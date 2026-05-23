@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node / build artefacts (in case slide tooling is added later)
+node_modules/
+dist/
+build/
+
+# Python (in case scripts are added later)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Local scratch
+scratch/
+tmp/
+*.log
