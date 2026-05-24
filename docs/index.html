@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+  LDaCA Wordflow landing page.
+
+  Hosting: GitHub Pages from `main` branch, `/docs` folder.
+  Settings → Pages → Source = Deploy from a branch → Branch = main → /docs → Save.
+  Published URL will be https://milysun.github.io/wordflow-workshop/
+
+  REPLACE BEFORE PUBLISHING — search for these placeholders and substitute real URLs:
+    [BINDER URL]            — the Launch-in-Binder URL for Wordflow
+    [MACOS DOWNLOAD URL]    — Wordflow desktop installer for macOS (Apple Silicon)
+    [WINDOWS DOWNLOAD URL]  — Wordflow desktop installer for Windows
+    [DOCS URL]              — Wordflow user documentation, if there is one
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LDaCA Wordflow — text analytics for researchers</title>
+<meta name="description" content="LDaCA Wordflow — a code-free interface for text analytics. Concordance, frequency, trends, topic modelling, comparative analysis through one workspace.">
+<style>
+  :root {
+    --ink: #1a1d24;
+    --paper: #fdfcf8;
+    --accent: #c8423e;
+    --accent-soft: #f3d6d5;
+    --muted: #6b6f78;
+    --rule: #d9d4c8;
+    --max-width: 960px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Header bar */
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    padding: 1rem 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .topbar strong { color: var(--ink); }
+
+  /* Hero */
+  .hero {
+    padding: 5rem 0 3.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin-bottom: 0.4em;
+  }
+  .hero .lede {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    color: var(--muted);
+    max-width: 36em;
+    margin-bottom: 1.5rem;
+  }
+  .hero .premise {
+    margin-top: 2rem;
+    padding: 0.4em 0 0.4em 1.2em;
+    border-left: 4px solid var(--accent);
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    color: var(--ink);
+    max-width: 36em;
+  }
+  .hero .premise em { color: var(--accent); font-style: italic; }
+
+  /* Action buttons */
+  .actions {
+    padding: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .actions-secondary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.6rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: transform 0.1s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(26,29,36,0.12); }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--paper);
+  }
+  .btn-primary:hover { background: #b8362f; }
+  .btn-secondary {
+    background: var(--paper);
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .btn .arrow { transition: transform 0.15s ease; }
+  .btn:hover .arrow { transform: translateX(3px); }
+  .btn-note {
+    width: 100%;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  /* Sections */
+  section.block {
+    padding: 3rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  section.block h2 {
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+  section.block p { margin-bottom: 0.8rem; }
+  section.block p:last-child { margin-bottom: 0; }
+
+  /* Workshops list */
+  .workshop-list { list-style: none; padding: 0; }
+  .workshop-list > li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .workshop-list > li:last-child { border-bottom: none; }
+  .workshop-list .ws-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    flex: 1 1 100%;
+  }
+  .workshop-list .ws-meta {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .workshop-list .ws-link {
+    margin-left: auto;
+    font-size: 0.95rem;
+  }
+  .workshop-list .ws-link code {
+    background: var(--accent-soft);
+    padding: 0.1em 0.45em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  .upcoming {
+    color: var(--muted);
+    font-style: italic;
+    padding-top: 0.5rem;
+  }
+
+  /* Attribution */
+  .attribution p { color: var(--ink); }
+  .attribution .funder {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 2rem 0 3rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; justify-content: space-between; }
+  footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 3rem 0 2rem; }
+    .actions { align-items: stretch; }
+    .actions-secondary { flex-direction: column; }
+    .btn { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><strong>LDaCA Wordflow</strong></span>
+    <span>v0.5 · 2026</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Text analytics for researchers — without code.</h1>
+    <p class="lede">LDaCA Wordflow is a single interface for concordance, frequency, trends, topic modelling, and comparative analysis across your text corpus.</p>
+    <div class="premise">
+      Text data flows through stackable, single-purpose tools — and the meaning of an analysis is shaped by <em>how you shape your data</em>, not by the tool itself.
+    </div>
+  </div>
+</header>
+
+<div class="wrap actions">
+  <a class="btn btn-primary" href="[BINDER URL]">
+    Launch Wordflow in Binder <span class="arrow">→</span>
+  </a>
+  <div class="actions-secondary">
+    <a class="btn btn-secondary" href="[MACOS DOWNLOAD URL]">
+      Download for macOS <span class="arrow">→</span>
+    </a>
+    <a class="btn btn-secondary" href="[WINDOWS DOWNLOAD URL]">
+      Download for Windows <span class="arrow">→</span>
+    </a>
+  </div>
+  <p class="btn-note">
+    Binder takes about a minute to spin up. The desktop app is recommended for serious work and as a backup if Binder is slow. The macOS installer is for Apple Silicon Macs.
+  </p>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Workshops</h2>
+    <ul class="workshop-list">
+      <li>
+        <span class="ws-title">Intro to Wordflow</span>
+        <span class="ws-meta">3 June 2026 · 3 hours · in-person · University of Sydney</span>
+        <span class="ws-link">
+          Materials:
+          <a href="https://github.com/milysun/wordflow-workshop/tree/intro_workshop_2026-06-03"><code>intro_workshop_2026-06-03</code></a>
+        </span>
+      </li>
+    </ul>
+    <p class="upcoming">More workshops to come — sessions focused on specific tools, on specific domains, and on combining tools into new workflows.</p>
+  </div>
+</section>
+
+<section class="block attribution">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>
+      Wordflow is developed by
+      <a href="https://www.sydney.edu.au/research/facilities/sydney-informatics-hub.html">Sydney Informatics Hub</a>
+      and
+      <a href="https://sydneycorpuslab.com/">Sydney Corpus Lab</a>,
+      as part of the
+      <a href="https://www.ldaca.edu.au/">Language Data Commons of Australia</a>
+      — a national HASS and Indigenous research infrastructure project.
+    </p>
+    <p class="funder">Funded by the <a href="https://ardc.edu.au/">Australian Research Data Commons</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© LDaCA · Built with care for HASS researchers.</span>
+    <ul>
+      <li><a href="https://github.com/Australian-Text-Analytics-Platform/LDaCa_Text_Analytics_Tools/">Master repo</a></li>
+      <li><a href="[DOCS URL]">Documentation</a></li>
+      <li><a href="https://github.com/milysun/wordflow-workshop">Workshop repo</a></li>
+      <li><a href="mailto:chao.sun@sydney.edu.au">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
