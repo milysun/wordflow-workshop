@@ -27,7 +27,6 @@ A way of asking a question of a data block. Tools include:
 | **Trends** | "How does this corpus change over time, or over any numeric axis?" |
 | **Topic Modelling** | "What themes group these documents?" |
 | **Quotation** | "What are people quoted as saying, and who said it?" (English only) |
-| **AI Annotator** | "Can a language model label these documents?" |
 | **Export** | "Get my data and results out of Wordflow." |
 
 ### Stacking
@@ -37,7 +36,7 @@ The most important verb in this workshop. You stack tools by taking the output o
 A small file (`.ldaca-snapshot`) that captures a finished analysis — tool, parameters, results — so you can re-open it or send it to a colleague without re-running. Saved per tool from the camera icon.
 
 ### Snapshot Mode
-A top-menu toggle that locks the interface to read-only. You can still hover, click visualisations, and switch views, but nothing changes. Use it when exploring someone else's snapshot, or to play safely. **Turn it OFF when you want to build.**
+A sidebar toggle (the **pencil icon next to the "VIEWS" title**) that enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only — you can still hover, click visualisations, and switch views, but you can't change parameters or rerun. Other tools stay editable as normal. **Turn it OFF for general workspace-building.**
 
 ### Workspace archive
 A portable export of your entire workspace — all data blocks, derivations, and metadata — as a single file. Different from snapshots: a snapshot captures one tool's view; a workspace archive captures the whole project. Import to recreate the workspace on another machine (or another participant's instance).
@@ -71,9 +70,8 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 │  │ - Trends             │    │ Data viewer              │    │
 │  │ - Topic Modelling    │    │  (selected block as      │    │
 │  │ - Quotation          │    │   a table; click a row   │    │
-│  │ - AI Annotator       │    │   for full content)      │    │
-│  │ - Export             │    └──────────────────────────┘    │
-│  └──────────────────────┘                                    │
+│  │ - Export             │    │   for full content)      │    │
+│  └──────────────────────┘    └──────────────────────────┘    │
 │                              ┌──────────────────────────┐    │
 │                              │ Tool interface           │    │
 │                              │  (controls + results,    │    │
@@ -93,7 +91,7 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 5. **Tool Interface** — controls and output. **Camera icon** = save snapshot. **Folder icon** = load snapshot.
 6. **Help (`?`)** — every control with a `?` opens the relevant tutorial section.
 7. **Feedback (♥)** — top right. Use it. Often.
-8. **Top menu** — Snapshot Mode toggle, workspace switcher, workspace archive import/export.
+8. **Top menu** — workspace switcher, workspace archive import/export. (The **Snapshot Mode toggle** lives in the sidebar — pencil icon next to the "VIEWS" title.)
 
 ### Three-second moves
 
@@ -111,7 +109,7 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 | Export a workspace archive | Workspace switcher → Export workspace archive |
 | Rename a block | double-click its name in the graph |
 | Delete a block | right-click → Delete (children get deleted too) |
-| Toggle Snapshot Mode | top menu → Snapshot Mode |
+| Toggle Snapshot Mode | sidebar → pencil icon next to "VIEWS" |
 | Send feedback | heart icon, top right |
 
 ### One-line rule

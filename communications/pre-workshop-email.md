@@ -24,7 +24,7 @@ Wordflow is a web-based tool for text analytics — concordance, frequency, topi
 
 ## What NOT to bring
 
-- **Don't bring sensitive or unpublished data** for the workshop's cloud-hosted version. Anything you upload during the workshop is uploaded to a temporary cloud server. It's deleted after your session, but for sensitive data you should use the local install (post-workshop, we'll send the instructions).
+- **Don't bring sensitive or unpublished data** for the workshop's cloud-hosted version. Anything you upload during the workshop is uploaded to a temporary cloud server. It's deleted after your session, but for sensitive data you should use the local install — the desktop installer is on **bit.ly/wordflows** (see the optional pre-install section below).
 - **Don't bring Word documents or PDFs** as your corpus — they won't import directly. If you have them, convert to CSV with at least one text column first. (Tools we can recommend: spreadsheet copy-paste for small corpora, Pandoc for batch conversion, or LDaCA's ingestion tools for serious work.)
 
 ## Format expectations if you bring data
@@ -58,8 +58,12 @@ This is a 3-hour intro. We won't be diving deep into every tool, parameter, or a
 
 - **Where**: [VENUE]
 - **When**: [DATE, START — END]
-- **WiFi**: provided; password on the whiteboard.
-- **Workshop URL**: I'll write it on the whiteboard at start.
+- **WiFi**: USyd-internal — your usual UniWiFi credentials.
+- **Workshop URL**: **bit.ly/wordflows** — bookmark it. Click "Launch in Binder" on the day. (No need to do anything before you arrive.)
+
+## Optional but recommended — install the desktop app as a backup
+
+The cloud version we'll use on the day is convenient but depends on a shared free service (Binder). It usually works, but if it's slow or down, we'll switch the room to the desktop app. **You can save the room some time by installing it beforehand:** go to **bit.ly/wordflows**, scroll to "Releases", and grab the Mac or Windows installer. Takes about 5 minutes. If Binder works fine on the day, you've still got a useful tool installed for later.
 
 ## Questions before the workshop?
 

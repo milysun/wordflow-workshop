@@ -21,46 +21,67 @@ The Session-1.5 snapshot tour shows each tool's destination visualisation. You n
 
 For each below — open Wordflow locally, run the analysis with the listed parameters, click the **Save snapshot** camera in the tool header, use the filename listed, then copy to a publishable location.
 
-### Snapshot 1 — Frequency
+### Snapshot 1 — Frequency (comparative)
 
-- Dataset: Honi Soit
-- Tool: Frequency
+- Dataset: `newstalk_stories`
+- Preprocessing: filter by source, then **group into two blocks**:
+  - **Left-leaning block** — Guardian (`guardian`) + Independent Australia (`ia`)
+  - **Right-leaning block** — Sky News (`sky`) + PerthNow (`perthnow`)
+  - (Set aside `msn`, `riotact`, `acm` — aggregator + local + mixed regional.)
+- Tool: Frequency, **comparative mode** (select both blocks before opening Frequency)
 - Stopwords: English, on
 - Top-N: 60
 - View at save time: Cloud
-- Filename: `token_frequencies-honi-soit-overview.ldaca-snapshot`
+- Filename: `Freq_Analysis_Newstalk.ldaca-snapshot`
 
-### Snapshot 2 — Concordance
+### Snapshot 2 — Concordance (regex, multi-pattern)
 
-- Dataset: Honi Soit
-- Tool: Concordance, Text mode
-- Search term: `student`
+- Dataset: SCL / Honi Soit
+- Tool: Concordance, **Regex mode**
+- Pattern: `student\w*|staff|universit\w+` — three patterns; each match coloured by which pattern it hit
 - Context window: 10
-- View at save time: Dispersion
-- Filename: `concordance-honi-soit-student.ldaca-snapshot`
+- **Combined view: OFF** (so participants see one view at a time, not 2×2 = 4)
+- View at save time: Dispersion (with the row table alongside)
+- Filename: `SCL_Honi_Soit.ldaca-snapshot`
 
-### Snapshot 3 — Trends
+### Snapshot 3 — Trends (built on a Concordance export)
 
-- Dataset: Reddit (download first; ~37 MB)
-- Tool: Trends
-- Time bin: month
-- Group-by: `subreddit`
-- Filename: `sequential_analysis-reddit-monthly.ldaca-snapshot`
+- Dataset: **2020 QLD election candidate tweets**, joined with `candidate_info_gender` — distinct from the 2025 newstalk media stories used in Snapshot 1, even though both touch QLD politics
+- Preprocessing:
+  1. Run **Concordance** on the joined block with regex pattern `job\w*|lnp\w*|economic`.
+  2. **Add the Concordance results as a new data block** so the matched-term column is preserved alongside `gender` and `party`.
+- Tool: Trends on the matched block
+- Time bin at save time: **hour** (the smallest available — participants can coarsen during the demo)
+- Available groupings (must be preserved in the snapshot): **matched term**, **gender**, **party**
+- Filename: `QLD_Election_Tweets_conc.ldaca-snapshot`
 
-### Snapshot 4 — Topic Modelling
+> Confirm before saving: in Snapshot Mode, all three grouping options can still be switched live. If a column gets dropped during export, the demo loses its punch.
 
-- Dataset: Honi Soit
-- Tool: Topic Modelling
-- Defaults. Let BERTopic finish.
+### Snapshot 4 — Topic Modelling (newstalk, balanced)
+
+- Dataset: **same** `newstalk_stories` source as Snapshot 1 (left vs right groupings)
+- Preprocessing — **balance the corpora** before topic modelling:
+  - Left (`guardian` + `ia`): 121 articles, use all
+  - Right (`sky` + `perthnow`): 301 articles → **apply 40% sample → 120 articles**
+- Tool: Topic Modelling on the combined balanced corpus
+- Parameters: **`min_topic_size = 7`**, **`seed = 46`**
+- Expected result: **~8 topics** with fair distances on the bubble plot; some bubbles should show colour blending (articles from both sides) and some should be solid (one side dominant)
 - View at save time: bubble chart
-- Filename: `topic_modeling-honi-soit-topics.ldaca-snapshot`
+- Filename: `newstalk_left_vs_right.ldaca-snapshot`
+
+> The sampling matters. If you regenerate without the 40% sample, topic discovery will be biased by the larger right-leaning corpus. The balanced input (120 vs 121) makes the colour mixing on bubbles meaningful.
+
+> The seed (`46`) and `min_topic_size` (`7`) are tuned for **visual interest** in the demo — fair topic distances on the plot and meaningful word clusters in each topic — not necessarily for a "right" topic model. The lesson is "themes can be discovered automatically", not "BERTopic found the truth."
 
 ### Snapshot 5 — Quotation
 
-- Dataset: Honi Soit
+- Dataset: 100-article Honi Soit sample
 - Tool: Quotation
-- Defaults
-- Filename: `quotation-honi-soit-speakers.ldaca-snapshot`
+- Parameters: defaults
+- Expected result: **~870 quotations across 95 of the 100 documents** (5 documents will show no extracted quotes — could be genuinely quote-less, could be misses; that's fine for the demo and worth mentioning honestly)
+- Filename: `SCL_Honi_Soit.ldaca-snapshot`
+
+> Naming note: this is the same filename as Snapshot 2 (Concordance on Honi Soit). Wordflow scopes snapshots per tool, so the two files live in separate per-tool registries and don't collide on load. If you'd prefer distinct filenames for your own bookkeeping (e.g., `SCL_Honi_Soit_concordance` / `SCL_Honi_Soit_quotation`), that's harmless to do.
 
 ---
 
@@ -112,7 +133,7 @@ Session 2 is the most ambitious 45 minutes of the day. Practise it twice.
 
 ## T-2 days: rehearse Sessions 1 and 3
 
-- [ ] Walk through Session 1.0 (slides 1-12) out loud. Time it. Target ≤ 25 min including 3-min for the parallel Binder sign-in.
+- [ ] Walk through Session 1.0 (slides 1-6) out loud. Time it. Target ≤ 25 min including 3-min for the parallel Binder sign-in.
 - [ ] Walk through the Session 1.5 snapshot tour. Five tools, 5 min each. Practise saying *"two more minutes"* and switching cleanly.
 - [ ] Rehearse the Session 3.A repurpose-the-lens demo end-to-end. Practise saying *"the tool didn't change; I changed how I shaped the data"* without looking at your notes.
 

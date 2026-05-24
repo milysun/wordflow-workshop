@@ -12,7 +12,7 @@ Follow the facilitator's screen.
 
 1. **Data Loader → Import sample content.** Import **all three** sample datasets: Honi Soit, QLD election tweets, and Reddit. (You won't use them all now, but they'll be ready later.)
 2. **Data Loader → Import demo snapshots.** Import **all five** snapshots from the catalogue. If the catalogue tab is empty, the facilitator will share a download link — drop the files into your snapshot folder via the same dialog.
-3. **Top menu → Enable Snapshot Mode.** Look for the **lock icon** or "Snapshot Mode" toggle. When it's on, the interface is read-only — you can still hover, click on visualisations, and switch views, but you can't accidentally change anything.
+3. **Click the pencil icon next to the "VIEWS" title in the left sidebar** — that's the **Snapshot Mode** toggle. Turn it ON. This enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only (you can hover, click, and switch views, but you can't change parameters). Other tools stay editable as normal.
 4. **Create a new workspace** called `tour`. (Top bar → workspace switcher → Create.)
 
 Tell your neighbour if anything didn't work. Flag the facilitator if you're stuck.
@@ -23,82 +23,107 @@ Tell your neighbour if anything didn't work. Flag the facilitator if you're stuc
 
 1. **Frequency** tool in the left sidebar.
 2. Click the **folder icon (Load snapshot)** in the tool header.
-3. Pick the **Honi Soit overview** snapshot. Wait a second.
+3. Pick **`Freq_Analysis_Newstalk`**. Wait a second.
 
-**Look at:** the word cloud. Bigger words = more frequent in the corpus.
+**Look at:** the **two-column comparative view**. Each column is a *grouping* of news outlets drawn from the same `newstalk_stories` corpus:
+
+- **Left-leaning** — Guardian Australia + Independent Australia.
+- **Right-leaning** — Sky News Australia + PerthNow.
+
+Bigger words = more frequent in that group's stories. Stopwords already filtered.
 
 **Try this:**
-- 🔁 Switch from **Cloud** to **List** view.
-- 🔁 Hover over a word in the list. Click it.
+- 🔁 Switch from **Cloud** to **List** view to see exact counts.
+- 🔁 Find a word that appears high on one side and is small or absent on the other — that's where the lens is doing real work.
+- 🔁 Hover over or click a word to see its rank on the opposite side.
 
-> What you're seeing: the most common content words in 100 articles from a student newspaper. Stopwords (the, a, is, etc.) are already filtered out.
+> What you're seeing: comparative frequency, not just frequency. The grouping (left vs right) is a *research assumption* — regroup the same corpus differently and the comparison changes. The data didn't change; the lens did.
 
 ---
 
 ## Tool 2 — Concordance *(0:35 – 0:40)*
 
 1. **Concordance** tool in the left sidebar.
-2. **Load snapshot** → **Honi Soit `student`**.
+2. **Load snapshot** → **`SCL_Honi_Soit`**.
 
-**Look at:** every appearance of the word "student" with the words before and after.
+**Look at:** every match of a **regex pattern** — `student\w*|staff|universit\w+` — across the Honi Soit student-newspaper corpus. That's three patterns at once:
+
+- anything starting with **student** (student, students, studentship…),
+- the word **staff** exactly,
+- anything starting with **universit** (university, universities, universities'…).
+
+Each pattern gets its own colour, both in the row table and in the dispersion plot.
 
 **Try this:**
-- 🔁 Switch view to **Dispersion**. Each bar is one article; the marks show where in that article the word appears.
-- 🔁 Hover over a row to see the full sentence.
+- 🔁 Switch view to **Dispersion**. Each bar is one document; the coloured marks show where each pattern lands in that document.
+- 🔁 Hover over a row in the table to see the full sentence.
+- 🔁 Edit the regex in the search box — results recompute live, no rerun needed.
 
-> What you're seeing: close reading at scale. You can read every instance of a word without losing the context — and the dispersion view shows you whether it's an obsession, a passing mention, or evenly spread.
+> What you're seeing: close reading at scale, three concepts at once. The coloured-by-pattern dispersion view tells you at a glance which documents are obsessed with *students*, which with *staff*, which with *the university itself* — and which thread them together.
 
 ---
 
 ## Tool 3 — Trends *(0:40 – 0:45)*
 
 1. **Trends** tool in the left sidebar.
-2. **Load snapshot** → **Reddit monthly volume**.
+2. **Load snapshot** → **`QLD_Election_Tweets_conc`**.
 
-**Look at:** how many submissions appeared per month, separated into different subreddits.
+**Look at:** when three election-time concepts surface across QLD candidate tweets — **`job\w*`**, **`lnp\w*`**, and **`economic`** — at hourly resolution. This Trends view is built on top of a Concordance search result, so each spike is a real tweet matching one of those patterns.
 
 **Try this:**
-- 🔁 Change the **time bin** from month to week (or year). The lines reshape on the fly — no re-running needed.
-- 🔁 Hover over a line to see exact counts.
+- 🔁 Switch the **grouping** control between:
+  - **Matched term** — one line per pattern (`job` / `lnp` / `economic`).
+  - **Gender** — one line per candidate gender.
+  - **Party** — one line per political party.
+- 🔁 Coarsen the **time bin** from hour → day → week. The lines reshape on the fly — no rerun needed.
+- 🔁 Hover any line for exact counts at that time.
 
-> What you're seeing: temporal patterns. When did topics surge? When did a subreddit go quiet? The grouping splits a single corpus into stories told side by side.
+> What you're seeing: the same matches viewed three different ways. *Whose* tweets, *when*, *about which concept* — same data, three stories. The story you tell depends on the grouping you pick.
 
 ---
 
 ## Tool 4 — Topic Modelling *(0:45 – 0:50)*
 
 1. **Topic Modelling** tool in the left sidebar.
-2. **Load snapshot** → **Honi Soit topics**.
+2. **Load snapshot** → **`newstalk_left_vs_right`**.
 
-**Look at:** the bubble chart. Each bubble is one discovered topic; size = how many articles fit it.
+**Look at:** the bubble chart of **8 discovered topics** across the same newstalk corpus you saw in Tool 1 — but this time we're asking BERTopic to *discover* themes automatically, rather than counting words. Bubble size = how many articles fit each topic; distance between bubbles reflects thematic similarity.
+
+The corpora are **balanced**: 120 right-leaning articles (sampled from a larger pool) and 121 left-leaning, so topic discovery isn't skewed by corpus size.
 
 **Try this:**
-- 🔁 Hover over a bubble — top words for that topic appear.
-- 🔁 Click a bubble — the word ranking opens.
+- 🔁 Hover over a bubble — the top words for that topic appear.
+- 🔁 Click a bubble — the full word ranking opens.
+- 🔁 Notice bubbles where the **colours blend** — those are topics with articles from *both* left and right outlets. Solid-coloured bubbles are topics dominated by one side.
 
-> What you're seeing: automatic theme discovery. BERTopic grouped the 100 articles into thematic clusters based on what they're about, without you telling it what to look for.
+> What you're seeing: the same corpus you saw in Tool 1, through a different lens. Tool 1 told you which *words* diverge between sides; Tool 4 tells you which *themes* cluster — and where the two sides talk about the same thing (colour-mixed bubbles) versus where they diverge (solid bubbles).
 
 ---
 
 ## Tool 5 — Quotation *(0:50 – 0:55)*
 
 1. **Quotation** tool in the left sidebar.
-2. **Load snapshot** → **Honi Soit speakers**.
+2. **Load snapshot** → **`SCL_Honi_Soit`** (the one in the Quotation tool's snapshot list — Wordflow scopes snapshots per tool).
 
-**Look at:** rows of quoted speech, each labelled with the speaker.
+**Look at:** rows of quoted speech extracted from 100 Honi Soit articles. The tool found **~870 quotations across 95 of the 100 documents** — student newspapers turn out to be very quote-rich (interviews, opinion pieces, news with sources). The remaining 5 documents might be genuinely quote-less, or the tool may have missed some.
 
 **Try this:**
-- 🔁 Click a row to see the surrounding sentence in context.
-- 🔁 Sort by speaker — who got quoted most?
+- 🔁 Click a row to see the surrounding sentence and source document.
+- 🔁 Sort by speaker — see who gets quoted most.
+- 🔁 Look for a few mis-hits — the extractor isn't perfect, especially with unusual quote markers or nested speech.
 
-> What you're seeing: structured extraction of attributed speech. Useful for newspaper, interview, or hansard corpora where "who said what" matters. (English-only for now.)
+> What you're seeing: structured extraction of attributed speech — who said what, in what context. Useful for newspaper, interview, hansard, or court transcripts where attribution matters. **English-only for now.**
 
 ---
 
 ## Recap before the break
 
-Same data, five lenses. None of them were *more correct* than the others — they answered different questions about the same texts.
+Same data, five lenses. None of them was *more correct* than the others — they answered different questions about the same texts.
 
-When we come back, you'll watch — and partly follow — a workflow that uses **four of these tools in a single research story**, with all the joins, filters, and slices that connect them.
+But there's one thing the snapshot tour didn't show: **outside of Snapshot Mode, every analysis result can be added back into the workspace as a new data block** — for another tool to analyse. Filter your corpus → run comparative frequency → click a word to jump to concordance → save the matching contexts as a new block → run topic modelling on that new block → plot the topics over time…
+
+**None of these tools is a dead end.** They feed each other. That's what makes Wordflow a *workflow* tool, not just a visualisation tool.
+
+When we come back, you'll watch — and partly follow — a workflow that does exactly this: **four of these tools chained into one research story**, with all the joins, filters, and slices that connect them.
 
 Break at **0:55 to 1:10**. See you back here.

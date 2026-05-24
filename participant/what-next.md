@@ -6,7 +6,7 @@ You've spent 3 hours with Wordflow. Here's where to go from here, in order of ef
 
 ## In the next 24 hours (5 minutes)
 
-- **Open the post-workshop email.** It has links to today's snapshots, the Session-2 workspace archive, the install link, and the docs.
+- **Open the post-workshop email.** It has links to today's snapshots, the Session-2 workspace archive, and the docs. (The desktop install link lives on **bit.ly/wordflows** — the same URL you used to launch today.)
 - **Save the workshop files** to your own machine if you want them long-term.
 
 ---

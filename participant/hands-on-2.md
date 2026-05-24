@@ -26,7 +26,7 @@ That's six tools, one workflow, one question.
 
 ## Pre-flight: turn off Snapshot Mode
 
-You enabled Snapshot Mode in Session 1.5 to play safely. Now we're building — **turn Snapshot Mode OFF** from the top menu. Your facilitator will pause until everyone has done this.
+You enabled Snapshot Mode in Session 1.5 so you could load the demo snapshots. Now we're building — **turn Snapshot Mode OFF** (the pencil icon next to "VIEWS" in the sidebar). Your facilitator will pause until everyone has done this.
 
 ---
 

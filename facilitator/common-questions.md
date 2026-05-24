@@ -17,7 +17,7 @@ Use as a pre-read; keep open during the workshop.
 - Chrome, Edge, Firefox, Safari — any current desktop browser is fine. Mobile browsers won't work well; warn them.
 
 ### "Do I need to install anything?"
-- No, for the workshop. Local install instructions are in the post-workshop email.
+- No, not for the workshop — Binder runs Wordflow in your browser. If you want the desktop app for later (or as a backup today if Binder is slow), the link is on **bit.ly/wordflows**.
 
 ### "What is Binder / what is this loading?"
 - *"A cloud computer that runs Wordflow for you. First time someone opens it today it takes a minute to start; after that everyone gets it fast."*
@@ -32,8 +32,8 @@ Use as a pre-read; keep open during the workshop.
 ### "I see no data blocks / snapshots."
 - They skipped one of the setup steps. Walk them through Data Loader → Import sample content → all three; then Data Loader → Import demo snapshots → all five.
 
-### "Snapshot Mode is greyed out."
-- Probably already in Snapshot Mode. Look for the lock icon — toggle should be visible.
+### "Snapshot Mode is greyed out / I can't find it."
+- The toggle is the **pencil icon next to the "VIEWS" title** in the left sidebar. (Not the top menu.) Click it to switch on or off.
 
 ### "Why can't I change anything?"
 - Snapshot Mode is on. That's intentional during the snapshot tour. They'll turn it off at the start of Session 2.
@@ -106,7 +106,7 @@ Use as a pre-read; keep open during the workshop.
 - *"Wordflow auto-saves your workspace on every change. Close the tab and come back — it's still there. To take it off the cloud: workspace switcher → Export workspace archive. For a single result: camera icon → Save snapshot."*
 
 ### "Can I install this on my own laptop?"
-- Yes — desktop app (Mac/Win) or `pip install ldaca-wordflow`. Link in the post-workshop email.
+- Yes — desktop app (Mac/Win) or `pip install ldaca-wordflow`. Desktop installer is on **bit.ly/wordflows**.
 - Caveat: install size is hundreds of MB (includes ML models). Warn them.
 
 ### "Does it work offline?"
@@ -120,7 +120,7 @@ Use as a pre-read; keep open during the workshop.
 ## Conceptual / "why" questions
 
 ### "Is this AI?"
-- *"Some tools use AI under the hood — Topic Modelling uses BERTopic, which uses a small language model to group texts; the AI Annotator uses a larger model to label them. Most other tools — Concordance, Frequency, Trends — are deterministic statistics. What matters is whether the output is interpretable, and we aim for yes."*
+- *"Some tools use AI under the hood — Topic Modelling uses BERTopic, which uses a small language model to group texts. Most other tools — Concordance, Frequency, Trends — are deterministic statistics. What matters is whether the output is interpretable, and we aim for yes."*
 
 ### "Will my data leave my computer?"
 - **Crucial question — answer carefully.** Depends on deployment:
