@@ -56,7 +56,7 @@ Use as a pre-read; keep open during the workshop.
 - Their hands-on-2 sheet labels each move. *"If you missed it, watch this one and try in the free lab."*
 
 ### "The join produced too many / too few rows."
-- They probably picked the wrong join type or the wrong key column. Pause briefly, point at your projected screen, continue. They can reload checkpoint α if needed.
+- They probably picked the wrong join type or the wrong key column. Pause briefly, point at your projected screen, continue. They can reload checkpoint A if needed.
 
 ### "Dtype warning — what do I do?"
 - *"Accept the normalisation. Wordflow is just standardising column types — making sure all dates are dates, all numbers are numbers. It's plumbing; it'll save you trouble later."*
@@ -67,7 +67,7 @@ Use as a pre-read; keep open during the workshop.
 
 ### "The regex returned zero matches / too many."
 - For zero: check the search mode is set to **Regex**, not Text. Check the parentheses-OR syntax `(a|b|c)`.
-- For too many: the regex matches as substrings by default; add `\b` word boundaries: `\b(covid|vaccine|mask)\b`.
+- For too many: the regex matches as substrings by default; add `\b` word boundaries: `\b(cases|covid|lnp\w*)\b`.
 - During the demo, pre-test your regex. Don't improvise.
 
 ### "BERTopic is taking forever."

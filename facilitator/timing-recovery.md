@@ -18,20 +18,20 @@ If you're 5 min behind because Session 1.0 ran long: cut deployment options enti
 
 Setup is taking too long because participants are stuck on something earlier. Don't try to recover with speed — **stop demoing and announce the recovery checkpoints**:
 
-> *"Anyone behind, download checkpoint α from the URL on the board and skip ahead. I'm continuing in 60 seconds."*
+> *"Anyone behind, download checkpoint A from bit.ly/wordflows → Releases and skip ahead. I'm continuing in 60 seconds."*
 
 Continue without waiting. The lost participants will catch up via checkpoints.
 
 ---
 
-## If you're 5+ minutes behind by 1:45 (end of Session 2 phase C)
+## If you're 5+ minutes behind by 1:40 (end of Session 2 phase C)
 
-You won't finish E. Choices in order of preference:
+You won't finish D + E cleanly. Choices in order of preference:
 
-1. **Cut phase E entirely.** Verbally describe what topic modelling + detach + Trends-by-topic would do, but don't demo it live. *"In the free lab in 25 minutes, you can try E yourself — checkpoint γ has the block you'd need."*
-2. **Cut phase D and E.** Even more aggressive. End Session 2 at the Concordance regex+dispersion result. The cross-tool flow lesson has already landed by then.
+1. **Cut phase E entirely.** Verbally describe what Stack → final Trends would do, but don't demo it live. *"In the free lab in 25 minutes, you can try E yourself — checkpoint D has the topic-detached blocks you'd need to start from."*
+2. **Cut phases D and E.** End Session 2 at the C-2 Trends with the `lnpcuts` skew. The cross-tool flow lesson has already landed, and the empirical hook (lnpcuts) is the highest-value finding — leaving on that beat is fine.
 
-Don't try to half-do E. Either run it cleanly or skip it. A rushed BERTopic that produces noise topics undermines the whole session.
+Don't try to half-do D. The two-corpus Topic Modelling run takes 60-90s and the colour-fusion lesson lives in the bubble layout — a rushed run that produces noise undermines it.
 
 ---
 

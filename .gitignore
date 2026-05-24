@@ -28,3 +28,9 @@ venv/
 scratch/
 tmp/
 *.log
+
+# Workshop checkpoint archives — uploaded as GitHub Release assets, not committed
+checkpoints/
+*.wordflow-workspace
+*.ldaca-snapshot
+Checkpoint_Tour-*.zip

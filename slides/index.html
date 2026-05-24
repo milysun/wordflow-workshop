@@ -377,17 +377,17 @@
     <h2>Who built this?</h2>
     <div class="team-grid">
       <div class="team-card">
-        <img src="images/team/chao-sun.jpg" alt="Dr Chao Sun">
+        <img src="images/team/Chao_Sun.jpg" alt="Dr Chao Sun">
         <div class="team-name">Dr Chao Sun</div>
         <div class="team-role">Developer<br>Sydney Informatics Hub</div>
       </div>
       <div class="team-card">
-        <img src="images/team/alex-guo.jpg" alt="Dr Alex Guo">
+        <img src="images/team/Senhui_Guo.jpg" alt="Dr Alex Guo">
         <div class="team-name">Dr Alex Guo</div>
         <div class="team-role">Developer<br>Sydney Informatics Hub</div>
       </div>
       <div class="team-card">
-        <img src="images/team/monika-bednarek.jpg" alt="Prof. Monika Bednarek">
+        <img src="images/team/Monika_Bednarek.jpg" alt="Prof. Monika Bednarek">
         <div class="team-name">Prof. Monika Bednarek</div>
         <div class="team-role">Academic lead<br>Sydney Corpus Lab</div>
       </div>
@@ -570,68 +570,74 @@
     <h2>The research question</h2>
     <p class="pullquote">Did female and male candidates tweet about different topical issues during the 2020 QLD election?</p>
     <p style="margin-top: 1em;">Some moves I'll ask you to <span class="badge try">TRY THIS</span>. Others <span class="badge watch">WATCH ONLY</span>.</p>
-    <p>If you fall behind, the <strong>Resources URL on the board</strong> has four checkpoint files. Load any one to rejoin in 30 seconds.</p>
+    <p>If you fall behind, <strong><code>bit.ly/wordflows</code> → Releases</strong> has five checkpoint workspace archives (A → E). Load any one to rejoin in 30 seconds.</p>
     <p style="margin-top: 1.5em;"><strong>First:</strong> turn OFF Snapshot Mode (sidebar — pencil icon next to "VIEWS"). We're building now.</p>
   </section>
 
   <!-- Slide 18: Phase A -->
-  <section class="slide" data-notes="Phase A is mostly watch — joins and dtype are fiddly. Don't try to talk individual participants through. ~10 min.">
+  <section class="slide" data-notes="Phase A is procedurally dense — 5-7 first-time-user moves. Narrate each calmly. ~7 min. The lesson: data prep work IS part of the analysis.">
     <h2>Phase A · <span class="badge watch">WATCH ONLY</span></h2>
-    <h1>Load, join, slice</h1>
+    <h1>Load, prepare, join</h1>
     <ol>
-      <li>Join QLD tweets + candidate gender data.</li>
-      <li>Accept the dtype normalisation.</li>
-      <li>Filter to gender = F, then gender = M → two sub-corpora.</li>
-      <li>Filter each to <code>text contains "#"</code> — keep just the hashtagged tweets.</li>
+      <li>Import the two source blocks (tweets + candidate gender).</li>
+      <li>Rename the long block (right-click → Rename).</li>
+      <li>Delete unused columns (right-click → Edit columns).</li>
+      <li>Set dtypes — make sure <code>candidate_id</code> matches across both.</li>
+      <li>Join on <code>candidate_id</code> (left join) → <code>tweets_with_gender</code>.</li>
+      <li>Click the joined block → see the gender column in the Data Viewer.</li>
     </ol>
-    <p style="margin-top: 1em;"><strong>Checkpoint α:</strong> <code>session2-after-A.wordflow-workspace</code></p>
+    <p style="margin-top: 0.6em; font-style: italic; color: var(--muted);">Data prep is part of the analysis. Don't rush.</p>
+    <p style="margin-top: 0.8em;"><strong>Checkpoint A:</strong> <code>Checkpoint_Tour-A.zip</code></p>
   </section>
 
   <!-- Slide 19: Phase B -->
-  <section class="slide" data-notes="This is the first TRY THIS. Wait for everyone to catch up before moving to C. Land the cross-tool jump — that's the lesson.">
+  <section class="slide" data-notes="First TRY THIS. The iterative Freq ↔ Concordance loop is the lesson — show the iteration, not just the result.">
     <h2>Phase B · <span class="badge try">TRY THIS</span></h2>
-    <h1>Comparative Frequency → jump to Concordance</h1>
+    <h1>Filter, then iterate Frequency ↔ Concordance</h1>
     <ol>
-      <li>Select <strong>both</strong> hashtagged blocks in the graph.</li>
-      <li>Frequency tool → comparative mode (Juxtorpus) → 40 words → stopwords on.</li>
-      <li>Save the list. Take a screenshot.</li>
-      <li><strong>Left-click a word.</strong> Watch what happens.</li>
+      <li>Filter by <code>gender = 'F'</code> and <code>gender = 'M'</code> → <code>tweets_female</code>, <code>tweets_male</code>.</li>
+      <li>Select both → <strong>Frequency</strong> tool, comparative mode (40 words, stopwords on).</li>
+      <li><strong>Left-click a topical word</strong> → Concordance opens with that word loaded.</li>
+      <li>Read a few contexts. Back to Frequency. Pick another word. <strong>Repeat.</strong></li>
+      <li>Patterns to settle on: <code>cases</code>, <code>covid</code>, <code>lnp\w*</code> — two themes (health, energy/policy).</li>
     </ol>
-    <p class="pullquote" style="margin-top: 1em;">Tools talk to each other.</p>
+    <p class="pullquote" style="margin-top: 1em;">The regex in C didn't fall from the sky. It came from this iteration.</p>
+    <p style="margin-top: 1em;"><strong>Checkpoint B:</strong> <code>Checkpoint_Tour-B.zip</code></p>
   </section>
 
   <!-- Slide 20: Phase C -->
-  <section class="slide" data-notes="C-1 is TRY (3 min), C-2 is WATCH (7 min). Mark the boundary clearly.">
+  <section class="slide" data-notes="C-1 is WATCH (4 min, set up the regex + detach). C-2 is TRY (6 min, Trends with lnpcuts legend isolation — the empirical hook).">
     <h2>Phase C · mixed</h2>
-    <h1>Concordance — simple, then advanced</h1>
-    <p><span class="badge try">TRY THIS</span> <strong>C-1:</strong> Run the search. <strong>Right-click results → Add as data block.</strong></p>
-    <p><span class="badge watch">WATCH ONLY</span> <strong>C-2:</strong> Switch to <strong>Regex</strong>. Pattern <code>(covid|vaccine|mask)</code>. Coloured matches. <strong>Dispersion view</strong>. Click-and-drag to select. Add contexts as aggregated block.</p>
-    <p style="margin-top: 1em;"><strong>Checkpoint γ:</strong> <code>session2-after-C.wordflow-workspace</code></p>
+    <h1>Multi-pattern regex → detach → Trends</h1>
+    <p><span class="badge watch">WATCH ONLY</span> <strong>C-1:</strong> Concordance Regex mode, pattern <code>cases|covid|lnp\w*</code>. Coloured matches. Dispersion view. Click-and-drag to select. Add as aggregated block.</p>
+    <p style="margin-top: 0.6em;"><span class="badge try">TRY THIS</span> <strong>C-2:</strong> Trends on the aggregated block. Group by matched-term. <strong>Click <code>lnpcuts</code> in the legend</strong> to isolate. Switch grouping to gender — <strong>F ≈ 20, M ≈ 4</strong>. ~5× skew on a small dataset.</p>
+    <p style="margin-top: 1em;"><strong>Checkpoint C:</strong> <code>Checkpoint_Tour-C.zip</code></p>
   </section>
 
   <!-- Slide 21: Phase D -->
-  <section class="slide" data-notes="Watch only. Show the swap-the-grouping move. ~5 min.">
+  <section class="slide" data-notes="Topic Modelling on TWO corpora produces fused colours. Show the bubble mixing as the visual punch. ~10 min.">
     <h2>Phase D · <span class="badge watch">WATCH ONLY</span></h2>
-    <h1>Trends on the aggregated block</h1>
+    <h1>Topic modelling on two corpora</h1>
     <ol>
-      <li>Time axis: tweet date. Bin: weekly.</li>
-      <li>Group by <code>gender</code> — two lines.</li>
-      <li>Swap to the matched-term column — three lines.</li>
+      <li><strong>Select both</strong> <code>tweets_female</code> + <code>tweets_male</code>. Topic Modelling. Target = 8, seed = 42. Run.</li>
+      <li>BERTopic produces ~23 topics. <strong>Drag re-aggregation to 16</strong> — bubbles spread.</li>
+      <li><strong>Colour mixing</strong> — solid = gender-dominant; blended = shared themes.</li>
+      <li>Select 2-3 topics → <strong>Detach</strong> → per-gender child blocks under female and male.</li>
     </ol>
-    <p class="pullquote" style="margin-top: 1em;">Same data. Swap one parameter. Different story.</p>
+    <p style="margin-top: 1em;"><strong>Checkpoint D:</strong> <code>Checkpoint_Tour-D.zip</code></p>
   </section>
 
   <!-- Slide 22: Phase E -->
-  <section class="slide" data-notes="If you're tight on time, SKIP the live run and describe verbally. ~5 min if you do run it.">
+  <section class="slide" data-notes="The closing move. Stack the per-gender topic blocks, view final Trends. ~5 min. Then the final landing.">
     <h2>Phase E · <span class="badge watch">WATCH ONLY</span></h2>
-    <h1>Topic modelling → detach → back to Trends</h1>
+    <h1>Stack → final Trends</h1>
     <ol>
-      <li>Topic Modelling. Target = 8 topics. Run.</li>
-      <li>Re-aggregate to 5 topics (client-side, no re-run).</li>
-      <li>Select 2-3 topics → <strong>Detach</strong> → new block.</li>
-      <li>Back to Trends → group by topic.</li>
+      <li><strong>Preprocessing → Stack</strong> the per-gender topic blocks from D → unified block (topic + gender columns preserved).</li>
+      <li>Click stacked block → <strong>Trends</strong>. Group by topic (or gender × topic).</li>
+      <li>Final view: selected topics, across the campaign, split by gender.</li>
     </ol>
-    <p class="pullquote" style="margin-top: 1em;">Six tools. One corpus. One question. One workflow.</p>
+    <p class="pullquote" style="margin-top: 1em;">Six tools. One corpus. One made-up hypothesis. One workflow.</p>
+    <p style="margin-top: 0.8em;"><strong>Checkpoint E:</strong> <code>Checkpoint_Tour-E.zip</code></p>
   </section>
 
   <!-- Slide 23: Break -->
@@ -672,7 +678,7 @@
     <div class="grid3">
       <div class="card">
         <h3>Track A</h3>
-        <p><strong>Continue Session 2.</strong> Load checkpoint α, β, γ or δ. Try the moves you watched.</p>
+        <p><strong>Continue Session 2.</strong> Load checkpoint A, B, C, D or E. Try the moves you watched.</p>
       </div>
       <div class="card">
         <h3>Track B</h3>

@@ -79,7 +79,7 @@ workshop/
 
 **A week before the workshop**
 
-1. Read `facilitator/pre-workshop-checklist.md` — there are five demo snapshots **plus** four Session-2 checkpoint snapshots **plus** the Session-2 portable workspace archive you'll need to capture.
+1. Read `facilitator/pre-workshop-checklist.md` — the five Session-1.5 demo snapshots ship with the LDaCA sample data and just need to be verified. You do need to **build and upload the five Session-2 workspace archives (A → E, one per phase)** as a GitHub Release on this branch.
 2. Send `communications/pre-workshop-email.md` (lightly tailored).
 3. Print `participant/welcome.md` + `participant/cheat-sheet.md` (double-sided) per attendee.
 
@@ -100,7 +100,7 @@ workshop/
 
 | Knob | Default | Adjust if… |
 |---|---|---|
-| Session 2 dataset | QLD election tweets (gender metadata + hashtags) | Want simpler narrative → use Honi Soit content filter instead |
+| Session 2 dataset | QLD election tweets (gender metadata; no hashtag filter — dataset is too small to subsample) | Want simpler narrative → use Honi Soit content filter instead |
 | Session 2 mode | Demo at full speed + selective follow-along (3-4 "try this" moves) | Room is small/confident → full follow-along (and bump Session 2 to 60 min from somewhere else) |
 | Checkpoint recovery | Pre-baked snapshots + workspace archive | First delivery → snapshots only; add archives next iteration |
 | Snapshot tour count | 5 (Frequency, Concordance, Trends, Topic, Quotation) | Tight room → 4 (drop Quotation; it's English-only with narrower appeal) |

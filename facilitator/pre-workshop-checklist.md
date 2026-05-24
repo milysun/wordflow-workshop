@@ -15,11 +15,11 @@ Tasks to complete in the week leading up to the workshop, roughly in order.
 
 ---
 
-## T-5 days: capture five demo snapshots (Session 1.5)
+## T-5 days: verify the Session-1.5 demo snapshots
 
-The Session-1.5 snapshot tour shows each tool's destination visualisation. You need **one demo snapshot per analytical tool**, pre-loaded on every participant's instance via the demo-snapshot catalogue (or hosted at the workshop URL for manual import).
+The Session-1.5 snapshot tour shows each tool's destination visualisation. The five demo snapshots ship with the **`ldaca-analytics-sample-data`** repo and get imported automatically alongside the sample datasets during Session 1.5's group-setup step — you don't need to upload them anywhere yourself.
 
-For each below — open Wordflow locally, run the analysis with the listed parameters, click the **Save snapshot** camera in the tool header, use the filename listed, then copy to a publishable location.
+What you *do* need to do, a few days out: **open Wordflow locally, import the sample data, load each demo snapshot, and confirm it still matches the spec below.** If anything has drifted (filename change, parameter change, dataset shape change in upstream sample data), flag it and update the matching slide / hands-on bullet so the runbook stays accurate. The specs below are the source of truth for what *should* be in each snapshot:
 
 ### Snapshot 1 — Frequency (comparative)
 
@@ -91,31 +91,57 @@ This is the big prep block. You'll build the full Session-2 workflow yourself in
 
 ### Build the workflow
 
-Open Wordflow in a fresh workspace called `session2-master`. Walk the full A→B→C→D→E chain (script in `runbook.md` Session 2). As you go:
+Open Wordflow in a fresh workspace called `session2-master`. Walk the full A→B→C→D→E chain (script in `runbook.md` Session 2). At each phase boundary, **export the workspace as a portable archive** — five files total, one per phase:
 
-- **At end of A** (joined-then-split-then-filtered): export the workspace as a portable archive.
-  - File: `session2-after-A.wordflow-workspace`
-  - Includes: `tweets_with_gender`, `tweets_female`, `tweets_male`, `tweets_female_hashtagged`, `tweets_male_hashtagged`.
+- **At end of A** (data prep complete: imports loaded, renames applied, unused columns dropped, dtypes set, join done → `tweets_with_gender`):
+  - File: `Checkpoint_Tour-A.zip`
+  - This is the most procedurally dense phase for first-time users — 5-7 moves — which is why it gets its own checkpoint.
 
-- **At end of B** (comparative frequency): save the Frequency snapshot.
-  - File: `frequency-tweets-comparative.ldaca-snapshot`
+- **At end of B** (gender-filtered: `tweets_female`, `tweets_male` added, comparative Frequency + iterative Concordance explored):
+  - File: `Checkpoint_Tour-B.zip`
 
-- **At end of C-2** (aggregated Concordance contexts): export the workspace.
-  - File: `session2-after-C.wordflow-workspace`
-  - Includes everything above plus the aggregated context block.
+- **At end of C** (regex `cases|covid|lnp\w*` → aggregated block added; Trends on it with `lnpcuts` skew verified):
+  - File: `Checkpoint_Tour-C.zip`
+  - **Verify before saving**: clicking `lnpcuts` in the Trends legend isolates it, and the gender split shows the ~20 (F) vs ~4 (M) skew. That's the empirical hook of Session 2 — if it doesn't reproduce on your laptop, dig in before the workshop.
 
-- **At end of D** (Trends with grouping): save the Trends snapshot.
-  - File: `trends-aggregated-by-gender.ldaca-snapshot`
+- **At end of D** (Topic Modelling on `tweets_female` + `tweets_male` as two corpora, target = 8 / seed = 42 / re-aggregated to 16; 2-3 topics detached as per-gender children):
+  - File: `Checkpoint_Tour-D.zip`
+  - **Verify before saving**: detached topics appear as child blocks under *both* `tweets_female` and `tweets_male` in the graph. If detach produces a single block instead of per-gender children, the topic modelling wasn't run on two corpora — re-run it with both selected.
 
-That's **2 workspace archives + 2 snapshots = 4 checkpoints**. Anyone who falls off mid-Session-2 can rejoin from whichever checkpoint matches where you are in the demo.
+- **At end of E** (Stack the per-gender topic blocks → unified block → final Trends viewed):
+  - File: `Checkpoint_Tour-E.zip`
+
+That's **5 workspace archives = 5 checkpoints**, one per phase. Anyone who falls off mid-Session-2 can rejoin from whichever checkpoint matches where you are in the demo.
 
 ### Test cross-OS
 
 The workspace-archive portability was recently fixed (May 2026). Before the workshop, **test importing each `.wordflow-workspace` on a different OS than the one you exported from** — Mac → Windows, or Linux → Mac, whichever pair you can manage. If anything breaks, file an issue and fall back to snapshots-only recovery for now.
 
-### Publish
+### Publish the Session-2 checkpoints
 
-Upload all 5 demo snapshots, the 2 workspace archives, and the 2 checkpoint snapshots to your hosting location. Verify each link works in a fresh browser session (logged out, no cache).
+The five Session-2 workspace archives (A–E) are **workshop-specific** — they live as a tagged release on `milysun/wordflow-workshop`, on this delivery's branch. The five Session-1.5 demo snapshots are handled separately via the `ldaca-analytics-sample-data` repo and don't need uploading here.
+
+To create the release:
+
+```bash
+# In your terminal, on this branch:
+git checkout intro_workshop_2026-06-03
+git tag intro-2026-06-03
+git push origin intro-2026-06-03
+```
+
+Then on GitHub:
+
+1. Go to `https://github.com/milysun/wordflow-workshop/releases/new`.
+2. **Choose a tag**: `intro-2026-06-03`. **Target**: `intro_workshop_2026-06-03`.
+3. **Release title**: *Intro to Wordflow — 3 June 2026*.
+4. **Description**: list the five archives with one-line descriptions of what each represents (copy from the Build section above).
+5. **Attach binaries**: drag in all five `session2-after-*.wordflow-workspace` files.
+6. **Publish**.
+
+Verify the download links work in a fresh browser session (logged out, no cache). The link `bit.ly/wordflows → Releases` now resolves to your release; this is what the runbook tells participants to use when they fall behind.
+
+> **Why GitHub Releases?** One URL (`bit.ly/wordflows`) gets people to both the landing page and the release assets, versioned per workshop delivery. No separate Box / OneDrive link to communicate. Each future delivery becomes a new release on its own branch.
 
 ---
 
@@ -124,10 +150,12 @@ Upload all 5 demo snapshots, the 2 workspace archives, and the 2 checkpoint snap
 Session 2 is the most ambitious 45 minutes of the day. Practise it twice.
 
 - [ ] **Run 1 — full demo at your fastest comfortable speed.** Stopwatch on. Note where each phase ends.
-  - Target: A ≤ 10 min, B ≤ 10 min, C ≤ 10 min, D ≤ 5 min, E ≤ 5 min, total ≤ 40 min with 5 min buffer.
-  - If you blow past 45 min: the most likely cut is E (topic modelling), then C-2 (regex dispersion). Plan which.
+  - Target: A ≤ 7 min, B ≤ 9 min, C ≤ 10 min, D ≤ 9 min, E ≤ 5 min, total ≤ 40 min with 5 min buffer.
+  - If you blow past 45 min: the most likely cut is Phase E (stack + final Trends — describe verbally instead). Phase D's BERTopic run is the next cut (skip the live run, narrate from the saved D checkpoint). Plan in advance which.
 
-- [ ] **Run 2 — practise narrating each step out loud as if to an audience.** Includes the cross-tool moments: the Frequency → Concordance left-click jump, the dispersion-select → aggregated block, the detach topics → group in Trends.
+- [ ] **Run 2 — practise narrating each step out loud as if to an audience.** Includes the cross-tool moments: the iterative Frequency ↔ Concordance loop in B, the dispersion-select → aggregated block in C-1, the `lnpcuts` legend-isolation in C-2 (the empirical hook), the two-corpus Topic Modelling colour-fusion in D, and the Stack → final Trends close in E.
+
+- [ ] **Phase D parameter check.** On the build laptop, run Topic Modelling with **target = 8 topics and seed = 42** with *both* `tweets_female` and `tweets_male` selected. Expect BERTopic to actually produce ~23 topics. Drag the **re-aggregation slider to 16**, confirm the bubbles spread out cleanly with visible colour fusion on shared topics. Detach 2-3 topics and confirm they appear as child blocks under *both* parents. If the slider value or detach behaviour differs from this on the workshop day, narration needs adjusting on the fly.
 
 ---
 

@@ -50,8 +50,8 @@ Three tracks. Pick whichever fits where you are.
 You watched some of Session 2 but didn't get to follow every step. Now's the time.
 
 1. Load whichever **checkpoint workspace archive** matches where you stopped following:
-   - `session2-after-A.wordflow-workspace` — start from the gender-split point.
-   - `session2-after-C.wordflow-workspace` — start from the aggregated Concordance block.
+   - `Checkpoint_Tour-A.zip` — start from the gender-split point.
+   - `Checkpoint_Tour-C.zip` — start from the aggregated Concordance block.
 2. Pick a step you watched and try it yourself:
    - The **regex with three keywords** in Concordance.
    - The **dispersion view + visual select** to make a new block.

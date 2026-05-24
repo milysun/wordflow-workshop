@@ -14,24 +14,19 @@ Thanks for spending three hours with Wordflow yesterday. Some of you asked for r
 
 ## The files from today
 
-All linked at: **[RESOURCES_URL]**
+**Session-1.5 demo snapshots** (the five we toured the tools with) — these ship with the LDaCA sample-data catalogue, so they import automatically alongside the sample datasets in Wordflow. **No separate download needed.** Use Data Loader → Import demo snapshots from inside Wordflow to pull them in any time.
 
-**Demo snapshots** (the five we used in the Session 1.5 tour):
-- `token_frequencies-honi-soit-overview.ldaca-snapshot`
-- `concordance-honi-soit-student.ldaca-snapshot`
-- `sequential_analysis-reddit-monthly.ldaca-snapshot`
-- `topic_modeling-honi-soit-topics.ldaca-snapshot`
-- `quotation-honi-soit-speakers.ldaca-snapshot`
+**Session-2 checkpoints** (the QLD election tweet workflow, one workspace archive per phase) — these are workshop-specific. Download from **bit.ly/wordflows → Releases** → the *Intro to Wordflow — 3 June 2026* release:
 
-**Session-2 checkpoints** (the QLD election tweet workflow, at four stages):
-- `session2-after-A.wordflow-workspace` — after joins and gender split.
-- `frequency-tweets-comparative.ldaca-snapshot` — comparative frequency stage.
-- `session2-after-C.wordflow-workspace` — after Concordance aggregation.
-- `trends-aggregated-by-gender.ldaca-snapshot` — after the Trends step.
+- `Checkpoint_Tour-A.zip` — after join + dtype.
+- `Checkpoint_Tour-B.zip` — after gender filter + iterative Freq ↔ Concordance.
+- `Checkpoint_Tour-C.zip` — after the regex aggregation + Trends with the `lnpcuts` skew.
+- `Checkpoint_Tour-D.zip` — after Topic Modelling on two corpora + detach into per-gender child blocks.
+- `Checkpoint_Tour-E.zip` — after Stack + final Trends.
 
 **How to use them:**
-- **Snapshots** (`.ldaca-snapshot`): in the matching tool, click the folder icon → Load snapshot.
-- **Workspace archives** (`.wordflow-workspace`): top bar workspace switcher → Import workspace archive. You'll have a full reproduction of the workflow up to that checkpoint.
+- **Demo snapshots**: in the matching tool, click the folder icon → Load snapshot. The five we used are already in your snapshot list once you've imported demo snapshots in Wordflow.
+- **Workspace archives** (`.wordflow-workspace`): top bar workspace switcher → Import workspace archive → pick the file. You'll have a full reproduction of the workflow up to that checkpoint.
 
 ## Documentation
 

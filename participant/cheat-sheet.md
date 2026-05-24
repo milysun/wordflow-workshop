@@ -30,7 +30,7 @@ A way of asking a question of a data block. Tools include:
 | **Export** | "Get my data and results out of Wordflow." |
 
 ### Stacking
-The most important verb in this workshop. You stack tools by taking the output of one and feeding it to another. Filter your tweets to one gender → split by hashtag → run comparative frequency → left-click a word → jump to concordance → add results as new block → run topic modelling on that. You build a workflow by chaining blocks.
+The most important verb in this workshop. You stack tools by taking the output of one and feeding it to another. Filter your tweets to one gender → run comparative frequency vs the other gender → left-click a word → jump to concordance → switch to a multi-pattern regex → add results as a new block → run topic modelling on that. You build a workflow by chaining blocks.
 
 ### Snapshot
 A small file (`.ldaca-snapshot`) that captures a finished analysis — tool, parameters, results — so you can re-open it or send it to a colleague without re-running. Saved per tool from the camera icon.
