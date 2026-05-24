@@ -42,7 +42,7 @@ A sidebar toggle (the **pencil icon next to the "VIEWS" title**) that enables sa
 A portable export of your entire workspace — all data blocks, derivations, and metadata — as a single file. Different from snapshots: a snapshot captures one tool's view; a workspace archive captures the whole project. Import to recreate the workspace on another machine (or another participant's instance).
 
 ### Feedback button
-The heart icon at the top right. Tap it any time something is confusing, surprising, or broken. Even one word helps the developers — they read every one.
+The **Feedback** button at the bottom of the left sidebar (next to Tutorial). Tap it any time something is confusing, surprising, or broken. Even one word helps the developers — they read every one.
 
 ### Detach
 A right-click action on a data block (or on selected topics in Topic Modelling) that splits selection into a new derived block. Useful for "I want to analyse just these rows further."
@@ -59,7 +59,7 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  [TOOL CHOICE]  [DATA SELECTION]  [TASK CENTRE]  [♥ FEEDBACK]│
+│  [TOOL CHOICE]  [DATA SELECTION]  [TASK CENTRE]              │
 │                                                              │
 │  ┌──────────────────────┐    ┌──────────────────────────┐    │
 │  │ Tool list (sidebar)  │    │ Workspace graph view     │    │
@@ -90,7 +90,7 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 4. **Data Viewer** — selected block as a scrollable table. **Click a row to see full document content.**
 5. **Tool Interface** — controls and output. **Camera icon** = save snapshot. **Folder icon** = load snapshot.
 6. **Help (`?`)** — every control with a `?` opens the relevant tutorial section.
-7. **Feedback (♥)** — top right. Use it. Often.
+7. **Feedback** — bottom of the left sidebar, next to Tutorial. Use it. Often.
 8. **Top menu** — workspace switcher, workspace archive import/export. (The **Snapshot Mode toggle** lives in the sidebar — pencil icon next to the "VIEWS" title.)
 
 ### Three-second moves
@@ -110,7 +110,7 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 | Rename a block | double-click its name in the graph |
 | Delete a block | right-click → Delete (children get deleted too) |
 | Toggle Snapshot Mode | sidebar → pencil icon next to "VIEWS" |
-| Send feedback | heart icon, top right |
+| Send feedback | Feedback button, bottom of the left sidebar |
 
 ### One-line rule
 

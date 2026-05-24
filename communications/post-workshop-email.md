@@ -18,11 +18,11 @@ Thanks for spending three hours with Wordflow yesterday. Some of you asked for r
 
 **Session-2 checkpoints** (the QLD election tweet workflow, one workspace archive per phase) — these are workshop-specific. Download from **bit.ly/wordflows → Releases** → the *Intro to Wordflow — 3 June 2026* release:
 
-- `Checkpoint_Tour-A.zip` — after join + dtype.
-- `Checkpoint_Tour-B.zip` — after gender filter + iterative Freq ↔ Concordance.
-- `Checkpoint_Tour-C.zip` — after the regex aggregation + Trends with the `lnpcuts` skew.
-- `Checkpoint_Tour-D.zip` — after Topic Modelling on two corpora + detach into per-gender child blocks.
-- `Checkpoint_Tour-E.zip` — after Stack + final Trends.
+- `Checkpoint_A.zip` — after join + dtype.
+- `Checkpoint_B.zip` — after gender filter + iterative Freq ↔ Concordance.
+- `Checkpoint_C.zip` — after the regex aggregation + Trends with the `lnpcuts` skew.
+- `Checkpoint_D.zip` — after Topic Modelling on two corpora + detach into per-gender child blocks.
+- `Checkpoint_E.zip` — after Stack + final Trends.
 
 **How to use them:**
 - **Demo snapshots**: in the matching tool, click the folder icon → Load snapshot. The five we used are already in your snapshot list once you've imported demo snapshots in Wordflow.

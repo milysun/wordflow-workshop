@@ -9,7 +9,7 @@ Minute-by-minute script. **Italics = your spoken framing**, plain text = facilit
 - Projector connected; `slides/index.html` open, slide 1 visible.
 - Wordflow open on your demo screen, the demo workspace already prepared with five demo snapshots imported.
 - **bit.ly/wordflows** is visible on slide 3 (Housekeeping) so people can launch Wordflow as they arrive. (USyd-internal workshop — no separate WiFi login needed.)
-- The **five Session-2 checkpoint workspace archives** (`Checkpoint_Tour-A.zip` through `Checkpoint_Tour-E.zip`) published as a GitHub release on `milysun/wordflow-workshop` so the same `bit.ly/wordflows` link gets people to them too.
+- The **five Session-2 checkpoint workspace archives** (`Checkpoint_A.zip` through `Checkpoint_E.zip`) published as a GitHub release on `milysun/wordflow-workshop` so the same `bit.ly/wordflows` link gets people to them too.
 - The **feedback form URL** open in a browser tab so you can flash it on demand.
 - `participant/welcome.md` and `participant/cheat-sheet.md` on every chair.
 - Pen and paper on every table.
@@ -112,7 +112,7 @@ Drive this from your screen and have everyone follow.
 1. *"Data Loader → Import sample content → import all three sample datasets (Honi Soit, QLD election tweets, Reddit). You won't use them all now, but they'll be ready for later."* (~1 min)
 2. *"Data Loader → Import demo snapshots → import all five demo snapshots from the catalogue."* (~1 min)
 3. *"In the sidebar, click the **pencil icon next to 'VIEWS'** — that turns on Snapshot Mode."* (~30s) *"This enables saving and loading snapshots in each tool. Once you load a snapshot into a tool, that tool's view is read-only — you can hover, click, and switch views, but you can't change the parameters or rerun. Other tools stay editable as normal."*
-4. *"Create a new workspace called `tour`."* (~30s)
+4. *"Create a new workspace called `Wordflow`."* (~30s)
 
 > If anyone is still stuck on import: keep moving. The snapshots are loaded by tool, not by workspace — they'll catch up at the next tool transition.
 
@@ -221,7 +221,7 @@ There's more to a "load" step than just clicking import. Walk through the typica
 
 > Phase A is short on minutes but long on steps — five-to-seven moves, depending on whether you do the optional cleanups. The lesson here is *the data prep work is part of the analysis*; people who skip it often pay later with mysterious bugs. The checkpoint catches anyone who fell off mid-way.
 
-> **Checkpoint A** — workspace archive: `Checkpoint_Tour-A.zip`. Mention it explicitly: *"Anyone behind, download checkpoint A from bit.ly/wordflows → Releases."*
+> **Checkpoint A** — workspace archive: `Checkpoint_A.zip`. Mention it explicitly: *"Anyone behind, download checkpoint A from bit.ly/wordflows → Releases."*
 
 ### 1:22 – 1:31 — B: Filter by gender + iterative Freq ↔ Concordance (9 min, TRY THIS)
 
@@ -237,7 +237,7 @@ This is where participants pick up the keyboard.
 
 > Land here: *"You just stacked twice — Frequency to Concordance, and back again. Read the graph: that's your method. The regex in Phase C didn't fall from the sky; it came from this iteration."*
 
-> **Checkpoint B** — workspace archive: `Checkpoint_Tour-B.zip`.
+> **Checkpoint B** — workspace archive: `Checkpoint_B.zip`.
 
 ### 1:31 – 1:41 — C: Multi-pattern regex → detach → Trends (10 min, MIXED)
 
@@ -260,7 +260,7 @@ This is where participants pick up the keyboard.
 
 > This is the empirical hook of Session 2. Don't oversell ("we discovered something!") but don't undersell either: *"end-to-end in 30 minutes, and there's something here to dig into."*
 
-> **Checkpoint C** — workspace archive: `Checkpoint_Tour-C.zip`.
+> **Checkpoint C** — workspace archive: `Checkpoint_C.zip`.
 
 ### 1:41 – 1:50 — D: Topic modelling on two corpora (9 min, WATCH)
 
@@ -275,7 +275,7 @@ Topic Modelling accepts **two data blocks** as input and produces a fused bubble
 
 > Numbers checked on this corpus: target=8 + seed=42 produces ~23 topics; re-aggregating to **16 spreads the bubbles cleanly**, 5 crushes them. The lesson is interactive tuning, not the magic number.
 
-> **Checkpoint D** — workspace archive: `Checkpoint_Tour-D.zip`.
+> **Checkpoint D** — workspace archive: `Checkpoint_D.zip`.
 
 ### 1:50 – 1:55 — E: Stack → final Trends (5 min, WATCH)
 
@@ -287,7 +287,7 @@ The closing move. Stack the per-gender topic blocks back together so the final T
 
 > **Final landing**: *"Six tools, one corpus, one made-up hypothesis, one workflow. We went from raw tweets to a finding — small, suggestive, but real — in 45 minutes. The graph behind me is the whole method, captured as a picture."*
 
-> **Checkpoint E** — workspace archive: `Checkpoint_Tour-E.zip`.
+> **Checkpoint E** — workspace archive: `Checkpoint_E.zip`.
 
 ---
 
@@ -297,29 +297,58 @@ The closing move. Stack the per-gender topic blocks back together so the final T
 
 ## Session 3.A — Repurpose the lens (2:10 – 2:25, 15 min)
 
-The conceptual payoff. Slow down — this is what they'll remember.
+The conceptual payoff. Three short demos showing **you shape the analysis at every step — in, through, and out.** Slow down for Demo 3, that's the one they'll remember.
 
-### 2:10 – 2:15 — Quick word count
+> No fresh workspace needed — keep using the workshop's `Wordflow` workspace (or wherever you ended Session 2). The snapshots and blocks already there are exactly what the demos use.
 
-*"Watch one move first. I'll use Frequency, not as a 'top words' tool, but as a counter. Total token count across the corpus, per gender."*
+### 2:10 – 2:13 — Demo 1: Export the visualisation (3 min)
 
-- Frequency tool with stopwords off, top-N very high, show that "total tokens" is right there in the summary.
-- *"That's word count. Frequency tool, but I'm not interested in any specific word — I just want totals."*
+*"First, a small but useful thing. Everything you analyse can come back out — as an image or as data."*
 
-### 2:15 – 2:25 — Repurpose Trends as a histogram
+1. Open one of the Session 1.5 snapshots — the word cloud (Frequency tool, `Freq_Analysis_Newstalk`) is good because it's visually distinct.
+2. **Click the export / download icon** in the tool header. Show the options: **PNG / SVG** (the picture) and **CSV** (the data behind it).
+3. *"PNG for the slide deck, CSV for the supplementary materials. The same export pattern works in every analytical tool — Trends, Topic Modelling, Concordance, Quotation."*
 
-*"Now watch this. Trends is the time-series tool, right? Line chart over dates. But it doesn't have to be time on the x-axis. Let me show you."*
+> The lesson: *your analysis is not trapped in the tool*. Don't dwell.
 
-1. On a tweets block, **add a derived numeric column** = word count per tweet (Preprocessing → Create column → tokens length, or similar).
-2. **Trends tool.** Instead of date, set the x-axis to the word-count column. Numeric bucketing.
-3. *"Now Trends is showing me distribution — number of tweets per word-count bucket. It's a histogram."*
-4. Add a grouping by gender. *"Histogram of tweet length, by gender."*
+### 2:13 – 2:18 — Demo 2: Filter the visualisation → add as a new data block (5 min)
 
-*"The tool didn't change. I changed how I shaped the data. That's the whole point of Wordflow — the analysis is defined by how you shape the question, not by which tool you clicked.*
+*"Visualisations aren't just for looking. You can pick parts of them and turn that selection into new analysable data."*
 
-*Every tool in Wordflow is a lens. The interesting research question is always: which lens, on which slice of which corpus, will tell me something I didn't already know? That's your job. Wordflow makes the lens-changing cheap."*
+1. Open the **Trends** snapshot — `QLD_Election_Tweets_conc` or your Session 2 final Trends. Has multiple lines (matched terms × gender, or similar).
+2. **Legend filtering**: click in the legend to toggle individual lines on and off. Narrate: *"I can hide everything except `lnpcuts` to focus on one term."*
+3. **Visual selection**: click-and-drag on the chart to select a peak or a date range. *"Now I've selected a slice — say, the campaign peak. Add to workspace as a new data block."*
+4. *"Same idea, same operation, different tools — quickly:"*
+   - Topic Modelling: **click bubbles** to select interesting topics → Detach → new blocks. *(We saw this in Session 2.)*
+   - Concordance: **dispersion view** — click-and-drag to select tweets in a percentage range → add as block. *(We saw this too.)*
+5. *"In every visual tool: see something interesting, select it, make it new data. That's reading and analysing in one move."*
 
-> If this is the one slide they tweet about, the workshop succeeded.
+### 2:18 – 2:23 — Demo 3: Create a column → Trends becomes a histogram (5 min)
+
+*"Now the big one. Trends is the time-series tool, right? Line chart over dates. But the x-axis doesn't have to be time."*
+
+1. Pick the **Honi Soit articles block** — they're longer and more varied in length than tweets, so the histogram is interesting.
+2. **Preprocessing → Create column.** New column: **word count per article** (number of tokens in the text column).
+3. **Trends tool.** Set the **x-axis to the new word-count column** (not the date).
+4. **Numeric bucketing: 100 intervals.** *"Fine-grained — we want to see the shape of the distribution."*
+5. **Switch chart type from line to bar.** *"Now Trends is showing a histogram — article count per word-length bucket."*
+6. (Optional) Add a grouping by year or section if available. *"Histogram of article length, split by something else. Same chart, different question."*
+
+### 2:23 – 2:25 — Land it + click feedback (2 min)
+
+Advance to the landing slide. Speak slowly:
+
+*"The tool didn't change. **I** changed how I shaped the data."*
+
+Pause. Let it sit. Then:
+
+*"Every tool in Wordflow is a lens. The interesting research question is always: which lens, on which slice of which corpus, will tell me something I didn't already know? That's your job. Wordflow makes the lens-changing cheap."*
+
+Then — **click the Feedback button on screen** to open the form. Don't fill it in; just show the form is there:
+
+*"While I'm here — this is the feedback button. I want you to use it twice today: once during the lab in a minute, every time something is confusing or surprising; and again later, if you keep using Wordflow, send us a note about what you'd want next."*
+
+> If this is the moment they tweet about, the workshop succeeded.
 
 ---
 
@@ -331,7 +360,7 @@ The conceptual payoff. Slow down — this is what they'll remember.
 - *Track B: bring your own data. Upload a CSV with at least one text column. My helper and I will be around.*
 - *Track C: open exploration — pick a tool, pick a sample dataset, see what falls out.*
 
-*One ask: every time you hit something confusing, weird, or broken — tap the feedback heart icon. Even just 'this is confusing' helps us. You're our v0.5 beta room."*
+*One ask: every time you hit something confusing, weird, or broken — tap the Feedback button at the bottom of the left sidebar. Even just 'this is confusing' helps us. You're our v0.5 beta room."*
 
 Slide reminder: feedback URL also accessible directly at the URL on the board.
 
@@ -353,7 +382,7 @@ Final slide.
 
 1. *Install it locally — desktop link is on bit.ly/wordflows, same URL you used today — and try it on your own work.*
 2. *If you publish using it, cite the project — the citation is on the docs site.*
-3. *Tap the feedback button as you go. Send us bugs. Send us 'this rocks'. Send us 'this is confusing'. Every one helps.*
+3. *Tap the feedback button as you go. Bug reports, improvement advice, "I need more", or just "this rocks" — all helpful.*
 
 *And — spread the word. If you have a colleague who works with text and is allergic to coding, they should know this exists.*
 

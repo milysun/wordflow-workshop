@@ -9,6 +9,7 @@
     --paper: #fdfcf8;
     --accent: #c8423e;
     --accent-soft: #f3d6d5;
+    --spotlight-bg: #c87060;    /* warm terracotta — less intimidating than --accent for full-slide backgrounds */
     --muted: #6b6f78;
     --rule: #d9d4c8;
   }
@@ -144,7 +145,7 @@
   section.slide.title-slide h2 { color: var(--accent); }
   section.slide.title-slide p { color: var(--paper); opacity: 0.85; }
   section.slide.spotlight {
-    background: var(--accent);
+    background: var(--spotlight-bg);
     color: var(--paper);
     align-items: center;
     text-align: center;
@@ -476,7 +477,7 @@
       <li><strong>Data Loader → Import sample content</strong> — import all three datasets.</li>
       <li><strong>Data Loader → Import demo snapshots</strong> — import all five snapshots.</li>
       <li><strong>Sidebar → pencil icon next to "VIEWS"</strong> — turn <strong>Snapshot Mode</strong> ON. This unlocks snapshot save/load in each tool. (A tool only becomes read-only after you load a snapshot into <em>it</em>; other tools keep working.)</li>
-      <li><strong>Workspace switcher → Create workspace</strong> — name it <code>tour</code>.</li>
+      <li><strong>Workspace switcher → Create workspace</strong> — name it <code>Wordflow</code>. (You'll keep using this same workspace through the whole workshop.)</li>
     </ol>
     <p style="margin-top: 1em; font-style: italic;">Once everyone has these four done, we tour the tools.</p>
   </section>
@@ -587,7 +588,7 @@
       <li>Click the joined block → see the gender column in the Data Viewer.</li>
     </ol>
     <p style="margin-top: 0.6em; font-style: italic; color: var(--muted);">Data prep is part of the analysis. Don't rush.</p>
-    <p style="margin-top: 0.8em;"><strong>Checkpoint A:</strong> <code>Checkpoint_Tour-A.zip</code></p>
+    <p style="margin-top: 0.8em;"><strong>Checkpoint A:</strong> <code>Checkpoint_A.zip</code></p>
   </section>
 
   <!-- Slide 19: Phase B -->
@@ -602,7 +603,7 @@
       <li>Patterns to settle on: <code>cases</code>, <code>covid</code>, <code>lnp\w*</code> — two themes (health, energy/policy).</li>
     </ol>
     <p class="pullquote" style="margin-top: 1em;">The regex in C didn't fall from the sky. It came from this iteration.</p>
-    <p style="margin-top: 1em;"><strong>Checkpoint B:</strong> <code>Checkpoint_Tour-B.zip</code></p>
+    <p style="margin-top: 1em;"><strong>Checkpoint B:</strong> <code>Checkpoint_B.zip</code></p>
   </section>
 
   <!-- Slide 20: Phase C -->
@@ -611,7 +612,7 @@
     <h1>Multi-pattern regex → detach → Trends</h1>
     <p><span class="badge watch">WATCH ONLY</span> <strong>C-1:</strong> Concordance Regex mode, pattern <code>cases|covid|lnp\w*</code>. Coloured matches. Dispersion view. Click-and-drag to select. Add as aggregated block.</p>
     <p style="margin-top: 0.6em;"><span class="badge try">TRY THIS</span> <strong>C-2:</strong> Trends on the aggregated block. Group by matched-term. <strong>Click <code>lnpcuts</code> in the legend</strong> to isolate. Switch grouping to gender — <strong>F ≈ 20, M ≈ 4</strong>. ~5× skew on a small dataset.</p>
-    <p style="margin-top: 1em;"><strong>Checkpoint C:</strong> <code>Checkpoint_Tour-C.zip</code></p>
+    <p style="margin-top: 1em;"><strong>Checkpoint C:</strong> <code>Checkpoint_C.zip</code></p>
   </section>
 
   <!-- Slide 21: Phase D -->
@@ -624,7 +625,7 @@
       <li><strong>Colour mixing</strong> — solid = gender-dominant; blended = shared themes.</li>
       <li>Select 2-3 topics → <strong>Detach</strong> → per-gender child blocks under female and male.</li>
     </ol>
-    <p style="margin-top: 1em;"><strong>Checkpoint D:</strong> <code>Checkpoint_Tour-D.zip</code></p>
+    <p style="margin-top: 1em;"><strong>Checkpoint D:</strong> <code>Checkpoint_D.zip</code></p>
   </section>
 
   <!-- Slide 22: Phase E -->
@@ -637,7 +638,7 @@
       <li>Final view: selected topics, across the campaign, split by gender.</li>
     </ol>
     <p class="pullquote" style="margin-top: 1em;">Six tools. One corpus. One made-up hypothesis. One workflow.</p>
-    <p style="margin-top: 0.8em;"><strong>Checkpoint E:</strong> <code>Checkpoint_Tour-E.zip</code></p>
+    <p style="margin-top: 0.8em;"><strong>Checkpoint E:</strong> <code>Checkpoint_E.zip</code></p>
   </section>
 
   <!-- Slide 23: Break -->
@@ -654,24 +655,51 @@
     <p style="margin-top: 1em;">Same tool, different question.</p>
   </section>
 
-  <!-- Slide 25: Repurpose demo -->
-  <section class="slide" data-notes="Slow down. Walk both moves on the projected Wordflow. Don't just say it; show it.">
-    <h2>Watch carefully</h2>
+  <!-- Slide 25: Demo 1 — Export -->
+  <section class="slide" data-notes="3 min. Use the Frequency word cloud or any Session 1.5 snapshot. Show PNG/SVG and CSV options. The same export works in every tool.">
+    <h2>Demo 1 · out of the tool</h2>
+    <h1>Export the visualisation</h1>
     <ol>
-      <li><strong>Frequency as word counter.</strong> Stopwords off, Top-N very high — the total token count is in the summary. Word count without caring about specific words.</li>
-      <li><strong>Trends as a histogram.</strong> Create a "tweet length" column. Set Trends' x-axis to that column, not the date. Add a numeric bucketing. Group by gender.</li>
+      <li>Open any analysed tool (e.g. the Frequency word cloud).</li>
+      <li><strong>Export icon</strong> in the tool header.</li>
+      <li>Save as <strong>PNG / SVG</strong> (image) or <strong>CSV</strong> (the data behind it).</li>
     </ol>
-    <p style="margin-top: 1.5em; font-style: italic;">A histogram of tweet length by gender — out of the tool that "does line charts over time".</p>
+    <p style="margin-top: 1em; font-style: italic;">Same operation in Trends, Topic Modelling, Concordance, Quotation.</p>
   </section>
 
-  <!-- Slide 26: Repurpose landing -->
+  <!-- Slide 26: Demo 2 — Filter visualisation → new block -->
+  <section class="slide" data-notes="5 min. Trends legend + click-and-drag selection → add as block. Mention same pattern in Topic Modelling (bubble click → detach) and Concordance (dispersion select).">
+    <h2>Demo 2 · through the tool</h2>
+    <h1>Filter the visualisation → new data block</h1>
+    <ol>
+      <li>In Trends: <strong>click in the legend</strong> to hide / isolate lines.</li>
+      <li><strong>Click-and-drag</strong> on the chart to select a peak or range.</li>
+      <li><strong>Add to workspace</strong> as a new data block.</li>
+    </ol>
+    <p style="margin-top: 1em; font-style: italic;">Same pattern — Topic Modelling: select bubbles → Detach. Concordance: dispersion select → add as block.</p>
+  </section>
+
+  <!-- Slide 27: Demo 3 — Create column → Trends as histogram -->
+  <section class="slide" data-notes="5 min. The repurpose punch. Honi Soit articles (longer/more variable than tweets). Create word-count column → Trends x-axis to it → 100 intervals → bar chart → histogram.">
+    <h2>Demo 3 · into the tool</h2>
+    <h1>Create a column → Trends becomes a histogram</h1>
+    <ol>
+      <li>On Honi Soit articles: <strong>Preprocessing → Create column</strong> = word count per article.</li>
+      <li><strong>Trends</strong> tool — x-axis = the new word-count column.</li>
+      <li>Numeric bucketing: <strong>100 intervals</strong>.</li>
+      <li>Switch chart from <strong>line to bar</strong> → histogram of article length.</li>
+    </ol>
+    <p style="margin-top: 1em; font-style: italic;">Trends is doing a histogram. The tool didn't change.</p>
+  </section>
+
+  <!-- Slide 28: Repurpose landing -->
   <section class="slide spotlight" data-notes="The most important sentence in the workshop. Say it slowly. Pause. Repeat it.">
     <h1>The tool didn't change.</h1>
     <h1 style="margin-top: 0;">I changed how I shaped the data.</h1>
     <p class="pullquote" style="margin-top: 2em;">Every tool is a lens. The interesting question is which lens, on which slice — and that's your job.</p>
   </section>
 
-  <!-- Slide 27: Lab framing -->
+  <!-- Slide 29: Lab framing -->
   <section class="slide" data-notes="5 minutes. Don't drag. The feedback ask is the most important line on this slide — say it.">
     <h2>Free lab — 25 minutes</h2>
     <h1>Pick a track</h1>
@@ -689,10 +717,10 @@
         <p><strong>Open exploration.</strong> Pick a tool, pick a sample. See what falls out.</p>
       </div>
     </div>
-    <p style="margin-top: 1.5em;"><strong>One ask:</strong> tap the ♥ feedback button whenever something confuses you. You're our v0.5 beta room.</p>
+    <p style="margin-top: 1.5em;"><strong>One ask:</strong> tap the <strong>Feedback button</strong> (bottom-left sidebar) whenever something confuses you. You're our v0.5 beta room.</p>
   </section>
 
-  <!-- Slide 28: Recap -->
+  <!-- Slide 30: Recap -->
   <section class="slide spotlight" data-notes="The wrap-up. Three takeaways. Don't add a fourth.">
     <h2>Three things to remember</h2>
     <ol>
@@ -703,14 +731,14 @@
     <p class="pullquote" style="margin-top: 1.5em;">The text flows. The lens changes.</p>
   </section>
 
-  <!-- Slide 29: Thank you -->
+  <!-- Slide 31: Thank you -->
   <section class="slide title-slide" data-notes="Three asks. Don't rush. End on time.">
     <h2>Thank you</h2>
     <h1>Three asks</h1>
-    <ul style="text-align: left; margin: 1.5em auto; max-width: 30em;">
+    <ul style="text-align: left; margin: 1.5em auto; max-width: 44em;">
       <li><strong>Install it</strong> — desktop link is on <code>bit.ly/wordflows</code>.</li>
       <li><strong>Cite our project</strong> — citation on the docs site.</li>
-      <li><strong>Tap the feedback button</strong> — bugs, "this rocks", "this is confusing" — all helpful.</li>
+      <li><strong>Tap the feedback button</strong> — bug reports, improvement advice, "I need more", or "this rocks" — all helpful.</li>
     </ul>
     <p style="margin-top: 1.5em;">Tonight's email asks one question — what would have made today more useful? <strong>Reply with one sentence.</strong></p>
   </section>
@@ -718,7 +746,7 @@
 </div>
 
 <div class="chrome">
-  <span id="slide-counter">1 / 28</span>
+  <span id="slide-counter">1 / 31</span>
   <span>←/→ navigate · N toggle notes · F fullscreen</span>
 </div>
 <div class="notes" id="notes"></div>

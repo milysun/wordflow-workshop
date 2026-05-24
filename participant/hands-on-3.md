@@ -8,28 +8,45 @@ Two halves: a short conceptual demo (3.A), then a free lab (3.C) where you pick 
 
 ## 3.A — Repurpose the lens (15 min) — 👀 WATCH ONLY
 
-A short demonstration from the facilitator. No keyboards needed.
+A short demonstration from the facilitator. No keyboards needed. Three quick moves that show **you shape the analysis at every step — in, through, and out.**
 
-The point: **the meaning of an analysis isn't fixed by which tool you clicked. It's defined by how you shape the data you put into that tool.**
+### Demo 1 — Export the visualisation (3 min)
 
-### Quick word count
+The facilitator will open a Session 1.5 visualisation (e.g. the Frequency word cloud) and use the tool's **export / download icon** to save it as **PNG / SVG** (the image) and **CSV** (the data behind the image).
 
-Frequency isn't only a "top words" tool. With stopwords off and Top-N very high, the **total token count** in the summary panel IS your word count — per corpus, per group. Word count is just frequency with the words ignored.
+> 🎯 The lesson: your analysis isn't trapped in the tool. The same export options exist in Trends, Topic Modelling, Concordance, and Quotation.
 
-### Trends as a histogram
+### Demo 2 — Filter the visualisation → add as a new data block (5 min)
+
+Visualisations aren't just for looking. You can pick parts of them and turn that selection into new analysable data. The facilitator will:
+
+1. Open a Trends snapshot. **Click in the legend** to hide or isolate individual lines (e.g. focus on `lnpcuts` only).
+2. **Click-and-drag** on the chart to select a peak or a date range. **Add the selection to the workspace** as a new data block.
+3. Quickly mention the same pattern in two other tools:
+   - **Topic Modelling**: click bubbles to select topics → Detach → new blocks. (Same move you saw in Session 2.)
+   - **Concordance**: click-and-drag in the dispersion view to select tweets in a percentage range → add as block.
+
+> 🎯 The lesson: in every visual tool, *seeing* something interesting and *making it new data* is one move, not two.
+
+### Demo 3 — Create a column → Trends becomes a histogram (5 min)
 
 Trends isn't only a "lines over time" tool. The x-axis doesn't have to be a date column.
 
 The facilitator will:
-1. **Create a new column** on a tweets block: word count per tweet (number of tokens per row).
-2. **Trends** tool — set the x-axis to the new word-count column, not the date.
-3. **Numeric bucketing**: 0-10 words, 10-20, 20-30...
-4. Now Trends is showing a **histogram** — tweet count per word-length bucket.
-5. Add a grouping by gender — histogram of tweet length, split by gender. Are the women writing longer or shorter tweets?
+1. On the **Honi Soit articles** block: **Preprocessing → Create column** = word count per article.
+2. **Trends** tool. Set the **x-axis to the new word-count column** (not the date).
+3. **Numeric bucketing — 100 intervals.** Fine-grained, so we can see the distribution shape.
+4. **Switch the chart from line to bar.** Now Trends is a **histogram** — article count per word-length bucket.
 
 > 🎯 Land: *"The tool didn't change. I changed how I shaped the data."*
 
 That's the most important sentence in this workshop. Every tool in Wordflow is a lens. The interesting research question is always: **which lens, on which slice, will tell me something I didn't already know?** That's your job. Wordflow makes the lens-changing cheap.
+
+### One more thing — feedback
+
+After landing the third demo, the facilitator will click the **Feedback button** (bottom of the left sidebar) on screen to show you the form. **Use it twice today:**
+- During the lab in a minute — every time something is confusing, surprising, or broken.
+- Later — if you keep using Wordflow after the workshop, send a note about what you'd want next.
 
 ---
 
@@ -37,7 +54,7 @@ That's the most important sentence in this workshop. Every tool in Wordflow is a
 
 The facilitator will introduce the three lab tracks. Pick one before you start — but you can switch if your track stalls.
 
-**One ask before you start:** as you click around in the lab, every time you hit something **confusing, surprising, or broken**, tap the **feedback heart icon** (top right). Even one word. We read every one — you're our v0.5 beta room.
+**One ask before you start:** as you click around in the lab, every time you hit something **confusing, surprising, or broken**, tap the **Feedback button** (bottom of the left sidebar, next to Tutorial). Even one word. We read every one — you're our v0.5 beta room.
 
 ---
 
@@ -50,8 +67,8 @@ Three tracks. Pick whichever fits where you are.
 You watched some of Session 2 but didn't get to follow every step. Now's the time.
 
 1. Load whichever **checkpoint workspace archive** matches where you stopped following:
-   - `Checkpoint_Tour-A.zip` — start from the gender-split point.
-   - `Checkpoint_Tour-C.zip` — start from the aggregated Concordance block.
+   - `Checkpoint_A.zip` — start from the gender-split point.
+   - `Checkpoint_C.zip` — start from the aggregated Concordance block.
 2. Pick a step you watched and try it yourself:
    - The **regex with three keywords** in Concordance.
    - The **dispersion view + visual select** to make a new block.
@@ -94,7 +111,7 @@ The facilitator will close. Three things to take home:
 
 1. **Install Wordflow locally** — desktop link is on **bit.ly/wordflows** (same URL you used today). The cloud version is fine for trying; the desktop or Python install is what you want for real research work.
 2. **Cite the project** if you publish using it. Citation on the docs site.
-3. **Feedback button** — keep using it. Bugs, "this is confusing", "this rocks" — all helpful.
+3. **Feedback button** — keep using it. Bug reports, improvement advice, "I need more", or "this rocks" — all helpful.
 
 And spread the word. If you have a colleague who works with text and doesn't want to learn code, they should know this exists.
 

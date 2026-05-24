@@ -13,7 +13,7 @@ Follow the facilitator's screen.
 1. **Data Loader → Import sample content.** Import **all three** sample datasets: Honi Soit, QLD election tweets, and Reddit. (You won't use them all now, but they'll be ready later.)
 2. **Data Loader → Import demo snapshots.** Import **all five** snapshots from the catalogue. If the catalogue tab is empty, the facilitator will share a download link — drop the files into your snapshot folder via the same dialog.
 3. **Click the pencil icon next to the "VIEWS" title in the left sidebar** — that's the **Snapshot Mode** toggle. Turn it ON. This enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only (you can hover, click, and switch views, but you can't change parameters). Other tools stay editable as normal.
-4. **Create a new workspace** called `tour`. (Top bar → workspace switcher → Create.)
+4. **Create a new workspace** called `Wordflow`. (Top bar → workspace switcher → Create.) You'll keep using this same workspace through Session 2 and Session 3.
 
 Tell your neighbour if anything didn't work. Flag the facilitator if you're stuck.
 

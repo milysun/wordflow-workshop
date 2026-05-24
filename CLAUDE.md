@@ -42,6 +42,15 @@ When in doubt: grep across the whole repo for the thing you're changing before s
 - The CSS variables at the top (`--ink`, `--paper`, `--accent`, …) are the design system. Use them rather than hard-coding new colours.
 - Keep the file readable as a single document — don't extract CSS/JS to separate files even for "cleanup."
 
+## Wordflow UI specifics worth remembering
+
+A few UI details that are easy to get wrong in materials (and have been corrected once already):
+
+- **Feedback button**: bottom of the **left sidebar**, next to Tutorial. Icon is `MessageSquare` from `lucide-react` (a small square speech-bubble outline, `h-4 w-4`). **Not** a heart, not at the top-right.
+- **Snapshot Mode toggle**: the **pencil icon next to the "VIEWS" header** in the left sidebar. **Not** in a top menu. When ON, it enables snapshot save/load in each tool; a tool's view becomes read-only only after a snapshot is loaded into *that* tool — other tools stay editable.
+- **Working directory**: shown in the sidebar but only relevant for the local-install desktop app. Ignore it for Binder/cloud workshop demos.
+- **AI Annotation tool**: visible in the sidebar's tool list but **not yet usable** (under development). Excluded from all workshop materials.
+
 ## Voice and tone
 
 - Concrete, warm, no jargon. The audience is curious researchers, not engineers.

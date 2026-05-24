@@ -94,22 +94,22 @@ This is the big prep block. You'll build the full Session-2 workflow yourself in
 Open Wordflow in a fresh workspace called `session2-master`. Walk the full A→B→C→D→E chain (script in `runbook.md` Session 2). At each phase boundary, **export the workspace as a portable archive** — five files total, one per phase:
 
 - **At end of A** (data prep complete: imports loaded, renames applied, unused columns dropped, dtypes set, join done → `tweets_with_gender`):
-  - File: `Checkpoint_Tour-A.zip`
+  - File: `Checkpoint_A.zip`
   - This is the most procedurally dense phase for first-time users — 5-7 moves — which is why it gets its own checkpoint.
 
 - **At end of B** (gender-filtered: `tweets_female`, `tweets_male` added, comparative Frequency + iterative Concordance explored):
-  - File: `Checkpoint_Tour-B.zip`
+  - File: `Checkpoint_B.zip`
 
 - **At end of C** (regex `cases|covid|lnp\w*` → aggregated block added; Trends on it with `lnpcuts` skew verified):
-  - File: `Checkpoint_Tour-C.zip`
+  - File: `Checkpoint_C.zip`
   - **Verify before saving**: clicking `lnpcuts` in the Trends legend isolates it, and the gender split shows the ~20 (F) vs ~4 (M) skew. That's the empirical hook of Session 2 — if it doesn't reproduce on your laptop, dig in before the workshop.
 
 - **At end of D** (Topic Modelling on `tweets_female` + `tweets_male` as two corpora, target = 8 / seed = 42 / re-aggregated to 16; 2-3 topics detached as per-gender children):
-  - File: `Checkpoint_Tour-D.zip`
+  - File: `Checkpoint_D.zip`
   - **Verify before saving**: detached topics appear as child blocks under *both* `tweets_female` and `tweets_male` in the graph. If detach produces a single block instead of per-gender children, the topic modelling wasn't run on two corpora — re-run it with both selected.
 
 - **At end of E** (Stack the per-gender topic blocks → unified block → final Trends viewed):
-  - File: `Checkpoint_Tour-E.zip`
+  - File: `Checkpoint_E.zip`
 
 That's **5 workspace archives = 5 checkpoints**, one per phase. Anyone who falls off mid-Session-2 can rejoin from whichever checkpoint matches where you are in the demo.
 

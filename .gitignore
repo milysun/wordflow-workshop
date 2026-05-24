@@ -33,4 +33,4 @@ tmp/
 checkpoints/
 *.wordflow-workspace
 *.ldaca-snapshot
-Checkpoint_Tour-*.zip
+Checkpoint_*.zip

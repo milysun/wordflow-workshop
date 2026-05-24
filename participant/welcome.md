@@ -30,7 +30,7 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 - **Ask questions any time.** If something feels confusing, three other people in the room are probably confused by the same thing.
 - **Make mistakes.** Wordflow never modifies the original data. You can branch, delete, redo as much as you want.
 - **Don't worry about following every step.** Session 2 has four pre-baked checkpoint files on the whiteboard URL — if you fall behind, you can rejoin in 30 seconds. Aim to *see* the workflow, not to keep up with every click.
-- **Tap the feedback heart icon (top right)** every time you hit something confusing or surprising. You're our v0.5 beta room.
+- **Tap the Feedback button** (bottom of the left sidebar, next to Tutorial) every time you hit something confusing or surprising. You're our v0.5 beta room.
 
 ---
 

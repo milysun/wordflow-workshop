@@ -31,7 +31,7 @@ You've spent 3 hours with Wordflow. Here's where to go from here, in order of ef
 ## When you get stuck
 
 - **In-app `?` icons** — fastest answer for "what does this control do?"
-- **Feedback button (heart icon, top right)** — the developers read every one. "This is confusing" is useful feedback.
+- **Feedback button (bottom of the left sidebar, next to Tutorial)** — the developers read every one. "This is confusing" is useful feedback.
 - **Documentation site** — fastest answer for "how do I do X?"
 - **GitHub issues** — best place to report bugs. The maintainers actually read them.
 - **LDaCA / ATAP support channels** — links in the post-workshop email.

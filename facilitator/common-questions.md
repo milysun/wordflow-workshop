@@ -23,7 +23,7 @@ Use as a pre-read; keep open during the workshop.
 - *"A cloud computer that runs Wordflow for you. First time someone opens it today it takes a minute to start; after that everyone gets it fast."*
 
 ### "How do I find the feedback button?"
-- Heart icon, top right. Mention this often during the workshop — it's the easiest channel for them to report friction.
+- A small **square speech-bubble** icon labelled **Feedback** at the bottom of the left sidebar (next to Tutorial). Mention this often during the workshop — it's the easiest channel for them to report friction.
 
 ---
 

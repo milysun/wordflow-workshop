@@ -44,7 +44,7 @@ What's happening:
 
 > Data prep work *is* part of the analysis. People who rush through it often pay later with mysterious bugs.
 
-✅ **Checkpoint A** — if you got lost: download `Checkpoint_Tour-A.zip` from **bit.ly/wordflows → Releases**. **Workspace switcher → Import workspace archive →** select the file. Your workspace now matches the facilitator's.
+✅ **Checkpoint A** — if you got lost: download `Checkpoint_A.zip` from **bit.ly/wordflows → Releases**. **Workspace switcher → Import workspace archive →** select the file. Your workspace now matches the facilitator's.
 
 ---
 
@@ -59,7 +59,7 @@ This is where you pick up the keyboard.
 
 > 🎯 Insight to land: you stacked twice — Frequency to Concordance, and back again. The regex in Phase C didn't fall from the sky; it came from this iteration. **Reading shapes searching shapes reading.**
 
-✅ **Checkpoint B** — `Checkpoint_Tour-B.zip`.
+✅ **Checkpoint B** — `Checkpoint_B.zip`.
 
 ---
 
@@ -88,7 +88,7 @@ You're picking up the keyboard again.
 
 > 🎯 Insight to land: same data, swap one parameter (the grouping), get a different story. Then click the legend to drill into one term — and a found-in-the-wild gender pattern emerges.
 
-✅ **Checkpoint C** — `Checkpoint_Tour-C.zip`.
+✅ **Checkpoint C** — `Checkpoint_C.zip`.
 
 ---
 
@@ -108,7 +108,7 @@ The facilitator will:
 
 > 🎯 Insight to land: themes can be discovered automatically, and the *colour mixing* tells you immediately which themes are shared vs gender-dominant.
 
-✅ **Checkpoint D** — `Checkpoint_Tour-D.zip`.
+✅ **Checkpoint D** — `Checkpoint_D.zip`.
 
 ---
 
@@ -122,7 +122,7 @@ The closing move. The facilitator will:
 
 > 🎯 Final landing: six tools, one corpus, one made-up hypothesis, one connected workflow. Every step shaped the next. The graph behind the facilitator is your whole method section, captured as a picture — and there's a small finding sitting inside it.
 
-✅ **Checkpoint E** — `Checkpoint_Tour-E.zip`.
+✅ **Checkpoint E** — `Checkpoint_E.zip`.
 
 ---
 
