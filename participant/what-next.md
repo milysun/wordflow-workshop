@@ -15,7 +15,7 @@ You've spent 3 hours with Wordflow. Here's where to go from here, in order of ef
 
 - **Read the tutorial.** The Wordflow documentation has a step-by-step walkthrough for each tool. Start with the [Index page](https://atap.github.io/ldaca-wordflow-docs/v0.5/tutorials/) and pick the tools you saw today.
 - **Try one analysis on your own data.** Even a small experimental CSV. The point is to make Wordflow part of your toolkit, not just a workshop memory.
-- **Save your workspace as an archive.** Snapshots are great for individual results; the workspace archive (workspace switcher → Export workspace archive) backs up your whole project as one portable file.
+- **Save your workspace as an archive.** Snapshots are great for individual results; the workspace archive (Data Loader → Export workspace archive) backs up your whole project as one portable file.
 
 ---
 
@@ -47,7 +47,7 @@ Three options, easiest first:
 
 2. **Desktop app (Mac / Windows).** A native installer that runs everything on your own machine. Slower to start the first time, faster after. **Recommended for serious research work.** Link in the email.
 
-3. **Python install (`pip install ldaca-wordflow`).** For Python users who want CLI access. Requires Python 3.10+ and ~500 MB of disk.
+3. **Python install (`pip install ldaca-wordflow`).** For Python users who want CLI access. Requires Python 3.14+ and ~500 MB of disk.
 
 ---
 

@@ -44,7 +44,7 @@ What's happening:
 
 > Data prep work *is* part of the analysis. People who rush through it often pay later with mysterious bugs.
 
-✅ **Checkpoint A** — if you got lost: download `Checkpoint_A.zip` from **bit.ly/wordflows → Releases**. **Workspace switcher → Import workspace archive →** select the file. Your workspace now matches the facilitator's.
+✅ **Checkpoint A** — if you got lost: download `Checkpoint_A.zip` from **bit.ly/wordflows → Releases**. In Wordflow: **Data Loader → Import workspace archive →** select the file. Your workspace now matches the facilitator's.
 
 ---
 
@@ -133,7 +133,7 @@ If you got lost mid-stream — that's fine. The point isn't to have your screen 
 In the free lab (Session 3.C), you can:
 - Load any checkpoint (C, D, or E) and continue the chain at your own pace.
 - Try the regex + dispersion move on a different word set.
-- Replace QLD tweets with Honi Soit or Reddit and see what changes.
+- Replace QLD tweets with Honi Soit or the Federal Election NewsTalk/Reddit bundle and see what changes.
 
 ---
 

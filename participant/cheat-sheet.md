@@ -7,7 +7,7 @@
 ## Page 1 — Glossary
 
 ### Workspace
-Your project folder, saved automatically. Holds all your data and analyses for one project. You can have many. Switch between them in the top bar.
+Your project folder, saved automatically. Holds all your data and analyses for one project. You can have many — create, switch, import or export workspaces inside the **Data Loader** tool.
 
 ### Data block
 A spreadsheet of texts. One row = one document. One column = the text; other columns = metadata (date, author, category, etc.). The fundamental analytic unit in Wordflow.
@@ -91,7 +91,7 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 5. **Tool Interface** — controls and output. **Camera icon** = save snapshot. **Folder icon** = load snapshot.
 6. **Help (`?`)** — every control with a `?` opens the relevant tutorial section.
 7. **Feedback** — bottom of the left sidebar, next to Tutorial. Use it. Often.
-8. **Top menu** — workspace switcher, workspace archive import/export. (The **Snapshot Mode toggle** lives in the sidebar — pencil icon next to the "VIEWS" title.)
+8. **Data Loader** also hosts workspace operations — **Create workspace**, switch active workspace, **Import / Export workspace archive**. (The **Snapshot Mode toggle** is the pencil icon next to the "VIEWS" title in the sidebar.)
 
 ### Three-second moves
 
@@ -105,8 +105,8 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 | Select from a Dispersion plot | click-and-drag in the visual |
 | Save a result | camera icon in the tool header |
 | Re-open a saved result | folder icon in the tool header → Load snapshot |
-| Import a workspace archive | Workspace switcher → Import workspace archive |
-| Export a workspace archive | Workspace switcher → Export workspace archive |
+| Import a workspace archive | Data Loader → Import workspace archive |
+| Export a workspace archive | Data Loader → Export workspace archive |
 | Rename a block | double-click its name in the graph |
 | Delete a block | right-click → Delete (children get deleted too) |
 | Toggle Snapshot Mode | sidebar → pencil icon next to "VIEWS" |

@@ -26,7 +26,7 @@ Thanks for spending three hours with Wordflow yesterday. Some of you asked for r
 
 **How to use them:**
 - **Demo snapshots**: in the matching tool, click the folder icon → Load snapshot. The five we used are already in your snapshot list once you've imported demo snapshots in Wordflow.
-- **Workspace archives** (`.wordflow-workspace`): top bar workspace switcher → Import workspace archive → pick the file. You'll have a full reproduction of the workflow up to that checkpoint.
+- **Workspace archives** (`.wordflow-workspace`): in **Data Loader → Import workspace archive →** pick the file. You'll have a full reproduction of the workflow up to that checkpoint.
 
 ## Documentation
 
@@ -34,15 +34,13 @@ Thanks for spending three hours with Wordflow yesterday. Some of you asked for r
 - **Tool-by-tool tutorials**: linked from the home page; each tool has a 5–10 minute walkthrough.
 - **In-app help**: every `?` icon next to a control opens the relevant tutorial section directly.
 
-## Sample data
+## Sample data — and how to cite it
 
-The full sample-data catalogue (the one we used today + more):
+All three datasets are publicly available and ship as part of the sample-data catalogue (**Data Loader → Import sample content** in the app). They were supplied by LDaCA partner organisations. **Please cite if used in published research.**
 
-- **Honi Soit** — student newspaper, English, 100 articles. Good for concordance, topic modelling.
-- **ADO Queensland Election Tweets** — candidate tweets with gender metadata. Good for comparative frequency.
-- **ADO Reddit (Australian News)** — 37 MB; r/australia and news subreddits with timestamps. Good for Trends.
-
-All are imported via **Data Loader → Import sample content** in the app.
+- **2025 Australian Federal Election — NewsTalk & Reddit** *(the `newstalk_stories` corpus you saw in Tools 1 + 4, plus the AusReddit data)*. Supplied by The Digital Observatory at Queensland University of Technology (formerly the *Australian Digital Observatory*, an ARDC-funded platform). Links: [newstalk.digitalobservatory.net.au](https://newstalk.digitalobservatory.net.au/), [ausreddit.digitalobservatory.net.au](https://ausreddit.digitalobservatory.net.au/), [digitalobservatory.net.au](https://www.digitalobservatory.net.au/).
+- **Queensland Election 2020 on Twitter** *(candidate tweets with gender metadata, Session 2)*. Collected by QUT Digital Observatory with Prof. Axel Bruns, Prof. Daniel Angus, and Tegan Cohen. Gender metadata by [Sydney Corpus Lab](https://sydneycorpuslab.com/). **Cite as**: Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). *Queensland Election 2020 on Twitter.* Queensland University of Technology. [doi.org/10.25912/RDF_1665115527020](https://doi.org/10.25912/RDF_1665115527020).
+- **Honi Soit Corpus** *(student newspaper, English, 100 articles, ~60,000 words — Tools 2 + 5)*. Compiled by [Sydney Corpus Lab](https://sydneycorpuslab.com/) (February 2024), using constructed-week sampling of [Honi Soit](https://honisoit.com/category/news/) news articles from January 2021 to December 2022. Used with permission from the Honi Soit editorial team.
 
 ## Installing Wordflow on your own machine
 
@@ -50,7 +48,7 @@ Three options:
 
 1. **Cloud (Binder)** — same URL as today's workshop. Free, no install. Caveat: don't upload sensitive data.
 2. **Desktop app (Mac / Windows)** — native installer, runs everything locally. Recommended for serious work. Downloads: [link].
-3. **Python (`pip install ldaca-wordflow`)** — for Python users, gives you CLI access. Requires Python 3.10+ and around 500 MB of disk.
+3. **Python (`pip install ldaca-wordflow`)** — for Python users, gives you CLI access. Requires Python 3.14+ and around 500 MB of disk.
 
 ## Where to get help
 

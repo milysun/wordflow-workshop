@@ -93,14 +93,14 @@ The facilitator and helpers are around — flag them down.
 
 ### Track C — Open exploration
 
-Pick any sample dataset (Honi Soit, Reddit, or QLD tweets — all imported during Session 1.5). Pick any tool you haven't really used.
+Pick any sample dataset (Honi Soit, QLD 2020 tweets, or the 2025 Federal Election NewsTalk/Reddit bundle — all imported during Session 1.5). Pick any tool you haven't really used.
 
 Some quick prompts:
 
 - **Comparative Frequency on Honi Soit** by year — what changed between 2021 and 2022?
 - **Concordance** for a politically loaded word in QLD tweets — how is it weaponised?
-- **Trends on Reddit** with a different grouping — what hidden patterns emerge?
-- **Topic Modelling on Reddit** — sample to ~5,000 documents first (full corpus is slow).
+- **Trends on the Federal Election Reddit data** with a different grouping — what hidden patterns emerge?
+- **Topic Modelling on the Federal Election Reddit data** — sample to ~5,000 documents first (full corpus is slow).
 - **Quotation Extraction on Honi Soit** — who got quoted most? About what?
 
 ---

@@ -49,7 +49,7 @@ Use as a pre-read; keep open during the workshop.
 ## During Session 2 (the research story)
 
 ### "I lost track / my screen doesn't match yours."
-- **Default response**: *"That's fine — point at the URL on the whiteboard. Download checkpoint [α/β/γ/δ depending on where you are] and load it through the workspace switcher. You'll be back in sync in 30 seconds."*
+- **Default response**: *"That's fine — go to bit.ly/wordflows → Releases. Download whichever Checkpoint (A–E) matches where I am, then in Wordflow: Data Loader → Import workspace archive → pick the file. You'll be back in sync in 30 seconds."*
 - Don't try to talk individual participants back into sync mid-demo. The checkpoints exist for this.
 
 ### "I'm not sure if this move was 'try this' or 'watch only'."
@@ -103,7 +103,7 @@ Use as a pre-read; keep open during the workshop.
 - If urgent and small: have them save as Parquet or XLSX from another tool.
 
 ### "How do I save my work?"
-- *"Wordflow auto-saves your workspace on every change. Close the tab and come back — it's still there. To take it off the cloud: workspace switcher → Export workspace archive. For a single result: camera icon → Save snapshot."*
+- *"Wordflow auto-saves your workspace on every change. Close the tab and come back — it's still there. To take it off the cloud: Data Loader → Export workspace archive. For a single result: camera icon → Save snapshot."*
 
 ### "Can I install this on my own laptop?"
 - Yes — desktop app (Mac/Win) or `pip install ldaca-wordflow`. Desktop installer is on **bit.ly/wordflows**.

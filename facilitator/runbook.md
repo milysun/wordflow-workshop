@@ -109,9 +109,9 @@ The goal: every participant touches each of the five analytic tools' visualisati
 
 Drive this from your screen and have everyone follow.
 
-1. *"Data Loader → Import sample content → import all three sample datasets (Honi Soit, QLD election tweets, Reddit). You won't use them all now, but they'll be ready for later."* (~1 min)
+1. *"Data Loader → Import sample content → import all three sample datasets: Honi Soit, QLD election 2020 tweets, and the 2025 Federal Election NewsTalk/Reddit bundle. You won't use them all today, but they'll be ready for later."* (~1 min)
 2. *"Data Loader → Import demo snapshots → import all five demo snapshots from the catalogue."* (~1 min)
-3. *"In the sidebar, click the **pencil icon next to 'VIEWS'** — that turns on Snapshot Mode."* (~30s) *"This enables saving and loading snapshots in each tool. Once you load a snapshot into a tool, that tool's view is read-only — you can hover, click, and switch views, but you can't change the parameters or rerun. Other tools stay editable as normal."*
+3. *"In the sidebar, click the **pencil icon next to 'VIEWS'** — that turns on Snapshot Mode."* (~30s) *"This enables saving and loading snapshots in each **analysis tool** — Frequency, Concordance, Trends, Topic Modelling, Quotation. (Data Loader, Preprocessing and Export don't have snapshots — those tools build the data, they don't produce views.) Once you load a snapshot into an analysis tool, that tool's view is read-only — you can hover, click, and switch views, but you can't change the parameters or rerun. Other tools stay editable as normal."*
 4. *"Create a new workspace called `Wordflow`."* (~30s)
 
 > If anyone is still stuck on import: keep moving. The snapshots are loaded by tool, not by workspace — they'll catch up at the next tool transition.
@@ -376,7 +376,7 @@ Time check at 2:50 — start corralling everyone back to their seats with *"five
 
 ## Session 3.D — Thanks + close (2:55 – 3:00, 5 min)
 
-Final slide.
+Two slides: **Slide 31 (Thank you)** for the three asks, then **Slide 32 (Data acknowledgements)** as the final reference slide that stays up while people gather their things.
 
 *"Thank you for spending three hours with us. Three asks if Wordflow turned out useful:*
 

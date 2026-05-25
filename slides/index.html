@@ -181,6 +181,47 @@
     color: var(--paper);
   }
   section.slide.acknowledgement .ack-body strong { color: var(--paper); font-weight: 600; }
+  /* Data acknowledgements slide — three citation blocks */
+  section.slide.acknowledgements-slide {
+    padding: 3vh 5vw;
+    justify-content: flex-start;
+  }
+  section.slide.acknowledgements-slide h2 {
+    margin-bottom: 0.4em;
+  }
+  section.slide.acknowledgements-slide .ack-intro {
+    font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+    color: var(--muted);
+    font-style: italic;
+    max-width: 52em;
+    margin-bottom: 1.2em;
+    line-height: 1.45;
+  }
+  section.slide.acknowledgements-slide .ack-block {
+    margin-bottom: 1em;
+    padding-left: 1em;
+    border-left: 3px solid var(--accent-soft);
+  }
+  section.slide.acknowledgements-slide .ack-block h3 {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    color: var(--accent);
+    margin-bottom: 0.15em;
+    font-weight: 600;
+  }
+  section.slide.acknowledgements-slide .ack-block p {
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    margin-bottom: 0.2em;
+    line-height: 1.45;
+  }
+  section.slide.acknowledgements-slide .ack-block .citation {
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+    color: var(--muted);
+  }
+  section.slide.acknowledgements-slide a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  section.slide.acknowledgements-slide a:hover { text-decoration: underline; }
   /* Project + team slide — three portrait cards */
   .team-grid {
     display: grid;
@@ -410,7 +451,7 @@
       </div>
       <div class="card">
         <h3>Python install</h3>
-        <p><code>pip install ldaca-wordflow</code> — for the Python users. Requires Python 3.10+.</p>
+        <p><code>pip install ldaca-wordflow</code> — for the Python users. Requires Python 3.14+.</p>
       </div>
     </div>
     <p style="margin-top: 1.5em; font-style: italic;">Today: the cloud version. Desktop install is on the same <code style="font-style: normal; background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px;">bit.ly/wordflows</code> URL whenever you want it.</p>
@@ -456,7 +497,7 @@
       <li><strong>Tool sidebar</strong> — pick a tool here</li>
       <li><strong>Tool interface</strong> — controls and results for the selected tool</li>
       <li><strong>Workspace graph view</strong> — your map of data blocks and their derivations</li>
-      <li><strong>Data viewer</strong> — click a block in the graph to see its rows</li>
+      <li><strong>Data viewer</strong> — manage and inspect columns and rows in a data block. Not just a viewer.</li>
       <li><strong>Data block quick-select</strong> — switch the active block without going back to the graph</li>
       <li><strong>Tutorial</strong> — every <code>?</code> next to a control opens the matching section</li>
       <li><strong>Feedback</strong> — tap anytime something is confusing, surprising, or broken</li>
@@ -467,7 +508,7 @@
   <section class="slide section-divider" data-notes="Section break. Hold for 3 seconds, let them register where we are.">
     <h2>Session 1.5</h2>
     <h1>5 tools, 5 minutes each</h1>
-    <p style="margin-top: 1em;">Touch every tool's destination — without setting any of them up.</p>
+    <p style="margin-top: 1em;">Touch every tool's destination — you'll do the data prep yourself in Session 2.</p>
   </section>
 
   <!-- Slide 8: Setup steps -->
@@ -476,10 +517,11 @@
     <ol>
       <li><strong>Data Loader → Import sample content</strong> — import all three datasets.</li>
       <li><strong>Data Loader → Import demo snapshots</strong> — import all five snapshots.</li>
-      <li><strong>Sidebar → pencil icon next to "VIEWS"</strong> — turn <strong>Snapshot Mode</strong> ON. This unlocks snapshot save/load in each tool. (A tool only becomes read-only after you load a snapshot into <em>it</em>; other tools keep working.)</li>
-      <li><strong>Workspace switcher → Create workspace</strong> — name it <code>Wordflow</code>. (You'll keep using this same workspace through the whole workshop.)</li>
+      <li><strong>Sidebar → pencil icon next to "VIEWS"</strong> — turn <strong>Snapshot Mode</strong> ON. This unlocks snapshot save/load in each <strong>analysis tool</strong> (Frequency, Concordance, Trends, Topic Modelling, Quotation). A tool only becomes read-only after you load a snapshot into <em>it</em>; other tools keep working.</li>
+      <li><strong>Data Loader → Create workspace</strong> — name it <code>Wordflow</code>. (Wordflow's hint system will highlight the button on first use. You'll keep this same workspace for the whole workshop.)</li>
     </ol>
     <p style="margin-top: 1em; font-style: italic;">Once everyone has these four done, we tour the tools.</p>
+    <p style="margin-top: 0.8em; font-size: 0.9em; color: var(--muted);">All datasets you just imported are publicly available LDaCA-partner contributions. Citations on the final slide — please cite if used in research.</p>
   </section>
 
   <!-- Slide 9: Frequency tool -->
@@ -743,10 +785,34 @@
     <p style="margin-top: 1.5em;">Tonight's email asks one question — what would have made today more useful? <strong>Reply with one sentence.</strong></p>
   </section>
 
+  <!-- Slide 32: Data acknowledgements -->
+  <section class="slide acknowledgements-slide" data-notes="Final reference slide — keep up while people leave so they can photograph the citations. Brief verbal: 'And a final acknowledgement to the data providers. Citations on screen, and in the post-workshop email.'">
+    <h2>Data acknowledgements</h2>
+    <p class="ack-intro">All three datasets used today are publicly available, supplied by LDaCA partner organisations. Please cite if used in research outputs.</p>
+
+    <div class="ack-block">
+      <h3>2025 Australian Federal Election — NewsTalk &amp; Reddit</h3>
+      <p>Supplied by <strong>The Digital Observatory</strong> at Queensland University of Technology (formerly the <em>Australian Digital Observatory</em>, an ARDC-funded platform). Powers the <code>newstalk_stories</code> corpus and the AusReddit data.</p>
+      <p class="citation"><a href="https://newstalk.digitalobservatory.net.au/">newstalk.digitalobservatory.net.au</a> · <a href="https://ausreddit.digitalobservatory.net.au/">ausreddit.digitalobservatory.net.au</a> · <a href="https://www.digitalobservatory.net.au/">digitalobservatory.net.au</a></p>
+    </div>
+
+    <div class="ack-block">
+      <h3>Queensland Election 2020 on Twitter</h3>
+      <p>QUT Digital Observatory with <strong>Prof. Axel Bruns</strong>, <strong>Prof. Daniel Angus</strong>, and <strong>Tegan Cohen</strong>. Gender metadata contributed by <strong>Sydney Corpus Lab</strong>.</p>
+      <p class="citation">Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). <em>Queensland Election 2020 on Twitter.</em> QUT. <a href="https://doi.org/10.25912/RDF_1665115527020">doi.org/10.25912/RDF_1665115527020</a></p>
+    </div>
+
+    <div class="ack-block">
+      <h3>Honi Soit Corpus</h3>
+      <p><strong>Sydney Corpus Lab</strong> (February 2024). ~60,000 words, 100 news articles from the University of Sydney student newspaper <a href="https://honisoit.com/category/news/">Honi Soit</a> (January 2021 – December 2022). Compiled with permission from the Honi Soit editorial team using constructed-week sampling.</p>
+      <p class="citation"><a href="https://sydneycorpuslab.com/">sydneycorpuslab.com</a></p>
+    </div>
+  </section>
+
 </div>
 
 <div class="chrome">
-  <span id="slide-counter">1 / 31</span>
+  <span id="slide-counter">1 / 32</span>
   <span>←/→ navigate · N toggle notes · F fullscreen</span>
 </div>
 <div class="notes" id="notes"></div>
