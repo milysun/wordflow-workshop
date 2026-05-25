@@ -109,7 +109,7 @@ Some quick prompts:
 
 The facilitator will close. Three things to take home:
 
-1. **Install Wordflow locally** — desktop link is on **bit.ly/wordflows** (same URL you used today). The cloud version is fine for trying; the desktop or Python install is what you want for real research work.
+1. **Install Wordflow locally** — desktop link is on **cutt.ly/wordflow** (same URL you used today). The cloud version is fine for trying; the desktop or Python install is what you want for real research work.
 2. **Cite the project** if you publish using it. Citation on the docs site.
 3. **Feedback button** — keep using it. Bug reports, improvement advice, "I need more", or "this rocks" — all helpful.
 

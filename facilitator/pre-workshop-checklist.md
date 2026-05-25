@@ -139,9 +139,9 @@ Then on GitHub:
 5. **Attach binaries**: drag in all five `session2-after-*.wordflow-workspace` files.
 6. **Publish**.
 
-Verify the download links work in a fresh browser session (logged out, no cache). The link `bit.ly/wordflows → Releases` now resolves to your release; this is what the runbook tells participants to use when they fall behind.
+Verify the download links work in a fresh browser session (logged out, no cache). The link `cutt.ly/wordflow → Releases` now resolves to your release; this is what the runbook tells participants to use when they fall behind.
 
-> **Why GitHub Releases?** One URL (`bit.ly/wordflows`) gets people to both the landing page and the release assets, versioned per workshop delivery. No separate Box / OneDrive link to communicate. Each future delivery becomes a new release on its own branch.
+> **Why GitHub Releases?** One URL (`cutt.ly/wordflow`) gets people to both the landing page and the release assets, versioned per workshop delivery. No separate Box / OneDrive link to communicate. Each future delivery becomes a new release on its own branch.
 
 ---
 
