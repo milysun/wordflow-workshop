@@ -14,7 +14,7 @@ Thanks for spending three hours with Wordflow yesterday. Some of you asked for r
 
 ## The files from today
 
-**Session-1.5 demo snapshots** (the five we toured the tools with) — these ship with the LDaCA sample-data catalogue, so they import automatically alongside the sample datasets in Wordflow. **No separate download needed.** Use Data Loader → Import demo snapshots from inside Wordflow to pull them in any time.
+**Session-1.5 demo snapshots** (the five we toured the tools with) — these ship with the LDaCA sample-data catalogue, so they import alongside the sample datasets in Wordflow. **No separate download needed.** In **Data Loader → Import sample data**, the modal's **Demo Snapshots** tab lets you select and import them any time.
 
 **Session-2 checkpoints** (the QLD election tweet workflow, one workspace archive per phase) — these are workshop-specific. Download from **bit.ly/wordflows → Releases** → the *Intro to Wordflow — 3 June 2026* release:
 
@@ -36,7 +36,7 @@ Thanks for spending three hours with Wordflow yesterday. Some of you asked for r
 
 ## Sample data — and how to cite it
 
-All three datasets are publicly available and ship as part of the sample-data catalogue (**Data Loader → Import sample content** in the app). They were supplied by LDaCA partner organisations. **Please cite if used in published research.**
+All three datasets are publicly available and ship as part of the sample-data catalogue (**Data Loader → Import sample data** in the app — the **Datasets** tab of the modal). They were supplied by LDaCA partner organisations. **Please cite if used in published research.**
 
 - **2025 Australian Federal Election — NewsTalk & Reddit** *(the `newstalk_stories` corpus you saw in Tools 1 + 4, plus the AusReddit data)*. Supplied by The Digital Observatory at Queensland University of Technology (formerly the *Australian Digital Observatory*, an ARDC-funded platform). Links: [newstalk.digitalobservatory.net.au](https://newstalk.digitalobservatory.net.au/), [ausreddit.digitalobservatory.net.au](https://ausreddit.digitalobservatory.net.au/), [digitalobservatory.net.au](https://www.digitalobservatory.net.au/).
 - **Queensland Election 2020 on Twitter** *(candidate tweets with gender metadata, Session 2)*. Collected by QUT Digital Observatory with Prof. Axel Bruns, Prof. Daniel Angus, and Tegan Cohen. Gender metadata by [Sydney Corpus Lab](https://sydneycorpuslab.com/). **Cite as**: Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). *Queensland Election 2020 on Twitter.* Queensland University of Technology. [doi.org/10.25912/RDF_1665115527020](https://doi.org/10.25912/RDF_1665115527020).

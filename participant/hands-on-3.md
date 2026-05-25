@@ -12,19 +12,19 @@ A short demonstration from the facilitator. No keyboards needed. Three quick mov
 
 ### Demo 1 — Export the visualisation (3 min)
 
-The facilitator will open a Session 1.5 visualisation (e.g. the Frequency word cloud) and use the tool's **export / download icon** to save it as **PNG / SVG** (the image) and **CSV** (the data behind the image).
+The facilitator will open a Session 1.5 visualisation (e.g. the Frequency word cloud) and use the **download icon at the top-right of each visualisation or table** to save it. Image views (cloud, dispersion, bubble chart) save as **PNG**; list / table views save as **CSV** (the data behind the visualisation).
 
 > 🎯 The lesson: your analysis isn't trapped in the tool. The same export options exist in Trends, Topic Modelling, Concordance, and Quotation.
 
-### Demo 2 — Filter the visualisation → add as a new data block (5 min)
+### Demo 2 — Filter the visualisation → Add to Workspace (5 min)
 
 Visualisations aren't just for looking. You can pick parts of them and turn that selection into new analysable data. The facilitator will:
 
 1. Open a Trends snapshot. **Click in the legend** to hide or isolate individual lines (e.g. focus on `lnpcuts` only).
-2. **Click-and-drag** on the chart to select a peak or a date range. **Add the selection to the workspace** as a new data block.
+2. **Click** a data point — or **click + Shift-click** to select a range (e.g. a campaign peak or a date window). **Add the selection to the workspace** as a new data block.
 3. Quickly mention the same pattern in two other tools:
    - **Topic Modelling**: click bubbles to select topics → Detach → new blocks. (Same move you saw in Session 2.)
-   - **Concordance**: click-and-drag in the dispersion view to select tweets in a percentage range → add as block.
+   - **Concordance**: click + Shift-click hit markers in the dispersion view to select tweets → Add to Workspace.
 
 > 🎯 The lesson: in every visual tool, *seeing* something interesting and *making it new data* is one move, not two.
 

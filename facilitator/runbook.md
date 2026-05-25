@@ -109,8 +109,10 @@ The goal: every participant touches each of the five analytic tools' visualisati
 
 Drive this from your screen and have everyone follow.
 
-1. *"Data Loader → Import sample content → import all three sample datasets: Honi Soit, QLD election 2020 tweets, and the 2025 Federal Election NewsTalk/Reddit bundle. You won't use them all today, but they'll be ready for later."* (~1 min)
-2. *"Data Loader → Import demo snapshots → import all five demo snapshots from the catalogue."* (~1 min)
+1. *"In Data Loader, click **Import sample data**. A modal opens with two tabs."* (~1.5 min)
+   - *"**Datasets** tab — select all three: Honi Soit, QLD election 2020 tweets, and the 2025 Federal Election NewsTalk/Reddit bundle."*
+   - *"**Demo Snapshots** tab — select all five (the snapshots we'll tour in a minute)."*
+   - *"Then click **Import selected** — everything imports together. You won't use it all today, but it'll be ready for later."*
 3. *"In the sidebar, click the **pencil icon next to 'VIEWS'** — that turns on Snapshot Mode."* (~30s) *"This enables saving and loading snapshots in each **analysis tool** — Frequency, Concordance, Trends, Topic Modelling, Quotation. (Data Loader, Preprocessing and Export don't have snapshots — those tools build the data, they don't produce views.) Once you load a snapshot into an analysis tool, that tool's view is read-only — you can hover, click, and switch views, but you can't change the parameters or rerun. Other tools stay editable as normal."*
 4. *"Create a new workspace called `Wordflow`."* (~30s)
 
@@ -123,8 +125,10 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 #### Tool 1 — Frequency (2:00 pm – 2:05 pm)
 
 - *"Click Frequency in the sidebar. Click 'Load snapshot' (folder icon). Pick `Freq_Analysis_Newstalk`."*
-- Narrate the comparative view: *"What you're looking at is a comparative frequency — two columns, one corpus. The corpus is a set of Australian news stories. I've filtered by source and grouped them: on the left, two left-leaning outlets — Guardian Australia and Independent Australia. On the right, two right-leaning outlets — Sky News Australia and PerthNow. Bigger word = more frequent in that group's stories. Switch to List view if you want exact counts."*
-- 2-min explore: *"The interesting move is to spot a word that's big on one side and small or absent on the other — that's where editorial divergence shows up. The loaded snapshot view is read-only, so feel free to click around — nothing reruns."*
+- Narrate the comparative view: *"What you're looking at is a comparative frequency — two columns, one corpus. The corpus is a set of Australian news stories. I've filtered by source and grouped them: on the left, two left-leaning outlets — Guardian Australia and Independent Australia. On the right, two right-leaning outlets — Sky News Australia and PerthNow. Bigger word = more frequent in that group's stories."*
+- *"Switch between **Cloud** and **List** views — same data, just a different visual. List gives you exact counts."*
+- Show the stopword shortcut: *"One little gem — **right-click any word** in the cloud or list and it gets added to stopwords. Watch — *[right-click a word]* — gone. Useful for hiding tokens you don't care about without re-running anything."*
+- 2-min explore: *"Try the view switch, try right-clicking a few words. Spot a word that's big on one side and small or absent on the other — that's where editorial divergence shows up. The loaded snapshot view is read-only otherwise, so feel free to click around — nothing reruns."*
 
 > Frame the grouping as a *research assumption*, not a claim. If anyone challenges it: *"Yes — change the grouping and the comparison changes. That's the point. Wordflow makes the regrouping cheap."*
 
@@ -205,17 +209,17 @@ Slide 17.
 
 *You don't have to follow every step. Your hands-on sheet marks some moves as 'try this' — pick up the keyboard for those. Other moves are marked 'watch' — sit back and look at my screen. If you fall behind, **bit.ly/wordflows → Releases** has five checkpoint files (A–E, one per phase); load whichever you need to rejoin.*
 
-*First — turn OFF Snapshot Mode. The toggle is the pencil icon next to 'VIEWS' in the sidebar — same place you turned it on. We're building, not just looking."*
+*From here on, we're building, not just looking. Snapshot Mode can stay on — it only locks a tool's view once you load a snapshot into that tool. New analyses you start are fine."*
 
 ### 2:45 pm – 2:52 pm — A: Load, prepare, join (7 min, WATCH)
 
 There's more to a "load" step than just clicking import. Walk through the typical first-time-user prep moves calmly — narrate each so the room doesn't panic about catching up.
 
 1. **Data Loader** → import (or open) the two source blocks: `qldelection2020_candidate_tweets` and `candidate_info_gender`. *"These are the two starting blocks. The first is one row per tweet; the second is one row per candidate with a gender column."*
-2. **Rename** the long block name (optional but worth showing). Right-click the block → Rename. `qldelection2020_candidate_tweets` → `tweets`. *"Block names show up in every later step — shorter is better."*
-3. **Delete unused columns** (optional but worth showing). Right-click → Edit columns. Drop anything you don't need (URLs, retweet counts, whatever doesn't matter for this analysis). *"Smaller blocks load faster, and the column list in later tools is less noisy."*
-4. **Set column dtypes** — Preprocessing → Set dtype on any columns that need it (e.g. confirm `candidate_id` is the same type in both blocks before joining). *"Mixed types break joins and group-bys silently — set them now and you avoid surprises later."*
-5. **Preprocessing → Join.** Left join on `candidate_id` → Add to Workspace as `tweets_with_gender`. *"Left join, so we keep all tweets even if the gender info is missing."*
+2. **Rename** the long block name (optional but worth showing). Open the block's **menu icon** (the small icon on the block) → Rename. `qldelection2020_candidate_tweets` → `tweets`. *"Block names show up in every later step — shorter is better. Wordflow doesn't use right-click — everything is in the menu icon on the block, and the same icon shape sits on each column header for column operations."*
+3. **Delete unused columns** (optional but worth showing). Click the **menu icon at the end of a column header** to open that column's menu, then delete. Drop anything you don't need (URLs, retweet counts, whatever doesn't matter for this analysis). *"Smaller blocks load faster, and the column list in later tools is less noisy."*
+4. **Set column dtypes** — open a column's menu (or use the dtype dropdown next to its name) and confirm `username` is the same type in both blocks before joining. *"Mixed types break joins and group-bys silently — set them now and you avoid surprises later."*
+5. **Preprocessing → Join.** Left join on `username` → Add to Workspace as `tweets_with_gender`. *"The join key is `username` — both blocks have a username column for the candidate. Left join, so we keep all tweets even if the gender info is missing."*
 6. If a dtype warning appears at this stage: *"Wordflow noticed something we missed. Accept the auto-standardisation."*
 7. *Click `tweets_with_gender` → look at the Data Viewer.* *"Now every tweet has a gender column. Click a row to read one full tweet."*
 
@@ -232,7 +236,7 @@ This is where participants pick up the keyboard.
 > **Why no hashtag filter?** The dataset is small. Filtering by `text contains "#"` would chop ~half the tweets and weaken the comparison. We keep the full gender corpora.
 
 2. **Select both** in the graph. **Frequency tool → comparative mode (Juxtorpus).** Word count 40, stopwords on.
-3. **Iterative exploration**: left-click a topical word → jumps to Concordance with that word pre-loaded. Read a few contexts. Go back to Frequency, pick a different word. *Repeat — this is the exploration before settling on a final pattern.*
+3. **Iterative exploration**: click a topical word → jumps to Concordance with that word pre-loaded. Read a few contexts. Go back to Frequency, pick a different word. *Repeat — this is the exploration before settling on a final pattern.*
 4. After a few rounds, narrate aloud: *"I've been jumping between Frequency and Concordance to spot meaningful patterns. Words I keep coming back to: `cases`, `covid`, and anything starting with `lnp`. Two themes are emerging — health and energy/policy. In the next phase, I'll build a regex that captures all three terms in one search."*
 
 > Land here: *"You just stacked twice — Frequency to Concordance, and back again. Read the graph: that's your method. The regex in Phase C didn't fall from the sky; it came from this iteration."*
@@ -246,19 +250,21 @@ This is where participants pick up the keyboard.
 1. In Concordance, switch to **Regex mode**. Pattern: `cases|covid|lnp\w*`.
    *"Three patterns covering two themes — health (`cases`, `covid`) and energy/policy (`lnp\w*`)."*
 2. Each match coloured by which pattern hit. **Switch view to Dispersion** — bars per tweet, colour-coded.
-3. **Click-and-drag in the dispersion plot** to select a subset of tweets.
-4. **Add selected contexts as an aggregated block** — one row per source tweet, matched-term column preserved alongside the gender column.
+3. **Click a point** in the dispersion plot, then **Shift-click** another point to extend the selection to a range. Repeat to build up the subset of tweets you want.
+4. Click **Add to Workspace** — the matched contexts become a new data block (matched-term column preserved alongside the gender column, ready for Trends).
 
 > The hypothesis we're testing (informally): *do female candidates tweet more about health, and male candidates more about LNP/policy?* Made-up hypothesis on a small dataset — useful as a worked example, not a finding.
 
-#### C-2 — Trends on the detached block, find the lnpcuts skew (TRY THIS, ~6 min)
+#### C-2 — Trends on the matched block, find the lnpcuts skew (TRY THIS, ~6 min)
 
-1. Click the aggregated block → **Trends tool.** Date column: tweet date. Time bin: weekly.
-2. Group by **matched term** — one line per term (`cases`, `covid`, `lnp`, `lnpqld`, `lnpcuts`, …).
-3. **Click `lnpcuts` in the legend** to isolate it. Then switch grouping (or filter further) to the gender column.
-4. *"Female candidates mention `lnpcuts` around 20 times across the campaign; male candidates 4. A 5× gender skew, on a small dataset — suggestive not definitive, but it lines up with the hypothesis."*
+1. Click the matched block → **Trends tool.** Date column: tweet date. Time bin: weekly.
+2. Group by **matched-term × gender** so each combination (e.g. `lnp-M`, `lnp-F`, `lnpqld-M`, `lnpcuts-F`, …) is its own line.
+3. Narrate while looking at the chart: *"Lots of pro-LNP terms — `lnp`, `lnpqld`, `lnpgov`. But one stands out as anti-LNP — `lnpcuts`. Let's take a closer look."*
+4. **Hide the other lines via the legend** — click the major pro-LNP and health combinations off, one by one, until only `lnpcuts-M` and `lnpcuts-F` remain. *"Female candidates mention `lnpcuts` around 20 times across the campaign; male candidates 4. A 5× skew on a small dataset — suggestive not definitive, but the one term that doesn't fit the pro-LNP pattern shows the strongest gender split."*
 
-> This is the empirical hook of Session 2. Don't oversell ("we discovered something!") but don't undersell either: *"end-to-end in 30 minutes, and there's something here to dig into."*
+> This is the empirical hook of Session 2. The visual punch is the legend-hide sequence — pro-LNP lines disappear one by one until only the anti-LNP `lnpcuts` is left, and the gender gap is suddenly visible. Don't pre-explain; let the chart land it.
+
+> Don't oversell ("we discovered something!") but don't undersell either: *"end-to-end in 30 minutes, and there's something here to dig into."*
 
 > **Checkpoint C** — workspace archive: `Checkpoint_C.zip`.
 
@@ -285,7 +291,7 @@ The closing move. Stack the per-gender topic blocks back together so the final T
 2. Click the stacked block → **Trends.** Time bin weekly. Group by `topic` (or `gender × topic` if the tool supports a two-key group).
 3. *"Final view. Selected topics from the two-corpus model, evolving across the campaign, split by gender. End to end — that's our method."*
 
-> **Final landing**: *"Six tools, one corpus, one made-up hypothesis, one workflow. We went from raw tweets to a finding — small, suggestive, but real — in 45 minutes. The graph behind me is the whole method, captured as a picture."*
+> **Final landing**: *"Four analysis tools — Frequency, Concordance, Trends (twice), Topic Modelling — across one corpus, one made-up hypothesis, one workflow. We went from raw tweets to a finding — small, suggestive, but real — in 45 minutes. The graph behind me is the whole method, captured as a picture."*
 
 > **Checkpoint E** — workspace archive: `Checkpoint_E.zip`.
 
@@ -306,21 +312,21 @@ The conceptual payoff. Three short demos showing **you shape the analysis at eve
 *"First, a small but useful thing. Everything you analyse can come back out — as an image or as data."*
 
 1. Open one of the Session 1.5 snapshots — the word cloud (Frequency tool, `Freq_Analysis_Newstalk`) is good because it's visually distinct.
-2. **Click the export / download icon** in the tool header. Show the options: **PNG / SVG** (the picture) and **CSV** (the data behind it).
+2. **Click the download icon at the top-right corner of the word cloud** — it saves a **PNG** of the cloud. Then switch to the **List view** and use *its* download icon — that saves the underlying ranking as a **CSV**. *"Each visualisation or table has its own download button. Image views give you images, data views give you data."*
 3. *"PNG for the slide deck, CSV for the supplementary materials. The same export pattern works in every analytical tool — Trends, Topic Modelling, Concordance, Quotation."*
 
 > The lesson: *your analysis is not trapped in the tool*. Don't dwell.
 
-### 3:43 pm – 3:48 pm — Demo 2: Filter the visualisation → add as a new data block (5 min)
+### 3:43 pm – 3:48 pm — Demo 2: Filter the visualisation → Add to Workspace (5 min)
 
 *"Visualisations aren't just for looking. You can pick parts of them and turn that selection into new analysable data."*
 
 1. Open the **Trends** snapshot — `QLD_Election_Tweets_conc` or your Session 2 final Trends. Has multiple lines (matched terms × gender, or similar).
 2. **Legend filtering**: click in the legend to toggle individual lines on and off. Narrate: *"I can hide everything except `lnpcuts` to focus on one term."*
-3. **Visual selection**: click-and-drag on the chart to select a peak or a date range. *"Now I've selected a slice — say, the campaign peak. Add to workspace as a new data block."*
+3. **Visual selection**: **click a point** on the chart, then **Shift-click** another to select a range — say, the campaign peak. Click **Add to Workspace**. *"Now I've selected a slice and turned it into a new data block."*
 4. *"Same idea, same operation, different tools — quickly:"*
    - Topic Modelling: **click bubbles** to select interesting topics → Detach → new blocks. *(We saw this in Session 2.)*
-   - Concordance: **dispersion view** — click-and-drag to select tweets in a percentage range → add as block. *(We saw this too.)*
+   - Concordance: **dispersion view** — click + Shift-click on hit markers to select tweets → **Add to Workspace**. *(We saw this too.)*
 5. *"In every visual tool: see something interesting, select it, make it new data. That's reading and analysing in one move."*
 
 ### 3:48 pm – 3:53 pm — Demo 3: Create a column → Trends becomes a histogram (5 min)

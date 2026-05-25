@@ -20,13 +20,7 @@ We'll answer it by:
 5. Topic modelling on both gender corpora together — fused bubbles, then detach.
 6. Stacking the detached topic blocks and viewing the final cross-gender trends.
 
-That's six tools, one workflow, one question — and one *made-up hypothesis* about which gender tweets more about which theme.
-
----
-
-## Pre-flight: turn off Snapshot Mode
-
-You enabled Snapshot Mode in Session 1.5 so you could load the demo snapshots. Now we're building — **turn Snapshot Mode OFF** (the pencil icon next to "VIEWS" in the sidebar). Your facilitator will pause until everyone has done this.
+That's a six-step workflow across **four analysis tools** (Frequency, Concordance, Trends — used twice — and Topic Modelling), one corpus, one question — and one *made-up hypothesis* about which gender tweets more about which theme.
 
 ---
 
@@ -36,10 +30,10 @@ The facilitator drives this. You watch the projector. **There's more to "load" t
 
 What's happening:
 1. **Import** the two source blocks: `qldelection2020_candidate_tweets` and `candidate_info_gender`.
-2. **Rename** the longer block to `tweets` (right-click → Rename) — shorter names are easier to read in later tools.
-3. **Delete unused columns** that aren't relevant to this analysis (right-click → Edit columns).
-4. **Set column dtypes** — make sure the join key (`candidate_id`) is the same type in both blocks.
-5. **Join** the two on `candidate_id` (left join) → new block `tweets_with_gender`. Accept any dtype warning Wordflow shows.
+2. **Rename** the longer block to `tweets` — click the **menu icon** on the data block → Rename. (Wordflow doesn't use right-click; the menu icon is a tiny icon on the block itself.)
+3. **Delete unused columns** that aren't relevant to this analysis — click the **menu icon at the end of a column header** to open the column menu.
+4. **Set column dtypes** — make sure the join key (`username`) is the same type in both blocks.
+5. **Join** the two on `username` (left join) → new block `tweets_with_gender`. Accept any dtype warning Wordflow shows.
 6. **Click `tweets_with_gender`** → look at the Data Viewer. Click a row to read one full tweet.
 
 > Data prep work *is* part of the analysis. People who rush through it often pay later with mysterious bugs.
@@ -54,7 +48,7 @@ This is where you pick up the keyboard.
 
 1. **Preprocessing → Filter** the joined block: `gender = 'F'` → block called `tweets_female`. Again for `gender = 'M'` → `tweets_male`. *(No hashtag filter — the dataset is small and filtering by `#` would chop too many tweets.)*
 2. **Select both** in the graph (click one, Cmd/Ctrl-click the other). **Frequency** tool — opens in **comparative mode (Juxtorpus)**. Word count 40, stopwords on.
-3. **Iterate**: left-click a topical word → Wordflow jumps to **Concordance** with that word pre-loaded. Read a few contexts. Go back to Frequency, pick a different word. Repeat — this is the *exploration* before settling on a final pattern.
+3. **Iterate**: click a topical word → Wordflow jumps to **Concordance** with that word pre-loaded. Read a few contexts. Go back to Frequency, pick a different word. Repeat — this is the *exploration* before settling on a final pattern.
 4. The facilitator will narrate the moves they keep coming back to: `cases`, `covid`, anything starting with `lnp`. **Two themes** are emerging — *health* and *energy/policy*. That sets up the regex in Phase C.
 
 > 🎯 Insight to land: you stacked twice — Frequency to Concordance, and back again. The regex in Phase C didn't fall from the sky; it came from this iteration. **Reading shapes searching shapes reading.**
@@ -72,8 +66,8 @@ The facilitator will:
    - **Health** — `cases` (mostly meaning COVID case counts in 2020) + `covid`.
    - **Energy / policy** — `lnp\w*`, i.e. anything starting with *lnp* (LNP, lnpqld, lnpcuts, …).
 2. Each match gets its **own colour**. Switch to **Dispersion view** — bars per tweet, colour-coded.
-3. **Click-and-drag** in the dispersion plot to select a subset of tweets.
-4. **Add selected contexts as an aggregated block** — one row per source tweet, matched-term column preserved alongside the gender column.
+3. **Click** a hit marker in the dispersion plot — or **click + Shift-click** to extend the selection to a range. Build up the subset of tweets you want.
+4. Click **Add to Workspace** — the matched contexts become a new data block (matched-term column preserved alongside the gender column).
 
 > 🎯 Insight to land: visual selection in any tool can become structured data for the next tool. Reading and analysing are two sides of one workflow.
 
@@ -81,12 +75,12 @@ The facilitator will:
 
 You're picking up the keyboard again.
 
-1. Click the aggregated block → **Trends** tool. Time axis: tweet date. Time bin: weekly.
-2. Group by **matched term** — one line per term (`cases`, `covid`, `lnp`, `lnpqld`, `lnpcuts`, …).
-3. **Click the `lnpcuts` entry in the legend** to isolate it. Then switch the grouping (or filter further) to the gender column.
-4. Female candidates mention `lnpcuts` ~20 times across the campaign; male candidates ~4. **A 5× gender skew on a small dataset** — suggestive, not definitive, but it lines up with the hypothesis.
+1. Click the matched block → **Trends** tool. Time axis: tweet date. Time bin: weekly.
+2. Group by **matched term × gender** — each combination (e.g. `lnp-F`, `lnp-M`, `lnpqld-F`, `lnpcuts-F`, …) is its own line.
+3. The facilitator will point out: lots of pro-LNP terms (`lnp`, `lnpqld`, `lnpgov`…). But one stands out as **anti-LNP** — `lnpcuts`. Let's look closer.
+4. **Hide other lines via the legend** — click the major pro-LNP and health combinations off, one by one, until only `lnpcuts-M` and `lnpcuts-F` are left. Female candidates mention `lnpcuts` ~20 times across the campaign; male candidates ~4. **A 5× skew on a small dataset** — suggestive, not definitive. The one term that *doesn't* fit the pro-LNP pattern shows the strongest gender split.
 
-> 🎯 Insight to land: same data, swap one parameter (the grouping), get a different story. Then click the legend to drill into one term — and a found-in-the-wild gender pattern emerges.
+> 🎯 Insight to land: the legend isn't just a colour key — it's an interactive filter. Hide what isn't interesting and the story underneath comes through.
 
 ✅ **Checkpoint C** — `Checkpoint_C.zip`.
 
@@ -120,7 +114,7 @@ The closing move. The facilitator will:
 2. Click the stacked block → **Trends.** Time bin weekly. Group by `topic` (or `gender × topic`).
 3. Final view: the topics from D, evolving across the campaign, split by gender. End to end — that's our method.
 
-> 🎯 Final landing: six tools, one corpus, one made-up hypothesis, one connected workflow. Every step shaped the next. The graph behind the facilitator is your whole method section, captured as a picture — and there's a small finding sitting inside it.
+> 🎯 Final landing: four analysis tools (Trends used twice), one corpus, one made-up hypothesis, one connected workflow. Every step shaped the next. The graph behind the facilitator is your whole method section, captured as a picture — and there's a small finding sitting inside it.
 
 ✅ **Checkpoint E** — `Checkpoint_E.zip`.
 
@@ -128,7 +122,7 @@ The closing move. The facilitator will:
 
 ## You don't have to have followed every step
 
-If you got lost mid-stream — that's fine. The point isn't to have your screen match the facilitator's at minute 45. The point is to **see what's possible**, recognise the cross-tool moves (left-click jump, add-as-block, detach, stack, group), and trust you can build something like it yourself.
+If you got lost mid-stream — that's fine. The point isn't to have your screen match the facilitator's at minute 45. The point is to **see what's possible**, recognise the cross-tool moves (click jump, add-as-block, detach, stack, group), and trust you can build something like it yourself.
 
 In the free lab (Session 3.C), you can:
 - Load any checkpoint (C, D, or E) and continue the chain at your own pace.

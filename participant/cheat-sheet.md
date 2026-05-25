@@ -30,13 +30,13 @@ A way of asking a question of a data block. Tools include:
 | **Export** | "Get my data and results out of Wordflow." |
 
 ### Stacking
-The most important verb in this workshop. You stack tools by taking the output of one and feeding it to another. Filter your tweets to one gender → run comparative frequency vs the other gender → left-click a word → jump to concordance → switch to a multi-pattern regex → add results as a new block → run topic modelling on that. You build a workflow by chaining blocks.
+The most important verb in this workshop. You stack tools by taking the output of one and feeding it to another. Filter your tweets to one gender → run comparative frequency vs the other gender → click a word → jump to concordance → switch to a multi-pattern regex → add results as a new block → run topic modelling on that. You build a workflow by chaining blocks.
 
 ### Snapshot
 A small file (`.ldaca-snapshot`) that captures a finished analysis — tool, parameters, results — so you can re-open it or send it to a colleague without re-running. Saved per tool from the camera icon.
 
 ### Snapshot Mode
-A sidebar toggle (the **pencil icon next to the "VIEWS" title**) that enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only — you can still hover, click visualisations, and switch views, but you can't change parameters or rerun. Other tools stay editable as normal. **Turn it OFF for general workspace-building.**
+A sidebar toggle (the **pencil icon next to the "VIEWS" title**) that enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only — you can still hover, click visualisations, and switch views, but you can't change parameters or rerun. Other tools (and new analyses) stay fully editable as normal. **Snapshot Mode can stay on while you're building — it only ever affects a tool *after* you load a snapshot into it.**
 
 ### Workspace archive
 A portable export of your entire workspace — all data blocks, derivations, and metadata — as a single file. Different from snapshots: a snapshot captures one tool's view; a workspace archive captures the whole project. Import to recreate the workspace on another machine (or another participant's instance).
@@ -45,10 +45,10 @@ A portable export of your entire workspace — all data blocks, derivations, and
 The **Feedback** button at the bottom of the left sidebar (next to Tutorial). Tap it any time something is confusing, surprising, or broken. Even one word helps the developers — they read every one.
 
 ### Detach
-A right-click action on a data block (or on selected topics in Topic Modelling) that splits selection into a new derived block. Useful for "I want to analyse just these rows further."
+Available from the data-block **menu icon** (or as an action on selected topics in Topic Modelling). Splits the selection into a new derived block. Useful for "I want to analyse just these rows further."
 
 ### Tokenise
-A right-click action that pre-computes a word-tokenised version of your text column. Required for Tokens-mode Concordance, especially for languages like Chinese / Japanese where there's no space between words. For English you usually don't need this manually.
+Available from the data-block **menu icon**. Pre-computes a word-tokenised version of your text column. Required for Tokens-mode Concordance, especially for languages like Chinese / Japanese where there's no space between words. For English you usually don't need this manually.
 
 ### Stopword
 A common word like "the", "a", "is", that's frequent enough to drown out everything else. Most analyses can hide them with one toggle.
@@ -100,15 +100,15 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 | Run an analysis | a tool in the sidebar + a data block in the graph |
 | Make a new data block | Preprocessing → Filter/Sample/Join/Stack/Find/Create → Add to Workspace |
 | Comparative frequency | select two blocks, then Frequency tool |
-| Jump from a word to its context | left-click the word in Frequency's list/cloud |
-| Make Concordance results a new block | right-click results → Add as data block |
-| Select from a Dispersion plot | click-and-drag in the visual |
+| Jump from a word to its context | click the word in Frequency's list/cloud |
+| Make Concordance results a new block | click **Add to Workspace** on the results panel |
+| Select from a visualisation | click a point, or click + Shift-click for a range |
 | Save a result | camera icon in the tool header |
 | Re-open a saved result | folder icon in the tool header → Load snapshot |
 | Import a workspace archive | Data Loader → Import workspace archive |
 | Export a workspace archive | Data Loader → Export workspace archive |
-| Rename a block | double-click its name in the graph |
-| Delete a block | right-click → Delete (children get deleted too) |
+| Rename a block | block's menu icon → Rename |
+| Delete a block | block's menu icon → Delete (children get deleted too) |
 | Toggle Snapshot Mode | sidebar → pencil icon next to "VIEWS" |
 | Send feedback | Feedback button, bottom of the left sidebar |
 

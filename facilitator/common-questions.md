@@ -30,7 +30,7 @@ Use as a pre-read; keep open during the workshop.
 ## During the snapshot tour (Session 1.5)
 
 ### "I see no data blocks / snapshots."
-- They skipped one of the setup steps. Walk them through Data Loader → Import sample content → all three; then Data Loader → Import demo snapshots → all five.
+- They skipped the setup step. Walk them through **Data Loader → Import sample data**, then select all three in the **Datasets** tab and all five in the **Demo Snapshots** tab, then **Import selected**.
 
 ### "Snapshot Mode is greyed out / I can't find it."
 - The toggle is the **pencil icon next to the "VIEWS" title** in the left sidebar. (Not the top menu.) Click it to switch on or off.
@@ -75,7 +75,7 @@ Use as a pre-read; keep open during the workshop.
 - If it's much longer: the corpus may be too large. Topic Modelling has a built-in sampling step — make sure it's enabled.
 
 ### "I added a block by accident / I have too many branches."
-- *"Doesn't matter — ignore the wrong branches. They don't change anything else. Or right-click → Delete."*
+- *"Doesn't matter — ignore the wrong branches. They don't change anything else. Or open the block's menu icon → Delete."*
 
 ---
 

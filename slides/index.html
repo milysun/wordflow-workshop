@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Wordflow Workshop — 3 hours</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
   :root {
     --ink: #1a1d24;
@@ -515,9 +516,8 @@
   <section class="slide" data-notes="Drive this from your screen. Wait for everyone to catch up before moving to the Frequency tool.">
     <h2>Together — 5 minutes of setup</h2>
     <ol>
-      <li><strong>Data Loader → Import sample content</strong> — import all three datasets.</li>
-      <li><strong>Data Loader → Import demo snapshots</strong> — import all five snapshots.</li>
-      <li><strong>Sidebar → pencil icon next to "VIEWS"</strong> — turn <strong>Snapshot Mode</strong> ON. This unlocks snapshot save/load in each <strong>analysis tool</strong> (Frequency, Concordance, Trends, Topic Modelling, Quotation). A tool only becomes read-only after you load a snapshot into <em>it</em>; other tools keep working.</li>
+      <li><strong>Data Loader → Import sample data</strong>. Modal has two tabs — <strong>Datasets</strong> (select all three) and <strong>Demo Snapshots</strong> (select all five). Click <strong>Import selected</strong>.</li>
+      <li><strong>Sidebar → pencil icon next to "VIEWS"</strong> — turn <strong>Snapshot Mode</strong> ON. This unlocks snapshot save/load in each <strong>analysis tool</strong> (Frequency, Concordance, Trends, Topic Modelling, Quotation). A tool's view goes read-only once you load a snapshot into <em>it</em>; other tools keep working.</li>
       <li><strong>Data Loader → Create workspace</strong> — name it <code>Wordflow</code>. (Wordflow's hint system will highlight the button on first use. You'll keep this same workspace for the whole workshop.)</li>
     </ol>
     <p style="margin-top: 1em; font-style: italic;">Once everyone has these four done, we tour the tools.</p>
@@ -525,14 +525,16 @@
   </section>
 
   <!-- Slide 9: Frequency tool -->
-  <section class="slide" data-notes="Load Freq_Analysis_Newstalk. Two columns: Guardian+IA on left, Sky+PerthNow on right. Frame the grouping as a research assumption, not a claim.">
+  <section class="slide" data-notes="Load Freq_Analysis_Newstalk. Two columns: Guardian+IA on left, Sky+PerthNow on right. Frame the grouping as a research assumption, not a claim. Demo the Cloud↔List toggle, then show right-click on a word adding it to stopwords (the word disappears).">
     <h2>Tool 1 — Frequency</h2>
     <h1>Same corpus, two lenses.</h1>
     <p>Load snapshot → <strong><code>Freq_Analysis_Newstalk</code></strong>.</p>
     <ul>
       <li>Comparative view: <strong>left-leaning</strong> (Guardian + IA) vs <strong>right-leaning</strong> (Sky + PerthNow).</li>
       <li>One corpus (<code>newstalk_stories</code>), filtered and grouped by source.</li>
+      <li>Switch between <strong>Cloud</strong> and <strong>List</strong> views — same data, different visual.</li>
       <li>Spot words that are big on one side, small or absent on the other.</li>
+      <li><strong>Right-click a word</strong> (cloud or list) to add it to stopwords — hides instantly.</li>
     </ul>
   </section>
 
@@ -605,7 +607,7 @@
   <section class="slide section-divider" data-notes="Slow down. This is the centrepiece. Land the research question before showing anything.">
     <h2>Session 2</h2>
     <h1>A real workflow</h1>
-    <p style="margin-top: 1em;">Six tools, one question, 45 minutes.</p>
+    <p style="margin-top: 1em;">Four analysis tools. One question. 45 minutes.</p>
   </section>
 
   <!-- Slide 17: Research question + mode -->
@@ -614,7 +616,7 @@
     <p class="pullquote">Did female and male candidates tweet about different topical issues during the 2020 QLD election?</p>
     <p style="margin-top: 1em;">Some moves I'll ask you to <span class="badge try">TRY THIS</span>. Others <span class="badge watch">WATCH ONLY</span>.</p>
     <p>If you fall behind, <strong><code>bit.ly/wordflows</code> → Releases</strong> has five checkpoint workspace archives (A → E). Load any one to rejoin in 30 seconds.</p>
-    <p style="margin-top: 1.5em;"><strong>First:</strong> turn OFF Snapshot Mode (sidebar — pencil icon next to "VIEWS"). We're building now.</p>
+    <p style="margin-top: 1.5em;"><strong>From here on, we're building — not just looking.</strong> Snapshot Mode can stay on; it only locks a tool's view once you load a snapshot into it.</p>
   </section>
 
   <!-- Slide 18: Phase A -->
@@ -623,10 +625,10 @@
     <h1>Load, prepare, join</h1>
     <ol>
       <li>Import the two source blocks (tweets + candidate gender).</li>
-      <li>Rename the long block (right-click → Rename).</li>
-      <li>Delete unused columns (right-click → Edit columns).</li>
-      <li>Set dtypes — make sure <code>candidate_id</code> matches across both.</li>
-      <li>Join on <code>candidate_id</code> (left join) → <code>tweets_with_gender</code>.</li>
+      <li>Rename the long block via its <strong>menu icon → Rename</strong>.</li>
+      <li>Delete unused columns via the <strong>column menu icon</strong> at the end of each column header.</li>
+      <li>Set dtypes — make sure <code>username</code> matches across both.</li>
+      <li>Join on <code>username</code> (left join) → <code>tweets_with_gender</code>.</li>
       <li>Click the joined block → see the gender column in the Data Viewer.</li>
     </ol>
     <p style="margin-top: 0.6em; font-style: italic; color: var(--muted);">Data prep is part of the analysis. Don't rush.</p>
@@ -640,7 +642,7 @@
     <ol>
       <li>Filter by <code>gender = 'F'</code> and <code>gender = 'M'</code> → <code>tweets_female</code>, <code>tweets_male</code>.</li>
       <li>Select both → <strong>Frequency</strong> tool, comparative mode (40 words, stopwords on).</li>
-      <li><strong>Left-click a topical word</strong> → Concordance opens with that word loaded.</li>
+      <li><strong>Click a topical word</strong> → Concordance opens with that word loaded.</li>
       <li>Read a few contexts. Back to Frequency. Pick another word. <strong>Repeat.</strong></li>
       <li>Patterns to settle on: <code>cases</code>, <code>covid</code>, <code>lnp\w*</code> — two themes (health, energy/policy).</li>
     </ol>
@@ -652,8 +654,8 @@
   <section class="slide" data-notes="C-1 is WATCH (4 min, set up the regex + detach). C-2 is TRY (6 min, Trends with lnpcuts legend isolation — the empirical hook).">
     <h2>Phase C · mixed</h2>
     <h1>Multi-pattern regex → detach → Trends</h1>
-    <p><span class="badge watch">WATCH ONLY</span> <strong>C-1:</strong> Concordance Regex mode, pattern <code>cases|covid|lnp\w*</code>. Coloured matches. Dispersion view. Click-and-drag to select. Add as aggregated block.</p>
-    <p style="margin-top: 0.6em;"><span class="badge try">TRY THIS</span> <strong>C-2:</strong> Trends on the aggregated block. Group by matched-term. <strong>Click <code>lnpcuts</code> in the legend</strong> to isolate. Switch grouping to gender — <strong>F ≈ 20, M ≈ 4</strong>. ~5× skew on a small dataset.</p>
+    <p><span class="badge watch">WATCH ONLY</span> <strong>C-1:</strong> Concordance Regex mode, pattern <code>cases|covid|lnp\w*</code>. Coloured matches. Dispersion view. <strong>Click + Shift-click</strong> to select.</p>
+    <p style="margin-top: 0.6em;"><span class="badge try">TRY THIS</span> <strong>C-2:</strong> Trends on the matched block, grouped by term × gender. Many pro-LNP terms — but one stands out: <code>lnpcuts</code>. Let's take a closer look.</p>
     <p style="margin-top: 1em;"><strong>Checkpoint C:</strong> <code>Checkpoint_C.zip</code></p>
   </section>
 
@@ -679,7 +681,7 @@
       <li>Click stacked block → <strong>Trends</strong>. Group by topic (or gender × topic).</li>
       <li>Final view: selected topics, across the campaign, split by gender.</li>
     </ol>
-    <p class="pullquote" style="margin-top: 1em;">Six tools. One corpus. One made-up hypothesis. One workflow.</p>
+    <p class="pullquote" style="margin-top: 1em;">Four analysis tools. One corpus. One made-up hypothesis. One workflow.</p>
     <p style="margin-top: 0.8em;"><strong>Checkpoint E:</strong> <code>Checkpoint_E.zip</code></p>
   </section>
 
@@ -698,27 +700,27 @@
   </section>
 
   <!-- Slide 25: Demo 1 — Export -->
-  <section class="slide" data-notes="3 min. Use the Frequency word cloud or any Session 1.5 snapshot. Show PNG/SVG and CSV options. The same export works in every tool.">
+  <section class="slide" data-notes="3 min. Use the Frequency word cloud or any Session 1.5 snapshot. The download icon sits on each visualisation/table individually (top-right corner) — image views save PNG, list/table views save CSV. The same pattern works in every analysis tool.">
     <h2>Demo 1 · out of the tool</h2>
     <h1>Export the visualisation</h1>
     <ol>
-      <li>Open any analysed tool (e.g. the Frequency word cloud).</li>
-      <li><strong>Export icon</strong> in the tool header.</li>
-      <li>Save as <strong>PNG / SVG</strong> (image) or <strong>CSV</strong> (the data behind it).</li>
+      <li>Open any analysis tool (e.g. the Frequency word cloud).</li>
+      <li><strong>Download icon</strong> at the top-right corner of each visualisation or table.</li>
+      <li>Image views save <strong>PNG</strong>; list / table views save <strong>CSV</strong>.</li>
     </ol>
-    <p style="margin-top: 1em; font-style: italic;">Same operation in Trends, Topic Modelling, Concordance, Quotation.</p>
+    <p style="margin-top: 1em; font-style: italic;">Same pattern in Trends, Topic Modelling, Concordance, Quotation.</p>
   </section>
 
   <!-- Slide 26: Demo 2 — Filter visualisation → new block -->
-  <section class="slide" data-notes="5 min. Trends legend + click-and-drag selection → add as block. Mention same pattern in Topic Modelling (bubble click → detach) and Concordance (dispersion select).">
+  <section class="slide" data-notes="5 min. Trends legend filtering + click / Shift-click selection on chart points → Add to Workspace. Mention same pattern in Topic Modelling (multi-click bubbles → Detach) and Concordance dispersion (click + Shift-click on points).">
     <h2>Demo 2 · through the tool</h2>
     <h1>Filter the visualisation → new data block</h1>
     <ol>
       <li>In Trends: <strong>click in the legend</strong> to hide / isolate lines.</li>
-      <li><strong>Click-and-drag</strong> on the chart to select a peak or range.</li>
-      <li><strong>Add to workspace</strong> as a new data block.</li>
+      <li><strong>Click</strong> a data point — or <strong>click + Shift-click</strong> for a range.</li>
+      <li>Click <strong>Add to Workspace</strong> — selection becomes a new data block.</li>
     </ol>
-    <p style="margin-top: 1em; font-style: italic;">Same pattern — Topic Modelling: select bubbles → Detach. Concordance: dispersion select → add as block.</p>
+    <p style="margin-top: 1em; font-style: italic;">Same pattern — Topic Modelling: select bubbles → Detach. Concordance: dispersion select → Add to Workspace.</p>
   </section>
 
   <!-- Slide 27: Demo 3 — Create column → Trends as histogram -->
@@ -764,10 +766,10 @@
 
   <!-- Slide 30: Recap -->
   <section class="slide spotlight" data-notes="The wrap-up. Three takeaways. Don't add a fourth.">
-    <h2>Three things to remember</h2>
+    <h2>Three takeaways from Wordflow</h2>
     <ol>
       <li><strong>Workspace + data block + graph</strong> — your project is a tree of derived data.</li>
-      <li><strong>Tools talk to each other</strong> — left-click a word, add as block, detach, group. Stacking is what makes a workflow.</li>
+      <li><strong>Tools talk to each other</strong> — click a word, Add to Workspace, Detach, group. Stacking is what makes a workflow.</li>
       <li><strong>Every tool is a lens</strong> — the analysis is shaped by how you shape the data, not by which tool you clicked.</li>
     </ol>
     <p class="pullquote" style="margin-top: 1.5em;">The text flows. The lens changes.</p>

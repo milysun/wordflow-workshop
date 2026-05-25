@@ -102,7 +102,7 @@ Open Wordflow in a fresh workspace called `session2-master`. Walk the full A→B
 
 - **At end of C** (regex `cases|covid|lnp\w*` → aggregated block added; Trends on it with `lnpcuts` skew verified):
   - File: `Checkpoint_C.zip`
-  - **Verify before saving**: clicking `lnpcuts` in the Trends legend isolates it, and the gender split shows the ~20 (F) vs ~4 (M) skew. That's the empirical hook of Session 2 — if it doesn't reproduce on your laptop, dig in before the workshop.
+  - **Verify before saving**: with Trends grouped by matched-term × gender, hiding the other major pro-LNP and health combinations via the legend leaves only `lnpcuts-M` and `lnpcuts-F`, and the gender split shows the ~20 (F) vs ~4 (M) skew. That's the empirical hook of Session 2 — if it doesn't reproduce on your laptop, dig in before the workshop.
 
 - **At end of D** (Topic Modelling on `tweets_female` + `tweets_male` as two corpora, target = 8 / seed = 42 / re-aggregated to 16; 2-3 topics detached as per-gender children):
   - File: `Checkpoint_D.zip`

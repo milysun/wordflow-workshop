@@ -10,10 +10,12 @@ You've just finished a tour of the Wordflow interface. Now you'll touch each of 
 
 Follow the facilitator's screen.
 
-1. **Data Loader → Import sample content.** Import **all three** sample datasets: **Honi Soit**, **QLD election 2020 tweets**, and the **2025 Federal Election NewsTalk/Reddit** bundle. (You won't use them all today, but they'll be ready later.)
-2. **Data Loader → Import demo snapshots.** Import **all five** snapshots from the catalogue. If the catalogue tab is empty, the facilitator will share a download link — drop the files into your snapshot folder via the same dialog.
-3. **Click the pencil icon next to the "VIEWS" title in the left sidebar** — that's the **Snapshot Mode** toggle. Turn it ON. This enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only (you can hover, click, and switch views, but you can't change parameters). Other tools stay editable as normal.
-4. **Create a new workspace** called `Wordflow`. Click **Create workspace** inside the **Data Loader** tool — Wordflow's hint system will highlight the button on first use. You'll keep using this same workspace through Session 2 and Session 3.
+1. **Data Loader → Import sample data.** A modal opens with two tabs:
+   - **Datasets** — select all three: **Honi Soit**, **QLD election 2020 tweets**, and the **2025 Federal Election NewsTalk/Reddit** bundle.
+   - **Demo Snapshots** — select all five (the Session 1.5 tour snapshots).
+   Click **Import selected** to bring everything in at once. *(You won't use it all today, but it'll be ready later.)*
+2. **Click the pencil icon next to the "VIEWS" title in the left sidebar** — that's the **Snapshot Mode** toggle. Turn it ON. This enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only (you can hover, click, and switch views, but you can't change parameters). Other tools stay editable as normal.
+3. **Create a new workspace** called `Wordflow`. Click **Create workspace** inside the **Data Loader** tool — Wordflow's hint system will highlight the button on first use. You'll keep using this same workspace through Session 2 and Session 3.
 
 Tell your neighbour if anything didn't work. Flag the facilitator if you're stuck.
 
@@ -36,6 +38,7 @@ Bigger words = more frequent in that group's stories. Stopwords already filtered
 - 🔁 Switch from **Cloud** to **List** view to see exact counts.
 - 🔁 Find a word that appears high on one side and is small or absent on the other — that's where the lens is doing real work.
 - 🔁 Hover over or click a word to see its rank on the opposite side.
+- 🔁 **Right-click a word** (cloud or list) — it's added to stopwords and disappears from the display. Handy for hiding tokens you don't care about.
 
 > What you're seeing: comparative frequency, not just frequency. The grouping (left vs right) is a *research assumption* — regroup the same corpus differently and the comparison changes. The data didn't change; the lens did.
 

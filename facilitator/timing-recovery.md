@@ -67,6 +67,6 @@ Rare but possible with a small or technically-confident room.
 ## Universal rules
 
 - **Don't sacrifice Session 3.A** (the repurpose-the-lens demo). That's the workshop's emotional centre. Cut around it.
-- **Don't sacrifice the closing recap** in 3.D. Even one minute of *"three things to remember"* beats none.
+- **Don't sacrifice the closing recap** in 3.D. Even one minute of *"three takeaways"* beats none.
 - **Always end on time.** Participants would rather you end 5 min early than 5 min late.
 - **Pre-baked checkpoints are your friend.** When in doubt, point at the URL on the whiteboard and keep moving.
