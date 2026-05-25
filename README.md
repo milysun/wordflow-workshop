@@ -24,15 +24,15 @@ If they leave with those three, the workshop succeeded.
 
 | Time | Block | Duration | Mode |
 |---|---|---|---|
-| 0:00 – 0:25 | **1.0** Intro + UI tour | 25 min | Presentation; participants sign into Binder in parallel |
-| 0:25 – 0:55 | **1.5** Snapshot tour across 5 tools | 30 min | Facilitator-led demo + each participant loads each snapshot |
-| 0:55 – 1:10 | **Break** | 15 min | |
-| 1:10 – 1:55 | **2** Research story | 45 min | Demo at full speed + selective participant follow-along |
-| 1:55 – 2:10 | **Break** | 15 min | |
-| 2:10 – 2:25 | **3.A** Repurpose-the-lens demo | 15 min | Demo; the "wait, you can do that?" moment |
-| 2:25 – 2:30 | **3.B** Lab framing + feedback ask | 5 min | Brief instructions |
-| 2:30 – 2:55 | **3.C** Free hands-on lab | 25 min | Three tracks; helpers circulating |
-| 2:55 – 3:00 | **3.D** Thanks + close | 5 min | |
+| 1:30 pm – 1:55 pm | **1.0** Intro + UI tour | 25 min | Presentation; participants sign into Binder in parallel |
+| 1:55 pm – 2:25 pm | **1.5** Snapshot tour across 5 tools | 30 min | Facilitator-led demo + each participant loads each snapshot |
+| 2:25 pm – 2:40 pm | **Break** | 15 min | |
+| 2:40 pm – 3:25 pm | **2** Research story | 45 min | Demo at full speed + selective participant follow-along |
+| 3:25 pm – 3:40 pm | **Break** | 15 min | |
+| 3:40 pm – 3:55 pm | **3.A** Repurpose-the-lens demo | 15 min | Demo; the "wait, you can do that?" moment |
+| 3:55 pm – 4:00 pm | **3.B** Lab framing + feedback ask | 5 min | Brief instructions |
+| 4:00 pm – 4:25 pm | **3.C** Free hands-on lab | 25 min | Three tracks; helpers circulating |
+| 4:25 pm – 4:30 pm | **3.D** Thanks + close | 5 min | |
 
 ---
 
@@ -45,7 +45,7 @@ In case you want to adapt later:
 - **Dual recovery mechanism (snapshots + workspace archives).** Session 2 is a linear chain — one stuck participant 15 min in falls off the rest. Pre-baked checkpoint snapshots and portable workspace archives let anyone rejoin at any major stage. Belt + braces.
 - **"Watch" / "try this" markers in Session 2.** The 18+ step chain is too long for full follow-along in 45 min. Hands-on sheets mark each move as **try this** (key learning) or **watch only** (advanced/optional). Mode A facilitators can ignore the markers; less-confident participants use them as an explicit permission to put the keyboard down.
 - **Session 3.A as conceptual payoff.** Repurposing Trends into a histogram is the demo that lands the lens metaphor. It takes 15 min and is the single moment most likely to be quoted afterwards.
-- **Free lab over structured exercise in Session 3.C.** By 2:30 participants are saturated. A loose lab with helpers wins over another guided exercise — they consolidate by exploring at their own pace.
+- **Free lab over structured exercise in Session 3.C.** By 4:00 pm participants are saturated. A loose lab with helpers wins over another guided exercise — they consolidate by exploring at their own pace.
 
 ---
 

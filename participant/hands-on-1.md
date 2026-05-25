@@ -1,6 +1,6 @@
 # Session 1.5 — Snapshot tour
 
-**Time: 30 minutes** *(0:25 – 0:55 in the schedule)*
+**Time: 30 minutes** *(1:55 pm – 2:25 pm in the schedule)*
 
 You've just finished a tour of the Wordflow interface. Now you'll touch each of the five analytic tools — without setting any of them up. You're loading **pre-baked snapshots** to see what each tool produces, so when we build something together in Session 2 you'll know what you're aiming at.
 
@@ -19,7 +19,7 @@ Tell your neighbour if anything didn't work. Flag the facilitator if you're stuc
 
 ---
 
-## Tool 1 — Frequency *(0:30 – 0:35)*
+## Tool 1 — Frequency *(2:00 pm – 2:05 pm)*
 
 1. **Frequency** tool in the left sidebar.
 2. Click the **folder icon (Load snapshot)** in the tool header.
@@ -41,7 +41,7 @@ Bigger words = more frequent in that group's stories. Stopwords already filtered
 
 ---
 
-## Tool 2 — Concordance *(0:35 – 0:40)*
+## Tool 2 — Concordance *(2:05 pm – 2:10 pm)*
 
 1. **Concordance** tool in the left sidebar.
 2. **Load snapshot** → **`SCL_Honi_Soit`**.
@@ -63,7 +63,7 @@ Each pattern gets its own colour, both in the row table and in the dispersion pl
 
 ---
 
-## Tool 3 — Trends *(0:40 – 0:45)*
+## Tool 3 — Trends *(2:10 pm – 2:15 pm)*
 
 1. **Trends** tool in the left sidebar.
 2. **Load snapshot** → **`QLD_Election_Tweets_conc`**.
@@ -82,7 +82,7 @@ Each pattern gets its own colour, both in the row table and in the dispersion pl
 
 ---
 
-## Tool 4 — Topic Modelling *(0:45 – 0:50)*
+## Tool 4 — Topic Modelling *(2:15 pm – 2:20 pm)*
 
 1. **Topic Modelling** tool in the left sidebar.
 2. **Load snapshot** → **`newstalk_left_vs_right`**.
@@ -100,7 +100,7 @@ The corpora are **balanced**: 120 right-leaning articles (sampled from a larger 
 
 ---
 
-## Tool 5 — Quotation *(0:50 – 0:55)*
+## Tool 5 — Quotation *(2:20 pm – 2:25 pm)*
 
 1. **Quotation** tool in the left sidebar.
 2. **Load snapshot** → **`SCL_Honi_Soit`** (the one in the Quotation tool's snapshot list — Wordflow scopes snapshots per tool).
@@ -126,4 +126,4 @@ But there's one thing the snapshot tour didn't show: **outside of Snapshot Mode,
 
 When we come back, you'll watch — and partly follow — a workflow that does exactly this: **four of these tools chained into one research story**, with all the joins, filters, and slices that connect them.
 
-Break at **0:55 to 1:10**. See you back here.
+Break at **2:25 pm to 2:40 pm**. See you back here.

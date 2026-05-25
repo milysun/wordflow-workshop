@@ -1,6 +1,6 @@
 # Session 2 — Research story (45 min)
 
-**Time: 1:10 – 1:55**
+**Time: 2:40 pm – 3:25 pm**
 
 This is the heart of the workshop. The facilitator will walk a real multi-tool workflow, end to end, answering a research question. Some moves you **try yourself** (✋ TRY THIS), others you **watch on the projector** (👀 WATCH ONLY). The markers below tell you which is which.
 
@@ -145,4 +145,4 @@ Look at the graph view. **Read it back to front, aloud or silently:**
 
 That sentence is your method section. Wordflow wrote most of it for you.
 
-Break at **1:55 to 2:10**.
+Break at **3:25 pm to 3:40 pm**.

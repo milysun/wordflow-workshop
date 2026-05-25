@@ -2,11 +2,11 @@
 
 What to cut if you fall behind. Use the runbook timestamps to spot drift early.
 
-The single biggest risk is Session 2 running over. Watch the clock at 1:35 (should be ending C-1) and at 1:45 (should be ending D). Beyond that, your odds of finishing E on time are low.
+The single biggest risk is Session 2 running over. Watch the clock at 3:05 pm (should be ending C-1) and at 3:15 pm (should be ending D). Beyond that, your odds of finishing E on time are low.
 
 ---
 
-## If you're 5 minutes behind by 0:55 (end of Session 1.5)
+## If you're 5 minutes behind by 2:25 pm (end of Session 1.5)
 
 You spent too long on a snapshot. Recover at the break — push back the Session 2 start by 5 min if needed, but compress Session 2's phase E.
 
@@ -14,7 +14,7 @@ If you're 5 min behind because Session 1.0 ran long: cut deployment options enti
 
 ---
 
-## If you're 10+ minutes behind by 1:25 (mid-Session 2 phase A)
+## If you're 10+ minutes behind by 2:55 pm (mid-Session 2 phase A)
 
 Setup is taking too long because participants are stuck on something earlier. Don't try to recover with speed — **stop demoing and announce the recovery checkpoints**:
 
@@ -24,7 +24,7 @@ Continue without waiting. The lost participants will catch up via checkpoints.
 
 ---
 
-## If you're 5+ minutes behind by 1:40 (end of Session 2 phase C)
+## If you're 5+ minutes behind by 3:10 pm (end of Session 2 phase C)
 
 You won't finish D + E cleanly. Choices in order of preference:
 
@@ -43,14 +43,14 @@ Do NOT cut 3.A. Repurposing Trends as a histogram is the most quotable moment of
 
 ---
 
-## If you're 10+ minutes behind by 2:45
+## If you're 10+ minutes behind by 4:15 pm
 
 You're not finishing on time. Options:
 
-1. **Cut the free lab early.** At 2:50 announce: *"Five minutes left — start saving snapshots. Bring questions to my email."*
+1. **Cut the free lab early.** At 4:20 pm announce: *"Five minutes left — start saving snapshots. Bring questions to my email."*
 2. **Skip Session 3.D's full closing.** A one-minute *"thanks, email tonight, please send feedback"* is enough.
 
-End at 3:00 sharp regardless. Going over is worse than cutting content.
+End at 4:30 pm sharp regardless. Going over is worse than cutting content.
 
 ---
 
@@ -60,7 +60,7 @@ Rare but possible with a small or technically-confident room.
 
 - In Session 1.5, give a sixth "tool" — show the Comparative Frequency mode using the Juxtorpus on Honi Soit by year. Visual, conceptually rich.
 - In Session 2, slow down phase B and have everyone follow C-2 too (regex+dispersion).
-- In Session 3.C, do a stand-and-share at 2:50: 2-3 participants briefly demo what they built. Memorable for the room.
+- In Session 3.C, do a stand-and-share at 4:20 pm: 2-3 participants briefly demo what they built. Memorable for the room.
 
 ---
 

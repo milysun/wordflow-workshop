@@ -1,6 +1,6 @@
 # Session 3 — Repurpose the lens + Free lab (50 min)
 
-**Time: 2:10 – 3:00**
+**Time: 3:40 pm – 4:30 pm**
 
 Two halves: a short conceptual demo (3.A), then a free lab (3.C) where you pick what to try.
 
@@ -105,7 +105,7 @@ Some quick prompts:
 
 ---
 
-## Wrap-up (2:55 – 3:00)
+## Wrap-up (4:25 pm – 4:30 pm)
 
 The facilitator will close. Three things to take home:
 

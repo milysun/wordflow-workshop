@@ -38,15 +38,15 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 
 | Time | What we're doing |
 |---|---|
-| 0:00 – 0:25 | **Session 1.0** — intro + interface tour |
-| 0:25 – 0:55 | **Session 1.5** — snapshot tour across five tools |
-| 0:55 – 1:10 | Break |
-| 1:10 – 1:55 | **Session 2** — a real research workflow |
-| 1:55 – 2:10 | Break |
-| 2:10 – 2:25 | **Session 3.A** — the lens-repurpose demo |
-| 2:25 – 2:30 | Lab framing |
-| 2:30 – 2:55 | **Session 3.C** — free hands-on lab |
-| 2:55 – 3:00 | Wrap-up |
+| 1:30 pm – 1:55 pm | **Session 1.0** — intro + interface tour |
+| 1:55 pm – 2:25 pm | **Session 1.5** — snapshot tour across five tools |
+| 2:25 pm – 2:40 pm | Break |
+| 2:40 pm – 3:25 pm | **Session 2** — a real research workflow |
+| 3:25 pm – 3:40 pm | Break |
+| 3:40 pm – 3:55 pm | **Session 3.A** — the lens-repurpose demo |
+| 3:55 pm – 4:00 pm | Lab framing |
+| 4:00 pm – 4:25 pm | **Session 3.C** — free hands-on lab |
+| 4:25 pm – 4:30 pm | Wrap-up |
 
 ---
 

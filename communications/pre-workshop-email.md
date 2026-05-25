@@ -39,14 +39,14 @@ If your data doesn't fit those constraints, no problem — there are great sampl
 
 ## What we'll cover
 
-- **0:00 – 0:25** — intro to the project, team, and the Wordflow interface.
-- **0:25 – 0:55** — snapshot tour: touch all five analytic tools in 30 minutes.
-- **0:55 – 1:10** — break.
-- **1:10 – 1:55** — a real research workflow on QLD election tweets, end to end.
-- **1:55 – 2:10** — break.
-- **2:10 – 2:25** — the lens-repurpose demo (the most quotable 15 minutes).
-- **2:25 – 2:55** — free hands-on lab with three tracks: continue Session 2 / your own data / open exploration.
-- **2:55 – 3:00** — wrap-up.
+- **1:30 pm – 1:55 pm** — intro to the project, team, and the Wordflow interface.
+- **1:55 pm – 2:25 pm** — snapshot tour: touch all five analytic tools in 30 minutes.
+- **2:25 pm – 2:40 pm** — break.
+- **2:40 pm – 3:25 pm** — a real research workflow on QLD election tweets, end to end.
+- **3:25 pm – 3:40 pm** — break.
+- **3:40 pm – 3:55 pm** — the lens-repurpose demo (the most quotable 15 minutes).
+- **3:55 pm – 4:25 pm** — free hands-on lab with three tracks: continue Session 2 / your own data / open exploration.
+- **4:25 pm – 4:30 pm** — wrap-up.
 
 **A note on Session 2:** it's a guided demo with selective follow-along. You don't have to follow every click. We'll provide pre-built checkpoint files (snapshots and workspace archives) so anyone who falls behind can rejoin in 30 seconds.
 

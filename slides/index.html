@@ -405,7 +405,7 @@
     <ul>
       <li><strong>Open <code style="font-size: 1.1em; background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">bit.ly/wordflows</code></strong> on your laptop now — click "Launch in Binder" to spin up Wordflow in your browser. Takes about a couple of minutes.</li>
       <li><strong>If Binder isn't loading after 5 minutes</strong> — same URL has a desktop install link as a backup.</li>
-      <li><strong>Two breaks</strong> — 0:55 and 1:55. Bathrooms are around the corner on the other end pass the lifts.</li>
+      <li><strong>Two breaks</strong> — 2:25 pm and 3:25 pm, 15 minutes each. Bathrooms are around the corner on the other end past the lifts.</li>
       <li><strong>Ask anything, any time.</strong> Three other people are probably wondering the same thing.</li>
       <li><strong>Handouts on your seat</strong> — welcome card and cheat sheet.</li>
       <li><strong>Evacuation</strong> — In case of fire, follow the nearest exit signs and the fire stair case locates next to the bathrooms.</li>
@@ -595,10 +595,10 @@
   </section>
 
   <!-- Slide 15: Break -->
-  <section class="slide" data-notes="15 min. Be back at 1:10 sharp. Use the break to check timing — are you ahead or behind?">
+  <section class="slide break-slide" data-notes="15 min. Be back at 2:40 pm sharp (for the 1:30–4:30 pm workshop slot). Use the break to check timing — are you ahead or behind?">
     <h2>Break</h2>
     <h1>15 minutes</h1>
-    <p style="margin-top: 1em;">Back at <strong>1:10</strong>. When we return, we'll <em>build</em> a workflow like the ones you just saw — but step by step, from raw tweets to a finding.</p>
+    <p style="margin-top: 1em;">Back at <strong class="break-back-time">2:40 pm</strong>. When we return, we'll <em>build</em> a workflow like the ones you just saw — but step by step, from raw tweets to a finding.</p>
   </section>
 
   <!-- Slide 16: Section divider — Session 2 -->
@@ -684,10 +684,10 @@
   </section>
 
   <!-- Slide 23: Break -->
-  <section class="slide" data-notes="15 min break. Time check — if behind by 5+ min, cut Session 3.B framing to 2 min instead of 5.">
+  <section class="slide break-slide" data-notes="15 min break. Be back at 3:40 pm sharp. Time check — if behind by 5+ min, cut Session 3.B framing to 2 min instead of 5.">
     <h2>Break</h2>
     <h1>15 minutes</h1>
-    <p style="margin-top: 1em;">Back at <strong>2:10</strong>. The next demo is the most quotable 15 minutes of today.</p>
+    <p style="margin-top: 1em;">Back at <strong class="break-back-time">3:40 pm</strong>. The next demo is the most quotable 15 minutes of today.</p>
   </section>
 
   <!-- Slide 24: Section divider — Session 3 -->
@@ -826,6 +826,18 @@
   let idx = 0;
   let notesOn = false;
 
+  function formatTimePlus15() {
+    // Returns "H:MM am/pm" for the current time + 15 minutes.
+    // Used on .break-slide slides so 'Back at HH:MM' updates the moment the slide is shown.
+    const t = new Date(Date.now() + 15 * 60 * 1000);
+    let h = t.getHours();
+    const m = t.getMinutes().toString().padStart(2, '0');
+    const ampm = h >= 12 ? 'pm' : 'am';
+    h = h % 12;
+    if (h === 0) h = 12;
+    return `${h}:${m} ${ampm}`;
+  }
+
   function render() {
     slides.forEach((s, i) => s.classList.toggle('active', i === idx));
     counter.textContent = `${idx + 1} / ${slides.length}`;
@@ -834,6 +846,12 @@
       ? `<h4>Speaker notes — slide ${idx + 1}</h4><p>${notes}</p>`
       : `<h4>Slide ${idx + 1}</h4><p style="opacity:0.6">(no notes)</p>`;
     notesEl.classList.toggle('show', notesOn);
+    // Recompute break "Back at" times each time we land on a break slide.
+    const backTimeEls = slides[idx].querySelectorAll('.break-back-time');
+    if (backTimeEls.length) {
+      const stamp = formatTimePlus15();
+      backTimeEls.forEach(el => { el.textContent = stamp; });
+    }
   }
 
   document.addEventListener('keydown', (e) => {

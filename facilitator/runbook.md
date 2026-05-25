@@ -19,7 +19,7 @@ Minute-by-minute script. **Italics = your spoken framing**, plain text = facilit
 
 ## Plan B — if Binder is down or overloaded
 
-**Trigger:** at the 0:23 sync check (or earlier if it's obvious from the room), fewer than ~70% of attendees have Wordflow loaded, AND it's not just stragglers — Binder is unreachable, painfully slow, or refusing connections.
+**Trigger:** at the 1:53 pm sync check (or earlier if it's obvious from the room), fewer than ~70% of attendees have Wordflow loaded, AND it's not just stragglers — Binder is unreachable, painfully slow, or refusing connections.
 
 **The move:**
 - Tell the room: *"Binder isn't cooperating today. Anyone who hasn't gotten in: go to bit.ly/wordflows and click the desktop download link instead. Install takes about 5 minutes — we'll wait."*
@@ -27,7 +27,7 @@ Minute-by-minute script. **Italics = your spoken framing**, plain text = facilit
 - Anyone installing: tell them to keep going, you'll loop them in at the next sync check.
 
 **Time recovery** (installing eats 5–8 minutes — see `timing-recovery.md` for the full list of cuts):
-- Shorten the project+team narration at 0:05–0:12 from 7 min to ~3 min — say *"developed by Sydney Informatics Hub and Sydney Corpus Lab, part of LDaCA, funded by ARDC"* and move on. Save the full attribution for the post-workshop email.
+- Shorten the project+team narration at 1:35 pm–1:42 pm from 7 min to ~3 min — say *"developed by Sydney Informatics Hub and Sydney Corpus Lab, part of LDaCA, funded by ARDC"* and move on. Save the full attribution for the post-workshop email.
 - The Quotation tool in Session 1.5 is the easiest cut (it's last and English-only).
 - If still over, ask for one volunteer's screen and have everyone watch the Session 2 demo rather than follow along — the checkpoint files cover the catch-up.
 
@@ -35,9 +35,9 @@ Minute-by-minute script. **Italics = your spoken framing**, plain text = facilit
 
 ---
 
-## Session 1.0 — Intro + UI tour (0:00 – 0:25, 25 min)
+## Session 1.0 — Intro + UI tour (1:30 pm – 1:55 pm, 25 min)
 
-### 0:00 – 0:01 — Welcome + Acknowledgement of Country
+### 1:30 pm – 1:31 pm — Welcome + Acknowledgement of Country
 
 Slides 1 → 2. Stand. Speak slowly and sincerely; this isn't boilerplate. About 30–45 seconds total.
 
@@ -49,7 +49,7 @@ Slides 1 → 2. Stand. Speak slowly and sincerely; this isn't boilerplate. About
 
 > Wait a beat. Don't rush to the next slide.
 
-### 0:01 – 0:05 — Sign-in-while-I-talk + housekeeping
+### 1:31 pm – 1:35 pm — Sign-in-while-I-talk + housekeeping
 
 Slide 3 (Housekeeping).
 
@@ -59,7 +59,7 @@ Slide 3 (Housekeeping).
 
 > Why parallelise: Binder cold-start takes 1–2 minutes the first time. Don't waste classroom minutes watching it spin.
 
-### 0:05 – 0:12 — Project + team + deployment options
+### 1:35 pm – 1:42 pm — Project + team + deployment options
 
 Slide 4 (team), then slide 5 (deployment options).
 
@@ -74,7 +74,7 @@ Slide 4 (team), then slide 5 (deployment options).
 
 *Today we use the cloud version because it gets everyone running in about a minute. Take the desktop app home for serious work — link is in the post-workshop email."*
 
-### 0:12 – 0:23 — UI tour (live walkthrough on your screen)
+### 1:42 pm – 1:53 pm — UI tour (live walkthrough on your screen)
 
 Slide 6 has the annotated UI map; switch to your Wordflow window for the live tour and point at the matching regions on screen.
 
@@ -92,7 +92,7 @@ Walk in this order, pointing at the projection:
 
 > Why land the feedback button NOW (before the snapshot tour): every minute they're using the app, they should know there's a low-friction way to report friction. Don't let them save it up for after the workshop.
 
-### 0:23 – 0:25 — Sync check
+### 1:53 pm – 1:55 pm — Sync check
 
 *"Quick check — show of hands, who has Wordflow loaded?"* (Either Binder finished spinning up, or the desktop app is open if they installed it beforehand.)
 
@@ -101,11 +101,11 @@ Walk in this order, pointing at the projection:
 
 ---
 
-## Session 1.5 — Snapshot tour (0:25 – 0:55, 30 min)
+## Session 1.5 — Snapshot tour (1:55 pm – 2:25 pm, 30 min)
 
 The goal: every participant touches each of the five analytic tools' visualisations. They are **not** building anything yet — they're seeing what the destination looks like, so Session 2 feels like working towards something real.
 
-### 0:25 – 0:30 — Group setup (5 min)
+### 1:55 pm – 2:00 pm — Group setup (5 min)
 
 Drive this from your screen and have everyone follow.
 
@@ -116,11 +116,11 @@ Drive this from your screen and have everyone follow.
 
 > If anyone is still stuck on import: keep moving. The snapshots are loaded by tool, not by workspace — they'll catch up at the next tool transition.
 
-### 0:30 – 0:55 — Five tools, five minutes each (25 min)
+### 2:00 pm – 2:25 pm — Five tools, five minutes each (25 min)
 
 For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min, (c) participants explore ~2 min, (d) 30s pivot to next tool.** Stick to the budget — if a tool fascinates someone, they'll come back in the free lab.
 
-#### Tool 1 — Frequency (0:30 – 0:35)
+#### Tool 1 — Frequency (2:00 pm – 2:05 pm)
 
 - *"Click Frequency in the sidebar. Click 'Load snapshot' (folder icon). Pick `Freq_Analysis_Newstalk`."*
 - Narrate the comparative view: *"What you're looking at is a comparative frequency — two columns, one corpus. The corpus is a set of Australian news stories. I've filtered by source and grouped them: on the left, two left-leaning outlets — Guardian Australia and Independent Australia. On the right, two right-leaning outlets — Sky News Australia and PerthNow. Bigger word = more frequent in that group's stories. Switch to List view if you want exact counts."*
@@ -128,7 +128,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 
 > Frame the grouping as a *research assumption*, not a claim. If anyone challenges it: *"Yes — change the grouping and the comparison changes. That's the point. Wordflow makes the regrouping cheap."*
 
-#### Tool 2 — Concordance (0:35 – 0:40)
+#### Tool 2 — Concordance (2:05 pm – 2:10 pm)
 
 - *"Concordance in the sidebar. Load snapshot — `SCL_Honi_Soit`."*
 - Narrate the regex search: *"This one's a regex search — three patterns in one query. `student\w*` (anything beginning with 'student'), `staff` exactly, and `universit\w+` (university, universities, etc.). Each pattern gets its own colour."*
@@ -137,7 +137,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 
 > Combined view is intentionally OFF on this snapshot — two views (table + dispersion) at a time, not four. Less to parse.
 
-#### Tool 3 — Trends (0:40 – 0:45)
+#### Tool 3 — Trends (2:10 pm – 2:15 pm)
 
 - *"Trends in the sidebar. Load snapshot — `QLD_Election_Tweets_conc`."*
 - Narrate: *"This Trends view is built on a Concordance result — three patterns searched across QLD candidate tweets: `job\w*`, `lnp\w*`, and `economic`. Each match is one row underneath; here we're plotting them over time, at hourly resolution."*
@@ -148,7 +148,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 
 > Heads-up on data: this is a *different* corpus from Tool 1's newstalk media articles. Tool 1 was the **2025 QLD election** as covered by news outlets; this Trends view is **2020 QLD election** tweets posted by candidates themselves. Same broad context, different year, different source. Don't conflate them in narration if a participant asks.
 
-#### Tool 4 — Topic Modelling (0:45 – 0:50)
+#### Tool 4 — Topic Modelling (2:15 pm – 2:20 pm)
 
 - *"Topic Modelling in the sidebar. Load snapshot — `newstalk_left_vs_right`."*
 - Narrate: *"Same corpus as Tool 1 — left-leaning vs right-leaning Australian news outlets. But this time, we're not comparing word frequencies; we're asking BERTopic to discover thematic clusters automatically. Eight topics. Bubble size = how many articles fit; bubble position reflects how thematically related topics are to each other."*
@@ -159,7 +159,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 
 > If someone asks about corpus sizes: the right-leaning corpus has 301 articles, the left-leaning 121. I downsampled the right to 40% (120) so topic discovery isn't biased by the larger corpus. The model used `min_topic_size=7` and `seed=46` — tuned for visual interest, not statistical defensibility.
 
-#### Tool 5 — Quotation (0:50 – 0:55)
+#### Tool 5 — Quotation (2:20 pm – 2:25 pm)
 
 - *"Quotation in the sidebar. Load snapshot — `SCL_Honi_Soit`."*
 - Narrate: *"Quoted speech extracted automatically with the speaker. From 100 Honi Soit articles, the tool pulled around 870 quotations across 95 documents — student newspapers are quote-rich. Each row is one extracted quote with its speaker; click for the surrounding context."*
@@ -169,7 +169,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 
 > Why Quotation last: it's English-only and the narrowest. If you're running over by 5 min already, you can cut it without losing the lesson.
 
-### 0:55 — Recap + hand-off to break
+### 2:25 pm — Recap + hand-off to break
 
 Advance to **Slide 14** (the red "Before the break" slide). Land this bridge clearly — it's the conceptual hinge between the snapshot tour and Session 2. ~45–60 seconds spoken.
 
@@ -185,11 +185,11 @@ Advance to **Slide 14** (the red "Before the break" slide). Land this bridge cle
 
 ---
 
-## Break 1 (0:55 – 1:10, 15 min)
+## Break 1 (2:25 pm – 2:40 pm, 15 min)
 
 ---
 
-## Session 2 — Research story (1:10 – 1:55, 45 min)
+## Session 2 — Research story (2:40 pm – 3:25 pm, 45 min)
 
 **The story:** *"Are there gender-based differences in how QLD election candidates tweeted about topical issues during the 2020 campaign?"*
 
@@ -197,7 +197,7 @@ Advance to **Slide 14** (the red "Before the break" slide). Land this bridge cle
 
 **Recovery:** Five checkpoint workspace archives (A → E), one per phase. At each, mention the corresponding file on **bit.ly/wordflows → Releases**. Anyone who's lost loads it and rejoins. Don't lose more than 60 seconds shepherding stragglers — the archives are the safety net.
 
-### 1:10 – 1:15 — Frame the research question + disable snapshot mode
+### 2:40 pm – 2:45 pm — Frame the research question + disable snapshot mode
 
 Slide 17.
 
@@ -207,7 +207,7 @@ Slide 17.
 
 *First — turn OFF Snapshot Mode. The toggle is the pencil icon next to 'VIEWS' in the sidebar — same place you turned it on. We're building, not just looking."*
 
-### 1:15 – 1:22 — A: Load, prepare, join (7 min, WATCH)
+### 2:45 pm – 2:52 pm — A: Load, prepare, join (7 min, WATCH)
 
 There's more to a "load" step than just clicking import. Walk through the typical first-time-user prep moves calmly — narrate each so the room doesn't panic about catching up.
 
@@ -223,7 +223,7 @@ There's more to a "load" step than just clicking import. Walk through the typica
 
 > **Checkpoint A** — workspace archive: `Checkpoint_A.zip`. Mention it explicitly: *"Anyone behind, download checkpoint A from bit.ly/wordflows → Releases."*
 
-### 1:22 – 1:31 — B: Filter by gender + iterative Freq ↔ Concordance (9 min, TRY THIS)
+### 2:52 pm – 3:01 pm — B: Filter by gender + iterative Freq ↔ Concordance (9 min, TRY THIS)
 
 This is where participants pick up the keyboard.
 
@@ -239,7 +239,7 @@ This is where participants pick up the keyboard.
 
 > **Checkpoint B** — workspace archive: `Checkpoint_B.zip`.
 
-### 1:31 – 1:41 — C: Multi-pattern regex → detach → Trends (10 min, MIXED)
+### 3:01 pm – 3:11 pm — C: Multi-pattern regex → detach → Trends (10 min, MIXED)
 
 #### C-1 — Set the regex, dispersion view, detach as block (WATCH, ~4 min)
 
@@ -262,7 +262,7 @@ This is where participants pick up the keyboard.
 
 > **Checkpoint C** — workspace archive: `Checkpoint_C.zip`.
 
-### 1:41 – 1:50 — D: Topic modelling on two corpora (9 min, WATCH)
+### 3:11 pm – 3:20 pm — D: Topic modelling on two corpora (9 min, WATCH)
 
 Topic Modelling accepts **two data blocks** as input and produces a fused bubble chart — bubble colours blend in topics that draw documents from both corpora, stay solid in topics dominated by one.
 
@@ -277,7 +277,7 @@ Topic Modelling accepts **two data blocks** as input and produces a fused bubble
 
 > **Checkpoint D** — workspace archive: `Checkpoint_D.zip`.
 
-### 1:50 – 1:55 — E: Stack → final Trends (5 min, WATCH)
+### 3:20 pm – 3:25 pm — E: Stack → final Trends (5 min, WATCH)
 
 The closing move. Stack the per-gender topic blocks back together so the final Trends view can compare topics across genders.
 
@@ -291,17 +291,17 @@ The closing move. Stack the per-gender topic blocks back together so the final T
 
 ---
 
-## Break 2 (1:55 – 2:10, 15 min)
+## Break 2 (3:25 pm – 3:40 pm, 15 min)
 
 ---
 
-## Session 3.A — Repurpose the lens (2:10 – 2:25, 15 min)
+## Session 3.A — Repurpose the lens (3:40 pm – 3:55 pm, 15 min)
 
 The conceptual payoff. Three short demos showing **you shape the analysis at every step — in, through, and out.** Slow down for Demo 3, that's the one they'll remember.
 
 > No fresh workspace needed — keep using the workshop's `Wordflow` workspace (or wherever you ended Session 2). The snapshots and blocks already there are exactly what the demos use.
 
-### 2:10 – 2:13 — Demo 1: Export the visualisation (3 min)
+### 3:40 pm – 3:43 pm — Demo 1: Export the visualisation (3 min)
 
 *"First, a small but useful thing. Everything you analyse can come back out — as an image or as data."*
 
@@ -311,7 +311,7 @@ The conceptual payoff. Three short demos showing **you shape the analysis at eve
 
 > The lesson: *your analysis is not trapped in the tool*. Don't dwell.
 
-### 2:13 – 2:18 — Demo 2: Filter the visualisation → add as a new data block (5 min)
+### 3:43 pm – 3:48 pm — Demo 2: Filter the visualisation → add as a new data block (5 min)
 
 *"Visualisations aren't just for looking. You can pick parts of them and turn that selection into new analysable data."*
 
@@ -323,7 +323,7 @@ The conceptual payoff. Three short demos showing **you shape the analysis at eve
    - Concordance: **dispersion view** — click-and-drag to select tweets in a percentage range → add as block. *(We saw this too.)*
 5. *"In every visual tool: see something interesting, select it, make it new data. That's reading and analysing in one move."*
 
-### 2:18 – 2:23 — Demo 3: Create a column → Trends becomes a histogram (5 min)
+### 3:48 pm – 3:53 pm — Demo 3: Create a column → Trends becomes a histogram (5 min)
 
 *"Now the big one. Trends is the time-series tool, right? Line chart over dates. But the x-axis doesn't have to be time."*
 
@@ -334,7 +334,7 @@ The conceptual payoff. Three short demos showing **you shape the analysis at eve
 5. **Switch chart type from line to bar.** *"Now Trends is showing a histogram — article count per word-length bucket."*
 6. (Optional) Add a grouping by year or section if available. *"Histogram of article length, split by something else. Same chart, different question."*
 
-### 2:23 – 2:25 — Land it + click feedback (2 min)
+### 3:53 pm – 3:55 pm — Land it + click feedback (2 min)
 
 Advance to the landing slide. Speak slowly:
 
@@ -352,7 +352,7 @@ Then — **click the Feedback button on screen** to open the form. Don't fill it
 
 ---
 
-## Session 3.B — Lab framing + feedback ask (2:25 – 2:30, 5 min)
+## Session 3.B — Lab framing + feedback ask (3:55 pm – 4:00 pm, 5 min)
 
 *"Next 25 minutes: free lab. Three tracks — pick whichever fits.*
 
@@ -366,15 +366,15 @@ Slide reminder: feedback URL also accessible directly at the URL on the board.
 
 ---
 
-## Session 3.C — Free hands-on (2:30 – 2:55, 25 min)
+## Session 3.C — Free hands-on (4:00 pm – 4:25 pm, 25 min)
 
 You and any helpers walk the room. Common questions in `common-questions.md`. Prompts for the three tracks in `hands-on-3.md` for participants.
 
-Time check at 2:50 — start corralling everyone back to their seats with *"five minutes — finish your current click."*
+Time check at 4:20 pm — start corralling everyone back to their seats with *"five minutes — finish your current click."*
 
 ---
 
-## Session 3.D — Thanks + close (2:55 – 3:00, 5 min)
+## Session 3.D — Thanks + close (4:25 pm – 4:30 pm, 5 min)
 
 Two slides: **Slide 31 (Thank you)** for the three asks, then **Slide 32 (Data acknowledgements)** as the final reference slide that stays up while people gather their things.
 
