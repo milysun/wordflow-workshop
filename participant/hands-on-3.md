@@ -20,7 +20,7 @@ The facilitator will open a Session 1.5 visualisation (e.g. the Frequency word c
 
 Visualisations aren't just for looking. You can pick parts of them and turn that selection into new analysable data. The facilitator will:
 
-1. Open a Trends snapshot. **Click in the legend** to hide or isolate individual lines (e.g. focus on `lnpcuts` only).
+1. Open a Trends snapshot. **Click in the legend** to hide or isolate individual lines (e.g. focus on the `cut(s)` lines only).
 2. **Click** a data point — or **click + Shift-click** to select a range (e.g. a campaign peak or a date window). **Add the selection to the workspace** as a new data block.
 3. Quickly mention the same pattern in two other tools:
    - **Topic Modelling**: click bubbles to select topics → Detach → new blocks. (Same move you saw in Session 2.)

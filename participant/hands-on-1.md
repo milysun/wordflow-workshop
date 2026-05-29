@@ -71,11 +71,11 @@ Each pattern gets its own colour, both in the row table and in the dispersion pl
 1. **Trends** tool in the left sidebar.
 2. **Load snapshot** → **`QLD_Election_Tweets_conc`**.
 
-**Look at:** when three election-time concepts surface across QLD candidate tweets — **`job\w*`**, **`lnp\w*`**, and **`economic`** — at hourly resolution. This Trends view is built on top of a Concordance search result, so each spike is a real tweet matching one of those patterns.
+**Look at:** when three election-time concepts surface across QLD candidate tweets — **`jobs`**, **`cases`**, and **`economic`** — at hourly resolution. This Trends view is built on top of a Concordance search result, so each spike is a real tweet matching one of those patterns.
 
 **Try this:**
 - 🔁 Switch the **grouping** control between:
-  - **Matched term** — one line per pattern (`job` / `lnp` / `economic`).
+  - **Matched term** — one line per pattern (`jobs` / `cases` / `economic`).
   - **Gender** — one line per candidate gender.
   - **Party** — one line per political party.
 - 🔁 Coarsen the **time bin** from hour → day → week. The lines reshape on the fly — no rerun needed.

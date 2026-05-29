@@ -556,7 +556,7 @@
     <h1>One result, three stories.</h1>
     <p>Load snapshot → <strong><code>QLD_Election_Tweets_conc</code></strong>.</p>
     <ul>
-      <li>Concordance result over time: <code>job\w*</code> · <code>lnp\w*</code> · <code>economic</code>.</li>
+      <li>Concordance result over time: <code>jobs</code> · <code>cases</code> · <code>economic</code>.</li>
       <li>Switch <strong>grouping</strong> live: matched term · gender · party.</li>
       <li>Coarsen the time bin (hour → day → week) — no rerun.</li>
     </ul>
@@ -644,18 +644,18 @@
       <li>Select both → <strong>Frequency</strong> tool, comparative mode (40 words, stopwords on).</li>
       <li><strong>Click a topical word</strong> → Concordance opens with that word loaded.</li>
       <li>Read a few contexts. Back to Frequency. Pick another word. <strong>Repeat.</strong></li>
-      <li>Patterns to settle on: <code>cases</code>, <code>covid</code>, <code>lnp\w*</code> — two themes (health, energy/policy).</li>
+      <li>Patterns to settle on: <code>covid</code>, <code>case(s)?</code>, <code>cut(s)?</code> — two themes (COVID, spending cuts).</li>
     </ol>
     <p class="pullquote" style="margin-top: 1em;">The regex in C didn't fall from the sky. It came from this iteration.</p>
     <p style="margin-top: 1em;"><strong>Checkpoint B:</strong> <code>Checkpoint_B.zip</code></p>
   </section>
 
   <!-- Slide 20: Phase C -->
-  <section class="slide" data-notes="C-1 is WATCH (4 min, set up the regex + detach). C-2 is TRY (6 min, Trends with lnpcuts legend isolation — the empirical hook).">
+  <section class="slide" data-notes="C-1 is WATCH (4 min, set up the regex + detach). C-2 is TRY (6 min: filter the covid/cases lines off in the legend, switch line→bar, compare male vs female on cut(s) — the empirical hook).">
     <h2>Phase C · mixed</h2>
     <h1>Multi-pattern regex → detach → Trends</h1>
-    <p><span class="badge watch">WATCH ONLY</span> <strong>C-1:</strong> Concordance Regex mode, pattern <code>cases|covid|lnp\w*</code>. Coloured matches. Dispersion view. <strong>Click + Shift-click</strong> to select.</p>
-    <p style="margin-top: 0.6em;"><span class="badge try">TRY THIS</span> <strong>C-2:</strong> Trends on the matched block, grouped by term × gender. Many pro-LNP terms — but one stands out: <code>lnpcuts</code>. Let's take a closer look.</p>
+    <p><span class="badge watch">WATCH ONLY</span> <strong>C-1:</strong> Concordance Regex mode, pattern <code>covid|case(s)?|cut(s)?</code>. Coloured matches. Dispersion view. <strong>Click + Shift-click</strong> to select.</p>
+    <p style="margin-top: 0.6em;"><span class="badge try">TRY THIS</span> <strong>C-2:</strong> Trends on the matched block, grouped by term × gender. Click the covid/cases lines off in the legend, switch to a <strong>bar chart</strong> — male candidates mention <code>cut(s)</code> more than female. Set the time bin to weekly to sharpen it.</p>
     <p style="margin-top: 1em;"><strong>Checkpoint C:</strong> <code>Checkpoint_C.zip</code></p>
   </section>
 

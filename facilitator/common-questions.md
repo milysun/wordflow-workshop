@@ -36,7 +36,7 @@ Use as a pre-read; keep open during the workshop.
 - The toggle is the **pencil icon next to the "VIEWS" title** in the left sidebar. (Not the top menu.) Click it to switch on or off.
 
 ### "Why can't I change anything?"
-- Snapshot Mode is on. That's intentional during the snapshot tour. They'll turn it off at the start of Session 2.
+- A snapshot has been loaded into this tool, which puts *that tool's view* into read-only. That's expected. Snapshot Mode itself doesn't lock anything — only loading a snapshot into a tool does, and only for that tool. Start a fresh analysis (or use a different tool) and you can edit freely; no need to turn Snapshot Mode off.
 
 ### "I want to keep exploring this tool."
 - Park it: *"Come back in the free lab. We have to keep moving to see all five."*
@@ -67,7 +67,7 @@ Use as a pre-read; keep open during the workshop.
 
 ### "The regex returned zero matches / too many."
 - For zero: check the search mode is set to **Regex**, not Text. Check the parentheses-OR syntax `(a|b|c)`.
-- For too many: the regex matches as substrings by default; add `\b` word boundaries: `\b(cases|covid|lnp\w*)\b`.
+- For too many: the regex matches as substrings by default; add `\b` word boundaries: `\b(covid|case(s)?|cut(s)?)\b`.
 - During the demo, pre-test your regex. Don't improvise.
 
 ### "BERTopic is taking forever."

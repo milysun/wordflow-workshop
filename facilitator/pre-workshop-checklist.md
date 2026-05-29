@@ -48,7 +48,7 @@ What you *do* need to do, a few days out: **open Wordflow locally, import the sa
 
 - Dataset: **2020 QLD election candidate tweets**, joined with `candidate_info_gender` — distinct from the 2025 newstalk media stories used in Snapshot 1, even though both touch QLD politics
 - Preprocessing:
-  1. Run **Concordance** on the joined block with regex pattern `job\w*|lnp\w*|economic`.
+  1. Run **Concordance** on the joined block with regex pattern `jobs|cases|economic`.
   2. **Add the Concordance results as a new data block** so the matched-term column is preserved alongside `gender` and `party`.
 - Tool: Trends on the matched block
 - Time bin at save time: **hour** (the smallest available — participants can coarsen during the demo)
@@ -100,9 +100,9 @@ Open Wordflow in a fresh workspace called `session2-master`. Walk the full A→B
 - **At end of B** (gender-filtered: `tweets_female`, `tweets_male` added, comparative Frequency + iterative Concordance explored):
   - File: `Checkpoint_B.zip`
 
-- **At end of C** (regex `cases|covid|lnp\w*` → aggregated block added; Trends on it with `lnpcuts` skew verified):
+- **At end of C** (regex `covid|case(s)?|cut(s)?` → aggregated block added; Trends on it with the `cut(s)` gender gap verified):
   - File: `Checkpoint_C.zip`
-  - **Verify before saving**: with Trends grouped by matched-term × gender, hiding the other major pro-LNP and health combinations via the legend leaves only `lnpcuts-M` and `lnpcuts-F`, and the gender split shows the ~20 (F) vs ~4 (M) skew. That's the empirical hook of Session 2 — if it doesn't reproduce on your laptop, dig in before the workshop.
+  - **Verify before saving**: with Trends grouped by matched-term × gender, filtering the `covid`/`case`/`cases` combinations off via the legend leaves only the `cut` / `cuts` lines; switching the chart from line to bar shows male candidates mentioning `cut(s)` more often than female (sharper with the time bin set to weekly). That's the empirical hook of Session 2 — if it doesn't reproduce on your laptop, dig in before the workshop.
 
 - **At end of D** (Topic Modelling on `tweets_female` + `tweets_male` as two corpora, target = 8 / seed = 42 / re-aggregated to 16; 2-3 topics detached as per-gender children):
   - File: `Checkpoint_D.zip`
@@ -115,7 +115,7 @@ That's **5 workspace archives = 5 checkpoints**, one per phase. Anyone who falls
 
 ### Test cross-OS
 
-The workspace-archive portability was recently fixed (May 2026). Before the workshop, **test importing each `.wordflow-workspace` on a different OS than the one you exported from** — Mac → Windows, or Linux → Mac, whichever pair you can manage. If anything breaks, file an issue and fall back to snapshots-only recovery for now.
+The workspace-archive portability was recently fixed (May 2026). Before the workshop, **test importing each `Checkpoint_*.zip` on a different OS than the one you exported from** — Mac → Windows, or Linux → Mac, whichever pair you can manage. If anything breaks, file an issue and fall back to snapshots-only recovery for now.
 
 ### Publish the Session-2 checkpoints
 
@@ -136,7 +136,7 @@ Then on GitHub:
 2. **Choose a tag**: `intro-2026-06-03`. **Target**: `intro_workshop_2026-06-03`.
 3. **Release title**: *Intro to Wordflow — 3 June 2026*.
 4. **Description**: list the five archives with one-line descriptions of what each represents (copy from the Build section above).
-5. **Attach binaries**: drag in all five `session2-after-*.wordflow-workspace` files.
+5. **Attach binaries**: drag in all five `Checkpoint_*.zip` files (`Checkpoint_A.zip` … `Checkpoint_E.zip`).
 6. **Publish**.
 
 Verify the download links work in a fresh browser session (logged out, no cache). The link `sih.tools/wordflow → Releases` now resolves to your release; this is what the runbook tells participants to use when they fall behind.
@@ -153,7 +153,7 @@ Session 2 is the most ambitious 45 minutes of the day. Practise it twice.
   - Target: A ≤ 7 min, B ≤ 9 min, C ≤ 10 min, D ≤ 9 min, E ≤ 5 min, total ≤ 40 min with 5 min buffer.
   - If you blow past 45 min: the most likely cut is Phase E (stack + final Trends — describe verbally instead). Phase D's BERTopic run is the next cut (skip the live run, narrate from the saved D checkpoint). Plan in advance which.
 
-- [ ] **Run 2 — practise narrating each step out loud as if to an audience.** Includes the cross-tool moments: the iterative Frequency ↔ Concordance loop in B, the dispersion-select → aggregated block in C-1, the `lnpcuts` legend-isolation in C-2 (the empirical hook), the two-corpus Topic Modelling colour-fusion in D, and the Stack → final Trends close in E.
+- [ ] **Run 2 — practise narrating each step out loud as if to an audience.** Includes the cross-tool moments: the iterative Frequency ↔ Concordance loop in B, the dispersion-select → aggregated block in C-1, the COVID-legend-filter → line→bar comparison on `cut(s)` in C-2 (the empirical hook), the two-corpus Topic Modelling colour-fusion in D, and the Stack → final Trends close in E.
 
 - [ ] **Phase D parameter check.** On the build laptop, run Topic Modelling with **target = 8 topics and seed = 42** with *both* `tweets_female` and `tweets_male` selected. Expect BERTopic to actually produce ~23 topics. Drag the **re-aggregation slider to 16**, confirm the bubbles spread out cleanly with visible colour fusion on shared topics. Detach 2-3 topics and confirm they appear as child blocks under *both* parents. If the slider value or detach behaviour differs from this on the workshop day, narration needs adjusting on the fly.
 

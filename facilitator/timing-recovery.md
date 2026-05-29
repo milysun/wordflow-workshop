@@ -29,7 +29,7 @@ Continue without waiting. The lost participants will catch up via checkpoints.
 You won't finish D + E cleanly. Choices in order of preference:
 
 1. **Cut phase E entirely.** Verbally describe what Stack → final Trends would do, but don't demo it live. *"In the free lab in 25 minutes, you can try E yourself — checkpoint D has the topic-detached blocks you'd need to start from."*
-2. **Cut phases D and E.** End Session 2 at the C-2 Trends with the `lnpcuts` skew. The cross-tool flow lesson has already landed, and the empirical hook (lnpcuts) is the highest-value finding — leaving on that beat is fine.
+2. **Cut phases D and E.** End Session 2 at the C-2 Trends with the `cut(s)` gender gap. The cross-tool flow lesson has already landed, and the empirical hook (the male-vs-female bar chart on `cut(s)`) is the highest-value finding — leaving on that beat is fine.
 
 Don't try to half-do D. The two-corpus Topic Modelling run takes 60-90s and the colour-fusion lesson lives in the bubble layout — a rushed run that produces noise undermines it.
 

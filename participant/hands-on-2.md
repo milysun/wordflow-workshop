@@ -16,7 +16,7 @@ We'll answer it by:
 1. Joining tweets with candidate gender data.
 2. Filtering into female and male sub-corpora.
 3. Comparing them with frequency analysis and reading specific terms in context — iterating between the two tools to settle on a search pattern.
-4. Running that pattern as a regex covering a **health** theme (`cases`, `covid`) and an **energy/policy** theme (`lnp\w*`); detaching the matches and looking at temporal trends, including the gender skew around *lnpcuts*.
+4. Running that pattern as a regex covering a **COVID** theme (`covid`, `case(s)`) and a **spending-cuts** theme (`cut(s)`); detaching the matches and looking at temporal trends, including the gender gap on *cut(s)*.
 5. Topic modelling on both gender corpora together — fused bubbles, then detach.
 6. Stacking the detached topic blocks and viewing the final cross-gender trends.
 
@@ -49,7 +49,7 @@ This is where you pick up the keyboard.
 1. **Preprocessing → Filter** the joined block: `gender = 'F'` → block called `tweets_female`. Again for `gender = 'M'` → `tweets_male`. *(No hashtag filter — the dataset is small and filtering by `#` would chop too many tweets.)*
 2. **Select both** in the graph (click one, Cmd/Ctrl-click the other). **Frequency** tool — opens in **comparative mode (Juxtorpus)**. Word count 40, stopwords on.
 3. **Iterate**: click a topical word → Wordflow jumps to **Concordance** with that word pre-loaded. Read a few contexts. Go back to Frequency, pick a different word. Repeat — this is the *exploration* before settling on a final pattern.
-4. The facilitator will narrate the moves they keep coming back to: `cases`, `covid`, anything starting with `lnp`. **Two themes** are emerging — *health* and *energy/policy*. That sets up the regex in Phase C.
+4. The facilitator will narrate the moves they keep coming back to: `covid`, `case(s)`, `cut(s)`. **Two themes** are emerging — *COVID* and *spending cuts*. That sets up the regex in Phase C.
 
 > 🎯 Insight to land: you stacked twice — Frequency to Concordance, and back again. The regex in Phase C didn't fall from the sky; it came from this iteration. **Reading shapes searching shapes reading.**
 
@@ -62,25 +62,25 @@ This is where you pick up the keyboard.
 ### C-1 — Set the regex, dispersion view, detach as block (4 min) — 👀 WATCH ONLY
 
 The facilitator will:
-1. Switch search to **Regex mode**. Pattern: `cases|covid|lnp\w*` — three patterns covering two themes:
-   - **Health** — `cases` (mostly meaning COVID case counts in 2020) + `covid`.
-   - **Energy / policy** — `lnp\w*`, i.e. anything starting with *lnp* (LNP, lnpqld, lnpcuts, …).
+1. Switch search to **Regex mode**. Pattern: `covid|case(s)?|cut(s)?` — three patterns covering two themes:
+   - **COVID** — `covid` + `case(s)?` (case / cases, mostly meaning COVID case counts in 2020).
+   - **Spending cuts** — `cut(s)?` (cut / cuts).
 2. Each match gets its **own colour**. Switch to **Dispersion view** — bars per tweet, colour-coded.
 3. **Click** a hit marker in the dispersion plot — or **click + Shift-click** to extend the selection to a range. Build up the subset of tweets you want.
 4. Click **Add to Workspace** — the matched contexts become a new data block (matched-term column preserved alongside the gender column).
 
 > 🎯 Insight to land: visual selection in any tool can become structured data for the next tool. Reading and analysing are two sides of one workflow.
 
-### C-2 — Trends, find the lnpcuts skew (6 min) — ✋ TRY THIS
+### C-2 — Trends, find the cut(s) gender gap (6 min) — ✋ TRY THIS
 
 You're picking up the keyboard again.
 
-1. Click the matched block → **Trends** tool. Time axis: tweet date. Time bin: weekly.
-2. Group by **matched term × gender** — each combination (e.g. `lnp-F`, `lnp-M`, `lnpqld-F`, `lnpcuts-F`, …) is its own line.
-3. The facilitator will point out: lots of pro-LNP terms (`lnp`, `lnpqld`, `lnpgov`…). But one stands out as **anti-LNP** — `lnpcuts`. Let's look closer.
-4. **Hide other lines via the legend** — click the major pro-LNP and health combinations off, one by one, until only `lnpcuts-M` and `lnpcuts-F` are left. Female candidates mention `lnpcuts` ~20 times across the campaign; male candidates ~4. **A 5× skew on a small dataset** — suggestive, not definitive. The one term that *doesn't* fit the pro-LNP pattern shows the strongest gender split.
+1. Click the matched block → **Trends** tool. Time axis: tweet date. Time bin: daily to start.
+2. Group by **matched term × gender** — each combination (e.g. `covid-F`, `covid-M`, `case-F`, `cuts-F`, `cuts-M`, …) is its own line.
+3. **Filter the COVID lines off via the legend** — click the `covid`, `case`, and `cases` combinations off, one by one, until only the `cut` / `cuts` lines remain. The legend is an interactive filter, not just a colour key.
+4. **Switch the chart from line to bar.** Now you're comparing male vs female on `cut(s)` directly — and male candidates mention spending cuts more often than female. **Set the time bin to weekly** and the contrast sharpens further. A pattern on a small dataset — suggestive, not definitive.
 
-> 🎯 Insight to land: the legend isn't just a colour key — it's an interactive filter. Hide what isn't interesting and the story underneath comes through.
+> 🎯 Insight to land: the legend isn't just a colour key — it's an interactive filter. And switching the chart type (line → bar) reshapes the same data into the comparison you actually want.
 
 ✅ **Checkpoint C** — `Checkpoint_C.zip`.
 
@@ -135,7 +135,7 @@ In the free lab (Session 3.C), you can:
 
 Look at the graph view. **Read it back to front, aloud or silently:**
 
-> *"Starting from QLD tweets joined with gender data, I filtered by gender, jumped between Frequency and Concordance to find a search pattern, ran it as a regex, detached the matches, found a gender skew on `lnpcuts` in Trends, topic-modelled the two corpora together, detached selected topics, stacked them, and looked at the trends of those topics. What I found is ____."*
+> *"Starting from QLD tweets joined with gender data, I filtered by gender, jumped between Frequency and Concordance to find a search pattern, ran it as a regex, detached the matches, found a gender gap on `cut(s)` in Trends, topic-modelled the two corpora together, detached selected topics, stacked them, and looked at the trends of those topics. What I found is ____."*
 
 That sentence is your method section. Wordflow wrote most of it for you.
 

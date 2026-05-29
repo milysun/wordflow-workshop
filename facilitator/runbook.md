@@ -144,7 +144,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 #### Tool 3 — Trends (2:10 pm – 2:15 pm)
 
 - *"Trends in the sidebar. Load snapshot — `QLD_Election_Tweets_conc`."*
-- Narrate: *"This Trends view is built on a Concordance result — three patterns searched across QLD candidate tweets: `job\w*`, `lnp\w*`, and `economic`. Each match is one row underneath; here we're plotting them over time, at hourly resolution."*
+- Narrate: *"This Trends view is built on a Concordance result — three patterns searched across QLD candidate tweets: `jobs`, `cases`, and `economic`. Each match is one row underneath; here we're plotting them over time, at hourly resolution."*
 - *"The grouping control is the magic — switch between **matched term**, **gender**, and **party** and you get three different stories from the same matches."*
 - 2-min explore: *"Try changing the grouping. Try coarsening the time bin from hour → day → week. Everything re-aggregates client-side — no rerun."*
 
@@ -201,7 +201,7 @@ Advance to **Slide 14** (the red "Before the break" slide). Land this bridge cle
 
 **Recovery:** Five checkpoint workspace archives (A → E), one per phase. At each, mention the corresponding file on **sih.tools/wordflow → Releases**. Anyone who's lost loads it and rejoins. Don't lose more than 60 seconds shepherding stragglers — the archives are the safety net.
 
-### 2:40 pm – 2:45 pm — Frame the research question + disable snapshot mode
+### 2:40 pm – 2:45 pm — Frame the research question
 
 Slide 17.
 
@@ -237,7 +237,7 @@ This is where participants pick up the keyboard.
 
 2. **Select both** in the graph. **Frequency tool → comparative mode (Juxtorpus).** Word count 40, stopwords on.
 3. **Iterative exploration**: click a topical word → jumps to Concordance with that word pre-loaded. Read a few contexts. Go back to Frequency, pick a different word. *Repeat — this is the exploration before settling on a final pattern.*
-4. After a few rounds, narrate aloud: *"I've been jumping between Frequency and Concordance to spot meaningful patterns. Words I keep coming back to: `cases`, `covid`, and anything starting with `lnp`. Two themes are emerging — health and energy/policy. In the next phase, I'll build a regex that captures all three terms in one search."*
+4. After a few rounds, narrate aloud: *"I've been jumping between Frequency and Concordance to spot meaningful patterns. Words I keep coming back to: `covid`, `cases`, and `cut(s)`. Two themes are emerging — COVID and spending cuts. In the next phase, I'll build a regex that captures these terms in one search."*
 
 > Land here: *"You just stacked twice — Frequency to Concordance, and back again. Read the graph: that's your method. The regex in Phase C didn't fall from the sky; it came from this iteration."*
 
@@ -247,22 +247,22 @@ This is where participants pick up the keyboard.
 
 #### C-1 — Set the regex, dispersion view, detach as block (WATCH, ~4 min)
 
-1. In Concordance, switch to **Regex mode**. Pattern: `cases|covid|lnp\w*`.
-   *"Three patterns covering two themes — health (`cases`, `covid`) and energy/policy (`lnp\w*`)."*
+1. In Concordance, switch to **Regex mode**. Pattern: `covid|case(s)?|cut(s)?`.
+   *"Three patterns covering two themes — COVID (`covid`, `case(s)`) and spending cuts (`cut(s)`)."*
 2. Each match coloured by which pattern hit. **Switch view to Dispersion** — bars per tweet, colour-coded.
 3. **Click a point** in the dispersion plot, then **Shift-click** another point to extend the selection to a range. Repeat to build up the subset of tweets you want.
 4. Click **Add to Workspace** — the matched contexts become a new data block (matched-term column preserved alongside the gender column, ready for Trends).
 
-> The hypothesis we're testing (informally): *do female candidates tweet more about health, and male candidates more about LNP/policy?* Made-up hypothesis on a small dataset — useful as a worked example, not a finding.
+> The hypothesis we're testing (informally): *do female and male candidates tweet differently about the pandemic vs spending cuts?* Made-up hypothesis on a small dataset — useful as a worked example, not a finding.
 
-#### C-2 — Trends on the matched block, find the lnpcuts skew (TRY THIS, ~6 min)
+#### C-2 — Trends on the matched block, find the cut(s) gender gap (TRY THIS, ~6 min)
 
-1. Click the matched block → **Trends tool.** Date column: tweet date. Time bin: weekly.
-2. Group by **matched-term × gender** so each combination (e.g. `lnp-M`, `lnp-F`, `lnpqld-M`, `lnpcuts-F`, …) is its own line.
-3. Narrate while looking at the chart: *"Lots of pro-LNP terms — `lnp`, `lnpqld`, `lnpgov`. But one stands out as anti-LNP — `lnpcuts`. Let's take a closer look."*
-4. **Hide the other lines via the legend** — click the major pro-LNP and health combinations off, one by one, until only `lnpcuts-M` and `lnpcuts-F` remain. *"Female candidates mention `lnpcuts` around 20 times across the campaign; male candidates 4. A 5× skew on a small dataset — suggestive not definitive, but the one term that doesn't fit the pro-LNP pattern shows the strongest gender split."*
+1. Click the matched block → **Trends tool.** Date column: tweet date. Time bin: daily to start.
+2. Group by **matched-term × gender** so each combination (e.g. `covid-M`, `covid-F`, `case-F`, `cuts-M`, `cuts-F`, …) is its own line.
+3. **Filter the COVID lines off via the legend** — click the `covid`, `case`, and `cases` combinations off, one by one, until only the `cut` / `cuts` lines remain. *"The legend is an interactive filter, not just a colour key — hide what isn't interesting and the story underneath comes through."*
+4. **Switch the chart from line to bar** to compare male vs female on `cut(s)` directly. *"Male candidates mention spending cuts more often than female. Set the time bin to weekly and the gap sharpens. A pattern on a small dataset — suggestive, not definitive."*
 
-> This is the empirical hook of Session 2. The visual punch is the legend-hide sequence — pro-LNP lines disappear one by one until only the anti-LNP `lnpcuts` is left, and the gender gap is suddenly visible. Don't pre-explain; let the chart land it.
+> This is the empirical hook of Session 2. The visual punch is the two-step reveal — the COVID lines disappear from the legend, then the line→bar switch turns the remaining `cut(s)` data into a clean male-vs-female comparison. Don't pre-explain; let the chart land it.
 
 > Don't oversell ("we discovered something!") but don't undersell either: *"end-to-end in 30 minutes, and there's something here to dig into."*
 
@@ -322,7 +322,7 @@ The conceptual payoff. Three short demos showing **you shape the analysis at eve
 *"Visualisations aren't just for looking. You can pick parts of them and turn that selection into new analysable data."*
 
 1. Open the **Trends** snapshot — `QLD_Election_Tweets_conc` or your Session 2 final Trends. Has multiple lines (matched terms × gender, or similar).
-2. **Legend filtering**: click in the legend to toggle individual lines on and off. Narrate: *"I can hide everything except `lnpcuts` to focus on one term."*
+2. **Legend filtering**: click in the legend to toggle individual lines on and off. Narrate: *"I can hide everything except `economic` to focus on one term."*
 3. **Visual selection**: **click a point** on the chart, then **Shift-click** another to select a range — say, the campaign peak. Click **Add to Workspace**. *"Now I've selected a slice and turned it into a new data block."*
 4. *"Same idea, same operation, different tools — quickly:"*
    - Topic Modelling: **click bubbles** to select interesting topics → Detach → new blocks. *(We saw this in Session 2.)*
