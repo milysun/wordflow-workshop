@@ -207,11 +207,11 @@ Slide 17.
 
 *"For the next 45 minutes, I'm going to walk a real research workflow. The question: did female and male candidates in the 2020 QLD election tweet about different topical issues? We'll build a workflow that answers it — and along the way surface one small empirical finding.*
 
-*You don't have to follow every step. Your hands-on sheet marks some moves as 'try this' — pick up the keyboard for those. Other moves are marked 'watch' — sit back and look at my screen. If you fall behind, **sih.tools/wordflow → Releases** has five checkpoint files (A–E, one per phase); load whichever you need to rejoin.*
+*You don't have to nail every step. Your hands-on sheet marks the key moves as 'try this' — pick up the keyboard for those. The rest are 'follow along' — have a go if you can, no pressure if you can't. If you fall behind, or a step doesn't work, **sih.tools/wordflow → Releases** has a checkpoint for every phase (A–E); load whichever you need to rejoin.*
 
 *From here on, we're building, not just looking. Snapshot Mode can stay on — it only locks a tool's view once you load a snapshot into that tool. New analyses you start are fine."*
 
-### 2:45 pm – 2:52 pm — A: Load, prepare, join (7 min, WATCH)
+### 2:45 pm – 2:52 pm — A: Load, prepare, join (7 min, FOLLOW ALONG)
 
 There's more to a "load" step than just clicking import. Walk through the typical first-time-user prep moves calmly — narrate each so the room doesn't panic about catching up.
 
@@ -227,9 +227,9 @@ There's more to a "load" step than just clicking import. Walk through the typica
 
 > **Checkpoint A** — workspace archive: `Checkpoint_A.zip`. Mention it explicitly: *"Anyone behind, download checkpoint A from sih.tools/wordflow → Releases."*
 
-### 2:52 pm – 3:01 pm — B: Filter by gender + iterative Freq ↔ Concordance (9 min, TRY THIS)
+### 2:52 pm – 3:01 pm — B: Filter by gender + iterative Freq ↔ Concordance (9 min, FOLLOW ALONG)
 
-This is where participants pick up the keyboard.
+A good phase for participants to follow along on the keyboard — no pressure if anyone can't keep pace.
 
 1. **Preprocessing → Filter** the joined block: `gender = 'F'` → `tweets_female`. Then `gender = 'M'` → `tweets_male`. *"Two sub-blocks by metadata."*
 
@@ -245,7 +245,7 @@ This is where participants pick up the keyboard.
 
 ### 3:01 pm – 3:11 pm — C: Multi-pattern regex → detach → Trends (10 min, MIXED)
 
-#### C-1 — Set the regex, dispersion view, detach as block (WATCH, ~4 min)
+#### C-1 — Set the regex, dispersion view, detach as block (FOLLOW ALONG, ~4 min)
 
 1. In Concordance, switch to **Regex mode**. Pattern: `covid|case(s)?|cut(s)?`.
    *"Three patterns covering two themes — COVID (`covid`, `case(s)`) and spending cuts (`cut(s)`)."*
@@ -268,7 +268,7 @@ This is where participants pick up the keyboard.
 
 > **Checkpoint C** — workspace archive: `Checkpoint_C.zip`.
 
-### 3:11 pm – 3:20 pm — D: Topic modelling on two corpora (9 min, WATCH)
+### 3:11 pm – 3:20 pm — D: Topic modelling on two corpora (9 min, TRY THIS)
 
 Topic Modelling accepts **two data blocks** as input and produces a fused bubble chart — bubble colours blend in topics that draw documents from both corpora, stay solid in topics dominated by one.
 
@@ -283,7 +283,7 @@ Topic Modelling accepts **two data blocks** as input and produces a fused bubble
 
 > **Checkpoint D** — workspace archive: `Checkpoint_D.zip`.
 
-### 3:20 pm – 3:25 pm — E: Stack → final Trends (5 min, WATCH)
+### 3:20 pm – 3:25 pm — E: Stack → final Trends (5 min, TRY THIS)
 
 The closing move. Stack the per-gender topic blocks back together so the final Trends view can compare topics across genders.
 

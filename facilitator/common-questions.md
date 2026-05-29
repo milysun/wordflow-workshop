@@ -52,8 +52,8 @@ Use as a pre-read; keep open during the workshop.
 - **Default response**: *"That's fine — go to sih.tools/wordflow → Releases. Download whichever Checkpoint (A–E) matches where I am, then in Wordflow: Data Loader → Import workspace archive → pick the file. You'll be back in sync in 30 seconds."*
 - Don't try to talk individual participants back into sync mid-demo. The checkpoints exist for this.
 
-### "I'm not sure if this move was 'try this' or 'watch only'."
-- Their hands-on-2 sheet labels each move. *"If you missed it, watch this one and try in the free lab."*
+### "I'm not sure if this move was 'try this' or 'follow along'."
+- Their hands-on-2 sheet labels each phase. *"Either way, have a go — and if you fall behind, load the phase checkpoint or try it in the free lab."*
 
 ### "The join produced too many / too few rows."
 - They probably picked the wrong join type or the wrong key column. Pause briefly, point at your projected screen, continue. They can reload checkpoint A if needed.

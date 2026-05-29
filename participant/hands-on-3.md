@@ -6,7 +6,7 @@ Two halves: a short conceptual demo (3.A), then a free lab (3.C) where you pick 
 
 ---
 
-## 3.A — Repurpose the lens (15 min) — 👀 WATCH ONLY
+## 3.A — Repurpose the lens (15 min) — 👀 DEMO
 
 A short demonstration from the facilitator. No keyboards needed. Three quick moves that show **you shape the analysis at every step — in, through, and out.**
 

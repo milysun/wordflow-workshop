@@ -43,7 +43,7 @@ In case you want to adapt later:
 - **Snapshot tour ahead of mechanics (Session 1.5).** Participants touch all 5 analytical tools in 30 minutes and see the *visualisations* before they're asked to *produce* anything. Builds interest through visual variety instead of "configure this importer".
 - **One coherent research story in Session 2.** Threading joins → comparative frequency → concordance → trends → topic modelling through a single research question (gender differences in QLD candidate tweets) is more memorable than disconnected exercises. The cross-tool moves (Frequency → click jump → Concordance; detach topics → group in Trends) are the things that make Wordflow feel *fluid*.
 - **Dual recovery mechanism (snapshots + workspace archives).** Session 2 is a linear chain — one stuck participant 15 min in falls off the rest. Pre-baked checkpoint snapshots and portable workspace archives let anyone rejoin at any major stage. Belt + braces.
-- **"Watch" / "try this" markers in Session 2.** The 18+ step chain is too long for full follow-along in 45 min. Hands-on sheets mark each move as **try this** (key learning) or **watch only** (advanced/optional). Mode A facilitators can ignore the markers; less-confident participants use them as an explicit permission to put the keyboard down.
+- **"Try this" / "follow along" markers in Session 2.** The 18+ step chain is too long to nail every step in 45 min. Hands-on sheets mark the key moves as **try this** and the rest as **follow along** (have a go, no pressure). A checkpoint for every phase (A–E) means anyone who falls behind — or hits a step that won't work — rejoins in 30 seconds, so nobody panics. The framing invites everyone to attempt the moves rather than telling less-confident participants to sit on their hands.
 - **Session 3.A as conceptual payoff.** Repurposing Trends into a histogram is the demo that lands the lens metaphor. It takes 15 min and is the single moment most likely to be quoted afterwards.
 - **Free lab over structured exercise in Session 3.C.** By 4:00 pm participants are saturated. A loose lab with helpers wins over another guided exercise — they consolidate by exploring at their own pace.
 
@@ -101,7 +101,7 @@ workshop/
 | Knob | Default | Adjust if… |
 |---|---|---|
 | Session 2 dataset | QLD election tweets (gender metadata; no hashtag filter — dataset is too small to subsample) | Want simpler narrative → use Honi Soit content filter instead |
-| Session 2 mode | Demo at full speed + selective follow-along (3-4 "try this" moves) | Room is small/confident → full follow-along (and bump Session 2 to 60 min from somewhere else) |
+| Session 2 mode | Demo at full speed; key moves marked "try this", the rest "follow along" | Room is small/confident → full follow-along (and bump Session 2 to 60 min from somewhere else) |
 | Checkpoint recovery | Pre-baked snapshots + workspace archive | First delivery → snapshots only; add archives next iteration |
 | Snapshot tour count | 5 (Frequency, Concordance, Trends, Topic, Quotation) | Tight room → 4 (drop Quotation; it's English-only with narrower appeal) |
 | Session 3.A demo | Trends → article-size histogram | Have a better "lens repurpose" example for your audience → swap freely |

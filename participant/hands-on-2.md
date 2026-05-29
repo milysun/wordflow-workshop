@@ -2,7 +2,7 @@
 
 **Time: 2:40 pm – 3:25 pm**
 
-This is the heart of the workshop. The facilitator will walk a real multi-tool workflow, end to end, answering a research question. Some moves you **try yourself** (✋ TRY THIS), others you **watch on the projector** (👀 WATCH ONLY). The markers below tell you which is which.
+This is the heart of the workshop. The facilitator will walk a real multi-tool workflow, end to end, answering a research question. The key moves are marked **✋ TRY THIS**; the rest are **👣 FOLLOW ALONG** — have a go at them too, and don't worry if you fall behind. The markers below tell you which is which, and there's a checkpoint for every phase if you need to catch up.
 
 If you fall behind, there are **five checkpoint workspace archives (A → E)** on **sih.tools/wordflow → Releases** — one per phase. Download whichever matches where the facilitator is, import it, you're back in sync. Don't stress about following every click.
 
@@ -24,9 +24,9 @@ That's a six-step workflow across **four analysis tools** (Frequency, Concordanc
 
 ---
 
-## A — Load, prepare, join (7 min) — 👀 WATCH ONLY
+## A — Load, prepare, join (7 min) — 👣 FOLLOW ALONG
 
-The facilitator drives this. You watch the projector. **There's more to "load" than just clicking import** — for first-time users this is the most procedurally dense phase of the workshop. Watch the moves; you don't need to follow them on your machine.
+Follow along on your machine if you can. **There's more to "load" than just clicking import** — for first-time users this is the most procedurally dense phase, so it's fine to just watch the projector here. Checkpoint A catches you up before Phase B.
 
 What's happening:
 1. **Import** the two source blocks: `qldelection2020_candidate_tweets` and `candidate_info_gender`.
@@ -42,9 +42,9 @@ What's happening:
 
 ---
 
-## B — Filter by gender + iterative Frequency ↔ Concordance (9 min) — ✋ TRY THIS
+## B — Filter by gender + iterative Frequency ↔ Concordance (9 min) — 👣 FOLLOW ALONG
 
-This is where you pick up the keyboard.
+A good place to pick up the keyboard and follow along — no pressure if you can't keep pace.
 
 1. **Preprocessing → Filter** the joined block: `gender = 'F'` → block called `tweets_female`. Again for `gender = 'M'` → `tweets_male`. *(No hashtag filter — the dataset is small and filtering by `#` would chop too many tweets.)*
 2. **Select both** in the graph (click one, Cmd/Ctrl-click the other). **Frequency** tool — opens in **comparative mode (Juxtorpus)**. Word count 40, stopwords on.
@@ -59,7 +59,7 @@ This is where you pick up the keyboard.
 
 ## C — Multi-pattern regex → detach → Trends (10 min) — mixed
 
-### C-1 — Set the regex, dispersion view, detach as block (4 min) — 👀 WATCH ONLY
+### C-1 — Set the regex, dispersion view, detach as block (4 min) — 👣 FOLLOW ALONG
 
 The facilitator will:
 1. Switch search to **Regex mode**. Pattern: `covid|case(s)?|cut(s)?` — three patterns covering two themes:
@@ -86,11 +86,11 @@ You're picking up the keyboard again.
 
 ---
 
-## D — Topic modelling on two corpora (9 min) — 👀 WATCH ONLY
+## D — Topic modelling on two corpora (9 min) — ✋ TRY THIS
 
 The Topic Modelling tool accepts **two data blocks as input** and produces a fused bubble chart — colours blend in topics that draw documents from both corpora, stay solid in topics dominated by one.
 
-The facilitator will:
+Try this one with the facilitator — it's worth running yourself:
 
 1. **Select both** `tweets_female` and `tweets_male`.
 2. **Topic Modelling.** Target = 8 topics, seed = 42. Run. Wait ~60-90s.
@@ -106,9 +106,9 @@ The facilitator will:
 
 ---
 
-## E — Stack → final Trends (5 min) — 👀 WATCH ONLY
+## E — Stack → final Trends (5 min) — ✋ TRY THIS
 
-The closing move. The facilitator will:
+The closing move — try it with the facilitator:
 
 1. **Preprocessing → Stack** the per-gender topic blocks from D back together. Result: a unified block where each row carries both its topic label and its gender column.
 2. Click the stacked block → **Trends.** Time bin weekly. Group by `topic` (or `gender × topic`).

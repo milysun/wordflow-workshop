@@ -28,7 +28,7 @@ When timing, session numbering, tool names, or the demo storyline changes, sever
 - **Session timing**: `README.md` table → `slides/index.html` (housekeeping slide + any per-section title slides) → `facilitator/runbook.md` (section headers + minute timestamps) → `facilitator/timing-recovery.md` (cut points reference these times)
 - **Session numbering** (`1.0`, `1.5`, `2`, `3.A`, `3.B`, `3.C`, `3.D`): used as section anchors in runbook and hands-on sheets. If a section is renamed, grep the whole repo before saving.
 - **Tool names** in the snapshot tour — currently 5: **Frequency, Concordance, Trends, Topic, Quotation**. If the count changes, `README.md` "Tunable parameters" + `hands-on-1.md` + the snapshot-tour slides all need updating.
-- **Try this / watch only** markers in `hands-on-2.md` — these are an explicit promise to less-confident participants. If the runbook adds a new "try this" moment, the hands-on sheet must mark it too.
+- **Try this / follow along** markers in `hands-on-2.md` — these are an explicit promise to less-confident participants (key moves to **try this**; the rest to **follow along**, no pressure, with a per-phase checkpoint as the safety net). If a phase's marker changes, the slide badge, the hands-on header, and the runbook header must all match. Current map: A/B/C-1 = follow along; C-2/D/E = try this.
 - **Pre-workshop checklist** in `facilitator/pre-workshop-checklist.md` lists the snapshots and the workspace archive. If the demo storyline changes, the list of required snapshots changes.
 
 When in doubt: grep across the whole repo for the thing you're changing before saving.
