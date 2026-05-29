@@ -38,7 +38,7 @@ Bigger words = more frequent in that group's stories. Stopwords already filtered
 - 🔁 Switch from **Cloud** to **List** view to see exact counts.
 - 🔁 Find a word that appears high on one side and is small or absent on the other — that's where the lens is doing real work.
 - 🔁 Hover over or click a word to see its rank on the opposite side.
-- 🔁 **Right-click a word** (cloud or list) — it's added to stopwords and disappears from the display. Handy for hiding tokens you don't care about.
+- 🔁 **Right-click a word** (cloud or list) — it's added to stopwords and disappears from the display. Handy for hiding tokens you don't care about. Added stopwords go to the **top of the stopword list**, so you can remove one manually if you add a word by mistake.
 
 > What you're seeing: comparative frequency, not just frequency. The grouping (left vs right) is a *research assumption* — regroup the same corpus differently and the comparison changes. The data didn't change; the lens did.
 
@@ -60,6 +60,7 @@ Each pattern gets its own colour, both in the row table and in the dispersion pl
 **Try this:**
 - 🔁 Switch view to **Dispersion**. Each bar is one document; the coloured marks show where each pattern lands in that document.
 - 🔁 Hover over a row in the table to see the full sentence.
+- 🔁 **Click any row** — in the table or the dispersion view — to open that document with the matched tokens highlighted.
 - 🔁 Edit the regex in the search box — results recompute live, no rerun needed.
 
 > What you're seeing: close reading at scale, three concepts at once. The coloured-by-pattern dispersion view tells you at a glance which documents are obsessed with *students*, which with *staff*, which with *the university itself* — and which thread them together.

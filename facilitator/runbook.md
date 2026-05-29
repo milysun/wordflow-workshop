@@ -126,7 +126,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 - *"Click Frequency in the sidebar. Click 'Load snapshot' (folder icon). Pick `Freq_Analysis_Newstalk`."*
 - Narrate the comparative view: *"What you're looking at is a comparative frequency — two columns, one corpus. The corpus is a set of Australian news stories. I've filtered by source and grouped them: on the left, two left-leaning outlets — Guardian Australia and Independent Australia. On the right, two right-leaning outlets — Sky News Australia and PerthNow. Bigger word = more frequent in that group's stories."*
 - *"Switch between **Cloud** and **List** views — same data, just a different visual. List gives you exact counts."*
-- Show the stopword shortcut: *"One little gem — **right-click any word** in the cloud or list and it gets added to stopwords. Watch — *[right-click a word]* — gone. Useful for hiding tokens you don't care about without re-running anything."*
+- Show the stopword shortcut: *"One little gem — **right-click any word** in the cloud or list and it gets added to stopwords. Watch — *[right-click a word]* — gone. Useful for hiding tokens you don't care about without re-running anything. Custom stopwords go to the top of the stopword list, so you can remove one by hand if you add a word by mistake."*
 - 2-min explore: *"Try the view switch, try right-clicking a few words. Spot a word that's big on one side and small or absent on the other — that's where editorial divergence shows up. The loaded snapshot view is read-only otherwise, so feel free to click around — nothing reruns."*
 
 > Frame the grouping as a *research assumption*, not a claim. If anyone challenges it: *"Yes — change the grouping and the comparison changes. That's the point. Wordflow makes the regrouping cheap."*
@@ -136,6 +136,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 - *"Concordance in the sidebar. Load snapshot — `SCL_Honi_Soit`."*
 - Narrate the regex search: *"This one's a regex search — three patterns in one query. `student\w*` (anything beginning with 'student'), `staff` exactly, and `universit\w+` (university, universities, etc.). Each pattern gets its own colour."*
 - *"Switch to Dispersion view. Each bar is one document; the coloured marks show where each pattern lands in that document — at a glance, which documents talk about students, which about staff, which about the institution itself."*
+- *"Click any row — in the table or the dispersion view — and it opens that document with the matched tokens highlighted. Close reading is one click away."*
 - 2-min explore: *"Try editing the search to a term of your own. Multi-pattern with coloured-by-term is one of the things that's hard to do by hand on a big corpus and trivial here."*
 
 > Combined view is intentionally OFF on this snapshot — two views (table + dispersion) at a time, not four. Less to parse.

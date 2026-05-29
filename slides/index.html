@@ -536,7 +536,7 @@
   <!-- Slide 9: Frequency tool -->
   <section class="slide" data-notes="Load Freq_Analysis_Newstalk. Two columns: Guardian+IA on left, Sky+PerthNow on right. Frame the grouping as a research assumption, not a claim. Demo the Cloud↔List toggle, then show right-click on a word adding it to stopwords (the word disappears).">
     <h2>Tool 1 — Frequency</h2>
-    <h1>Same corpus, two lenses.</h1>
+    <h1>Explore by comparison.</h1>
     <p>Load snapshot → <strong><code>Freq_Analysis_Newstalk</code></strong>.</p>
     <ul>
       <li>Comparative view: <strong>left-leaning</strong> (Guardian + IA) vs <strong>right-leaning</strong> (Sky + PerthNow).</li>
@@ -544,17 +544,19 @@
       <li>Switch between <strong>Cloud</strong> and <strong>List</strong> views — same data, different visual.</li>
       <li>Spot words that are big on one side, small or absent on the other.</li>
       <li><strong>Right-click a word</strong> (cloud or list) to add it to stopwords — hides instantly.</li>
+      <li>Custom stopwords go to the <strong>top of the stopword list</strong> — remove one manually if you add a word by mistake.</li>
     </ul>
   </section>
 
   <!-- Slide 10: Concordance tool -->
   <section class="slide" data-notes="Load SCL_Honi_Soit. Regex with 3 patterns, each coloured. Show dispersion view explicitly. Combined view intentionally OFF.">
     <h2>Tool 2 — Concordance</h2>
-    <h1>Three search patterns at once.</h1>
+    <h1>Search several at once.</h1>
     <p>Load snapshot → <strong><code>SCL_Honi_Soit</code></strong>.</p>
     <ul>
       <li>Regex: <code>student\w*|staff|universit\w+</code> — each pattern coloured.</li>
       <li>Dispersion view: per-document hits, colour-coded by which pattern matched.</li>
+      <li>Click any row — in the table or dispersion view — to open the document with the matched tokens highlighted.</li>
       <li>Close reading at scale, three concepts in one query.</li>
     </ul>
   </section>
@@ -562,7 +564,7 @@
   <!-- Slide 11: Trends tool -->
   <section class="slide" data-notes="Load QLD_Election_Tweets_conc. Built on a Concordance export. Show all three groupings live (matched term / gender / party) — that's the punch.">
     <h2>Tool 3 — Trends</h2>
-    <h1>One result, three stories.</h1>
+    <h1>One period, many views.</h1>
     <p>Load snapshot → <strong><code>QLD_Election_Tweets_conc</code></strong>.</p>
     <ul>
       <li>Concordance result over time: <code>jobs</code> · <code>cases</code> · <code>economic</code>.</li>
@@ -574,7 +576,7 @@
   <!-- Slide 12: Topic Modelling -->
   <section class="slide" data-notes="Load newstalk_left_vs_right. Same corpus as Tool 1, different lens. Highlight colour blending on bubbles (themes shared across left and right) vs solid colours (one side dominant). Don't get into BERTopic internals.">
     <h2>Tool 4 — Topic Modelling</h2>
-    <h1>Same corpus, themes this time.</h1>
+    <h1>Themes across the spectrum.</h1>
     <p>Load snapshot → <strong><code>newstalk_left_vs_right</code></strong>.</p>
     <ul>
       <li>Same newstalk data as Tool 1 — balanced 120 vs 121.</li>
