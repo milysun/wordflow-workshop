@@ -103,6 +103,7 @@
     font-size: clamp(1rem, 1.4vw, 1.3rem);
     margin: 0;
   }
+  section.slide .card code { font-size: 0.85em; }
   section.slide pre.ascii {
     background: var(--ink);
     color: var(--paper);
@@ -254,12 +255,15 @@
     font-size: clamp(0.85rem, 1.15vw, 1.05rem);
     line-height: 1.35;
   }
-  .team-attribution {
+  section.slide p.team-attribution {
     margin-top: 1em;
     text-align: center;
-    max-width: 38em;
+    max-width: 52em;
     margin-left: auto;
     margin-right: auto;
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+    line-height: 1.45;
+    color: var(--muted);
   }
   .chrome {
     position: fixed;
@@ -401,11 +405,16 @@
   </section>
 
   <!-- Slide 3: Housekeeping + sign in while we talk -->
-  <section class="slide" data-notes="Tell them to launch Wordflow NOW while you talk. Parallelises the Binder cold-start with your intro. Cover breaks and bathrooms.">
+  <section class="slide" data-notes="Tell them to get Wordflow running NOW while you talk — either Launch in Binder (parallelises the cold-start with your intro) or install the desktop app. Binder is the no-install default; desktop is the fallback if Binder stalls. Briefly introduce the three SIH helpers on site — they can help with technical difficulties throughout. Cover breaks and bathrooms.">
     <h2>Housekeeping</h2>
     <ul>
-      <li><strong>Open <code style="font-size: 1.1em; background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code></strong> on your laptop now — click "Launch in Binder" to spin up Wordflow in your browser. Takes about a couple of minutes.</li>
-      <li><strong>If Binder isn't loading after 5 minutes</strong> — same URL has a desktop install link as a backup.</li>
+      <li><strong>Open <code style="font-size: 1.1em; background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code> on your laptop now.</strong> Two ways to run Wordflow today — pick whichever suits you:
+        <ul>
+          <li><strong>Launch in Binder</strong> — runs in your browser, nothing to install, about a couple of minutes to start. Best if you're not ready to install anything.</li>
+          <li><strong>Desktop app</strong> — the same page has Mac &amp; Windows installers; download and install to run it on your own machine.</li>
+        </ul>
+      </li>
+      <li><strong>Helpers in the room</strong> — wave one over if you hit any technical trouble.</li>
       <li><strong>Two breaks</strong> — 2:25 pm and 3:25 pm, 15 minutes each. Bathrooms are around the corner on the other end past the lifts.</li>
       <li><strong>Ask anything, any time.</strong> Three other people are probably wondering the same thing.</li>
       <li><strong>Handouts on your seat</strong> — welcome card and cheat sheet.</li>
@@ -422,12 +431,12 @@
       <div class="team-card">
         <img src="images/team/Chao_Sun.jpg" alt="Dr Chao Sun">
         <div class="team-name">Dr Chao Sun</div>
-        <div class="team-role">Developer<br>Sydney Informatics Hub</div>
+        <div class="team-role">Project tech lead<br>Sydney Informatics Hub</div>
       </div>
       <div class="team-card">
         <img src="images/team/Senhui_Guo.jpg" alt="Dr Alex Guo">
         <div class="team-name">Dr Alex Guo</div>
-        <div class="team-role">Developer<br>Sydney Informatics Hub</div>
+        <div class="team-role">Principal developer<br>Sydney Informatics Hub</div>
       </div>
       <div class="team-card">
         <img src="images/team/Monika_Bednarek.jpg" alt="Prof. Monika Bednarek">
@@ -435,16 +444,16 @@
         <div class="team-role">Academic lead<br>Sydney Corpus Lab</div>
       </div>
     </div>
-    <p class="team-attribution">All at the <strong>University of Sydney</strong> — as part of the <strong>Language Data Commons of Australia (LDaCA)</strong>, a national HASS and Indigenous research infrastructure project funded by the <strong>Australian Research Data Commons (ARDC)</strong>.</p>
+    <p class="team-attribution">All at the <strong>University of Sydney</strong>, a <strong>partner institution</strong> of the <strong>Language Data Commons of Australia (LDaCA)</strong> — a <strong>co-investment partnership with the Australian Research Data Commons (ARDC)</strong> through the HASS and Indigenous Research Data Commons. The ARDC is enabled by the Australian Government's <strong>National Collaborative Research Infrastructure Strategy (NCRIS)</strong>.</p>
   </section>
 
   <!-- Slide 5: Deployment options -->
-  <section class="slide" data-notes="Three deployment options. Mention all three, emphasise that today's session uses the cloud version for speed. Desktop install is on the same sih.tools/wordflow URL — point that out so anyone who needs to switch on the day knows where to go.">
+  <section class="slide" data-notes="Three deployment options. Mention all three. Today participants can use either Binder or the desktop app — both on the same sih.tools/wordflow URL. The Python install is only for people who already have a Python environment set up — it's the same performance as the desktop app, so anyone who doesn't normally program should just use the desktop app.">
     <h2>Three ways to use it</h2>
     <div class="grid3">
       <div class="card">
         <h3>Cloud (Binder)</h3>
-        <p>What you're loading right now. No install. Free. Don't put sensitive data on it.</p>
+        <p>Runs in your browser — nothing to install. Free. Don't put sensitive data on it.</p>
       </div>
       <div class="card">
         <h3>Desktop app</h3>
@@ -452,17 +461,17 @@
       </div>
       <div class="card">
         <h3>Python install</h3>
-        <p><code>pip install ldaca-wordflow</code> — for the Python users. Requires Python 3.14+.</p>
+        <p>For Python users (3.14+):<br><code>pip install ldaca-wordflow</code><br>or run directly:<br><code>uvx ldaca-wordflow@latest</code></p>
       </div>
     </div>
-    <p style="margin-top: 1.5em; font-style: italic;">Today: the cloud version. Desktop install is on the same <code style="font-style: normal; background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px;">sih.tools/wordflow</code> URL whenever you want it.</p>
+    <p style="margin-top: 1.5em; font-style: italic;">Today: use either Binder or the desktop app — both on the same <code style="font-style: normal; background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px;">sih.tools/wordflow</code> URL. The Python install is just for those who already work in Python — same performance as the desktop app, so no need otherwise.</p>
   </section>
 
   <!-- Slide 6: UI tour — annotated screenshot of the Wordflow workspace.
        Image is slides/images/ui-overview.png (2800×1740). SVG overlay below uses the
        image's pixel coordinate space via viewBox. To adjust a circle position, edit
        cx/cy in the corresponding <circle>+<text> pair. -->
-  <section class="slide ui-overview-slide" data-notes="Live walkthrough on the projected Wordflow. Don't just show the slide — point at the actual UI elements. Land all 7 items, especially the feedback button.">
+  <section class="slide ui-overview-slide" data-notes="Live walkthrough on the projected Wordflow. Don't just show the slide — point at the actual UI elements. Land all 7 items, especially the feedback button. Item 6 is the Tutorial button (opens the tutorial index); the CircleHelp (?) icon next to any control is the other route — it jumps straight to that control's section.">
     <h2>The interface — 7 things to know</h2>
     <div class="ui-overview-container">
       <div class="ui-overview-figure">
@@ -497,10 +506,10 @@
     <ol class="ui-overview-legend">
       <li><strong>Tool sidebar</strong> — pick a tool here</li>
       <li><strong>Tool interface</strong> — controls and results for the selected tool</li>
-      <li><strong>Workspace graph view</strong> — your map of data blocks and their derivations</li>
+      <li><strong>Workspace graph view</strong> — where your current project's data and its analytical derivations live</li>
       <li><strong>Data viewer</strong> — manage and inspect columns and rows in a data block. Not just a viewer.</li>
       <li><strong>Data block quick-select</strong> — switch the active block without going back to the graph</li>
-      <li><strong>Tutorial</strong> — every <code>?</code> next to a control opens the matching section</li>
+      <li><strong>Tutorial</strong> — opens the tutorial index page; or click the <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:-0.15em;"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> icon next to any control to jump straight to its section</li>
       <li><strong>Feedback</strong> — tap anytime something is confusing, surprising, or broken</li>
     </ol>
   </section>
@@ -513,15 +522,15 @@
   </section>
 
   <!-- Slide 8: Setup steps -->
-  <section class="slide" data-notes="Drive this from your screen. Wait for everyone to catch up before moving to the Frequency tool.">
+  <section class="slide" data-notes="Drive this from your screen. Wait for everyone to catch up before moving to the Frequency tool. Importing is two steps — the Datasets tab, then the Demo Snapshots tab, each with its own Import selected (you can't import both tabs at once). The Quote icon beside a dataset opens its details and citation.">
     <h2>Together — 5 minutes of setup</h2>
     <ol>
-      <li><strong>Data Loader → Import sample data</strong>. Modal has two tabs — <strong>Datasets</strong> (select all three) and <strong>Demo Snapshots</strong> (select all five). Click <strong>Import selected</strong>.</li>
+      <li><strong>Data Loader → Import sample data</strong>. The modal's two tabs import separately: on <strong>Datasets</strong>, select all three → <strong>Import selected</strong>; then switch to <strong>Demo Snapshots</strong>, select all five → <strong>Import selected</strong> again.</li>
       <li><strong>Sidebar → pencil icon next to "VIEWS"</strong> — turn <strong>Snapshot Mode</strong> ON. This unlocks snapshot save/load in each <strong>analysis tool</strong> (Frequency, Concordance, Trends, Topic Modelling, Quotation). A tool's view goes read-only once you load a snapshot into <em>it</em>; other tools keep working.</li>
       <li><strong>Data Loader → Create workspace</strong> — name it <code>Wordflow</code>. (Wordflow's hint system will highlight the button on first use. You'll keep this same workspace for the whole workshop.)</li>
     </ol>
-    <p style="margin-top: 1em; font-style: italic;">Once everyone has these four done, we tour the tools.</p>
-    <p style="margin-top: 0.8em; font-size: 0.9em; color: var(--muted);">All datasets you just imported are publicly available LDaCA-partner contributions. Citations on the final slide — please cite if used in research.</p>
+    <p style="margin-top: 1em; font-style: italic;">Once everyone has these three done, we tour the tools.</p>
+    <p style="margin-top: 0.8em; font-size: 0.9em; color: var(--muted);">All datasets are publicly available LDaCA-partner contributions. Click the <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:-0.15em;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg> icon beside a dataset for its details and citation. Citations are also on the final slide — please cite if used in research.</p>
   </section>
 
   <!-- Slide 9: Frequency tool -->

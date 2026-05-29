@@ -106,7 +106,7 @@ Use as a pre-read; keep open during the workshop.
 - *"Wordflow auto-saves your workspace on every change. Close the tab and come back — it's still there. To take it off the cloud: Data Loader → Export workspace archive. For a single result: camera icon → Save snapshot."*
 
 ### "Can I install this on my own laptop?"
-- Yes — desktop app (Mac/Win) or `pip install ldaca-wordflow`. Desktop installer is on **sih.tools/wordflow**.
+- Yes — desktop app (Mac/Win) or `pip install ldaca-wordflow` (or `uvx ldaca-wordflow@latest` to run directly). Desktop installer is on **sih.tools/wordflow**.
 - Caveat: install size is hundreds of MB (includes ML models). Warn them.
 
 ### "Does it work offline?"

@@ -27,7 +27,7 @@ Minute-by-minute script. **Italics = your spoken framing**, plain text = facilit
 - Anyone installing: tell them to keep going, you'll loop them in at the next sync check.
 
 **Time recovery** (installing eats 5–8 minutes — see `timing-recovery.md` for the full list of cuts):
-- Shorten the project+team narration at 1:35 pm–1:42 pm from 7 min to ~3 min — say *"developed by Sydney Informatics Hub and Sydney Corpus Lab, part of LDaCA, funded by ARDC"* and move on. Save the full attribution for the post-workshop email.
+- Shorten the project+team narration at 1:35 pm–1:42 pm from 7 min to ~3 min — say *"developed by Sydney Informatics Hub and Sydney Corpus Lab at the University of Sydney — an LDaCA partner institution; LDaCA is an ARDC co-investment partnership"* and move on. Save the full attribution for the post-workshop email.
 - The Quotation tool in Session 1.5 is the easiest cut (it's last and English-only).
 - If still over, ask for one volunteer's screen and have everyone watch the Session 2 demo rather than follow along — the checkpoint files cover the catch-up.
 
@@ -63,14 +63,14 @@ Slide 3 (Housekeeping).
 
 Slide 4 (team), then slide 5 (deployment options).
 
-*"LDaCA Wordflow is developed by a small team at the University of Sydney — myself and Dr Alex Guo at **Sydney Informatics Hub**, with Prof. Monika Bednarek as academic lead at **Sydney Corpus Lab**. It's part of the **Language Data Commons of Australia**, a national HASS and Indigenous research infrastructure project funded by the **Australian Research Data Commons**.*
+*"LDaCA Wordflow is developed by a small team at the University of Sydney — myself and Dr Alex Guo at **Sydney Informatics Hub**, with Prof. Monika Bednarek as academic lead at **Sydney Corpus Lab**. The University of Sydney is a **partner institution** of the **Language Data Commons of Australia** — a **co-investment partnership with the Australian Research Data Commons (ARDC)** through the HASS and Indigenous Research Data Commons. The ARDC is enabled by the Australian Government's **National Collaborative Research Infrastructure Strategy (NCRIS)**.*
 
 (Advance to slide 5.)
 
 *Three ways to use it:*
 - *Cloud (Binder), which is what you're loading right now — no install, free, but don't put sensitive data on it.*
 - *Desktop app (Mac/Windows) — runs everything on your machine.*
-- *Python install — `pip install ldaca-wordflow` if you're already a Python user.*
+- *Python install — `pip install ldaca-wordflow` (or `uvx ldaca-wordflow@latest` to run directly) if you're already a Python user.*
 
 *Today we use the cloud version because it gets everyone running in about a minute. Take the desktop app home for serious work — link is in the post-workshop email."*
 
@@ -109,12 +109,11 @@ The goal: every participant touches each of the five analytic tools' visualisati
 
 Drive this from your screen and have everyone follow.
 
-1. *"In Data Loader, click **Import sample data**. A modal opens with two tabs."* (~1.5 min)
-   - *"**Datasets** tab — select all three: Honi Soit, QLD election 2020 tweets, and the 2025 Federal Election NewsTalk/Reddit bundle."*
-   - *"**Demo Snapshots** tab — select all five (the snapshots we'll tour in a minute)."*
-   - *"Then click **Import selected** — everything imports together. You won't use it all today, but it'll be ready for later."*
-3. *"In the sidebar, click the **pencil icon next to 'VIEWS'** — that turns on Snapshot Mode."* (~30s) *"This enables saving and loading snapshots in each **analysis tool** — Frequency, Concordance, Trends, Topic Modelling, Quotation. (Data Loader, Preprocessing and Export don't have snapshots — those tools build the data, they don't produce views.) Once you load a snapshot into an analysis tool, that tool's view is read-only — you can hover, click, and switch views, but you can't change the parameters or rerun. Other tools stay editable as normal."*
-4. *"Create a new workspace called `Wordflow`."* (~30s)
+1. *"In Data Loader, click **Import sample data**. A modal opens with two tabs that import separately."* (~1.5 min)
+   - *"**Datasets** tab — select all three: Honi Soit, QLD election 2020 tweets, and the 2025 Federal Election NewsTalk/Reddit bundle — then click **Import selected**."*
+   - *"**Demo Snapshots** tab — switch to it, select all five (the snapshots we'll tour in a minute), and click **Import selected** again. You won't use it all today, but it'll be ready for later."*
+2. *"In the sidebar, click the **pencil icon next to 'VIEWS'** — that turns on Snapshot Mode."* (~30s) *"This enables saving and loading snapshots in each **analysis tool** — Frequency, Concordance, Trends, Topic Modelling, Quotation. (Data Loader, Preprocessing and Export don't have snapshots — those tools build the data, they don't produce views.) Once you load a snapshot into an analysis tool, that tool's view is read-only — you can hover, click, and switch views, but you can't change the parameters or rerun. Other tools stay editable as normal."*
+3. *"Create a new workspace called `Wordflow`."* (~30s)
 
 > If anyone is still stuck on import: keep moving. The snapshots are loaded by tool, not by workspace — they'll catch up at the next tool transition.
 

@@ -10,10 +10,10 @@ You've just finished a tour of the Wordflow interface. Now you'll touch each of 
 
 Follow the facilitator's screen.
 
-1. **Data Loader → Import sample data.** A modal opens with two tabs:
-   - **Datasets** — select all three: **Honi Soit**, **QLD election 2020 tweets**, and the **2025 Federal Election NewsTalk/Reddit** bundle.
-   - **Demo Snapshots** — select all five (the Session 1.5 tour snapshots).
-   Click **Import selected** to bring everything in at once. *(You won't use it all today, but it'll be ready later.)*
+1. **Data Loader → Import sample data.** A modal opens with two tabs that import separately:
+   - **Datasets** — select all three (**Honi Soit**, **QLD election 2020 tweets**, and the **2025 Federal Election NewsTalk/Reddit** bundle) and click **Import selected**.
+   - **Demo Snapshots** — switch to this tab, select all five (the Session 1.5 tour snapshots), and click **Import selected** again.
+   *(You won't use it all today, but it'll be ready later.)*
 2. **Click the pencil icon next to the "VIEWS" title in the left sidebar** — that's the **Snapshot Mode** toggle. Turn it ON. This enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only (you can hover, click, and switch views, but you can't change parameters). Other tools stay editable as normal.
 3. **Create a new workspace** called `Wordflow`. Click **Create workspace** inside the **Data Loader** tool — Wordflow's hint system will highlight the button on first use. You'll keep using this same workspace through Session 2 and Session 3.
 

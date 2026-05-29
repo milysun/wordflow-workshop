@@ -47,7 +47,7 @@ Three options, easiest first:
 
 2. **Desktop app (Mac / Windows).** A native installer that runs everything on your own machine. Slower to start the first time, faster after. **Recommended for serious research work.** Link in the email.
 
-3. **Python install (`pip install ldaca-wordflow`).** For Python users who want CLI access. Requires Python 3.14+ and ~500 MB of disk.
+3. **Python install (`pip install ldaca-wordflow`, or `uvx ldaca-wordflow@latest` to run directly).** For Python users who want CLI access. Requires Python 3.14+ and ~500 MB of disk.
 
 ---
 

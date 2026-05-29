@@ -48,7 +48,7 @@ Three options:
 
 1. **Cloud (Binder)** — same URL as today's workshop. Free, no install. Caveat: don't upload sensitive data.
 2. **Desktop app (Mac / Windows)** — native installer, runs everything locally. Recommended for serious work. Downloads: [link].
-3. **Python (`pip install ldaca-wordflow`)** — for Python users, gives you CLI access. Requires Python 3.14+ and around 500 MB of disk.
+3. **Python (`pip install ldaca-wordflow`, or `uvx ldaca-wordflow@latest` to run directly)** — for Python users, gives you CLI access. Requires Python 3.14+ and around 500 MB of disk.
 
 ## Where to get help
 
