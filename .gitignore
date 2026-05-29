@@ -35,3 +35,7 @@ tmp/
 *.ldaca-snapshot
 !artifacts/snapshots/*.ldaca-snapshot
 
+# Generated handout build output (regenerate with handouts/build.py)
+handouts/*.html
+handouts/*.pdf
+
