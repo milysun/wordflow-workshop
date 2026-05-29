@@ -17,7 +17,7 @@ Use as a pre-read; keep open during the workshop.
 - Chrome, Edge, Firefox, Safari — any current desktop browser is fine. Mobile browsers won't work well; warn them.
 
 ### "Do I need to install anything?"
-- No, not for the workshop — Binder runs Wordflow in your browser. If you want the desktop app for later (or as a backup today if Binder is slow), the link is on **cutt.ly/wordflow**.
+- No, not for the workshop — Binder runs Wordflow in your browser. If you want the desktop app for later (or as a backup today if Binder is slow), the link is on **sih.tools/wordflow**.
 
 ### "What is Binder / what is this loading?"
 - *"A cloud computer that runs Wordflow for you. First time someone opens it today it takes a minute to start; after that everyone gets it fast."*
@@ -49,7 +49,7 @@ Use as a pre-read; keep open during the workshop.
 ## During Session 2 (the research story)
 
 ### "I lost track / my screen doesn't match yours."
-- **Default response**: *"That's fine — go to cutt.ly/wordflow → Releases. Download whichever Checkpoint (A–E) matches where I am, then in Wordflow: Data Loader → Import workspace archive → pick the file. You'll be back in sync in 30 seconds."*
+- **Default response**: *"That's fine — go to sih.tools/wordflow → Releases. Download whichever Checkpoint (A–E) matches where I am, then in Wordflow: Data Loader → Import workspace archive → pick the file. You'll be back in sync in 30 seconds."*
 - Don't try to talk individual participants back into sync mid-demo. The checkpoints exist for this.
 
 ### "I'm not sure if this move was 'try this' or 'watch only'."
@@ -106,7 +106,7 @@ Use as a pre-read; keep open during the workshop.
 - *"Wordflow auto-saves your workspace on every change. Close the tab and come back — it's still there. To take it off the cloud: Data Loader → Export workspace archive. For a single result: camera icon → Save snapshot."*
 
 ### "Can I install this on my own laptop?"
-- Yes — desktop app (Mac/Win) or `pip install ldaca-wordflow`. Desktop installer is on **cutt.ly/wordflow**.
+- Yes — desktop app (Mac/Win) or `pip install ldaca-wordflow`. Desktop installer is on **sih.tools/wordflow**.
 - Caveat: install size is hundreds of MB (includes ML models). Warn them.
 
 ### "Does it work offline?"

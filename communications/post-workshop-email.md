@@ -16,7 +16,7 @@ Thanks for spending three hours with Wordflow yesterday. Some of you asked for r
 
 **Session-1.5 demo snapshots** (the five we toured the tools with) — these ship with the LDaCA sample-data catalogue, so they import alongside the sample datasets in Wordflow. **No separate download needed.** In **Data Loader → Import sample data**, the modal's **Demo Snapshots** tab lets you select and import them any time.
 
-**Session-2 checkpoints** (the QLD election tweet workflow, one workspace archive per phase) — these are workshop-specific. Download from **cutt.ly/wordflow → Releases** → the *Intro to Wordflow — 3 June 2026* release:
+**Session-2 checkpoints** (the QLD election tweet workflow, one workspace archive per phase) — these are workshop-specific. Download from **sih.tools/wordflow → Releases** → the *Intro to Wordflow — 3 June 2026* release:
 
 - `Checkpoint_A.zip` — after join + dtype.
 - `Checkpoint_B.zip` — after gender filter + iterative Freq ↔ Concordance.

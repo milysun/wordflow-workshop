@@ -8,8 +8,8 @@ Minute-by-minute script. **Italics = your spoken framing**, plain text = facilit
 
 - Projector connected; `slides/index.html` open, slide 1 visible.
 - Wordflow open on your demo screen, the demo workspace already prepared with five demo snapshots imported.
-- **cutt.ly/wordflow** is visible on slide 3 (Housekeeping) so people can launch Wordflow as they arrive. (USyd-internal workshop — no separate WiFi login needed.)
-- The **five Session-2 checkpoint workspace archives** (`Checkpoint_A.zip` through `Checkpoint_E.zip`) published as a GitHub release on `milysun/wordflow-workshop` so the same `cutt.ly/wordflow` link gets people to them too.
+- **sih.tools/wordflow** is visible on slide 3 (Housekeeping) so people can launch Wordflow as they arrive. (USyd-internal workshop — no separate WiFi login needed.)
+- The **five Session-2 checkpoint workspace archives** (`Checkpoint_A.zip` through `Checkpoint_E.zip`) published as a GitHub release on `milysun/wordflow-workshop` so the same `sih.tools/wordflow` link gets people to them too.
 - The **feedback form URL** open in a browser tab so you can flash it on demand.
 - `participant/welcome.md` and `participant/cheat-sheet.md` on every chair.
 - Pen and paper on every table.
@@ -22,7 +22,7 @@ Minute-by-minute script. **Italics = your spoken framing**, plain text = facilit
 **Trigger:** at the 1:53 pm sync check (or earlier if it's obvious from the room), fewer than ~70% of attendees have Wordflow loaded, AND it's not just stragglers — Binder is unreachable, painfully slow, or refusing connections.
 
 **The move:**
-- Tell the room: *"Binder isn't cooperating today. Anyone who hasn't gotten in: go to cutt.ly/wordflow and click the desktop download link instead. Install takes about 5 minutes — we'll wait."*
+- Tell the room: *"Binder isn't cooperating today. Anyone who hasn't gotten in: go to sih.tools/wordflow and click the desktop download link instead. Install takes about 5 minutes — we'll wait."*
 - Anyone whose Binder *did* load can keep using it.
 - Anyone installing: tell them to keep going, you'll loop them in at the next sync check.
 
@@ -53,7 +53,7 @@ Slides 1 → 2. Stand. Speak slowly and sincerely; this isn't boilerplate. About
 
 Slide 3 (Housekeeping).
 
-*"Three hours, two breaks, lots of clicking. Before I say a word about Wordflow, please open `cutt.ly/wordflow` on your laptop and click 'Launch in Binder' — it'll spin up a copy of Wordflow in the cloud for you, takes a couple of minutes. While that's loading, I'll introduce the project and the team. If Binder hasn't loaded after about five minutes, the same URL has a desktop install link."*
+*"Three hours, two breaks, lots of clicking. Before I say a word about Wordflow, please open `sih.tools/wordflow` on your laptop and click 'Launch in Binder' — it'll spin up a copy of Wordflow in the cloud for you, takes a couple of minutes. While that's loading, I'll introduce the project and the team. If Binder hasn't loaded after about five minutes, the same URL has a desktop install link."*
 
 - Pause briefly to make sure people have typed the URL.
 
@@ -199,7 +199,7 @@ Advance to **Slide 14** (the red "Before the break" slide). Land this bridge cle
 
 **Mode:** Facilitator demo at full speed + participants follow only the moves marked **try this** in the hands-on-2 sheet. ~30 min demo + ~15 min selective follow-along.
 
-**Recovery:** Five checkpoint workspace archives (A → E), one per phase. At each, mention the corresponding file on **cutt.ly/wordflow → Releases**. Anyone who's lost loads it and rejoins. Don't lose more than 60 seconds shepherding stragglers — the archives are the safety net.
+**Recovery:** Five checkpoint workspace archives (A → E), one per phase. At each, mention the corresponding file on **sih.tools/wordflow → Releases**. Anyone who's lost loads it and rejoins. Don't lose more than 60 seconds shepherding stragglers — the archives are the safety net.
 
 ### 2:40 pm – 2:45 pm — Frame the research question + disable snapshot mode
 
@@ -207,7 +207,7 @@ Slide 17.
 
 *"For the next 45 minutes, I'm going to walk a real research workflow. The question: did female and male candidates in the 2020 QLD election tweet about different topical issues? We'll build a workflow that answers it — and along the way surface one small empirical finding.*
 
-*You don't have to follow every step. Your hands-on sheet marks some moves as 'try this' — pick up the keyboard for those. Other moves are marked 'watch' — sit back and look at my screen. If you fall behind, **cutt.ly/wordflow → Releases** has five checkpoint files (A–E, one per phase); load whichever you need to rejoin.*
+*You don't have to follow every step. Your hands-on sheet marks some moves as 'try this' — pick up the keyboard for those. Other moves are marked 'watch' — sit back and look at my screen. If you fall behind, **sih.tools/wordflow → Releases** has five checkpoint files (A–E, one per phase); load whichever you need to rejoin.*
 
 *From here on, we're building, not just looking. Snapshot Mode can stay on — it only locks a tool's view once you load a snapshot into that tool. New analyses you start are fine."*
 
@@ -225,7 +225,7 @@ There's more to a "load" step than just clicking import. Walk through the typica
 
 > Phase A is short on minutes but long on steps — five-to-seven moves, depending on whether you do the optional cleanups. The lesson here is *the data prep work is part of the analysis*; people who skip it often pay later with mysterious bugs. The checkpoint catches anyone who fell off mid-way.
 
-> **Checkpoint A** — workspace archive: `Checkpoint_A.zip`. Mention it explicitly: *"Anyone behind, download checkpoint A from cutt.ly/wordflow → Releases."*
+> **Checkpoint A** — workspace archive: `Checkpoint_A.zip`. Mention it explicitly: *"Anyone behind, download checkpoint A from sih.tools/wordflow → Releases."*
 
 ### 2:52 pm – 3:01 pm — B: Filter by gender + iterative Freq ↔ Concordance (9 min, TRY THIS)
 
@@ -386,13 +386,13 @@ Two slides: **Slide 31 (Thank you)** for the three asks, then **Slide 32 (Data a
 
 *"Thank you for spending three hours with us. Three asks if Wordflow turned out useful:*
 
-1. *Install it locally — desktop link is on cutt.ly/wordflow, same URL you used today — and try it on your own work.*
+1. *Install it locally — desktop link is on sih.tools/wordflow, same URL you used today — and try it on your own work.*
 2. *If you publish using it, cite the project — the citation is on the docs site.*
 3. *Tap the feedback button as you go. Bug reports, improvement advice, "I need more", or just "this rocks" — all helpful.*
 
 *And — spread the word. If you have a colleague who works with text and is allergic to coding, they should know this exists.*
 
-*Tonight you'll get an email with the snapshots and workspace archive from today, the docs, and one question: what would have made today more useful? Reply with one sentence. The desktop install link is on cutt.ly/wordflow whenever you want it.*
+*Tonight you'll get an email with the snapshots and workspace archive from today, the docs, and one question: what would have made today more useful? Reply with one sentence. The desktop install link is on sih.tools/wordflow whenever you want it.*
 
 *Thanks. Have a good evening."*
 

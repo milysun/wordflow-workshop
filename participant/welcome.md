@@ -21,7 +21,7 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 - A confident mental model of how Wordflow's pieces fit together — workspace, data block, graph.
 - The big idea: **every tool is a lens, and the analysis is shaped by how you shape the data**.
 - At least one of: a saved snapshot, a workspace archive, or a clear next move for your own corpus.
-- A post-workshop email with all the day's files and the docs. (The install link lives on **cutt.ly/wordflow** any time.)
+- A post-workshop email with all the day's files and the docs. (The install link lives on **sih.tools/wordflow** any time.)
 
 ---
 
@@ -52,8 +52,8 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 
 ## Today's open URLs
 
-> **Workshop URL**: **cutt.ly/wordflow** — click "Launch in Binder" to start Wordflow in your browser. The same page has a desktop download link if Binder isn't cooperating.
-> **Workshop resources** (Session 2 checkpoint snapshots + workspace archive): **cutt.ly/wordflow** → Releases.
+> **Workshop URL**: **sih.tools/wordflow** — click "Launch in Binder" to start Wordflow in your browser. The same page has a desktop download link if Binder isn't cooperating.
+> **Workshop resources** (Session 2 checkpoint snapshots + workspace archive): **sih.tools/wordflow** → Releases.
 > **Feedback form**: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 *URLs will also be on the screen during the workshop.*
