@@ -29,6 +29,9 @@ scratch/
 tmp/
 *.log
 
-# Workshop checkpoint archives — uploaded as GitHub Release assets, not committed
+# Ignore stray snapshot exports anywhere in the tree, but keep the curated
+# workshop bundles under artifacts/snapshots/ (their source of truth is the
+# ldaca-analytics-sample-data repo; tracked here for convenience).
 *.ldaca-snapshot
+!artifacts/snapshots/*.ldaca-snapshot
 

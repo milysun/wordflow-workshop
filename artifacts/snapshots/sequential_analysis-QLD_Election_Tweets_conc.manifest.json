@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "mode": "demo",
+  "tool": "sequential_analysis",
+  "tool_version": "0.5.5",
+  "captured_at": "2026-05-29T06:29:49.788Z",
+  "title": "QLD_Election_Tweets_conc",
+  "source": {
+    "workspace_id": "ce852f9f-c0f6-4aa3-8d29-4a72d0459f2c",
+    "workspace_name": "Wordflow",
+    "node_ids": [
+      "bb31b943-42ce-41f2-9520-916b4a1e5a8d"
+    ],
+    "node_labels": [
+      "qldelection2020_conc"
+    ],
+    "per_block_rows": [
+      767
+    ],
+    "total_source_rows": 767
+  },
+  "capabilities": {
+    "canPaginate": false,
+    "canSortAndFilterResult": true,
+    "canExport": true,
+    "canFilterSourceRows": false,
+    "canCrossJump": false
+  },
+  "preview": {
+    "tool": "sequential_analysis",
+    "seriesCount": 21,
+    "bucketCount": 195,
+    "chartType": "line"
+  },
+  "payloads": [
+    {
+      "kind": "result",
+      "path": "tables/result.json"
+    },
+    {
+      "kind": "settings",
+      "path": "settings.json"
+    }
+  ],
+  "node_colors": {
+    "bb31b943-42ce-41f2-9520-916b4a1e5a8d": "#2563eb"
+  }
+}
