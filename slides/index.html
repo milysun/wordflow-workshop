@@ -635,11 +635,11 @@
     <h2>Phase A · <span class="badge watch">FOLLOW ALONG</span></h2>
     <h1>Load, prepare, join</h1>
     <ol>
-      <li>Import the two source blocks (tweets + candidate gender).</li>
+      <li>Add the two CSV files as data blocks (tweets + candidate gender).</li>
       <li>Rename the long block via its <strong>menu icon → Rename</strong>.</li>
-      <li>Delete unused columns via the <strong>column menu icon</strong> at the end of each column header.</li>
-      <li>Set dtypes — make sure <code>username</code> matches across both.</li>
-      <li>Join on <code>username</code> (left join) → <code>tweets_with_gender</code>.</li>
+      <li>Delete unused columns via the <strong>column menu icon</strong> at the end of each column header. <span style="color: var(--muted); font-style: italic;">(optional)</span></li>
+      <li>Set dtypes — <code>username</code> must be the <strong>same type</strong> in both, or the join won't match.</li>
+      <li>Select <code>tweets</code> first, then the gender block — <strong>first pick = left table</strong>. Join on <code>username</code> (left join keeps every tweet) → <code>tweets_with_gender</code>.</li>
       <li>Click the joined block → see the gender column in the Data Viewer.</li>
     </ol>
     <p style="margin-top: 0.6em; font-style: italic; color: var(--muted);">Data prep is part of the analysis. Don't rush.</p>

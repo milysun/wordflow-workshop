@@ -29,11 +29,11 @@ That's a six-step workflow across **four analysis tools** (Frequency, Concordanc
 Follow along on your machine if you can. **There's more to "load" than just clicking import** — for first-time users this is the most procedurally dense phase, so it's fine to just watch the projector here. Checkpoint A catches you up before Phase B.
 
 What's happening:
-1. **Import** the two source blocks: `qldelection2020_candidate_tweets` and `candidate_info_gender`.
+1. **Add** the two CSV files as data blocks: `qldelection2020_candidate_tweets` and `candidate_info_gender`. (They were already downloaded in the start-of-workshop **Import sample data** step — in the Data Loader file list, click **Add** on each. No re-importing here.)
 2. **Rename** the longer block to `tweets` — click the **menu icon** on the data block → Rename. (Wordflow doesn't use right-click; the menu icon is a tiny icon on the block itself.)
-3. **Delete unused columns** that aren't relevant to this analysis — click the **menu icon at the end of a column header** to open the column menu.
-4. **Set column dtypes** — make sure the join key (`username`) is the same type in both blocks.
-5. **Join** the two on `username` (left join) → new block `tweets_with_gender`. Accept any dtype warning Wordflow shows.
+3. **Delete unused columns** that aren't relevant to this analysis — click the **menu icon at the end of a column header** to open the column menu. *(Optional — not essential for the analysis.)*
+4. **Set column dtypes** — make sure the join key (`username`) is the **same type** in both blocks, or the join won't match the rows.
+5. **Join** the two on `username`: select `tweets` **first** so it becomes the *left* table (the first block you select is the left side), then choose **left join** → new block `tweets_with_gender`, keeping every tweet. Accept any dtype warning Wordflow shows.
 6. **Click `tweets_with_gender`** → look at the Data Viewer. Click a row to read one full tweet.
 
 > Data prep work *is* part of the analysis. People who rush through it often pay later with mysterious bugs.

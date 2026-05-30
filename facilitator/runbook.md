@@ -215,11 +215,11 @@ Slide 17.
 
 There's more to a "load" step than just clicking import. Walk through the typical first-time-user prep moves calmly — narrate each so the room doesn't panic about catching up.
 
-1. **Data Loader** → import (or open) the two source blocks: `qldelection2020_candidate_tweets` and `candidate_info_gender`. *"These are the two starting blocks. The first is one row per tweet; the second is one row per candidate with a gender column."*
+1. **Data Loader** → **Add** the two source blocks as data blocks: `qldelection2020_candidate_tweets` and `candidate_info_gender` (already downloaded in the start-of-workshop **Import sample data** step — in the file list, click **Add** on each; no re-import). *"These are the two starting blocks. The first is one row per tweet; the second is one row per candidate with a gender column."*
 2. **Rename** the long block name (optional but worth showing). Open the block's **menu icon** (the small icon on the block) → Rename. `qldelection2020_candidate_tweets` → `tweets`. *"Block names show up in every later step — shorter is better. Wordflow doesn't use right-click — everything is in the menu icon on the block, and the same icon shape sits on each column header for column operations."*
 3. **Delete unused columns** (optional but worth showing). Click the **menu icon at the end of a column header** to open that column's menu, then delete. Drop anything you don't need (URLs, retweet counts, whatever doesn't matter for this analysis). *"Smaller blocks load faster, and the column list in later tools is less noisy."*
 4. **Set column dtypes** — open a column's menu (or use the dtype dropdown next to its name) and confirm `username` is the same type in both blocks before joining. *"Mixed types break joins and group-bys silently — set them now and you avoid surprises later."*
-5. **Preprocessing → Join.** Left join on `username` → Add to Workspace as `tweets_with_gender`. *"The join key is `username` — both blocks have a username column for the candidate. Left join, so we keep all tweets even if the gender info is missing."*
+5. **Preprocessing → Join.** Select `tweets` **first** so it's the *left* table (the first block you select becomes the left side), then **left join** on `username` → Add to Workspace as `tweets_with_gender`. *"The join key is `username` — both blocks have a username column for the candidate. Order matters: pick tweets first so it's the left table, then left join — that keeps all tweets even if the gender info is missing."*
 6. If a dtype warning appears at this stage: *"Wordflow noticed something we missed. Accept the auto-standardisation."*
 7. *Click `tweets_with_gender` → look at the Data Viewer.* *"Now every tweet has a gender column. Click a row to read one full tweet."*
 
