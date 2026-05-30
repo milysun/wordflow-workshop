@@ -44,8 +44,8 @@ A portable export of your entire workspace — all data blocks, derivations, and
 ### Feedback button
 The **Feedback** button at the bottom of the left sidebar (next to Tutorial). Tap it any time something is confusing, surprising, or broken. Even one word helps the developers — they read every one.
 
-### Detach
-Available from the data-block **menu icon** (or as an action on selected topics in Topic Modelling). Splits the selection into a new derived block. Useful for "I want to analyse just these rows further."
+### Add to Workspace
+The button in each tool's results panel (Concordance, Frequency comparative, Trends selection, Topic Modelling, Preprocessing). Turns the current result or selection into a new derived data block in your workspace. Useful for "I want to take these results and analyse them further in another tool."
 
 ### Tokenise
 Available from the data-block **menu icon**. Pre-computes a word-tokenised version of your text column. Required for Tokens-mode Concordance, especially for languages like Chinese / Japanese where there's no space between words. For English you usually don't need this manually.

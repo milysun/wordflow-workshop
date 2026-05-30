@@ -16,9 +16,9 @@ We'll answer it by:
 1. Joining tweets with candidate gender data.
 2. Filtering into female and male sub-corpora.
 3. Comparing them with frequency analysis and reading specific terms in context — iterating between the two tools to settle on a search pattern.
-4. Running that pattern as a regex covering a **COVID** theme (`covid`, `case(s)`) and a **spending-cuts** theme (`cut(s)`); detaching the matches and looking at temporal trends, including the gender gap on *cut(s)*.
-5. Topic modelling on both gender corpora together — fused bubbles, then detach.
-6. Stacking the detached topic blocks and viewing the final cross-gender trends.
+4. Running that pattern as a regex covering a **COVID** theme (`covid`, `case(s)`) and a **spending-cuts** theme (`cut(s)`); adding the matches to the workspace and looking at temporal trends, including the gender gap on *cut(s)*.
+5. Topic modelling on both gender corpora together — fused bubbles, then Add to Workspace.
+6. Stacking the topic blocks you added to the workspace and viewing the final cross-gender trends.
 
 That's a six-step workflow across **four analysis tools** (Frequency, Concordance, Trends — used twice — and Topic Modelling), one corpus, one question — and one *made-up hypothesis* about which gender tweets more about which theme.
 
@@ -97,7 +97,7 @@ Try this one with the facilitator — it's worth running yourself:
 4. When done: BERTopic actually produces **~23 topics** (the "target" is a hint, not a cap). Crowded.
 5. **Drag the re-aggregation slider to 16 topics** — bubbles spread out, themes become distinguishable. Re-aggregation is client-side — no re-run. (Trying further down to 5 would crush the topics together.)
 6. **Look at the colour mixing**: solid bubbles = gender-dominant; blended = shared themes. Hover for top words.
-7. **Select 2-3 interesting topics → Detach.** Because Topic Modelling ran on two parents, detaching produces *per-gender child blocks* — one set under `tweets_female`, one under `tweets_male`.
+7. **Select 2-3 interesting topics → Add to Workspace.** Because Topic Modelling ran on two parents, this produces *per-gender child blocks* — one set under `tweets_female`, one under `tweets_male`.
 
 > 🎯 Insight to land: themes can be discovered automatically, and the *colour mixing* tells you immediately which themes are shared vs gender-dominant.
 
@@ -121,7 +121,7 @@ The closing move — try it with the facilitator:
 
 ## You don't have to have followed every step
 
-If you got lost mid-stream — that's fine. The point isn't to have your screen match the facilitator's at minute 45. The point is to **see what's possible**, recognise the cross-tool moves (click jump, add-as-block, detach, stack, group), and trust you can build something like it yourself.
+If you got lost mid-stream — that's fine. The point isn't to have your screen match the facilitator's at minute 45. The point is to **see what's possible**, recognise the cross-tool moves (click jump, Add to Workspace, stack, group), and trust you can build something like it yourself.
 
 In the free lab (Session 3.C), you can:
 - Load any checkpoint (C, D, or E) and continue the chain at your own pace.
@@ -134,7 +134,7 @@ In the free lab (Session 3.C), you can:
 
 Look at the graph view. **Read it back to front, aloud or silently:**
 
-> *"Starting from QLD tweets joined with gender data, I filtered by gender, jumped between Frequency and Concordance to find a search pattern, ran it as a regex, detached the matches, found a gender gap on `cut(s)` in Trends, topic-modelled the two corpora together, detached selected topics, stacked them, and looked at the trends of those topics. What I found is ____."*
+> *"Starting from QLD tweets joined with gender data, I filtered by gender, jumped between Frequency and Concordance to find a search pattern, ran it as a regex, added the matches to the workspace, found a gender gap on `cut(s)` in Trends, topic-modelled the two corpora together, added selected topics to the workspace, stacked them, and looked at the trends of those topics. What I found is ____."*
 
 That sentence is your method section. Wordflow wrote most of it for you.
 

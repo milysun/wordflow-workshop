@@ -23,7 +23,7 @@ Visualisations aren't just for looking. You can pick parts of them and turn that
 1. Open a Trends snapshot. **Click in the legend** to hide or isolate individual lines (e.g. focus on the `cut(s)` lines only).
 2. **Click** a data point — or **click + Shift-click** to select a range (e.g. a campaign peak or a date window). **Add the selection to the workspace** as a new data block.
 3. Quickly mention the same pattern in two other tools:
-   - **Topic Modelling**: click bubbles to select topics → Detach → new blocks. (Same move you saw in Session 2.)
+   - **Topic Modelling**: click bubbles to select topics → Add to Workspace → new blocks. (Same move you saw in Session 2.)
    - **Concordance**: click + Shift-click hit markers in the dispersion view to select tweets → Add to Workspace.
 
 > 🎯 The lesson: in every visual tool, *seeing* something interesting and *making it new data* is one move, not two.
@@ -72,7 +72,7 @@ You watched some of Session 2 but didn't get to follow every step. Now's the tim
 2. Pick a step you watched and try it yourself:
    - The **regex with three keywords** in Concordance.
    - The **dispersion view + visual select** to make a new block.
-   - The **topic modelling + detach + group in Trends** sequence.
+   - The **topic modelling + Add to Workspace + group in Trends** sequence.
 3. Save your result as a snapshot when you have something you like.
 
 ### Track B — Bring your own data

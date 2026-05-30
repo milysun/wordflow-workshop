@@ -104,9 +104,9 @@ Open Wordflow in a fresh workspace called `session2-master`. Walk the full A→B
   - File: `Checkpoint_C.zip`
   - **Verify before saving**: with Trends grouped by matched-term × gender, filtering the `covid`/`case`/`cases` combinations off via the legend leaves only the `cut` / `cuts` lines; switching the chart from line to bar shows male candidates mentioning `cut(s)` more often than female (sharper with the time bin set to weekly). That's the empirical hook of Session 2 — if it doesn't reproduce on your laptop, dig in before the workshop.
 
-- **At end of D** (Topic Modelling on `tweets_female` + `tweets_male` as two corpora, target = 8 / seed = 42 / re-aggregated to 16; 2-3 topics detached as per-gender children):
+- **At end of D** (Topic Modelling on `tweets_female` + `tweets_male` as two corpora, target = 8 / seed = 42 / re-aggregated to 16; 2-3 topics added to the workspace as per-gender children):
   - File: `Checkpoint_D.zip`
-  - **Verify before saving**: detached topics appear as child blocks under *both* `tweets_female` and `tweets_male` in the graph. If detach produces a single block instead of per-gender children, the topic modelling wasn't run on two corpora — re-run it with both selected.
+  - **Verify before saving**: the added topics appear as child blocks under *both* `tweets_female` and `tweets_male` in the graph. If Add to Workspace produces a single block instead of per-gender children, the topic modelling wasn't run on two corpora — re-run it with both selected.
 
 - **At end of E** (Stack the per-gender topic blocks → unified block → final Trends viewed):
   - File: `Checkpoint_E.zip`
@@ -155,7 +155,7 @@ Session 2 is the most ambitious 45 minutes of the day. Practise it twice.
 
 - [ ] **Run 2 — practise narrating each step out loud as if to an audience.** Includes the cross-tool moments: the iterative Frequency ↔ Concordance loop in B, the dispersion-select → aggregated block in C-1, the COVID-legend-filter → line→bar comparison on `cut(s)` in C-2 (the empirical hook), the two-corpus Topic Modelling colour-fusion in D, and the Stack → final Trends close in E.
 
-- [ ] **Phase D parameter check.** On the build laptop, run Topic Modelling with **target = 8 topics and seed = 42** with *both* `tweets_female` and `tweets_male` selected. Expect BERTopic to actually produce ~23 topics. Drag the **re-aggregation slider to 16**, confirm the bubbles spread out cleanly with visible colour fusion on shared topics. Detach 2-3 topics and confirm they appear as child blocks under *both* parents. If the slider value or detach behaviour differs from this on the workshop day, narration needs adjusting on the fly.
+- [ ] **Phase D parameter check.** On the build laptop, run Topic Modelling with **target = 8 topics and seed = 42** with *both* `tweets_female` and `tweets_male` selected. Expect BERTopic to actually produce ~23 topics. Drag the **re-aggregation slider to 16**, confirm the bubbles spread out cleanly with visible colour fusion on shared topics. Add 2-3 topics to the workspace and confirm they appear as child blocks under *both* parents. If the slider value or Add-to-Workspace behaviour differs from this on the workshop day, narration needs adjusting on the fly.
 
 ---
 

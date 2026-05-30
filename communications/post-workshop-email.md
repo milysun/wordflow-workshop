@@ -21,7 +21,7 @@ Thanks for spending three hours with Wordflow yesterday. Some of you asked for r
 - `Checkpoint_A.zip` — after join + dtype.
 - `Checkpoint_B.zip` — after gender filter + iterative Freq ↔ Concordance.
 - `Checkpoint_C.zip` — after the regex aggregation + Trends with the `cut(s)` gender gap.
-- `Checkpoint_D.zip` — after Topic Modelling on two corpora + detach into per-gender child blocks.
+- `Checkpoint_D.zip` — after Topic Modelling on two corpora + Add to Workspace into per-gender child blocks.
 - `Checkpoint_E.zip` — after Stack + final Trends.
 
 **How to use them:**

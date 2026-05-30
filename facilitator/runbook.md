@@ -276,7 +276,7 @@ Topic Modelling accepts **two data blocks** as input and produces a fused bubble
 3. While it runs: *"Look at the Task Centre — that's where slow tasks show progress."*
 4. When done: BERTopic actually produces ~23 topics. **Drag the re-aggregation slider to 16** — bubbles spread out, themes become distinguishable.
 5. Narrate the colour mixing: *"Solid bubbles are gender-dominant topics; blended bubbles are themes shared across both. Hover for top words."*
-6. **Select 2–3 interesting topics → Detach.** Because the topic model ran on two parents, detaching produces *per-gender child blocks* — one set under `tweets_female`, one under `tweets_male`.
+6. **Select 2–3 interesting topics → Add to Workspace.** Because the topic model ran on two parents, this produces *per-gender child blocks* — one set under `tweets_female`, one under `tweets_male`.
 
 > Numbers checked on this corpus: target=8 + seed=42 produces ~23 topics; re-aggregating to **16 spreads the bubbles cleanly**, 5 crushes them. The lesson is interactive tuning, not the magic number.
 
@@ -286,7 +286,7 @@ Topic Modelling accepts **two data blocks** as input and produces a fused bubble
 
 The closing move. Stack the per-gender topic blocks back together so the final Trends view can compare topics across genders.
 
-1. **Preprocessing → Stack** the detached topic blocks from `tweets_female` and `tweets_male`. Result: a unified block where each row carries both its topic label and its gender column.
+1. **Preprocessing → Stack** the topic blocks you added to the workspace from `tweets_female` and `tweets_male`. Result: a unified block where each row carries both its topic label and its gender column.
 2. Click the stacked block → **Trends.** Time bin weekly. Group by `topic` (or `gender × topic` if the tool supports a two-key group).
 3. *"Final view. Selected topics from the two-corpus model, evolving across the campaign, split by gender. End to end — that's our method."*
 
@@ -324,7 +324,7 @@ The conceptual payoff. Three short demos showing **you shape the analysis at eve
 2. **Legend filtering**: click in the legend to toggle individual lines on and off. Narrate: *"I can hide everything except `economic` to focus on one term."*
 3. **Visual selection**: **click a point** on the chart, then **Shift-click** another to select a range — say, the campaign peak. Click **Add to Workspace**. *"Now I've selected a slice and turned it into a new data block."*
 4. *"Same idea, same operation, different tools — quickly:"*
-   - Topic Modelling: **click bubbles** to select interesting topics → Detach → new blocks. *(We saw this in Session 2.)*
+   - Topic Modelling: **click bubbles** to select interesting topics → Add to Workspace → new blocks. *(We saw this in Session 2.)*
    - Concordance: **dispersion view** — click + Shift-click on hit markers to select tweets → **Add to Workspace**. *(We saw this too.)*
 5. *"In every visual tool: see something interesting, select it, make it new data. That's reading and analysing in one move."*
 
