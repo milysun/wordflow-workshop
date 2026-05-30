@@ -53,7 +53,7 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 ## Today's open URLs
 
 > **Workshop URL**: **sih.tools/wordflow** — click "Launch in Binder" to start Wordflow in your browser. The same page has a desktop download link if Binder isn't cooperating.
-> **Workshop resources** (Session 2 checkpoint snapshots + workspace archive): **sih.tools/wordflow** → Releases.
+> **Workshop resources** (Session 2 checkpoint files): **sih.tools/wordflow → Materials → Session 2 checkpoint files**.
 > **Feedback form**: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 *URLs will also be on the screen during the workshop.*

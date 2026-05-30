@@ -4,7 +4,7 @@
 
 This is the heart of the workshop. The facilitator will walk a real multi-tool workflow, end to end, answering a research question. The key moves are marked **✋ TRY THIS**; the rest are **👣 FOLLOW ALONG** — have a go at them too, and don't worry if you fall behind. The markers below tell you which is which, and there's a checkpoint for every phase if you need to catch up.
 
-If you fall behind, there are **five checkpoint workspace archives (A → E)** on **sih.tools/wordflow → Releases** — one per phase. Download whichever matches where the facilitator is, import it, you're back in sync. Don't stress about following every click.
+If you fall behind, there are **five checkpoint workspace archives (A → E)** — one per phase — under **sih.tools/wordflow → Materials → Session 2 checkpoint files**. Download whichever matches where the facilitator is, then import it as a workspace (Data Loader → Import workspace archive) and you're back in sync. Don't stress about following every click.
 
 ---
 
@@ -38,7 +38,7 @@ What's happening:
 
 > Data prep work *is* part of the analysis. People who rush through it often pay later with mysterious bugs.
 
-✅ **Checkpoint A** — if you got lost: download `Checkpoint_A.zip` from **sih.tools/wordflow → Releases**. In Wordflow: **Data Loader → Import workspace archive →** select the file. Your workspace now matches the facilitator's.
+✅ **Checkpoint A** — if you got lost: download `Checkpoint_A.zip` from **sih.tools/wordflow → Materials → Session 2 checkpoint files**. In Wordflow: **Data Loader → Import workspace archive →** select the file. Your workspace now matches the facilitator's.
 
 ---
 

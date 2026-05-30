@@ -49,7 +49,7 @@ Use as a pre-read; keep open during the workshop.
 ## During Session 2 (the research story)
 
 ### "I lost track / my screen doesn't match yours."
-- **Default response**: *"That's fine — go to sih.tools/wordflow → Releases. Download whichever Checkpoint (A–E) matches where I am, then in Wordflow: Data Loader → Import workspace archive → pick the file. You'll be back in sync in 30 seconds."*
+- **Default response**: *"That's fine — go to sih.tools/wordflow → Materials → Session 2 checkpoint files. Download whichever Checkpoint (A–E) matches where I am, then in Wordflow: Data Loader → Import workspace archive → pick the file. You'll be back in sync in 30 seconds."*
 - Don't try to talk individual participants back into sync mid-demo. The checkpoints exist for this.
 
 ### "I'm not sure if this move was 'try this' or 'follow along'."

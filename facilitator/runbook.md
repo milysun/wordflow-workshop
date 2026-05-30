@@ -199,7 +199,7 @@ Advance to **Slide 14** (the red "Before the break" slide). Land this bridge cle
 
 **Mode:** Facilitator demo at full speed + participants follow only the moves marked **try this** in the hands-on-2 sheet. ~30 min demo + ~15 min selective follow-along.
 
-**Recovery:** Five checkpoint workspace archives (A → E), one per phase. At each, mention the corresponding file on **sih.tools/wordflow → Releases**. Anyone who's lost loads it and rejoins. Don't lose more than 60 seconds shepherding stragglers — the archives are the safety net.
+**Recovery:** Five checkpoint workspace archives (A → E), one per phase. At each, mention the corresponding file under **sih.tools/wordflow → Materials → Session 2 checkpoint files**. Anyone who's lost downloads it and imports it as a workspace to rejoin. Don't lose more than 60 seconds shepherding stragglers — the archives are the safety net.
 
 ### 2:40 pm – 2:45 pm — Frame the research question
 
@@ -207,7 +207,7 @@ Slide 17.
 
 *"For the next 45 minutes, I'm going to walk a real research workflow. The question: did female and male candidates in the 2020 QLD election tweet about different topical issues? We'll build a workflow that answers it — and along the way surface one small empirical finding.*
 
-*You don't have to nail every step. Your hands-on sheet marks the key moves as 'try this' — pick up the keyboard for those. The rest are 'follow along' — have a go if you can, no pressure if you can't. If you fall behind, or a step doesn't work, **sih.tools/wordflow → Releases** has a checkpoint for every phase (A–E); load whichever you need to rejoin.*
+*You don't have to nail every step. Your hands-on sheet marks the key moves as 'try this' — pick up the keyboard for those. The rest are 'follow along' — have a go if you can, no pressure if you can't. If you fall behind, or a step doesn't work, **sih.tools/wordflow → Materials → Session 2 checkpoint files** has one for every phase (A–E); download it and import it as a workspace to rejoin.*
 
 *From here on, we're building, not just looking. Snapshot Mode can stay on — it only locks a tool's view once you load a snapshot into that tool. New analyses you start are fine."*
 
@@ -225,7 +225,7 @@ There's more to a "load" step than just clicking import. Walk through the typica
 
 > Phase A is short on minutes but long on steps — five-to-seven moves, depending on whether you do the optional cleanups. The lesson here is *the data prep work is part of the analysis*; people who skip it often pay later with mysterious bugs. The checkpoint catches anyone who fell off mid-way.
 
-> **Checkpoint A** — workspace archive: `Checkpoint_A.zip`. Mention it explicitly: *"Anyone behind, download checkpoint A from sih.tools/wordflow → Releases."*
+> **Checkpoint A** — workspace archive: `Checkpoint_A.zip`. Mention it explicitly: *"Anyone behind, download checkpoint A from sih.tools/wordflow → Materials → Session 2 checkpoint files and import it as a workspace."*
 
 ### 2:52 pm – 3:01 pm — B: Filter by gender + iterative Freq ↔ Concordance (9 min, FOLLOW ALONG)
 

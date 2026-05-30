@@ -63,7 +63,7 @@ This is a 3-hour intro. We won't be diving deep into every tool, parameter, or a
 
 ## Optional but recommended — install the desktop app as a backup
 
-The cloud version we'll use on the day is convenient but depends on a shared free service (Binder). It usually works, but if it's slow or down, we'll switch the room to the desktop app. **You can save the room some time by installing it beforehand:** go to **sih.tools/wordflow**, scroll to "Releases", and grab the Mac or Windows installer. Takes about 5 minutes. If Binder works fine on the day, you've still got a useful tool installed for later.
+The cloud version we'll use on the day is convenient but depends on a shared free service (Binder). It usually works, but if it's slow or down, we'll switch the room to the desktop app. **You can save the room some time by installing it beforehand:** go to **sih.tools/wordflow** and download the Mac or Windows installer. Takes about 5 minutes. If Binder works fine on the day, you've still got a useful tool installed for later.
 
 ## Questions before the workshop?
 

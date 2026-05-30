@@ -18,7 +18,7 @@ If you're 5 min behind because Session 1.0 ran long: cut deployment options enti
 
 Setup is taking too long because participants are stuck on something earlier. Don't try to recover with speed — **stop demoing and announce the recovery checkpoints**:
 
-> *"Anyone behind, download checkpoint A from sih.tools/wordflow → Releases and skip ahead. I'm continuing in 60 seconds."*
+> *"Anyone behind, grab checkpoint A from sih.tools/wordflow → Materials → Session 2 checkpoint files, import it as a workspace, and skip ahead. I'm continuing in 60 seconds."*
 
 Continue without waiting. The lost participants will catch up via checkpoints.
 
