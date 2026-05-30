@@ -239,7 +239,7 @@ A good phase for participants to follow along on the keyboard — no pressure if
 3. **Iterative exploration**: click a topical word → jumps to Concordance with that word pre-loaded. Read a few contexts. Go back to Frequency, pick a different word. *Repeat — this is the exploration before settling on a final pattern.*
 4. After a few rounds, narrate aloud: *"I've been jumping between Frequency and Concordance to spot meaningful patterns. Words I keep coming back to: `covid`, `cases`, and `cut(s)`. Two themes are emerging — COVID and spending cuts. In the next phase, I'll build a regex that captures these terms in one search."*
 
-> Land here: *"You just stacked twice — Frequency to Concordance, and back again. Read the graph: that's your method. The regex in Phase C didn't fall from the sky; it came from this iteration."*
+> Land here: *"You just stacked twice — Frequency to Concordance, and back again. Read the graph: that's your method. The regex in Phase C grew straight out of this iteration."*
 
 > **Checkpoint B** — workspace archive: `Checkpoint_B.zip`.
 

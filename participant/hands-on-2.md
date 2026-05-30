@@ -51,7 +51,7 @@ A good place to pick up the keyboard and follow along — no pressure if you can
 3. **Iterate**: click a topical word → Wordflow jumps to **Concordance** with that word pre-loaded. Read a few contexts. Go back to Frequency, pick a different word. Repeat — this is the *exploration* before settling on a final pattern.
 4. The facilitator will narrate the moves they keep coming back to: `covid`, `case(s)`, `cut(s)`. **Two themes** are emerging — *COVID* and *spending cuts*. That sets up the regex in Phase C.
 
-> 🎯 Insight to land: you stacked twice — Frequency to Concordance, and back again. The regex in Phase C didn't fall from the sky; it came from this iteration. **Reading shapes searching shapes reading.**
+> 🎯 Insight to land: you stacked twice — Frequency to Concordance, and back again. The regex in Phase C grew straight out of this iteration. **Reading shapes searching shapes reading.**
 
 ✅ **Checkpoint B** — `Checkpoint_B.zip`.
 
