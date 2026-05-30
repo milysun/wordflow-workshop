@@ -252,7 +252,7 @@ A good phase for participants to follow along on the keyboard — no pressure if
 2. Each match coloured by which pattern hit. **Switch view to Dispersion** — bars per tweet, colour-coded — to show how the matches spread across the corpus.
 3. **Switch back to the Table view**, then click **Add to Workspace** — each matched hit becomes its own row (matched-term column preserved alongside the gender column, ready for Trends). *"Add from the Table view, not Dispersion — Dispersion gives you a per-document aggregation, which collapses the hit-level rows Trends needs."*
 
-> The hypothesis we're testing (informally): *do female and male candidates tweet differently about the pandemic vs spending cuts?* Made-up hypothesis on a small dataset — useful as a worked example, not a finding.
+> The hypothesis we're testing (informally): *do female and male candidates tweet differently about the pandemic vs spending cuts?* Toy hypothesis on a small dataset — useful as a worked example, not a finding.
 
 #### C-2 — Trends on the matched block, find the cut(s) gender gap (TRY THIS, ~6 min)
 
@@ -290,7 +290,7 @@ The closing move. Stack the per-gender topic blocks back together so the final T
 2. Click the stacked block → **Trends.** Time bin weekly. Group by `topic` (or `gender × topic` if the tool supports a two-key group).
 3. *"Final view. Selected topics from the two-corpus model, evolving across the campaign, split by gender. End to end — that's our method."*
 
-> **Final landing**: *"Four analysis tools — Frequency, Concordance, Trends (twice), Topic Modelling — across one corpus, one made-up hypothesis, one workflow. We went from raw tweets to a finding — small, suggestive, but real — in 45 minutes. The graph behind me is the whole method, captured as a picture."*
+> **Final landing**: *"Four analysis tools — Frequency, Concordance, Trends (twice), Topic Modelling — across one corpus, one toy hypothesis, one workflow. We went from raw tweets to a finding — small, suggestive, but real — in 45 minutes. The graph behind me is the whole method, captured as a picture."*
 
 > **Checkpoint E** — workspace archive: `Checkpoint_E.zip`.
 

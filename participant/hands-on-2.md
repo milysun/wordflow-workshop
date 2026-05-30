@@ -20,7 +20,7 @@ We'll answer it by:
 5. Topic modelling on both gender corpora together — fused bubbles, then Add to Workspace.
 6. Stacking the topic blocks you added to the workspace and viewing the final cross-gender trends.
 
-That's a six-step workflow across **four analysis tools** (Frequency, Concordance, Trends — used twice — and Topic Modelling), one corpus, one question — and one *made-up hypothesis* about which gender tweets more about which theme.
+That's a six-step workflow across **four analysis tools** (Frequency, Concordance, Trends — used twice — and Topic Modelling), one corpus, one question — and one *toy hypothesis* about which gender tweets more about which theme.
 
 ---
 
@@ -113,7 +113,7 @@ The closing move — try it with the facilitator:
 2. Click the stacked block → **Trends.** Time bin weekly. Group by `topic` (or `gender × topic`).
 3. Final view: the topics from D, evolving across the campaign, split by gender. End to end — that's our method.
 
-> 🎯 Final landing: four analysis tools (Trends used twice), one corpus, one made-up hypothesis, one connected workflow. Every step shaped the next. The graph behind the facilitator is your whole method section, captured as a picture — and there's a small finding sitting inside it.
+> 🎯 Final landing: four analysis tools (Trends used twice), one corpus, one toy hypothesis, one connected workflow. Every step shaped the next. The graph behind the facilitator is your whole method section, captured as a picture — and there's a small finding sitting inside it.
 
 ✅ **Checkpoint E** — `Checkpoint_E.zip`.
 
