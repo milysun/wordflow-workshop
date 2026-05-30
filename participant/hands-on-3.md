@@ -38,7 +38,7 @@ The facilitator will:
 3. **Numeric bucketing — 100 intervals.** Fine-grained, so we can see the distribution shape.
 4. **Switch the chart from line to bar.** Now Trends is a **histogram** — article count per word-length bucket.
 
-> 🎯 Land: *"The tool didn't change. I changed how I shaped the data."*
+> 🎯 Land: *"Reshape the data — and the same tool tells a new story."*
 
 That's the most important sentence in this workshop. Every tool in Wordflow is a lens. The interesting research question is always: **which lens, on which slice, will tell me something I didn't already know?** That's your job. Wordflow makes the lens-changing cheap.
 

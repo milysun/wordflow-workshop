@@ -163,7 +163,7 @@ Session 2 is the most ambitious 45 minutes of the day. Practise it twice.
 
 - [ ] Walk through Session 1.0 (slides 1-6) out loud. Time it. Target ≤ 25 min including 3-min for the parallel Binder sign-in.
 - [ ] Walk through the Session 1.5 snapshot tour. Five tools, 5 min each. Practise saying *"two more minutes"* and switching cleanly.
-- [ ] Rehearse the Session 3.A repurpose-the-lens demo end-to-end. Practise saying *"the tool didn't change; I changed how I shaped the data"* without looking at your notes.
+- [ ] Rehearse the Session 3.A repurpose-the-lens demo end-to-end. Practise saying *"reshape the data, and the same tool tells a new story"* without looking at your notes.
 
 ---
 

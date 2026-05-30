@@ -343,7 +343,7 @@ The conceptual payoff. Three short demos showing **you shape the analysis at eve
 
 Advance to the landing slide. Speak slowly:
 
-*"The tool didn't change. **I** changed how I shaped the data."*
+*"Reshape the data — and the **same tool** tells a new story."*
 
 Pause. Let it sit. Then:
 
