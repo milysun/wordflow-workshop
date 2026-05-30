@@ -243,15 +243,14 @@ A good phase for participants to follow along on the keyboard — no pressure if
 
 > **Checkpoint B** — workspace archive: `Checkpoint_B.zip`.
 
-### 3:01 pm – 3:11 pm — C: Multi-pattern regex → detach → Trends (10 min, MIXED)
+### 3:01 pm – 3:11 pm — C: Multi-pattern regex → Add to Workspace → Trends (10 min, MIXED)
 
-#### C-1 — Set the regex, dispersion view, detach as block (FOLLOW ALONG, ~4 min)
+#### C-1 — Set the regex, view dispersion, Add to Workspace (FOLLOW ALONG, ~4 min)
 
 1. In Concordance, switch to **Regex mode**. Pattern: `covid|case(s)?|cut(s)?`.
    *"Three patterns covering two themes — COVID (`covid`, `case(s)`) and spending cuts (`cut(s)`)."*
-2. Each match coloured by which pattern hit. **Switch view to Dispersion** — bars per tweet, colour-coded.
-3. **Click a point** in the dispersion plot, then **Shift-click** another point to extend the selection to a range. Repeat to build up the subset of tweets you want.
-4. Click **Add to Workspace** — the matched contexts become a new data block (matched-term column preserved alongside the gender column, ready for Trends).
+2. Each match coloured by which pattern hit. **Switch view to Dispersion** — bars per tweet, colour-coded — to show how the matches spread across the corpus.
+3. **Switch back to the Table view**, then click **Add to Workspace** — each matched hit becomes its own row (matched-term column preserved alongside the gender column, ready for Trends). *"Add from the Table view, not Dispersion — Dispersion gives you a per-document aggregation, which collapses the hit-level rows Trends needs."*
 
 > The hypothesis we're testing (informally): *do female and male candidates tweet differently about the pandemic vs spending cuts?* Made-up hypothesis on a small dataset — useful as a worked example, not a finding.
 

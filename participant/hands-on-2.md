@@ -57,19 +57,18 @@ A good place to pick up the keyboard and follow along — no pressure if you can
 
 ---
 
-## C — Multi-pattern regex → detach → Trends (10 min) — mixed
+## C — Multi-pattern regex → Add to Workspace → Trends (10 min) — mixed
 
-### C-1 — Set the regex, dispersion view, detach as block (4 min) — 👣 FOLLOW ALONG
+### C-1 — Set the regex, view dispersion, Add to Workspace (4 min) — 👣 FOLLOW ALONG
 
 The facilitator will:
 1. Switch search to **Regex mode**. Pattern: `covid|case(s)?|cut(s)?` — three patterns covering two themes:
    - **COVID** — `covid` + `case(s)?` (case / cases, mostly meaning COVID case counts in 2020).
    - **Spending cuts** — `cut(s)?` (cut / cuts).
-2. Each match gets its **own colour**. Switch to **Dispersion view** — bars per tweet, colour-coded.
-3. **Click** a hit marker in the dispersion plot — or **click + Shift-click** to extend the selection to a range. Build up the subset of tweets you want.
-4. Click **Add to Workspace** — the matched contexts become a new data block (matched-term column preserved alongside the gender column).
+2. Each match gets its **own colour**. Switch to **Dispersion view** — bars per tweet, colour-coded — to see how the matches spread across the corpus.
+3. Switch back to **Table view**, then click **Add to Workspace** — each matched hit becomes its own row (matched-term column preserved alongside the gender column), ready for Trends. *Add from the Table view, **not** Dispersion: the Dispersion view aggregates hits per document, which would collapse the hit-level detail the Trends comparison needs.*
 
-> 🎯 Insight to land: visual selection in any tool can become structured data for the next tool. Reading and analysing are two sides of one workflow.
+> 🎯 Insight to land: one tool's result becomes the next tool's structured input. Reading and analysing are two sides of one workflow.
 
 ### C-2 — Trends, find the cut(s) gender gap (6 min) — ✋ TRY THIS
 
