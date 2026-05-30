@@ -58,9 +58,9 @@ Three options:
 - **LDaCA community Slack / mailing list** — [link if available].
 - **Me, by email** — for follow-up questions specific to your research project.
 
-## One question for you
+## One optional question
 
-Reply with **one sentence** answering this:
+No pressure — but if you have a moment, a one-line reply helps us shape the next workshop:
 
 > *What would have made the workshop more useful for you?*
 

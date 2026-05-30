@@ -109,8 +109,8 @@ Some quick prompts:
 
 The facilitator will close. Three things to take home:
 
-1. **Install Wordflow locally** — desktop link is on **sih.tools/wordflow** (same URL you used today). The cloud version is fine for trying; the desktop or Python install is what you want for real research work.
-2. **Cite the project** if you publish using it. Citation on the docs site.
+1. **Install Wordflow locally** — desktop link is on **sih.tools/ldaca**. The cloud version is fine for trying; the desktop or Python install is what you want for real research work.
+2. **Cite the project** if you publish using it. Click the green quote icon in the sidebar ("Cite LDaCA Wordflow").
 3. **Feedback button** — keep using it. Bug reports, improvement advice, "I need more", or "this rocks" — all helpful.
 
 And spread the word. If you have a colleague who works with text and doesn't want to learn code, they should know this exists.

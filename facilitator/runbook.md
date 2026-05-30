@@ -381,17 +381,17 @@ Time check at 4:20 pm — start corralling everyone back to their seats with *"f
 
 ## Session 3.D — Thanks + close (4:25 pm – 4:30 pm, 5 min)
 
-Two slides: **Slide 31 (Thank you)** for the three asks, then **Slide 32 (Data acknowledgements)** as the final reference slide that stays up while people gather their things.
+Two slides: **Slide 31 (Thank you)** for the closing invitations, then **Slide 32 (Data acknowledgements)** as the final reference slide that stays up while people gather their things.
 
-*"Thank you for spending three hours with us. Three asks if Wordflow turned out useful:*
+*"Thank you for spending three hours with us. If Wordflow was useful, a few things:*
 
-1. *Install it locally — desktop link is on sih.tools/wordflow, same URL you used today — and try it on your own work.*
-2. *If you publish using it, cite the project — the citation is on the docs site.*
+1. *Keep using it — stay on Binder (re-upload your data each session), or install the desktop app for an easy resume. Link: sih.tools/ldaca. Try it on your own work.*
+2. *If you publish using it, cite the project — click the green quote icon in the sidebar ("Cite LDaCA Wordflow").*
 3. *Tap the feedback button as you go. Bug reports, improvement advice, "I need more", or just "this rocks" — all helpful.*
 
 *And — spread the word. If you have a colleague who works with text and is allergic to coding, they should know this exists.*
 
-*Tonight you'll get an email with the snapshots and workspace archive from today, the docs, and one question: what would have made today more useful? Reply with one sentence. The desktop install link is on sih.tools/wordflow whenever you want it.*
+*Tonight you'll get an email with the snapshots and workspace archive from today, the docs, and one optional question: what would have made today more useful? A one-line reply, if you have a moment, helps us run the next workshop better. The desktop install link is on sih.tools/ldaca whenever you want it.*
 
 *Thanks. Have a good evening."*
 

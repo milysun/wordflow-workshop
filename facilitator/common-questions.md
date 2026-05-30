@@ -141,7 +141,7 @@ Use as a pre-read; keep open during the workshop.
 - *"The portability fix landed recently and we've tested across [your tested OS pair]. Cross-OS is the design intent and should work, but if you hit an issue — please tap the feedback button."*
 
 ### "Can I cite Wordflow in a paper?"
-- Yes — citation info is on the docs site. Note it in the post-workshop email.
+- Yes — click the green quote icon in the sidebar ("Cite LDaCA Wordflow") for the citation. Note it in the post-workshop email.
 
 ---
 

@@ -6,7 +6,7 @@ You've spent 3 hours with Wordflow. Here's where to go from here, in order of ef
 
 ## In the next 24 hours (5 minutes)
 
-- **Open the post-workshop email.** It has links to today's snapshots, the Session-2 workspace archive, and the docs. (The desktop install link lives on **sih.tools/wordflow** — the same URL you used to launch today.)
+- **Open the post-workshop email.** It has links to today's snapshots, the Session-2 workspace archive, and the docs. (The desktop install link lives on **sih.tools/ldaca** any time.)
 - **Save the workshop files** to your own machine if you want them long-term.
 
 ---
@@ -53,7 +53,7 @@ Three options, easiest first:
 
 ## Where to send feedback about the workshop
 
-Reply to the post-workshop email with **one sentence** answering: what would have made today more useful for you?
+If you have a moment, the post-workshop email has one optional question — what would have made today more useful for you? A one-line reply helps us improve the next workshop.
 
 We use that feedback to design the next version of this workshop. No need to be polite — direct is most useful.
 
