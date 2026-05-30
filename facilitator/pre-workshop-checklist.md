@@ -139,9 +139,9 @@ Then on GitHub:
 5. **Attach binaries**: drag in all five `Checkpoint_*.zip` files (`Checkpoint_A.zip` … `Checkpoint_E.zip`).
 6. **Publish**.
 
-Verify the download links work in a fresh browser session (logged out, no cache). The link `sih.tools/wordflow → Releases` now resolves to your release; this is what the runbook tells participants to use when they fall behind.
+Verify the download links work in a fresh browser session (logged out, no cache). Then check that the landing page's **Materials → Session 2 checkpoint files** link points to this release's artifacts page — that's the path the runbook tells participants to use when they fall behind.
 
-> **Why GitHub Releases?** One URL (`sih.tools/wordflow`) gets people to both the landing page and the release assets, versioned per workshop delivery. No separate Box / OneDrive link to communicate. Each future delivery becomes a new release on its own branch.
+> **Why GitHub Releases?** The checkpoint files live as release artifacts, versioned per workshop delivery; the landing page (`sih.tools/wordflow`) links to them under **Materials → Session 2 checkpoint files**. No separate Box / OneDrive link to communicate. Each future delivery becomes a new release on its own branch.
 
 ---
 
