@@ -77,7 +77,7 @@ You watched some of Session 2 but didn't get to follow every step. Now's the tim
 
 ### Track B — Bring your own data
 
-You brought a CSV. Brave.
+You brought a CSV. Let's load it.
 
 1. **Data Loader → Upload your file.** Wordflow expects CSV / TSV / Excel / Parquet. UTF-8 encoded.
 2. If you get a Dtype warning: accept it. Wordflow is standardising your column types.
@@ -87,7 +87,7 @@ You brought a CSV. Brave.
    - **Frequency** with stopwords on.
    - A **Filter** to a subset, then any analysis on the subset.
 
-Realistic warning: data ingestion is the most common stumbling block. If you hit a wall after 10 minutes, **switch to Track A or C**. There's value in doing one thing well; less value in fighting a CSV.
+It should load fast — Wordflow reads lazily, so even large files come in quickly. The usual snags are a **very large file**, an **unusual text encoding**, or a tool not behaving quite as expected on unfamiliar data — grab a helper for any of those. And there's no shame in switching to Track A or C if you'd rather; one thing done well beats wrestling a CSV.
 
 The facilitator and helpers are around — flag them down.
 
