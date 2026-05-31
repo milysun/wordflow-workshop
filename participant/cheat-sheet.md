@@ -10,33 +10,38 @@
 Your project folder, saved automatically. Holds all your data and analyses for one project. You can have many — create, switch, import or export workspaces inside the **Data Loader** tool.
 
 ### Data block
-A spreadsheet of texts. One row = one document. One column = the text; other columns = metadata (date, author, category, etc.). The fundamental analytic unit in Wordflow.
+A spreadsheet of texts. One row = one document. For each analysis you choose **one string column** as the text to analyse; the remaining columns then act as metadata (date, author, category, etc.). That choice isn't fixed to the block — a block can hold several text columns (e.g. title, abstract, body), and you can analyse any of them the same way. The fundamental analytic unit in Wordflow.
 
 ### Graph (workspace graph view)
-The visual map of all data blocks in your workspace and how they're derived from each other. Each transformation creates a new child block; originals are never modified. **Read the graph back-to-front to see your method.**
+The visual map of all data blocks in your workspace and how they're derived from each other. Most transformations create a new child block, leaving the parent intact; a few operations (adding, renaming or removing a column) change a block in place — but every in-place change is easily undone, so nothing is destructive. **Read the graph back-to-front to see your method.**
 
 ### Tool
-A way of asking a question of a data block. Tools include:
+A way of working with a data block. Wordflow's tools come in three kinds:
 
-| Tool | What it answers |
+- **Data in / out** — **Data Loader** and **Export**.
+- **Shaping the data** — **Preprocessing**, plus column-level edits in the **Data Viewer**.
+- **Asking questions** — the five analysis tools (Concordance, Frequency, Trends, Topic Modelling, Quotation), each asking a different question of a chosen text column.
+
+| Tool | What it's for |
 |---|---|
-| **Data Loader** | "Where does my data come from? What language is it in?" |
-| **Preprocessing** | "What subset / combination / transformation of my data do I want?" — Filter, Sample, Join, Stack, Find, Create |
+| **Data Loader** | Bring data in — import sample data or your own files, set the text language, and create / switch / import / export workspaces. |
+| **Preprocessing** | Reshape a block — Filter, Sample, Join, Stack, Find, Create. Each step makes a new block or column. |
 | **Concordance** | "Where does this word appear, and what comes before and after?" |
 | **Frequency** | "What words appear most often?" (and: comparative mode for two blocks) |
 | **Trends** | "How does this corpus change over time, or over any numeric axis?" |
 | **Topic Modelling** | "What themes group these documents?" |
 | **Quotation** | "What are people quoted as saying, and who said it?" (English only) |
-| **Export** | "Get my data and results out of Wordflow." |
+| **Export** | Take your data with you — download one or more data blocks in your chosen file format, individually or bundled as a zip archive. |
 
 ### Stacking
-The most important verb in this workshop. You stack tools by taking the output of one and feeding it to another. Filter your tweets to one gender → run comparative frequency vs the other gender → click a word → jump to concordance → switch to a multi-pattern regex → add results as a new block → run topic modelling on that. You build a workflow by chaining blocks.
+The core idea of this workshop: you build a workflow by taking the output of one tool and feeding it into the next. Filter your tweets to one gender → run comparative frequency vs the other → click a word → jump to Concordance → switch to a multi-pattern regex → **Add to Workspace** as a new block → run Topic Modelling on that. Chaining blocks and tools like this *is* your method.
+
+*Don't confuse this with the **Stack** step in Preprocessing — that's one specific operation that combines the rows of two blocks into a single block. "Stacking" the concept is the whole chaining idea.*
 
 ### Snapshot
-A small file (`.ldaca-snapshot`) that captures a finished analysis — tool, parameters, results — so you can re-open it or send it to a colleague without re-running. Saved per tool from the camera icon.
+A saved capture of a finished analysis — the tool, its parameters, and its results — so you can re-open it later or share it with a colleague without re-running anything.
 
-### Snapshot Mode
-A sidebar toggle (the **pencil icon next to the "VIEWS" title**) that enables saving and loading snapshots inside each analytical tool. Once you load a snapshot into a tool, *that tool's view* becomes read-only — you can still hover, click visualisations, and switch views, but you can't change parameters or rerun. Other tools (and new analyses) stay fully editable as normal. **Snapshot Mode can stay on while you're building — it only ever affects a tool *after* you load a snapshot into it.**
+Turn on **Snapshot Mode** (the **pencil icon next to the "VIEWS" title** in the sidebar) to save and load snapshots inside each analysis tool: **camera icon** = save, **folder icon** = load. Once you load a snapshot into a tool, *that tool's view* becomes read-only — you can still hover, click visualisations, and switch views, but not change parameters or rerun. Other tools (and any new analysis) stay fully editable, and Snapshot Mode can stay on the whole time — it only locks a tool *after* you load a snapshot into it.
 
 ### Workspace archive
 A portable export of your entire workspace — all data blocks, derivations, and metadata — as a single file. Different from snapshots: a snapshot captures one tool's view; a workspace archive captures the whole project. Import to recreate the workspace on another machine (or another participant's instance).
@@ -51,49 +56,44 @@ The button in each tool's results panel (Concordance, Frequency comparative, Tre
 Available from the data-block **menu icon**. Pre-computes a word-tokenised version of your text column. Required for Tokens-mode Concordance, especially for languages like Chinese / Japanese where there's no space between words. For English you usually don't need this manually.
 
 ### Stopword
-A common word like "the", "a", "is", that's frequent enough to drown out everything else. Most analyses can hide them with one toggle.
+A common word like "the", "a", "is" — frequent enough to drown out everything else. **Important:** stopwords are always included when an analysis runs; hiding them is a *post-processing* step applied to the results afterwards, not a removal before the analysis. The stopword toggle (and the right-click → add-to-stopwords shortcut) only changes what's displayed — the underlying computation still counts every word.
 
 ---
 
 ## Page 2 — UI map
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│  [TOOL CHOICE]  [DATA SELECTION]  [TASK CENTRE]              │
-│                                                              │
-│  ┌──────────────────────┐    ┌──────────────────────────┐    │
-│  │ Tool list (sidebar)  │    │ Workspace graph view     │    │
-│  │ - Data Loader        │    │  (your data blocks here) │    │
-│  │ - Preprocessing      │    │                          │    │
-│  │ - Concordance        │    └──────────────────────────┘    │
-│  │ - Frequency          │    ┌──────────────────────────┐    │
-│  │ - Trends             │    │ Data viewer              │    │
-│  │ - Topic Modelling    │    │  (selected block as      │    │
-│  │ - Quotation          │    │   a table; click a row   │    │
-│  │ - Export             │    │   for full content)      │    │
-│  └──────────────────────┘    └──────────────────────────┘    │
-│                              ┌──────────────────────────┐    │
-│                              │ Tool interface           │    │
-│                              │  (controls + results,    │    │
-│                              │   camera = save snapshot)│    │
-│                              └──────────────────────────┘    │
-│                                                              │
-│  [WORKING DIRECTORY]               [HELP & FEEDBACK ?]       │
-└──────────────────────────────────────────────────────────────┘
+Wordflow  
+┌──────────────────┬────────────────────────┬──────────────────────┐
+│                  │ Tool interface         │ Workspace graph view │
+│ VIEWS            │  controls + results    │  your data blocks,   │
+│  Data Loader     │  for the selected      │  linked left → right │
+│  Preprocessing   │  tool                  │                      │
+│  Frequency       │  Load / Save           ├──────────────────────┤
+│  Concordance     │  snapshot top-right    │ Data view            │
+│  Trends          │                        │  selected block as   │
+│  Topic Modelling │                        │  a table — click a   │
+│  Quotation       │                        │  row for full text   │
+│  Export          │                        │                      │
+│                  │                        │                      │
+│ DATA BLOCKS      │                        │                      │
+│ TASKS            │                        │                      │
+│ Tutorial·Feedback│                        │                      │
+└──────────────────┴────────────────────────┴──────────────────────┘
 ```
 
 ### Numbered guide
 
 1. **Tool sidebar** — pick a tool. Each asks a different question.
-2. **Workspace graph view** — all your data blocks; arrows show derivations.
-3. **Task Centre** — progress for slow tasks (Topic Modelling, large imports).
+2. **Workspace graph view** — all your data blocks and the links showing how they're derived; the graph flows left → right.
+3. **Tasks** (left sidebar) — live progress for slow tasks (Topic Modelling, large imports).
 4. **Data Viewer** — selected block as a scrollable table. **Click a row to see full document content.**
-5. **Tool Interface** — controls and output. **Camera icon** = save snapshot. **Folder icon** = load snapshot.
+5. **Tool interface** (the central panel) — controls and output. **Camera icon** = save snapshot, **folder icon** = load snapshot.
 6. **Help (`?`)** — every control with a `?` opens the relevant tutorial section.
 7. **Feedback** — bottom of the left sidebar, next to Tutorial. Use it. Often.
 8. **Data Loader** also hosts workspace operations — **Create workspace**, switch active workspace, **Import / Export workspace archive**. (The **Snapshot Mode toggle** is the pencil icon next to the "VIEWS" title in the sidebar.)
 
-### Three-second moves
+### Common tasks — where to click
 
 | To do this | … click here |
 |---|---|
@@ -111,7 +111,3 @@ A common word like "the", "a", "is", that's frequent enough to drown out everyth
 | Delete a block | block's menu icon → Delete (children get deleted too) |
 | Toggle Snapshot Mode | sidebar → pencil icon next to "VIEWS" |
 | Send feedback | Feedback button, bottom of the left sidebar |
-
-### One-line rule
-
-> **A tool always asks a question. A preprocessing step always makes a new block. Read the graph back-to-front to see what you did.**

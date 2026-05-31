@@ -242,6 +242,10 @@ hr { border: none; border-top: 1px solid var(--line); margin: 1.1em 0; }
 a { color: var(--accent); text-decoration: none; }
 a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .82em; color: var(--muted); word-break: break-all; }
 strong { font-weight: 700; }
+/* Two-column glossary (cheat sheet, page 1) — keeps the whole glossary on one side */
+.cols2 { column-count: 2; column-gap: 11mm; }
+.cols2 h3 { margin-top: .55em; break-after: avoid; }
+.cols2 h3, .cols2 p, .cols2 ul, .cols2 li { break-inside: avoid; }
 """
 
 TEMPLATE = """<!doctype html>
@@ -254,11 +258,28 @@ TEMPLATE = """<!doctype html>
 """
 
 
+def render_doc(name: str, md: str) -> str:
+    """Render a participant doc to HTML. The cheat sheet's glossary (everything
+    between the 'Page 1' heading and 'Page 2') is wrapped in a two-column block so
+    it fits a single printed side; the UI map on Page 2 stays full-width."""
+    if name != "cheat-sheet.md" or "\n## Page 2" not in md:
+        return md_to_html(md)
+    page1, rest = md.split("\n## Page 2", 1)
+    page2 = "## Page 2" + rest
+    m = re.search(r"(?m)^## Page 1[^\n]*$", page1)
+    if not m:
+        return md_to_html(md)
+    head, glossary = page1[: m.end()], page1[m.end():]
+    return (md_to_html(head)
+            + '<div class="cols2">' + md_to_html(glossary) + "</div>"
+            + md_to_html(page2))
+
+
 def build_page(out_name: str, title: str, sources: list[str]) -> None:
     docs = []
     for name in sources:
         md = (PART / name).read_text(encoding="utf-8")
-        docs.append(f'<div class="doc">{md_to_html(md)}</div>')
+        docs.append(f'<div class="doc">{render_doc(name, md)}</div>')
     page = TEMPLATE.format(title=title, css=CSS, body="\n".join(docs))
     (OUT / out_name).write_text(page, encoding="utf-8")
     print(f"  wrote {out_name}  ({len(sources)} doc(s))")
