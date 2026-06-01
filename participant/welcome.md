@@ -11,7 +11,7 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 1. Meet the project and the team, then take a guided tour of the interface.
 2. Touch all five analytic tools by loading pre-built snapshots — see what each tool *produces* before you set any of them up.
 3. Follow along with a real multi-tool research workflow on QLD election tweets — joins, filters, comparative frequency, concordance, trends, topic modelling — answering one research question. Try what you can; checkpoints catch you up if you fall behind.
-4. See the "wait, you can do that?" lens-repurpose demo.
+4. See a few short demos with handy tweaks — creative ways to use the tools.
 5. Spend free-lab time exploring at your own pace, with helpers around.
 
 ---
@@ -20,8 +20,7 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 
 - A confident mental model of how Wordflow's pieces fit together — workspace, data block, graph.
 - The big idea: **every tool is a lens, and the analysis is shaped by how you shape the data**.
-- At least one of: a saved snapshot, a workspace archive, or a clear next move for your own corpus.
-- A post-workshop email with all the day's files and the docs. (The install link lives on **sih.tools/wordflow** any time.)
+- A clear next move — or at least some ideas — for how you'd bring your own corpus into Wordflow.
 
 ---
 
@@ -31,6 +30,7 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 - **Make mistakes.** Most steps create a new block and leave the parent untouched; the few in-place edits are easily undone. Branch, delete, redo as much as you want — nothing is destructive.
 - **Don't worry about following every step.** Session 2 has five pre-baked checkpoint files (A–E) at **sih.tools/wordflow → Materials → Session 2 checkpoint files** — if you fall behind, you can rejoin in 30 seconds. Aim to *see* the workflow, not to keep up with every click.
 - **Tap the Feedback button** (bottom of the left sidebar, next to Tutorial) every time you hit something confusing or surprising. You're our v0.5 beta room.
+- **No need to take detailed notes.** A follow-up email after the workshop will have the day's files and the docs.
 
 ---
 
@@ -53,8 +53,8 @@ Today we'll explore **LDaCA Wordflow**, a tool for analysing text corpora withou
 ## Today's open URLs
 
 > **Workshop URL**: **sih.tools/wordflow** — start Wordflow in your browser with "Launch in Binder", or download the desktop app from the same page. Either is fine for today.
+>
 > **Workshop resources** (Session 2 checkpoint files): **sih.tools/wordflow → Materials → Session 2 checkpoint files**.
-> **Feedback form**: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 *URLs will also be on the screen during the workshop.*
 
