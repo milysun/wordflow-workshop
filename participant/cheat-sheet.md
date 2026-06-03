@@ -97,17 +97,18 @@ Wordflow
 
 | To do this | … click here |
 |---|---|
-| Run an analysis | a tool in the sidebar + a data block in the graph |
-| Make a new data block | Preprocessing → Filter/Sample/Join/Stack/Find/Create → Add to Workspace |
+| Run an analysis | a tool in the sidebar + a data block in the graph with correct column chosen |
+| Find the right data block | Workspace graph view → <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 30" fill="currentColor" style="width:1.05em;height:1.05em;vertical-align:-0.18em;"><path d="M3.692 4.63c0-.53.4-.938.939-.938h5.215V0H4.708C2.13 0 0 2.054 0 4.63v5.216h3.692V4.631zM27.354 0h-5.2v3.692h5.17c.53 0 .984.4.984.939v5.215H32V4.631C32 2.054 29.93 0 27.354 0zm.954 24.83c0 .532-.4.94-.939.94h-5.215v3.768h5.215c2.577 0 4.631-2.13 4.631-4.707v-5.139h-3.692v5.139zm-23.677.94c-.531 0-.939-.4-.939-.94v-5.138H0v5.139c0 2.577 2.13 4.707 4.708 4.707h5.138V25.77H4.631z"/></svg> **Fit view** to show the whole map; then scroll to zoom and drag to pan |
+| Make a new data block | Preprocessing → Filter/Sample/Join/Stack etc → Add to Workspace |
 | Comparative frequency | select two blocks, then Frequency tool |
 | Jump from a word to its context | click the word in Frequency's list/cloud |
-| Make Concordance results a new block | click **Add to Workspace** on the results panel |
-| Select from a visualisation | click a point, or click + Shift-click for a range |
-| Save a result | camera icon in the tool header |
-| Re-open a saved result | folder icon in the tool header → Load snapshot |
-| Import a workspace archive | Data Loader → Import workspace archive |
-| Export a workspace archive | Data Loader → Export workspace archive |
-| Rename a block | block's menu icon → Rename |
-| Delete a block | block's menu icon → Delete (children get deleted too) |
-| Toggle Snapshot Mode | sidebar → pencil icon next to "VIEWS" |
+| Make analytical results a new block | click **Add to Workspace** on the results panel |
+| Select from a visualisation | click a point, or click + Shift-click for a range in line plots |
+| Save a snapshot (source block < 2k rows) | camera icon in the tool header - Save |
+| Load a saved snapshot | camera icon in the tool header → Load |
+| Import a workspace archive | Data Loader → Workspace manager → Upload workspace |
+| Export a workspace archive | Data Loader → Workspace manager → Download workspace |
+| Rename a block | block's menu icon/data viewer → Rename |
+| Delete a block | block's menu icon → Delete (children are not affected) |
+| Toggle tool visibilities | sidebar → pencil icon next to "VIEWS" |
 | Send feedback | Feedback button, bottom of the left sidebar |

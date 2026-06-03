@@ -29,6 +29,7 @@ OUT = Path(__file__).resolve().parent              # handouts/
 # ---------------------------------------------------------------- inline ----
 
 _CODE_TOKEN = "\x00CODE{}\x00"
+_RAW_TOKEN = "\x00RAW{}\x00"
 
 
 def _inline(text: str) -> str:
@@ -41,6 +42,15 @@ def _inline(text: str) -> str:
         return _CODE_TOKEN.format(len(spans) - 1)
 
     text = re.sub(r"`([^`]+)`", _stash, text)
+
+    # 1b. protect inline raw HTML (e.g. <svg> icons) so it renders, not escaped
+    raws: list[str] = []
+
+    def _stash_raw(m: re.Match) -> str:
+        raws.append(m.group(0))
+        return _RAW_TOKEN.format(len(raws) - 1)
+
+    text = re.sub(r"<svg\b.*?</svg>", _stash_raw, text, flags=re.S)
 
     # 2. escape everything else
     text = html.escape(text)
@@ -57,9 +67,11 @@ def _inline(text: str) -> str:
     text = re.sub(r"(?<!\w)_([^_]+)_(?!\w)", r"<em>\1</em>", text)
     text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", text)
 
-    # 5. restore code spans
+    # 5. restore code spans + raw HTML
     for i, s in enumerate(spans):
         text = text.replace(_CODE_TOKEN.format(i), f"<code>{s}</code>")
+    for i, s in enumerate(raws):
+        text = text.replace(_RAW_TOKEN.format(i), s)
     return text
 
 
