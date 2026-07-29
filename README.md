@@ -1,3 +1,9 @@
+# Wordflow — Workshops
+
+> **This branch: CAITG Winter School, 30 July 2026** — a 45-minute hands-on on the new **Annotation** tool (GenAI text coding) in Wordflow v0.7.1. Materials: `slides/caitg-annotator.html` (minimal intro deck), `facilitator/runbook-caitg.md`, `participant/hands-on-annotator.md`. The session arc: brief LDaCA/Wordflow intro (~8 min of slides) → live hands-on — import the QLD Election Twitter sample, code candidate gender into a `gender.ai` column with an M/F/U codebook, connect OpenRouter (temp key at `sih.tools/api`), preview → intercoder reliability → confusion matrix → prompt revision → Run All → own data. Closing message: own API key or local model + stay inside your ethics approval.
+>
+> Everything below documents the original 3-hour intro workshop (03 June 2026), kept on this branch as reference and reusable assets.
+
 # Wordflow — 3-Hour Intro Workshop
 
 Materials for a 3-hour in-person workshop introducing **LDaCA Wordflow** to university researchers (HDR students through senior academics across faculties; HASS is the primary design audience but anyone working with text is welcome).

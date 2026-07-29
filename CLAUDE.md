@@ -2,6 +2,18 @@
 
 Read this before editing files in this repo. Read `README.md` for the workshop design itself.
 
+## This branch: CAITG Winter School, 30 July 2026
+
+This branch (`caitg_winter_school_2026-07-30`) holds a **45-minute hands-on session** on Wordflow **v0.7.1**'s new **Annotation** tool (GenAI-assisted text coding), delivered at the CAITG (Centre for AI, Trust and Governance) Winter School. Its materials are **new files alongside** the June intro-workshop ones:
+
+- `slides/caitg-annotator.html` — 8-slide minimal intro deck (first ~8 minutes only; the rest is live)
+- `facilitator/runbook-caitg.md` — the 45-minute minute-by-minute
+- `participant/hands-on-annotator.md` — the participant step sheet
+
+The 3-hour intro-workshop files (`slides/index.html`, `facilitator/runbook.md`, `participant/hands-on-*.md`, …) are the **June 2026 workshop's** materials; on this branch they are reference/reuse sources, not the deliverable. Two notes below are **superseded for this branch**: the Annotation tool is now released and is the session's centrepiece (the "not yet usable" bullet described v0.5), and the session runs on **v0.7.1**, not v0.5.
+
+Known v0.7.1 issue to keep in materials: **Excel spreadsheet and zip-archive import are broken** — participants should use CSV/plain text.
+
 ## What this repo is
 
 Materials for a single 3-hour in-person workshop introducing **LDaCA Wordflow** to university researchers — mostly HASS, mostly limited coding capability, ranging from HDR students to senior academics. The workshop is one piece of a larger series Chao is developing.
@@ -49,7 +61,7 @@ A few UI details that are easy to get wrong in materials (and have been correcte
 - **Feedback button**: bottom of the **left sidebar**, next to Tutorial. Icon is `MessageSquare` from `lucide-react` (a small square speech-bubble outline, `h-4 w-4`). **Not** a heart, not at the top-right.
 - **Snapshot Mode toggle**: the **pencil icon next to the "VIEWS" header** in the left sidebar. **Not** in a top menu. When ON, it enables snapshot save/load in each **analysis tool** only — Frequency, Concordance, Trends, Topic Modelling, Quotation. Data Loader, Preprocessing and Export don't have snapshots. A tool's view goes read-only **only after** a snapshot has been loaded into *that* tool — other tools (and any fresh analysis you start) stay fully editable. **Snapshot Mode can be left ON during workspace-building** — it doesn't lock anything by itself. **Never write "turn off Snapshot Mode before building"** in materials — it's not necessary.
 - **Working directory**: shown in the sidebar but only relevant for the local-install desktop app. Ignore it for Binder/cloud workshop demos.
-- **AI Annotation tool**: visible in the sidebar's tool list but **not yet usable** (under development). Excluded from all workshop materials.
+- **Annotation tool** (v0.5-era note, superseded on this branch): was "visible but not yet usable" in v0.5; **released in v0.7** and is this branch's whole session. Sidebar label is exactly **"Annotation"** — not "AI Annotator" / "AI Annotation". Key v0.7.1 UI facts: **Manual/AI** toggle; **Annotation Column → Start new annotation** dialog creates the column (no `.ai` suffix suggested — that's Chao's naming habit); the **Codebook** is a normal data block (**Create New** → **Edit codebook** dialog, Code + Description rows); providers via **Add Provider** (OpenRouter default; API key write-only; Custom = any OpenAI-compatible base URL); **Model** field is a free-text combobox over the provider's live model list (no hard-coded catalogue); **Preview** is display-only (per-page, 10–100 rows); **Compare To** offers Percent Agreement / Cohen's Kappa (default) / Krippendorff's Alpha, with the **confusion matrix in the score badge's hover tooltip**; **Run All processing** radios are **"Reprocess all rows"** (default) vs **"Fill missing only"**; corrections via the **Correction:** dropdown (suggests `<column>.correction`) and **Use as example** feeds them back as few-shot examples. No cost/token estimate is shown anywhere.
 - **Visualisation selection** is by **click** (single point) or **click + Shift-click** (range / multi-point), *not* click-and-drag. Topic Modelling bubbles support **multi-click only** — no range, no drag-rectangle. Applies to Trends chart points, Concordance dispersion hit markers, Topic Modelling bubbles.
 - **Download / export icons** sit on each individual **visualisation or table** (top-right corner), *not* a single export button in the tool header. Image views save **PNG**, list / table views save **CSV**. Each view exports independently.
 - **Right-click is reserved for in-tool visualisation shortcuts, NOT for block/column management.** Specifically: **Frequency cloud/list — right-click a word to add it to stopwords** (it hides instantly). There may be other in-tool right-click actions in future tools. **Block-level actions (Rename, Clone, Tokenise, Undo, Redo, Delete) come from a menu icon on the data block itself.** The same icon shape appears at the end of each column header for column-level actions. **Never write "right-click → Rename / Delete / ..." for block or column management** — use "open the block's menu icon" or "open the column menu" instead. The Frequency stopword shortcut IS an exception worth documenting in materials.
