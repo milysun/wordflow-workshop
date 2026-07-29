@@ -381,6 +381,28 @@
     justify-content: center;
     font-size: 0.85em;
   }
+
+  /* Print / Save-as-PDF: lay every slide out, one per page (the deck normally
+     shows only the .active slide, so a plain print captures just slide 1). */
+  @media print {
+    @page { size: 1280px 720px; margin: 0; }
+    html, body { height: auto; overflow: visible; background: #fff; }
+    .deck { position: static; width: auto; height: auto; }
+    section.slide {
+      position: relative !important;
+      inset: auto !important;
+      display: flex !important;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    section.slide:last-child { page-break-after: avoid; break-after: auto; }
+    .chrome, .notes, .hint { display: none !important; }
+  }
 </style>
 </head>
 <body>

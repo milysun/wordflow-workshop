@@ -305,7 +305,7 @@ def main() -> None:
                ["hands-on-1.md", "hands-on-2.md", "hands-on-3.md"])
     build_page("participant-pack.html", "Wordflow Workshop — Participant Pack",
                ["welcome.md", "cheat-sheet.md", "hands-on-1.md", "hands-on-2.md",
-                "hands-on-3.md", "what-next.md"])
+                "hands-on-3.md"])
     print("Done. Open the .html files and File > Print > Save as PDF.")
 
 

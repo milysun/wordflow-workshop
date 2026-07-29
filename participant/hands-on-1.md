@@ -24,7 +24,7 @@ Tell your neighbour if anything didn't work. Flag the facilitator if you're stuc
 ## Tool 1 — Frequency *(2:00 pm – 2:05 pm)*
 
 1. **Frequency** tool in the left sidebar.
-2. Click the **folder icon (Load snapshot)** in the tool header.
+2. Click the **camera icon (Load snapshot)** in the tool header.
 3. Pick **`Freq_Analysis_Newstalk`**. Wait a second.
 
 **Look at:** the **two-column comparative view**. Each column is a *grouping* of news outlets drawn from the same `newstalk_stories` corpus:

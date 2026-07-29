@@ -41,7 +41,7 @@ The core idea of this workshop: you build a workflow by taking the output of one
 ### Snapshot
 A saved capture of a finished analysis — the tool, its parameters, and its results — so you can re-open it later or share it with a colleague without re-running anything.
 
-Turn on **Snapshot Mode** (the **pencil icon next to the "VIEWS" title** in the sidebar) to save and load snapshots inside each analysis tool: **camera icon** = save, **folder icon** = load. Once you load a snapshot into a tool, *that tool's view* becomes read-only — you can still hover, click visualisations, and switch views, but not change parameters or rerun. Other tools (and any new analysis) stay fully editable, and Snapshot Mode can stay on the whole time — it only locks a tool *after* you load a snapshot into it.
+Turn on **Snapshot Mode** (the **pencil icon next to the "VIEWS" title** in the sidebar) to save and load snapshots inside each analysis tool from the **camera icon** in the tool header (Save / Load). Once you load a snapshot into a tool, *that tool's view* becomes read-only — you can still hover, click visualisations, and switch views, but not change parameters or rerun. Other tools (and any new analysis) stay fully editable, and Snapshot Mode can stay on the whole time — it only locks a tool *after* you load a snapshot into it.
 
 ### Workspace archive
 A portable export of your entire workspace — all data blocks, derivations, and metadata — as a single file. Different from snapshots: a snapshot captures one tool's view; a workspace archive captures the whole project. Import to recreate the workspace on another machine (or another participant's instance).
@@ -88,7 +88,7 @@ Wordflow
 2. **Workspace graph view** — all your data blocks and the links showing how they're derived; the graph flows left → right.
 3. **Tasks** (left sidebar) — live progress for slow tasks (Topic Modelling, large imports).
 4. **Data Viewer** — selected block as a scrollable table. **Click a row to see full document content.**
-5. **Tool interface** (the central panel) — controls and output. **Camera icon** = save snapshot, **folder icon** = load snapshot.
+5. **Tool interface** (the central panel) — controls and output. **Camera icon** (top-right) = save / load snapshots.
 6. **Help (`?`)** — every control with a `?` opens the relevant tutorial section.
 7. **Feedback** — bottom of the left sidebar, next to Tutorial. Use it. Often.
 8. **Data Loader** also hosts workspace operations — **Create workspace**, switch active workspace, **Import / Export workspace archive**. (The **Snapshot Mode toggle** is the pencil icon next to the "VIEWS" title in the sidebar.)
