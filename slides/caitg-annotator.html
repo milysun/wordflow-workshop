@@ -451,13 +451,13 @@
   </section>
 
   <!-- Slide 7: Hands-on roadmap (leave up while people catch up / reference) -->
-  <section class="slide" data-notes="Show once when going live so people know the arc, then switch to Wordflow. Come back to it if someone asks 'where are we?'. The API key page (sih.tools/api) matters most — repeat it out loud when the room reaches provider setup.">
+  <section class="slide" data-notes="Show once when going live so people know the arc, then switch to Wordflow. Come back to it if someone asks 'where are we?'. (Post-session edit: the shared sih.tools/api key page has been removed — the slide now tells people to bring their own API key and pick any suitable model.)">
     <h2>The hands-on, in one slide</h2>
     <ol style="font-size: 0.95em;">
       <li><strong>Create a workspace</strong>, import the sample data — the <strong>QLD Election 2020 Twitter</strong> blocks. (Or drop in your own CSV / text files. Excel &amp; zip import is broken in 0.7.1 — CSV works.)</li>
       <li><strong>Annotation tool</strong> → candidate info block → <strong>Start new annotation</strong> → column <code>gender.ai</code>.</li>
       <li><strong>Codebook → Create New → Edit</strong> — define the codes: <code>M</code> / <code>F</code> / <code>U</code>, each with a description. Try a few rows by hand in <strong>Manual</strong> mode first.</li>
-      <li><strong>Flip to AI</strong> — Add Provider: <strong>OpenRouter</strong>, temporary key at <code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/api</code>. Pick Gemini 2.5 Flash / Flash Lite or a free Gemma model.</li>
+      <li><strong>Flip to AI</strong> — Add Provider (e.g. <strong>OpenRouter</strong>) with <strong>your own API key</strong>, then pick a model suited to your coding task. It doesn't have to be Gemini — those were just the low-cost models enabled for the live session.</li>
       <li><strong>Preview → Compare To → confusion matrix</strong> — check agreement with the human coding, find the weak spots, revise your prompt.</li>
       <li><strong>Run All</strong>, review and correct. Then: <strong>your own data, your own coding problem.</strong></li>
     </ol>
@@ -467,7 +467,7 @@
   <section class="slide" data-notes="Closing — 2 minutes, leave the slide up as people pack. The ethics line is the one to say explicitly and slowly: the workshop key routes data to a commercial API; their real research may not be allowed to. Then feedback + citation ask, lightly.">
     <h2>Take it home</h2>
     <ul>
-      <li><strong>The workshop API key dies today.</strong> For your research: use <strong>your own API key</strong> (OpenRouter, or a provider your institution approves) — or a <strong>local model</strong>, so your data never leaves your machine.</li>
+      <li><strong>The shared workshop API key has been removed.</strong> For your research: use <strong>your own API key</strong> (OpenRouter, or a provider your institution approves) — or a <strong>local model</strong>, so your data never leaves your machine.</li>
       <li><strong>Check your ethics approval before you code real data with AI.</strong> Which models and providers are permitted — and whether your data may be sent to an external API at all — is an ethics question, not a technical one.</li>
       <li><strong>Everything you learned in the first half applies here</strong> — pilot on a sample, measure agreement against human coding, revise the codebook, document your prompts.</li>
       <li><strong>Keep Wordflow</strong> — <code>sih.tools/wordflow</code>. Tap the in-app <strong>Feedback</strong> button freely; cite via the quote icon in the sidebar (&ldquo;Cite LDaCA Wordflow&rdquo;).</li>
