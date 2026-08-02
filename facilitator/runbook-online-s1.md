@@ -1,6 +1,6 @@
 # Runbook — Online workshop Session 1 (90 min, recorded)
 
-**Wordflow: concepts, interface, and a real multi-tool workflow · Friday 28 August 2026 · 10:30 am – 12:00 pm (TBC) · Zoom**
+**Wordflow: concepts, interface, and a real multi-tool workflow · Friday 28 August 2026 · 11:00 am – 12:30 pm AEST (9:00 – 10:30 am AWST) · Zoom**
 
 Deck: `slides/online-s1-intro.html` (27 slides). This session is **all demo, no participant hands-on** — which means you control the clock completely. It is **recorded**: narrate for the future viewer as much as for the live room (say what you're clicking, read short bits of screen text aloud, don't rely on cursor-pointing alone).
 

@@ -19,11 +19,13 @@ Plus the afternoon's extension: *an AI model is just another coder — it earns 
 
 ## Session structure
 
-| Time (TBC) | Session | Duration | Mode |
-|---|---|---|---|
-| 10:30 am – 12:00 pm | **1** Wordflow: concepts, interface, and a real multi-tool workflow | 90 min | Presentation + live demo. **No hands-on. Recorded.** |
-| 12:00 – 1:30 pm | **Lunch break** | 90 min | Also the install/setup window for Session 2 |
-| 1:30 – 3:00 pm | **2** Hands-on: coding text with GenAI (Annotation tool) | 90 min | Participant hands-on. **Not recorded.** |
+| Time (AEST) | Time (AWST) | Session | Duration | Mode |
+|---|---|---|---|---|
+| 11:00 am – 12:30 pm | 9:00 – 10:30 am | **1** Wordflow: concepts, interface, and a real multi-tool workflow | 90 min | Presentation + live demo. **No hands-on. Recorded.** |
+| 12:30 – 2:00 pm | 10:30 am – 12:00 pm | **Lunch break** | 90 min | Also the install/setup window for Session 2 |
+| 2:00 – 3:30 pm | 12:00 – 1:30 pm | **2** Hands-on: coding text with GenAI (Annotation tool) | 90 min | Participant hands-on. **Not recorded.** |
+
+*Times chosen for a nation-wide audience: WA participants (2 h behind AEST) get Session 1 in early working hours rather than before 9 am, and Session 2 over their midday.*
 
 ### Session 1 outline (demo-only, recorded)
 

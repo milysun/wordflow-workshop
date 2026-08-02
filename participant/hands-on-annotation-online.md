@@ -1,6 +1,6 @@
 # Hands-on — Coding text with GenAI in Wordflow
 
-**LDaCA Online Workshop · Session 2 · 28 August 2026 · 1:30 – 3:00 pm**
+**LDaCA Online Workshop · Session 2 · 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST)**
 
 You'll use Wordflow's **Annotation** tool (new in v0.7) to code a real dataset with an AI model — and, more importantly, to *check* the AI's coding the way you'd check a human coder's: agreement scores, a confusion matrix, and targeted corrections.
 

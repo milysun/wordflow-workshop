@@ -1,6 +1,6 @@
 # Runbook — Online workshop Session 2 (90 min, hands-on, NOT recorded)
 
-**Coding text with GenAI: the Annotation tool · Friday 28 August 2026 · 1:30 – 3:00 pm (TBC) · Zoom**
+**Coding text with GenAI: the Annotation tool · Friday 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST) · Zoom**
 
 Deck: `slides/online-s2-annotation.html` (7 slides — done by minute ~15, then live). Participant sheet: `participant/hands-on-annotation-online.md` (drop the link in chat at the start; it mirrors every step). This is the CAITG 45-minute session grown to 90: same spine, but you own the theory framing (no preceding speaker), participants bring **their own API keys**, and recovery runs on **checkpoint workspace archives** instead of a facilitator sprint.
 

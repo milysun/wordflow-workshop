@@ -14,11 +14,11 @@ Thank you for registering for the LDaCA Wordflow online workshop on **Friday 28 
 
 ## The shape of the day
 
-The workshop runs as **two 1.5-hour sessions** over Zoom, with a lunch break between. They're designed so you can attend either half or both:
+The workshop runs as **two 1.5-hour sessions** over Zoom, with a long lunch break between. They're designed so you can attend either half or both — and the times are chosen with colleagues across the country in mind (all times AEST, with Adelaide/Darwin and Perth equivalents):
 
-- **Session 1, ⟨10:30 am – 12:00 pm⟩ — Wordflow from zero.** Concepts, interface, and a real multi-tool research workflow, all as a guided demo. **No hands-on** — just watch, ask questions in chat, and absorb. If you attended the June workshop, you can comfortably skip this one (though v0.7 has a refreshed interface, so a skim of the recording later may still be worth it).
-- **Lunch, ⟨12:00 – 1:30 pm⟩** — also your install window if you haven't set up yet.
-- **Session 2, ⟨1:30 – 3:00 pm⟩ — hands-on: coding text with GenAI.** You'll use Wordflow's new **Annotation** tool to classify a real dataset with an AI model, measure its agreement with human coding, and improve it. This session is where the pre-work below matters.
+- **Session 1, 11:00 am – 12:30 pm AEST** *(10:30 am ACST · 9:00 am AWST)* — **Wordflow from zero.** Concepts, interface, and a real multi-tool research workflow, all as a guided demo. **No hands-on** — just watch, ask questions in chat, and absorb. If you attended the June workshop, you can comfortably skip this one (though v0.7 has a refreshed interface, so a skim of the recording later may still be worth it).
+- **Lunch, 12:30 – 2:00 pm AEST** — also your install window if you haven't set up yet.
+- **Session 2, 2:00 – 3:30 pm AEST** *(1:30 pm ACST · 12:00 pm AWST)* — **hands-on: coding text with GenAI.** You'll use Wordflow's new **Annotation** tool to classify a real dataset with an AI model, measure its agreement with human coding, and improve it. This session is where the pre-work below matters.
 
 **A note on recording:** Session 1 **will be recorded** and shared afterwards, so you can revisit the material any time. Session 2 **will not be recorded** — it's hands-on, at the room's pace, and your questions and screens stay off the record.
 
