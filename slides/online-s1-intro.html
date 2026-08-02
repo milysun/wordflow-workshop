@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wordflow Online Workshop — Session 1: Concepts &amp; Workflow</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  :root {
+    --ink: #1a1d24;
+    --paper: #fdfcf8;
+    --accent: #c8423e;
+    --accent-soft: #f3d6d5;
+    --spotlight-bg: #c87060;    /* warm terracotta — less intimidating than --accent for full-slide backgrounds */
+    --muted: #6b6f78;
+    --rule: #d9d4c8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+  }
+  .deck { position: relative; width: 100vw; height: 100vh; }
+  section.slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6vh 8vw;
+    overflow: auto;
+  }
+  section.slide.active { display: flex; }
+  section.slide h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.6em;
+    letter-spacing: -0.01em;
+  }
+  section.slide h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.8em;
+  }
+  section.slide h3 {
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+  section.slide p, section.slide li {
+    font-size: clamp(1.1rem, 1.7vw, 1.6rem);
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+  }
+  section.slide ul, section.slide ol {
+    margin-left: 2em;
+    margin-top: 0.8em;
+  }
+  section.slide li { margin-bottom: 0.6em; }
+  section.slide .meta {
+    color: var(--muted);
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  section.slide .pullquote {
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--ink);
+    padding: 0.5em 0;
+    border-left: 6px solid var(--accent);
+    padding-left: 1em;
+    margin: 1em 0;
+  }
+  section.slide .accent { color: var(--accent); font-weight: 600; }
+  section.slide .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+    margin-top: 1em;
+  }
+  section.slide .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5vw;
+    margin-top: 1em;
+  }
+  section.slide .card {
+    background: var(--accent-soft);
+    padding: 1.5em;
+    border-radius: 12px;
+  }
+  section.slide .card h3 { color: var(--accent); margin-bottom: 0.3em; }
+  section.slide .card p {
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
+    margin: 0;
+  }
+  section.slide .card code { font-size: 0.85em; }
+  section.slide table {
+    border-collapse: collapse;
+    margin-top: 1em;
+    font-size: clamp(0.95rem, 1.4vw, 1.3rem);
+  }
+  section.slide th, section.slide td {
+    border: 1px solid var(--rule);
+    padding: 0.5em 1em;
+    text-align: left;
+  }
+  section.slide th { background: var(--accent-soft); }
+  section.slide.title-slide {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.title-slide h1 { color: var(--paper); }
+  section.slide.title-slide h2 { color: var(--accent); }
+  section.slide.title-slide p { color: var(--paper); opacity: 0.85; }
+  section.slide.spotlight {
+    background: var(--spotlight-bg);
+    color: var(--paper);
+    align-items: center;
+    text-align: center;
+  }
+  section.slide.spotlight h1, section.slide.spotlight h2, section.slide.spotlight p {
+    color: var(--paper);
+  }
+  section.slide.spotlight .pullquote {
+    border-left-color: var(--paper);
+    color: var(--paper);
+  }
+  section.slide.section-divider {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.section-divider h1 { color: var(--paper); font-size: clamp(3rem, 7vw, 6rem); }
+  section.slide.section-divider h2 { color: var(--accent); }
+  section.slide.section-divider p { color: var(--paper); opacity: 0.75; }
+  section.slide.acknowledgement {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.acknowledgement h2 { color: var(--accent); }
+  section.slide.acknowledgement .ack-body {
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+    line-height: 1.55;
+    max-width: 30em;
+    font-weight: 400;
+    color: var(--paper);
+  }
+  section.slide.acknowledgement .ack-body strong { color: var(--paper); font-weight: 600; }
+  /* Data acknowledgements slide */
+  section.slide.acknowledgements-slide {
+    padding: 3vh 5vw;
+    justify-content: flex-start;
+  }
+  section.slide.acknowledgements-slide h2 { margin-bottom: 0.4em; }
+  section.slide.acknowledgements-slide .ack-intro {
+    font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+    color: var(--muted);
+    font-style: italic;
+    max-width: 52em;
+    margin-bottom: 1.2em;
+    line-height: 1.45;
+  }
+  section.slide.acknowledgements-slide .ack-block {
+    margin-bottom: 1em;
+    padding-left: 1em;
+    border-left: 3px solid var(--accent-soft);
+  }
+  section.slide.acknowledgements-slide .ack-block h3 {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    color: var(--accent);
+    margin-bottom: 0.15em;
+    font-weight: 600;
+  }
+  section.slide.acknowledgements-slide .ack-block p {
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    margin-bottom: 0.2em;
+    line-height: 1.45;
+  }
+  section.slide.acknowledgements-slide .ack-block .citation {
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+    color: var(--muted);
+  }
+  section.slide.acknowledgements-slide a { color: var(--accent); text-decoration: none; }
+  section.slide.acknowledgements-slide a:hover { text-decoration: underline; }
+  /* Project + team slide */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    margin: 1.2em 0;
+    align-items: start;
+  }
+  .team-card { text-align: center; }
+  .team-card img {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 0.7em;
+    border: 4px solid var(--accent-soft);
+    background: var(--accent-soft);
+  }
+  .team-card .team-name {
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    margin-bottom: 0.2em;
+    line-height: 1.2;
+  }
+  .team-card .team-role {
+    color: var(--muted);
+    font-size: clamp(0.85rem, 1.15vw, 1.05rem);
+    line-height: 1.35;
+  }
+  section.slide p.team-attribution {
+    margin-top: 1em;
+    text-align: center;
+    max-width: 52em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .chrome {
+    position: fixed;
+    bottom: 1.5vh;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    pointer-events: none;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .chrome > span { background: var(--paper); padding: 0.3em 0.7em; border-radius: 4px; }
+  .notes {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    max-height: 35vh;
+    overflow: auto;
+    background: rgba(26, 29, 36, 0.97);
+    color: var(--paper);
+    padding: 1.5em 3em;
+    border-top: 3px solid var(--accent);
+    display: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .notes.show { display: block; }
+  .notes h4 {
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    margin-bottom: 0.5em;
+  }
+  .hint {
+    position: fixed;
+    top: 1vh;
+    right: 2vw;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: var(--paper);
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    opacity: 0.6;
+  }
+  /* UI overview slide */
+  section.slide.ui-overview-slide {
+    padding: 2vh 4vw;
+    justify-content: flex-start;
+  }
+  section.slide.ui-overview-slide h2 { margin-bottom: 0.3em; }
+  .ui-overview-container {
+    position: relative;
+    width: 100%;
+    max-height: 53vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .ui-overview-container .ui-overview-figure {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    max-height: 53vh;
+  }
+  .ui-overview-container img {
+    display: block;
+    max-width: 100%;
+    max-height: 53vh;
+    width: auto;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+  .ui-overview-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+  }
+  .ui-overview-legend {
+    counter-reset: ui-item;
+    columns: 2;
+    column-gap: 2.5em;
+    margin-top: 0.5em;
+    padding: 0;
+    list-style: none;
+    font-size: clamp(0.78rem, 1.05vw, 1rem);
+  }
+  .ui-overview-legend li {
+    counter-increment: ui-item;
+    margin-bottom: 0.25em;
+    break-inside: avoid;
+    padding-left: 2.4em;
+    position: relative;
+    line-height: 1.3;
+  }
+  .ui-overview-legend li::before {
+    content: counter(ui-item);
+    position: absolute;
+    left: 0; top: 0;
+    width: 1.7em; height: 1.7em;
+    background: var(--accent);
+    color: var(--paper);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+  }
+
+  /* Print / Save-as-PDF */
+  @media print {
+    @page { size: 1280px 720px; margin: 0; }
+    html, body { height: auto; overflow: visible; background: #fff; }
+    .deck { position: static; width: auto; height: auto; }
+    section.slide {
+      position: relative !important;
+      inset: auto !important;
+      display: flex !important;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    section.slide:last-child { page-break-after: avoid; break-after: auto; }
+    .chrome, .notes, .hint { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- Slide 1: Title -->
+  <section class="slide title-slide active" data-notes="START THE ZOOM RECORDING before you speak — this whole session is shared afterwards. Greet, pause, wait for the join trickle to settle (~1 min past the hour).">
+    <h2>LDaCA Online Workshop · Session 1 of 2</h2>
+    <h1>Wordflow: text analytics without code</h1>
+    <p style="margin-top: 2em; font-size: 1.3rem;">Concepts, interface, and a real multi-tool research workflow — all demo, no homework</p>
+    <p style="margin-top: 2.5em; font-size: 0.95rem;"><strong>Dr Chao Sun</strong> · Sydney Informatics Hub</p>
+    <p style="margin-top: 0.3em; font-size: 0.85rem; opacity: 0.7;">Friday 28 August 2026 · Session 1: 10:30 am – 12:00 pm · Session 2 (hands-on): 1:30 – 3:00 pm</p>
+  </section>
+
+  <!-- Slide 2: Acknowledgement of Country -->
+  <section class="slide acknowledgement" data-notes="Speak slowly and sincerely. 30–45 seconds. Online rooms deserve the same pause afterwards as physical ones.">
+    <h2>Acknowledgement of Country</h2>
+    <p class="ack-body">
+      We acknowledge the <strong>Gadigal people of the Eora Nation</strong>, the Traditional Custodians of the land from which we present today, and the Traditional Custodians of the many lands from which you are joining.
+    </p>
+    <p class="ack-body" style="margin-top: 1.2em;">
+      We pay our respects to Elders past and present.
+    </p>
+  </section>
+
+  <!-- Slide 3: How today works (online housekeeping) -->
+  <section class="slide" data-notes="Say the recording sentence VERBATIM and early — people must know before they speak on mic. Emphasise the two-session design: this half is watch-only on purpose; anyone can leave at lunch with a complete experience, and the afternoon is where keyboards come out. Point to the pre-workshop email for the two setup tasks.">
+    <h2>How today works</h2>
+    <ul>
+      <li><strong>This morning session is being recorded</strong> and will be shared afterwards — so you can relax, watch, and revisit anything later. <strong>The afternoon hands-on will NOT be recorded.</strong></li>
+      <li><strong>No hands-on before lunch.</strong> This session is a guided tour — no need to install or follow along. Questions in the <strong>Zoom chat</strong> any time; I'll take them at section breaks.</li>
+      <li><strong>1:30 – 3:00 pm — the hands-on.</strong> Wordflow's new <strong>Annotation</strong> tool: coding text with GenAI, on your own machine. To join in, you need two things from the pre-workshop email: <strong>the desktop app installed</strong> (<code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code>) and <strong>your own AI-provider API key</strong>. Lunch is the setup window.</li>
+      <li><strong>Attend either half or both.</strong> If you were at the June workshop, the afternoon alone is a fine plan.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 4: Project + team -->
+  <section class="slide" data-notes="Attribution chain: team → University of Sydney → LDaCA → ARDC/NCRIS. ~1.5 min. LDaCA in one line: national research infrastructure building a data commons for Australian language data; Wordflow is one of its text analytics tools.">
+    <h2>Who built this?</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="images/team/Chao_Sun.jpg" alt="Dr Chao Sun">
+        <div class="team-name">Dr Chao Sun</div>
+        <div class="team-role">Project tech lead<br>Sydney Informatics Hub</div>
+      </div>
+      <div class="team-card">
+        <img src="images/team/Senhui_Guo.jpg" alt="Dr Alex Guo">
+        <div class="team-name">Dr Alex Guo</div>
+        <div class="team-role">Principal developer<br>Sydney Informatics Hub</div>
+      </div>
+      <div class="team-card">
+        <img src="images/team/Monika_Bednarek.jpg" alt="Prof. Monika Bednarek">
+        <div class="team-name">Prof. Monika Bednarek</div>
+        <div class="team-role">Academic lead<br>Sydney Corpus Lab</div>
+      </div>
+    </div>
+    <p class="team-attribution">All at the <strong>University of Sydney</strong>, a <strong>partner institution</strong> of the <strong>Language Data Commons of Australia (LDaCA)</strong> — a <strong>co-investment partnership with the Australian Research Data Commons (ARDC)</strong> through the HASS and Indigenous Research Data Commons. The ARDC is enabled by the Australian Government's <strong>National Collaborative Research Infrastructure Strategy (NCRIS)</strong>.</p>
+  </section>
+
+  <!-- Slide 5: Why Wordflow -->
+  <section class="slide" data-notes="The 'why' slide — ~2 min. Most text-analysis methods live in Python/R, which walls off most researchers who work with text. Say the north-star sentence slowly; it structures the whole day.">
+    <h2>Why build Wordflow?</h2>
+    <p>Modern text analysis — corpus methods, NLP, and now GenAI — mostly lives in <strong>Python and R</strong>. That's a wall for most researchers who work with text.</p>
+    <p>Wordflow puts those methods behind <strong>point-and-click tools</strong>: your data stays visible, every step is inspectable, and no code is required.</p>
+    <p class="pullquote">Text data flows through stackable, single-purpose tools — the meaning of an analysis is shaped by how you shape your data, not by the tool itself.</p>
+    <p style="font-size: 0.95em; color: var(--muted);">That sentence is the whole workshop. Everything you'll see this morning is that idea in motion.</p>
+  </section>
+
+  <!-- Slide 6: Three ways to use it -->
+  <section class="slide" data-notes="Three deployment options, ~1.5 min. For the afternoon: desktop app is the recommended path (and the only one for non-AAF folks); Binder needs an Australian university sign-in. Python install only for people who already live in Python.">
+    <h2>Three ways to use it</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>Desktop app</h3>
+        <p>Native installer for Mac &amp; Windows (v0.7.x). Everything runs on your machine. <strong>Recommended</strong> — and what the afternoon hands-on assumes.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud (Binder)</h3>
+        <p>Runs in your browser, nothing to install. Needs an <strong>AAF sign-in</strong> (Australian university credentials). Don't put sensitive data on it.</p>
+      </div>
+      <div class="card">
+        <h3>Python install</h3>
+        <p>For Python users:<br><code>pip install ldaca-wordflow</code><br>or run directly:<br><code>uvx ldaca-wordflow@latest</code></p>
+      </div>
+    </div>
+    <p style="margin-top: 1.5em; font-style: italic;">Everything lives at <code style="font-style: normal; background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px;">sih.tools/wordflow</code> — installers, Binder launch, docs, and today's materials.</p>
+  </section>
+
+  <!-- Slide 7: UI tour — annotated screenshot.
+       NOTE: images/ui-overview.png is a v0.5 screenshot — RETAKE on v0.7 before the day
+       (visible differences: Annotation entry in Views, "Help" instead of "Tutorial",
+       no working-directory footer). Overlay positions may need re-aiming. -->
+  <section class="slide ui-overview-slide" data-notes="Do this on the LIVE app, screen-shared — the slide is the recap. Land all 7. v0.7 notes: bottom-left buttons are Help + Feedback (Help was 'Tutorial' in older versions); sidebar sections are Views / Data Blocks / Tasks; the Tasks section is where slow analyses show progress.">
+    <h2>The interface — 7 things to know</h2>
+    <div class="ui-overview-container">
+      <div class="ui-overview-figure">
+        <img src="images/ui-overview.png" alt="Annotated Wordflow workspace with seven labelled regions" />
+        <svg class="ui-overview-overlay" viewBox="0 0 2800 1740" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" font-size="72" text-anchor="middle">
+            <circle cx="180" cy="440" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="180" y="465" fill="#fdfcf8">1</text>
+            <circle cx="1100" cy="90" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="1100" y="115" fill="#fdfcf8">2</text>
+            <circle cx="2280" cy="90" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="2280" y="115" fill="#fdfcf8">3</text>
+            <circle cx="2280" cy="1050" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="2280" y="1075" fill="#fdfcf8">4</text>
+            <circle cx="180" cy="820" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="180" y="845" fill="#fdfcf8">5</text>
+            <circle cx="135" cy="1695" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="135" y="1720" fill="#fdfcf8">6</text>
+            <circle cx="330" cy="1695" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="330" y="1720" fill="#fdfcf8">7</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <ol class="ui-overview-legend">
+      <li><strong>Tool sidebar (Views)</strong> — pick a tool here; Annotation is the newest entry</li>
+      <li><strong>Tool interface</strong> — controls and results for the selected tool, organised in tabs</li>
+      <li><strong>Workspace graph view</strong> — where your project's data and its analytical derivations live</li>
+      <li><strong>Data viewer</strong> — manage and inspect columns and rows in a data block. Not just a viewer.</li>
+      <li><strong>Data block quick-select</strong> — switch the active block without going back to the graph</li>
+      <li><strong>Help</strong> — the built-in tutorials; the small <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:-0.15em;"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> icon next to a control jumps straight to its section</li>
+      <li><strong>Feedback</strong> — tap anytime something is confusing, surprising, or broken</li>
+    </ol>
+  </section>
+
+  <!-- Slide 8: The data block concept + tabs -->
+  <section class="slide" data-notes="The one concept — ~2 min. Then the v0.7 tabs line: each analysis view runs in tabs like a browser; tabs are saved with the workspace, which is exactly how this afternoon's checkpoint files work. Don't demo tab mechanics now, just plant the idea.">
+    <h2>One idea to hold onto</h2>
+    <h1>Everything is a data block.</h1>
+    <ul>
+      <li>Your imported dataset is a data block. A filter, a join, an analysis result — each becomes a <strong>new block</strong> in the workspace graph.</li>
+      <li>Every tool is a <strong>lens</strong>: it reads blocks, and its results can go back into the workspace — click <strong>Add to Workspace</strong> — to feed the next tool.</li>
+      <li>The workspace graph <em>is</em> your method: every step visible, every derivation traceable.</li>
+      <li>New in v0.7: analyses run in <strong>tabs</strong>, like a browser — and tabs are saved with your workspace. Export the workspace as a ZIP and someone else can pick up exactly where you left off. <em>(That's how this afternoon's checkpoint files work.)</em></li>
+    </ul>
+  </section>
+
+  <!-- Slide 9: Divider — tool tour -->
+  <section class="slide section-divider" data-notes="Section break. From here you're mostly in the live app. Open the pre-built Tour workspace — one tab per tool, analyses already run. ~4 min per tool, 20 total. Come back to each tool's slide only if the app misbehaves.">
+    <h2>Part 2</h2>
+    <h1>5 tools, ~4 minutes each</h1>
+    <p style="margin-top: 1em;">A pre-built workspace, one tab per tool — see each lens's destination before we build anything.</p>
+  </section>
+
+  <!-- Slide 10: Frequency -->
+  <section class="slide" data-notes="Live: Tour workspace, Frequency tab (news corpus, Guardian+IA vs Sky+PerthNow). Frame the grouping as a research assumption, not a claim. Demo Cloud↔List toggle; right-click a word to add it to the Stop words filter — it disappears instantly. Mention the per-visualisation download icons (PNG for cloud, CSV for list).">
+    <h2>Tool 1 — Frequency</h2>
+    <h1>Explore by comparison.</h1>
+    <ul>
+      <li>Two corpora side by side — what does each side talk about more?</li>
+      <li>Cloud view ↔ list view; <strong>right-click a word</strong> to add it to the stop-words filter.</li>
+      <li>Click a word → jump straight into Concordance with it loaded.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 11: Concordance -->
+  <section class="slide" data-notes="Live: Concordance tab (Honi Soit). Regex with 3 patterns, each coloured. Show the dispersion view explicitly — where in the corpus the hits fall.">
+    <h2>Tool 2 — Concordance</h2>
+    <h1>Search several at once.</h1>
+    <ul>
+      <li>Keyword-in-context: every hit with its surroundings.</li>
+      <li>Regex mode — several patterns at once, colour-coded.</li>
+      <li>Dispersion view: <em>where</em> in the corpus the matches fall.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 12: Trends -->
+  <section class="slide" data-notes="Live: Trends tab (QLD election tweets). Show the same period grouped three ways — matched term / gender / party. The legend is an interactive filter. This is the tool we'll bend into a histogram at the end.">
+    <h2>Tool 3 — Trends</h2>
+    <h1>One period, many views.</h1>
+    <ul>
+      <li>Counts over time, grouped by any column — term, gender, party…</li>
+      <li>The legend is a filter: click lines off to isolate a story.</li>
+      <li>Remember this tool — we'll bend it into something else later.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 13: Topic Modeling -->
+  <section class="slide" data-notes="Live: Topic Modeling tab (news corpus, left vs right). Highlight colour blending on bubbles (themes shared across the two corpora) vs solid (one side dominant). Don't get into BERTopic internals.">
+    <h2>Tool 4 — Topic Modeling</h2>
+    <h1>Themes across two corpora.</h1>
+    <ul>
+      <li>Unsupervised themes, one bubble per topic — hover for the top words.</li>
+      <li>Feed it <strong>two</strong> corpora: blended bubble colours = shared themes, solid = one-sided.</li>
+      <li>Select bubbles → <strong>Add to Workspace</strong> → the documents behind them become new blocks.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 14: Quotation -->
+  <section class="slide" data-notes="Live: Quotation tab (Honi Soit). Who is quoted, saying what. Sort by speaker. Mention English-only honestly.">
+    <h2>Tool 5 — Quotation</h2>
+    <h1>Who said what?</h1>
+    <ul>
+      <li>Extracts direct quotes with their speakers.</li>
+      <li>Sort by speaker — see who gets quoted most.</li>
+      <li>English-only for now.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 15: Divider — research story -->
+  <section class="slide section-divider" data-notes="Slow down. This is the centrepiece of the morning. Land the research question before touching the app. Remind the room: full-speed demo, recorded — nobody needs to memorise clicks.">
+    <h2>Part 3</h2>
+    <h1>A real workflow</h1>
+    <p style="margin-top: 1em;">Four analysis tools. One question. ~30 minutes, end to end.</p>
+  </section>
+
+  <!-- Slide 16: Research question -->
+  <section class="slide" data-notes="Frame it, then go. Emphasise the watching contract: 'you don't need to follow — this is recorded, and this afternoon you'll get your own hands-on with checkpoints.' Chat questions at phase boundaries.">
+    <h2>The research question</h2>
+    <p class="pullquote">Did female and male candidates tweet about different topical issues during the 2020 QLD election?</p>
+    <p style="margin-top: 1em;">Watch how the question turns into a <strong>workflow</strong> — raw tweets in, a small empirical finding out. Full speed, narrated; the recording has every click if you want them later.</p>
+    <p style="margin-top: 0.8em; color: var(--muted); font-style: italic;">Five phases: prepare → explore → pattern → themes → combine.</p>
+  </section>
+
+  <!-- Slide 17: Phase A -->
+  <section class="slide" data-notes="~5 min live. Data Loader: the two blocks (tweets + candidate gender). Rename via the block's menu icon. Show a column menu; set dtypes so username matches in both. Preprocessing → Join: pick tweets FIRST (left table), left join on username. The lesson: data prep IS analysis.">
+    <h2>Phase A</h2>
+    <h1>Load, prepare, join</h1>
+    <ol>
+      <li>Two blocks: one row per <strong>tweet</strong>, one row per <strong>candidate</strong> (with gender).</li>
+      <li>Tidy: rename blocks, drop noise columns, align the <code>username</code> types.</li>
+      <li><strong>Preprocessing → Join</strong>: left-join tweets to candidates on <code>username</code> → every tweet now carries a gender column.</li>
+    </ol>
+    <p style="margin-top: 0.6em; font-style: italic; color: var(--muted);">Data prep is part of the analysis — the join <em>is</em> a research decision.</p>
+  </section>
+
+  <!-- Slide 18: Phase B -->
+  <section class="slide" data-notes="~7 min live. Filter gender=F / gender=M. Both blocks → Frequency comparative (40 words, stopwords on). Then the loop: click a word → Concordance → read contexts → back → next word. Do 2-3 rounds honestly. Words to converge on: covid, cases, cut(s).">
+    <h2>Phase B</h2>
+    <h1>Filter, then iterate Frequency ↔ Concordance</h1>
+    <ol>
+      <li>Filter the joined block: <code>gender = 'F'</code> / <code>gender = 'M'</code> → two sub-corpora.</li>
+      <li>Both into <strong>Frequency</strong>, comparative mode.</li>
+      <li><strong>Click a word</strong> → Concordance opens with it loaded. Read. Return. Repeat.</li>
+      <li>What keeps surfacing: <code>covid</code>, <code>case(s)</code>, <code>cut(s)</code> — two themes: COVID, spending cuts.</li>
+    </ol>
+    <p class="pullquote" style="margin-top: 0.6em;">The next phase's search pattern grew straight out of this loop.</p>
+  </section>
+
+  <!-- Slide 19: Phase C -->
+  <section class="slide" data-notes="~8 min live. Concordance Regex mode: covid|case(s)?|cut(s)?, coloured matches, glance at Dispersion, then TABLE view → Add to Workspace (table = one row per hit; dispersion aggregates per document). Trends on the matched block, group term × gender, legend the covid lines off, switch line→bar: male candidates mention cut(s) more. Weekly bin sharpens it. Let the chart land before naming it.">
+    <h2>Phase C</h2>
+    <h1>Pattern → Add to Workspace → Trends</h1>
+    <ol>
+      <li>Concordance <strong>Regex</strong> mode: <code>covid|case(s)?|cut(s)?</code> — one search, both themes, colour-coded.</li>
+      <li>Table view → <strong>Add to Workspace</strong>: every hit becomes a row in a new block.</li>
+      <li><strong>Trends</strong> on that block, grouped by term × gender. Legend off the COVID lines; switch line → bar.</li>
+    </ol>
+    <p style="margin-top: 0.6em;"><strong>The finding:</strong> male candidates mention <code>cut(s)</code> more than female candidates. Small dataset — suggestive, not definitive. But it's real, and we got here from raw tweets in ~20 minutes.</p>
+  </section>
+
+  <!-- Slide 20: Phase D -->
+  <section class="slide" data-notes="~7 min live. Select tweets_female + tweets_male → Topic Modeling, target 8, seed 42, Run (~60-90s — point at the Tasks section progress while waiting; take a chat question here). ~23 topics; drag re-aggregation to 16. Solid bubbles = gender-dominant, blended = shared. Select 2-3 topics → Add to Workspace → per-gender child blocks.">
+    <h2>Phase D</h2>
+    <h1>Topic modelling on two corpora</h1>
+    <ol>
+      <li>Both gender corpora into <strong>Topic Modeling</strong>. Run. (Slow tasks live in the sidebar's <strong>Tasks</strong> section.)</li>
+      <li>Re-aggregate the topics until the bubbles separate cleanly.</li>
+      <li><strong>Colour mixing</strong>: solid = one gender dominates the theme; blended = shared.</li>
+      <li>Select the interesting topics → <strong>Add to Workspace</strong> → per-gender blocks of just those documents.</li>
+    </ol>
+  </section>
+
+  <!-- Slide 21: Phase E -->
+  <section class="slide" data-notes="~4 min live. Preprocessing → Stack the per-gender topic blocks → one unified block (topic + gender columns). Trends, weekly, group by topic (or gender × topic). Then the landing line: the graph behind me is the whole method, captured as a picture.">
+    <h2>Phase E</h2>
+    <h1>Stack → final Trends</h1>
+    <ol>
+      <li><strong>Preprocessing → Stack</strong> the per-gender topic blocks → one block, topic + gender preserved.</li>
+      <li><strong>Trends</strong>: selected topics, across the campaign, split by gender.</li>
+    </ol>
+    <p class="pullquote" style="margin-top: 1em;">Four analysis tools. One corpus. One toy hypothesis. One workflow — and the workspace graph is the method, captured as a picture.</p>
+  </section>
+
+  <!-- Slide 22: Repurpose demo — through the tool -->
+  <section class="slide" data-notes="~4 min live. Back in Trends: legend filtering, click a point / click + Shift-click a range → Add to Workspace: the selection is now a data block. One breath for the same pattern elsewhere: Topic Modeling bubbles, Concordance dispersion. Also flash the download icon on a visualisation: PNG out of image views, CSV out of tables.">
+    <h2>Part 4 · Repurpose the lens</h2>
+    <h1>Visualisations are doors, not posters</h1>
+    <ul>
+      <li><strong>Out:</strong> every visualisation and table has its own download icon — PNG for images, CSV for tables.</li>
+      <li><strong>Through:</strong> click a point (or click + Shift-click a range) on a chart → <strong>Add to Workspace</strong> → the selection becomes new, analysable data.</li>
+      <li>Same move in Topic Modeling (bubbles) and Concordance (dispersion markers).</li>
+    </ul>
+  </section>
+
+  <!-- Slide 23: Repurpose demo — histogram -->
+  <section class="slide" data-notes="~6 min live, the quotable demo. Honi Soit block: Preprocessing → Create → word-count column. Trends: x-axis = word count (not the date), numeric bucketing 100 intervals, line → bar. Trends is now a histogram of article length. Pause before the punchline slide.">
+    <h2>Part 4 · Repurpose the lens</h2>
+    <h1>Trends becomes a histogram</h1>
+    <ol>
+      <li><strong>Preprocessing → Create</strong>: a word-count column on the articles block.</li>
+      <li><strong>Trends</strong>: set the x-axis to the new column — not the date.</li>
+      <li>Bucket into 100 intervals, switch line → bar.</li>
+    </ol>
+    <p style="margin-top: 1em; font-style: italic;">Trends is drawing a histogram of article length. The tool didn't change — the data did.</p>
+  </section>
+
+  <!-- Slide 24: Landing -->
+  <section class="slide spotlight" data-notes="The most important sentence of the morning. Say it slowly. Pause. Repeat it.">
+    <h1>Reshape the data,</h1>
+    <h1 style="margin-top: 0;">and the same tool tells a new story.</h1>
+    <p class="pullquote" style="margin-top: 2em;">Every tool is a lens. The interesting question is which lens, on which slice — and that's your job.</p>
+  </section>
+
+  <!-- Slide 25: Three takeaways -->
+  <section class="slide spotlight" data-notes="Wrap-up of the morning. Three takeaways, no fourth. Land the name reveal on takeaway 3.">
+    <h2>Three takeaways from Wordflow</h2>
+    <ol>
+      <li><strong>Workspace + data block + graph</strong> — your project is a tree of derived data.</li>
+      <li><strong>Every tool is a lens</strong> — the analysis is shaped by how you shape the data, not by which tool you clicked.</li>
+      <li><strong>Tools talk to each other</strong> — click-jumps, Add to Workspace, grouping. Stack tools along the flow of text and you've built a workflow — that's <strong>Wordflow</strong>.</li>
+    </ol>
+    <p class="pullquote" style="margin-top: 1.5em;">The text flows. The lens changes.</p>
+  </section>
+
+  <!-- Slide 26: Lunch + afternoon setup -->
+  <section class="slide" data-notes="Leave this up over lunch. STOP THE RECORDING after you finish speaking to it. Walk the two setup tasks once out loud. Repeat: the afternoon is not recorded, join with a keyboard ready.">
+    <h2>Lunch — back at 1:30 pm</h2>
+    <h1>This afternoon: hands-on.</h1>
+    <p>Wordflow's new <strong>Annotation</strong> tool — code (classify) a real dataset with a GenAI model, measure its agreement with human coding, and improve it. <strong>Not recorded; keyboards required.</strong></p>
+    <p style="margin-top: 1em;"><strong>Set up over lunch (10 minutes, both steps in the pre-workshop email):</strong></p>
+    <ol>
+      <li>Install the desktop app — <code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code> (or Launch in Binder with an AAF login).</li>
+      <li>Have your <strong>AI-provider API key</strong> ready to paste (openrouter.ai — free tier is enough).</li>
+    </ol>
+    <p style="margin-top: 1em; font-style: italic;">No key? Come anyway — you can build everything up to the AI runs and watch those on the shared screen.</p>
+  </section>
+
+  <!-- Slide 27: Data acknowledgements -->
+  <section class="slide acknowledgements-slide" data-notes="Final reference slide — flash it, and note it's in the follow-up email with the recording. Verbal: 'a final acknowledgement to our data providers.'">
+    <h2>Data acknowledgements</h2>
+    <p class="ack-intro">All datasets used today are publicly available, supplied by LDaCA partner organisations. Please cite if used in research.</p>
+
+    <div class="ack-block">
+      <h3>2025 Australian Federal Election — NewsTalk &amp; Reddit</h3>
+      <p>Supplied by <strong>The Digital Observatory</strong> at Queensland University of Technology (formerly the <em>Australian Digital Observatory</em>, an ARDC-funded platform).</p>
+      <p class="citation"><a href="https://newstalk.digitalobservatory.net.au/">newstalk.digitalobservatory.net.au</a> · <a href="https://ausreddit.digitalobservatory.net.au/">ausreddit.digitalobservatory.net.au</a> · <a href="https://www.digitalobservatory.net.au/">digitalobservatory.net.au</a></p>
+    </div>
+
+    <div class="ack-block">
+      <h3>Queensland Election 2020 on Twitter</h3>
+      <p>QUT Digital Observatory with <strong>Prof. Axel Bruns</strong>, <strong>Prof. Daniel Angus</strong>, and <strong>Tegan Cohen</strong>. Gender metadata contributed by <strong>Sydney Corpus Lab</strong>.</p>
+      <p class="citation">Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). <em>Queensland Election 2020 on Twitter.</em> QUT. <a href="https://doi.org/10.25912/RDF_1665115527020">doi.org/10.25912/RDF_1665115527020</a></p>
+    </div>
+
+    <div class="ack-block">
+      <h3>Honi Soit Corpus</h3>
+      <p><strong>Sydney Corpus Lab</strong> (February 2024). ~60,000 words, 100 news articles from the University of Sydney student newspaper <a href="https://honisoit.com/category/news/">Honi Soit</a> (January 2021 – December 2022). Compiled with permission from the Honi Soit editorial team using constructed-week sampling.</p>
+      <p class="citation"><a href="https://sydneycorpuslab.com/">sydneycorpuslab.com</a></p>
+    </div>
+  </section>
+
+</div>
+
+<div class="chrome">
+  <span id="slide-counter">1 / 27</span>
+  <span>←/→ navigate · N toggle notes · F fullscreen</span>
+</div>
+<div class="notes" id="notes"></div>
+<div class="hint" id="hint">Press F for fullscreen, N for speaker notes</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('section.slide'));
+  const notesEl = document.getElementById('notes');
+  const counter = document.getElementById('slide-counter');
+  const hint = document.getElementById('hint');
+  let idx = 0;
+  let notesOn = false;
+
+  function render() {
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    counter.textContent = `${idx + 1} / ${slides.length}`;
+    const notes = slides[idx].dataset.notes || '';
+    notesEl.innerHTML = notes
+      ? `<h4>Speaker notes — slide ${idx + 1}</h4><p>${notes}</p>`
+      : `<h4>Slide ${idx + 1}</h4><p style="opacity:0.6">(no notes)</p>`;
+    notesEl.classList.toggle('show', notesOn);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      idx = Math.min(idx + 1, slides.length - 1);
+      render();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      idx = Math.max(idx - 1, 0);
+      render();
+    } else if (e.key === 'Home') {
+      idx = 0;
+      render();
+    } else if (e.key === 'End') {
+      idx = slides.length - 1;
+      render();
+    } else if (e.key.toLowerCase() === 'n') {
+      notesOn = !notesOn;
+      render();
+    } else if (e.key.toLowerCase() === 'f') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  setTimeout(() => { hint.style.opacity = '0'; hint.style.transition = 'opacity 1s'; }, 5000);
+
+  render();
+</script>
+</body>
+</html>

@@ -2,17 +2,31 @@
 
 Read this before editing files in this repo. Read `README.md` for the workshop design itself.
 
-## This branch: CAITG Winter School, 30 July 2026
+## This branch: online workshop, 28 August 2026
 
-This branch (`caitg_winter_school_2026-07-30`) holds a **45-minute hands-on session** on Wordflow **v0.7.1**'s new **Annotation** tool (GenAI-assisted text coding), delivered at the CAITG (Centre for AI, Trust and Governance) Winter School. Its materials are **new files alongside** the June intro-workshop ones:
+This branch (`online_workshop_2026-08-28`) holds a **one-day online workshop on Wordflow v0.7.x** combining the June intro workshop and the July CAITG session: **Session 1** (90 min, morning, demo-only, **recorded**) is a condensed intro — concepts, interface, multi-tool research workflow; **Session 2** (90 min, after lunch, hands-on, **not recorded**) is the Annotation-tool GenAI coding exercise. `README.md` on this branch is the canonical structure. This workshop's deliverables:
 
-- `slides/caitg-annotator.html` — 8-slide minimal intro deck (first ~8 minutes only; the rest is live)
-- `facilitator/runbook-caitg.md` — the 45-minute minute-by-minute
-- `participant/hands-on-annotator.md` — the participant step sheet
+- `slides/online-s1-intro.html` + `slides/online-s2-annotation.html`
+- `facilitator/runbook-online-s1.md`, `runbook-online-s2.md`, `pre-workshop-checklist-online.md`
+- `participant/hands-on-annotation-online.md`
+- `communications/pre-workshop-email-online.md`, `post-workshop-email-online.md`
 
-The 3-hour intro-workshop files (`slides/index.html`, `facilitator/runbook.md`, `participant/hands-on-*.md`, …) are the **June 2026 workshop's** materials; on this branch they are reference/reuse sources, not the deliverable. Two notes below are **superseded for this branch**: the Annotation tool is now released and is the session's centrepiece (the "not yet usable" bullet described v0.5), and the session runs on **v0.7.1**, not v0.5.
+Older files are sources, not deliverables: the June 3-hour materials (`slides/index.html`, `facilitator/runbook.md`, `participant/hands-on-*.md`) are **v0.5-era** — check every UI claim against the v0.7 list below before reusing; the CAITG files (`slides/caitg-annotator.html`, `facilitator/runbook-caitg.md`, `participant/hands-on-annotator.md`) are already v0.7-accurate for the Annotation tool.
 
-Known v0.7.1 issue to keep in materials: **Excel spreadsheet and zip-archive import are broken** — participants should use CSV/plain text.
+Known v0.7.1 issue to keep in materials until fixed: **Excel spreadsheet and zip-archive import are broken** — participants should use CSV/plain text. (Verify against the shipping 0.7.x before the day.)
+
+## v0.7 UI facts (verified against v0.7.1 code, 2026-08-02) — these override any v0.5-era bullet below
+
+- **Snapshot Mode is GONE.** No per-tool snapshot save/load, no snapshot banners, no "Demo Snapshots" tab in the sample-import dialog, no `.ldaca-snapshot` files. The pencil next to the **Views** header is now only **"Edit visible views"** (view visibility checkboxes — nothing else). Never mention Snapshot Mode in v0.7 materials.
+- **Sample data import**: Data Loader → **"Import sample data"** button → dialog **"Import sample content"** — a single flat list of collections (no tabs), status chips **"✓ Imported"** / **"○ Remote"**, button **"Import selected"**. Collections: `ADO — Queensland Election Tweets`, `SCL — Honi Soit Student Newspaper`, `ADO — Reddit (Australian News)`.
+- **Sidebar sections**: **Views**, **Data Blocks**, **Tasks**. Tool order: `Data Loader, Preprocessing, Frequency, Concordance, Trends, Topic Modeling, Quotation, Annotation, Export`. **"Topic Modeling" is one-L in the sidebar.** Footer buttons: **"Help"** (renamed from v0.5's "Tutorial") and **"Feedback"**. Header icons: About, **"Cite LDaCA Wordflow"**, Settings cog. The working-directory display moved from the sidebar footer to **Settings → Workspace**.
+- **Multi-tab system**: analysis views (Frequency, Concordance, Trends, Topic Modeling, Quotation, Annotation) run in Chrome-style tabs. The tab strip shows when **Settings → General → "Enable multi-tab"** is on (default OFF) or when >1 tab exists. "+" = new tab ("Analysis N"); **rename = click the already-active tab a second time** (no double-click, no right-click); X closes; drag reorders. Data Loader, Preprocessing, Export are not tabbed. Facilitator machines should have multi-tab ON.
+- **Workspace archive = the checkpoint mechanism.** Export: **Export view → "Export Workspace" → "Export workspace archive"** (or Data Loader → Workspace manager → row **"Download"**) → `<Name>.zip`. Import: **Data Loader → Workspace manager → "Upload workspace"** (only `.zip`; **no drag-and-drop for archives**) → then click **"Load"** on the new row (upload does NOT auto-load). Restores: data blocks (materialised parquet), tabs (name/kind/order), and all *terminal* analyses with parameters + results. Does NOT restore: active tab, per-tab display settings, or the tool's **input selections** (device-local) — after loading a checkpoint, participants may need to re-select the data block/columns in the tool. **Archives contain no API keys or credentials** (provider keys live outside the workspace), so checkpoint files are safe to distribute.
+- **Preprocessing sub-tabs**: `Filter, Sample, Join, Stack, Find, Create, Expression` (v0.5's "Polars Expression" → "Expression"). New **"Apply result as"** control: **"Create new Data Block"** vs **"Update"**.
+- **Still true in v0.7**: "Add to Workspace" is the publication button everywhere; right-click a Frequency word adds it to the **"Stop words filter (N)"**; per-visualisation download icons (image→PNG, table→CSV); double-click a graph node adds it to the active tool; block/column actions via menu icons (never right-click).
+- **Hints**: v0.5 hint system replaced by **Settings → Guidance** ("Show contextual hints", "Reset Contextual Hint history"). Don't reference the old hint bubbles.
+- **In-app docs lag**: `Help` content (ui.md etc.) still describes v0.5 names ("Token Frequency", "Trends and Sequence", working directory in sidebar) and omits Annotation — don't quote in materials without checking, and expect participants to notice discrepancies.
+- **Slide asset warning**: `slides/images/ui-overview.png` is a v0.5 screenshot — retake on v0.7 before the day (sidebar differences are visible: Annotation entry, Help button, no working-directory footer).
 
 ## What this repo is
 
