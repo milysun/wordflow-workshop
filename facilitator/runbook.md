@@ -123,7 +123,7 @@ For each tool: **(a) load the snapshot together, (b) facilitator narrates ~2 min
 
 #### Tool 1 — Frequency (2:00 pm – 2:05 pm)
 
-- *"Click Frequency in the sidebar. Click 'Load snapshot' (folder icon). Pick `Freq_Analysis_Newstalk`."*
+- *"Click Frequency in the sidebar. Click 'Load snapshot' (camera icon). Pick `Freq_Analysis_Newstalk`."*
 - Narrate the comparative view: *"What you're looking at is a comparative frequency — two columns, one corpus. The corpus is a set of Australian news stories. I've filtered by source and grouped them: on the left, two left-leaning outlets — Guardian Australia and Independent Australia. On the right, two right-leaning outlets — Sky News Australia and PerthNow. Bigger word = more frequent in that group's stories."*
 - *"Switch between **Cloud** and **List** views — same data, just a different visual. List gives you exact counts."*
 - Show the stopword shortcut: *"One little gem — **right-click any word** in the cloud or list and it gets added to stopwords. Watch — *[right-click a word]* — gone. Useful for hiding tokens you don't care about without re-running anything. Custom stopwords go to the top of the stopword list, so you can remove one by hand if you add a word by mistake."*
