@@ -13,19 +13,19 @@ A free one-day online workshop for researchers who work with text. Morning: see 
 
 **Description:**
 
-Working with interviews, social media, news articles, or any other text corpus, but not with Python or R? **LDaCA Wordflow** is a free, code-free text analytics app built for exactly that: concordance, word frequency, trends, topic modelling, quotation extraction, and now **GenAI-assisted annotation**, all point-and-click, with your data visible at every step.
+Working with interviews, social media, news articles, or any other text corpus, but not with Python or R? **LDaCA Wordflow** is a free text analytics app built for exactly that, no code required: concordance, word frequency, trends, topic modelling, quotation extraction, and now **GenAI-assisted annotation**, all point-and-click, with your data visible at every step.
 
 This online workshop runs as **two 90-minute Zoom sessions**; attend either half or both.
 
 **Session 1 · Wordflow from zero, 11:00 am – 12:30 pm AEST** *(10:30 am ACST · 9:00 am AWST)*
-A guided tour, no hands-on and nothing to install: the concepts, the interface, and a real research workflow built live: from raw election tweets to a small empirical finding, across four analysis tools. This session is **recorded**, so you can revisit it any time. If you attended our June workshop, you may prefer to join for the afternoon only.
+A guided tour, no hands-on and nothing to install: the concepts, the interface, and a worked-example research workflow built live, from raw election tweets to a small finding, across four analysis tools. This session is **recorded**, so you can revisit it any time. If you attended our [June workshop](https://milysun.github.io/wordflow-workshop/#workshops) in person, you may prefer to join for the afternoon only.
 
 **Session 2 · Hands-on: coding text with GenAI, 2:00 – 3:30 pm AEST** *(1:30 pm ACST · 12:00 pm AWST)*
 At your own keyboard, you'll use Wordflow's new **Annotation** tool the researcher-first way: you code a sample and define the codebook; the AI must match your expectation (agreement scores, a confusion matrix, targeted revisions to your codebook and prompt) before it earns the corpus; then it annotates at scale. This session is deliberately **not recorded**, so it can run at the room's pace. To take part you'll need the free desktop app installed and a free AI-provider API key; a registration email a week beforehand walks you through both (about 10 minutes; zero cost).
 
 **Who it's for:** HDR students to senior academics, in any field where text is data. No coding experience needed. That's the point. Built for Australian researchers, but free and open to everyone; international colleagues are warmly welcome (session times are AEST; the desktop app works anywhere).
 
-**What you need:** a laptop and a browser for the morning; the two small setup steps above for the afternoon. Optionally, bring a small text dataset (CSV) and a classification question you care about.
+**What you need:** just the Zoom meeting for the morning, from any device. For the afternoon: a laptop or desktop and the two small setup steps above. The hands-on uses a prepared sample dataset so the whole room stays on the same steps; the materials are yours to keep, so you can repeat the exercise on your own data and coding question afterwards, at your own pace.
 
 Wordflow is developed at the University of Sydney (Sydney Informatics Hub and Sydney Corpus Lab) as part of the **Language Data Commons of Australia (LDaCA)**, an ARDC co-investment partnership enabled by NCRIS.
 
@@ -37,7 +37,7 @@ Wordflow is developed at the University of Sydney (Sydney Informatics Hub and Sy
 
 **Section title:** Teach the AI your codebook: free Wordflow workshop, 28 August
 
-**Text analytics without code, including GenAI text coding (online, 28 August).** Do you work with text (interviews, social media, news, archives) but not with Python or R? Join us on **Friday 28 August** for a free online workshop on **LDaCA Wordflow**, a point-and-click text analytics app from the Language Data Commons of Australia. The morning session (**11:00 am – 12:30 pm AEST**; 9:00 am in the west) is a watch-only tour: concepts, interface, and a real research workflow built live, recorded for later viewing. After lunch (**2:00 – 3:30 pm AEST**), a hands-on session introduces Wordflow's new **Annotation** tool. You code a sample and define the codebook; the AI must match your expectation before it earns the corpus; then it annotates at scale. Attend either session or both; no coding experience required. Register at ⟨Eventbrite link⟩.
+**Text analytics without code, including GenAI text coding (online, 28 August).** Do you work with text (interviews, social media, news, archives) but not with Python or R? Join us on **Friday 28 August** for a free online workshop on **LDaCA Wordflow**, a point-and-click text analytics app from the Language Data Commons of Australia. The morning session (**11:00 am – 12:30 pm AEST**; 9:00 am in the west) is a watch-only tour: concepts, interface, and a worked-example research workflow built live, recorded for later viewing. After lunch (**2:00 – 3:30 pm AEST**), a hands-on session introduces Wordflow's new **Annotation** tool. You code a sample and define the codebook; the AI must match your expectation before it earns the corpus; then it annotates at scale. Attend either session or both; no coding experience required. Register at ⟨Eventbrite link⟩.
 
 ---
 
