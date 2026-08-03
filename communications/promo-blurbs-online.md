@@ -29,6 +29,8 @@ At your own keyboard, you'll use Wordflow's new **Annotation** tool the research
 
 Wordflow is developed at the University of Sydney (Sydney Informatics Hub and Sydney Corpus Lab) as part of the **Language Data Commons of Australia (LDaCA)**, an ARDC co-investment partnership enabled by NCRIS.
 
+**Want a look before the day?** The Wordflow page at [sih.tools/wordflow](https://sih.tools/wordflow) has screenshots, installers, and photos from past workshops; the project lives on GitHub at [github.com/Australian-Text-Analytics-Platform/LDaCa_Text_Analytics_Tools](https://github.com/Australian-Text-Analytics-Platform/LDaCa_Text_Analytics_Tools).
+
 ⟨Zoom link sent to registrants. Contact: chao.sun@sydney.edu.au⟩
 
 ---
