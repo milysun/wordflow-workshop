@@ -26,6 +26,8 @@ This repository houses materials for the LDaCA Wordflow workshop series. Each wo
 
 | Workshop | Date | Length | Materials |
 |---|---|---|---|
+| Text analytics without code: teach the AI your codebook | 28 August 2026 | 2 × 90 min, online | [`online_workshop_2026-08-28`](../../tree/online_workshop_2026-08-28) |
+| Coding text with GenAI: the Annotation tool (CAITG Winter School) | 30 July 2026 | 45 min, in-person hands-on | [`caitg_winter_school_2026-07-30`](../../tree/caitg_winter_school_2026-07-30) |
 | Intro to Wordflow | 3 June 2026 | 3 hours, in-person | [`intro_workshop_2026-06-03`](../../tree/intro_workshop_2026-06-03) |
 
 *More workshops to come — sessions focused on specific tools, on specific domains, and on combining tools into new workflows.*
