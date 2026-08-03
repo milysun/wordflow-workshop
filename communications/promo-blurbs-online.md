@@ -6,7 +6,7 @@ Three ready-to-paste blurbs. Placeholders in ⟨angle brackets⟩. Keep the tone
 
 ## 1 · Eventbrite post
 
-**Title:** Text analytics without code: LDaCA Wordflow online workshop (incl. hands-on GenAI text coding)
+**Title:** Text analytics without code: teach the AI your codebook (LDaCA Wordflow)
 
 **Summary (short description field):**
 A free one-day online workshop for researchers who work with text. Morning: see what Wordflow can do, end to end (no installation needed). Afternoon: hands-on with the new Annotation tool. You code a sample and define the codebook; the AI must match your expectation before it earns the corpus; then it annotates at scale.
@@ -34,6 +34,8 @@ Wordflow is developed at the University of Sydney (Sydney Informatics Hub and Sy
 ---
 
 ## 2 · Newsletter paragraph
+
+**Section title:** Teach the AI your codebook: free Wordflow workshop, 28 August
 
 **Text analytics without code, including GenAI text coding (online, 28 August).** Do you work with text (interviews, social media, news, archives) but not with Python or R? Join us on **Friday 28 August** for a free online workshop on **LDaCA Wordflow**, a point-and-click text analytics app from the Language Data Commons of Australia. The morning session (**11:00 am – 12:30 pm AEST**; 9:00 am in the west) is a watch-only tour: concepts, interface, and a real research workflow built live, recorded for later viewing. After lunch (**2:00 – 3:30 pm AEST**), a hands-on session introduces Wordflow's new **Annotation** tool. You code a sample and define the codebook; the AI must match your expectation before it earns the corpus; then it annotates at scale. Attend either session or both; no coding experience required. Register at ⟨Eventbrite link⟩.
 
