@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Banner — Wordflow online workshop 28 Aug 2026</title>
+<style>
+  /* Renders correctly at any 2:1-ish viewport (2160×1080 Eventbrite, 1200×630 newsletter).
+     All sizes in vw so both renders scale identically. Design system = workshop decks. */
+  :root {
+    --ink: #1a1d24;
+    --paper: #fdfcf8;
+    --accent: #c8423e;
+    --accent-soft: #f3d6d5;
+    --terra: #c87060;
+    --muted: #9aa0ab;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100vw; height: 100vh; overflow: hidden; }
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+  }
+  .left {
+    flex: 1.35;
+    padding: 6vh 0 6vh 4.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+  .kicker {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 1.55vw;
+    margin-bottom: 1.8vh;
+  }
+  h1 {
+    font-size: 4.6vw;
+    line-height: 1.06;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin-bottom: 2.6vh;
+  }
+  h1 .thin { font-weight: 300; opacity: 0.92; }
+  .sub {
+    font-size: 1.85vw;
+    line-height: 1.4;
+    color: var(--paper);
+    opacity: 0.85;
+    margin-bottom: 4.2vh;
+    max-width: 46vw;
+  }
+  .sessions { display: flex; gap: 1.4vw; margin-bottom: 4vh; }
+  .session {
+    background: rgba(253, 252, 248, 0.07);
+    border: 1px solid rgba(253, 252, 248, 0.18);
+    border-left: 0.45vw solid var(--accent);
+    border-radius: 0.7vw;
+    padding: 1.6vh 1.5vw;
+    min-width: 20vw;
+  }
+  .session .when {
+    font-size: 1.35vw;
+    font-weight: 700;
+    color: var(--accent-soft);
+    margin-bottom: 0.6vh;
+    letter-spacing: 0.02em;
+  }
+  .session .what { font-size: 1.5vw; font-weight: 600; line-height: 1.25; }
+  .session .tag {
+    display: inline-block;
+    margin-top: 0.9vh;
+    font-size: 1.05vw;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .date-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1.6vw;
+    font-size: 1.7vw;
+  }
+  .date-row .date { font-weight: 800; color: var(--paper); }
+  .date-row .free {
+    color: var(--ink);
+    background: var(--accent-soft);
+    font-weight: 800;
+    padding: 0.25vh 0.9vw;
+    border-radius: 999px;
+    font-size: 1.35vw;
+    letter-spacing: 0.05em;
+  }
+  .date-row .zoom { color: var(--muted); font-weight: 500; }
+  /* Right: abstract workspace-graph motif (echoes Wordflow's data-block graph) */
+  .right {
+    flex: 1;
+    position: relative;
+  }
+  .right svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .footer {
+    position: absolute;
+    bottom: 3.6vh;
+    left: 4.5vw;
+    font-size: 1.15vw;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    z-index: 2;
+  }
+  .footer strong { color: var(--paper); font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="kicker">LDaCA Wordflow · Free Online Workshop</div>
+    <h1>Text analytics,<br><span class="thin">without code.</span></h1>
+    <p class="sub">A guided tour of point-and-click text analysis — then a hands-on with the new <strong>GenAI Annotation tool</strong>: code your text data, and check the AI's work.</p>
+    <div class="sessions">
+      <div class="session">
+        <div class="when">AM · 11:00 – 12:30 AEST</div>
+        <div class="what">Wordflow from zero — watch a real workflow</div>
+        <div class="tag">Demo · Recorded</div>
+      </div>
+      <div class="session">
+        <div class="when">PM · 2:00 – 3:30 AEST</div>
+        <div class="what">Coding text with GenAI — at your keyboard</div>
+        <div class="tag">Hands-on</div>
+      </div>
+    </div>
+    <div class="date-row">
+      <span class="date">Friday 28 August 2026</span>
+      <span class="free">FREE</span>
+      <span class="zoom">on Zoom · Australia-wide</span>
+    </div>
+  </div>
+  <div class="right">
+    <!-- Data-block graph motif: blocks flowing left→right through tool lenses -->
+    <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#1a1d24"/>
+          <stop offset="1" stop-color="#23262f"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="600" fill="url(#fade)"/>
+      <g stroke="#3a3f4b" stroke-width="2.5" fill="none">
+        <path d="M 90 300 C 150 300, 150 170, 215 170"/>
+        <path d="M 90 300 C 150 300, 150 430, 215 430"/>
+        <path d="M 215 170 C 290 170, 290 110, 360 110"/>
+        <path d="M 215 170 C 290 170, 290 240, 360 240"/>
+        <path d="M 215 430 C 290 430, 290 370, 360 370"/>
+        <path d="M 215 430 C 290 430, 290 500, 360 500"/>
+        <path d="M 360 240 C 430 240, 430 305, 495 305"/>
+        <path d="M 360 370 C 430 370, 430 305, 495 305"/>
+      </g>
+      <g>
+        <rect x="55"  y="272" width="70" height="56" rx="12" fill="#c8423e"/>
+        <rect x="180" y="142" width="70" height="56" rx="12" fill="#c87060"/>
+        <rect x="180" y="402" width="70" height="56" rx="12" fill="#c87060"/>
+        <rect x="325" y="82"  width="70" height="56" rx="12" fill="#8a5a9e"/>
+        <rect x="325" y="212" width="70" height="56" rx="12" fill="#4a7fb5"/>
+        <rect x="325" y="342" width="70" height="56" rx="12" fill="#4a9e7f"/>
+        <rect x="325" y="472" width="70" height="56" rx="12" fill="#b58a4a"/>
+        <rect x="460" y="277" width="70" height="56" rx="12" fill="#f3d6d5"/>
+      </g>
+      <!-- tiny "annotation" tick marks on the final block -->
+      <g stroke="#1a1d24" stroke-width="4" stroke-linecap="round" fill="none">
+        <path d="M 478 300 l 7 8 l 12 -14"/>
+        <path d="M 478 318 l 7 8 l 12 -14"/>
+      </g>
+    </svg>
+  </div>
+  <div class="footer"><strong>sih.tools/wordflow</strong> · Language Data Commons of Australia · Sydney Informatics Hub, University of Sydney</div>
+</body>
+</html>
