@@ -23,7 +23,7 @@ A guided tour, no hands-on and nothing to install: the concepts, the interface, 
 **Session 2 · Hands-on: coding text with GenAI — 2:00 – 3:30 pm AEST** *(1:30 pm ACST · 12:00 pm AWST)*
 At your own keyboard, you'll use Wordflow's new **Annotation** tool to classify a real dataset with an AI model — then check the AI's coding the way you'd check a human coder's: agreement scores, a confusion matrix, and targeted revisions to your codebook and prompt. This session is deliberately **not recorded**, so it can run at the room's pace. To take part you'll need the free desktop app installed and a free AI-provider API key — a registration email a week beforehand walks you through both (about 10 minutes; zero cost).
 
-**Who it's for:** HDR students to senior academics, in any field where text is data. No coding experience needed — that's the point.
+**Who it's for:** HDR students to senior academics, in any field where text is data. No coding experience needed — that's the point. Built for Australian researchers, but free and open to everyone — international colleagues are warmly welcome (session times are AEST; the desktop app works anywhere).
 
 **What you need:** a laptop and a browser for the morning; the two small setup steps above for the afternoon. Optionally, bring a small text dataset (CSV) and a classification question you care about.
 
