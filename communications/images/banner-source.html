@@ -24,7 +24,7 @@
   }
   .left {
     flex: 1.35;
-    padding: 6vh 0 6vh 4.5vw;
+    padding: 4.5vh 0 15vh 4.5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,14 +106,28 @@
   .right svg { position: absolute; inset: 0; width: 100%; height: 100%; }
   .footer {
     position: absolute;
-    bottom: 3.6vh;
+    bottom: 3vh;
     left: 4.5vw;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 2.2vw;
+    z-index: 2;
+  }
+  .footer img.ldaca { height: 5.2vh; display: block; }
+  .footer img.sih { height: 10.5vh; display: block; }
+  .footer .divider {
+    width: 1px;
+    height: 8vh;
+    background: rgba(253, 252, 248, 0.25);
+  }
+  .footer .url {
     font-size: 1.15vw;
     color: var(--muted);
     letter-spacing: 0.06em;
-    z-index: 2;
+    margin-left: 0.6vw;
   }
-  .footer strong { color: var(--paper); font-weight: 700; }
+  .footer .url strong { color: var(--paper); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -176,6 +190,12 @@
       </g>
     </svg>
   </div>
-  <div class="footer"><strong>sih.tools/wordflow</strong> · Language Data Commons of Australia · Sydney Informatics Hub, University of Sydney</div>
+  <div class="footer">
+    <img class="ldaca" src="ldaca-logo-simplified-light.svg" alt="LDaCA — Language Data Commons of Australia">
+    <div class="divider"></div>
+    <img class="sih" src="sih-usyd-lockup-white.svg" alt="The University of Sydney — Sydney Informatics Hub">
+    <div class="divider"></div>
+    <div class="url"><strong>sih.tools/wordflow</strong></div>
+  </div>
 </body>
 </html>
