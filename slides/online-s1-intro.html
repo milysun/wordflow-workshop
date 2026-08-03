@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Wordflow Online Workshop — Session 1: Concepts &amp; Workflow</title>
+<title>Wordflow Online Workshop · Session 1: Concepts &amp; Workflow</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
   :root {
@@ -10,7 +10,7 @@
     --paper: #fdfcf8;
     --accent: #c8423e;
     --accent-soft: #f3d6d5;
-    --spotlight-bg: #c87060;    /* warm terracotta — less intimidating than --accent for full-slide backgrounds */
+    --spotlight-bg: #c87060;    /* warm terracotta; less intimidating than --accent for full-slide backgrounds */
     --muted: #6b6f78;
     --rule: #d9d4c8;
   }
@@ -375,10 +375,10 @@
 <div class="deck">
 
   <!-- Slide 1: Title -->
-  <section class="slide title-slide active" data-notes="START THE ZOOM RECORDING before you speak — this whole session is shared afterwards. Greet, pause, wait for the join trickle to settle (~1 min past the hour).">
+  <section class="slide title-slide active" data-notes="START THE ZOOM RECORDING before you speak: this whole session is shared afterwards. Greet, pause, wait for the join trickle to settle (~1 min past the hour).">
     <h2>LDaCA Online Workshop · Session 1 of 2</h2>
     <h1>Wordflow: text analytics without code</h1>
-    <p style="margin-top: 2em; font-size: 1.3rem;">Concepts, interface, and a real multi-tool research workflow — all demo, no homework</p>
+    <p style="margin-top: 2em; font-size: 1.3rem;">Concepts, interface, and a real multi-tool research workflow: all demo, no homework</p>
     <p style="margin-top: 2.5em; font-size: 0.95rem;"><strong>Dr Chao Sun</strong> · Sydney Informatics Hub</p>
     <p style="margin-top: 0.3em; font-size: 0.85rem; opacity: 0.7;">Friday 28 August 2026 · Session 1: 11:00 am – 12:30 pm AEST · Session 2 (hands-on): 2:00 – 3:30 pm AEST · (AWST: 9:00 am / 12:00 pm)</p>
   </section>
@@ -395,12 +395,12 @@
   </section>
 
   <!-- Slide 3: How today works (online housekeeping) -->
-  <section class="slide" data-notes="Say the recording sentence VERBATIM and early — people must know before they speak on mic. Emphasise the two-session design: this half is watch-only on purpose; anyone can leave at lunch with a complete experience, and the afternoon is where keyboards come out. Point to the pre-workshop email for the two setup tasks.">
+  <section class="slide" data-notes="Say the recording sentence VERBATIM and early; people must know before they speak on mic. Emphasise the two-session design: this half is watch-only on purpose; anyone can leave at lunch with a complete experience, and the afternoon is where keyboards come out. Point to the pre-workshop email for the two setup tasks.">
     <h2>How today works</h2>
     <ul>
-      <li><strong>This morning session is being recorded</strong> and will be shared afterwards — so you can relax, watch, and revisit anything later. <strong>The afternoon hands-on will NOT be recorded.</strong></li>
-      <li><strong>No hands-on before lunch.</strong> This session is a guided tour — no need to install or follow along. Questions in the <strong>Zoom chat</strong> any time; I'll take them at section breaks.</li>
-      <li><strong>2:00 – 3:30 pm AEST (12:00 – 1:30 pm in WA) — the hands-on.</strong> Wordflow's new <strong>Annotation</strong> tool: coding text with GenAI, on your own machine. To join in, you need two things from the pre-workshop email: <strong>the desktop app installed</strong> (<code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code>) and <strong>your own AI-provider API key</strong>. Lunch is the setup window.</li>
+      <li><strong>This morning session is being recorded</strong> and will be shared afterwards, so you can relax, watch, and revisit anything later. <strong>The afternoon hands-on will NOT be recorded.</strong></li>
+      <li><strong>No hands-on before lunch.</strong> This session is a guided tour: no need to install or follow along. Questions in the <strong>Zoom chat</strong> any time; I'll take them at section breaks.</li>
+      <li><strong>2:00 – 3:30 pm AEST (12:00 – 1:30 pm in WA): the hands-on.</strong> Wordflow's new <strong>Annotation</strong> tool: coding text with GenAI, on your own machine. To join in, you need two things from the pre-workshop email: <strong>the desktop app installed</strong> (<code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code>) and <strong>your own AI-provider API key</strong>. Lunch is the setup window.</li>
       <li><strong>Attend either half or both.</strong> If you were at the June workshop, the afternoon alone is a fine plan.</li>
     </ul>
   </section>
@@ -425,15 +425,15 @@
         <div class="team-role">Academic lead<br>Sydney Corpus Lab</div>
       </div>
     </div>
-    <p class="team-attribution">All at the <strong>University of Sydney</strong>, a <strong>partner institution</strong> of the <strong>Language Data Commons of Australia (LDaCA)</strong> — a <strong>co-investment partnership with the Australian Research Data Commons (ARDC)</strong> through the HASS and Indigenous Research Data Commons. The ARDC is enabled by the Australian Government's <strong>National Collaborative Research Infrastructure Strategy (NCRIS)</strong>.</p>
+    <p class="team-attribution">All at the <strong>University of Sydney</strong>, a <strong>partner institution</strong> of the <strong>Language Data Commons of Australia (LDaCA)</strong>, a <strong>co-investment partnership with the Australian Research Data Commons (ARDC)</strong> through the HASS and Indigenous Research Data Commons. The ARDC is enabled by the Australian Government's <strong>National Collaborative Research Infrastructure Strategy (NCRIS)</strong>.</p>
   </section>
 
   <!-- Slide 5: Why Wordflow -->
-  <section class="slide" data-notes="The 'why' slide — ~2 min. Most text-analysis methods live in Python/R, which walls off most researchers who work with text. Say the north-star sentence slowly; it structures the whole day.">
+  <section class="slide" data-notes="The 'why' slide, ~2 min. Most text-analysis methods live in Python/R, which walls off most researchers who work with text. Say the north-star sentence slowly; it structures the whole day.">
     <h2>Why build Wordflow?</h2>
-    <p>Modern text analysis — corpus methods, NLP, and now GenAI — mostly lives in <strong>Python and R</strong>. That's a wall for most researchers who work with text.</p>
+    <p>Modern text analysis (corpus methods, NLP, and now GenAI) mostly lives in <strong>Python and R</strong>. That's a wall for most researchers who work with text.</p>
     <p>Wordflow puts those methods behind <strong>point-and-click tools</strong>: your data stays visible, every step is inspectable, and no code is required.</p>
-    <p class="pullquote">Text data flows through stackable, single-purpose tools — the meaning of an analysis is shaped by how you shape your data, not by the tool itself.</p>
+    <p class="pullquote">Text data flows through stackable, single-purpose tools: the meaning of an analysis is shaped by how you shape your data, not by the tool itself.</p>
     <p style="font-size: 0.95em; color: var(--muted);">That sentence is the whole workshop. Everything you'll see this morning is that idea in motion.</p>
   </section>
 
@@ -443,7 +443,7 @@
     <div class="grid3">
       <div class="card">
         <h3>Desktop app</h3>
-        <p>Native installer for Mac &amp; Windows (v0.7.x). Everything runs on your machine. <strong>Recommended</strong> — and what the afternoon hands-on assumes.</p>
+        <p>Native installer for Mac &amp; Windows (v0.7.x). Everything runs on your machine. <strong>Recommended</strong>, and what the afternoon hands-on assumes.</p>
       </div>
       <div class="card">
         <h3>Cloud (Binder)</h3>
@@ -454,15 +454,15 @@
         <p>For Python users:<br><code>pip install ldaca-wordflow</code><br>or run directly:<br><code>uvx ldaca-wordflow@latest</code></p>
       </div>
     </div>
-    <p style="margin-top: 1.5em; font-style: italic;">Everything lives at <code style="font-style: normal; background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px;">sih.tools/wordflow</code> — installers, Binder launch, docs, and today's materials.</p>
+    <p style="margin-top: 1.5em; font-style: italic;">Everything lives at <code style="font-style: normal; background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px;">sih.tools/wordflow</code>: installers, Binder launch, docs, and today's materials.</p>
   </section>
 
-  <!-- Slide 7: UI tour — annotated screenshot.
-       NOTE: images/ui-overview.png is a v0.5 screenshot — RETAKE on v0.7 before the day
+  <!-- Slide 7: UI tour (annotated screenshot).
+       NOTE: images/ui-overview.png is a v0.5 screenshot; RETAKE on v0.7 before the day
        (visible differences: Annotation entry in Views, "Help" instead of "Tutorial",
        no working-directory footer). Overlay positions may need re-aiming. -->
-  <section class="slide ui-overview-slide" data-notes="Do this on the LIVE app, screen-shared — the slide is the recap. Land all 7. v0.7 notes: bottom-left buttons are Help + Feedback (Help was 'Tutorial' in older versions); sidebar sections are Views / Data Blocks / Tasks; the Tasks section is where slow analyses show progress.">
-    <h2>The interface — 7 things to know</h2>
+  <section class="slide ui-overview-slide" data-notes="Do this on the LIVE app, screen-shared; the slide is the recap. Land all 7. v0.7 notes: bottom-left buttons are Help + Feedback (Help was 'Tutorial' in older versions); sidebar sections are Views / Data Blocks / Tasks; the Tasks section is where slow analyses show progress.">
+    <h2>The interface: 7 things to know</h2>
     <div class="ui-overview-container">
       <div class="ui-overview-figure">
         <img src="images/ui-overview.png" alt="Annotated Wordflow workspace with seven labelled regions" />
@@ -487,74 +487,74 @@
       </div>
     </div>
     <ol class="ui-overview-legend">
-      <li><strong>Tool sidebar (Views)</strong> — pick a tool here; Annotation is the newest entry</li>
-      <li><strong>Tool interface</strong> — controls and results for the selected tool, organised in tabs</li>
-      <li><strong>Workspace graph view</strong> — where your project's data and its analytical derivations live</li>
-      <li><strong>Data viewer</strong> — manage and inspect columns and rows in a data block. Not just a viewer.</li>
-      <li><strong>Data block quick-select</strong> — switch the active block without going back to the graph</li>
-      <li><strong>Help</strong> — the built-in tutorials; the small <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:-0.15em;"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> icon next to a control jumps straight to its section</li>
-      <li><strong>Feedback</strong> — tap anytime something is confusing, surprising, or broken</li>
+      <li><strong>Tool sidebar (Views)</strong>: pick a tool here; Annotation is the newest entry</li>
+      <li><strong>Tool interface</strong>: controls and results for the selected tool, organised in tabs</li>
+      <li><strong>Workspace graph view</strong>: where your project's data and its analytical derivations live</li>
+      <li><strong>Data viewer</strong>: manage and inspect columns and rows in a data block. Not just a viewer.</li>
+      <li><strong>Data block quick-select</strong>: switch the active block without going back to the graph</li>
+      <li><strong>Help</strong>: the built-in tutorials; the small <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:-0.15em;"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> icon next to a control jumps straight to its section</li>
+      <li><strong>Feedback</strong>: tap anytime something is confusing, surprising, or broken</li>
     </ol>
   </section>
 
   <!-- Slide 8: The data block concept + tabs -->
-  <section class="slide" data-notes="The one concept — ~2 min. Then the v0.7 tabs line: each analysis view runs in tabs like a browser; tabs are saved with the workspace, which is exactly how this afternoon's checkpoint files work. Don't demo tab mechanics now, just plant the idea.">
+  <section class="slide" data-notes="The one concept, ~2 min. Then the v0.7 tabs line: each analysis view runs in tabs like a browser; tabs are saved with the workspace, which is exactly how this afternoon's checkpoint files work. Don't demo tab mechanics now, just plant the idea.">
     <h2>One idea to hold onto</h2>
     <h1>Everything is a data block.</h1>
     <ul>
-      <li>Your imported dataset is a data block. A filter, a join, an analysis result — each becomes a <strong>new block</strong> in the workspace graph.</li>
-      <li>Every tool is a <strong>lens</strong>: it reads blocks, and its results can go back into the workspace — click <strong>Add to Workspace</strong> — to feed the next tool.</li>
+      <li>Your imported dataset is a data block. A filter, a join, an analysis result: each becomes a <strong>new block</strong> in the workspace graph.</li>
+      <li>Every tool is a <strong>lens</strong>: it reads blocks, and its results can go back into the workspace (click <strong>Add to Workspace</strong>) to feed the next tool.</li>
       <li>The workspace graph <em>is</em> your method: every step visible, every derivation traceable.</li>
-      <li>New in v0.7: analyses run in <strong>tabs</strong>, like a browser — and tabs are saved with your workspace. Export the workspace as a ZIP and someone else can pick up exactly where you left off. <em>(That's how this afternoon's checkpoint files work.)</em></li>
+      <li>New in v0.7: analyses run in <strong>tabs</strong>, like a browser, and tabs are saved with your workspace. Export the workspace as a ZIP and someone else can pick up exactly where you left off. <em>(That's how this afternoon's checkpoint files work.)</em></li>
     </ul>
   </section>
 
-  <!-- Slide 9: Divider — tool tour -->
-  <section class="slide section-divider" data-notes="Section break. From here you're mostly in the live app. Open the pre-built Tour workspace — one tab per tool, analyses already run. ~4 min per tool, 20 total. Come back to each tool's slide only if the app misbehaves.">
+  <!-- Slide 9: Divider (tool tour) -->
+  <section class="slide section-divider" data-notes="Section break. From here you're mostly in the live app. Open the pre-built Tour workspace: one tab per tool, analyses already run. ~4 min per tool, 20 total. Come back to each tool's slide only if the app misbehaves.">
     <h2>Part 2</h2>
     <h1>5 tools, ~4 minutes each</h1>
-    <p style="margin-top: 1em;">A pre-built workspace, one tab per tool — see each lens's destination before we build anything.</p>
+    <p style="margin-top: 1em;">A pre-built workspace, one tab per tool: see each lens's destination before we build anything.</p>
   </section>
 
   <!-- Slide 10: Frequency -->
-  <section class="slide" data-notes="Live: Tour workspace, Frequency tab (news corpus, Guardian+IA vs Sky+PerthNow). Frame the grouping as a research assumption, not a claim. Demo Cloud↔List toggle; right-click a word to add it to the Stop words filter — it disappears instantly. Mention the per-visualisation download icons (PNG for cloud, CSV for list).">
-    <h2>Tool 1 — Frequency</h2>
+  <section class="slide" data-notes="Live: Tour workspace, Frequency tab (news corpus, Guardian+IA vs Sky+PerthNow). Frame the grouping as a research assumption, not a claim. Demo Cloud↔List toggle; right-click a word to add it to the Stop words filter; it disappears instantly. Mention the per-visualisation download icons (PNG for cloud, CSV for list).">
+    <h2>Tool 1 · Frequency</h2>
     <h1>Explore by comparison.</h1>
     <ul>
-      <li>Two corpora side by side — what does each side talk about more?</li>
+      <li>Two corpora side by side: what does each side talk about more?</li>
       <li>Cloud view ↔ list view; <strong>right-click a word</strong> to add it to the stop-words filter.</li>
       <li>Click a word → jump straight into Concordance with it loaded.</li>
     </ul>
   </section>
 
   <!-- Slide 11: Concordance -->
-  <section class="slide" data-notes="Live: Concordance tab (Honi Soit). Regex with 3 patterns, each coloured. Show the dispersion view explicitly — where in the corpus the hits fall.">
-    <h2>Tool 2 — Concordance</h2>
+  <section class="slide" data-notes="Live: Concordance tab (Honi Soit). Regex with 3 patterns, each coloured. Show the dispersion view explicitly: where in the corpus the hits fall.">
+    <h2>Tool 2 · Concordance</h2>
     <h1>Search several at once.</h1>
     <ul>
       <li>Keyword-in-context: every hit with its surroundings.</li>
-      <li>Regex mode — several patterns at once, colour-coded.</li>
+      <li>Regex mode: several patterns at once, colour-coded.</li>
       <li>Dispersion view: <em>where</em> in the corpus the matches fall.</li>
     </ul>
   </section>
 
   <!-- Slide 12: Trends -->
-  <section class="slide" data-notes="Live: Trends tab (QLD election tweets). Show the same period grouped three ways — matched term / gender / party. The legend is an interactive filter. This is the tool we'll bend into a histogram at the end.">
-    <h2>Tool 3 — Trends</h2>
+  <section class="slide" data-notes="Live: Trends tab (QLD election tweets). Show the same period grouped three ways: matched term / gender / party. The legend is an interactive filter. This is the tool we'll bend into a histogram at the end.">
+    <h2>Tool 3 · Trends</h2>
     <h1>One period, many views.</h1>
     <ul>
-      <li>Counts over time, grouped by any column — term, gender, party…</li>
+      <li>Counts over time, grouped by any column: term, gender, party…</li>
       <li>The legend is a filter: click lines off to isolate a story.</li>
-      <li>Remember this tool — we'll bend it into something else later.</li>
+      <li>Remember this tool: we'll bend it into something else later.</li>
     </ul>
   </section>
 
   <!-- Slide 13: Topic Modeling -->
   <section class="slide" data-notes="Live: Topic Modeling tab (news corpus, left vs right). Highlight colour blending on bubbles (themes shared across the two corpora) vs solid (one side dominant). Don't get into BERTopic internals.">
-    <h2>Tool 4 — Topic Modeling</h2>
+    <h2>Tool 4 · Topic Modeling</h2>
     <h1>Themes across two corpora.</h1>
     <ul>
-      <li>Unsupervised themes, one bubble per topic — hover for the top words.</li>
+      <li>Unsupervised themes, one bubble per topic; hover for the top words.</li>
       <li>Feed it <strong>two</strong> corpora: blended bubble colours = shared themes, solid = one-sided.</li>
       <li>Select bubbles → <strong>Add to Workspace</strong> → the documents behind them become new blocks.</li>
     </ul>
@@ -562,27 +562,27 @@
 
   <!-- Slide 14: Quotation -->
   <section class="slide" data-notes="Live: Quotation tab (Honi Soit). Who is quoted, saying what. Sort by speaker. Mention English-only honestly.">
-    <h2>Tool 5 — Quotation</h2>
+    <h2>Tool 5 · Quotation</h2>
     <h1>Who said what?</h1>
     <ul>
       <li>Extracts direct quotes with their speakers.</li>
-      <li>Sort by speaker — see who gets quoted most.</li>
+      <li>Sort by speaker: see who gets quoted most.</li>
       <li>English-only for now.</li>
     </ul>
   </section>
 
-  <!-- Slide 15: Divider — research story -->
-  <section class="slide section-divider" data-notes="Slow down. This is the centrepiece of the morning. Land the research question before touching the app. Remind the room: full-speed demo, recorded — nobody needs to memorise clicks.">
+  <!-- Slide 15: Divider (research story) -->
+  <section class="slide section-divider" data-notes="Slow down. This is the centrepiece of the morning. Land the research question before touching the app. Remind the room: full-speed demo, recorded; nobody needs to memorise clicks.">
     <h2>Part 3</h2>
     <h1>A real workflow</h1>
     <p style="margin-top: 1em;">Four analysis tools. One question. ~30 minutes, end to end.</p>
   </section>
 
   <!-- Slide 16: Research question -->
-  <section class="slide" data-notes="Frame it, then go. Emphasise the watching contract: 'you don't need to follow — this is recorded, and this afternoon you'll get your own hands-on with checkpoints.' Chat questions at phase boundaries.">
+  <section class="slide" data-notes="Frame it, then go. Emphasise the watching contract: 'you don't need to follow; this is recorded, and this afternoon you'll get your own hands-on with checkpoints.' Chat questions at phase boundaries.">
     <h2>The research question</h2>
     <p class="pullquote">Did female and male candidates tweet about different topical issues during the 2020 QLD election?</p>
-    <p style="margin-top: 1em;">Watch how the question turns into a <strong>workflow</strong> — raw tweets in, a small empirical finding out. Full speed, narrated; the recording has every click if you want them later.</p>
+    <p style="margin-top: 1em;">Watch how the question turns into a <strong>workflow</strong>: raw tweets in, a small empirical finding out. Full speed, narrated; the recording has every click if you want them later.</p>
     <p style="margin-top: 0.8em; color: var(--muted); font-style: italic;">Five phases: prepare → explore → pattern → themes → combine.</p>
   </section>
 
@@ -595,7 +595,7 @@
       <li>Tidy: rename blocks, drop noise columns, align the <code>username</code> types.</li>
       <li><strong>Preprocessing → Join</strong>: left-join tweets to candidates on <code>username</code> → every tweet now carries a gender column.</li>
     </ol>
-    <p style="margin-top: 0.6em; font-style: italic; color: var(--muted);">Data prep is part of the analysis — the join <em>is</em> a research decision.</p>
+    <p style="margin-top: 0.6em; font-style: italic; color: var(--muted);">Data prep is part of the analysis: the join <em>is</em> a research decision.</p>
   </section>
 
   <!-- Slide 18: Phase B -->
@@ -606,7 +606,7 @@
       <li>Filter the joined block: <code>gender = 'F'</code> / <code>gender = 'M'</code> → two sub-corpora.</li>
       <li>Both into <strong>Frequency</strong>, comparative mode.</li>
       <li><strong>Click a word</strong> → Concordance opens with it loaded. Read. Return. Repeat.</li>
-      <li>What keeps surfacing: <code>covid</code>, <code>case(s)</code>, <code>cut(s)</code> — two themes: COVID, spending cuts.</li>
+      <li>What keeps surfacing: <code>covid</code>, <code>case(s)</code>, <code>cut(s)</code>. Two themes: COVID, spending cuts.</li>
     </ol>
     <p class="pullquote" style="margin-top: 0.6em;">The next phase's search pattern grew straight out of this loop.</p>
   </section>
@@ -616,15 +616,15 @@
     <h2>Phase C</h2>
     <h1>Pattern → Add to Workspace → Trends</h1>
     <ol>
-      <li>Concordance <strong>Regex</strong> mode: <code>covid|case(s)?|cut(s)?</code> — one search, both themes, colour-coded.</li>
+      <li>Concordance <strong>Regex</strong> mode: <code>covid|case(s)?|cut(s)?</code>. One search, both themes, colour-coded.</li>
       <li>Table view → <strong>Add to Workspace</strong>: every hit becomes a row in a new block.</li>
       <li><strong>Trends</strong> on that block, grouped by term × gender. Legend off the COVID lines; switch line → bar.</li>
     </ol>
-    <p style="margin-top: 0.6em;"><strong>The finding:</strong> male candidates mention <code>cut(s)</code> more than female candidates. Small dataset — suggestive, not definitive. But it's real, and we got here from raw tweets in ~20 minutes.</p>
+    <p style="margin-top: 0.6em;"><strong>The finding:</strong> male candidates mention <code>cut(s)</code> more than female candidates. Small dataset: suggestive, not definitive. But it's real, and we got here from raw tweets in ~20 minutes.</p>
   </section>
 
   <!-- Slide 20: Phase D -->
-  <section class="slide" data-notes="~7 min live. Select tweets_female + tweets_male → Topic Modeling, target 8, seed 42, Run (~60-90s — point at the Tasks section progress while waiting; take a chat question here). ~23 topics; drag re-aggregation to 16. Solid bubbles = gender-dominant, blended = shared. Select 2-3 topics → Add to Workspace → per-gender child blocks.">
+  <section class="slide" data-notes="~7 min live. Select tweets_female + tweets_male → Topic Modeling, target 8, seed 42, Run (~60-90s; point at the Tasks section progress while waiting; take a chat question here). ~23 topics; drag re-aggregation to 16. Solid bubbles = gender-dominant, blended = shared. Select 2-3 topics → Add to Workspace → per-gender child blocks.">
     <h2>Phase D</h2>
     <h1>Topic modelling on two corpora</h1>
     <ol>
@@ -643,70 +643,70 @@
       <li><strong>Preprocessing → Stack</strong> the per-gender topic blocks → one block, topic + gender preserved.</li>
       <li><strong>Trends</strong>: selected topics, across the campaign, split by gender.</li>
     </ol>
-    <p class="pullquote" style="margin-top: 1em;">Four analysis tools. One corpus. One toy hypothesis. One workflow — and the workspace graph is the method, captured as a picture.</p>
+    <p class="pullquote" style="margin-top: 1em;">Four analysis tools. One corpus. One toy hypothesis. One workflow, and the workspace graph is the method, captured as a picture.</p>
   </section>
 
-  <!-- Slide 22: Repurpose demo — through the tool -->
+  <!-- Slide 22: Repurpose demo (through the tool) -->
   <section class="slide" data-notes="~4 min live. Back in Trends: legend filtering, click a point / click + Shift-click a range → Add to Workspace: the selection is now a data block. One breath for the same pattern elsewhere: Topic Modeling bubbles, Concordance dispersion. Also flash the download icon on a visualisation: PNG out of image views, CSV out of tables.">
     <h2>Part 4 · Repurpose the lens</h2>
     <h1>Visualisations are doors, not posters</h1>
     <ul>
-      <li><strong>Out:</strong> every visualisation and table has its own download icon — PNG for images, CSV for tables.</li>
+      <li><strong>Out:</strong> every visualisation and table has its own download icon: PNG for images, CSV for tables.</li>
       <li><strong>Through:</strong> click a point (or click + Shift-click a range) on a chart → <strong>Add to Workspace</strong> → the selection becomes new, analysable data.</li>
       <li>Same move in Topic Modeling (bubbles) and Concordance (dispersion markers).</li>
     </ul>
   </section>
 
-  <!-- Slide 23: Repurpose demo — histogram -->
+  <!-- Slide 23: Repurpose demo (histogram) -->
   <section class="slide" data-notes="~6 min live, the quotable demo. Honi Soit block: Preprocessing → Create → word-count column. Trends: x-axis = word count (not the date), numeric bucketing 100 intervals, line → bar. Trends is now a histogram of article length. Pause before the punchline slide.">
     <h2>Part 4 · Repurpose the lens</h2>
     <h1>Trends becomes a histogram</h1>
     <ol>
       <li><strong>Preprocessing → Create</strong>: a word-count column on the articles block.</li>
-      <li><strong>Trends</strong>: set the x-axis to the new column — not the date.</li>
+      <li><strong>Trends</strong>: set the x-axis to the new column, not the date.</li>
       <li>Bucket into 100 intervals, switch line → bar.</li>
     </ol>
-    <p style="margin-top: 1em; font-style: italic;">Trends is drawing a histogram of article length. The tool didn't change — the data did.</p>
+    <p style="margin-top: 1em; font-style: italic;">Trends is drawing a histogram of article length. The tool didn't change; the data did.</p>
   </section>
 
   <!-- Slide 24: Landing -->
   <section class="slide spotlight" data-notes="The most important sentence of the morning. Say it slowly. Pause. Repeat it.">
     <h1>Reshape the data,</h1>
     <h1 style="margin-top: 0;">and the same tool tells a new story.</h1>
-    <p class="pullquote" style="margin-top: 2em;">Every tool is a lens. The interesting question is which lens, on which slice — and that's your job.</p>
+    <p class="pullquote" style="margin-top: 2em;">Every tool is a lens. The interesting question is which lens, on which slice, and that's your job.</p>
   </section>
 
   <!-- Slide 25: Three takeaways -->
   <section class="slide spotlight" data-notes="Wrap-up of the morning. Three takeaways, no fourth. Land the name reveal on takeaway 3.">
     <h2>Three takeaways from Wordflow</h2>
     <ol>
-      <li><strong>Workspace + data block + graph</strong> — your project is a tree of derived data.</li>
-      <li><strong>Every tool is a lens</strong> — the analysis is shaped by how you shape the data, not by which tool you clicked.</li>
-      <li><strong>Tools talk to each other</strong> — click-jumps, Add to Workspace, grouping. Stack tools along the flow of text and you've built a workflow — that's <strong>Wordflow</strong>.</li>
+      <li><strong>Workspace + data block + graph</strong>: your project is a tree of derived data.</li>
+      <li><strong>Every tool is a lens</strong>: the analysis is shaped by how you shape the data, not by which tool you clicked.</li>
+      <li><strong>Tools talk to each other</strong>: click-jumps, Add to Workspace, grouping. Stack tools along the flow of text and you've built a workflow: that's <strong>Wordflow</strong>.</li>
     </ol>
     <p class="pullquote" style="margin-top: 1.5em;">The text flows. The lens changes.</p>
   </section>
 
   <!-- Slide 26: Lunch + afternoon setup -->
   <section class="slide" data-notes="Leave this up over lunch. STOP THE RECORDING after you finish speaking to it. Walk the two setup tasks once out loud. Repeat: the afternoon is not recorded, join with a keyboard ready.">
-    <h2>Lunch — back at 2:00 pm AEST (12:00 pm AWST)</h2>
+    <h2>Lunch: back at 2:00 pm AEST (12:00 pm AWST)</h2>
     <h1>This afternoon: hands-on.</h1>
-    <p>Wordflow's new <strong>Annotation</strong> tool — code (classify) a real dataset with a GenAI model, measure its agreement with human coding, and improve it. <strong>Not recorded; keyboards required.</strong></p>
+    <p>Wordflow's new <strong>Annotation</strong> tool: code (classify) a real dataset with a GenAI model, measure its agreement with human coding, and improve it. <strong>Not recorded; keyboards required.</strong></p>
     <p style="margin-top: 1em;"><strong>Set up over lunch (10 minutes, both steps in the pre-workshop email):</strong></p>
     <ol>
-      <li>Install the desktop app — <code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code> (or Launch in Binder with an AAF login).</li>
-      <li>Have your <strong>AI-provider API key</strong> ready to paste (openrouter.ai — free tier is enough).</li>
+      <li>Install the desktop app: <code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code> (or Launch in Binder with an AAF login).</li>
+      <li>Have your <strong>AI-provider API key</strong> ready to paste (openrouter.ai; free tier is enough).</li>
     </ol>
-    <p style="margin-top: 1em; font-style: italic;">No key? Come anyway — you can build everything up to the AI runs and watch those on the shared screen.</p>
+    <p style="margin-top: 1em; font-style: italic;">No key? Come anyway: you can build everything up to the AI runs and watch those on the shared screen.</p>
   </section>
 
   <!-- Slide 27: Data acknowledgements -->
-  <section class="slide acknowledgements-slide" data-notes="Final reference slide — flash it, and note it's in the follow-up email with the recording. Verbal: 'a final acknowledgement to our data providers.'">
+  <section class="slide acknowledgements-slide" data-notes="Final reference slide: flash it, and note it's in the follow-up email with the recording. Verbal: 'a final acknowledgement to our data providers.'">
     <h2>Data acknowledgements</h2>
     <p class="ack-intro">All datasets used today are publicly available, supplied by LDaCA partner organisations. Please cite if used in research.</p>
 
     <div class="ack-block">
-      <h3>2025 Australian Federal Election — NewsTalk &amp; Reddit</h3>
+      <h3>2025 Australian Federal Election · NewsTalk &amp; Reddit</h3>
       <p>Supplied by <strong>The Digital Observatory</strong> at Queensland University of Technology (formerly the <em>Australian Digital Observatory</em>, an ARDC-funded platform).</p>
       <p class="citation"><a href="https://newstalk.digitalobservatory.net.au/">newstalk.digitalobservatory.net.au</a> · <a href="https://ausreddit.digitalobservatory.net.au/">ausreddit.digitalobservatory.net.au</a> · <a href="https://www.digitalobservatory.net.au/">digitalobservatory.net.au</a></p>
     </div>
@@ -746,7 +746,7 @@
     counter.textContent = `${idx + 1} / ${slides.length}`;
     const notes = slides[idx].dataset.notes || '';
     notesEl.innerHTML = notes
-      ? `<h4>Speaker notes — slide ${idx + 1}</h4><p>${notes}</p>`
+      ? `<h4>Speaker notes · slide ${idx + 1}</h4><p>${notes}</p>`
       : `<h4>Slide ${idx + 1}</h4><p style="opacity:0.6">(no notes)</p>`;
     notesEl.classList.toggle('show', notesOn);
   }

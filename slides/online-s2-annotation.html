@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Wordflow Online Workshop — Session 2: Coding Text with GenAI</title>
+<title>Wordflow Online Workshop · Session 2: Coding Text with GenAI</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
   :root {
@@ -200,90 +200,90 @@
 <div class="deck">
 
   <!-- Slide 1: Title -->
-  <section class="slide title-slide active" data-notes="Do NOT record this session — confirm the Zoom recording is OFF before speaking, and say so out loud (it changes how freely people ask questions). Welcome back + welcome to afternoon-only joiners in the same breath.">
+  <section class="slide title-slide active" data-notes="Do NOT record this session: confirm the Zoom recording is OFF before speaking, and say so out loud (it changes how freely people ask questions). Welcome back + welcome to afternoon-only joiners in the same breath.">
     <h2>LDaCA Online Workshop · Session 2 of 2</h2>
-    <h1>Coding text with GenAI — hands-on</h1>
+    <h1>Coding text with GenAI: hands-on</h1>
     <p style="margin-top: 2em; font-size: 1.3rem;">The Annotation tool in LDaCA Wordflow · keyboards required, mistakes encouraged</p>
     <p style="margin-top: 2.5em; font-size: 0.95rem;"><strong>Dr Chao Sun</strong> · Sydney Informatics Hub</p>
     <p style="margin-top: 0.3em; font-size: 0.85rem; opacity: 0.7;">Friday 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST) · this session is <strong>not recorded</strong></p>
   </section>
 
   <!-- Slide 2: Setup check -->
-  <section class="slide" data-notes="Run this as a 3-minute triage while people settle. Afternoon-only joiners are first-class citizens: one breath of orientation (left sidebar = tools; middle = the tool; right = your data), and the hands-on sheet has every step written down. Anyone without the app or key: pair them with the shared screen — everything up to the AI runs still works.">
-    <h2>Before we start — 3 checks</h2>
+  <section class="slide" data-notes="Run this as a 3-minute triage while people settle. Afternoon-only joiners are first-class citizens: one breath of orientation (left sidebar = tools; middle = the tool; right = your data), and the hands-on sheet has every step written down. Anyone without the app or key: pair them with the shared screen; everything up to the AI runs still works.">
+    <h2>Before we start: 3 checks</h2>
     <ol>
-      <li><strong>Wordflow is running</strong> — desktop app (v0.7.x) or Binder. Not yet? <code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code> — install takes ~5 minutes; follow on the shared screen meanwhile.</li>
-      <li><strong>Your API key is at hand</strong> — from the pre-workshop email (openrouter.ai, free tier is fine; any OpenAI / Anthropic / Google key also works). No key? You can still do everything except the AI runs.</li>
-      <li><strong>The hands-on sheet is open</strong> — every step from this session, in order, with exact button names. Link in the chat now.</li>
+      <li><strong>Wordflow is running</strong>: desktop app (v0.7.x) or Binder. Not yet? <code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code>. Install takes ~5 minutes; follow on the shared screen meanwhile.</li>
+      <li><strong>Your API key is at hand</strong>: from the pre-workshop email (openrouter.ai, free tier is fine; any OpenAI / Anthropic / Google key also works). No key? You can still do everything except the AI runs.</li>
+      <li><strong>The hands-on sheet is open</strong>: every step from this session, in order, with exact button names. Link in the chat now.</li>
     </ol>
-    <p style="margin-top: 1em; font-style: italic;">Just joining for the afternoon? Perfect — this session stands alone. The morning's recording covers the wider tour of Wordflow.</p>
+    <p style="margin-top: 1em; font-style: italic;">Just joining for the afternoon? Perfect. This session stands alone. The morning's recording covers the wider tour of Wordflow.</p>
   </section>
 
-  <!-- Slide 3: GenAI as a coder — promise and pitfalls -->
-  <section class="slide" data-notes="~5 min of framing — this room hasn't had a theory session (unlike the winter school), so we owe them the honest picture before the tool. Keep it concrete: the model is fast, cheap, tireless, and confidently wrong in ways a human RA usually isn't. Every pitfall on this slide maps to a feature they'll use in the next 60 minutes.">
+  <!-- Slide 3: GenAI as a coder: promise and pitfalls -->
+  <section class="slide" data-notes="~5 min of framing: this room hasn't had a theory session (unlike the winter school), so we owe them the honest picture before the tool. Keep it concrete: the model is fast, cheap, tireless, and confidently wrong in ways a human RA usually isn't. Every pitfall on this slide maps to a feature they'll use in the next 60 minutes.">
     <h2>The idea, honestly</h2>
     <h1>An LLM can code your text. Should it?</h1>
     <div class="grid2">
       <div class="card">
         <h3>The promise</h3>
-        <p>Classify thousands of texts against <em>your</em> categories in minutes — stance, topic, tone, anything you can define in words. No training data, no coding scripts.</p>
+        <p>Classify thousands of texts against <em>your</em> categories in minutes: stance, topic, tone, anything you can define in words. No training data, no coding scripts.</p>
       </div>
       <div class="card">
         <h3>The pitfalls</h3>
         <p>Confidently wrong labels · inconsistent on edge cases · biased where language is biased · drifts when the prompt is vague · and it never says "I'm not sure" unless you give it that option.</p>
       </div>
     </div>
-    <p style="margin-top: 1.5em;">Today isn't "trust the AI" — it's <strong>how to check it</strong>. Every pitfall above has a control you'll use within the hour.</p>
+    <p style="margin-top: 1.5em;">Today isn't "trust the AI"; it's <strong>how to check it</strong>. Every pitfall above has a control you'll use within the hour.</p>
   </section>
 
   <!-- Slide 4: Treat it like a coder -->
-  <section class="slide" data-notes="The methodological spine of the session — say it slowly. This is standard content-analysis practice (codebook, pilot, intercoder reliability) applied to a new coder that happens to be a machine. The loop on this slide IS the agenda for the next hour.">
+  <section class="slide" data-notes="The methodological spine of the session: say it slowly. This is standard content-analysis practice (codebook, pilot, intercoder reliability) applied to a new coder that happens to be a machine. The loop on this slide IS the agenda for the next hour.">
     <h2>The method</h2>
     <h1>Treat the AI like a new coder on your team.</h1>
     <ol>
-      <li><strong>Codebook</strong> — define the categories in writing, like instructions to a new research assistant.</li>
-      <li><strong>Pilot</strong> — let it code a small sample first. Never the whole dataset on faith.</li>
-      <li><strong>Measure agreement</strong> — compare against human coding: intercoder reliability (Cohen's κ), confusion matrix.</li>
-      <li><strong>Revise</strong> — sharpen the codebook and prompt where the disagreements pile up. Re-pilot.</li>
-      <li><strong>Document</strong> — prompt, codebook, model, agreement scores → your methods section.</li>
+      <li><strong>Codebook</strong>: define the categories in writing, like instructions to a new research assistant.</li>
+      <li><strong>Pilot</strong>: let it code a small sample first. Never the whole dataset on faith.</li>
+      <li><strong>Measure agreement</strong>: compare against human coding: intercoder reliability (Cohen's κ), confusion matrix.</li>
+      <li><strong>Revise</strong>: sharpen the codebook and prompt where the disagreements pile up. Re-pilot.</li>
+      <li><strong>Document</strong>: prompt, codebook, model, agreement scores → your methods section.</li>
     </ol>
-    <p class="pullquote" style="margin-top: 0.8em;">A coder earns trust through agreement — human or machine.</p>
+    <p class="pullquote" style="margin-top: 0.8em;">A coder earns trust through agreement, human or machine.</p>
   </section>
 
   <!-- Slide 5: The hands-on, in one slide -->
-  <section class="slide" data-notes="Show once so people know the arc, then switch to live Wordflow and stay there. Come back if someone asks 'where are we?'. The dataset: candidate info from the 2020 QLD election — the AI codes gender from first names, and the human-coded gender column is our ground truth. Deliberately simple, so all attention goes to the checking workflow.">
+  <section class="slide" data-notes="Show once so people know the arc, then switch to live Wordflow and stay there. Come back if someone asks 'where are we?'. The dataset: candidate info from the 2020 QLD election: the AI codes gender from first names, and the human-coded gender column is our ground truth. Deliberately simple, so all attention goes to the checking workflow.">
     <h2>The hands-on, in one slide</h2>
     <ol style="font-size: 0.95em;">
-      <li><strong>Create a workspace</strong>, import the sample data — <strong>ADO — Queensland Election Tweets</strong>.</li>
+      <li><strong>Create a workspace</strong>, import the sample data: <strong>ADO — Queensland Election Tweets</strong>.</li>
       <li><strong>Annotation tool</strong> → candidate info block → <strong>Start new annotation</strong> → column <code>gender.ai</code>.</li>
-      <li><strong>Codebook → Create New → Edit</strong> — codes <code>M</code> / <code>F</code> / <code>U</code>, each with a written description. Code a few rows yourself in <strong>Manual</strong> mode.</li>
-      <li><strong>Flip to AI</strong> — Add Provider with <strong>your own API key</strong>, pick a model.</li>
-      <li><strong>Preview → Compare To → confusion matrix</strong> — measure agreement with the human coding, find weak spots, revise the prompt. <em>(The heart of the session.)</em></li>
+      <li><strong>Codebook → Create New → Edit</strong>: codes <code>M</code> / <code>F</code> / <code>U</code>, each with a written description. Code a few rows yourself in <strong>Manual</strong> mode.</li>
+      <li><strong>Flip to AI</strong>: Add Provider with <strong>your own API key</strong>, pick a model.</li>
+      <li><strong>Preview → Compare To → confusion matrix</strong>: measure agreement with the human coding, find weak spots, revise the prompt. <em>(The heart of the session.)</em></li>
       <li><strong>Run All</strong>, review, correct. Then: <strong>your own data, your own coding problem.</strong></li>
     </ol>
   </section>
 
   <!-- Slide 6: Checkpoints -->
-  <section class="slide" data-notes="Show this right before going live, and repeat the mechanics the first time someone actually falls behind. The checkpoint files restore data blocks, tabs, and finished analyses — but not the tool's selected inputs, so after loading, re-pick the data block / column in the Annotation tool if a selector is empty. Provider + key are stored on their machine, not in the file, so those survive a checkpoint load untouched.">
+  <section class="slide" data-notes="Show this right before going live, and repeat the mechanics the first time someone actually falls behind. The checkpoint files restore data blocks, tabs, and finished analyses, but not the tool's selected inputs, so after loading, re-pick the data block / column in the Annotation tool if a selector is empty. Provider + key are stored on their machine, not in the file, so those survive a checkpoint load untouched.">
     <h2>If you fall behind</h2>
-    <h1>Checkpoints — rejoin in under a minute.</h1>
+    <h1>Checkpoints: rejoin in under a minute.</h1>
     <ol>
       <li>Download the latest checkpoint file from the link in the chat (a <code>.zip</code> workspace archive).</li>
       <li><strong>Data Loader → Workspace manager → Upload workspace</strong> → choose the file.</li>
       <li>Click <strong>Load</strong> on the newly listed workspace.</li>
-      <li>Back in the <strong>Annotation</strong> tool: re-select the data block / column if a selector shows empty — everything else (data, tabs, results) is restored.</li>
+      <li>Back in the <strong>Annotation</strong> tool: re-select the data block / column if a selector shows empty; everything else (data, tabs, results) is restored.</li>
     </ol>
-    <p style="margin-top: 1em; font-style: italic;">Your API key isn't touched — provider settings live on your machine, not in the workspace file. And there's no shame in checkpointing; that's what they're for.</p>
+    <p style="margin-top: 1em; font-style: italic;">Your API key isn't touched: provider settings live on your machine, not in the workspace file. And there's no shame in checkpointing; that's what they're for.</p>
   </section>
 
   <!-- Slide 7: Take it home -->
-  <section class="slide" data-notes="Closing — leave it up while people finish. The ethics line slowly and explicitly: today their data went to a commercial API under their own account; whether their research data may do the same is an ethics-approval question. Then feedback + citation, lightly. Thank the room; point to the follow-up email (recording of session 1, materials, checkpoints).">
+  <section class="slide" data-notes="Closing: leave it up while people finish. The ethics line slowly and explicitly: today their data went to a commercial API under their own account; whether their research data may do the same is an ethics-approval question. Then feedback + citation, lightly. Thank the room; point to the follow-up email (recording of session 1, materials, checkpoints).">
     <h2>Take it home</h2>
     <ul>
-      <li><strong>Everything you did today ran on your own API key</strong> — that's exactly the setup for real research. Prefer your data never leaves your machine? <strong>Add Provider → Custom</strong> points Wordflow at a local model server (Ollama, LM Studio — anything speaking the OpenAI API).</li>
-      <li><strong>Check your ethics approval before coding real data with AI.</strong> Which models, which providers, and whether data may be sent to an external API at all — that's your approval's call, not the tool's.</li>
+      <li><strong>Everything you did today ran on your own API key</strong>: that's exactly the setup for real research. Prefer your data never leaves your machine? <strong>Add Provider → Custom</strong> points Wordflow at a local model server (Ollama, LM Studio; anything speaking the OpenAI API).</li>
+      <li><strong>Check your ethics approval before coding real data with AI.</strong> Which models, which providers, and whether data may be sent to an external API at all: that's your approval's call, not the tool's.</li>
       <li><strong>Keep the loop:</strong> codebook → pilot → agreement → revise → document. Prompt, codebook, model and κ belong in your methods section.</li>
-      <li><strong>Keep Wordflow</strong> — <code>sih.tools/wordflow</code>. Tap the in-app <strong>Feedback</strong> button freely; cite via the sidebar's quote icon (&ldquo;Cite LDaCA Wordflow&rdquo;).</li>
+      <li><strong>Keep Wordflow</strong>: <code>sih.tools/wordflow</code>. Tap the in-app <strong>Feedback</strong> button freely; cite via the sidebar's quote icon (&ldquo;Cite LDaCA Wordflow&rdquo;).</li>
     </ul>
     <p style="margin-top: 1.2em; font-size: 0.8em; color: var(--muted);">Data: Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). <em>Queensland Election 2020 on Twitter.</em> QUT. doi.org/10.25912/RDF_1665115527020 · Gender metadata: Sydney Corpus Lab.</p>
   </section>
@@ -310,7 +310,7 @@
     counter.textContent = `${idx + 1} / ${slides.length}`;
     const notes = slides[idx].dataset.notes || '';
     notesEl.innerHTML = notes
-      ? `<h4>Speaker notes — slide ${idx + 1}</h4><p>${notes}</p>`
+      ? `<h4>Speaker notes · slide ${idx + 1}</h4><p>${notes}</p>`
       : `<h4>Slide ${idx + 1}</h4><p style="opacity:0.6">(no notes)</p>`;
     notesEl.classList.toggle('show', notesOn);
   }
