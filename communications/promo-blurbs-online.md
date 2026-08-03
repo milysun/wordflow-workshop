@@ -18,7 +18,7 @@ Working with interviews, social media, news articles, or any other text corpus, 
 This online workshop runs as **two 90-minute Zoom sessions**; attend either half or both.
 
 **Session 1 · Wordflow from zero, 11:00 am – 12:30 pm AEST** *(10:30 am ACST · 9:00 am AWST)*
-A guided tour, no hands-on and nothing to install: the concepts, the interface, and a worked-example research workflow built live, from raw election tweets to a small finding, across four analysis tools. This session is **recorded**, so you can revisit it any time. If you attended our [June workshop](https://milysun.github.io/wordflow-workshop/#workshops) in person, you may prefer to join for the afternoon only.
+A guided tour, no hands-on and nothing to install: the concepts, the interface, and a worked-example research workflow built live, from raw election tweets to a small finding, across four analysis tools. This session is **recorded**, so you can revisit it any time. If you attended our [June workshop](https://sih.tools/wordflow/#ws-intro-2026-06-03) in person, you may prefer to join for the afternoon only.
 
 **Session 2 · Hands-on: coding text with GenAI, 2:00 – 3:30 pm AEST** *(1:30 pm ACST · 12:00 pm AWST)*
 At your own keyboard, you'll use Wordflow's new **Annotation** tool the researcher-first way: you code a sample and define the codebook; the AI must match your expectation (agreement scores, a confusion matrix, targeted revisions to your codebook and prompt) before it earns the corpus; then it annotates at scale. This session is deliberately **not recorded**, so it can run at the room's pace. To take part you'll need the free desktop app installed and a free AI-provider API key; a registration email a week beforehand walks you through both (about 10 minutes; zero cost).
