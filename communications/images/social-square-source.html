@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Social square: Wordflow online workshop 28 Aug 2026</title>
+<style>
+  /* Fixed 1080x1080 render. Same content and design system as banner-source.html,
+     restacked for a square feed post. */
+  :root {
+    --ink: #1a1d24;
+    --paper: #fdfcf8;
+    --accent: #c8423e;
+    --accent-soft: #f3d6d5;
+    --muted: #9aa0ab;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1080px; overflow: hidden; }
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    position: relative;
+  }
+  /* Graph motif: faint, anchored to the top-right so text stays legible */
+  .motif {
+    position: absolute;
+    top: -120px; right: -150px;
+    width: 520px; height: 520px;
+    opacity: 0.38;
+    z-index: 0;
+  }
+  .content {
+    position: absolute;
+    inset: 0;
+    padding: 72px 76px 64px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .kicker {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 27px;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 88px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin-bottom: 30px;
+  }
+  h1 .thin { font-weight: 300; opacity: 0.92; }
+  .sub {
+    font-size: 31px;
+    line-height: 1.42;
+    color: rgba(253, 252, 248, 0.78);
+    max-width: 720px;
+    margin-bottom: 14px;
+  }
+  .standard {
+    font-size: 34px;
+    line-height: 1.35;
+    color: var(--paper);
+    font-weight: 650;
+    max-width: 860px;
+    margin-bottom: 44px;
+  }
+  .sessions { display: flex; flex-direction: column; gap: 20px; margin-bottom: 44px; }
+  .session {
+    background: rgba(253, 252, 248, 0.07);
+    border: 1px solid rgba(253, 252, 248, 0.18);
+    border-left: 9px solid var(--accent);
+    border-radius: 14px;
+    padding: 22px 28px;
+    display: flex;
+    align-items: baseline;
+    gap: 26px;
+  }
+  .session .when {
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--accent-soft);
+    white-space: nowrap;
+  }
+  .session .what { font-size: 28px; font-weight: 600; line-height: 1.3; }
+  .session .tag {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-left: auto;
+  }
+  .date-row {
+    display: flex;
+    align-items: baseline;
+    gap: 26px;
+    font-size: 33px;
+  }
+  .date-row .date { font-weight: 800; }
+  .date-row .free {
+    color: var(--ink);
+    background: var(--accent-soft);
+    font-weight: 800;
+    padding: 4px 20px;
+    border-radius: 999px;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+  }
+  .date-row .zoom { color: var(--muted); font-weight: 500; }
+  .footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .footer img.ldaca { height: 56px; display: block; }
+  .footer img.sih { height: 112px; display: block; }
+  .footer .divider {
+    width: 1px;
+    height: 86px;
+    background: rgba(253, 252, 248, 0.25);
+  }
+  .footer .url {
+    font-size: 25px;
+    color: var(--paper);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+  <svg class="motif" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#3a3f4b" stroke-width="2.5" fill="none">
+      <path d="M 90 300 C 150 300, 150 170, 215 170"/>
+      <path d="M 90 300 C 150 300, 150 430, 215 430"/>
+      <path d="M 215 170 C 290 170, 290 110, 360 110"/>
+      <path d="M 215 170 C 290 170, 290 240, 360 240"/>
+      <path d="M 215 430 C 290 430, 290 370, 360 370"/>
+      <path d="M 215 430 C 290 430, 290 500, 360 500"/>
+      <path d="M 360 240 C 430 240, 430 305, 495 305"/>
+      <path d="M 360 370 C 430 370, 430 305, 495 305"/>
+    </g>
+    <g>
+      <rect x="55"  y="272" width="70" height="56" rx="12" fill="#c8423e"/>
+      <rect x="180" y="142" width="70" height="56" rx="12" fill="#c87060"/>
+      <rect x="180" y="402" width="70" height="56" rx="12" fill="#c87060"/>
+      <rect x="325" y="82"  width="70" height="56" rx="12" fill="#8a5a9e"/>
+      <rect x="325" y="212" width="70" height="56" rx="12" fill="#4a7fb5"/>
+      <rect x="325" y="342" width="70" height="56" rx="12" fill="#4a9e7f"/>
+      <rect x="325" y="472" width="70" height="56" rx="12" fill="#b58a4a"/>
+      <rect x="460" y="277" width="70" height="56" rx="12" fill="#f3d6d5"/>
+    </g>
+    <g stroke="#1a1d24" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M 478 300 l 7 8 l 12 -14"/>
+      <path d="M 478 318 l 7 8 l 12 -14"/>
+    </g>
+  </svg>
+
+  <div class="content">
+    <div class="kicker">LDaCA Wordflow · Free Online Workshop</div>
+    <h1>Text analytics,<br><span class="thin">without code.</span></h1>
+    <p class="sub">A guided tour of point-and-click text analysis, then a hands-on with the new <strong>GenAI Annotation tool</strong>.</p>
+    <p class="standard">You set the coding standard.<br>The AI applies it at scale.</p>
+    <div class="sessions">
+      <div class="session">
+        <span class="when">AM · 11:00 – 12:30 AEST</span>
+        <span class="what">Wordflow from zero</span>
+        <span class="tag">Demo · Recorded</span>
+      </div>
+      <div class="session">
+        <span class="when">PM · 2:00 – 3:30 AEST</span>
+        <span class="what">Coding text with GenAI</span>
+        <span class="tag">Hands-on</span>
+      </div>
+    </div>
+    <div class="date-row">
+      <span class="date">Friday 28 August 2026</span>
+      <span class="free">FREE</span>
+      <span class="zoom">on Zoom · all welcome</span>
+    </div>
+    <div class="footer">
+      <img class="ldaca" src="ldaca-logo-simplified-light.svg" alt="LDaCA: Language Data Commons of Australia">
+      <div class="divider"></div>
+      <img class="sih" src="sih-usyd-lockup-white.svg" alt="The University of Sydney · Sydney Informatics Hub">
+      <div class="divider"></div>
+      <span class="url">sih.tools/wordflow</span>
+    </div>
+  </div>
+</body>
+</html>
