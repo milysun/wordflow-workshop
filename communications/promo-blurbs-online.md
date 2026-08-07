@@ -39,7 +39,7 @@ Wordflow is developed at the University of Sydney (Sydney Informatics Hub and Sy
 
 **Section title:** Teach the AI your codebook: free Wordflow workshop, 28 August
 
-**Text analytics without code, including GenAI text coding (online, 28 August).** Do you work with text (interviews, social media, news, archives) but not with Python or R? Join us on **Friday 28 August** for a free online workshop on **LDaCA Wordflow**, a point-and-click text analytics app from the Language Data Commons of Australia. The morning session (**11:00 am – 12:30 pm AEST**; 9:00 am in the west) is a watch-only tour: concepts, interface, and a worked-example research workflow built live, recorded for later viewing. After lunch (**2:00 – 3:30 pm AEST**), a hands-on session introduces Wordflow's new **Annotation** tool. You code a sample and define the codebook; the AI must match your expectation before it earns the corpus; then it annotates at scale. Attend either session or both; no coding experience required. Register at ⟨Eventbrite link⟩.
+**Text analytics without code, including GenAI text coding (online, 28 August).** Do you work with text (interviews, social media, news, archives) but not with Python or R? Join us on **Friday 28 August** for a free online workshop on **LDaCA Wordflow**, a point-and-click text analytics app from the Language Data Commons of Australia. The morning session (**11:00 am – 12:30 pm AEST**; 9:00 am in the west) is a watch-only tour: concepts, interface, and a worked-example research workflow built live, recorded for later viewing. After lunch (**2:00 – 3:30 pm AEST**), a hands-on session introduces Wordflow's new **Annotation** tool. You code a sample and define the codebook; the AI must match your expectation before it earns the corpus; then it annotates at scale. Attend either session or both; no coding experience required. Register on [Eventbrite](https://www.eventbrite.com/e/text-analytics-without-code-teach-ai-your-codebook-ldaca-wordflow-tickets-1996765544495).
 
 ---
 
@@ -52,7 +52,7 @@ Free online workshop, Fri 28 Aug: **LDaCA Wordflow**, point-and-click text analy
 ☀️ AM (11:00 AEST / 9:00 AWST): watch a full research workflow, raw tweets → findings. Recorded.
 🛠️ PM (2:00 AEST / 12:00 AWST): hands-on. You set the coding standard. The AI applies it at scale.
 
-Come for one session or both. Register: ⟨link⟩
+Come for one session or both. Register: https://www.eventbrite.com/e/text-analytics-without-code-teach-ai-your-codebook-ldaca-wordflow-tickets-1996765544495
 
 #TextAnalytics #DigitalHumanities #LDaCA #ResearchTools
 
@@ -70,7 +70,7 @@ On **Friday 28 August, 2:00 – 3:30 pm AEST** (12:00 pm in the west), you'll us
 
 Since you've done the June intro, this afternoon session is all you need, though there's also a **morning session (11:00 am – 12:30 pm AEST)** re-introducing Wordflow for newcomers, rebuilt on v0.7's refreshed interface. It'll be recorded, so you can skim it later if you're curious what's changed.
 
-Register at ⟨Eventbrite link⟩, and if you pick the afternoon, the registration email includes two 5-minute setup steps (the v0.7 desktop app, and a free AI-provider key) to do before the day.
+Register on [Eventbrite](https://www.eventbrite.com/e/text-analytics-without-code-teach-ai-your-codebook-ldaca-wordflow-tickets-1996765544495), and if you pick the afternoon, the registration email includes two 5-minute setup steps (the v0.7 desktop app, and a free AI-provider key) to do before the day.
 
 Hope to see you there,
 
