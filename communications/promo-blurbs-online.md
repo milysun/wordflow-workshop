@@ -76,3 +76,17 @@ Hope to see you there,
 
 Dr Chao Sun
 Sydney Informatics Hub · chao.sun@sydney.edu.au
+
+---
+
+## 5 · Presenter bio
+
+**Full (Eventbrite organiser section, ~110 words):**
+
+Dr Chao Sun is a Data Science Group Lead at the Sydney Informatics Hub, University of Sydney, and an analytics tech lead for the Language Data Commons of Australia (LDaCA), an ARDC co-investment partnership. He spent 2016 to 2019 as the Faculty of Arts and Social Sciences' sole data scientist and has worked with humanities and social science researchers ever since, teaching data skills to hundreds of HASS researchers along the way. Since 2022 he has led the development of LDaCA's text analytics tools, including LDaCA Wordflow, the code-free text analytics app this workshop teaches, and its new GenAI Annotation tool. His background spans electronics engineering (BS) and machine learning (MS, PhD).
+
+**Short (newsletters, event intros):**
+
+Dr Chao Sun is a Data Science Group Lead at the Sydney Informatics Hub, University of Sydney, and an analytics tech lead for the Language Data Commons of Australia (LDaCA). Formerly the Faculty of Arts and Social Sciences' sole data scientist (2016–2019), he has taught data skills to hundreds of HASS researchers and leads the development of LDaCA's text analytics tools, including Wordflow and its new GenAI Annotation tool.
+
+*Reuse note: in the full bio, swap "the code-free text analytics app this workshop teaches" for "a code-free text analytics app for researchers" outside workshop contexts. Optional personal closer: "Outside of work, Chao is a busy father of three and a weekend DIY enthusiast."*
