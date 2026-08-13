@@ -35,6 +35,12 @@ Three reminders from the close of Session 2:
 
 If anything in Wordflow confused, surprised, or delighted you, tap the **Feedback** button (bottom-left of the app); it lands directly with the team, and it genuinely shapes what we build next. And if Wordflow ends up in your research, please cite it: the quote icon in the sidebar ("Cite LDaCA Wordflow") has the citation ready to copy.
 
+## Hearing about the next one
+
+We run these workshops a few times a year. If you'd like a short note when the next one opens for registration, add yourself here: **⟨opt-in link⟩**. Workshop announcements only, a handful of emails a year, and every one carries an unsubscribe link.
+
+If you'd rather not, there's nothing to do. We won't add you from today's registration, and we won't email you about future workshops unless you ask us to.
+
 ## Data acknowledgement
 
 The workshop dataset: Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). *Queensland Election 2020 on Twitter.* QUT. https://doi.org/10.25912/RDF_1665115527020, with gender metadata contributed by Sydney Corpus Lab. Please cite if it appears in research outputs.

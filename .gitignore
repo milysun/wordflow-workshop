@@ -29,6 +29,17 @@ scratch/
 tmp/
 *.log
 
+# Participant personal data: NEVER commit. This repo is planned to go public.
+# Names, emails, affiliations and sign-in sheets live in private/ only, with the
+# authoritative copy in University-approved storage. See private/README.md.
+private/
+attendance_sheet*.html
+attendance*.csv
+participants*.csv
+participants*.xlsx
+*registrations*.csv
+*attendees*.csv
+
 # Ignore stray snapshot exports anywhere in the tree, but keep the curated
 # workshop bundles under artifacts/snapshots/ (their source of truth is the
 # ldaca-analytics-sample-data repo; tracked here for convenience).
