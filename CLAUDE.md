@@ -55,10 +55,30 @@ When in doubt: grep across the whole repo for the thing you're changing before s
 - When making a non-trivial change, summarise what moved and which other files probably need a follow-up pass — don't silently update one channel and leave the others stale.
 - Use `git status` and `git diff` to sanity-check before committing on Chao's behalf.
 
+## Participant data: never commit it
+
+This repo goes public later, so **no file in the tracked tree may carry participant
+names, emails, or affiliations.** A printed sign-in sheet (`attendance_sheet.html`,
+38 real names) was committed on the June delivery branch and had to be purged from
+git history on 2026-08-14. Don't recreate that situation.
+
+- Participant data lives in `private/` only, which is gitignored on every branch,
+  along with `attendance_sheet*.html`, `participants*.csv` and similar patterns.
+- `private/participants.csv` is the rolling register across all deliveries: one row
+  per person per event, keyed on lowercased email, with a `promo_opt_in` column. It
+  answers both "who may be emailed about future workshops" and "who are the return
+  participants". The authoritative copy belongs in University-approved storage
+  (Sydney Box / OneDrive / SharePoint), not a laptop or a personal cloud account.
+- **Every workshop's post-workshop email must carry the opt-in block.** Registration
+  alone is not consent to be emailed about later events, and a blank in the register
+  means *never asked*, which is not consent. Open public sessions should also ask at
+  registration via an unticked Eventbrite checkbox.
+
 ## What lives outside this repo
 
 - The actual Wordflow snapshots and workspace archives referenced in the runbook live in cloud storage (Sydney Box / OneDrive / SharePoint / GitHub release). They're not committed here.
 - The feedback form and Binder URL are separate links Chao manages.
+- Participant registers and sign-in sheets: see the section above.
 
 ## Project repo
 
