@@ -60,22 +60,28 @@ Come for one session or both. Register: https://www.eventbrite.com/e/text-analyt
 
 ## 4 · Short email to June workshop participants
 
-**Subject:** The Wordflow feature you asked about: hands-on workshop, 28 August (online)
+*One-off send, not a list. June only mentioned the Annotation tool in passing, so this offers two sessions of equal standing and lets the reader take neither. See `private/README.md` for why this cohort has no opt-in on file.*
+
+**Subject:** What's new in Wordflow since June (online sessions, 28 August)
 
 Hi all,
 
-You joined our Wordflow workshop back in June. Thank you again. You may remember an AI annotation entry sitting in the sidebar that wasn't usable yet. It's now released, and we're running an online hands-on for it.
+You spent an afternoon with Wordflow back in June, and thank you again. A fair bit has changed since, so we're running two short online sessions on **Friday 28 August**. You're welcome at either, both, or neither.
 
-On **Friday 28 August, 2:00 – 3:30 pm AEST** (12:00 pm in the west), you'll use the new **Annotation tool** in Wordflow v0.7 the researcher-first way: code a sample, define the codebook, and hold the AI to your standard (intercoder reliability, a confusion matrix, codebook revisions until the numbers hold up) before it annotates the corpus at scale. It's on your own keyboard, at the room's pace, and not recorded.
+**Morning, 11:00 am – 12:30 pm AEST** (9:00 am in the west). A tour of v0.7: a refreshed interface, reworked topic modelling, and a research workflow built live from raw data to a small finding. If you mainly want to see what's changed since June, this is the one. It's recorded, so watching later is a perfectly good option.
 
-Since you've done the June intro, this afternoon session is all you need, though there's also a **morning session (11:00 am – 12:30 pm AEST)** re-introducing Wordflow for newcomers, rebuilt on v0.7's refreshed interface. It'll be recorded, so you can skim it later if you're curious what's changed.
+**Afternoon, 2:00 – 3:30 pm AEST** (12:00 pm in the west). Hands-on with the Annotation tool, which was still in development when we met and is now released. You code a sample, define the codebook, and hold the AI to your standard (agreement scores, a confusion matrix, revisions until the numbers hold up) before it annotates the corpus at scale. It's built for research that involves coding text into categories, which is daily work in some fields and beside the point in others. If it's not yours, the morning is likely the better use of your time. Not recorded, so it can run at the room's pace.
 
-Register on [Eventbrite](https://www.eventbrite.com/e/text-analytics-without-code-teach-ai-your-codebook-ldaca-wordflow-tickets-1996765544495), and if you pick the afternoon, the registration email includes two 5-minute setup steps (the v0.7 desktop app, and a free AI-provider key) to do before the day.
+Registration is on [Eventbrite](https://www.eventbrite.com/e/text-analytics-without-code-teach-ai-your-codebook-ldaca-wordflow-tickets-1996765544495). The afternoon needs two 5-minute setup steps (the v0.7 desktop app and a free AI-provider key); the registration email walks you through both.
 
-Hope to see you there,
+No need to reply if neither fits. Do get in touch, though, if you have questions about using Wordflow on your own material. That offer stands from June.
+
+Best wishes,
 
 Dr Chao Sun
 Sydney Informatics Hub · chao.sun@sydney.edu.au
+
+P.S. This is a one-off note to everyone who came in June, not a mailing list. We won't add you to one without asking.
 
 ---
 
