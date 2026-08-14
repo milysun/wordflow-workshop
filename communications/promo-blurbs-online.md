@@ -76,6 +76,8 @@ Registration is on [Eventbrite](https://www.eventbrite.com/e/text-analytics-with
 
 No need to reply if neither fits. Do get in touch, though, if you have questions about using Wordflow on your own material. That offer stands from June.
 
+Please do forward this to colleagues or collaborators who might find it useful: both sessions are free and open to anyone, in Australia or overseas.
+
 Best wishes,
 
 Dr Chao Sun
