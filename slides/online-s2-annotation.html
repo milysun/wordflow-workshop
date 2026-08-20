@@ -213,7 +213,7 @@
     <h2>Before we start: 3 checks</h2>
     <ol>
       <li><strong>Wordflow is running</strong>: desktop app (v0.7.x) or Binder. Not yet? <code style="background: var(--accent-soft); padding: 0.1em 0.4em; border-radius: 4px;">sih.tools/wordflow</code>. Install takes ~5 minutes; follow on the shared screen meanwhile.</li>
-      <li><strong>Your API key is at hand</strong>: from the pre-workshop email (openrouter.ai, free tier is fine; any OpenAI / Anthropic / Google key also works). No key? You can still do everything except the AI runs.</li>
+      <li><strong>Model access is provided in this session</strong>: a shared workshop key lands in the chat when we need it (deleted at 3:30 pm). Your own OpenRouter / OpenAI / Anthropic / Google key works too, if you prefer.</li>
       <li><strong>The hands-on sheet is open</strong>: every step from this session, in order, with exact button names. Link in the chat now.</li>
     </ol>
     <p style="margin-top: 1em; font-style: italic;">Just joining for the afternoon? Perfect. This session stands alone. The morning's recording covers the wider tour of Wordflow.</p>
@@ -251,15 +251,15 @@
   </section>
 
   <!-- Slide 5: The hands-on, in one slide -->
-  <section class="slide" data-notes="Show once so people know the arc, then switch to live Wordflow and stay there. Come back if someone asks 'where are we?'. The dataset: candidate info from the 2020 QLD election: the AI codes gender from first names, and the human-coded gender column is our ground truth. Deliberately simple, so all attention goes to the checking workflow.">
+  <section class="slide" data-notes="Show once so people know the arc, then switch to live Wordflow and stay there. Come back if someone asks 'where are we?'. The dataset: the QLD election tweets from this morning. The theme comes out of the word cloud (jobs), the block is derived with two filters (everyone lands on 226 rows), and your own manual codes are the standard the AI must match.">
     <h2>The hands-on, in one slide</h2>
     <ol style="font-size: 0.95em;">
       <li><strong>Create a workspace</strong>, import the sample data: <strong>ADO — Queensland Election Tweets</strong>.</li>
-      <li><strong>Annotation tool</strong> → candidate info block → <strong>Start new annotation</strong> → column <code>gender.ai</code>.</li>
-      <li><strong>Codebook → Create New → Edit</strong>: codes <code>M</code> / <code>F</code> / <code>U</code>, each with a written description. Code a few rows yourself in <strong>Manual</strong> mode.</li>
-      <li><strong>Flip to AI</strong>: Add Provider with <strong>your own API key</strong>, pick a model.</li>
-      <li><strong>Preview → Compare To → confusion matrix</strong>: measure agreement with the human coding, find weak spots, revise the prompt. <em>(The heart of the session.)</em></li>
-      <li><strong>Run All</strong>, review, correct. Then: <strong>your own data, your own coding problem.</strong></li>
+      <li><strong>Explore</strong>: the Frequency word cloud says the campaign is about <strong>jobs</strong>. Two filters (drop retweets, keep "job") → everyone has the same <strong>226 tweets</strong>.</li>
+      <li><strong>Codebook</strong>: three codes, <code>promise</code> / <code>cuts</code> / <code>other</code>. Code ~8 tweets yourself first (<code>theme.manual</code>).</li>
+      <li><strong>Connect a model</strong>: shared workshop key from the chat → new column <code>theme.ai</code>.</li>
+      <li><strong>Preview → Compare To → confusion matrix</strong>: measure the AI against <em>your</em> codes, then revise the codebook and watch κ move.</li>
+      <li><strong>Run All</strong>: 226 tweets coded, with the numbers to trust them. Then: cleverer questions, same tool.</li>
     </ol>
   </section>
 
@@ -280,7 +280,7 @@
   <section class="slide" data-notes="Closing: leave it up while people finish. The ethics line slowly and explicitly: today their data went to a commercial API under their own account; whether their research data may do the same is an ethics-approval question. Then feedback + citation, lightly. Thank the room; point to the follow-up email (recording of session 1, materials, checkpoints).">
     <h2>Take it home</h2>
     <ul>
-      <li><strong>Everything you did today ran on your own API key</strong>: that's exactly the setup for real research. Prefer your data never leaves your machine? <strong>Add Provider → Custom</strong> points Wordflow at a local model server (Ollama, LM Studio; anything speaking the OpenAI API).</li>
+      <li><strong>Today ran on a shared workshop key, which is now gone.</strong> For real research: your own API key (the setup is identical to what you just did), or a local model: <strong>Add Provider → Custom</strong> points Wordflow at a local server (Ollama, LM Studio; anything speaking the OpenAI API), so your data never leaves your machine.</li>
       <li><strong>Check your ethics approval before coding real data with AI.</strong> Which models, which providers, and whether data may be sent to an external API at all: that's your approval's call, not the tool's.</li>
       <li><strong>Keep the loop:</strong> codebook → pilot → agreement → revise → document. Prompt, codebook, model and κ belong in your methods section.</li>
       <li><strong>Keep Wordflow</strong>: <code>sih.tools/wordflow</code>. Tap the in-app <strong>Feedback</strong> button freely; cite via the sidebar's quote icon (&ldquo;Cite LDaCA Wordflow&rdquo;).</li>

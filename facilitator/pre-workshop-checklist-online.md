@@ -4,7 +4,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 
 ## 1 · Version + known issues (T-7 days)
 
-- [ ] Confirm the shipping Wordflow version (0.7.1 or later 0.7.x) and install it fresh on the presenting machine. The desktop app self-updates — pin/verify the version the morning of, so the room and your screen match.
+- [ ] Base release is **v0.7.2** (Tauri, published 2026-08-19). Install it fresh on the presenting machine; only bug-fix updates expected before the day. The desktop app self-updates, so re-verify the version the morning of. Note: **Windows installer is unsigned** (SmartScreen warning; More info → Run anyway); macOS is signed and notarized.
 - [ ] Re-test the **Excel/zip import** bug on that version. If fixed, delete the caveat from: `participant/hands-on-annotation-online.md` §1, `slides/online-s2-annotation.html` (none currently), `runbook-online-s2.md` §0:15, `communications/pre-workshop-email-online.md` (not mentioned — OK).
 - [ ] Settings → General → **Enable multi-tab: ON** on the presenting machine.
 - [ ] **Retake `slides/images/ui-overview.png` on v0.7** (current file is a v0.5 screenshot — the sidebar shows Annotation, "Help" instead of "Tutorial", and no working-directory footer). Re-aim the numbered-circle overlay in `slides/online-s1-intro.html` (cx/cy pairs) if the layout shifted.
@@ -22,26 +22,28 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 
 ## 3 · Session 2 checkpoint archives (T-5 days)
 
-Build in a clean workspace, exporting after each stage (**Export view → Export Workspace → "Export workspace archive"**), and rename the files:
+Build in a clean workspace on v0.7.2, exporting after each stage (**Export view → Export Workspace → "Export workspace archive"**), and rename the files. Class names everywhere are lowercase: `promise` / `cuts` / `other`.
 
-- [ ] `Checkpoint_0_Data.zip` — workspace + ADO Queensland Election Tweets imported, `candidate_info_gender` added as a block.
-- [ ] `Checkpoint_1_Codebook.zip` — plus `gender.ai` column, M/F/U codebook with descriptions, ~5 manual codes.
-- [ ] `Checkpoint_2_Preview.zip` — plus a working prompt saved in the Annotation tab. *(Provider/key are NOT in archives — nothing to scrub.)*
-- [ ] **Round-trip test each file on a second machine**: Upload workspace → Load → open Annotation → confirm data, tabs, codebook restore; note that block/column selectors need re-picking (that's expected — the sheet says so).
-- [ ] Upload the three files to the materials location and put the download links in a text file ready to paste into Zoom chat. ⟨Where: sih.tools/wordflow → Materials, or a GitHub release on this branch⟩
+- [ ] `Checkpoint_a_Data.zip`: sample tweets imported → Filter #1 (`^[Rr][Tt]` regex, negated) → Filter #2 (contains `job`) → the **226-row block**, PLUS `tweets_job_groundtruth.csv` (in `artifacts/online-2026-08-28/`) loaded as a block, ready to join on `tweet_id`.
+- [ ] `Checkpoint_b_Codebook.zip`: plus the v1 codebook (three lowercase codes with v1 descriptions), `theme.manual` column with ~8 codes filled, and an empty `theme.ai` column.
+- [ ] `Checkpoint_c_V2.zip`: plus the v2 codebook descriptions and v2 prompt saved in the Annotation tab, ready to Run All.
+- [ ] **Round-trip test each file on a second machine**: Upload workspace → Load → open Annotation → data, tabs, codebook restore; block/column selectors need re-picking (expected; the sheet says so).
+- [ ] **Join test**: join the ground-truth block onto the 226-row block on `tweet_id` (both sides must parse the id with the same dtype), then Compare To `theme.fable` shows a full-table κ.
+- [ ] Upload the three ZIPs + `tweets_job_groundtruth.csv` to the materials location; paste the links into the run-of-show panel's Checkpoint field.
 
 ## 4 · AI provider (T-3 days)
 
-- [ ] Your own OpenRouter key works: model list loads, a `:free` Gemma model previews successfully, `gemini-2.5-flash-lite` runs if credited.
-- [ ] Confirm at least one **`:free`** model currently listed on OpenRouter handles the task acceptably (free-model lineups change — re-check the week of).
-- [ ] Decide the fallback-key policy: if yes, create a **separate throwaway key with a hard spend cap** to paste into chat if several participants' keys fail; revoke it same day. Never on a public URL.
+- [ ] The **shared session key is the primary path** (decided): create it fresh on the day (12:35 step in the run-of-show) with a hard spend cap, named `workshop-2026-08-28`, and **delete it at 15:30**. Budget sanity check: ~50 participants × 226 tweets × a few preview pages on flash-lite is still only a few dollars; set the cap accordingly (e.g. US$20).
+- [ ] Rehearse the full flow on a throwaway key beforehand: model list loads, `google/gemini-2.5-flash-lite` previews and Run-Alls the 226-row block cleanly, and note the run time.
+- [ ] Confirm at least one `:free` model currently on OpenRouter handles the v1 task acceptably (fallback if the shared key rate-limits under 50 concurrent users; free models have their own per-account limits, so they are the backup, not the plan).
 
 ## 5 · Zoom + recording (T-2 days)
 
 - [ ] Schedule ONE meeting covering both sessions (same link, per the email). Waiting room off ⟨or a helper admitting⟩; chat open to everyone; participants can unmute in Session 2.
 - [ ] **Recording plan**: cloud-record Session 1 only. **Auto-record OFF** — start manually at the Session 1 title slide, stop at the lunch slide. Before Session 2, confirm recording is off and say so on mic.
 - [ ] Test screen share readability: share the app window, bump app zoom (Cmd/Ctrl +), check in the Zoom preview at 720p.
-- [ ] Brief helpers ⟨if any⟩: chat triage in S2, the checkpoint drill (Upload workspace → Load → re-select), backup host if you drop.
+- [ ] **Helpers (all co-hosts)**: morning = Alex + Seb (chat inquiries, roll); afternoon = Gordon, Georgie, Xinwei, Alex, Seb (roll, chat triage, resend links/key/prompts, breakout rooms, escalate via Teams/mobile if the majority is struggling). Pre-create breakout rooms **Help-1/2/3**.
+- [ ] **Helper briefing meeting (Tue/Wed before)**: walk the run-of-show panel top to bottom; share the hands-on sheet and the panel file itself (it holds every chat snippet); agree the escalation signal ("majority struggling" = you stop and repeat on screen); collect their known-pitfall suggestions.
 
 ## 6 · Communications
 

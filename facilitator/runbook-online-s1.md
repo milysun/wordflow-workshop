@@ -1,5 +1,7 @@
 # Runbook — Online workshop Session 1 (90 min, recorded)
 
+> **⚠ Superseded in part (2026-08-20):** the deck is now 15 slides (tool and phase slides cut; the tour and research story run live) and AI-model access is provided on the day (no participant API keys). Slide numbers below are stale until the review pass. The live source of truth for timings is `facilitator/run-of-show-online.html`.
+
 **Wordflow: concepts, interface, and a real multi-tool workflow · Friday 28 August 2026 · 11:00 am – 12:30 pm AEST (9:00 – 10:30 am AWST) · Zoom**
 
 Deck: `slides/online-s1-intro.html` (27 slides). This session is **all demo, no participant hands-on** — which means you control the clock completely. It is **recorded**: narrate for the future viewer as much as for the live room (say what you're clicking, read short bits of screen text aloud, don't rely on cursor-pointing alone).

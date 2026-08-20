@@ -4,13 +4,13 @@
 
 ---
 
-**Subject:** Wordflow online workshop (28 Aug): how to be ready, and one 5-minute task
+**Subject:** Wordflow online workshop (28 Aug): how to be ready, one 5-minute task
 
 ---
 
 Hi all,
 
-Thank you for registering for the LDaCA Wordflow online workshop on **Friday 28 August**. This email has everything you need, including **one small task to do before the day** if you're joining the afternoon hands-on.
+Thank you for registering for the LDaCA Wordflow online workshop on **Friday 28 August**. This email has everything you need, including **one small task to do before the day** if you're joining the afternoon hands-on: install the free desktop app.
 
 ## The shape of the day
 
@@ -24,21 +24,14 @@ The workshop runs as **two 1.5-hour sessions** over Zoom, with a long lunch brea
 
 ## Before the day: for Session 2 participants
 
-**1. Install Wordflow (5 minutes).** Go to **sih.tools/wordflow** and install the desktop app (Mac or Windows, v0.7.x). Everything runs on your own machine. If you can't install software, the same page has a browser option ("Launch in Binder"); it needs an Australian university (AAF) sign-in and a couple of minutes to start.
+**Install Wordflow (5 minutes).** Go to **sih.tools/wordflow** and install the desktop app (Mac or Windows, v0.7.2). Everything runs on your own machine. **Windows note:** the installer may trigger a security warning; choose "More info" then "Run anyway". If you can't install software, the same page has a browser option ("Launch in Binder"); it needs an Australian university (AAF) sign-in and a couple of minutes to start.
 
-**2. Create an AI-provider API key (5 minutes).** The hands-on connects Wordflow to an AI model through your own account: this is exactly how you'd use it in real research, and it means no shared credentials floating around a Zoom call.
-
-- Sign up at **openrouter.ai** (free).
-- Create an API key (Keys → Create Key) and save it somewhere you can copy-paste from on the day.
-- **No payment needed**: OpenRouter offers free models (we'll point you to suitable ones on the day). If you'd like to try stronger commercial models, US$1–2 of credit is more than enough for the workshop.
-- Already have an OpenAI / Anthropic / Google API key through your work? That works too; bring it instead.
-
-If the key setup doesn't work out, join anyway; you'll still be able to build the coding setup and follow the AI runs on the shared screen.
+**AI-model access is provided on the day.** You don't need an account with any AI provider: we'll share temporary model access in the session. If you already have an OpenRouter, OpenAI, Anthropic or Google API key and prefer to use your own, bring it along; the steps are identical.
 
 ## What to have handy
 
 - A laptop or desktop (any OS, recent browser). A second screen helps a lot for follow-along, but isn't required.
-- Optionally: **a small text dataset of your own** (CSV with a text column works best) and a classification question you care about; the last part of Session 2 is "try it on your own problem". *Don't* use sensitive or unpublished data with a cloud AI model (more on ethics on the day).
+- A classification question from your own research, if you have one in mind. The hands-on uses a prepared dataset so the whole room stays in step, and the materials are yours to keep, so you can repeat the exercise on your own data afterwards at your own pace.
 
 ## Zoom
 

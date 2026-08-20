@@ -100,6 +100,7 @@
   <div><label>Data file link(s) for S2 upload path</label><input id="f-data" placeholder="https://… CSV download(s)"></div>
   <div><label>Session OpenRouter API key (create on the day)</label><input id="f-key" placeholder="sk-or-v1-…"></div>
   <div><label>Model id for the room</label><input id="f-model" value="google/gemini-2.5-flash-lite"></div>
+  <div><label>Checkpoint workspace links (a/b/c)</label><input id="f-ckpt" placeholder="https://… checkpoint ZIPs"></div>
   <div class="hint">Fill these before 10:30. Copy buttons below interpolate them into ready-to-paste Zoom chat messages. Everything on this page stays in this browser (localStorage), but treat the key as burned: it gets deleted at 15:30 regardless.</div>
 </div>
 
@@ -110,7 +111,7 @@
 </div>
 <div class="item" data-start="10:30"><input type="checkbox"><span class="t">10:30</span><span class="d">15m</span>
   <div class="what"><div class="head">Zoom prep</div>
-  <div class="sub">Open meeting · <b>auto-record OFF</b> (start manually) · share the app/deck window only, not the desktop · check font size in Zoom preview · helpers admitted and briefed (chat triage; breakout drill for small-group problems).</div></div>
+  <div class="sub">Open meeting · <b>auto-record OFF</b> (start manually) · share the app/deck window only, not the desktop · check font size in Zoom preview · helpers admitted, all co-hosts. Morning: Alex + Seb (chat inquiries, mark the roll).</div></div>
 </div>
 <div class="item" data-start="10:45"><input type="checkbox"><span class="t">10:45</span><span class="d">10m</span>
   <div class="what"><div class="head">Chat snippets armed</div>
@@ -137,6 +138,7 @@
 <div class="item" data-start="11:12"><input type="checkbox"><span class="t">11:12</span><span class="d">3m</span>
   <div class="what"><div class="head"><span class="flag chat">CHAT</span>Three ways to run it (v0.7.2)</div>
   <button class="copy" data-tpl="Get Wordflow (free): https://sih.tools/wordflow — desktop app for Mac & Windows (v0.7.2). The afternoon hands-on assumes the desktop app.">Copy: download link</button>
+  <button class="copy" data-tpl="Windows users: the installer is not signed yet, so Windows may show a SmartScreen warning. Click More info, then Run anyway. (macOS installers are signed and notarized.)">Copy: Windows install fix</button>
   </div>
 </div>
 <div class="item" data-start="11:15"><input type="checkbox"><span class="t">11:15</span><span class="d">8m</span>
@@ -166,6 +168,7 @@
   <div class="what"><div class="head"><span class="flag chat">CHAT</span><span class="flag stop">REC OFF</span>Lunch slide + afternoon pitch, then STOP RECORDING</div>
   <div class="sub">Repeat the download link out loud AND in chat. Afternoon: hands-on, not recorded, keyboards required, model access provided on the day (no API key needed).</div>
   <button class="copy" data-tpl="Before you go to lunch: Session 2 (2:00 pm AEST) is hands-on. Install the desktop app now: https://sih.tools/wordflow — takes ~5 minutes. We'll provide AI-model access in the session, nothing else to prepare. Hands-on sheet: {SHEET}">Copy: lunch msg</button>
+  <button class="copy" data-tpl="Windows users: the installer is not signed yet, so Windows may show a SmartScreen warning. Click More info, then Run anyway. (macOS installers are signed and notarized.)">Copy: Windows install fix</button>
   </div>
 </div>
 
@@ -176,7 +179,7 @@
 </div>
 <div class="item" data-start="13:30"><input type="checkbox"><span class="t">13:30</span><span class="d">15m</span>
   <div class="what"><div class="head">Helpers briefing #2 + own machine reset</div>
-  <div class="sub">Helpers know: the breakout drill, the sheet section numbers, the key message. Your machine: fresh workspace for S2, deck S2 open, morning tabs closed. Zoom: confirm not recording.</div></div>
+  <div class="sub">Afternoon crew all co-hosts: <b>Gordon, Georgie, Xinwei, Alex, Seb</b>. Roles: mark the roll · chat triage · resend links/key/prompts to anyone who missed them · pull stuck people into breakout rooms <b>Help-1/2/3</b> (pre-created) · escalate via Teams/mobile if the MAJORITY is struggling (then you stop and repeat on screen). Your machine: fresh workspace for S2, deck S2 open, morning tabs closed. Zoom: confirm not recording.</div></div>
 </div>
 
 <h2>Session 2 · hands-on, NOT recorded · 14:00 – 15:30</h2>
@@ -184,6 +187,7 @@
   <div class="what"><div class="head"><span class="flag chat">CHAT</span>Welcome back + 3 checks (say "not recorded" on mic)</div>
   <div class="sub">Checks: app installed · sheet open · that's it (model access comes from us). Intro the helpers + the breakout plan. Afternoon-only joiners: one-breath orientation.</div>
   <button class="copy" data-tpl="Welcome to the hands-on! This session is NOT recorded. You need: 1) the Wordflow desktop app (https://sih.tools/wordflow), 2) this step sheet: {SHEET} — model access will be provided in a moment. Stuck at any point? Message the helpers or raise a hand.">Copy: S2 welcome</button>
+  <button class="copy" data-tpl="Lost, or something broke? Grab the matching checkpoint workspace: {CKPT} — then in Wordflow: Data Loader → Workspace manager → Upload workspace → choose the ZIP → click Load, and re-select the data block/column in the Annotation tool.">Copy: checkpoint rescue</button>
   </div>
 </div>
 <div class="item" data-start="14:05"><input type="checkbox"><span class="t">14:05</span><span class="d">7m</span>
@@ -202,7 +206,7 @@
 </div>
 <div class="item" data-start="14:28"><input type="checkbox"><span class="t">14:28</span><span class="d">7m</span>
   <div class="what"><div class="head">STEP 2 (say it, skip it) + STEP 3 setup · v1 codebook + manual codes</div>
-  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add the 226-row block · Text Column = text · Start new annotation → <b>theme.manual</b> · Codebook → Create New → Edit → paste the <b>v1 codebook</b> from the copy bank below · Manual mode → everyone codes ~8 rows into theme.manual. ✅-check.</div></div>
+  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add the 226-row block · Text Column = text · Start new annotation → <b>theme.manual</b> · Codebook → Create New → Edit → paste the <b>v1 codebook</b> from the copy bank below (class names lowercase: <b>promise / cuts / other</b>, typo-proof for the ground-truth comparison) · Manual mode → everyone codes ~8 rows into theme.manual. ✅-check.</div></div>
 </div>
 <div class="item" data-start="14:35"><input type="checkbox"><span class="t">14:35</span><span class="d">2m</span>
   <div class="what"><div class="head">Second column for the AI</div>
@@ -220,7 +224,7 @@
 </div>
 <div class="item" data-start="15:02"><input type="checkbox"><span class="t">15:02</span><span class="d">8m</span>
   <div class="what"><div class="head">STEP 5 · Run All: trustworthy coding at scale</div>
-  <div class="sub">Run All on all 226 (mention Reprocess vs Fill missing) · Annotation Review full-table · Correction column (accepts theme.ai.correction) · correct one row · "Use as example" feeds it back. Land the line: "AI didn't just do the job, it did the whole corpus, and you have the agreement numbers to trust it." Expected shape: roughly 2/3 PROMISE, 1/6 CUTS, 1/6 OTHER.</div></div>
+  <div class="sub">Run All on all 226 (mention Reprocess vs Fill missing) · Annotation Review full-table · Correction column (accepts theme.ai.correction) · correct one row · "Use as example" feeds it back. Land the line: "AI didn't just do the job, it did the whole corpus, and you have the agreement numbers to trust it." Expected shape: roughly 2/3 promise, 1/6 cuts, 1/6 other.</div></div>
 </div>
 <div class="item" data-start="15:10"><input type="checkbox"><span class="t">15:10</span><span class="d">12m</span>
   <div class="what"><div class="head">Showcase: same tool, cleverer questions (demo only)</div>
@@ -237,45 +241,45 @@
   <div class="what"><div class="head">STEP 3 · Plain codebook + prompt ("AI can do the job")</div>
   <div class="sub">Paste each description into its class in Edit codebook; prompt into the Prompt field.</div>
   <button class="copy" data-tpl="You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs.">Prompt v1</button>
-  <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered.">PROMISE v1</button>
-  <button class="copy" data-tpl="The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts.">CUTS v1</button>
-  <button class="copy" data-tpl="The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above.">OTHER v1</button>
+  <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered.">promise v1</button>
+  <button class="copy" data-tpl="The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts.">cuts v1</button>
+  <button class="copy" data-tpl="The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above.">other v1</button>
   </div>
 </div>
 
 <div class="item"><span></span><span class="t">v2</span><span class="d"></span>
   <div class="what"><div class="head">STEP 4 · Improved codebook + prompt (after reading the disagreements)</div>
   <div class="sub">The four added rules come straight from the confusion matrix: mixed slogans, vote-lists, hashtag-only framing, price-cut trap.</div>
-  <button class="copy" data-tpl="You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use OTHER.">Prompt v2</button>
-  <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered. Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as PROMISE. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code PROMISE only when the promise leads the message.">PROMISE v2</button>
-  <button class="copy" data-tpl="The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts. Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts.">CUTS v2</button>
-  <button class="copy" data-tpl="The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above. Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message.">OTHER v2</button>
+  <button class="copy" data-tpl="You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use other.">Prompt v2</button>
+  <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered. Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code promise only when the promise leads the message.">promise v2</button>
+  <button class="copy" data-tpl="The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts. Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts.">cuts v2</button>
+  <button class="copy" data-tpl="The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above. Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message.">other v2</button>
   </div>
 </div>
 
 <div class="item"><span></span><span class="t">Show</span><span class="d">A</span>
   <div class="what"><div class="head">Showcase A · Sentiment toward the LNP (aspect, not sentence)</div>
-  <button class="copy" data-tpl="For each tweet, judge the sentiment expressed toward the LNP (Liberal National Party) or its leader Deb Frecklington specifically, not the overall tone of the tweet. If neither is mentioned or referenced, use NOT_MENTIONED.">Prompt A</button>
-  <button class="copy" data-tpl="The tweet criticises, attacks or blames the LNP or its leader.">NEG</button>
-  <button class="copy" data-tpl="The tweet praises or supports the LNP or its leader.">POS</button>
-  <button class="copy" data-tpl="The LNP or its leader is mentioned without a clear positive or negative judgement.">NEU</button>
-  <button class="copy" data-tpl="The tweet does not mention or refer to the LNP or its leader.">NOT_MENTIONED</button>
+  <button class="copy" data-tpl="For each tweet, judge the sentiment expressed toward the LNP (Liberal National Party) or its leader Deb Frecklington specifically, not the overall tone of the tweet. If neither is mentioned or referenced, use none.">Prompt A</button>
+  <button class="copy" data-tpl="The tweet criticises, attacks or blames the LNP or its leader.">neg</button>
+  <button class="copy" data-tpl="The tweet praises or supports the LNP or its leader.">pos</button>
+  <button class="copy" data-tpl="The LNP or its leader is mentioned without a clear positive or negative judgement.">neu</button>
+  <button class="copy" data-tpl="The tweet does not mention or refer to the LNP or its leader.">none</button>
   </div>
 </div>
 
 <div class="item"><span></span><span class="t">Show</span><span class="d">B</span>
   <div class="what"><div class="head">Showcase B · Mentions a place outside Queensland?</div>
   <button class="copy" data-tpl="Decide whether the tweet mentions any real place located outside Queensland, interstate or overseas. Queensland towns, regions, electorates and roads do not count.">Prompt B</button>
-  <button class="copy" data-tpl="The tweet mentions at least one real place outside Queensland, for example another Australian state or city, or another country.">YES</button>
-  <button class="copy" data-tpl="All places mentioned are in Queensland, or no places are mentioned at all.">NO</button>
+  <button class="copy" data-tpl="The tweet mentions at least one real place outside Queensland, for example another Australian state or city, or another country.">yes</button>
+  <button class="copy" data-tpl="All places mentioned are in Queensland, or no places are mentioned at all.">no</button>
   </div>
 </div>
 
 <div class="item"><span></span><span class="t">Show</span><span class="d">C</span>
   <div class="what"><div class="head">Showcase C · More than two people mentioned?</div>
   <button class="copy" data-tpl="Count the distinct individual people the tweet refers to, by name or @handle. Groups, parties and organisations do not count as people.">Prompt C</button>
-  <button class="copy" data-tpl="The tweet refers to more than two distinct individual people.">YES</button>
-  <button class="copy" data-tpl="The tweet refers to two or fewer distinct individual people.">NO</button>
+  <button class="copy" data-tpl="The tweet refers to more than two distinct individual people.">yes</button>
+  <button class="copy" data-tpl="The tweet refers to two or fewer distinct individual people.">no</button>
   </div>
 </div>
 
@@ -303,7 +307,7 @@
   const state = JSON.parse(localStorage.getItem(LS) || '{}');
 
   // Fields persist + interpolate into copy templates
-  const fields = { SHEET: '#f-sheet', DATA: '#f-data', KEY: '#f-key', MODEL: '#f-model' };
+  const fields = { SHEET: '#f-sheet', DATA: '#f-data', KEY: '#f-key', MODEL: '#f-model', CKPT: '#f-ckpt' };
   for (const [k, sel] of Object.entries(fields)) {
     const el = $(sel);
     if (state['f' + k]) el.value = state['f' + k];

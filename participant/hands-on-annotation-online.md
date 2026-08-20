@@ -2,7 +2,7 @@
 
 **LDaCA Online Workshop · Session 2 · 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST)**
 
-You'll use Wordflow's **Annotation** tool (new in v0.7) to code a real dataset with an AI model, and, more importantly, to *check* the AI's coding the way you'd check a human coder's: agreement scores, a confusion matrix, and targeted corrections.
+You'll use Wordflow's **Annotation** tool (new in v0.7) to code a real dataset with an AI model, and, more importantly, to *check* the AI's coding the way you'd check a human coder's: agreement scores, a confusion matrix, and targeted revisions until the numbers hold up.
 
 This sheet mirrors the live session step by step, and works as a standalone tutorial afterwards. Fall behind at any point? Jump to **§10 Checkpoints**; you can rejoin in under a minute.
 
@@ -10,110 +10,145 @@ This sheet mirrors the live session step by step, and works as a standalone tuto
 
 ## 0 · Before we start: three things
 
-1. **Wordflow running**: the v0.7.x desktop app from **`sih.tools/wordflow`** (Mac/Windows), or *Launch in Binder* on the same page (needs an Australian university AAF sign-in; don't upload sensitive data there).
-2. **Your API key at hand**: from the pre-workshop email, an **openrouter.ai** key (free account; free models available), or an OpenAI / Anthropic / Google key you already have.
-3. **This sheet open** next to Wordflow (a second screen helps).
-
-No key? Do everything below anyway: you'll be able to run steps 1–6 and 8 fully, and watch the AI runs on the shared screen; your key can go in any time later.
+1. **Wordflow running**: the v0.7.2 desktop app from **`sih.tools/wordflow`** (Mac/Windows). *Windows may show a security warning: click **More info**, then **Run anyway**.*
+2. **This sheet open** next to Wordflow (a second screen helps).
+3. **Model access is provided**: a shared workshop key will be posted in the Zoom chat when we reach §6 (it is deleted at 3:30 pm). Your own OpenRouter / OpenAI / Anthropic / Google key works too, if you prefer.
 
 ## 1 · Workspace and data
 
 1. In the **Data Loader**, click **Create workspace** and give it a name.
 2. Click **Import sample data**. In the dialog, tick **ADO — Queensland Election Tweets** → **Import selected**. Wait for the **✓ Imported** chip.
-3. Add **`candidate_info_gender`** as a data block and click it. One row per candidate: `party`, `electorate`, `first_name`, `last_name`, `username`, and a human-coded **`gender`** column. That last column is our ground truth; today the AI competes with it.
-4. **Or bring your own data**: drag & drop a file, or use **Upload files**. CSV and plain-text files work. *(Known issue in 0.7.x: Excel spreadsheets and zip archives fail to import; export to CSV first.)*
+3. Add the **candidate tweets** file as a data block: one row per tweet from candidates in the 2020 Queensland state election, with the tweet in the `text` column.
 
-## 2 · Open the Annotation tool
+## 2 · Explore first: what is this campaign about?
 
-1. In the left sidebar under **Views**, click **Annotation**.
-2. Under **Selected Data Blocks**, add **`candidate_info_gender`** (the **Add data block** button, or double-click the block's node in the graph).
-3. Set **Text Column** to **`first_name`**. That's what the model will read.
-4. In the **Annotation Column** dropdown, choose **Start new annotation**. Name the column **`gender.ai`** → **Create**.
-   *(The `.ai` suffix is just a naming habit; it keeps AI-coded columns obvious next to human ones.)*
+Before defining any codes, let the data speak.
 
-## 3 · Build a codebook
+1. Click the tweets block → open **Frequency**. The word cloud makes it obvious: this campaign is about **jobs**.
+2. Optional: click "jobs" in the cloud to jump into **Concordance** and read a few tweets in context. Notice the different ways the word is used; that observation becomes our codebook in §4.
 
-The codebook is itself a small data block: one row per code, with a description. The descriptions are what the model actually reads; write them like instructions to a new research assistant.
+## 3 · Derive the coding dataset (everyone lands on the same 226 rows)
 
-1. In the **Codebook** card, click **Create New**; this makes an empty `..._codebook` block and selects it.
-2. Next to **Codes**, click **Edit**. In the **Edit codebook** dialog, **Add code** three times:
+Two filter steps in **Preprocessing → Filter**, each creating a new block:
 
-   | Code | Description (suggestion: write your own) |
+1. **Drop retweets**: on the tweets block, filter where `text` contains RegEx **`^[Rr][Tt]`**, and tick **negate** (keep everything that does NOT start with rt). This gives the original-tweets block.
+2. **Keep the job tweets**: on that new block, filter where `text` contains **`job`** (plain contains, not whole-word, so "jobs" and "job-seeker" count).
+
+Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint a, §10).
+
+## 4 · Build the codebook (v1: plain and simple)
+
+The codebook is itself a small data block: one row per code, with a description. The descriptions are what the model actually reads.
+
+1. Open the **Annotation** tool (left sidebar, under **Views**). Under **Selected Data Blocks**, add the 226-row block. Set **Text Column** to **`text`**.
+2. In the **Annotation Column** dropdown, choose **Start new annotation** → name it **`theme.manual`** → **Create**.
+3. In the **Codebook** card, click **Create New**, then **Edit** next to **Codes**. **Add code** three times and type exactly (lowercase, to keep everyone's columns comparable):
+
+   | Code | Description |
    |---|---|
-   | `M` | The first name is typically used for men in Australia. |
-   | `F` | The first name is typically used for women in Australia. |
-   | `U` | The name is ambiguous, initials only, unisex, or you cannot tell. |
+   | `promise` | The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered. |
+   | `cuts` | The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts. |
+   | `other` | The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above. |
 
-3. **Save.**
+4. **Save.**
 
-## 4 · Code a few rows yourself (Manual mode)
-
-Before the AI touches anything, be the coder for a minute.
+## 5 · Be the coder first (Manual mode)
 
 1. Leave the **Manual / AI** toggle on **Manual** and click **Start**.
-2. Each row has a **Select class** dropdown; code 5–10 rows into `gender.ai`.
-3. This is exactly how a human coding team works in Wordflow: each coder gets their own column (`gender.chao`, `gender.sam`, …) and picks it under **Annotation Column** to continue their work.
-4. Click **Close** when done.
+2. Each row has a **Select class** dropdown: code **about 8 tweets** into `theme.manual`. These become the standard the AI has to match.
+3. Click **Close** when done.
 
-## 5 · Connect your AI model
+## 6 · Connect the AI
 
-1. Flip the toggle to **AI**, then expand the settings via the chevron (**Advanced settings**).
-2. Under **Provider**, click **+ Add Provider**:
-   - **Provider**: `OpenRouter` (or OpenAI / Anthropic / Google if that's the key you brought)
-   - **API Key**: paste your key. It's write-only: Wordflow never displays it again.
-   - **Name**: press Tab to accept the suggestion → **Add Provider**
-3. Under **Model**, search the live list and pick one:
-   - a **free** Gemma model: search "gemma", choose one tagged `:free` (zero cost), or
-   - `google/gemini-2.5-flash-lite` / `google/gemini-2.5-flash` if your account has credit, or
-   - any model you like (the field also accepts a typed model id).
+1. Create the AI's own column: **Annotation Column → Start new annotation** → **`theme.ai`** → **Create**. (Your codes stay safe in `theme.manual`.)
+2. Flip the toggle to **AI**, expand **Advanced settings** (the chevron).
+3. **+ Add Provider** → **OpenRouter** → paste the **shared key from the Zoom chat** → press Tab to accept the name → **Add Provider**.
+4. **Model**: paste the model id from the chat message.
+5. **Prompt** (v1, simple): paste into the Prompt field:
 
-## 6 · Preview before you run
+   > You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs.
 
-1. The **Prompt** field shows a default prompt greyed out: press **Tab** to start from it, or write your own. Say what the text is (Australian election candidates' first names) and what to do when unsure (use `U`).
-2. Click **Preview**. The model codes the visible page (10 rows; raise **Rows per page** up to 100 for a bigger sample). The `gender.ai (preview)` column shows predictions; **nothing is written to your data yet**. This is your pilot study.
-3. Now check it like you'd check a coder. Click **Compare To** and tick the human-coded **`gender`** column. Metric: **Cohen's Kappa** (default; Percent Agreement and Krippendorff's Alpha are there too).
-4. A score badge (e.g. `κ 0.81`) appears in the column header. **Hover the badge**: that's the **confusion matrix**. Where do the disagreements pile up? (Usually `U` vs everything.)
-5. Click the **Filter any difference** button (filter icon by the column header) to see *only* the rows where the model and the human disagree. Read them. Is the model wrong, or is the human coding debatable? Both happen.
-6. Revise your prompt or codebook descriptions → **Update Preview** → watch the score move. **This loop is the skill**: codebook → pilot → agreement → revise.
-7. Optional, few-shot: set a **Correction** column, correct a few rows, then click **Use as example**; your corrections become worked examples sent with every request.
+## 7 · Preview, measure, revise (this is the skill)
 
-## 7 · Run All
+1. Click **Preview**. The model codes the visible page (10 rows; raise **Rows per page** for a bigger sample). Predictions are display-only; nothing is written to your data yet.
+2. Click **Compare To** and tick **`theme.manual`**. A **Cohen's Kappa** badge (e.g. `κ 0.74`) appears; **hover it** for the **confusion matrix** against your own codes.
+3. Click **Filter any difference** (the filter icon by the column header) and read the disagreements. Mixed tweets ("jobs, not cuts!") and campaign vote-lists ("For Health. For Jobs.") are the usual suspects. Is the model wrong, or was the codebook silent about these cases?
+4. **Revise**: update the codebook descriptions to v2 (Edit the codebook, extend each description), and the prompt:
 
-1. Click **Run All**. Progress appears above the results and in the sidebar **Tasks** list (**Stop** cancels).
-2. In **Advanced settings → Run All processing**, note the two modes:
-   - **Reprocess all rows** (default): replaces the whole annotation column.
-   - **Fill missing only**: keeps existing labels (e.g. your manual codes) and codes only the empty rows.
-3. When it finishes, the **Annotation Review** table opens: same **Compare To**, confusion matrix, and disagreement filters, now over the whole dataset. Correct any rows the model got wrong via a **Correction** column (it suggests `gender.ai.correction`).
-4. Your annotations live in the data block itself: filter on `gender.ai`, feed it into Frequency or Trends, or export it from the **Export** view as CSV.
+   | Code | v2 description (v1 plus the new rules) |
+   |---|---|
+   | `promise` | …as v1, plus: Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code promise only when the promise leads the message. |
+   | `cuts` | …as v1, plus: Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts. |
+   | `other` | …as v1, plus: Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message. |
 
-## 8 · Now do it with your own data
+   > Prompt v2: You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use other.
 
-Load your own CSV (any text column works) and think of a *harder* coding problem than names: stance, sentiment, topic, whether a text contains a policy claim. Write the codebook, preview on a page, check agreement against your own manual codes, revise, run. No data of your own? Try to beat your κ on the names task, or code the tweets block's `text` column for topic.
+5. **Update Preview** → watch κ move. That loop (codebook → pilot → agreement → revise) is the method; everything else is buttons.
 
-## 9 · Before you use this in real research
+## 8 · Run All: coding at scale
 
-- **You already have the real-research setup**: your own key, your own account. To keep data fully on your machine, use a **local model**: in **Add Provider** choose **Custom** and point it at any local server that speaks the OpenAI Chat Completions API (e.g. Ollama, LM Studio).
-- **Check your ethics approval.** Which AI models and providers you may use (and whether your data is allowed to be sent to an external API at all) is governed by your approval, not by what the tool can do.
-- **Keep your methods audit-ready**: save your prompt, codebook, model name, and agreement scores. They belong in your methods section.
+1. Click **Run All**: all 226 tweets, about a minute. (In **Advanced settings → Run All processing**: **Reprocess all rows** replaces the column; **Fill missing only** keeps existing labels.)
+2. The **Annotation Review** table opens: same **Compare To**, confusion matrix and disagreement filters, now over everything. Expect roughly two-thirds `promise`, one-sixth `cuts`, one-sixth `other`.
+3. Fix any wrong rows via a **Correction** column (it suggests `theme.ai.correction`), and note **Use as example**: your corrections can feed back into the AI as worked examples.
+4. Your coded column is ordinary data now: filter on it, chart `theme.ai` by party in **Trends**, or export CSV from the **Export** view.
+
+## 9 · Optional: compare against a full reference coding
+
+The workshop provides a reference coding of all 226 tweets (`tweets_job_groundtruth.csv`, in the chat and the follow-up email): tweet ids plus a `theme.fable` column produced by a frontier model with the same v1 codebook.
+
+1. Add it as a data block, then **Preprocessing → Join**: your 226-row block first (left), join on `tweet_id`.
+2. In the Annotation Review, **Compare To → `theme.fable`**: now your κ is computed over all 226 rows, not just the ones you hand-coded.
 
 ## 10 · Checkpoints: if you fall behind
 
-Checkpoint files are workspace archives posted in the Zoom chat (also in the follow-up email):
+Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader → Workspace manager → Upload workspace** → choose the ZIP → click **Load** on the new row → re-select the block/columns in the Annotation tool (selections aren't stored in the file; everything else is).
 
-| File | Restores the state after… |
+| Checkpoint | Restores the state after… |
 |---|---|
-| `Checkpoint_0_Data.zip` | §1: workspace with the sample data imported |
-| `Checkpoint_1_Codebook.zip` | §3–4: annotation column, codebook, some manual codes |
-| `Checkpoint_2_Preview.zip` | §6: a working prompt + codebook ready to Preview |
+| **a** | §3: the 226-row block, plus the reference coding block ready to join |
+| **b** | §4–6: v1 codebook, `theme.manual` + `theme.ai` columns ready |
+| **c** | §7: the v2 codebook and prompt in place, ready to Run All |
 
-To load one:
+Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them.
 
-1. **Data Loader → Workspace manager → Upload workspace** → choose the downloaded `.zip`.
-2. Click **Load** on the newly listed workspace.
-3. Back in **Annotation**: if a selector shows empty, re-select the data block / columns. The data, tabs, and results are all restored; only the tool's current selections aren't stored in the file.
+## 11 · Before you use this in real research
 
-Your provider and API key are untouched: they live on your machine, never inside workspace files (which is also why checkpoint files are safe to share).
+- **The shared workshop key is deleted at 3:30 pm today.** For your research: your own API key (the setup is identical), or a **local model**: in **Add Provider** choose **Custom** and point it at any local server that speaks the OpenAI Chat Completions API (e.g. Ollama, LM Studio), so your data never leaves your machine.
+- **Check your ethics approval.** Which AI models and providers you may use, and whether your data is allowed to be sent to an external API at all, is governed by your approval, not by what the tool can do.
+- **Keep your methods audit-ready**: save your prompt, codebook, model name, and agreement scores. They belong in your methods section.
 
 ---
 
-*Data: Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). Queensland Election 2020 on Twitter. QUT. doi.org/10.25912/RDF_1665115527020. Gender metadata by Sydney Corpus Lab. Please cite if used in research.*
+## Appendix · Same tool, cleverer questions (replay at home)
+
+Three more codebooks for the same 226 tweets, shown as demos in the session. Each is one small codebook away; the checking workflow from §7 is what makes them trustworthy.
+
+**A · Sentiment toward the LNP** (aspect, not sentence)
+Prompt: *For each tweet, judge the sentiment expressed toward the LNP (Liberal National Party) or its leader Deb Frecklington specifically, not the overall tone of the tweet. If neither is mentioned or referenced, use none.*
+
+| Code | Description |
+|---|---|
+| `neg` | The tweet criticises, attacks or blames the LNP or its leader. |
+| `pos` | The tweet praises or supports the LNP or its leader. |
+| `neu` | The LNP or its leader is mentioned without a clear positive or negative judgement. |
+| `none` | The tweet does not mention or refer to the LNP or its leader. |
+
+**B · Mentions a place outside Queensland?**
+Prompt: *Decide whether the tweet mentions any real place located outside Queensland, interstate or overseas. Queensland towns, regions, electorates and roads do not count.*
+
+| Code | Description |
+|---|---|
+| `yes` | The tweet mentions at least one real place outside Queensland, for example another Australian state or city, or another country. |
+| `no` | All places mentioned are in Queensland, or no places are mentioned at all. |
+
+**C · More than two people mentioned?**
+Prompt: *Count the distinct individual people the tweet refers to, by name or @handle. Groups, parties and organisations do not count as people.*
+
+| Code | Description |
+|---|---|
+| `yes` | The tweet refers to more than two distinct individual people. |
+| `no` | The tweet refers to two or fewer distinct individual people. |
+
+---
+
+*Data: Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). Queensland Election 2020 on Twitter. QUT. doi.org/10.25912/RDF_1665115527020. Please cite if used in research.*
