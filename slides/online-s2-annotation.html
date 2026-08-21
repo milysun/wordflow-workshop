@@ -167,6 +167,21 @@
   .title-logos .logo-ldaca-lg { height: 4.5vh; }
   .title-logos .logo-sih-lg { height: 8vh; }
   .title-logos .title-divider { width: 1px; height: 5.5vh; background: rgba(253, 252, 248, 0.35); }
+  section.slide.acknowledgement {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.acknowledgement h2 { color: var(--accent); }
+  section.slide.acknowledgement .ack-body {
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+    line-height: 1.55;
+    max-width: 30em;
+    font-weight: 400;
+    color: var(--paper);
+  }
+  section.slide.acknowledgement .ack-body strong { color: var(--paper); font-weight: 600; }
   .chrome {
     position: fixed;
     bottom: 1.5vh;
@@ -248,6 +263,19 @@
       <span class="title-divider"></span>
       <img class="logo-sih-lg" src="images/logos/sih-usyd-white.svg" alt="The University of Sydney — Sydney Informatics Hub">
     </div>
+  </section>
+
+  <!-- Slide 2: Acknowledgement of Country (S2 has partly new attendees, so the
+       afternoon is its own opening; guidance places an Acknowledgement at the
+       beginning of a meeting or event) -->
+  <section class="slide acknowledgement" data-notes="Part of this room joined fresh this afternoon, so give the full Acknowledgement, unhurried. If the audience is largely the morning crowd, the natural form is: 'as we did this morning, I would like to acknowledge...'. 30-45 seconds; pause before moving on.">
+    <h2>Acknowledgement of Country</h2>
+    <p class="ack-body">
+      We acknowledge the <strong>Gadigal people of the Eora Nation</strong>, the Traditional Custodians of the land from which we present today, and the Traditional Custodians of the many lands from which you are joining.
+    </p>
+    <p class="ack-body" style="margin-top: 1.2em;">
+      We pay our respects to Elders past and present.
+    </p>
   </section>
 
   <!-- Slide 2: Setup check -->
@@ -344,7 +372,7 @@
 </div>
 
 <div class="chrome">
-  <span id="slide-counter">1 / 7</span>
+  <span id="slide-counter">1 / 8</span>
   <span>←/→ navigate · N toggle notes · F fullscreen</span>
 </div>
 <div class="notes" id="notes"></div>
@@ -354,7 +382,7 @@
   const slides = Array.from(document.querySelectorAll('section.slide'));
   // Branding strip on every slide except the title (matches the S1 deck)
   const brandTpl = document.getElementById('brand-footer-tpl');
-  slides.forEach((sl, i) => { if (i >= 1) sl.appendChild(brandTpl.content.cloneNode(true)); });
+  slides.forEach((sl, i) => { if (i >= 2) sl.appendChild(brandTpl.content.cloneNode(true)); });
   const notesEl = document.getElementById('notes');
   const counter = document.getElementById('slide-counter');
   const hint = document.getElementById('hint');
