@@ -11,9 +11,9 @@
 
 ## North star
 
-Unchanged from June:
+Refined from June (wording tightened 2026-08-21; the idea is unchanged):
 
-> **One thing they leave knowing:** *text data flows through stackable, single-purpose tools — and the meaning of an analysis is shaped by how you shape your data, not by the tool itself.*
+> **One thing they leave knowing:** *text data flows through stackable, single-purpose tools, and the meaning of an analysis comes from how you shape your data, not from the tool itself.*
 
 Plus the afternoon's extension: *an AI model is just another coder — it earns trust the same way a human coder does: codebook, pilot, agreement scores, revision.*
 

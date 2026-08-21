@@ -32,7 +32,7 @@ Known v0.7.1 issue to keep in materials until fixed: **Excel spreadsheet and zip
 
 Materials for a single 3-hour in-person workshop introducing **LDaCA Wordflow** to university researchers — mostly HASS, mostly limited coding capability, ranging from HDR students to senior academics. The workshop is one piece of a larger series Chao is developing.
 
-The **north star** (from README) is: *"text data flows through stackable, single-purpose tools — and the meaning of an analysis is shaped by how you shape your data, not by the tool itself."* Don't soften or rewrite this without checking with Chao.
+The **north star** (from README) is: *"text data flows through stackable, single-purpose tools, and the meaning of an analysis comes from how you shape your data, not from the tool itself."* Don't soften or rewrite this without checking with Chao.
 
 ## How the pieces fit together
 
