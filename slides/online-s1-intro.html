@@ -271,6 +271,28 @@
     font-size: 0.8rem;
     margin-bottom: 0.5em;
   }
+  /* Branding strip: injected by JS into every slide from #3 onward (inside the
+     section, so it prints per-slide). White pill keeps logos legible on dark
+     divider/spotlight slides. SIH logo links to informatics.sydney.edu.au. */
+  .brand-footer {
+    position: absolute;
+    bottom: 1.2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.6vw;
+    background: rgba(253, 252, 248, 0.95);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.8vh 1.6vw;
+    z-index: 3;
+  }
+  .brand-footer img { display: block; }
+  .brand-footer .logo-ldaca { height: 2.6vh; }
+  .brand-footer .logo-ardc { height: 3.4vh; }
+  .brand-footer .logo-sih { height: 4.6vh; }
+  .brand-footer a { display: block; line-height: 0; }
   .hint {
     position: fixed;
     top: 1vh;
@@ -604,6 +626,14 @@
     </div>
   </section>
 
+  <!-- Branding strip template: cloned by JS into slides 3+ -->
+  <template id="brand-footer-tpl">
+    <div class="brand-footer">
+      <img class="logo-ldaca" src="images/logos/ldaca-dark.svg" alt="LDaCA — Language Data Commons of Australia">
+      <img class="logo-ardc" src="images/logos/ardc.svg" alt="ARDC — Australian Research Data Commons">
+      <a href="https://informatics.sydney.edu.au" target="_blank" rel="noopener"><img class="logo-sih" src="images/logos/sih-usyd.png" alt="The University of Sydney — Sydney Informatics Hub"></a>
+    </div>
+  </template>
 </div>
 
 <div class="chrome">
@@ -615,6 +645,9 @@
 
 <script>
   const slides = Array.from(document.querySelectorAll('section.slide'));
+  // Branding strip on every slide from #3 onward (recording branding)
+  const brandTpl = document.getElementById('brand-footer-tpl');
+  slides.forEach((sl, i) => { if (i >= 2) sl.appendChild(brandTpl.content.cloneNode(true)); });
   const notesEl = document.getElementById('notes');
   const counter = document.getElementById('slide-counter');
   const hint = document.getElementById('hint');
