@@ -24,7 +24,7 @@ The workshop runs as **two 1.5-hour sessions** over Zoom, with a long lunch brea
 
 ## Before the day: for Session 2 participants
 
-**Install Wordflow (5 minutes).** Go to **sih.tools/wordflow** and install the desktop app (Mac or Windows, v0.7.2). Everything runs on your own machine. **Windows note:** the installer may trigger a security warning; choose "More info" then "Run anyway". If you can't install software, the same page has a browser option ("Launch in Binder"); it needs an Australian university (AAF) sign-in and a couple of minutes to start.
+**Install Wordflow (5 minutes).** Go to **sih.tools/wordflow** and install the desktop app (Mac or Windows, the latest v0.7 release). Everything runs on your own machine. **Windows note:** the installer may trigger a security warning; choose "More info" then "Run anyway". If you can't install software, the same page has a browser option ("Launch in Binder"); it needs an Australian university (AAF) sign-in and a couple of minutes to start.
 
 **AI-model access is provided on the day.** You don't need an account with any AI provider: we'll share temporary model access in the session. If you already have an OpenRouter, OpenAI, Anthropic or Google API key and prefer to use your own, bring it along; the steps are identical.
 

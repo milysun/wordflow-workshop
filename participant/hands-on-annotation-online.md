@@ -10,7 +10,7 @@ This sheet mirrors the live session step by step, and works as a standalone tuto
 
 ## 0 · Before we start: three things
 
-1. **Wordflow running**: the v0.7.2 desktop app from **`sih.tools/wordflow`** (Mac/Windows). *Windows may show a security warning: click **More info**, then **Run anyway**.*
+1. **Wordflow running**: the latest v0.7 desktop app from **`sih.tools/wordflow`** (Mac/Windows). *Windows may show a security warning: click **More info**, then **Run anyway**.*
 2. **This sheet open** next to Wordflow (a second screen helps).
 3. **Model access is provided**: a shared workshop key will be posted in the Zoom chat when we reach §6 (it is deleted at 3:30 pm). Your own OpenRouter / OpenAI / Anthropic / Google key works too, if you prefer.
 
