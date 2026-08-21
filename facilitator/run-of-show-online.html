@@ -100,6 +100,7 @@
   <div><label>Data file link(s) for S2 upload path</label><input id="f-data" placeholder="https://… CSV download(s)"></div>
   <div><label>Session OpenRouter API key (create on the day)</label><input id="f-key" placeholder="sk-or-v1-…"></div>
   <div><label>Model id for the room</label><input id="f-model" value="google/gemini-2.5-flash-lite"></div>
+  <div><label>Fallback model id (paid, different upstream; pre-tested Wed)</label><input id="f-model2" value="openai/gpt-5-nano"></div>
   <div><label>Checkpoint workspace links (a/b/c)</label><input id="f-ckpt" placeholder="https://… checkpoint ZIPs"></div>
   <div class="hint">Fill these before 10:30. Copy buttons below interpolate them into ready-to-paste Zoom chat messages. Everything on this page stays in this browser (localStorage), but treat the key as burned: it gets deleted at 15:30 regardless.</div>
 </div>
@@ -220,6 +221,8 @@
   <div class="what"><div class="head"><span class="flag key">KEY</span><span class="flag chat">CHAT</span>Connect the model (the danger zone: go slow)</div>
   <div class="sub">Toggle AI → Advanced settings → + Add Provider → OpenRouter → paste key → Tab → Add Provider → Model: paste the id. Helpers sweep; breakout for stragglers. Say: key is shared, temporary, dies at 3:30.</div>
   <button class="copy" data-tpl="Model access for this session (shared, deleted at 3:30 pm): provider OpenRouter, API key: {KEY} — model: {MODEL}. In Wordflow: Annotation tool → toggle AI → Advanced settings → + Add Provider → OpenRouter → paste the key → Add Provider, then paste the model id into the Model box.">Copy: key + model msg</button>
+  <button class="copy" data-tpl="The model is congested — everyone please switch: in the Annotation tool, replace the model id with {MODEL2} (same provider, same key, nothing else changes) and continue from where you were.">Copy: switch to fallback model</button>
+  <button class="copy" data-tpl="If openrouter.ai is not reachable from your network (some institutional firewalls and some countries block it): no problem — code a few tweets manually, watch the shared screen for the AI steps, and repeat them later on another network or with a local model (shown at the end).">Copy: OpenRouter unreachable msg</button>
   </div>
 </div>
 <div class="item" data-start="14:47"><input type="checkbox"><span class="t">14:47</span><span class="d">15m</span>
@@ -319,7 +322,7 @@
   const state = JSON.parse(localStorage.getItem(LS) || '{}');
 
   // Fields persist + interpolate into copy templates
-  const fields = { SHEET: '#f-sheet', DATA: '#f-data', KEY: '#f-key', MODEL: '#f-model', CKPT: '#f-ckpt' };
+  const fields = { SHEET: '#f-sheet', DATA: '#f-data', KEY: '#f-key', MODEL: '#f-model', MODEL2: '#f-model2', CKPT: '#f-ckpt' };
   for (const [k, sel] of Object.entries(fields)) {
     const el = $(sel);
     if (state['f' + k]) el.value = state['f' + k];

@@ -49,7 +49,13 @@ Build in a clean workspace on v0.7.2, exporting after each stage (**Export view 
 
 - [ ] The **shared session key is the primary path** (decided): create it fresh on the day (12:35 step in the run-of-show) with a hard spend cap, named `workshop-2026-08-28`, and **delete it at 15:30**. Budget sanity check: ~50 participants × 226 tweets × a few preview pages on flash-lite is still only a few dollars; set the cap accordingly (e.g. US$20).
 - [ ] Rehearse the full flow on a throwaway key beforehand: model list loads, `google/gemini-2.5-flash-lite` previews and Run-Alls the 226-row block cleanly, and note the run time.
-- [ ] Confirm at least one `:free` model currently on OpenRouter handles the v1 task acceptably (fallback if the shared key rate-limits under 50 concurrent users; free models have their own per-account limits, so they are the backup, not the plan).
+- [ ] **Know the rate-limit facts (verified against OpenRouter docs, 2026-08-21):**
+  - Limits are **per account, not per key**. Extra keys on the same account add zero capacity.
+  - `:free` models: **20 requests/minute per account across all free models combined**, and 1,000/day (the $10 lifetime purchase unlocks 1,000/day, up from 50; it does NOT raise the 20 RPM). One shared account × a whole room means **free models are unusable as the room path AND unusable as the fallback**. Spreading people across different free models does not help; the cap is account-wide.
+  - **Paid models (no `:free` suffix): no OpenRouter platform request cap** while the balance is positive; the real ceilings are upstream-provider capacity and Cloudflare's per-IP abuse protection. Participants call from their own home/office IPs, so the per-IP layer is naturally spread; the shared thing is only the account.
+  - Cost sanity: 70 people × 226 tweets on flash-lite ≈ 16k tiny requests ≈ **under US$2**. The $10 already on the account covers the day; the US$20 key cap stands.
+- [ ] **Fallback is a second PAID model on a different upstream** (e.g. `openai/gpt-5-nano`), pre-tested on the v1 task. If the room model starts returning 429/errors mid-session (upstream congestion), everyone switches the Model dropdown; nothing else changes. Put its id in the panel's fallback-model field.
+- [ ] **Stress test (Wednesday, with the real account)**: run `facilitator/stress-test-openrouter.py` with ~50 concurrent requests × a few hundred total against the room model, from one machine. Watch for 429s, Cloudflare 403s, and latency. Costs cents. If the account itself gets throttled at one-machine concurrency, escalate: the room's load will be gentler per-IP but heavier in total.
 
 ## 5 · Zoom + recording (T-2 days)
 

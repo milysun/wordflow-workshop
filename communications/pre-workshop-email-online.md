@@ -28,6 +28,8 @@ The workshop runs as **two 1.5-hour sessions** over Zoom, with a long lunch brea
 
 **AI-model access is provided on the day.** You don't need an account with any AI provider: we'll share temporary model access in the session. If you already have an OpenRouter, OpenAI, Anthropic or Google API key and prefer to use your own, bring it along; the steps are identical.
 
+**One 10-second connectivity check.** The AI-coding steps call **openrouter.ai** from your computer. Open [https://openrouter.ai](https://openrouter.ai) in a browser on the network you'll use on the day; if the page loads, you're set. Some networks (certain institutional firewalls, and networks in some countries, including mainland China) can't reach it. If it doesn't load for you, still come along: everything except the AI-coding calls runs locally, so you can code manually, follow the shared screen for the AI steps, and repeat them later on any network (or with a local model, which we'll show).
+
 ## What to have handy
 
 - A laptop or desktop (any OS, recent browser). A second screen helps a lot for follow-along, but isn't required.
