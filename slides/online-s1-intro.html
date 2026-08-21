@@ -320,14 +320,14 @@
   }
   /* UI overview slide */
   section.slide.ui-overview-slide {
-    padding: 2vh 4vw;
+    padding: 2vh 4vw 8vh;
     justify-content: flex-start;
   }
   section.slide.ui-overview-slide h2 { margin-bottom: 0.3em; }
   .ui-overview-container {
     position: relative;
     width: 100%;
-    max-height: 53vh;
+    max-height: 46vh;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -336,12 +336,12 @@
     position: relative;
     display: inline-block;
     max-width: 100%;
-    max-height: 53vh;
+    max-height: 46vh;
   }
   .ui-overview-container img {
     display: block;
     max-width: 100%;
-    max-height: 53vh;
+    max-height: 46vh;
     width: auto;
     height: auto;
     border: 1px solid var(--rule);
@@ -498,43 +498,48 @@
     <p style="margin-top: 1.5em; font-style: italic;">One address to remember: <code style="font-style: normal; background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px;">sih.tools/wordflow</code>. Wordflow's home page has the downloads, the run-in-browser option, the documentation, and more about the project.</p>
   </section>
 
-  <!-- Slide 7: UI tour (annotated screenshot).
-       NOTE: images/ui-overview.png is a v0.5 screenshot; RETAKE on v0.7 before the day
-       (visible differences: Annotation entry in Views, "Help" instead of "Tutorial",
-       no working-directory footer). Overlay positions may need re-aiming. -->
-  <section class="slide ui-overview-slide" data-notes="Do this on the LIVE app, screen-shared; the slide is the recap. Land all 7. v0.7 notes: bottom-left buttons are Help + Feedback (Help was 'Tutorial' in older versions); sidebar sections are Views / Data Blocks / Tasks; the Tasks section is where slow analyses show progress.">
-    <h2>The interface: 7 things to know</h2>
+  <!-- Slide 7: UI tour — annotated v0.7.2 screenshot (images/ui-overview-v07.png, 2800x1891).
+       To adjust a circle, edit the cx/cy in the matching <circle>+<text> pair (image pixel coords). -->
+  <section class="slide ui-overview-slide" data-notes="Do this on the LIVE app, screen-shared; the slide is the recap. Walk the numbers in order and land 6 and 7 in one breath each: Tasks is where slow analyses show progress (you'll point at it again during Topic Modelling), and Help + Feedback are the two buttons to remember.">
+    <h2>The interface at a glance</h2>
     <div class="ui-overview-container">
       <div class="ui-overview-figure">
-        <img src="images/ui-overview.png" alt="Annotated Wordflow workspace with seven labelled regions" />
-        <svg class="ui-overview-overlay" viewBox="0 0 2800 1740" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <img src="images/ui-overview-v07.png" alt="Annotated Wordflow v0.7 workspace with seven labelled regions" />
+        <svg class="ui-overview-overlay" viewBox="0 0 2800 1891" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" font-size="72" text-anchor="middle">
-            <circle cx="180" cy="440" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="180" y="465" fill="#fdfcf8">1</text>
-            <circle cx="1100" cy="90" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="1100" y="115" fill="#fdfcf8">2</text>
-            <circle cx="2280" cy="90" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="2280" y="115" fill="#fdfcf8">3</text>
-            <circle cx="2280" cy="1050" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="2280" y="1075" fill="#fdfcf8">4</text>
-            <circle cx="180" cy="820" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="180" y="845" fill="#fdfcf8">5</text>
-            <circle cx="135" cy="1695" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="135" y="1720" fill="#fdfcf8">6</text>
-            <circle cx="330" cy="1695" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="330" y="1720" fill="#fdfcf8">7</text>
+            <!-- 1. Tool sidebar — Views list (Frequency row) -->
+            <circle cx="154" cy="357" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="154" y="382" fill="#fdfcf8">1</text>
+            <!-- 2. Tool interface + tabs — middle column header -->
+            <circle cx="649" cy="151" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="649" y="176" fill="#fdfcf8">2</text>
+            <!-- 3. Workspace Graph View — top right header -->
+            <circle cx="1588" cy="90" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="1588" y="115" fill="#fdfcf8">3</text>
+            <!-- 4. Data View — bottom right header -->
+            <circle cx="1620" cy="1060" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="1620" y="1085" fill="#fdfcf8">4</text>
+            <!-- 5. Data Blocks quick-select — left sidebar list -->
+            <circle cx="154" cy="965" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="154" y="990" fill="#fdfcf8">5</text>
+            <!-- 6. Tasks — left sidebar, running analyses -->
+            <circle cx="154" cy="1595" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="154" y="1620" fill="#fdfcf8">6</text>
+            <!-- 7. Help + Feedback — bottom of the sidebar -->
+            <circle cx="159" cy="1828" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
+            <text x="159" y="1853" fill="#fdfcf8">7</text>
           </g>
         </svg>
       </div>
     </div>
     <ol class="ui-overview-legend">
-      <li><strong>Tool sidebar (Views)</strong>: pick a tool here; Annotation is the newest entry</li>
-      <li><strong>Tool interface</strong>: controls and results for the selected tool, organised in tabs</li>
-      <li><strong>Workspace graph view</strong>: where your project's data and its analytical derivations live</li>
-      <li><strong>Data viewer</strong>: manage and inspect columns and rows in a data block. Not just a viewer.</li>
-      <li><strong>Data block quick-select</strong>: switch the active block without going back to the graph</li>
-      <li><strong>Help</strong>: the built-in tutorials; the small <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:-0.15em;"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> icon next to a control jumps straight to its section</li>
-      <li><strong>Feedback</strong>: tap anytime something is confusing, surprising, or broken</li>
+      <li><strong>Tool sidebar (Views)</strong>: pick a tool; Annotation is the newest</li>
+      <li><strong>Tool interface</strong>: the selected tool's controls and results, in browser-style tabs</li>
+      <li><strong>Workspace Graph View</strong>: your data and every block derived from it</li>
+      <li><strong>Data View</strong>: inspect and manage a block's rows and columns</li>
+      <li><strong>Data Blocks</strong>: switch the active block quickly</li>
+      <li><strong>Tasks</strong>: progress of longer-running analyses</li>
+      <li><strong>Help &amp; Feedback</strong>: built-in tutorials; a direct line to the team</li>
     </ol>
   </section>
 

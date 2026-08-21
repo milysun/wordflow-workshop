@@ -7,7 +7,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] Base release is **v0.7.2** (Tauri, published 2026-08-19). Install it fresh on the presenting machine; only bug-fix updates expected before the day. The desktop app self-updates, so re-verify the version the morning of. Note: **Windows installer is unsigned** (SmartScreen warning; More info → Run anyway); macOS is signed and notarized.
 - [ ] Re-test the **Excel/zip import** bug on that version. If fixed, delete the caveat from: `participant/hands-on-annotation-online.md` §1, `slides/online-s2-annotation.html` (none currently), `runbook-online-s2.md` §0:15, `communications/pre-workshop-email-online.md` (not mentioned — OK).
 - [ ] Settings → General → **Enable multi-tab: ON** on the presenting machine.
-- [ ] **Retake `slides/images/ui-overview.png` on v0.7** (current file is a v0.5 screenshot — the sidebar shows Annotation, "Help" instead of "Tutorial", and no working-directory footer). Re-aim the numbered-circle overlay in `slides/online-s1-intro.html` (cx/cy pairs) if the layout shifted.
+- [x] ~~Retake the UI screenshot~~ DONE 2026-08-21: slide 7 now uses `slides/images/ui-overview-v07.png` (v0.7.2 capture from Chao) with re-aimed circles and a rewritten legend.
 
 ## 2 · Session 1 demo workspaces (T-5 days)
 
@@ -15,7 +15,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
   - `Frequency` tab: news corpus comparative (Guardian+IA vs Sky+PerthNow), 40 words, stopwords on.
   - `Concordance` tab: Honi Soit, 3-pattern regex, coloured.
   - `Trends` tab: QLD tweets grouped by term/gender/party.
-  - `Topic Modeling` tab: news corpus two-sided run (blended vs solid bubbles visible).
+  - `Topic Modelling` tab: news corpus two-sided run (blended vs solid bubbles visible).
   - `Quotation` tab: Honi Soit, sorted by speaker.
 - [ ] **Story workspace** — sample data imported, *nothing built* (the research story is built live).
 - [ ] **Story backup archives** — build the full story once, exporting a workspace archive at each phase boundary (A–E). These are your Plan B if a live step misbehaves mid-recording. Keep them local; they're not published.
