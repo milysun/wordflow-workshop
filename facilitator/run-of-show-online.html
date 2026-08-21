@@ -158,7 +158,7 @@
 </div>
 <div class="item" data-start="12:13"><input type="checkbox"><span class="t">12:13</span><span class="d">8m</span>
   <div class="what"><div class="head">Repurpose the lens</div>
-  <div class="sub">Chart selection → Add to Workspace (2m) · word-count column → Trends as histogram (6m). Say the landing line twice.</div></div>
+  <div class="sub">Chart selection → Add to Workspace (2m) · Expression group-by: tweets per candidate → Trends as histogram (6m; paste the two JSONs from the copy bank below). Say the landing line twice.</div></div>
 </div>
 <div class="item" data-start="12:21"><input type="checkbox"><span class="t">12:21</span><span class="d">4m</span>
   <div class="what"><div class="head">Takeaways</div>
@@ -236,6 +236,14 @@
 </div>
 
 <h2>Copy bank · codebooks &amp; prompts (paste into Wordflow, field by field)</h2>
+
+<div class="item"><span></span><span class="t">S1</span><span class="d"></span>
+  <div class="what"><div class="head">S1 histogram demo · tweets per candidate (Expression tab, group-by context)</div>
+  <div class="sub">Paste into the Grouping key field, then the Aggregation field. Result block: one row per candidate with tweet_count.</div>
+  <button class="copy" data-tpl='{"expression": {"op": "column", "name": "username"}}'>Grouping key</button>
+  <button class="copy" data-tpl='{"expression": {"op": "count", "operand": {"op": "column", "name": "username"}}, "alias": "tweet_count"}'>Aggregation: count</button>
+  </div>
+</div>
 
 <div class="item"><span></span><span class="t">v1</span><span class="d"></span>
   <div class="what"><div class="head">STEP 3 · Plain codebook + prompt ("AI can do the job")</div>

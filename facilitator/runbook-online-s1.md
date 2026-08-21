@@ -61,7 +61,7 @@ Land the question on slide 16, restate the watching contract (*"full speed, narr
 ## 1:15 – 1:25 · Repurpose the lens (slides 22–23)
 
 - **Through the tool (~4 min):** back in Trends — legend filtering, click / click + Shift-click a range → **Add to Workspace**. One breath: same move on Topic Modelling bubbles and Concordance dispersion markers.
-- **Into the tool (~6 min), the quotable one:** Honi Soit block → **Preprocessing → Create** → word-count column. Trends: x-axis = word count (not the date), 100 intervals, line → bar. *"Trends is drawing a histogram. The tool didn't change — the data did."*
+- **Into the tool (~6 min), the quotable one:** tweets block → **Preprocessing → Expression**, group-by context → group by `username`, aggregate `count` as `tweet_count` (paste both JSON snippets from the run-of-show copy bank; the closed v0.7.2 DSL has no word-count, see wordflow issue). Trends on the new block: x-axis = `tweet_count`, bucketed, line → bar. *"Trends is drawing a histogram of candidate activity: most candidates tweet a little, a few tweet constantly. The tool didn't change; the data did."*
 
 ## 1:25 – 1:30 · Landing + takeaways + lunch (slides 24–26)
 
