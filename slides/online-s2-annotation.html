@@ -97,6 +97,11 @@
     margin: 0;
   }
   section.slide .card code { font-size: 0.85em; }
+  section.slide.dense { padding-bottom: 9vh; }
+  section.slide.dense h1 { font-size: clamp(1.8rem, 3.6vw, 3.2rem); margin-bottom: 0.3em; }
+  section.slide.dense .grid2 { gap: 1.2vw; margin-top: 0.7em; }
+  section.slide.dense .card { padding: 0.9em 1.1em; }
+  section.slide.dense .card p { font-size: clamp(0.9rem, 1.25vw, 1.15rem); }
   section.slide table {
     border-collapse: collapse;
     margin-top: 1em;
@@ -320,6 +325,31 @@
     <p class="pullquote" style="margin-top: 0.8em;">A coder earns trust through agreement, human or machine.</p>
   </section>
 
+  <!-- Slide: Responsible AI (before the hands-on begins, deliberately) -->
+  <section class="slide dense" data-notes="Deliver this BEFORE anyone touches the tool, unhurried (~2 min). Say the non-endorsement sentence explicitly; it is also why the workshop key is deleted at 3:30. The four cards are the checklist a researcher walks before choosing a provider; model capability is the last consideration, not the first. The take-home slide returns to this with the local-model recipe.">
+    <h2>Before you dive in</h2>
+    <h1>Choosing an AI provider is a research decision.</h1>
+    <p>Today we use shared <strong>OpenRouter</strong> access so everyone can do the exercise. That is convenience, <strong>not an endorsement</strong> of OpenRouter or of any commercial AI service for research use.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Ethics approval</h3>
+        <p>Which providers and models are permitted, and whether your data may be sent to an external service at all, is set by your approval, not by the tool.</p>
+      </div>
+      <div class="card">
+        <h3>Data privacy</h3>
+        <p>Coding sends your texts to the provider. Sensitive or unpublished data may not belong there; <strong>local models</strong> keep everything on your machine.</p>
+      </div>
+      <div class="card">
+        <h3>Fit for the question</h3>
+        <p>Match the model to your task, language, and data. Pilot and measure; never assume.</p>
+      </div>
+      <div class="card">
+        <h3>Cost &amp; accountability</h3>
+        <p>Budget for full-corpus runs, and document model, prompt, codebook, and agreement. The coding in your outputs stays <strong>your</strong> responsibility.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Slide 5: The hands-on, in one slide -->
   <section class="slide" data-notes="Show once so people know the arc, then switch to live Wordflow and stay there. Come back if someone asks 'where are we?'. The dataset: the QLD election tweets from this morning. The theme comes out of the word cloud (jobs), the block is derived with two filters (everyone lands on 226 rows), and human-verified ground-truth labels are the standard the AI must match.">
     <h2>The hands-on, in one slide</h2>
@@ -372,7 +402,7 @@
 </div>
 
 <div class="chrome">
-  <span id="slide-counter">1 / 8</span>
+  <span id="slide-counter">1 / 9</span>
   <span>←/→ navigate · N toggle notes · F fullscreen</span>
 </div>
 <div class="notes" id="notes"></div>
