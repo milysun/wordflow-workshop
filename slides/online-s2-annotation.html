@@ -130,6 +130,43 @@
     border-left-color: var(--paper);
     color: var(--paper);
   }
+  /* Branding strip: injected by JS into every slide from #3 onward (inside the
+     section, so it prints per-slide). White pill keeps logos legible on dark
+     divider/spotlight slides. SIH logo links to informatics.sydney.edu.au. */
+  .brand-footer {
+    position: absolute;
+    bottom: 1.2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.6vw;
+    background: rgba(253, 252, 248, 0.95);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.8vh 1.6vw;
+    z-index: 3;
+  }
+  .brand-footer img { display: block; }
+  .brand-footer .logo-ldaca { height: 2.6vh; }
+  .brand-footer .logo-ardc { height: 3.4vh; }
+  .brand-footer .logo-ncris { height: 4.2vh; }
+  .brand-footer .brand-divider { width: 1px; height: 4vh; background: var(--rule); }
+  .brand-footer .logo-scl { height: 3.8vh; }
+  .brand-footer .logo-sih { height: 4.6vh; }
+  .brand-footer a { display: block; line-height: 0; }
+  /* Title-slide logo row: LDaCA + SIH only (white variants on the ink background) */
+  .title-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4vw;
+    margin-top: 4.5vh;
+  }
+  .title-logos img { display: block; }
+  .title-logos .logo-ldaca-lg { height: 4.5vh; }
+  .title-logos .logo-sih-lg { height: 8vh; }
+  .title-logos .title-divider { width: 1px; height: 5.5vh; background: rgba(253, 252, 248, 0.35); }
   .chrome {
     position: fixed;
     bottom: 1.5vh;
@@ -206,6 +243,11 @@
     <p style="margin-top: 2em; font-size: 1.3rem;">The Annotation tool in LDaCA Wordflow · keyboards required, mistakes encouraged</p>
     <p style="margin-top: 2.5em; font-size: 0.95rem;"><strong>Dr Chao Sun</strong> · Sydney Informatics Hub</p>
     <p style="margin-top: 0.3em; font-size: 0.85rem; opacity: 0.7;">Friday 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST) · this session is <strong>not recorded</strong></p>
+    <div class="title-logos">
+      <img class="logo-ldaca-lg" src="images/logos/ldaca-light.svg" alt="LDaCA — Language Data Commons of Australia">
+      <span class="title-divider"></span>
+      <img class="logo-sih-lg" src="images/logos/sih-usyd-white.svg" alt="The University of Sydney — Sydney Informatics Hub">
+    </div>
   </section>
 
   <!-- Slide 2: Setup check -->
@@ -288,6 +330,17 @@
     <p style="margin-top: 1.2em; font-size: 0.8em; color: var(--muted);">Data: Bruns, A.; Angus, D.; Cohen, T.; QUT Digital Observatory (2022). <em>Queensland Election 2020 on Twitter.</em> QUT. doi.org/10.25912/RDF_1665115527020 · Gender metadata: Sydney Corpus Lab.</p>
   </section>
 
+  <!-- Branding strip template: cloned by JS into slides 3+ -->
+  <template id="brand-footer-tpl">
+    <div class="brand-footer">
+      <img class="logo-ldaca" src="images/logos/ldaca-dark.svg" alt="LDaCA — Language Data Commons of Australia">
+      <img class="logo-ardc" src="images/logos/ardc.svg" alt="ARDC — Australian Research Data Commons">
+      <img class="logo-ncris" src="images/logos/ausgov-ncris.png" alt="Australian Government — NCRIS, National Research Infrastructure for Australia">
+      <span class="brand-divider"></span>
+      <img class="logo-scl" src="images/logos/sydney-corpus-lab.png" alt="Sydney Corpus Lab">
+      <a href="https://informatics.sydney.edu.au" target="_blank" rel="noopener"><img class="logo-sih" src="images/logos/sih-usyd.png" alt="The University of Sydney — Sydney Informatics Hub"></a>
+    </div>
+  </template>
 </div>
 
 <div class="chrome">
@@ -299,6 +352,9 @@
 
 <script>
   const slides = Array.from(document.querySelectorAll('section.slide'));
+  // Branding strip on every slide except the title (matches the S1 deck)
+  const brandTpl = document.getElementById('brand-footer-tpl');
+  slides.forEach((sl, i) => { if (i >= 1) sl.appendChild(brandTpl.content.cloneNode(true)); });
   const notesEl = document.getElementById('notes');
   const counter = document.getElementById('slide-counter');
   const hint = document.getElementById('hint');
