@@ -291,10 +291,22 @@
   .brand-footer img { display: block; }
   .brand-footer .logo-ldaca { height: 2.6vh; }
   .brand-footer .logo-ardc { height: 3.4vh; }
-  .brand-footer .logo-ncris { height: 3.4vh; }
+  .brand-footer .logo-ncris { height: 4.2vh; }
   .brand-footer .brand-divider { width: 1px; height: 4vh; background: var(--rule); }
   .brand-footer .logo-sih { height: 4.6vh; }
   .brand-footer a { display: block; line-height: 0; }
+  /* Title-slide logo row: LDaCA + SIH only (white variants on the ink background) */
+  .title-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    margin-top: 4vh;
+  }
+  .title-logos img { display: block; }
+  .title-logos .logo-ldaca-lg { height: 6.5vh; }
+  .title-logos .logo-sih-lg { height: 11vh; }
+  .title-logos .title-divider { width: 1px; height: 8vh; background: rgba(253, 252, 248, 0.35); }
   .hint {
     position: fixed;
     top: 1vh;
@@ -405,6 +417,11 @@
     <p style="margin-top: 2em; font-size: 1.3rem;">Concepts, interface, and a real multi-tool research workflow: all demo, no homework</p>
     <p style="margin-top: 2.5em; font-size: 0.95rem;"><strong>Dr Chao Sun</strong> · <strong>Dr Alex Guo</strong> · Sydney Informatics Hub</p>
     <p style="margin-top: 0.3em; font-size: 0.85rem; opacity: 0.7;">Friday 28 August 2026 · Session 1: 11:00 am – 12:30 pm AEST · Session 2 (hands-on): 2:00 – 3:30 pm AEST · (AWST: 9:00 am / 12:00 pm)</p>
+    <div class="title-logos">
+      <img class="logo-ldaca-lg" src="images/logos/ldaca-light.svg" alt="LDaCA — Language Data Commons of Australia">
+      <span class="title-divider"></span>
+      <img class="logo-sih-lg" src="images/logos/sih-usyd-white.svg" alt="The University of Sydney — Sydney Informatics Hub">
+    </div>
   </section>
 
   <!-- Slide 2: Acknowledgement of Country -->
