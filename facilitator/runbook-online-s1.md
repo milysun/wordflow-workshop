@@ -67,7 +67,7 @@ Land the question on slide 16, restate the watching contract (*"full speed, narr
 
 Slide 24 slowly — say it twice. Slide 25: three takeaways, land the name reveal on #3. Slide 26 (lunch): walk the two setup tasks once out loud; repeat that the afternoon is not recorded and keyboards are required; *"no key? come anyway."* Flash slide 27 (data acknowledgements) and note it ships in the follow-up email.
 
-**STOP THE RECORDING.** Leave slide 26 on screen through lunch for late lookers. Keep the Zoom meeting open (same link for both sessions).
+**STOP THE RECORDING.** Then the **install clinic (12:30, ~15 min)**: anyone unsure how to download or install stays on the call and you walk it live with Alex + Seb (Windows SmartScreen More info → Run anyway; macOS first-open Open confirmation). This is the only path for overseas participants, since Binder needs AAF. Leave slide 26 on screen through lunch for late lookers. Keep the Zoom meeting open (same link for both sessions).
 
 ---
 
