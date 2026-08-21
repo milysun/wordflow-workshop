@@ -2,7 +2,7 @@
 
 **Text analytics for researchers — without code.** A single interface for concordance, frequency, trends, topic modelling, and comparative analysis across your text corpus.
 
-> Text data flows through stackable, single-purpose tools — and the meaning of an analysis is shaped by *how you shape your data*, not by the tool itself.
+> Text data flows through stackable, single-purpose tools, and the meaning of an analysis comes from *how you shape your data*, not from the tool itself.
 
 ---
 
