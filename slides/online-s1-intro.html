@@ -338,7 +338,9 @@
   }
   .ui-overview-container .ui-overview-figure {
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-width: 100%;
     height: 100%;
   }
@@ -346,12 +348,10 @@
     display: block;
     max-width: 100%;
     max-height: 100%;
-    height: 100%;
     width: auto;
-    object-fit: contain;
+    height: auto;
     border: 1px solid var(--rule);
     border-radius: 6px;
-    margin: 0 auto;
   }
   .ui-overview-overlay {
     position: absolute;
@@ -506,37 +506,14 @@
   </section>
 
   <!-- Slide 7: UI tour — annotated v0.7.2 screenshot (images/ui-overview-v07.png, 2800x1726).
-       To adjust a circle, edit the cx/cy in the matching <circle>+<text> pair (image pixel coords). -->
+       The numbered circles are BAKED INTO the PNG (they drifted as an SVG overlay in
+       narrow windows). To re-aim them, edit the coords dict in the PIL snippet in git
+       history (commit message 'weld callouts') and regenerate from ui-overview-v07-clean.png. -->
   <section class="slide ui-overview-slide" data-notes="Do this on the LIVE app, screen-shared; the slide is the recap. Walk the numbers in order and land 6 and 7 in one breath each: Tasks is where slow analyses show progress (you'll point at it again during Topic Modelling), and Help + Feedback are the two buttons to remember.">
     <h2>The interface at a glance</h2>
     <div class="ui-overview-container">
       <div class="ui-overview-figure">
         <img src="images/ui-overview-v07.png" alt="Annotated Wordflow v0.7 workspace with seven labelled regions" />
-        <svg class="ui-overview-overlay" viewBox="0 0 2800 1726" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" font-size="72" text-anchor="middle">
-            <!-- 1. Tool sidebar — Views list (Frequency row) -->
-            <circle cx="169" cy="388" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="169" y="413" fill="#fdfcf8">1</text>
-            <!-- 2. Tool interface + tabs — middle column header -->
-            <circle cx="515" cy="374" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="515" y="399" fill="#fdfcf8">2</text>
-            <!-- 3. Workspace Graph View — top right header -->
-            <circle cx="1795" cy="85" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="1795" y="110" fill="#fdfcf8">3</text>
-            <!-- 4. Data View — bottom right header -->
-            <circle cx="1705" cy="986" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="1705" y="1011" fill="#fdfcf8">4</text>
-            <!-- 5. Data Blocks quick-select — left sidebar list -->
-            <circle cx="169" cy="910" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="169" y="935" fill="#fdfcf8">5</text>
-            <!-- 6. Tasks — left sidebar, running analyses -->
-            <circle cx="168" cy="1463" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="168" y="1488" fill="#fdfcf8">6</text>
-            <!-- 7. Help + Feedback — bottom of the sidebar -->
-            <circle cx="170" cy="1660" r="56" fill="#c8423e" stroke="#fdfcf8" stroke-width="6"/>
-            <text x="170" y="1685" fill="#fdfcf8">7</text>
-          </g>
-        </svg>
       </div>
     </div>
     <ol class="ui-overview-legend">
