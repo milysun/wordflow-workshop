@@ -137,6 +137,13 @@
     border-left-color: var(--paper);
     color: var(--paper);
   }
+  /* Numbered lists on centered spotlight slides: keep the block centered but
+     the text left-aligned, so list numbers hang consistently. */
+  section.slide.spotlight ol {
+    text-align: left;
+    margin: 0.8em auto 0;
+    max-width: 30em;
+  }
   section.slide.section-divider {
     background: var(--ink);
     color: var(--paper);
