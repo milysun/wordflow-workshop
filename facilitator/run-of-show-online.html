@@ -208,27 +208,27 @@
   <div class="what"><div class="head">STEP 1 · Identify the theme, then derive the block (everyone lands on 226 rows)</div>
   <div class="sub">Frequency word cloud → <b>jobs</b> dominates the campaign language: that's our theme. Then Preprocessing → Filter #1: text contains RegEx <b>^[Rr][Tt]</b> → <b>negate</b> → non-retweets block. Filter #2 on that block: text contains <b>job</b> (not whole-word, so jobs / job-seeker count) → <b>226 rows</b>. Say the number out loud; ✅-check on 226.</div></div>
 </div>
-<div class="item" data-start="14:28"><input type="checkbox"><span class="t">14:28</span><span class="d">7m</span>
-  <div class="what"><div class="head">STEP 2 (say it, skip it) + STEP 3 setup · v1 codebook + manual codes</div>
-  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add the 226-row block · Text Column = text · Start new annotation → <b>theme.manual</b> · Codebook → Create New → Edit → paste the <b>v1 codebook</b> from the copy bank below (class names lowercase: <b>promise / cuts / other</b>, typo-proof for the ground-truth comparison) · Manual mode → everyone codes ~8 rows into theme.manual. ✅-check.</div></div>
+<div class="item" data-start="14:28"><input type="checkbox"><span class="t">14:28</span><span class="d">4m</span>
+  <div class="what"><div class="head"><span class="flag chat">CHAT</span>Join the ground truth (human-verified labels)</div>
+  <div class="sub">Chat the <b>tweets_job_groundtruth.csv</b> link (part of {DATA}) · add as block · Preprocessing → Join: 226-block FIRST (left), on <b>tweet_id</b> → joined block carries <b>theme.verified</b>. Say what it is: coded by a frontier model with this codebook, then verified tweet-by-tweet by a human coder. ✅-check.</div></div>
 </div>
-<div class="item" data-start="14:35"><input type="checkbox"><span class="t">14:35</span><span class="d">2m</span>
-  <div class="what"><div class="head">Second column for the AI</div>
-  <div class="sub">Annotation Column → Start new annotation → <b>theme.ai</b> (your codes stay safe in theme.manual; the AI gets its own column and must earn agreement with yours).</div></div>
+<div class="item" data-start="14:32"><input type="checkbox"><span class="t">14:32</span><span class="d">7m</span>
+  <div class="what"><div class="head">STEP 2 (say it, skip it) + STEP 3 setup · v1 codebook + feel-the-task</div>
+  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add the JOINED block · Text Column = text · Start new annotation → <b>theme.manual</b> · Codebook → Create New → Edit → paste the <b>v1 codebook</b> from the copy bank below (lowercase: <b>promise / cuts / other</b>) · Manual mode → everyone codes ~5 rows to feel the task · then Annotation Column → Start new annotation → <b>theme.ai</b>. ✅-check.</div></div>
 </div>
-<div class="item" data-start="14:37"><input type="checkbox"><span class="t">14:37</span><span class="d">9m</span>
+<div class="item" data-start="14:39"><input type="checkbox"><span class="t">14:39</span><span class="d">8m</span>
   <div class="what"><div class="head"><span class="flag key">KEY</span><span class="flag chat">CHAT</span>Connect the model (the danger zone: go slow)</div>
   <div class="sub">Toggle AI → Advanced settings → + Add Provider → OpenRouter → paste key → Tab → Add Provider → Model: paste the id. Helpers sweep; breakout for stragglers. Say: key is shared, temporary, dies at 3:30.</div>
   <button class="copy" data-tpl="Model access for this session (shared, deleted at 3:30 pm): provider OpenRouter, API key: {KEY} — model: {MODEL}. In Wordflow: Annotation tool → toggle AI → Advanced settings → + Add Provider → OpenRouter → paste the key → Add Provider, then paste the model id into the Model box.">Copy: key + model msg</button>
   </div>
 </div>
-<div class="item" data-start="14:46"><input type="checkbox"><span class="t">14:46</span><span class="d">16m</span>
-  <div class="what"><div class="head">STEP 3 → STEP 4 · v1 shows AI can do the job; comparison shows how to make it better</div>
-  <div class="sub">Prompt: paste <b>v1 prompt</b> (copy bank) · Preview (page of 10) · Compare To → tick <b>theme.manual</b> → κ badge → hover = confusion matrix · Filter any difference → read 2-3 disagreements aloud (mixed "jobs not cuts" tweets and vote-lists will be the ones) · THE REVISION: swap in the <b>v2 codebook + v2 prompt</b> (copy bank) → Update Preview → κ jumps. Then 4 quiet minutes for the room; collect κ in chat.</div></div>
+<div class="item" data-start="14:47"><input type="checkbox"><span class="t">14:47</span><span class="d">15m</span>
+  <div class="what"><div class="head">STEP 3 → STEP 4 · v1 shows AI can do the job; the ground truth shows how to make it better</div>
+  <div class="sub">Prompt: paste <b>v1 prompt</b> (copy bank) · Preview (page of 10) · Compare To → tick <b>theme.verified</b> (+ optionally theme.manual: "how do YOU agree with the ground truth?") → κ badge → hover = confusion matrix · Filter any difference → read 2-3 disagreements aloud (mixed "jobs not cuts" tweets and vote-lists will be the ones) · THE REVISION: swap in the <b>v2 codebook + v2 prompt</b> (copy bank) → Update Preview → κ jumps. Then 4 quiet minutes for the room; collect κ in chat.</div></div>
 </div>
 <div class="item" data-start="15:02"><input type="checkbox"><span class="t">15:02</span><span class="d">8m</span>
   <div class="what"><div class="head">STEP 5 · Run All: trustworthy coding at scale</div>
-  <div class="sub">Run All on all 226 (mention Reprocess vs Fill missing) · Annotation Review full-table · Correction column (accepts theme.ai.correction) · correct one row · "Use as example" feeds it back. Land the line: "AI didn't just do the job, it did the whole corpus, and you have the agreement numbers to trust it." Expected shape: roughly 2/3 promise, 1/6 cuts, 1/6 other.</div></div>
+  <div class="sub">Run All on all 226 (mention Reprocess vs Fill missing) · Annotation Review: <b>Compare To theme.verified = full-table κ, the headline number</b> · Correction column (accepts theme.ai.correction) · correct one row · "Use as example" feeds it back. Land the line: "AI didn't just do the job, it did the whole corpus, and you have the agreement numbers to trust it." Expected shape: roughly 2/3 promise, 1/6 cuts, 1/6 other.</div></div>
 </div>
 <div class="item" data-start="15:10"><input type="checkbox"><span class="t">15:10</span><span class="d">12m</span>
   <div class="what"><div class="head">Showcase: same tool, cleverer questions (demo only)</div>

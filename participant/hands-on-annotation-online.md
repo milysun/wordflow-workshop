@@ -36,11 +36,19 @@ Two filter steps in **Preprocessing → Filter**, each creating a new block:
 
 Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint a, §10).
 
-## 4 · Build the codebook (v1: plain and simple)
+## 4 · Join the ground-truth labels
+
+The workshop provides **human-verified ground-truth labels** for all 226 tweets: coded by a frontier AI model with the same codebook you're about to use, then reviewed tweet-by-tweet by a human coder. Joining them in now means you can measure any coder (human or AI) against them later.
+
+1. Download `tweets_job_groundtruth.csv` from the Zoom chat and add it as a data block (drag & drop, or **Upload files**). It has two columns: `tweet_id` and `theme.verified`.
+2. **Preprocessing → Join**: select your 226-row block FIRST (first pick = left table), then the ground-truth block. Join on **`tweet_id`** (left join).
+3. The joined block (still 226 rows) now carries `theme.verified` alongside the text. Work in this block from here on.
+
+## 5 · Build the codebook (v1: plain and simple)
 
 The codebook is itself a small data block: one row per code, with a description. The descriptions are what the model actually reads.
 
-1. Open the **Annotation** tool (left sidebar, under **Views**). Under **Selected Data Blocks**, add the 226-row block. Set **Text Column** to **`text`**.
+1. Open the **Annotation** tool (left sidebar, under **Views**). Under **Selected Data Blocks**, add the joined block. Set **Text Column** to **`text`**.
 2. In the **Annotation Column** dropdown, choose **Start new annotation** → name it **`theme.manual`** → **Create**.
 3. In the **Codebook** card, click **Create New**, then **Edit** next to **Codes**. **Add code** three times and type exactly (lowercase, to keep everyone's columns comparable):
 
@@ -52,15 +60,17 @@ The codebook is itself a small data block: one row per code, with a description.
 
 4. **Save.**
 
-## 5 · Be the coder first (Manual mode)
+## 6 · Feel the task (Manual mode, 2 minutes)
+
+Before the AI touches anything, be the coder for a moment: it changes how you read everything after.
 
 1. Leave the **Manual / AI** toggle on **Manual** and click **Start**.
-2. Each row has a **Select class** dropdown: code **about 8 tweets** into `theme.manual`. These become the standard the AI has to match.
-3. Click **Close** when done.
+2. Code **about 5 tweets** into `theme.manual` via each row's **Select class** dropdown. Notice the ones that make you hesitate; the AI will hesitate there too.
+3. Click **Close**. (In a real team, each coder gets their own column like this, picked under **Annotation Column**.)
 
-## 6 · Connect the AI
+## 7 · Connect the AI
 
-1. Create the AI's own column: **Annotation Column → Start new annotation** → **`theme.ai`** → **Create**. (Your codes stay safe in `theme.manual`.)
+1. Create the AI's own column: **Annotation Column → Start new annotation** → **`theme.ai`** → **Create**.
 2. Flip the toggle to **AI**, expand **Advanced settings** (the chevron).
 3. **+ Add Provider** → **OpenRouter** → paste the **shared key from the Zoom chat** → press Tab to accept the name → **Add Provider**.
 4. **Model**: paste the model id from the chat message.
@@ -68,12 +78,13 @@ The codebook is itself a small data block: one row per code, with a description.
 
    > You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs.
 
-## 7 · Preview, measure, revise (this is the skill)
+## 8 · Preview, measure against the ground truth, revise
 
 1. Click **Preview**. The model codes the visible page (10 rows; raise **Rows per page** for a bigger sample). Predictions are display-only; nothing is written to your data yet.
-2. Click **Compare To** and tick **`theme.manual`**. A **Cohen's Kappa** badge (e.g. `κ 0.74`) appears; **hover it** for the **confusion matrix** against your own codes.
-3. Click **Filter any difference** (the filter icon by the column header) and read the disagreements. Mixed tweets ("jobs, not cuts!") and campaign vote-lists ("For Health. For Jobs.") are the usual suspects. Is the model wrong, or was the codebook silent about these cases?
-4. **Revise**: update the codebook descriptions to v2 (Edit the codebook, extend each description), and the prompt:
+2. Click **Compare To** and tick **`theme.verified`**: the human-verified ground truth. A **Cohen's Kappa** badge (e.g. `κ 0.74`) appears; **hover it** for the **confusion matrix**.
+3. Optionally also tick **`theme.manual`**: how does the AI agree with *you*, and how do you agree with the ground truth? Disagreement is data, not failure.
+4. Click **Filter any difference** (the filter icon by the column header) and read the disagreements. Mixed tweets ("jobs, not cuts!") and campaign vote-lists ("For Health. For Jobs.") are the usual suspects. Is the model wrong, or was the codebook silent about these cases?
+5. **Revise**: update the codebook descriptions to v2 (Edit the codebook, extend each description), and the prompt:
 
    | Code | v2 description (v1 plus the new rules) |
    |---|---|
@@ -83,21 +94,14 @@ The codebook is itself a small data block: one row per code, with a description.
 
    > Prompt v2: You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use other.
 
-5. **Update Preview** → watch κ move. That loop (codebook → pilot → agreement → revise) is the method; everything else is buttons.
+6. **Update Preview** → watch κ move. That loop (codebook → pilot → agreement → revise) is the method; everything else is buttons.
 
-## 8 · Run All: coding at scale
+## 9 · Run All: coding at scale
 
 1. Click **Run All**: all 226 tweets, about a minute. (In **Advanced settings → Run All processing**: **Reprocess all rows** replaces the column; **Fill missing only** keeps existing labels.)
-2. The **Annotation Review** table opens: same **Compare To**, confusion matrix and disagreement filters, now over everything. Expect roughly two-thirds `promise`, one-sixth `cuts`, one-sixth `other`.
+2. The **Annotation Review** table opens: **Compare To `theme.verified`** now gives a full-table κ over all 226 rows: your headline number. Expect roughly two-thirds `promise`, one-sixth `cuts`, one-sixth `other`.
 3. Fix any wrong rows via a **Correction** column (it suggests `theme.ai.correction`), and note **Use as example**: your corrections can feed back into the AI as worked examples.
 4. Your coded column is ordinary data now: filter on it, chart `theme.ai` by party in **Trends**, or export CSV from the **Export** view.
-
-## 9 · Optional: compare against a full reference coding
-
-The workshop provides a reference coding of all 226 tweets (`tweets_job_groundtruth.csv`, in the chat and the follow-up email): tweet ids plus a `theme.fable` column produced by a frontier model with the same v1 codebook.
-
-1. Add it as a data block, then **Preprocessing → Join**: your 226-row block first (left), join on `tweet_id`.
-2. In the Annotation Review, **Compare To → `theme.fable`**: now your κ is computed over all 226 rows, not just the ones you hand-coded.
 
 ## 10 · Checkpoints: if you fall behind
 
@@ -105,9 +109,9 @@ Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader
 
 | Checkpoint | Restores the state after… |
 |---|---|
-| **a** | §3: the 226-row block, plus the reference coding block ready to join |
-| **b** | §4–6: v1 codebook, `theme.manual` + `theme.ai` columns ready |
-| **c** | §7: the v2 codebook and prompt in place, ready to Run All |
+| **a** | §4: the 226-row block with `theme.verified` joined in |
+| **b** | §5–7: v1 codebook, `theme.manual` + `theme.ai` columns ready |
+| **c** | §8: the v2 codebook and prompt in place, ready to Run All |
 
 Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them.
 

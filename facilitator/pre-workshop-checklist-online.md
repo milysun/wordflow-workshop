@@ -17,7 +17,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] Sample import → tweets block; Frequency word cloud renders; right-click word → stop words.
 - [ ] S2 derivation: Filter regex `^[Rr][Tt]` + negate → Filter contains `job` → **exactly 226 rows**.
 - [ ] Annotation: `theme.manual` column + codebook (lowercase codes) + manual codes; `theme.ai`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
-- [ ] Ground-truth join: `tweets_job_groundtruth.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.fable` gives full-table κ.
+- [ ] Ground-truth join: `tweets_job_groundtruth.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.verified` gives full-table κ.
 - [ ] S1 histogram demo: Expression group-by JSONs from the copy bank → `tweet_count` block → **Trends accepts numeric x-axis + bucketing, line→bar**.
 - [ ] Topic Modelling: run on two blocks; note the v0.7.2+ cluster-control wording for the runbook.
 - [ ] Checkpoint round-trip on a second machine: Upload workspace → Load → selectors re-pick.
@@ -38,11 +38,11 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 
 Build in a clean workspace on v0.7.2, exporting after each stage (**Export view → Export Workspace → "Export workspace archive"**), and rename the files. Class names everywhere are lowercase: `promise` / `cuts` / `other`.
 
-- [ ] `Checkpoint_a_Data.zip`: sample tweets imported → Filter #1 (`^[Rr][Tt]` regex, negated) → Filter #2 (contains `job`) → the **226-row block**, PLUS `tweets_job_groundtruth.csv` (in `artifacts/online-2026-08-28/`) loaded as a block, ready to join on `tweet_id`.
+- [ ] `Checkpoint_a_Data.zip`: sample tweets imported → Filter #1 (`^[Rr][Tt]` regex, negated) → Filter #2 (contains `job`) → the **226-row block**, PLUS `tweets_job_groundtruth.csv` (in `artifacts/online-2026-08-28/`; column `theme.verified`) joined on `tweet_id`. **Rebuild the CSV from the RA-verified labels first** (merge `tweets_job_fable_review.csv` corrections; ask Claude).
 - [ ] `Checkpoint_b_Codebook.zip`: plus the v1 codebook (three lowercase codes with v1 descriptions), `theme.manual` column with ~8 codes filled, and an empty `theme.ai` column.
 - [ ] `Checkpoint_c_V2.zip`: plus the v2 codebook descriptions and v2 prompt saved in the Annotation tab, ready to Run All.
 - [ ] **Round-trip test each file on a second machine**: Upload workspace → Load → open Annotation → data, tabs, codebook restore; block/column selectors need re-picking (expected; the sheet says so).
-- [ ] **Join test**: join the ground-truth block onto the 226-row block on `tweet_id` (both sides must parse the id with the same dtype), then Compare To `theme.fable` shows a full-table κ.
+- [ ] **Join test**: join the ground-truth block onto the 226-row block on `tweet_id` (both sides must parse the id with the same dtype), then Compare To `theme.verified` shows a full-table κ.
 - [ ] Upload the three ZIPs + `tweets_job_groundtruth.csv` to the materials location; paste the links into the run-of-show panel's Checkpoint field.
 
 ## 4 · AI provider (T-3 days)
