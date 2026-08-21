@@ -23,7 +23,7 @@ Your condensed theory segment — the winter school had a whole talk here; you h
 - **Slide 3 (~5 min):** the promise (thousands of texts against *your* categories, minutes, no training data) vs the pitfalls (confidently wrong; inconsistent on edge cases; biased where language is biased; drifts on vague prompts; never unsure unless you allow it). Land: *"today is not 'trust the AI' — it's how to check it."*
 - **Slide 4 (~5 min):** the method — treat it like a new coder: codebook → pilot → agreement (κ) → revise → document. Say slowly: *"a coder earns trust through agreement — human or machine."* This loop is the agenda; point at it.
 
-Show slide 5 (roadmap) for 30 seconds, slide 6 (checkpoints) for 60 — *"if you fall behind at any point: chat link, Upload workspace, Load, re-select the block. Under a minute, no shame."* Then live Wordflow for the rest.
+Show slide 5 (roadmap) for 30 seconds, slide 6 (checkpoints) for 60 — *"if you fall behind at any point: chat link, Upload workspace, Load, re-select the block. Under a minute, and you're back with us."* Then live Wordflow for the rest.
 
 ## 0:15 – 0:25 · Workspace + data (live, everyone follows)
 
