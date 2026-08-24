@@ -90,4 +90,4 @@ F-list extras (Stack, Trends histogram via Expression, non-English tokenisation,
 | A build step misbehaves | Load the next section's backup archive and keep the narrative moving; the recording matters more than liveness. |
 | Live TM run stalls | Backup workspace's finished tab; narrate there. |
 | Background jobs unfinished when reached | Show Tasks honestly, pull the result from the backup workspace. |
-| Screen share lags / font small | Share the app window only; bump app zoom (Cmd/Ctrl +); check the Zoom preview. |
+| Screen share lags / font small | Bump app zoom (Cmd/Ctrl +); check the Zoom preview. Last resort: drop to window share (keeps the enlarged pointer, loses click ripples). |

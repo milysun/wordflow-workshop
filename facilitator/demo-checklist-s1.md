@@ -32,8 +32,9 @@
 - [ ] **Settings → General → Enable multi-tab = ON**; contextual hints **ON** (Chapter 1 turns them off as a demo).
 - [ ] A small demo **CSV** in an easy folder for the drag-and-drop step (file choice TBC).
 - [ ] Section backup workspace archives reachable without hunting (rebuild list in the pre-workshop checklist).
-- [ ] Deck on second monitor, this panel on the private screen, DND on, notifications off.
-- [ ] Zoom: share the app window, check readability in the Zoom preview.
+- [ ] **Display layout**: Wordflow full screen on the MBP built-in display; deck also presented from the MBP display; this panel + everything else on the external screen. Zoom shares the **entire MBP screen** (needed so cursor/click effects reach the feed and the recording). DND on, notifications off (doubly important with whole-screen share).
+- [ ] **Cursor kit active**: macOS pointer enlarged + coloured fill (Accessibility → Display → Pointer) and the click-effect app running (Mouzz or equivalent); effects verified in the Wednesday share test.
+- [ ] Zoom: check readability in the Zoom preview at 720p.
 
 **▶ START THE RECORDING at the title slide.** Slides until ~11:12, then live app.
 
