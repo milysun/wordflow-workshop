@@ -27,16 +27,21 @@ Plus the afternoon's extension: *an AI model is just another coder — it earns 
 
 *Times chosen for a nation-wide audience: WA participants (2 h behind AEST) get Session 1 in early working hours rather than before 9 am, and Session 2 over their midday.*
 
-### Session 1 outline (demo-only, recorded)
+### Session 1 outline (demo-only, recorded) — revised 2026-08-24
 
-| Min | Block |
+A **full-capability tour in eight per-tool chapters**, built live in one workspace from empty to export, cut for reuse as tutorial chapters. The QLD tweets + jobs/cuts question is a *thread* through the chapters (and the afternoon's Annotation theme), not the spine. Click-level steps: `facilitator/demo-checklist-s1.md`.
+
+| Min | Chapter |
 |---|---|
-| 0:00–0:10 | Welcome, Acknowledgement of Country, LDaCA + team, three ways to run Wordflow |
-| 0:10–0:22 | Interface tour + the data-block concept (v0.7 UI, incl. the multi-tab system) |
-| 0:22–0:42 | Tool tour — Frequency, Concordance, Trends, Topic Modelling, Quotation (~4 min each, from a pre-built workspace with one tab per tool) |
-| 0:42–1:15 | The research story, condensed: QLD election tweets — join → filter → comparative frequency ↔ concordance → regex → Trends → topic modelling → stack (demo at full speed, narrated) |
-| 1:15–1:25 | Repurpose-the-lens demo (Trends as histogram) |
-| 1:25–1:30 | Wrap: what the afternoon holds, setup instructions for the hands-on, lunch |
+| 0:00–0:12 | Slides: welcome, Acknowledgement of Country, team/LDaCA, three ways to run it, demo roadmap + thread question |
+| 0:12–0:21 | Ch 1 Getting around: hints, workspace, sample import, drag-and-drop, graph/data views |
+| 0:21–0:34 | Ch 2 Preparing data: dtypes, Create, Join, Filter (+ chat pause) |
+| 0:34–0:44 | Ch 3 Frequency: Honi Soit single + tweets F/M comparative → click into Concordance |
+| 0:44–0:56 | Ch 4 Concordance: tweets jobs/cuts + Honi Soit dispersion (+ chat pause) |
+| 0:56–1:04 | Ch 5 Trends (background jobs kicked off first: Honi Soit topic model + Quotation Run All) |
+| 1:04–1:16 | Ch 6 Topic Modelling: live F/M run, bubbles, job topics → Trends |
+| 1:16–1:22 | Ch 7 Quotation (from the background run) · Ch 8 Export & workspace archives |
+| 1:22–1:30 | Recap → bridge to the afternoon, takeaways, lunch/setup slide |
 
 ### Session 2 outline (hands-on, not recorded)
 

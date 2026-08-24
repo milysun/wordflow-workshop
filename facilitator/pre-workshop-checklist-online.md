@@ -6,7 +6,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 
 **The week's plan (workshop Friday 28 Aug):**
 
-- **Tue 25 (Alex back)**: helper briefing meeting; Alex triages the workshop-affecting bug issues; target **v0.7.3 bug-fix release Tuesday night**. Decide on #68 (word-count ops): if it ships, the S1 histogram demo can revert to the word-count variant; otherwise the tweets-per-candidate version runs (both are staged).
+- **Tue 25 (Alex back)**: helper briefing meeting; Alex triages the workshop-affecting bug issues; target **v0.7.3 bug-fix release Tuesday night**. Decide on #68 (word-count ops); note the histogram demo is now optional F.2 in the S1 plan (2026-08-24), so this only matters if time miraculously allows it.
 - **Wed 26**: install v0.7.3 fresh and run the **Wednesday test script** (below). Rebuild the demo workspaces + checkpoint archives on the final version. **Send the pre-workshop email Wednesday night** only after the test passes; if v0.7.3 slips, ship the email anyway (it references "the v0.7 desktop app", not a patch number) and fall back to v0.7.2 with known-bug workarounds.
 - **Thu 27**: full rehearsal against the run-of-show panel (both sessions, timed); upload final checkpoint files; T-1 reminder email.
 - **Fri 28**: morning-of checks (§7).
@@ -18,21 +18,30 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] S2 derivation: Filter regex `^[Rr][Tt]` + negate → Filter contains `job` → **exactly 226 rows**.
 - [ ] Annotation: `theme.manual` column + codebook (lowercase codes) + manual codes; `theme.ai`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
 - [ ] Ground-truth join: `tweets_job_groundtruth.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.verified` gives full-table κ.
-- [ ] S1 histogram demo: Expression group-by JSONs from the copy bank → `tweet_count` block → **Trends accepts numeric x-axis + bucketing, line→bar**.
-- [ ] Topic Modelling: run on two blocks; note the v0.7.2+ cluster-control wording for the runbook.
 - [ ] Checkpoint round-trip on a second machine: Upload workspace → Load → selectors re-pick.
 - [ ] Excel/zip import: retest; if fixed, delete the caveat from the hands-on sheet §1 and pre-email.
 
-## 2 · Session 1 demo workspaces (T-5 days)
+**Wednesday TBC hunt for the S1 demo (pins every TBC in `demo-checklist-s1.md` / `runbook-online-s1.md`; write the answers into the checklist):**
 
-- [ ] **Tour workspace** — one tab per tool, analyses finished, tabs named for the recording:
-  - `Frequency` tab: news corpus comparative (Guardian+IA vs Sky+PerthNow), 40 words, stopwords on.
-  - `Concordance` tab: Honi Soit, 3-pattern regex, coloured.
-  - `Trends` tab: QLD tweets grouped by term/gender/party.
-  - `Topic Modelling` tab: news corpus two-sided run (blended vs solid bubbles visible).
-  - `Quotation` tab: Honi Soit, sorted by speaker.
-- [ ] **Story workspace** — sample data imported, *nothing built* (the research story is built live).
-- [ ] **Story backup archives** — build the full story once, exporting a workspace archive at each phase boundary (A–E). These are your Plan B if a live step misbehaves mid-recording. Keep them local; they're not published.
+- [ ] **Topic Modelling on tweets_F + tweets_M with min topic size 7, topics 40**: find and RECORD the seed that reproduces the **5 "job" topics** via the word text-filter. Time the run.
+- [ ] Topic Modelling controls: exact v0.7.2/3 labels for sampling, segmentation methods, min topic size, topic-count **re-aggregation**; does bubble **lasso** selection exist (v0.7.1 had multi-click only)? If no lasso, strike 6.5's lasso line.
+- [ ] **Honi Soit Topic Modelling**: pick parameters, time the run (feeds the Ch5 background-kickoff timing).
+- [ ] **Quotation Run All on Honi Soit**: time it. If > ~20 min, the kickoff moves from Ch5 (11:56) to Ch3 (11:34). Record the output column names after Add to Workspace.
+- [ ] Concordance: exact name of the extraction column on an Add-to-Workspace block; does the review table have a filter as well as sort?
+- [ ] String dtype label: still "Utf8View" in v0.7.3, or renamed? Prepare the one-sentence explainer either way.
+- [ ] "Ways to add a block to a tool": confirm the full list (quick-select · double-click graph node · in-tool selector?) for Ch3.1.
+- [ ] Workspace creation: exact button wording for Ch1.3; graph-view node markers ("red dots") wording for Ch2.6.
+- [ ] Frequency comparative: exact mode names (side-by-side vs juxtaposed/overuse) for Ch3.7.
+- [ ] S1 histogram demo (optional F.2 only): Expression group-by JSONs from the copy bank → `tweet_count` block → Trends numeric x-axis + bucketing, line→bar.
+
+## 2 · Session 1 demo prep (T-5 days) — full-capability tour, built live from empty
+
+*(Replaces the old Tour + Story workspace pair: the 2026-08-24 plan builds ONE workspace on camera, from creating it in Ch1 through Export in Ch8. See `demo-checklist-s1.md`.)*
+
+- [ ] **Fresh-state check**: app opens with no workspace; contextual hints ON; multi-tab ON.
+- [ ] **Demo CSV** chosen and staged in an easy folder for the Ch1 drag-and-drop (any small, uncontroversial CSV; not the S2 ground-truth file).
+- [ ] **Section backup archives** — build the full demo once end-to-end (this is also the rehearsal), exporting a workspace archive at each chapter boundary (Ch2, Ch4, Ch5, Ch6, Ch8 at minimum). Plan B if a live step misbehaves mid-recording; the Ch6/Ch8 archives also carry the finished Honi Soit Topic Modelling + Quotation results in their tabs (fallback if the background jobs aren't done when reached). Keep them local; not published.
+- [ ] Write the pinned TBC values (seed, timings, control labels — from the Wednesday hunt above) into `demo-checklist-s1.md` before the Thursday rehearsal.
 
 ## 3 · Session 2 checkpoint archives (T-5 days)
 

@@ -1,82 +1,93 @@
 # Runbook — Online workshop Session 1 (90 min, recorded)
 
-> **⚠ Superseded in part (2026-08-20):** the deck is now 15 slides (tool and phase slides cut; the tour and research story run live) and AI-model access is provided on the day (no participant API keys). Slide numbers below are stale until the review pass. The live source of truth for timings is `facilitator/run-of-show-online.html`.
+> **Rewritten 2026-08-24** to Chao's full-capability demo plan: eight per-tool chapters instead of
+> the June-derived tour + research story. The QLD tweets + jobs/cuts question is a **thread**
+> through the chapters (and the afternoon's Annotation theme), not the spine. Click-level detail
+> lives in `demo-checklist-s1.md`; wall-clock rows in `run-of-show-online.html`. Some parameters
+> are **TBC** until the Wednesday test.
 
-**Wordflow: concepts, interface, and a real multi-tool workflow · Friday 28 August 2026 · 11:00 am – 12:30 pm AEST (9:00 – 10:30 am AWST) · Zoom**
+**Wordflow: concepts, interface, and a full-capability tour · Friday 28 August 2026 · 11:00 am – 12:30 pm AEST (9:00 – 10:30 am AWST) · Zoom**
 
-Deck: `slides/online-s1-intro.html` (27 slides). This session is **all demo, no participant hands-on** — which means you control the clock completely. It is **recorded**: narrate for the future viewer as much as for the live room (say what you're clicking, read short bits of screen text aloud, don't rely on cursor-pointing alone).
+This session is **all demo, no participant hands-on**, so you control the clock completely. It is **recorded** and the recording is designed for reuse as per-tool tutorial chapters: narrate for the future viewer, say what you're clicking, read short bits of screen text aloud, **say each chapter name as you enter it and leave a beat of silence at every chapter boundary** (those are the edit points). The demo window is a hard **70–75 minutes**.
 
-**Setup before start** (full list in `pre-workshop-checklist-online.md`): Wordflow v0.7.x desktop with **multi-tab ON** (Settings → General → Enable multi-tab); the pre-built **Tour** workspace loaded (one tab per tool, analyses finished); the **Story** workspace data imported but the workflow NOT yet built (you build it live); Zoom screen share tested at a readable zoom level; deck on second monitor.
+**Setup before start**: fresh app state (no workspace — you create one on camera), multi-tab ON, contextual hints ON (you turn them off as a demo), a demo CSV ready for drag-and-drop, backup archives reachable. Full list in `pre-workshop-checklist-online.md`.
 
-Timestamps below are minutes from start.
+---
+
+## 11:00 – 11:12 · Slides (title → roadmap)
+
+**START THE RECORDING before you speak.** Title + Acknowledgement of Country (~3 min). How today works: say the recording sentence verbatim and early (*"this session is recorded and shared afterwards; the afternoon hands-on is not"*), the watching contract (*"nothing to install for this half; watch, and put questions in the chat — I'll take them at two marked pauses"*), and the pace warning (*"this morning is deliberately dense; the recording has every click"*). Who built this + why (north-star sentence slowly). Three ways to run it. Then the roadmap slide: eight chapters, one workspace, end to end; the thread question (*did female and male candidates tweet about different topical issues in the 2020 QLD election?*) returns all morning and again at 2 pm.
+
+## 11:12 · Ch 1 — Getting around (9 min)
+
+Live app, empty state. A contextual hint is on screen: acknowledge it, then Settings → Guidance → hints off, saying where they come back. Views sidebar top-to-bottom (pause on Annotation: *"this afternoon's tool"*). Create a workspace. **Import sample data**: QLD Election Tweets + Honi Soit, Import selected. Drag-and-drop the demo CSV (*"any CSV or plain text you have — drop it in"*). Add to Workspace + preview it. Graph view and Data view: rename a column, change a column type, click one row to read a full record (*"management lives here, not in menus you have to hunt for"*). Help, ? marks, Feedback (*"under active development; the Feedback button is how you talk to us"*).
+
+## 11:21 · Ch 2 — Preparing data (12 min + 1 min pause)
+
+Dtype passes: `created_at` → datetime, `gender`/`party` → category; one prepared sentence for the string dtype label (TBC pending v0.7.3). Preprocessing sub-tabs in one breath. **Create** `full_name` (first_name + " " + last_name) with **Update** mode, and name the Update/Create-new-block choice. **Join**: tweets FIRST, on `username`, left join → `tweets_full`; landing line: *"data prep is part of the analysis — the join is a research decision."* **Filter**: gender F, gender M, and the negated `^[Rr][Tt]` regex → originals (*"remember this negate trick; it returns this afternoon"*). Graph view glance: the tree is growing. Sample and Find, one breath each.
+
+**★ Chat pause #1 (11:33, 1 min).** Chapter beat.
+
+## 11:34 · Ch 3 — Frequency (10 min)
+
+**Honi Soit single corpus (6):** add the block (show the ways to add + the colour picker), pick the text column, tokeniser line (multilingual). Word cloud: 50 words, English stopwords, **right-click a word to stopword it** (the crowd-pleaser), manual add/remove in the list. List view: max words, wildcard filter, count + rank. Recolour the block.
+
+**Comparative (4):** clear results, add `tweets_F` + `tweets_M`. Side-by-side then juxtaposed/overuse view; size/colour/algorithm in two sentences. Stopword the campaign noise live (names, `lnpqld`). Read it: mixed words (`cases`, `qldjobs`) vs polarised (`cuts`, `teachers` / `committed`, `leader`). Then the thread: *"what's actually behind cases?"* — **click the word** and let Wordflow carry you into Concordance. Chapter beat happens mid-flight; still say it.
+
+## 11:44 · Ch 4 — Concordance (11 min + 1 min pause)
+
+**Tweets (6):** you arrived with the query prefilled — that's the point, say it. Context windows, Text/Tokens modes, RegEx/punctuation/case options, **Preview vs Run All** (*"you'll meet this pair everywhere"*), L1/R1 table anatomy, Show metadata → full_name. Then the thread move: query → RegEx `job(s)?|cut(s)?`, Run All, and ⭐ **Add to Workspace** → `tweets_jobcut` (*"this button is the whole design: any result can become data"*). Show the new node's extraction column; for long documents this is a keyword-centred corpus builder. Sort the review table.
+
+**Honi Soit dispersion (5):** clear, switch corpus, RegEx `student(s)?|staff|union`, Run All. Dispersion view: where in each document the hits fall, % position, colours, uncased, legend filtering. Select on the plot (click, Shift-click), bin size, chart type, Add to Workspace from a selection; contrast the aggregated-contexts block with the table-view block from before.
+
+**★ Chat pause #2 (11:55, 1 min).** Chapter beat.
+
+## 11:56 · Ch 5 — Trends (8 min) — and the background kickoff
+
+**First 40 seconds, without ceremony:** new tab → Topic Modelling on Honi Soit → Run; new tab → Quotation on Honi Soit → Run All; point at **Tasks**: *"long jobs run in the background — we'll collect both later."* This is a feature demo disguised as logistics.
+
+Then Trends proper: `tweets_full`, x = `created_at`, daily; group by gender; graph type + frequency/count settings; the meaning line (*"the trend is whatever your input block makes it"*). Switch the block to `tweets_jobcut`: group by matched text (jobs vs cuts over time), add gender to the legend — the male-candidates-on-cuts gap lands here. Legend filtering, click selection, top bar. Visual selection → Add to Workspace. Chapter beat.
+
+## 12:04 · Ch 6 — Topic Modelling (12 min)
+
+BERTopic in three sentences (embeddings, not bag-of-words; no tokeniser to pick). Configure **before** running: sampling, segmentation (*"tweets are too short to segment — this matters for articles"*), **min topic size 7, topics 40, seed TBC**. Run on `tweets_F` + `tweets_M`; the ~90 s wait is your chat buffer, with three jobs visible in Tasks. Bubble chart: size, colour mixed by corpus percentage, tooltips, re-aggregation of topic count, top-topics-per-doc, word number/stopwords, word filter (not wildcard). Selection: clicks (lasso TBC), then **text filter "job" → 5 topics → select all → Add to Workspace** as `topic_job` (per-document rows + topic distribution column; per-topic detach is on the roadmap, say so). Open the finished background Honi Soit run: topic distribution on long documents *(first cut if late)*. Then the thread pays off: Trends on `topic_job`, job topics over time × gender. Chapter beat.
+
+## 12:16 · Ch 7 — Quotation (4 min)
+
+Open the background Quotation tab — finished while we worked. Review, click one row for the quote in context, Add to Workspace (quote becomes a column), one research scenario, and the honest line: English-only. Chapter beat.
+
+## 12:20 · Ch 8 — Export & workspaces (2 min)
+
+Per-visualisation download icons (PNG/CSV). Export workspace archive → ZIP. Upload workspace → Load: everything returns, tabs included — *"exactly how this afternoon's checkpoint files work."*
+
+## 12:22 · Recap + bridge (2 min)
+
+The arc, spoken plainly: Concordance is word-based; Topic Modelling is powerful but interpretively vague; for precision and confidence you **code** your data; manual coding doesn't scale; AI-assisted coding with a human-defined standard does. *"That's this afternoon: the Annotation tool."*
+
+## 12:24 – 12:30 · Closing slides
+
+Landing (say it twice) → three takeaways (name reveal on #3) → lunch slide: walk the install once aloud (Windows SmartScreen More info → Run anyway; macOS first-open Open), afternoon not recorded, keyboards required, model access provided. Flash data acknowledgements.
+
+**STOP THE RECORDING.** Then the **install clinic** (12:30, ~15 min, off the record) with Alex + Seb. Leave the lunch slide up; keep the Zoom meeting open.
 
 ---
 
-## 0:00 – 0:03 · Title + Acknowledgement (slides 1–2)
+## Timing discipline
 
-**START THE RECORDING before you speak.** Greet; let the join-trickle settle for ~a minute. Acknowledgement of Country — same care as in person.
+| Gate | Must be starting | If late, cut (in order) |
+|---|---|---|
+| 11:34 | Ch 3 Frequency | — (trim Ch2's Sample/Find breaths) |
+| 11:56 | Ch 5 Trends | dispersion detail 4b.5–6 |
+| 12:16 | Ch 7 Quotation | Honi Soit TM walkthrough (6.6) |
+| 12:24 | closing slides | Quotation to 2 min; Ch8 to 1 min |
 
-## 0:03 – 0:06 · How today works (slide 3)
-
-Say the recording sentence verbatim and early: *"This morning session is being recorded and shared afterwards — the afternoon hands-on will not be."* Then the contract for the morning: *"No hands-on before lunch — you don't need Wordflow installed to get everything from this session. Watch, and put questions in the chat; I'll take them at section breaks."* Preview the afternoon and its two lunch-time setup tasks (install + API key — both in the pre-workshop email). June-workshop alumni: *"you'll recognise the shape of this morning; v0.7 has a new interface, and this afternoon's tool is entirely new."*
-
-## 0:06 – 0:10 · Who built this + why (slides 4–5)
-
-Attribution chain (team → USyd → LDaCA → ARDC/NCRIS), then the why-slide. Say the north-star sentence slowly — it structures the whole day.
-
-## 0:10 – 0:13 · Three ways to run it (slide 6)
-
-Desktop (recommended, what the afternoon assumes), Binder (AAF only), Python. One breath each. *"Everything is at sih.tools/wordflow."*
-
-## 0:13 – 0:22 · Interface tour (slides 7–8, mostly live)
-
-Switch to the live app (Tour workspace). Walk the 7 things: **Views** sidebar (point at Annotation — *"this afternoon's star"*), tool interface, workspace graph, Data Viewer (*"not just a viewer — column and block management live here"*), quick-select, **Help**, **Feedback**. Then slide 8 — the data-block concept, and plant the tabs line: *"analyses run in tabs, tabs are saved with the workspace — remember that for this afternoon's checkpoints."*
-
-**Chat-question break #1** (~1 min).
-
-## 0:22 – 0:42 · Tool tour (slides 9–14, live from the Tour workspace)
-
-~4 min per tool, one pre-built tab each. Don't build anything; interpret what's on screen.
-
-1. **Frequency** — news corpus comparative. Cloud↔List toggle; **right-click a word** → it lands in the Stop words filter and vanishes. Flash a download icon (PNG/CSV).
-2. **Concordance** — Honi Soit, 3-pattern regex, coloured; show Dispersion view.
-3. **Trends** — QLD tweets; same period grouped three ways; legend-as-filter.
-4. **Topic Modelling** — news corpus two-sided; bubble colour blending vs solid; hover for top words.
-5. **Quotation** — Honi Soit; sort by speaker; say "English-only" honestly.
-
-Timing check at 0:42: if late, trim Quotation to 2 min (it has the narrowest appeal).
-
-**Chat-question break #2** (~1 min).
-
-## 0:42 – 1:15 · The research story, live build (slides 15–21)
-
-Land the question on slide 16, restate the watching contract (*"full speed, narrated, recorded — nobody needs to memorise clicks"*), then build in the **Story** workspace. Condensed from the June session-2 script; phase boundaries are your chat-question points.
-
-- **A · Load, prepare, join (~5 min).** Data Loader → add `qldelection2020_candidate_tweets` + `candidate_info_gender`. Rename the long block via its **menu icon** → `tweets`. Show one column-menu delete; align `username` dtypes. **Preprocessing → Join** — select `tweets` FIRST (first pick = left table), left join on `username` → `tweets_with_gender`. Then a 30-second treat: **Preprocessing → Create** → `full_name` = `first_name` + `" "` + `last_name` (column chips + a typed literal, joined with +). *"Your first derived column: no code, just terms."* Landing line: *"data prep is part of the analysis — the join is a research decision."*
-- **B · Filter + Frequency ↔ Concordance loop (~7 min).** Filter `gender='F'` / `'M'`. Both → Frequency comparative (40 words, stopwords on). Do the loop honestly 2–3 times: click a word → Concordance → read → back → next word. Converge on `covid`, `case(s)`, `cut(s)`. *"The regex in the next phase grew straight out of this loop."*
-- **C · Regex → Add to Workspace → Trends (~8 min).** Concordance Regex mode: `covid|case(s)?|cut(s)?`. Glance at Dispersion, then **Table view → Add to Workspace** (table = one row per hit; Dispersion aggregates per document — wrong shape for Trends). Trends on the matched block, group term × gender; legend the COVID lines off; **switch line → bar** — male candidates mention `cut(s)` more. Weekly bin sharpens it. Let the chart land before you name it; don't oversell (*"suggestive, not definitive — but real, from raw tweets in twenty minutes"*).
-- **D · Topic Modelling on two corpora (~7 min).** Select both gender blocks → Topic Modelling, target 8, seed 42, Run. While it runs (~60–90 s): point at the sidebar **Tasks** progress, and take a chat question — this is your built-in buffer. ~23 topics → re-aggregate to 16, bubbles spread. Colour story: solid = gender-dominant, blended = shared. Select 2–3 topics → **Add to Workspace** → per-gender child blocks.
-- **E · Stack → final Trends (~4 min).** **Preprocessing → Stack** the per-gender topic blocks → unified block. Trends: weekly, group by topic (or gender × topic). Landing: *"Four analysis tools, one workflow — and the workspace graph behind me is the whole method, captured as a picture."*
-
-## 1:15 – 1:25 · Repurpose the lens (slides 22–23)
-
-- **Through the tool (~4 min):** back in Trends — legend filtering, click / click + Shift-click a range → **Add to Workspace**. One breath: same move on Topic Modelling bubbles and Concordance dispersion markers.
-- **Into the tool (~6 min), the quotable one:** tweets block → **Preprocessing → Expression**, group-by context → group by `username`, aggregate `count` as `tweet_count` (paste both JSON snippets from the run-of-show copy bank; the closed v0.7.2 DSL has no word-count, see wordflow issue). Trends on the new block: x-axis = `tweet_count`, bucketed, line → bar. *"Trends is drawing a histogram of candidate activity: most candidates tweet a little, a few tweet constantly. The tool didn't change; the data did."*
-
-## 1:25 – 1:30 · Landing + takeaways + lunch (slides 24–26)
-
-Slide 24 slowly — say it twice. Slide 25: three takeaways, land the name reveal on #3. Slide 26 (lunch): walk the two setup tasks once out loud; repeat that the afternoon is not recorded and keyboards are required; *"no key? come anyway."* Flash slide 27 (data acknowledgements) and note it ships in the follow-up email.
-
-**STOP THE RECORDING.** Then the **install clinic (12:30, ~15 min)**: anyone unsure how to download or install stays on the call and you walk it live with Alex + Seb (Windows SmartScreen More info → Run anyway; macOS first-open Open confirmation). This is the only path for overseas participants, since Binder needs AAF. Leave slide 26 on screen through lunch for late lookers. Keep the Zoom meeting open (same link for both sessions).
-
----
+F-list extras (Stack, Trends histogram via Expression, non-English tokenisation, combined filters) only enter if a gate shows 5+ minutes ahead — realistically they won't.
 
 ## If things break
 
 | Symptom | Do |
 |---|---|
-| Topic Modelling run stalls mid-demo | Switch to the Tour workspace's finished Topic Modelling tab and narrate from there; the Story build resumes at Phase E via the pre-built backup workspace |
-| Any live-build step misbehaves | Backup workspace archives for phases A–E are in the materials folder (see checklist) — load the next one and keep the narrative moving; the recording matters more than the liveness |
-| Screen share lags / font too small | Zoom → share the app window only (not the desktop); bump the app zoom (Cmd/Ctrl +) — check readability in the Zoom preview, not on your monitor |
-| Way behind at 0:42 | The tour is done — protect the research story. Cut slide-22 (repurpose-through) and keep the histogram; takeaways can compress to 1 min |
-| Way behind at 1:15 | Skip straight to the histogram demo (the quotable one), then slides 24–26. Never skip slide 26 — the afternoon depends on it |
+| A build step misbehaves | Load the next section's backup archive and keep the narrative moving; the recording matters more than liveness. |
+| Live TM run stalls | Backup workspace's finished tab; narrate there. |
+| Background jobs unfinished when reached | Show Tasks honestly, pull the result from the backup workspace. |
+| Screen share lags / font small | Share the app window only; bump app zoom (Cmd/Ctrl +); check the Zoom preview. |
