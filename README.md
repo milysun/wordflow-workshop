@@ -29,11 +29,11 @@ Plus the afternoon's extension: *an AI model is just another coder — it earns 
 
 ### Session 1 outline (demo-only, recorded) — revised 2026-08-24
 
-A **full-capability tour in eight per-tool chapters**, built live in one workspace from empty to export, cut for reuse as tutorial chapters. The QLD tweets + jobs/cuts question is a *thread* through the chapters (and the afternoon's Annotation theme), not the spine. Click-level steps: `facilitator/demo-checklist-s1.md`.
+A **full-capability tour in eight per-tool chapters**, built live in one workspace from empty to export, cut for reuse as tutorial chapters. The on-screen stance is exploratory: no defined research question, no conclusions promised. Privately, the jobs/cuts campaign language recurs across chapters as connective tissue (and happens to be the afternoon's Annotation theme), and gender serves as a convenient binary split; neither is announced as a claim. Click-level steps: `facilitator/demo-checklist-s1.md`.
 
 | Min | Chapter |
 |---|---|
-| 0:00–0:12 | Slides: welcome, Acknowledgement of Country, team/LDaCA, three ways to run it, demo roadmap + thread question |
+| 0:00–0:12 | Slides: welcome, Acknowledgement of Country, team/LDaCA, three ways to run it, demo roadmap + dataset slide (exploratory stance) |
 | 0:12–0:21 | Ch 1 Getting around: hints, workspace, sample import, drag-and-drop, graph/data views |
 | 0:21–0:34 | Ch 2 Preparing data: dtypes, Create, Join, Filter (+ chat pause) |
 | 0:34–0:44 | Ch 3 Frequency: Honi Soit single + tweets F/M comparative → click into Concordance |
