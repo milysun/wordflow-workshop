@@ -16,7 +16,7 @@ This session is **all demo, no participant hands-on**, so you control the clock 
 
 ## 11:00 – 11:12 · Slides (title → roadmap)
 
-**START THE RECORDING before you speak.** Title + Acknowledgement of Country (~3 min). How today works: say the recording sentence verbatim and early (*"this session is recorded and shared afterwards; the afternoon hands-on is not"*), the watching contract (*"nothing to install for this half; watch, and put questions in the chat — I'll take them at two marked pauses"*), and the pace warning (*"this morning is deliberately dense; the recording has every click"*). Who built this + why (north-star sentence slowly). Three ways to run it. Then the roadmap slide: eight chapters, one workspace, end to end; the thread question (*did female and male candidates tweet about different topical issues in the 2020 QLD election?*) returns all morning and again at 2 pm.
+**START THE RECORDING before you speak.** Title + Acknowledgement of Country (~3 min). How today works: say the recording sentence verbatim and early (*"this session is recorded and shared afterwards; the afternoon hands-on is not"*), the watching contract (*"nothing to install for this half; watch, and put questions in the chat — I'll take them at two marked pauses"*), and the pace warning (*"this morning is deliberately dense; the recording has every click"*). Who built this + why (north-star sentence slowly). Three ways to run it. Then the roadmap slide: eight chapters, one workspace, end to end. The thread is the **jobs/cuts campaign language** (it returns all morning and again at 2 pm); **gender is a device, not a hypothesis** — a binary, available column that makes corpus splitting and grouping easy to see, and the move generalises to any variable. Say that honestly on the slide; it inoculates the whole demo against "but the gender difference is tiny".
 
 ## 11:12 · Ch 1 — Getting around (9 min)
 
@@ -32,7 +32,7 @@ Dtype passes: `created_at` → datetime, `gender`/`party` → category; one prep
 
 **Honi Soit single corpus (6):** add the block (show the ways to add + the colour picker), pick the text column, tokeniser line (multilingual). Word cloud: 50 words, English stopwords, **right-click a word to stopword it** (the crowd-pleaser), manual add/remove in the list. List view: max words, wildcard filter, count + rank. Recolour the block.
 
-**Comparative (4):** clear results, add `tweets_F` + `tweets_M`. Side-by-side then juxtaposed/overuse view; size/colour/algorithm in two sentences. Stopword the campaign noise live (names, `lnpqld`). Read it: mixed words (`cases`, `qldjobs`) vs polarised (`cuts`, `teachers` / `committed`, `leader`). Then the thread: *"what's actually behind cases?"* — **click the word** and let Wordflow carry you into Concordance. Chapter beat happens mid-flight; still say it.
+**Comparative (4):** clear results, add `tweets_F` + `tweets_M`. Side-by-side then juxtaposed/overuse view; size/colour/algorithm in two sentences. Stopword the campaign noise live (names, `lnpqld`). Read it honestly: mixed words (`cases`, `qldjobs`) vs somewhat polarised ones (`cuts`, `teachers` / `committed`, `leader`) — *"differences exist but they're modest; for politicians, party matters far more than gender — the split is here to show the comparison move."* Then the exploration payoff: *"cases was everywhere in 2020 — years later, can you still say what it meant?"* — **click the word** and let Wordflow carry you into Concordance, where the context gives the answer back (the pandemic). Suggestive, not conclusive; that's what exploration is for. Chapter beat happens mid-flight; still say it.
 
 ## 11:44 · Ch 4 — Concordance (11 min + 1 min pause)
 
@@ -46,7 +46,7 @@ Dtype passes: `created_at` → datetime, `gender`/`party` → category; one prep
 
 **First 40 seconds, without ceremony:** new tab → Topic Modelling on Honi Soit → Run; new tab → Quotation on Honi Soit → Run All; point at **Tasks**: *"long jobs run in the background — we'll collect both later."* This is a feature demo disguised as logistics.
 
-Then Trends proper: `tweets_full`, x = `created_at`, daily; group by gender; graph type + frequency/count settings; the meaning line (*"the trend is whatever your input block makes it"*). Switch the block to `tweets_jobcut`: group by matched text (jobs vs cuts over time), add gender to the legend — the male-candidates-on-cuts gap lands here. Legend filtering, click selection, top bar. Visual selection → Add to Workspace. Chapter beat.
+Then Trends proper: `tweets_full`, x = `created_at`, daily; group by gender; graph type + frequency/count settings; the meaning line (*"the trend is whatever your input block makes it"*). Switch the block to `tweets_jobcut`: group by matched text (jobs vs cuts over time), then add gender for the combined legend — read whatever gap shows without overselling it (*"a modest difference; the useful thing is that grouping by any column is one click — swap gender for party and it's a different study"*). Legend filtering, click selection, top bar. Visual selection → Add to Workspace. Chapter beat.
 
 ## 12:04 · Ch 6 — Topic Modelling (12 min)
 

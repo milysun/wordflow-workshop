@@ -76,8 +76,8 @@
 - [ ] 3.6 **Clear results**; add `tweets_F` + `tweets_M`.
 - [ ] 3.7 Side-by-side clouds → the juxtaposed/overuse cloud (mode names **TBC**); explain size, colour, algorithm in two sentences.
 - [ ] 3.8 Stopword the campaign noise live: candidate names, `lnpqld`, etc.
-- [ ] 3.9 Read the result: mixed words (`cases`, `qldjobs`) vs polarised words (`cuts`, `teachers` / `committed`, `leader`).
-- [ ] 3.10 Raise the thread question: "what is behind **cases**?" → **click the word** → Concordance opens. Chapter boundary beat.
+- [ ] 3.9 Read the result honestly: mixed words (`cases`, `qldjobs`) vs somewhat polarised (`cuts`, `teachers` / `committed`, `leader`). Say the framing line: gender split = a binary comparison device, modest differences expected; party matters more for politicians; the move works with any variable.
+- [ ] 3.10 Exploration payoff on **cases**: "everywhere in 2020 — can you still say what it meant?" → **click the word** → Concordance opens and the context answers (the pandemic). Suggestive, not conclusive. Chapter boundary beat.
 
 ## Ch 4 · Concordance · 11:44 (11 min)
 
@@ -108,7 +108,7 @@
 - [ ] 5.4 Say the meaning line: the trend is whatever the input block makes it.
 - [ ] 5.5 Switch the data block to `tweets_jobcut` (from 4.5): same tool, new story.
 - [ ] 5.6 Group by the **matched text**: `job(s)` vs `cut(s)` lines over time.
-- [ ] 5.7 Add gender → combined legend; the gender comparison lands (male candidates ahead on cuts).
+- [ ] 5.7 Add gender → combined legend; read the gap without overselling ("modest difference; the point is that grouping by any column is one click — swap gender for party and it's a different study").
 - [ ] 5.8 Legend filtering · click selection · the top bar's meaning.
 - [ ] 5.9 Visual selection → **Add to Workspace**. Summary breath. Chapter boundary beat.
 
