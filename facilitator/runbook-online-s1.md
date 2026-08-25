@@ -66,7 +66,7 @@ The arc, spoken plainly: Concordance is word-based; Topic Modelling is powerful 
 
 ## 12:24 – 12:30 · Closing slides
 
-Landing (say it twice) → three takeaways (name reveal on #3) → lunch slide: walk the install once aloud (Windows SmartScreen More info → Run anyway; macOS first-open Open), afternoon not recorded, keyboards required, model access provided. Flash data acknowledgements.
+Landing (say it twice) → three takeaways (name reveal on #3) → lunch slide: walk the install once aloud (Windows SmartScreen More info → Run anyway; macOS first-open Open), afternoon not recorded, keyboards required, model access provided. **Feedback ask, aimed at those not returning**: *"if you can't join this afternoon, tell us what you thought before you go — the Feedback button at the bottom of the Wordflow sidebar reaches the team directly."* Flash data acknowledgements.
 
 **STOP THE RECORDING.** Then the **install clinic** (12:30, ~15 min, off the record) with Alex + Seb. Leave the lunch slide up; keep the Zoom meeting open.
 

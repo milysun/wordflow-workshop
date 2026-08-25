@@ -10,7 +10,7 @@
     --paper: #fdfcf8;
     --accent: #c8423e;
     --accent-soft: #f3d6d5;
-    --spotlight-bg: #c87060;    /* warm terracotta; less intimidating than --accent for full-slide backgrounds */
+    --spotlight-bg: #1a1d24;    /* same dark ink as the section dividers; calm at full-slide size */
     --muted: #6b6f78;
     --rule: #d9d4c8;
   }
@@ -130,9 +130,10 @@
     align-items: center;
     text-align: center;
   }
-  section.slide.spotlight h1, section.slide.spotlight h2, section.slide.spotlight p {
+  section.slide.spotlight h1, section.slide.spotlight p {
     color: var(--paper);
   }
+  section.slide.spotlight h2 { color: var(--accent); }
   section.slide.spotlight .pullquote {
     border-left-color: var(--paper);
     color: var(--paper);
@@ -598,7 +599,7 @@
   <!-- Slide 26: Lunch + afternoon setup -->
   <section class="slide" style="padding-bottom: 10vh;" data-notes="Leave this up over lunch. STOP THE RECORDING after you finish speaking to it. Walk the install once out loud, including the Windows SmartScreen steps (on screen) and the macOS first-open confirmation. Then announce the install clinic: anyone unsure how to download or install stays on the call now and we do it together for ~15 minutes (helpers assist). Repeat: afternoon not recorded, model access provided.">
     <h2>Lunch: back at 2:00 pm AEST (12:00 pm AWST)</h2>
-    <h1>This afternoon: hands-on.</h1>
+    <h1 style="font-size: clamp(1.8rem, 3.8vw, 3.4rem); margin-bottom: 0.3em;">This afternoon: hands-on.</h1>
     <p>Wordflow's new <strong>Annotation</strong> tool: code (classify) a real dataset with a GenAI model, check its agreement against a reference coding, and improve it. <strong>Not recorded; keyboards required.</strong></p>
     <p style="margin-top: 0.6em;"><strong>Set up over lunch, if you haven't already done so from the pre-workshop email (~10 minutes):</strong></p>
     <ul style="margin-top: 0.3em;">
@@ -606,13 +607,14 @@
         <ul style="margin-top: 0.3em; font-size: 0.92em;">
           <li style="margin-bottom: 0.3em;"><strong>macOS</strong>: click <strong>Open</strong> at the downloaded-from-the-internet prompt.</li>
           <li style="margin-bottom: 0.2em;"><strong>Windows</strong>: <strong>More info → Run anyway</strong>:
-            <img src="images/smartscreen-steps.png" alt="Windows SmartScreen: step 1 click More info, step 2 click Run anyway" style="max-height: 14vh; width: auto; max-width: 100%; display: block; margin: 0.6vh 0 0;">
+            <img src="images/smartscreen-steps.png" alt="Windows SmartScreen: step 1 click More info, step 2 click Run anyway" style="max-height: 10vh; width: auto; max-width: 100%; display: block; margin: 0.4vh 0 0;">
           </li>
         </ul>
       </li>
       <li><strong>Browser alternative</strong>: Launch in Binder, with an AAF login (Australian and New Zealand institutions).</li>
     </ul>
-    <p style="margin-top: 0.8em; font-style: italic;">AI-model access is provided in the session. <strong>Not sure how to install?</strong> Stay on now for a 15-minute install clinic.</p>
+    <p style="margin-top: 0.6em; font-style: italic;">AI-model access is provided in the session. <strong>Not sure how to install?</strong> Stay on now for a 15-minute install clinic.</p>
+    <p style="margin-top: 0.4em;"><strong>Can't join this afternoon?</strong> Tell us what you thought before you go: the <strong>Feedback</strong> button at the bottom of the Wordflow sidebar reaches the team directly.</p>
   </section>
 
   <!-- Slide 27: Data acknowledgements -->
