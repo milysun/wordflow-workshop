@@ -141,7 +141,7 @@
 - [ ] Concordance is word-based; Topic Modelling is powerful but interpretively vague. For precision and confidence you code: manual coding → doesn't scale → AI-assisted coding with human-defined standards. "That's this afternoon: the Annotation tool."
 - [ ] Back to slides: landing → takeaways → lunch slide.
 
-**■ STOP THE RECORDING** after the lunch slide. Then the 12:30 install clinic (off the record).
+**■ STOP THE RECORDING** after the lunch slide. Then the install clinic, starting whenever Session 1 ends (off the record, ~15 min).
 
 ---
 

@@ -1,6 +1,6 @@
 # Pre-workshop email: online workshop 28 Aug 2026
 
-*Final version, sent **Thursday 27 August (T-1), by lunchtime**. Copy the body below; fill the ⟨Zoom link⟩ placeholder.*
+*Final version, sent **Thursday 27 August (T-1), by lunchtime**. Copy the body below as is; the Zoom link is filled in.*
 
 **How to send (participant-data rule):** send from Eventbrite (**Manage event → Emails to attendees**), which reaches all 90 registrations (86 unique people) without exporting addresses anywhere. If sending from Outlook instead, all recipients in **BCC**, and delete the exported CSV from Downloads afterwards; the register copy lives in `private/` only.
 
@@ -18,12 +18,12 @@ Thank you for registering for the LDaCA Wordflow online workshop, **tomorrow, Fr
 
 ## Zoom
 
-**Join here for both sessions:** ⟨Zoom link⟩
+**Join here for both sessions:** https://uni-sydney.zoom.us/j/81208778887
 
 All times are AEST (Sydney). For colleagues overseas: Session 1 starts at **01:00 UTC on Friday 28 August**.
 
 - **Session 1, 11:00 am – 12:30 pm AEST** *(10:30 am ACST · 9:00 am AWST)*: **Wordflow from zero.** A guided demo of the whole tool: concepts, interface, and a full tour of its analyses on real data. **Nothing to install**: watch and ask questions in the chat, where helpers from our team will answer as we go. **This session is recorded** and the recording will be shared with all registrants.
-- **Lunch, 12:30 – 2:00 pm AEST.** If you haven't installed the app yet, this is your window; anyone unsure how to install can stay on the call at 12:30 for a **15-minute install clinic** with our helpers.
+- **Lunch, 12:30 – 2:00 pm AEST.** If you haven't installed the app yet, this is your window. Unsure how to install? **Stay on the call after Session 1 ends** for a **15-minute install clinic** with our helpers.
 - **Session 2, 2:00 – 3:30 pm AEST** *(1:30 pm ACST · 12:00 pm AWST)*: **hands-on: coding text with GenAI.** You'll use Wordflow's new **Annotation** tool to classify a real dataset with an AI model, measure its agreement against human-verified coding, and improve it. **Not recorded**; keyboards required.
 
 You're welcome at either session or both.
