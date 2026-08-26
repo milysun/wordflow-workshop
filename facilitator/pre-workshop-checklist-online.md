@@ -8,7 +8,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 
 - **Tue 25 (Alex back)**: helper briefing meeting; Alex triages the workshop-affecting bug issues; target **v0.7.3 bug-fix release Tuesday night**. Decide on #68 (word-count ops); note the histogram demo is now optional F.2 in the S1 plan (2026-08-24), so this only matters if time miraculously allows it.
 - **Wed 26**: install v0.7.3 fresh and run the **Wednesday test script** (below). Rebuild the demo workspaces + checkpoint archives on the final version. **Send the pre-workshop email Wednesday night** only after the test passes; if v0.7.3 slips, ship the email anyway (it references "the v0.7 desktop app", not a patch number) and fall back to v0.7.2 with known-bug workarounds.
-- **Thu 27**: full rehearsal against the run-of-show panel (both sessions, timed); upload final checkpoint files; T-1 reminder email.
+- **Thu 27** *(actual: v0.7.3 still unreleased Thursday morning, Alex fixing)*: **pre-workshop email goes out by lunchtime** via Eventbrite (final text in `communications/pre-workshop-email-online.md`; it hedges with "latest v0.7" + "accept the in-app update prompt if offered tomorrow"); full rehearsal against the run-of-show panel (both sessions, timed); build checkpoint files on whatever version is current tonight, and if v0.7.3 lands late, re-run the checkpoint round-trip on it before bed.
 - **Fri 28**: morning-of checks (§7).
 
 **Wednesday test script (everything the materials assume, in order):**
