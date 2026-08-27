@@ -67,7 +67,7 @@ The second lever, with the first result kept intact: **Start new annotation → 
 
 ## 15:13 · Revise the codebook: v2 (sheet §11, 6 min)
 
-The third lever. Chat the Checkpoint d link first (*"if you're behind, load d: it holds the v2 codebook block"*). On screen: block menu → **Clone** the v1 codebook block → rename **`Job_with_ref_codebook_v2`** → edit the descriptions to v2 (or simply select the block from Checkpoint d). Annotation tool: **Codebook → `Job_with_ref_codebook_v2`**, **Start new annotation → `job.AI_v2`**, **paste the v2 prompt** (say it: *"the prompt lives only in this field; it is not in the codebook and not in any checkpoint"*). **Run All → Compare To `theme.reference` + `job.AI`**. Rehearsal κ: **TBC** (record it Thursday night). Land: *"three measured runs: plain, examples, revised codebook. Now you can say which lever did what, instead of guessing."*
+The third lever. Chat the Checkpoint d link first (*"if you're behind, load d: it holds the v2 codebook block"*). On screen: block menu → **Clone** the v1 codebook block → rename **`Job_with_ref_codebook_v2`** → edit the descriptions to v2 (or simply select the block from Checkpoint d). Annotation tool: **Codebook → `Job_with_ref_codebook_v2`**, **Start new annotation → `job.AI_v2`**, **paste the v2 prompt** (say it: *"the prompt lives only in this field; it is not in the codebook and not in any checkpoint"*). **Run All → Compare To `theme.reference` + `job.AI`**. Rehearsal κ: **0.66** (v1 plain 0.843, examples 0.728). Land: *"three measured runs: plain, examples, revised codebook. Now you can say which lever did what, instead of guessing."*
 
 ## 15:19 · Showcase: same tool, cleverer questions (demo only, 3 min; first cut if late)
 
