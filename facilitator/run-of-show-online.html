@@ -97,11 +97,11 @@
 
 <div class="fields">
   <div><label>Hands-on sheet URL (S2)</label><input id="f-sheet" placeholder="https://… hands-on sheet"></div>
-  <div><label>Data file link(s) for S2 upload path</label><input id="f-data" placeholder="https://… CSV download(s)"></div>
+  <div><label>Data file link(s) for S2 upload path</label><input id="f-data" value="https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/tweets_job_reference.csv"></div>
   <div><label>Session OpenRouter API key (create on the day)</label><input id="f-key" placeholder="sk-or-v1-…"></div>
   <div><label>Model id for the room</label><input id="f-model" value="google/gemini-2.5-flash-lite"></div>
   <div><label>Fallback model id (paid, different upstream; pre-tested Wed)</label><input id="f-model2" value="openai/gpt-5-nano"></div>
-  <div><label>Checkpoint workspace links (a/b/c)</label><input id="f-ckpt" placeholder="https://… checkpoint ZIPs"></div>
+  <div><label>Checkpoint workspace links (a/b/c)</label><input id="f-ckpt" value="https://github.com/milysun/wordflow-workshop/releases/tag/online-2026-08-28"></div>
   <div class="hint">Fill these before 10:30. Copy buttons below interpolate them into ready-to-paste Zoom chat messages. Everything on this page stays in this browser (localStorage), but treat the key as burned: it gets deleted at 15:30 regardless.</div>
 </div>
 
@@ -208,6 +208,7 @@
   <div class="sub">Checks: app installed · sheet open · that's it (model access comes from us). Intro the helpers + the breakout plan. Afternoon-only joiners: one-breath orientation.</div>
   <button class="copy" data-tpl="Welcome to the hands-on! This session is NOT recorded. You need: 1) the Wordflow desktop app (https://sih.tools/wordflow), UPDATED: if the app shows an update notification, accept it now (one click; quit and reopen if you don't see one), 2) this step sheet: {SHEET} — model access will be provided in a moment. Stuck at any point? Message the helpers or raise a hand.">Copy: S2 welcome</button>
   <button class="copy" data-tpl="Lost, or something broke? Grab the matching checkpoint workspace: {CKPT} — then in Wordflow: Data Loader → Workspace manager → Upload workspace → choose the ZIP → click Load, re-select the data block/column in the Annotation tool, and PASTE THE PROMPT again (prompts are not saved in checkpoints).">Copy: checkpoint rescue</button>
+  <button class="copy" data-tpl="All Session 2 files (also attachable directly in chat): reference CSV https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/tweets_job_reference.csv · checkpoint a (Tweets block) https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_a.zip · b (Jobs_with_ref) https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_b.zip · c (v1 codebook + manual page) https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_c.zip · d (v2 codebook) https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_d.zip · e (showcase codebooks) https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_e.zip · Load a ZIP: Data Loader → Workspace manager → Upload workspace → Load → re-select block/columns → PASTE THE PROMPT again.">Copy: ALL download links (helpers)</button>
   </div>
 </div>
 <div class="item" data-start="14:05"><input type="checkbox"><span class="t">14:05</span><span class="d">7m</span>
@@ -217,7 +218,7 @@
 <div class="item" data-start="14:12"><input type="checkbox"><span class="t">14:12</span><span class="d">9m</span>
   <div class="what"><div class="head"><span class="flag chat">CHAT</span>STEP 1 · Build the Tweets block from scratch (brisk: the morning's prep replayed)</div>
   <div class="sub">Create workspace · Import sample data → QLD Election Tweets → add BOTH blocks (tweets + candidate info) · types: created_at → date-time, party/gender → category · Create full_name (Update) · Join: tweets FIRST on username → rename <b>Tweets</b>. Rescue said aloud + chatted: Checkpoint a = exactly this result. ✅-check on a block called Tweets.</div>
-  <button class="copy" data-tpl="Lost in step 1? Load Checkpoint a instead: download Checkpoint_a.zip from {CKPT} — then Data Loader → Workspace manager → Upload workspace → choose the ZIP → click Load on the new row. You get the finished Tweets block.">Copy: checkpoint a rescue</button>
+  <button class="copy" data-tpl="Lost in step 1? Load Checkpoint a instead: download Wordflow_checkpoint_a.zip from {CKPT} — then Data Loader → Workspace manager → Upload workspace → choose the ZIP → click Load on the new row. You get the finished Tweets block.">Copy: checkpoint a rescue</button>
   <button class="copy" data-tpl="Data fallback if the sample import fails: download {DATA} and drag & drop into Wordflow's Data Loader (or use Upload files). CSV, Excel or zip all import.">Copy: data fallback</button>
   </div>
 </div>
@@ -264,8 +265,10 @@
   </div>
 </div>
 <div class="item" data-start="15:19"><input type="checkbox"><span class="t">15:19</span><span class="d">3m</span>
-  <div class="what"><div class="head">Showcase (demo only; FIRST CUT if late)</div>
-  <div class="sub">One codebook only: A) sentiment TOWARD the LNP, Preview, copy bank. Name B and C in one breath (sheet appendix). "Classic NLP problems, one codebook away; the checking workflow makes them trustworthy."</div></div>
+  <div class="what"><div class="head">Demo only: same v2 on a stronger model (GLM 5.3 flash) → hands-on ends → showcase</div>
+  <div class="sub">Say "hands-on is over; watch from here." Switch model to GLM 5.3 flash, same v2 codebook + prompt, Run All (it's slow: start it, talk over it, or show the rehearsal result: v1 0.809 → v2 <b>0.867</b> vs flash-lite 0.805). Land: "a stronger, newer model is the fourth lever: higher cost, slower, no guarantee, and only worth it once the codebook is right." Then showcase, ONE codebook: A) sentiment TOWARD the LNP, Preview, copy bank (Checkpoint e holds all three: https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_e.zip). Name B and C in a breath. FIRST CUT if late.</div>
+  <button class="copy" data-tpl="Showcase codebooks (try at home): load Wordflow_checkpoint_e.zip from https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_e.zip — it contains the three extra codebooks (sentiment toward the LNP; place outside Queensland; more than two people). Prompts are in the hands-on sheet appendix.">Copy: checkpoint e (showcase)</button>
+  </div>
 </div>
 <div class="item" data-start="15:22"><input type="checkbox"><span class="t">15:22</span><span class="d">8m</span>
   <div class="what"><div class="head">Take it home + close on time</div>

@@ -53,7 +53,8 @@ Build in a clean workspace, exporting after each stage (**Export view → Export
 - [ ] `Checkpoint_d.zip` (**REBUILD Thu night with the aligned v2 descriptions from the sheet §11 / copy bank**; first build used the misaligned draft): plus the v1 codebook block cloned, descriptions replaced with v2, renamed **`Job_with_ref_codebook_v2`**. Holds the block only: **the prompt is not part of a codebook block and tool parameters are not saved in the workspace**, so after loading c or d participants must re-select the model and paste the v1/v2 prompt.
 - [ ] **Round-trip test each file on a second machine**: Upload workspace → Load → open Annotation → data, tabs, codebook restore; block/column selectors need re-picking (expected; the sheet says so).
 - [ ] **Join test** (inside c): Compare To `theme.reference` on `job.manual` shows κ for the 16 coded rows.
-- [ ] Upload the four ZIPs + `tweets_job_reference.csv` to the materials location; paste the links into the run-of-show panel's Checkpoint and Data fields.
+- [x] `Wordflow_checkpoint_e.zip` (built 2026-08-27): plus the three showcase codebooks (A sentiment toward the LNP, B place outside Queensland, C more than two people).
+- [x] All five ZIPs + `tweets_job_reference.csv` published as GitHub release `online-2026-08-28` (https://github.com/milysun/wordflow-workshop/releases/tag/online-2026-08-28); links prefilled in the panel's Data and Checkpoint fields and linked from the hands-on sheet §4/§12.
 
 ## 4 · AI provider (T-3 days)
 

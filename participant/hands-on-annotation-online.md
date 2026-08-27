@@ -44,7 +44,7 @@ Your final block should have **226 rows**. If your number differs, put it in the
 
 The workshop provides **a human-verified reference annotation** for all 226 tweets: coded by a frontier AI model with the same codebook you're about to use, then reviewed tweet-by-tweet by a human coder. Joining them in now means you can measure any coder (human or AI) against them later.
 
-1. Download `tweets_job_reference.csv` from the Zoom chat and add it as a data block (drag & drop, or **Upload files**). It has two columns: `tweet_id` and `theme.reference`.
+1. Download [`tweets_job_reference.csv`](https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/tweets_job_reference.csv) (also posted in the Zoom chat) and add it as a data block (drag & drop, or **Upload files**). It has two columns: `tweet_id` and `theme.reference`.
 2. **Preprocessing → Join**: select your 226-row block FIRST (first pick = left table), then the reference block. Join on **`tweet_id`** (left join).
 3. The joined block (still 226 rows) now carries `theme.reference` alongside the text. Rename it **`Jobs_with_ref`** (block menu → Rename) and work in this block from here on.
 
@@ -123,17 +123,19 @@ The third lever is the codebook itself. The §8 disagreements point at cases v1 
    > You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes what it says about jobs. Code the tweet's main subject, not passing mentions. Campaign slogans and vote lists count as the author's own commitment. If a tweet both promises jobs and attacks cuts, choose Promise unless the cuts are spelled out as the main message. If the word job is not about employment, or the post has no real jobs message, use Other.
 
 3. **Run All** → **Compare To `theme.reference`** and **`job.AI`**. Did the sharper codebook move κ? Either way you now have three measured runs (plain, examples, revised codebook) and can say which lever did what.
+4. *Demo only (watch):* the same v2 codebook and prompt on a stronger, newer model (GLM 5.3 flash). In rehearsal it scored higher than the small model, at higher cost and much slower, and with no guarantee: a stronger model is the fourth lever, and it only pays off once the codebook is right.
 
 ## 12 · Checkpoints: if you fall behind
 
-Four checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader → Workspace manager → Upload workspace** → choose the ZIP → click **Load** on the new row → re-select the block/columns in the Annotation tool (selections aren't stored in the file; everything else is).
+Five checkpoint workspaces are available from the [workshop files page](https://github.com/milysun/wordflow-workshop/releases/tag/online-2026-08-28) and posted in the Zoom chat. Load one: **Data Loader → Workspace manager → Upload workspace** → choose the ZIP → click **Load** on the new row → re-select the block/columns in the Annotation tool (selections aren't stored in the file; everything else is).
 
 | Checkpoint | Restores the state after… |
 |---|---|
-| **a** | §1: the `Tweets` block (column types fixed, `full_name`, candidate metadata joined) |
-| **b** | §4: the 226-row `Jobs_with_ref` block with `theme.reference` joined |
-| **c** | §6: v1 codebook in place, `job.manual` coded for the first page (1–10) and the last page (221–226); everything ready to connect the AI |
-| **d** | §11 step 1: the v2 codebook block `Job_with_ref_codebook_v2` added, ready for the v2 run |
+| [**a**](https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_a.zip) | §1: the `Tweets` block (column types fixed, `full_name`, candidate metadata joined) |
+| [**b**](https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_b.zip) | §4: the 226-row `Jobs_with_ref` block with `theme.reference` joined |
+| [**c**](https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_c.zip) | §6: v1 codebook in place, `job.manual` coded for the first page (1–10) and the last page (221–226); everything ready to connect the AI |
+| [**d**](https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_d.zip) | §11 step 1: the v2 codebook block `Job_with_ref_codebook_v2` added, ready for the v2 run |
+| [**e**](https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_e.zip) | Appendix: the three showcase codebooks added (sentiment toward the LNP; place outside Queensland; more than two people) |
 
 Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them. **Prompts are not saved anywhere but the Prompt field**: they are not part of the codebook block and not restored by a checkpoint. After loading any checkpoint and choosing the model, paste the prompt again (v1 or v2, from the chat / this sheet).
 
@@ -147,7 +149,7 @@ Your provider and API key live on your machine, never inside workspace files, so
 
 ## Appendix · Same tool, cleverer questions (replay at home)
 
-Three more codebooks for the same 226 tweets, shown as demos in the session. Each is one small codebook away; the checking workflow from §8–11 is what makes them trustworthy.
+Three more codebooks for the same 226 tweets, shown as demos in the session; [Checkpoint e](https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_e.zip) has all three ready to run. Each is one small codebook away; the checking workflow from §8–11 is what makes them trustworthy.
 
 **A · Sentiment toward the LNP** (aspect, not sentence)
 Prompt: *For each tweet, judge the sentiment expressed toward the LNP (Liberal National Party) or its leader Deb Frecklington specifically, not the overall tone of the tweet. If neither is mentioned or referenced, use none.*
