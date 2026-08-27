@@ -28,7 +28,7 @@
 
 ## 0 · Pre-flight (before the recording starts)
 
-- [ ] Wordflow final release (v0.7.3 if shipped, else v0.7.2). **Fresh state: no workspace open** — Chapter 1 creates one on camera.
+- [ ] Wordflow **v0.7.5** (released overnight, briefly tested). **Fresh state: no workspace open** — Chapter 1 creates one on camera.
 - [ ] **Settings → General → Enable multi-tab = ON**; contextual hints **ON** (Chapter 1 turns them off as a demo).
 - [ ] A small demo **file** (CSV, Excel or zip) in an easy folder for the drag-and-drop step.
 - [ ] Section backup workspace archives reachable without hunting (rebuild list in the pre-workshop checklist).
