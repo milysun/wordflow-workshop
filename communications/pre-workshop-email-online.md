@@ -4,7 +4,7 @@
 
 **How to send (participant-data rule):** send from Eventbrite (**Manage event → Emails to attendees**), which reaches all 90 registrations (86 unique people) without exporting addresses anywhere. If sending from Outlook instead, all recipients in **BCC**, and delete the exported CSV from Downloads afterwards; the register copy lives in `private/` only.
 
-**Version hedge:** v0.7.3 is not out as of Thursday morning (Alex still fixing). The email says "latest v0.7 release" and asks people to accept the in-app update prompt if one appears tomorrow, so it stays correct whether v0.7.3 ships tonight or not.
+**Version plan (Thu 3 pm):** email goes now, while sih.tools/wordflow still serves v0.7.2. v0.7.3 builds ~4:30 pm and the landing page gets its links ~5 pm; v0.7.4 (Tauri tokeniser bug + medium-priority fixes) follows before the workshop. So the email tells people to install whatever is offered now and to accept the in-app update notification tomorrow morning; the lunch slide and the S2 welcome should repeat that ask.
 
 ---
 
@@ -14,7 +14,7 @@
 
 Hi all,
 
-Thank you for registering for the LDaCA Wordflow online workshop, **tomorrow, Friday 28 August**. Everything you need is below, including **one 5-minute task** if you're joining the afternoon hands-on.
+Thank you for registering for the LDaCA Wordflow online workshop, **tomorrow, Friday 28 August**. Apologies for the late arrival of this email: the team has been busy with a round of bug fixes to give you the best version of Wordflow for tomorrow. Everything you need is below, including **one 5-minute task** if you're joining the afternoon hands-on.
 
 ## Zoom
 
@@ -34,7 +34,7 @@ You're welcome at either session or both.
 
 - **macOS**: at the "downloaded from the internet" prompt, click **Open**.
 - **Windows**: the installer may show a security warning; choose **More info**, then **Run anyway**.
-- **If Wordflow offers an update when you open it tomorrow, please accept it** (one click). We may release a small update tonight.
+- **Important: please update the app tomorrow morning.** We are releasing bug fixes today and tomorrow (v0.7.3 and v0.7.4). Install whatever version the page offers now; then, when you open Wordflow tomorrow before the afternoon session, it will show an **update notification**: accept it, and the upgrade is one click. (If you don't see a notification, quit and reopen the app.)
 - Can't install software? The same page has a browser option, **Launch in Binder**; it needs an Australian or New Zealand university (AAF) sign-in and a couple of minutes to start.
 
 **2. A 10-second connectivity check.** The AI-coding steps call **openrouter.ai** from your computer. Open [https://openrouter.ai](https://openrouter.ai) on the network you'll use tomorrow; if the page loads, you're set. Some networks (certain institutional firewalls, and networks in some countries, including mainland China) can't reach it. If it doesn't load for you, still come along: everything except the AI-coding calls runs locally, so you can code manually, follow the shared screen for the AI steps, and repeat them later on another network or with a local model, which we'll show.
