@@ -87,7 +87,7 @@ Slide 9, top to bottom: the shared key is gone at 3:30, so real research means y
 
 | Symptom | Do |
 |---|---|
-| Someone can't complete the §1 build | Load Checkpoint a (exactly the §1 result). If even that fails: sample import → tweets block alone; nothing in §2–9 needs the metadata. |
+| Someone can't complete the §1 build | Load Checkpoint a (exactly the §1 result). If even that fails: sample import → tweets block alone; nothing in §2–11 needs the metadata. |
 | Someone's filter count isn't 226 | Helper + breakout; or load Checkpoint b (`Jobs_with_ref`: the 226 rows with the reference joined). |
 | Anyone behind at 14:42, before the AI | Load Checkpoint c (v1 codebook + hand-coded first and last pages); they continue with the model like everyone else. |
 | Provider add fails / model list empty | Re-paste the key (no trailing space); Tab before Add Provider; last resort: they watch the shared screen and use Checkpoint c later at home with their own key. |
