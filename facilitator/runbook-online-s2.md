@@ -1,6 +1,6 @@
 # Runbook — Online workshop Session 2 (90 min, hands-on, NOT recorded)
 
-> **Rewritten 2026-08-27** to the current design: the jobs theme-coding task on the 226-tweet block, Title-case `Promise` / `Cuts` / `Other` codebook, a preview → compare → correct loop and an examples run, all measured against a **human-verified reference annotation**, a **shared workshop key**, checkpoint workspace archives a/b/c as rescues (**a** = the Tweets block everyone builds first), the responsible-AI slide before the tool, and the showcase segment. Wall-clock rows and every chat snippet: `facilitator/run-of-show-online.html`. Participant steps: `participant/hands-on-annotation-online.md` (its § numbers are used below).
+> **Rewritten 2026-08-27** to the current design: the jobs theme-coding task on the 226-tweet block, Title-case `Promise` / `Cuts` / `Other` codebook, a preview → compare → correct loop and an examples run, all measured against a **human-verified reference annotation**, a **shared workshop key**, checkpoint workspace archives a/b/c/d as rescues (**a** = the Tweets block everyone builds first; **d** = the v2 codebook block). **Prompts are not saved in checkpoints or codebook blocks**: after any load, participants must paste the v1/v2 prompt again; brief the helpers, the responsible-AI slide before the tool, and the showcase segment. Wall-clock rows and every chat snippet: `facilitator/run-of-show-online.html`. Participant steps: `participant/hands-on-annotation-online.md` (its § numbers are used below).
 
 **Coding text with GenAI: the Annotation tool · Friday 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST) · Zoom**
 
@@ -65,11 +65,15 @@ Post the key + model snippet. **Start new annotation → `job.AI`**. Toggle **AI
 
 The second lever, with the first result kept intact: **Start new annotation → `job.AI.example`** (*"never overwrite a result you may want to compare against"*). In **Advanced settings**, set **`job.manual`** as the examples (**Use as example**; mention **Max examples per class**). **Run All** into the new column → **Compare To**: tick `theme.reference` **and `job.AI`**, so the two runs sit side by side. Rehearsal: **0.728**, *lower* than 0.843. While it's up, show the review-table tools once: **Filter any difference** between `job.AI.example` and `job.AI` (*"exactly where the examples changed the model's mind"*), the **display option** that shows the compared columns' values in the table, and the **exists / does not exist** filter (*"rows with or without a value: how you find the rows a model skipped or mis-coded, and what Fill missing only would target"*). Land it without drama: *"examples don't guarantee improvement; they can pull the model toward your particular hesitations. That is why every change gets measured, never assumed."* Hover both confusion matrices to show where the behaviour moved. (If the day's numbers go the other way, the lesson is the same: measure.)
 
-## 15:13 · Showcase: same tool, cleverer questions (demo only, 8 min)
+## 15:13 · Revise the codebook: v2 (sheet §11, 6 min)
 
-*"Watch, don't follow."* Three quick codebooks on the same 226 tweets, Preview only, all in the copy bank: **A** sentiment toward the LNP (aspect, not sentence); **B** mentions a place outside Queensland (the model knows geography); **C** more than two people mentioned (counting and names). Land: *"classic NLP problems, now one codebook away; the checking workflow you just did is what makes them trustworthy."* Mention the third lever, the codebook revision (v2 in the sheet's appendix), as homework. Take chat questions while previews run.
+The third lever. Chat the Checkpoint d link first (*"if you're behind, load d: it holds the v2 codebook block"*). On screen: block menu → **Clone** the v1 codebook block → rename **`Job_with_ref_codebook_v2`** → edit the descriptions to v2 (or simply select the block from Checkpoint d). Annotation tool: **Codebook → `Job_with_ref_codebook_v2`**, **Start new annotation → `job.AI_v2`**, **paste the v2 prompt** (say it: *"the prompt lives only in this field; it is not in the codebook and not in any checkpoint"*). **Run All → Compare To `theme.reference` + `job.AI`**. Rehearsal κ: **TBC** (record it Thursday night). Land: *"three measured runs: plain, examples, revised codebook. Now you can say which lever did what, instead of guessing."*
 
-## 15:21 · Take it home + close on time (slide 9, 9 min)
+## 15:19 · Showcase: same tool, cleverer questions (demo only, 3 min; first cut if late)
+
+One codebook, not three: **A** sentiment toward the LNP (aspect, not sentence), Preview only, from the copy bank. Name **B** (place outside Queensland) and **C** (more than two people) in one breath; they're in the sheet's appendix. Land: *"classic NLP problems, now one codebook away; the checking workflow you just did is what makes them trustworthy."*
+
+## 15:22 · Take it home + close on time (slide 9, 8 min)
 
 Slide 9, top to bottom: the shared key is gone at 3:30, so real research means your own key or a **local model** (Add Provider → Custom: Ollama, LM Studio); **ethics approval** decides models and providers; keep the loop and document prompt, codebook, model, κ; **no AI required**: a team of human coders each in their own column, Compare To gives percent agreement, Cohen's κ or Krippendorff's α across multiple reference columns; Wordflow is under active development: **Feedback** button, one-click updates, cite via the sidebar's quote icon. Thank the helpers. Follow-up email tomorrow: Session 1 recording, materials, checkpoints. **Close at 15:30.**
 
@@ -90,5 +94,6 @@ Slide 9, top to bottom: the shared key is gone at 3:30, so real research means y
 | openrouter.ai unreachable on their network | Post the unreachable snippet: code manually, watch the AI steps, repeat later on another network or with a local model. |
 | Room model returns 429s / errors | Post the fallback-model snippet; everyone swaps the model id, nothing else changes. Both models were tested Thursday. |
 | Run All slow for the room | Keep talking through Annotation Review on your own screen; the numbers arrive as you speak. |
-| Way behind at 15:00 | Skip the showcase (demo-only) first, then the examples run; Run All + take-home are the non-negotiables. |
+| Way behind at 15:00 | Cut in order: showcase → v2 run (point at Checkpoint d + appendix for home) → examples run. Run All + take-home are the non-negotiables. |
+| Someone loads a checkpoint and the AI does nothing / errors | The prompt is empty: prompts are not in the codebook block nor in checkpoints. Paste v1 or v2 from the chat. Helpers: this is the #1 thing to check after any checkpoint load. |
 | Someone pastes the key in public chat elsewhere | It has a spend cap and dies at 15:30; delete early if abused. |

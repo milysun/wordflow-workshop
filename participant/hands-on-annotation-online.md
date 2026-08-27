@@ -4,7 +4,7 @@
 
 You'll use Wordflow's **Annotation** tool (new in v0.7) to code a real dataset with an AI model, and, more importantly, to *check* the AI's coding the way you'd check a human coder's: agreement scores, a confusion matrix, and targeted revisions until the numbers hold up.
 
-This sheet mirrors the live session step by step, and works as a standalone tutorial afterwards. Fall behind at any point? Jump to **§11 Checkpoints**; you can rejoin in under a minute.
+This sheet mirrors the live session step by step, and works as a standalone tutorial afterwards. Fall behind at any point? Jump to **§12 Checkpoints**; you can rejoin in under a minute.
 
 ---
 
@@ -38,7 +38,7 @@ Two filter steps in **Preprocessing → Filter**, each creating a new block:
 1. **Drop retweets**: on the `Tweets` block, filter where `text` contains RegEx **`^[Rr][Tt]`**, and tick **negate** (keep everything that does NOT start with rt). This gives the original-tweets block.
 2. **Keep the job tweets**: on that new block, filter where `text` contains **`job`** (plain contains, not whole-word, so "jobs" and "job-seeker" count).
 
-Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint b, §11).
+Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint b, §12).
 
 ## 4 · Join the reference annotation
 
@@ -106,19 +106,38 @@ Few-shot examples are the other lever besides the codebook. Try it, but keep the
 4. Three review-table tools worth knowing here: **Filter any difference** between `job.AI.example` and `job.AI` shows exactly where the examples changed the model's mind; the **display option** shows the compared columns' values next to the prediction; and the **exists / does not exist** filter selects rows with or without a value in a column, which is how you find rows a model skipped or gave an invalid code, and what **Fill missing only** would target.
 5. Compare the two κ values. In rehearsal the examples run scored **κ 0.73**, *lower* than the plain run's 0.84. Examples don't guarantee improvement: they can pull the model toward your particular hesitations. This is why you measure every change instead of assuming it helped. Hover both confusion matrices to see where the behaviour moved.
 
-## 11 · Checkpoints: if you fall behind
+## 11 · Revise the codebook: v2
 
-Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader → Workspace manager → Upload workspace** → choose the ZIP → click **Load** on the new row → re-select the block/columns in the Annotation tool (selections aren't stored in the file; everything else is).
+The third lever is the codebook itself. The §8 disagreements point at cases v1 was silent about: mixed "jobs, not cuts!" slogans, campaign vote-lists ("For Health. For Jobs."), hashtag-only mentions, and "cutting prices" that is not cutting jobs.
+
+1. Duplicate your v1 codebook block (block menu → **Clone**), rename the copy **`Job_with_ref_codebook_v2`**, and edit its descriptions to v2 (below). Short on time? **Checkpoint d** contains exactly this block.
+
+   | Code | v2 description (v1 plus the new rules) |
+   |---|---|
+   | `Promise` | …as v1, plus: Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as Promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code Promise only when the promise leads the message. |
+   | `Cuts` | …as v1, plus: Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts. |
+   | `Other` | …as v1, plus: Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message. |
+
+2. In the Annotation tool, pick **`Job_with_ref_codebook_v2`** as the **Codebook**, create a fresh column **`job.AI_v2`**, and paste the v2 prompt:
+
+   > You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use Other.
+
+3. **Run All** → **Compare To `theme.reference`** and **`job.AI`**. Did the sharper codebook move κ? Either way you now have three measured runs (plain, examples, revised codebook) and can say which lever did what.
+
+## 12 · Checkpoints: if you fall behind
+
+Four checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader → Workspace manager → Upload workspace** → choose the ZIP → click **Load** on the new row → re-select the block/columns in the Annotation tool (selections aren't stored in the file; everything else is).
 
 | Checkpoint | Restores the state after… |
 |---|---|
 | **a** | §1: the `Tweets` block (column types fixed, `full_name`, candidate metadata joined) |
 | **b** | §4: the 226-row `Jobs_with_ref` block with `theme.reference` joined |
 | **c** | §6: v1 codebook in place, `job.manual` coded for the first page (1–10) and the last page (221–226); everything ready to connect the AI |
+| **d** | §11 step 1: the v2 codebook block `Job_with_ref_codebook_v2` added, ready for the v2 run |
 
-Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them.
+Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them. **Prompts are not saved anywhere but the Prompt field**: they are not part of the codebook block and not restored by a checkpoint. After loading any checkpoint and choosing the model, paste the prompt again (v1 or v2, from the chat / this sheet).
 
-## 12 · Before you use this in real research
+## 13 · Before you use this in real research
 
 - **The shared workshop key is deleted at 3:30 pm today.** For your research: your own API key (the setup is identical), or a **local model**: in **Add Provider** choose **Custom** and point it at any local server that speaks the OpenAI Chat Completions API (e.g. Ollama, LM Studio), so your data never leaves your machine.
 - **Check your ethics approval, and the rules around it.** Which AI models and providers you may use, and whether your data may be sent to an external API at all, is governed by your ethics approval plus your institution's, journal's and funder's AI-use rules, not by what the tool can do. A local model keeps data on your machine but does not make a model fair: de-identify regardless. You remain accountable for everything the AI did on your behalf.
@@ -128,7 +147,7 @@ Your provider and API key live on your machine, never inside workspace files, so
 
 ## Appendix · Same tool, cleverer questions (replay at home)
 
-Three more codebooks for the same 226 tweets, shown as demos in the session, plus the codebook-revision lever we didn't have time for. Each is one small codebook away; the checking workflow from §8–10 is what makes them trustworthy.
+Three more codebooks for the same 226 tweets, shown as demos in the session. Each is one small codebook away; the checking workflow from §8–11 is what makes them trustworthy.
 
 **A · Sentiment toward the LNP** (aspect, not sentence)
 Prompt: *For each tweet, judge the sentiment expressed toward the LNP (Liberal National Party) or its leader Deb Frecklington specifically, not the overall tone of the tweet. If neither is mentioned or referenced, use none.*
@@ -155,17 +174,6 @@ Prompt: *Count the distinct individual people the tweet refers to, by name or @h
 |---|---|
 | `yes` | The tweet refers to more than two distinct individual people. |
 | `no` | The tweet refers to two or fewer distinct individual people. |
-
-**D · Codebook v2: what a revision looks like (try at home)**
-The other lever is the codebook itself. Reading the disagreements in §8 usually points at cases the v1 descriptions were silent about: mixed "jobs, not cuts!" slogans, campaign vote-lists ("For Health. For Jobs."), hashtag-only mentions, and "cutting prices" that is not cutting jobs. A v2 codebook spells those out; run it into its own column (e.g. `job.AI_v2`) and compare κ again.
-
-| Code | v2 description (v1 plus the new rules) |
-|---|---|
-| `Promise` | …as v1, plus: Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as Promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code Promise only when the promise leads the message. |
-| `Cuts` | …as v1, plus: Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts. |
-| `Other` | …as v1, plus: Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message. |
-
-> Prompt v2: You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use Other.
 
 ---
 

@@ -56,8 +56,9 @@ A **full-capability tour in eight per-tool chapters**, built live in one workspa
 | 0:50–1:00 | Preview a few pages, back to page 1: Compare To `job.manual` and the reference → κ + confusion matrix, the mask, corrections (reuse `job.manual`) |
 | 1:00–1:05 | Run All into `job.AI`; headline κ against the reference (rehearsal 0.84) |
 | 1:05–1:13 | Feed `job.manual` back as examples into `job.AI.example`; Run All; κ again (rehearsal 0.73): examples don't guarantee improvement |
-| 1:13–1:21 | Showcase: same tool, cleverer questions (demo only) |
-| 1:21–1:30 | Take-home: your own data, local models, ethics, manual multi-coder use, feedback, close |
+| 1:13–1:19 | Revised codebook v2 (`Job_with_ref_codebook_v2`, Checkpoint d) into `job.AI_v2`; κ again: three measured runs |
+| 1:19–1:22 | Showcase: same tool, cleverer questions (demo only; first cut if late) |
+| 1:22–1:30 | Take-home: your own data, local models, ethics, manual multi-coder use, feedback, close |
 
 ## Design rationale (why this shape)
 
