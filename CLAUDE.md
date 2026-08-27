@@ -11,7 +11,7 @@ This branch (`online_workshop_2026-08-28`) holds a **one-day online workshop on 
 - `participant/hands-on-annotation-online.md`
 - `communications/pre-workshop-email-online.md`, `post-workshop-email-online.md`
 
-Older files are sources, not deliverables: the June 3-hour materials (`slides/index.html`, `facilitator/runbook.md`, `participant/hands-on-*.md`) are **v0.5-era** — check every UI claim against the v0.7 list below before reusing; the CAITG files (`slides/caitg-annotator.html`, `facilitator/runbook-caitg.md`, `participant/hands-on-annotator.md`) are already v0.7-accurate for the Annotation tool.
+Earlier deliveries' materials (June 3-hour intro, CAITG winter school) were **removed from this branch on 2026-08-27** because participants browse it via the pre-workshop email's link. They live on `intro_workshop_2026-06-03` and `caitg_winter_school_2026-07-30`; consult those branches for v0.5-era sources (check every UI claim against the v0.7 list below) and for the CAITG Annotation-tool files (already v0.7-accurate). Additional deliverables on this branch: `facilitator/demo-checklist-s1.md`, `facilitator/run-of-show-online.html`, `facilitator/stress-test-openrouter.py`, `communications/promo-blurbs-online.*`, `artifacts/online-2026-08-28/`.
 
 Known v0.7.1 issue to keep in materials until fixed: **Excel spreadsheet and zip-archive import are broken** — participants should use CSV/plain text. (Verify against the shipping 0.7.x before the day.)
 
@@ -26,11 +26,10 @@ Known v0.7.1 issue to keep in materials until fixed: **Excel spreadsheet and zip
 - **Still true in v0.7**: "Add to Workspace" is the publication button everywhere; right-click a Frequency word adds it to the **"Stop words filter (N)"**; per-visualisation download icons (image→PNG, table→CSV); double-click a graph node adds it to the active tool; block/column actions via menu icons (never right-click).
 - **Hints**: v0.5 hint system replaced by **Settings → Guidance** ("Show contextual hints", "Reset Contextual Hint history"). Don't reference the old hint bubbles.
 - **In-app docs lag**: `Help` content (ui.md etc.) still describes v0.5 names ("Token Frequency", "Trends and Sequence", working directory in sidebar) and omits Annotation — don't quote in materials without checking, and expect participants to notice discrepancies.
-- **Slide asset warning**: `slides/images/ui-overview.png` is a v0.5 screenshot — retake on v0.7 before the day (sidebar differences are visible: Annotation entry, Help button, no working-directory footer).
 
 ## What this repo is
 
-Materials for a single 3-hour in-person workshop introducing **LDaCA Wordflow** to university researchers — mostly HASS, mostly limited coding capability, ranging from HDR students to senior academics. The workshop is one piece of a larger series Chao is developing.
+Materials for Chao's **LDaCA Wordflow** workshop series for university researchers (mostly HASS, mostly limited coding capability, HDR students to senior academics), one branch per delivery. This branch is the 28 August 2026 online workshop; see the top of this file.
 
 The **north star** (from README) is: *"text data flows through stackable, single-purpose tools, and the meaning of an analysis comes from how you shape your data, not from the tool itself."* Don't soften or rewrite this without checking with Chao.
 
@@ -38,30 +37,29 @@ The **north star** (from README) is: *"text data flows through stackable, single
 
 Four parallel "channels" of content, each in its own folder:
 
-- `slides/index.html` — what's projected on the screen
-- `facilitator/runbook.md` — Chao's minute-by-minute script for the same moments
-- `participant/hands-on-*.md` — what attendees follow at their machine for the same sessions
-- `communications/` — pre/post emails to attendees
+- `slides/online-s1-intro.html`, `slides/online-s2-annotation.html` — what's on screen
+- `facilitator/runbook-online-s1.md`, `runbook-online-s2.md`, `demo-checklist-s1.md`, `run-of-show-online.html` — Chao's scripts, click lists, and wall-clock panel for the same moments
+- `participant/hands-on-annotation-online.md` — what attendees follow at their machine in Session 2
+- `communications/` — pre/post emails and promo copy
 
-They describe the **same three sessions** from different angles. The session structure is canonical in `README.md` (the table under "Session structure"). When something changes in one channel, it almost always needs to change in the others — see the consistency checklist below.
+They describe the **same two sessions** from different angles. The session structure is canonical in `README.md` (the table under "Session structure"). When something changes in one channel, it almost always needs to change in the others.
 
-`facilitator/pre-workshop-checklist.md`, `common-questions.md`, and `timing-recovery.md` are Chao-only references.
+`facilitator/pre-workshop-checklist-online.md` is Chao-only.
 
 ## Cross-file consistency — the rule that matters most
 
-When timing, session numbering, tool names, or the demo storyline changes, several files have to move together. Before declaring an edit done, check these match each other:
+When timing, chapter structure, tool names, or the demo plan changes, several files have to move together. Before declaring an edit done, check these match each other:
 
-- **Session timing**: `README.md` table → `slides/index.html` (housekeeping slide + any per-section title slides) → `facilitator/runbook.md` (section headers + minute timestamps) → `facilitator/timing-recovery.md` (cut points reference these times)
-- **Session numbering** (`1.0`, `1.5`, `2`, `3.A`, `3.B`, `3.C`, `3.D`): used as section anchors in runbook and hands-on sheets. If a section is renamed, grep the whole repo before saving.
-- **Tool names** in the snapshot tour — currently 5: **Frequency, Concordance, Trends, Topic, Quotation**. If the count changes, `README.md` "Tunable parameters" + `hands-on-1.md` + the snapshot-tour slides all need updating.
-- **Try this / follow along** markers in `hands-on-2.md` — these are an explicit promise to less-confident participants (key moves to **try this**; the rest to **follow along**, no pressure, with a per-phase checkpoint as the safety net). If a phase's marker changes, the slide badge, the hands-on header, and the runbook header must all match. Current map: A/B/C-1 = follow along; C-2/D/E = try this.
-- **Pre-workshop checklist** in `facilitator/pre-workshop-checklist.md` lists the snapshots and the workspace archive. If the demo storyline changes, the list of required snapshots changes.
+- **Session timing / chapters**: `README.md` tables → deck housekeeping and roadmap slides → `runbook-online-s1.md` / `demo-checklist-s1.md` clock gates → `run-of-show-online.html` rows.
+- **S2 task facts** (226 rows, `theme.verified`, codes `promise`/`cuts`/`other`, shared key deleted at 15:30): hands-on sheet → S2 deck → runbook-online-s2 → panel copy bank → pre-workshop checklist.
+- **Version wording**: participant-facing files say "the latest v0.7 release" and ask people to accept the in-app update prompt; never pin a patch number in participant materials.
+- **Screen-share setup** (full MBP screen, cursor kit): demo checklist pre-flight → panel prep rows → pre-workshop checklist §5.
 
 When in doubt: grep across the whole repo for the thing you're changing before saving.
 
 ## Slide deck constraints
 
-`slides/index.html` is a single self-contained HTML file. It must stay **offline-fine** — Chao runs it from a projector in rooms that may not have wifi.
+Each deck (`slides/online-s1-intro.html`, `slides/online-s2-annotation.html`) is a single self-contained HTML file. It must stay **offline-fine**.
 
 - Do **not** add `<script src="https://cdn...">` or `<link href="https://...">` — no external CDN dependencies.
 - Inline everything: CSS in `<style>`, JS in `<script>`, any small image data-uri'd or stored locally next to the file.
@@ -87,7 +85,7 @@ A few UI details that are easy to get wrong in materials (and have been correcte
 
 - Concrete, warm, no jargon. The audience is curious researchers, not engineers.
 - Address the room as "you," not "users" or "participants" (the facilitator runbook is the exception — it talks *about* participants).
-- Avoid hype words ("revolutionary," "powerful," "cutting-edge"). Match the existing tone — see `runbook.md` for the spoken voice and `cheat-sheet.md` for the written voice.
+- Avoid hype words ("revolutionary," "powerful," "cutting-edge"). Match the existing tone — see `runbook-online-s1.md` for the spoken voice and `hands-on-annotation-online.md` for the written voice.
 - Time is precious — every sentence in a slide or hands-on sheet should pull its weight.
 
 ## Workflow expectations
@@ -129,4 +127,4 @@ history on 2026-08-14. Don't recreate that situation.
 
 ## Project repo
 
-Remote: `https://github.com/milysun/wordflow-workshop` (private during development; will be made public later).
+Remote: `https://github.com/milysun/wordflow-workshop` (**public**; participants are linked to this branch, so keep it free of other deliveries' files and of any participant data).

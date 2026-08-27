@@ -5,7 +5,7 @@
 > - **Session 1 (morning, recorded)** — a condensed, demo-only version of the June intro workshop: Wordflow basics, concepts, and a multi-tool workflow. No participant hands-on.
 > - **Session 2 (afternoon, NOT recorded)** — a 1.5-hour hands-on on the **Annotation** tool (GenAI text coding), extending the CAITG winter-school session.
 >
-> The June 3-hour workshop's documentation is kept at the bottom of this file as reference; its materials on this branch (`slides/index.html`, `facilitator/runbook.md`, `participant/hands-on-*.md`) are **v0.5-era sources to condense from**, not deliverables.
+> Materials for earlier deliveries live on their own branches: [`intro_workshop_2026-06-03`](../../tree/intro_workshop_2026-06-03) (June 3-hour intro) and [`caitg_winter_school_2026-07-30`](../../tree/caitg_winter_school_2026-07-30) (CAITG hands-on). They were removed from this branch on 2026-08-27 so that participants following the pre-workshop email's link see only this workshop's materials.
 
 ---
 
@@ -47,14 +47,14 @@ A **full-capability tour in eight per-tool chapters**, built live in one workspa
 
 | Min | Block |
 |---|---|
-| 0:00–0:10 | Welcome back, setup check (app running, sample data imported), catch-up checkpoint for afternoon-only joiners |
-| 0:10–0:20 | GenAI as a coder: what to expect, pitfalls, and why we measure agreement (no theory talk precedes this session — unlike CAITG, we owe the room ~10 minutes of framing) |
-| 0:20–0:35 | Task setup: Annotation tool, `candidate_info_gender` block, `gender.ai` column, M/F/U codebook |
-| 0:35–0:45 | Manual coding + the multi-coder pattern |
-| 0:45–0:55 | Connect a model: own API key (prepared before the workshop), provider + model choice |
-| 0:55–1:10 | The preview loop: prompt → Preview → Compare To → confusion matrix → revise (the heart of the session) |
-| 1:10–1:20 | Run All, review, corrections |
-| 1:20–1:30 | Your own data + take-home: local models, ethics approval, feedback, close |
+| 0:00–0:05 | Welcome back, setup check (app running and updated), orientation for afternoon-only joiners |
+| 0:05–0:12 | Framing: GenAI as a coder (codebook → pilot → agreement → revise → document), then responsible AI: choosing a provider is a research decision (ethics approval, data privacy, local vs commercial models, cost) |
+| 0:12–0:32 | Workspace and data: import the QLD election tweets, derive the 226 non-retweet "job" tweets (Filter ×2), join the human-verified labels |
+| 0:32–0:39 | Codebook v1 (`promise` / `cuts` / `other`); feel the task by coding a few tweets by hand |
+| 0:39–0:47 | Connect a model (shared workshop key, deleted at 3:30 pm; own keys welcome) |
+| 0:47–1:02 | The preview loop: Preview → Compare To the verified labels → κ + confusion matrix → revise the codebook (v2), feed corrected rows back as examples |
+| 1:02–1:15 | Run All on the full table; headline κ; corrections |
+| 1:15–1:30 | Take-home: your own data, local models, ethics, manual multi-coder use, feedback, close |
 
 ## Design rationale (why this shape)
 
@@ -63,87 +63,30 @@ A **full-capability tour in eight per-tool chapters**, built live in one workspa
 - **Hands-on afternoon → deliberately NOT recorded.** Participants' screens, questions, data, and stumbles stay off the record; the session can move at the room's pace.
 - **Two sessions, lighter commitment.** People can attend either half: newcomers do the full day; June-workshop alumni can skip the morning and check in just for the new tool. The lunch break is the natural join/leave point — and the afternoon's install/setup window.
 - **Checkpoint recovery via workspace archives, not snapshots.** v0.7 removed the frontend Snapshot Mode, but the multi-tab system plus workspace metadata mean **open tabs are saved with the workspace** — so a checkpoint archive restores data blocks *and* the tab layout. Session 2 ships checkpoint files at each major stage; anyone lost re-imports the latest checkpoint and rejoins in under a minute.
-- **Online API-key handling.** No shared key on a public short URL this time (it can't be scoped to a room online). The pre-workshop email walks participants through creating their **own OpenRouter key** (free-tier models make this zero-cost); a fallback key can be dropped in the meeting chat at the facilitator's discretion.
+- **Shared workshop key, not participant keys.** A fresh OpenRouter key with a hard spend cap is created on the day, posted in the Zoom chat when the hands-on reaches the provider step, and deleted at 3:30 pm; participants with their own OpenRouter / OpenAI / Anthropic / Google keys can use those instead. Free-tier models are not used: their per-account rate limits cannot serve a room sharing one account.
 
 ## Folder map (this workshop's files)
 
 ```
-wordflow-workshop/
+wordflow-workshop/                           ← branch online_workshop_2026-08-28
 ├── README.md                                ← you are here (canonical structure)
 ├── slides/
 │   ├── online-s1-intro.html                 ← Session 1 deck (recorded morning)
-│   └── online-s2-annotation.html            ← Session 2 deck (afternoon hands-on)
-├── facilitator/
-│   ├── runbook-online-s1.md                 ← Session 1 minute-by-minute
-│   ├── runbook-online-s2.md                 ← Session 2 minute-by-minute
-│   └── pre-workshop-checklist-online.md     ← checkpoints to build, Zoom/recording setup
+│   ├── online-s2-annotation.html            ← Session 2 deck (afternoon hands-on)
+│   └── images/                              ← logos, v0.7 UI screenshot, team photos
 ├── participant/
-│   └── hands-on-annotation-online.md        ← Session 2 step sheet (sent before the day)
-└── communications/
-    ├── pre-workshop-email-online.md         ← ~1 week before (setup + API key prep)
-    └── post-workshop-email-online.md        ← within 24h after (recording link etc.)
+│   └── hands-on-annotation-online.md        ← Session 2 step sheet (linked from the pre-workshop email)
+├── facilitator/
+│   ├── demo-checklist-s1.md                 ← Session 1 click-by-click demo checklist
+│   ├── runbook-online-s1.md                 ← Session 1 spoken script + timing
+│   ├── runbook-online-s2.md                 ← Session 2 minute-by-minute
+│   ├── run-of-show-online.html              ← presenter panel (private screen; chat snippets)
+│   ├── pre-workshop-checklist-online.md     ← release-week timeline, test script, checkpoints
+│   └── stress-test-openrouter.py            ← shared-account concurrency test
+├── communications/
+│   ├── pre-workshop-email-online.md / .html ← sent Thu 27 Aug (HTML = paste source)
+│   ├── post-workshop-email-online.md        ← within 24 h after
+│   ├── promo-blurbs-online.md / .html       ← Eventbrite / newsletter / social copy
+│   └── images/                              ← banners
+└── artifacts/online-2026-08-28/             ← the 226 "job" tweets: model coding, human review, verified labels
 ```
-
-Everything else in those folders is inherited from the June workshop (v0.5-era) or the CAITG session and serves as source material.
-
----
-
----
-
-# Appendix — June 2026: Wordflow 3-Hour Intro Workshop (reference)
-
-Materials for a 3-hour in-person workshop introducing **LDaCA Wordflow** to university researchers (HDR students through senior academics across faculties; HASS is the primary design audience but anyone working with text is welcome).
-
-**⚠ v0.5-era**: the session structure, snapshot-tour mechanics, and any "Snapshot Mode" instructions below do not apply to v0.7.
-
-## Session structure
-
-| Time | Block | Duration | Mode |
-|---|---|---|---|
-| 1:30 pm – 1:55 pm | **1.0** Intro + UI tour | 25 min | Presentation; participants sign into Binder in parallel |
-| 1:55 pm – 2:25 pm | **1.5** Snapshot tour across 5 tools | 30 min | Facilitator-led demo + each participant loads each snapshot |
-| 2:25 pm – 2:40 pm | **Break** | 15 min | |
-| 2:40 pm – 3:25 pm | **2** Research story | 45 min | Demo at full speed + selective participant follow-along |
-| 3:25 pm – 3:40 pm | **Break** | 15 min | |
-| 3:40 pm – 3:55 pm | **3.A** Repurpose-the-lens demo | 15 min | Demo; the "wait, you can do that?" moment |
-| 3:55 pm – 4:00 pm | **3.B** Lab framing + feedback ask | 5 min | Brief instructions |
-| 4:00 pm – 4:25 pm | **3.C** Free hands-on lab | 25 min | Three tracks; helpers circulating |
-| 4:25 pm – 4:30 pm | **3.D** Thanks + close | 5 min | |
-
-## Why these design choices
-
-- **Snapshot tour ahead of mechanics (Session 1.5).** Participants touch all 5 analytical tools in 30 minutes and see the *visualisations* before they're asked to *produce* anything. Builds interest through visual variety instead of "configure this importer".
-- **One coherent research story in Session 2.** Threading joins → comparative frequency → concordance → trends → topic modelling through a single research question (gender differences in QLD candidate tweets) is more memorable than disconnected exercises. The cross-tool moves (Frequency → click jump → Concordance; Topic Modelling → Add to Workspace → group in Trends) are the things that make Wordflow feel *fluid*.
-- **Dual recovery mechanism (snapshots + workspace archives).** Session 2 is a linear chain — one stuck participant 15 min in falls off the rest. Pre-baked checkpoint snapshots and portable workspace archives let anyone rejoin at any major stage. Belt + braces.
-- **"Try this" / "follow along" markers in Session 2.** The 18+ step chain is too long to nail every step in 45 min. Hands-on sheets mark the key moves as **try this** and the rest as **follow along** (have a go, no pressure). A checkpoint for every phase (A–E) means anyone who falls behind — or hits a step that won't work — rejoins in 30 seconds, so nobody panics.
-- **Session 3.A as conceptual payoff.** Repurposing Trends into a histogram is the demo that lands the lens metaphor.
-- **Free lab over structured exercise in Session 3.C.** By 4:00 pm participants are saturated. A loose lab with helpers wins over another guided exercise.
-
-## June folder map
-
-```
-facilitator/runbook.md                  ← minute-by-minute, with scripts
-facilitator/pre-workshop-checklist.md   ← snapshots + workspace archives to prep
-facilitator/common-questions.md         ← anticipated stumbling blocks
-facilitator/timing-recovery.md          ← if you fall behind, cut these
-participant/welcome.md                  ← printable arrival handout
-participant/cheat-sheet.md              ← glossary + UI map (printable)
-participant/hands-on-1.md               ← Session 1.5 snapshot tour
-participant/hands-on-2.md               ← Session 2 research story
-participant/hands-on-3.md               ← Session 3 lens demo + free lab
-participant/what-next.md                ← post-workshop reading
-slides/index.html                       ← self-contained HTML deck (offline)
-communications/pre-workshop-email.md    ← ~1 week before
-communications/post-workshop-email.md   ← within 24h after
-```
-
-## June tunable parameters
-
-| Knob | Default | Adjust if… |
-|---|---|---|
-| Session 2 dataset | QLD election tweets (gender metadata; no hashtag filter — dataset is too small to subsample) | Want simpler narrative → use Honi Soit content filter instead |
-| Session 2 mode | Demo at full speed; key moves marked "try this", the rest "follow along" | Room is small/confident → full follow-along |
-| Checkpoint recovery | Pre-baked snapshots + workspace archive | First delivery → snapshots only |
-| Snapshot tour count | 5 (Frequency, Concordance, Trends, Topic, Quotation) | Tight room → 4 (drop Quotation; English-only) |
-| Session 3.A demo | Trends → article-size histogram | Have a better example for your audience → swap freely |
-| Session 3.C tracks | Continue Session 2 / own data / open exploration | Smaller homogeneous room → one track only |
