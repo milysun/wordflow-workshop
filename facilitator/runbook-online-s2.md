@@ -1,78 +1,65 @@
 # Runbook — Online workshop Session 2 (90 min, hands-on, NOT recorded)
 
-> **⚠ Superseded (2026-08-20):** Session 2 was redesigned around the jobs theme-coding task (226-tweet block via two filters, lowercase promise/cuts/other codebook, v1→v2 revision arc, shared session key, showcase segment). The live source of truth is `facilitator/run-of-show-online.html` plus `participant/hands-on-annotation-online.md`; this file awaits the review-pass rewrite. The break-glass table at the bottom remains largely valid.
+> **Rewritten 2026-08-27** to the current design: the jobs theme-coding task on the 226-tweet block, lowercase `promise` / `cuts` / `other` codebook with a v1 → v2 revision arc measured against a **human-verified reference annotation**, a **shared workshop key**, checkpoint workspace archives a/b/c (everyone loads **a** at the start), the responsible-AI slide before the tool, and the showcase segment. Wall-clock rows and every chat snippet: `facilitator/run-of-show-online.html`. Participant steps: `participant/hands-on-annotation-online.md` (its § numbers are used below).
 
 **Coding text with GenAI: the Annotation tool · Friday 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST) · Zoom**
 
-Deck: `slides/online-s2-annotation.html` (7 slides — done by minute ~15, then live). Participant sheet: `participant/hands-on-annotation-online.md` (drop the link in chat at the start; it mirrors every step). This is the CAITG 45-minute session grown to 90: same spine, but you own the theory framing (no preceding speaker), participants bring **their own API keys**, and recovery runs on **checkpoint workspace archives** instead of a facilitator sprint.
+Deck: `slides/online-s2-annotation.html`, 9 slides, done by ~14:12, then live Wordflow. Helpers (co-hosts): Gordon, Georgie, Xinwei, Alex, Seb; breakout rooms Help-1/2/3 pre-created. Online pacing rule: after every "now you do it" step, wait a beat longer than feels natural and ask for a ✅ reaction rather than "everyone good?" silence.
 
-**Setup before start** (full list in `pre-workshop-checklist-online.md`): recording **OFF** — verify, and disable auto-record for this meeting; checkpoint files uploaded and their links ready to paste; your own OpenRouter key working; a clean workspace on your machine; helpers briefed on the checkpoint drill ⟨if any⟩.
-
-Online pacing rule: after every "now you do it" step, give a beat longer than feels natural, and ask for a ✅ reaction in Zoom rather than "everyone good?" silence.
+**Setup before start** (full list in `pre-workshop-checklist-online.md`): recording **OFF** and auto-record disabled; checkpoint ZIPs a/b/c + `tweets_job_reference.csv` uploaded, links in the panel's fields; the shared key created at 12:35 with a spend cap, tested (model list loads, one Preview succeeds), pasted into the panel; room model `google/gemini-2.5-flash-lite`, fallback model in the panel; your own Wordflow on a clean workspace, multi-tab ON, cursor kit on; full MBP screen shared.
 
 ---
 
-## 0:00 – 0:05 · Welcome back + the three checks (slides 1–2)
+## 14:00 · Welcome back + the checks (slides 1–3, 5 min)
 
-Say the recording status out loud first: *"Unlike this morning, this session is **not** being recorded — ask anything, break anything."* Welcome afternoon-only joiners explicitly; one-breath orientation for them (sidebar = tools, middle = the tool, right = your data + graph). Run the three checks (app running / key at hand / sheet open — link in chat). Anyone without app or key: follow the shared screen, everything up to the AI runs still works on their machine later.
+Say the recording status first: *"Unlike this morning, this session is **not** recorded: ask anything, break anything."* Welcome afternoon-only joiners; one-breath orientation (sidebar = tools, middle = the tool, right = your data and graph). Checks: app running **and updated** (accept the update notification; quit and reopen if none showed), sheet open (chat the link), that's it: model access comes from us in a few minutes. Introduce the helpers and the breakout plan (*"stuck: message a helper or raise a hand; they'll pull you into a room"*). Post the S2 welcome snippet.
 
-## 0:05 – 0:15 · Framing: GenAI as a coder (slides 3–4)
+## 14:05 · Framing: GenAI as a coder, and choosing a provider (slides 4–6, 7 min)
 
-Your condensed theory segment — the winter school had a whole talk here; you have ten minutes, and they're load-bearing.
+- **Slide 4, the idea (2 min):** the promise (thousands of texts against *your* categories, minutes, no training data) vs the pitfalls (confidently wrong; inconsistent on edge cases; biased where language is biased; drifts on vague prompts; never unsure unless allowed). Land: *"today isn't 'trust the AI', it's how to check it."*
+- **Slide 5, the method (2 min):** treat it like a new coder: codebook → pilot → measure agreement against a reference (a human-verified annotation coded to the same codebook, or another coder) → revise → document. Slowly: *"a coder earns trust through agreement, human or machine."*
+- **Slide 6, responsible AI (~2 min, unhurried, before anyone touches the tool):** say the sentence explicitly: *"today we use shared OpenRouter access so everyone can do the exercise; that is convenience, not an endorsement of OpenRouter or any commercial AI service for research."* Ethics approval decides providers and whether data may leave at all; privacy (local models keep everything on your machine); fit for the question; cost and accountability. Also why the key dies at 3:30.
+- **Slide 7 (roadmap) 30 s, slide 8 (checkpoints) 45 s:** *"whenever you fall behind: chat link → Upload workspace → Load → re-select the block. Under a minute."* Then live Wordflow for the rest; keep the sheet's § numbers in your mouth.
 
-- **Slide 3 (~5 min):** the promise (thousands of texts against *your* categories, minutes, no training data) vs the pitfalls (confidently wrong; inconsistent on edge cases; biased where language is biased; drifts on vague prompts; never unsure unless you allow it). Land: *"today is not 'trust the AI' — it's how to check it."*
-- **Slide 4 (~5 min):** the method — treat it like a new coder: codebook → pilot → agreement (κ) → revise → document. Say slowly: *"a coder earns trust through agreement — human or machine."* This loop is the agenda; point at it.
+## 14:12 · STEP 1 · Load Checkpoint a: the prepared Tweets block (sheet §1, 8 min)
 
-Show slide 5 (roadmap) for 30 seconds, slide 6 (checkpoints) for 60 — *"if you fall behind at any point: chat link, Upload workspace, Load, re-select the block. Under a minute, and you're back with us."* Then live Wordflow for the rest.
+Chat the checkpoint link (panel snippet). Everyone: **Data Loader → Workspace manager → Upload workspace → Checkpoint_a_Data.zip → Load.** SEE: a block called **`Tweets`**. Say what is inside and why: *"this morning's data preparation, done for you: tweets plus candidate metadata joined on username, `created_at` as a real date-time, `party` and `gender` as categories, `full_name` built from first and last name. Loading it is also the rescue move for later."* Fallback for anyone whose upload fails: sample import → tweets block (metadata optional today). ✅-check before moving on.
 
-## 0:15 – 0:25 · Workspace + data (live, everyone follows)
+## 14:20 · Identify the theme, derive the block (sheet §2–3, 8 min)
 
-1. **Data Loader → Create workspace**, any name.
-2. **Import sample data** → tick **ADO — Queensland Election Tweets** → **Import selected**. (Flat list in v0.7 — no tabs in this dialog.) Wait for the **"✓ Imported"** chip.
-3. Add **`candidate_info_gender`** as a data block; click it — walk the columns in the Data Viewer: `party, electorate, first_name, last_name, username`, and human-coded `gender`. *"One row per candidate. The gender column is our reference annotation — coded by people. Today the AI competes with them."*
-4. Mention own-data upload for later (drag & drop, CSV/plain text; **Excel and zip import are broken in 0.7.x — export to CSV first** ⟨re-verify against the shipping version before the day⟩).
+Click `Tweets` → **Frequency**: the word cloud says **jobs**; that's the theme (*"normally you'd read and iterate here; we've pre-baked the codebook for time"*). Then **Preprocessing → Filter #1** on `Tweets`: `text` contains RegEx `^[Rr][Tt]`, **negate** → the originals block. **Filter #2** on that block: `text` contains `job` (plain contains, so "jobs" and "job-seeker" count). Say **226** out loud; ✅-check on 226. Anyone else's number: helper + breakout; Checkpoint b carries this block onward.
 
-**✅-check + Checkpoint 0** (`Checkpoint_0_Data.zip`) into chat: *"anyone stuck on import — this file is the workspace you just saw me build."*
+## 14:28 · Join the reference annotation (sheet §4, 4 min)
 
-## 0:25 – 0:40 · Annotation column + codebook + manual coding (live, everyone follows)
+Chat the `tweets_job_reference.csv` link. Add it as a block (drag & drop or Upload files). **Preprocessing → Join**: the 226-row block **FIRST** (first pick = left), then the reference block, on `tweet_id`, left join. Say what the column is: *"`theme.reference`: all 226 tweets coded by a frontier model with the codebook you're about to see, then reviewed tweet-by-tweet by a human coder. Not gospel; a reference you can measure any coder against, human or AI."* ✅-check.
 
-1. Sidebar → **Annotation**. Add `candidate_info_gender` under **Selected Data Blocks**; **Text Column = `first_name`** — *"that's all the model gets to read."*
-2. **Annotation Column → Start new annotation** → name it **`gender.ai`** → **Create**. (The `.ai` suffix is our naming habit, not the tool's.)
-3. **Codebook → Create New**, then **Edit**: add **M / F / U** with one-sentence descriptions. Teaching point, verbatim from CAITG (it worked): *"The description field is your codebook definition — the model reads it word for word. Write it like instructions to a new RA. Vague codebook, vague coder — human or machine."* Give the room 3 minutes to write their own descriptions; read one or two from chat volunteers.
-4. **Manual mode → Start**: code 3–4 rows on screen; ask everyone to do ~5. Point out the multi-coder pattern (one column per coder, continue via the Annotation Column dropdown). **Close**.
+## 14:32 · Codebook v1 + feel the task (sheet §5–6, 7 min)
 
-**✅-check + Checkpoint 1** (`Checkpoint_1_Codebook.zip`).
+**Annotation** tool → add the joined block → Text Column `text` → **Annotation Column → Start new annotation → `theme.manual`**. **Codebook → Create New → Edit**: three codes, lowercase, paste the v1 descriptions from the copy bank (chat them too). Then **Manual → Start**: everyone codes ~5 tweets. *"Notice where you hesitate; the model will hesitate there too. In a team, each coder gets their own column exactly like this."* Close. Then **Start new annotation → `theme.ai`** so the AI has its own column.
 
-## 0:40 – 0:50 · Provider + model (live — the online danger zone)
+## 14:39 · Connect the model: the danger zone, go slow (sheet §7, 8 min)
 
-The step that loses people online: no helpers at shoulders, so go slow and use chat aggressively.
+Post the key + model snippet. On screen, slowly: toggle **AI** → **Advanced settings** → **+ Add Provider → OpenRouter** → paste key → Tab → **Add Provider** → **Model**: paste the id. Say: *"the key is shared, temporary, and deleted at 3:30; on your own data you'd use your own key or a local model."* Helpers sweep chat; breakout for stragglers; **OpenRouter unreachable** snippet ready for anyone whose network blocks it (they code manually and watch). If the room model starts erroring, post the **switch to fallback model** snippet.
 
-1. Toggle **AI** → expand **Advanced settings** (chevron).
-2. **+ Add Provider** → **OpenRouter** → paste **your own key** → Tab to accept the name → **Add Provider**. Remind: keys are write-only here — *"Wordflow never shows your key again after you save it."*
-3. **Model**: search the live list. Suggest for the room: a `:free` Gemma model (search "gemma", pick one tagged `:free` — zero cost) or `google/gemini-2.5-flash-lite` if they added credit. Any provider's key works (OpenAI / Anthropic / Google via their own provider entries).
-4. Troubleshoot via chat: model list won't load → free-type the exact model id; key rejected → check for clipped characters when pasting.
+## 14:47 · The preview loop: v1 works, the reference makes it better (sheet §8, 15 min, protect these)
 
-This is a genuine 10 minutes — don't compress it. Anyone whose key won't cooperate: *"watch the next section on my screen; Preview needs nothing saved, you can wire your key up after the session with the sheet."*
+Paste the **v1 prompt**. **Preview** (page of 10; display-only). **Compare To → tick `theme.reference`** (and optionally `theme.manual`: *"how do YOU agree with the reference?"*). κ badge; **hover** for the confusion matrix. **Filter any difference**; read two or three disagreements aloud: the mixed "jobs, not cuts!" slogans and the "For Health. For Jobs." vote-lists will be the ones. Ask the room: model wrong, or codebook silent? Then **the revision**: Edit codebook → paste the **v2 descriptions**; paste the **v2 prompt**; **Update Preview**; watch κ move. Land it: *"codebook → pilot → agreement → revise. That loop is the method; everything else is buttons."* Mention that the reference itself came out of this loop: a human reviewer overrode the model on 22 of 226 tweets, mostly on exactly these two rules.
 
-## 0:50 – 1:10 · The preview loop (live — the heart, protect these 20 minutes)
+## 15:02 · Run All: trustworthy coding at scale (sheet §9, 8 min)
 
-1. **Prompt** field: Tab to take the default, then edit — add context (Australian election candidates' first names) and an escape hatch (unsure → `U`).
-2. **Preview** — codes the visible page (10 rows; **Rows per page** up to 100 for a steadier sample). Predictions are display-only: *"nothing has touched your data — this is the pilot study from slide 4."*
-3. **Compare To** → tick **`gender`** → **Cohen's Kappa** (default; Percent Agreement and Krippendorff's Alpha are one click away). Badge appears → **hover it → the confusion matrix.** Tie back: *"step 3 of the loop — agreement, measured, in one hover."*
-4. **Filter any difference** (filter icon by the column header) → read 2–3 disagreements aloud; ask the room in chat: model wrong, or human coding debatable? (`U` boundary cases will surface — that's the point.)
-5. Revise prompt or codebook description → **Update Preview** → watch κ move. One full loop on screen, then **5 quiet minutes for the room to loop on their own** — this is the skill being trained. Collect κ values in chat; celebrate the spread (*"different codebooks, different coders — same as a human team"*).
+**Run All** on all 226 (~1 min; name **Reprocess all rows** vs **Fill missing only**). **Annotation Review** → **Compare To `theme.reference`** = the full-table κ, the headline number. Expected shape: roughly three-quarters `promise`, the rest split between `cuts` and `other`. Correct one row via the **Correction** column (`theme.ai.correction`) and point at **Use as example**: corrections feed back as worked examples. *"The AI didn't just do the job; it did the whole corpus, and you have the numbers to trust it."* Then one breath on afterlife: the coded column is ordinary data (filter on it, Trends by `party`, Export CSV).
 
-**✅-check + Checkpoint 2** (`Checkpoint_2_Preview.zip` — includes a working prompt + codebook; after loading, re-select block/column if selectors are empty).
+## 15:10 · Showcase: same tool, cleverer questions (demo only, 12 min)
 
-## 1:10 – 1:20 · Run All + review (live)
+*"Watch, don't follow."* Three quick codebooks on the same 226 tweets, Preview only, all in the copy bank: **A** sentiment toward the LNP (aspect, not sentence); **B** mentions a place outside Queensland (the model knows geography); **C** more than two people mentioned (counting and names). Land: *"classic NLP problems, now one codebook away; the checking workflow you just did is what makes them trustworthy."* Take chat questions while previews run.
 
-1. **Run All**. While it runs: **Advanced settings → Run All processing** — **Reprocess all rows** (default) vs **Fill missing only** (*"keeps your manual codes, fills the gaps"*); Temperature 0 = deterministic. Progress in the banner + sidebar **Tasks**; **Stop** exists.
-2. **Annotation Review**: Compare To / matrix / filters, now full-table. Set a **Correction** column (accepts the suggested `gender.ai.correction`), correct one row, mention **Use as example** (corrections become few-shot examples).
-3. Close the loop: the coded column is ordinary data — filter on it, chart it in Trends (morning attendees will feel the click), export CSV from the **Export** view.
+## 15:22 · Take it home + close on time (slide 9, 8 min)
 
-## 1:20 – 1:30 · Your own data + take it home (slide 7)
+Slide 9, top to bottom: the shared key is gone at 3:30, so real research means your own key or a **local model** (Add Provider → Custom: Ollama, LM Studio); **ethics approval** decides models and providers; keep the loop and document prompt, codebook, model, κ; **no AI required**: a team of human coders each in their own column, Compare To gives percent agreement, Cohen's κ or Krippendorff's α across multiple reference columns; Wordflow is under active development: **Feedback** button, one-click updates, cite via the sidebar's quote icon. Thank the helpers. Follow-up email tomorrow: Session 1 recording, materials, checkpoints. **Close at 15:30.**
 
-~5 min free play or guided restart: own CSV + a harder coding problem (stance, topic, policy claims) — or improve κ on the names task, or code the tweets block's `text` column for topic. Then slide 7, plainly, in order: own key was the real-research setup all along; **local models** via Add Provider → Custom (Ollama, LM Studio); **ethics approval decides which models/providers — check before real data**; keep the loop and document it (prompt, codebook, model, κ → methods section); Feedback button + citation. Point to the follow-up email (Session 1 recording, materials, checkpoints). Thank the room; end on time.
+## 15:30 · Immediately after
+
+**Delete the OpenRouter key** (openrouter.ai → Keys → `workshop-2026-08-28`), then clear it from the panel field. Stop Zoom; save the chat log; export your S2 workspace archive as the reference copy.
 
 ---
 
@@ -80,10 +67,11 @@ This is a genuine 10 minutes — don't compress it. Anyone whose key won't coope
 
 | Symptom | Do |
 |---|---|
-| Someone lost mid-exercise | Checkpoint link + slide-6 drill: Upload workspace → Load → re-select block/column. Do the first one together on screen so the room sees it once |
-| Participant's model list won't load | Free-type the exact model id (the field accepts typed names); check the key pasted whole |
-| Key rejected / no key | They follow on your screen; the sheet works standalone afterwards. Fallback shared key in chat only at your discretion — never on a public URL |
-| Provider error strip in Preview | **Retry** button; if it's a 429, switch them to a `:free` model |
-| Run All "completed with N failed batches" | Blank rows remain — rerun with **Fill missing only** |
-| Zoom crashes / you drop out | Helpers hold the room ⟨name a backup host⟩; on rejoin, resume from your last checkpoint file — you eat your own dog food |
-| Way behind at 1:10 | Skip Run All — the preview loop already carried the payload. Never skip the ethics close |
+| Checkpoint a won't load for someone | Sample import → tweets block; they proceed without metadata (nothing in §2–9 needs it). |
+| Someone's filter count isn't 226 | Helper + breakout; or load Checkpoint b (block + reference join + v1 codebook). |
+| Provider add fails / model list empty | Re-paste the key (no trailing space); Tab before Add Provider; last resort: they watch the shared screen and use Checkpoint c later at home with their own key. |
+| openrouter.ai unreachable on their network | Post the unreachable snippet: code manually, watch the AI steps, repeat later on another network or with a local model. |
+| Room model returns 429s / errors | Post the fallback-model snippet; everyone swaps the model id, nothing else changes. Both models were tested Thursday. |
+| Run All slow for the room | Keep talking through Annotation Review on your own screen; the numbers arrive as you speak. |
+| Way behind at 15:02 | Skip the showcase (it's demo-only); Run All + take-home are the non-negotiables. |
+| Someone pastes the key in public chat elsewhere | It has a spend cap and dies at 15:30; delete early if abused. |

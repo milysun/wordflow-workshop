@@ -215,14 +215,15 @@
   <div class="sub">Promise vs pitfalls · the loop: codebook → pilot → agreement → revise → document. "A coder earns trust through agreement." Then the responsible-AI slide: say the non-endorsement sentence out loud (shared OpenRouter access = convenience, not endorsement); ethics approval, data privacy/local models, fit, cost.</div></div>
 </div>
 <div class="item" data-start="14:12"><input type="checkbox"><span class="t">14:12</span><span class="d">8m</span>
-  <div class="what"><div class="head"><span class="flag chat">CHAT</span>Workspace + load the tweets (STEP 1 starts)</div>
-  <div class="sub">Create workspace · Import sample data → QLD Election Tweets → add the tweets block. Fallback CSV in chat for anyone stuck. ✅-reaction check.</div>
-  <button class="copy" data-tpl="Data fallback if the sample import fails: {DATA} — download, then drag & drop into Wordflow's Data Loader (or use Upload files). CSV only; Excel/zip won't import.">Copy: data fallback</button>
+  <div class="what"><div class="head"><span class="flag chat">CHAT</span>Load Checkpoint a: the prepared Tweets block (STEP 1 starts)</div>
+  <div class="sub">Chat the checkpoint link · Data Loader → Workspace manager → <b>Upload workspace</b> → choose Checkpoint_a_Data.zip → <b>Load</b> · SEE the <b>Tweets</b> block (created_at datetime, party/gender categories, full_name joined). Say: "this morning's data prep, done for you; the same move rescues you later if you fall behind." Fallback for anyone stuck: sample import → tweets block (metadata optional for today). ✅-reaction check.</div>
+  <button class="copy" data-tpl="STEP 1: load the prepared workspace. Download Checkpoint_a_Data.zip from {CKPT} — then in Wordflow: Data Loader → Workspace manager → Upload workspace → choose the ZIP → click Load on the new row. You should see a data block called Tweets.">Copy: load checkpoint a</button>
+  <button class="copy" data-tpl="Data fallback if the checkpoint won't load: Data Loader → Import sample data → tick ADO — Queensland Election Tweets → Import selected → add the candidate tweets block. (Or download {DATA} and drag & drop into the Data Loader; CSV, Excel or zip all import.)">Copy: data fallback</button>
   </div>
 </div>
 <div class="item" data-start="14:20"><input type="checkbox"><span class="t">14:20</span><span class="d">8m</span>
   <div class="what"><div class="head">STEP 1 · Identify the theme, then derive the block (everyone lands on 226 rows)</div>
-  <div class="sub">Frequency word cloud → <b>jobs</b> dominates the campaign language: that's our theme. Then Preprocessing → Filter #1: text contains RegEx <b>^[Rr][Tt]</b> → <b>negate</b> → non-retweets block. Filter #2 on that block: text contains <b>job</b> (not whole-word, so jobs / job-seeker count) → <b>226 rows</b>. Say the number out loud; ✅-check on 226.</div></div>
+  <div class="sub">Frequency on <b>Tweets</b> → word cloud → <b>jobs</b> dominates the campaign language: that's our theme. Then Preprocessing → Filter #1 on Tweets: text contains RegEx <b>^[Rr][Tt]</b> → <b>negate</b> → non-retweets block. Filter #2 on that block: text contains <b>job</b> (not whole-word, so jobs / job-seeker count) → <b>226 rows</b>. Say the number out loud; ✅-check on 226. Stragglers: Checkpoint b carries this block + the reference join + the v1 codebook.</div></div>
 </div>
 <div class="item" data-start="14:28"><input type="checkbox"><span class="t">14:28</span><span class="d">4m</span>
   <div class="what"><div class="head"><span class="flag chat">CHAT</span>Join the reference annotation (human-verified labels)</div>

@@ -13,7 +13,7 @@ This branch (`online_workshop_2026-08-28`) holds a **one-day online workshop on 
 
 Earlier deliveries' materials (June 3-hour intro, CAITG winter school) were **removed from this branch on 2026-08-27** because participants browse it via the pre-workshop email's link. They live on `intro_workshop_2026-06-03` and `caitg_winter_school_2026-07-30`; consult those branches for v0.5-era sources (check every UI claim against the v0.7 list below) and for the CAITG Annotation-tool files (already v0.7-accurate). Additional deliverables on this branch: `facilitator/demo-checklist-s1.md`, `facilitator/run-of-show-online.html`, `facilitator/stress-test-openrouter.py`, `communications/promo-blurbs-online.*`, `artifacts/online-2026-08-28/`.
 
-Known v0.7.1 issue to keep in materials until fixed: **Excel spreadsheet and zip-archive import are broken** — participants should use CSV/plain text. (Verify against the shipping 0.7.x before the day.)
+Excel and zip-archive import, broken in v0.7.1, are **fixed in the current release** (verified by Chao 2026-08-27); no CSV-only caveats in materials.
 
 ## v0.7 UI facts (verified against v0.7.1 code, 2026-08-02) — these override any v0.5-era bullet below
 

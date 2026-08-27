@@ -15,7 +15,7 @@
 2. **Join order**: pick `tweets` FIRST in the Join tool. First pick = left table.
 3. **Set the Topic Modelling parameters BEFORE the live run** (min topic size 7, topics 40, seed **TBC**): re-running because you forgot costs 2+ minutes on camera.
 4. **Kick off the background jobs at the start of Chapter 5** (Honi Soit Topic Modelling + Quotation Run All). Miss it and Chapters 6.5 and 7 have nothing to show.
-5. **Drag-and-drop demo uses a CSV.** Excel/zip import was broken in v0.7.1; unless Wednesday proves it fixed, do not drag an xlsx on camera.
+5. **Drag-and-drop demo file staged and tested.** CSV, Excel and zip all import in the current release (verified 2026-08-27); use whichever you rehearsed, and know where it sits on disk.
 6. **Clock gates** (below): when you hit one late, cut in this order: F never starts → Honi Soit TM walkthrough (6.5) → dispersion detail (4b.5–6) → Quotation to 2 min.
 
 ## Clock gates (wall time; recording starts 11:00)
@@ -30,7 +30,7 @@
 
 - [ ] Wordflow final release (v0.7.3 if shipped, else v0.7.2). **Fresh state: no workspace open** — Chapter 1 creates one on camera.
 - [ ] **Settings → General → Enable multi-tab = ON**; contextual hints **ON** (Chapter 1 turns them off as a demo).
-- [ ] A small demo **CSV** in an easy folder for the drag-and-drop step (file choice TBC).
+- [ ] A small demo **file** (CSV, Excel or zip) in an easy folder for the drag-and-drop step.
 - [ ] Section backup workspace archives reachable without hunting (rebuild list in the pre-workshop checklist).
 - [ ] **Display layout**: Wordflow full screen on the MBP built-in display; deck also presented from the MBP display; this panel + everything else on the external screen. Zoom shares the **entire MBP screen** (needed so cursor/click effects reach the feed and the recording). DND on, notifications off (doubly important with whole-screen share).
 - [ ] **Cursor kit active**: macOS pointer enlarged + coloured fill (Accessibility → Display → Pointer) and the click-effect app running (Mouzz or equivalent); effects verified in the Wednesday share test.
@@ -46,7 +46,7 @@
 - [ ] 1.2 **Views** sidebar: the tool list top to bottom (point at Annotation: "this afternoon"); click between two tools to show switching.
 - [ ] 1.3 Create a new workspace (Data Loader → workspace creation; exact button wording **TBC**).
 - [ ] 1.4 **Import sample data** → dialog "Import sample content" → select `ADO — Queensland Election Tweets` AND `SCL — Honi Soit Student Newspaper` → **Import selected**. SEE: blocks appear in Data Blocks.
-- [ ] 1.5 **Drag and drop** the demo CSV onto the Data Loader. SEE: upload lands. (CSV only; see mistake #5.)
+- [ ] 1.5 **Drag and drop** the demo file onto the Data Loader. SEE: upload lands. (CSV, Excel or zip all work now.)
 - [ ] 1.6 **Add to Workspace** the uploaded file; preview it.
 - [ ] 1.7 **Graph view + Data view**: select a block to view; **rename a column** and **change a column type** via the column menu; **click one row** to preview the full record.
 - [ ] 1.8 Sidebar footer: **Help**, contextual **?** marks, **Feedback** ("under active development; use it").

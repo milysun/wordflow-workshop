@@ -19,7 +19,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] Annotation: `theme.manual` column + codebook (lowercase codes) + manual codes; `theme.ai`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
 - [ ] Reference join: `tweets_job_reference.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.reference` gives full-table κ.
 - [ ] Checkpoint round-trip on a second machine: Upload workspace → Load → selectors re-pick.
-- [ ] Excel/zip import: retest; if fixed, delete the caveat from the hands-on sheet §1 and pre-email.
+- [x] Excel/zip import: fixed since June (verified 2026-08-27); caveats removed from all materials.
 
 **Wednesday TBC hunt for the S1 demo (pins every TBC in `demo-checklist-s1.md` / `runbook-online-s1.md`; write the answers into the checklist):**
 
@@ -43,16 +43,16 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] **Section backup archives** — build the full demo once end-to-end (this is also the rehearsal), exporting a workspace archive at each chapter boundary (Ch2, Ch4, Ch5, Ch6, Ch8 at minimum). Plan B if a live step misbehaves mid-recording; the Ch6/Ch8 archives also carry the finished Honi Soit Topic Modelling + Quotation results in their tabs (fallback if the background jobs aren't done when reached). Keep them local; not published.
 - [ ] Write the pinned TBC values (seed, timings, control labels — from the Wednesday hunt above) into `demo-checklist-s1.md` before the Thursday rehearsal.
 
-## 3 · Session 2 checkpoint archives (T-5 days)
+## 3 · Session 2 checkpoint archives (built Thu 27 Aug on the final release)
 
-Build in a clean workspace on v0.7.2, exporting after each stage (**Export view → Export Workspace → "Export workspace archive"**), and rename the files. Class names everywhere are lowercase: `promise` / `cuts` / `other`.
+Build in a clean workspace, exporting after each stage (**Export view → Export Workspace → "Export workspace archive"**), and rename the files. Class names everywhere are lowercase: `promise` / `cuts` / `other`. Definitions agreed 2026-08-27:
 
-- [ ] `Checkpoint_a_Data.zip`: sample tweets imported → Filter #1 (`^[Rr][Tt]` regex, negated) → Filter #2 (contains `job`) → the **226-row block**, PLUS `tweets_job_reference.csv` (in `artifacts/online-2026-08-28/`; column `theme.reference`) joined on `tweet_id`. Built 2026-08-27 from Kelvin's review (Fable coding with 22 overrides); Xinwei's second pass may adjust it further.
-- [ ] `Checkpoint_b_Codebook.zip`: plus the v1 codebook (three lowercase codes with v1 descriptions), `theme.manual` column with ~8 codes filled, and an empty `theme.ai` column.
-- [ ] `Checkpoint_c_V2.zip`: plus the v2 codebook descriptions and v2 prompt saved in the Annotation tab, ready to Run All.
+- [ ] `Checkpoint_a_Data.zip` (**everyone loads this at 14:12; it is the hands-on's starting point**): sample tweets + candidate metadata imported → column types fixed (tweets `created_at` → datetime; candidate `party`, `gender` → category) → `full_name` = `first_name` + `last_name` (Preprocessing → Create) → join on `username` → the joined block renamed **`Tweets`**. Nothing else.
+- [ ] `Checkpoint_b_Codebook.zip`: plus Filter #1 (`^[Rr][Tt]` regex, negated) → Filter #2 (contains `job`) → the **226-row block**, `tweets_job_reference.csv` (column `theme.reference`) joined on `tweet_id`, the v1 codebook (three lowercase codes, v1 descriptions), and the `theme.manual` column with ~5 codes filled.
+- [ ] `Checkpoint_c_V2.zip`: plus the empty `theme.ai` column, the v2 codebook descriptions and the v2 prompt saved in the Annotation tab, ready to Run All.
 - [ ] **Round-trip test each file on a second machine**: Upload workspace → Load → open Annotation → data, tabs, codebook restore; block/column selectors need re-picking (expected; the sheet says so).
-- [ ] **Join test**: join the reference block onto the 226-row block on `tweet_id` (both sides must parse the id with the same dtype), then Compare To `theme.reference` shows a full-table κ.
-- [ ] Upload the three ZIPs + `tweets_job_reference.csv` to the materials location; paste the links into the run-of-show panel's Checkpoint field.
+- [ ] **Join test** (inside b): Compare To `theme.reference` shows a full-table κ once `theme.ai` exists.
+- [ ] Upload the three ZIPs + `tweets_job_reference.csv` to the materials location; paste the links into the run-of-show panel's Checkpoint and Data fields.
 
 ## 4 · AI provider (T-3 days)
 

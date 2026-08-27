@@ -10,31 +10,34 @@ This sheet mirrors the live session step by step, and works as a standalone tuto
 
 ## 0 · Before we start: three things
 
-1. **Wordflow running**: the latest v0.7 desktop app from **`sih.tools/wordflow`** (Mac/Windows). *Windows may show a security warning: click **More info**, then **Run anyway**.*
+1. **Wordflow running and updated**: the desktop app from **`sih.tools/wordflow`** (Mac/Windows); if it shows an update notification, accept it (one click). *Windows may show a security warning at install: click **More info**, then **Run anyway**.*
 2. **This sheet open** next to Wordflow (a second screen helps).
 3. **Model access is provided**: a shared workshop key will be posted in the Zoom chat when we reach §6 (it is deleted at 3:30 pm). Your own OpenRouter / OpenAI / Anthropic / Google key works too, if you prefer.
 
-## 1 · Workspace and data
+## 1 · Load the prepared workspace (Checkpoint a)
 
-1. In the **Data Loader**, click **Create workspace** and give it a name.
-2. Click **Import sample data**. In the dialog, tick **ADO — Queensland Election Tweets** → **Import selected**. Wait for the **✓ Imported** chip.
-3. Add the **candidate tweets** file as a data block: one row per tweet from candidates in the 2020 Queensland state election, with the tweet in the `text` column.
+This morning's data preparation is done for you. Load it in one step:
+
+1. **Data Loader → Workspace manager → Upload workspace** → choose `Checkpoint_a_Data.zip` (link in the Zoom chat) → click **Load** on the new row.
+2. You now have a **`Tweets`** block: one row per tweet by a candidate in the 2020 Queensland state election, with the tweet in `text`, `created_at` as a proper date-time, and the candidate's metadata (`party`, `gender`, `full_name`) joined in from the candidate table.
+
+*Prefer to build it yourself later? Data Loader → Import sample data → **ADO — Queensland Election Tweets**; add the tweets and candidate blocks; fix the column types (`created_at` → date-time; `party`, `gender` → category); create `full_name` from `first_name` + `last_name` in **Preprocessing → Create**; join the two on `username`. That is exactly what the checkpoint contains.*
 
 ## 2 · Explore first: what is this campaign about?
 
 Before defining any codes, let the data speak.
 
-1. Click the tweets block → open **Frequency**. The word cloud makes it obvious: this campaign is about **jobs**.
+1. Click the `Tweets` block → open **Frequency**. The word cloud makes it obvious: this campaign is about **jobs**.
 2. Optional: click "jobs" in the cloud to jump into **Concordance** and read a few tweets in context. Notice the different ways the word is used; that observation becomes our codebook in §4.
 
 ## 3 · Derive the coding dataset (everyone lands on the same 226 rows)
 
 Two filter steps in **Preprocessing → Filter**, each creating a new block:
 
-1. **Drop retweets**: on the tweets block, filter where `text` contains RegEx **`^[Rr][Tt]`**, and tick **negate** (keep everything that does NOT start with rt). This gives the original-tweets block.
+1. **Drop retweets**: on the `Tweets` block, filter where `text` contains RegEx **`^[Rr][Tt]`**, and tick **negate** (keep everything that does NOT start with rt). This gives the original-tweets block.
 2. **Keep the job tweets**: on that new block, filter where `text` contains **`job`** (plain contains, not whole-word, so "jobs" and "job-seeker" count).
 
-Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint a, §10).
+Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint b, §10).
 
 ## 4 · Join the reference annotation
 
@@ -109,9 +112,9 @@ Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader
 
 | Checkpoint | Restores the state after… |
 |---|---|
-| **a** | §4: the 226-row block with `theme.reference` joined in |
-| **b** | §5–7: v1 codebook, `theme.manual` + `theme.ai` columns ready |
-| **c** | §8: the v2 codebook and prompt in place, ready to Run All |
+| **a** | §1: the prepared `Tweets` block (column types fixed, candidate metadata joined) |
+| **b** | §5: the 226-row block with `theme.reference` joined, the v1 codebook, and the `theme.manual` column |
+| **c** | §8: `theme.ai` column, v2 codebook and v2 prompt in place, ready to Run All |
 
 Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them.
 
