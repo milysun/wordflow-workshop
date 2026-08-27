@@ -1,6 +1,6 @@
 # Pre-workshop email: online workshop 28 Aug 2026
 
-*Final version, sent **Thursday 27 August (T-1), by lunchtime**. Copy the body below as is; the Zoom link is filled in.*
+*Final version, sent **Thursday 27 August (T-1), ~3 pm via Eventbrite**. **Resent late Thursday evening by BCC from the SIH Training Administration mailbox** (the HTML paste source carries the resend preface) after a registrant reported the Eventbrite send never arrived; the resend also announces the v0.7.3 release and asks people to accept the in-app update. Registrants after the resend (sales close 8 am Fri) get the same email individually.*
 
 **How to send (participant-data rule):** send from Eventbrite (**Manage event → Emails to attendees**), which reaches all 90 registrations (86 unique people) without exporting addresses anywhere. If sending from Outlook instead, all recipients in **BCC**, and delete the exported CSV from Downloads afterwards; the register copy lives in `private/` only.
 
