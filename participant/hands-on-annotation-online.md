@@ -4,7 +4,7 @@
 
 You'll use Wordflow's **Annotation** tool (new in v0.7) to code a real dataset with an AI model, and, more importantly, to *check* the AI's coding the way you'd check a human coder's: agreement scores, a confusion matrix, and targeted revisions until the numbers hold up.
 
-This sheet mirrors the live session step by step, and works as a standalone tutorial afterwards. Fall behind at any point? Jump to **§12 Checkpoints**; you can rejoin in under a minute.
+This sheet mirrors the live session step by step, and works as a standalone tutorial afterwards. Fall behind at any point? Jump to **§13 Checkpoints**; you can rejoin in under a minute.
 
 ---
 
@@ -38,7 +38,7 @@ Two filter steps in **Preprocessing → Filter**, each creating a new block:
 1. **Drop retweets**: on the `Tweets` block, filter where `text` contains RegEx **`^[Rr][Tt]`**, and tick **negate** (keep everything that does NOT start with rt). This gives the original-tweets block.
 2. **Keep the job tweets**: on that new block, filter where `text` contains **`job`** (plain contains, not whole-word, so "jobs" and "job-seeker" count).
 
-Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint b, §12).
+Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint b, §13).
 
 ## 4 · Join the reference annotation
 
@@ -94,7 +94,7 @@ Before the AI touches anything, code the first page yourself. It changes how you
 
 1. Click **Run All**: all 226 tweets, about a minute. (In **Advanced settings → Run All processing**: **Reprocess all rows** replaces the column; **Fill missing only** keeps existing labels.)
 2. The **Annotation Review** table opens: **Compare To `theme.reference`** now gives a full-table κ over all 226 rows: your headline number. In rehearsal this model scored about **κ 0.84** against the reference; yours will differ a little, and that is normal for these models.
-3. Your coded column is ordinary data now: filter on it, chart `job.AI` by `party` in **Trends**, or export CSV from the **Export** view.
+3. Your coded column is ordinary data now (see §12 for what that unlocks), and you can export it as CSV from the **Export** view.
 
 ## 10 · Feed your own codes back as examples, and measure again
 
@@ -125,7 +125,18 @@ The third lever is the codebook itself. The §8 disagreements point at cases v1 
 3. **Run All** → **Compare To `theme.reference`** and **`job.AI`**. Did the sharper codebook move κ? Either way you now have three measured runs (plain, examples, revised codebook) and can say which lever did what.
 4. *Demo only (watch):* the same v2 codebook and prompt on a stronger, newer model (GLM 5.3 flash). In rehearsal it scored higher than the small model, at higher cost and much slower, and with no guarantee: a stronger model is the fourth lever, and it only pays off once the codebook is right.
 
-## 12 · Checkpoints: if you fall behind
+## 12 · After coding: the coded block is data
+
+Coding was never the goal. A good codebook turns 226 tweets into a **variable**, your angle on the data, and every other Wordflow tool can read it. Four moves to try (the first one live, if time allows):
+
+1. **A corpus per code**: **Preprocessing → Filter** on `Jobs_with_ref` where `job.AI_v2` = `Cuts` → **Add to Workspace**. You now have a block of just the cuts talk, for any tool.
+2. **Frequency**: select the `Promise` and `Cuts` blocks together for a comparative word cloud: who says what when the subject is jobs.
+3. **Trends**: on `Jobs_with_ref`, x = `created_at`, group by `job.AI_v2` (or `job.AI_v2` × `party`): when did the cuts attacks peak, and from whom?
+4. **Concordance and Topic Modelling**: read one code in context; find the themes inside `Promise`.
+
+Carry the provenance with the block: codebook, prompt, model and κ. Every result downstream inherits them, and belongs in your methods section.
+
+## 13 · Checkpoints: if you fall behind
 
 Five checkpoint workspaces are available from the [workshop files page](https://github.com/milysun/wordflow-workshop/releases/tag/online-2026-08-28) and posted in the Zoom chat. Load one: **Data Loader → Workspace manager → Upload workspace** → choose the ZIP → click **Load** on the new row → re-select the block/columns in the Annotation tool (selections aren't stored in the file; everything else is).
 
@@ -139,7 +150,7 @@ Five checkpoint workspaces are available from the [workshop files page](https://
 
 Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them. **Prompts are not saved anywhere but the Prompt field**: they are not part of the codebook block and not restored by a checkpoint. After loading any checkpoint and choosing the model, paste the prompt again (v1 or v2, from the chat / this sheet).
 
-## 13 · Before you use this in real research
+## 14 · Before you use this in real research
 
 - **The shared workshop key is deleted at 3:30 pm today.** For your research: your own API key (the setup is identical), or a **local model**: in **Add Provider** choose **Custom** and point it at any local server that speaks the OpenAI Chat Completions API (e.g. Ollama, LM Studio), so your data never leaves your machine.
 - **Check your ethics approval, and the rules around it.** Which AI models and providers you may use, and whether your data may be sent to an external API at all, is governed by your ethics approval plus your institution's, journal's and funder's AI-use rules, not by what the tool can do. A local model keeps data on your machine but does not make a model fair: de-identify regardless. You remain accountable for everything the AI did on your behalf.

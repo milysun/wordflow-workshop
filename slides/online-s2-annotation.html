@@ -359,7 +359,7 @@
       <li><strong>Join the reference annotation</strong>: human-verified labels for all 226 tweets, onto your block. Then the codebook: <code>Promise</code> / <code>Cuts</code> / <code>Other</code>; code the first page yourself and measure <em>your</em> agreement with the reference.</li>
       <li><strong>Connect a model</strong>: shared workshop key from the chat; a small, cheap model on purpose → new column <code>job.AI</code>.</li>
       <li><strong>Preview → Compare To → confusion matrix</strong>: measure the AI against your codes and the <em>reference annotation</em>; correct rows (reuse <code>job.manual</code>).</li>
-      <li><strong>Run All</strong>: 226 tweets coded, κ against the reference. Then two more levers, each in its own column: your codes as <strong>examples</strong> (<code>job.AI.example</code>) and a <strong>revised codebook</strong> (<code>job.AI_v2</code>). Better? Measure, don't assume.</li>
+      <li><strong>Run All</strong>: 226 tweets coded, κ against the reference. Then two more levers, each in its own column: your codes as <strong>examples</strong> (<code>job.AI.example</code>) and a <strong>revised codebook</strong> (<code>job.AI_v2</code>). Better? Measure, don't assume. Then the coded block goes into the other tools: that's where your analysis starts.</li>
     </ol>
   </section>
 
@@ -374,6 +374,32 @@
       <li>Back in the <strong>Annotation</strong> tool: re-select the data block / column if a selector shows empty; everything else (data, tabs, results) is restored.</li>
     </ol>
     <p style="margin-top: 1em; font-style: italic;">Your API key isn't touched: provider settings live on your machine, not in the workspace file. Use a checkpoint whenever it helps: they exist so you can spend your time on the interesting parts.</p>
+  </section>
+
+  <!-- Slide: After coding, the coded block is data (shown before the showcase, ~15:21) -->
+  <section class="slide dense" data-notes="~3 min, the key point of the whole tool: coding was never the goal. The coded column is a new variable on the data, and every other Wordflow tool can read it. If you have 60 seconds, do ONE live move: Preprocessing → Filter job.AI_v2 = Cuts → Add to Workspace → Trends grouped by party. Otherwise talk the four cards. Land: the annotated block carries the answers to YOUR question; carry it into the tools that give the targeted view. Then the provenance line.">
+    <h2>After coding at scale</h2>
+    <h1>The coded block is data. Now ask it your question.</h1>
+    <p>Coding was never the goal. A good codebook turns 226 tweets into a <strong>variable</strong>: your angle on the data, ready for every other tool in Wordflow.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Filter → a corpus per code</h3>
+        <p><strong>Preprocessing → Filter</strong> <code>job.AI_v2 = Cuts</code> → <strong>Add to Workspace</strong>: a block of just the cuts talk, ready for any tool below.</p>
+      </div>
+      <div class="card">
+        <h3>Frequency</h3>
+        <p>Compare the <code>Promise</code> and <code>Cuts</code> vocabularies side by side: who says what when the subject is jobs.</p>
+      </div>
+      <div class="card">
+        <h3>Trends</h3>
+        <p>Codes over the campaign, grouped by <code>party</code>: when did the cuts attacks peak, and from whom?</p>
+      </div>
+      <div class="card">
+        <h3>Concordance &amp; Topic Modelling</h3>
+        <p>Read one code in context; find the themes inside <code>Promise</code>. The code is a lens on your data, not the end of it.</p>
+      </div>
+    </div>
+    <p style="margin-top: 0.7em; font-size: 0.85em; color: var(--muted);">Carry the provenance with it: codebook, prompt, model, κ. Every result downstream inherits them.</p>
   </section>
 
   <!-- Slide 7: Take it home -->
@@ -403,7 +429,7 @@
 </div>
 
 <div class="chrome">
-  <span id="slide-counter">1 / 9</span>
+  <span id="slide-counter">1 / 10</span>
   <span>←/→ navigate · N toggle notes · F fullscreen</span>
 </div>
 <div class="notes" id="notes"></div>

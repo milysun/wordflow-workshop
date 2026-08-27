@@ -57,8 +57,10 @@ A **full-capability tour in eight per-tool chapters**, built live in one workspa
 | 1:00–1:05 | Run All into `job.AI`; headline κ against the reference (rehearsal 0.84) |
 | 1:05–1:13 | Feed `job.manual` back as examples into `job.AI.example`; Run All; κ again (rehearsal 0.73): examples don't guarantee improvement |
 | 1:13–1:19 | Revised codebook v2 (`Job_with_ref_codebook_v2`, Checkpoint d) into `job.AI_v2`; κ again: three measured runs |
-| 1:19–1:22 | Showcase: same tool, cleverer questions (demo only; first cut if late) |
-| 1:22–1:30 | Take-home: your own data, local models, ethics, manual multi-coder use, feedback, close |
+| 1:19–1:21 | Demo: same v2 on a stronger model (GLM 5.3 flash); the hands-on ends |
+| 1:21–1:24 | After coding: the coded block is data; filter per code, Frequency, Trends by party, Concordance, Topic Modelling |
+| 1:24–1:25 | Showcase in one breath (Checkpoint e) |
+| 1:25–1:30 | Take-home: your own data, local models, ethics, manual multi-coder use, feedback, close |
 
 ## Design rationale (why this shape)
 

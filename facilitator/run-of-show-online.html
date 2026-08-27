@@ -282,15 +282,23 @@ Other: The word job is used another way, or the post carries no substantive jobs
 Prompt v2 (paste into the Prompt field; new column job.AI_v2): You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes what it says about jobs. Code the tweet&#x27;s main subject, not passing mentions. Campaign slogans and vote lists count as the author&#x27;s own commitment. If a tweet both promises jobs and attacks cuts, choose Promise unless the cuts are spelled out as the main message. If the word job is not about employment, or the post has no real jobs message, use Other.">Copy: v2 codebook + prompt (chat)</button>
   </div>
 </div>
-<div class="item" data-start="15:19"><input type="checkbox"><span class="t">15:19</span><span class="d">3m</span>
-  <div class="what"><div class="head">Demo only: same v2 on a stronger model (GLM 5.3 flash) → hands-on ends → showcase</div>
-  <div class="sub">Say "hands-on is over; watch from here." Switch model to z-ai/glm-5.3-flash (the fallback field), same v2 codebook + prompt, Run All (it's slow: start it, talk over it, or show the rehearsal result: v1 0.809 → v2 <b>0.867</b> vs flash-lite 0.805). Land: "a stronger, newer model is the fourth lever: higher cost, slower, no guarantee, and only worth it once the codebook is right." Then showcase, ONE codebook: A) sentiment TOWARD the LNP, Preview, copy bank (Checkpoint e holds all three: https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_e.zip). Name B and C in a breath. FIRST CUT if late.</div>
+<div class="item" data-start="15:19"><input type="checkbox"><span class="t">15:19</span><span class="d">2m</span>
+  <div class="what"><div class="head">Demo only: same v2 on a stronger model (GLM 5.3 flash) → hands-on ends</div>
+  <div class="sub">Say "hands-on is over; watch from here." Switch model to z-ai/glm-5.3-flash (the fallback field), same v2 codebook + prompt, Run All (slow: start it, talk over it, or show the rehearsal result: v1 0.809 → v2 <b>0.867</b> vs flash-lite 0.805). Land: "a stronger, newer model is the fourth lever: higher cost, slower, no guarantee, and only worth it once the codebook is right."</div></div>
+</div>
+<div class="item" data-start="15:21"><input type="checkbox"><span class="t">15:21</span><span class="d">3m</span>
+  <div class="what"><div class="head">SLIDE 9 · After coding: the coded block is data (THE key point; non-negotiable)</div>
+  <div class="sub">"Coding was never the goal: the codebook turned 226 tweets into a variable, your angle on the data; every tool can read it." ONE live move if 60 s: Preprocessing → Filter <b>job.AI_v2 = Cuts</b> → Add to Workspace → Trends grouped by party. Else talk the 4 cards: corpus per code · Frequency Promise vs Cuts · Trends of codes by party · Concordance / Topic Modelling inside a code. Land: "the annotated block carries the answers to YOUR question; carry it into the tools for the targeted view." Provenance travels with it (codebook, prompt, model, κ).</div></div>
+</div>
+<div class="item" data-start="15:24"><input type="checkbox"><span class="t">15:24</span><span class="d">1m</span>
+  <div class="what"><div class="head">Showcase in one breath (FIRST CUT if late)</div>
+  <div class="sub">Name A) sentiment TOWARD the LNP, B) place outside QLD, C) more than two people; all in Checkpoint e, prompts in the sheet appendix. One live Preview only if ahead.</div>
   <button class="copy" data-tpl="Showcase codebooks (try at home): load Wordflow_checkpoint_e.zip from https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/Wordflow_checkpoint_e.zip — it contains the three extra codebooks (sentiment toward the LNP; place outside Queensland; more than two people). Prompts are in the hands-on sheet appendix.">Copy: checkpoint e (showcase)</button>
   </div>
 </div>
-<div class="item" data-start="15:22"><input type="checkbox"><span class="t">15:22</span><span class="d">8m</span>
+<div class="item" data-start="15:25"><input type="checkbox"><span class="t">15:25</span><span class="d">5m</span>
   <div class="what"><div class="head">Take it home + close on time</div>
-  <div class="sub">Slide 9 top to bottom: real research = your own key or a local model (Add Provider → Custom: Ollama/LM Studio) · ethics approval + institution/journal/funder rules decide models/providers · keep the loop, document prompt + codebook + model + κ · NO AI REQUIRED: multi-coder use, Compare To (percent agreement / κ / Krippendorff's α) · active development: Feedback button, one-click updates, cite via sidebar quote icon · thank the helpers · follow-up email tomorrow (S1 recording, materials, checkpoints) · CLOSE 15:30.</div></div>
+  <div class="sub">Slide 10 top to bottom, briskly: real research = your own key or a local model (Add Provider → Custom: Ollama/LM Studio) · ethics approval + institution/journal/funder rules decide models/providers · keep the loop, document prompt + codebook + model + κ · NO AI REQUIRED: multi-coder use, Compare To (percent agreement / κ / Krippendorff's α) · active development: Feedback button, one-click updates, cite via sidebar quote icon · thank the helpers · follow-up email tomorrow (S1 recording, materials, checkpoints) · CLOSE 15:30.</div></div>
 </div>
 
 <h2>Copy bank · codebooks &amp; prompts (paste into Wordflow, field by field)</h2>
