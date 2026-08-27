@@ -92,7 +92,7 @@ Slide 9, top to bottom: the shared key is gone at 3:30, so real research means y
 | Anyone behind at 14:42, before the AI | Load Checkpoint c (v1 codebook + hand-coded first and last pages); they continue with the model like everyone else. |
 | Provider add fails / model list empty | Re-paste the key (no trailing space); Tab before Add Provider; last resort: they watch the shared screen and use Checkpoint c later at home with their own key. |
 | openrouter.ai unreachable on their network | Post the unreachable snippet: code manually, watch the AI steps, repeat later on another network or with a local model. |
-| Room model returns 429s / errors | Post the fallback-model snippet; everyone swaps the model id, nothing else changes. Both models were tested Thursday. |
+| Room model returns 429s / errors | Post the fallback-model snippet; everyone swaps the model id, nothing else changes. Both models were tested Thursday (fallback = `z-ai/glm-5.3-flash`, the stronger, slower one). |
 | Run All slow for the room | Keep talking through Annotation Review on your own screen; the numbers arrive as you speak. |
 | Way behind at 15:00 | Cut in order: showcase → v2 run (point at Checkpoint d + appendix for home) → examples run. Run All + take-home are the non-negotiables. |
 | Someone loads a checkpoint and the AI does nothing / errors | The prompt is empty: prompts are not in the codebook block nor in checkpoints. Paste v1 or v2 from the chat. Helpers: this is the #1 thing to check after any checkpoint load. |
