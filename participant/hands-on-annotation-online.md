@@ -36,12 +36,12 @@ Two filter steps in **Preprocessing → Filter**, each creating a new block:
 
 Your final block should have **226 rows**. If your number differs, put it in the chat and a helper will jump in (or grab Checkpoint a, §10).
 
-## 4 · Join the ground-truth labels
+## 4 · Join the reference annotation
 
-The workshop provides **human-verified ground-truth labels** for all 226 tweets: coded by a frontier AI model with the same codebook you're about to use, then reviewed tweet-by-tweet by a human coder. Joining them in now means you can measure any coder (human or AI) against them later.
+The workshop provides **a human-verified reference annotation** for all 226 tweets: coded by a frontier AI model with the same codebook you're about to use, then reviewed tweet-by-tweet by a human coder. Joining them in now means you can measure any coder (human or AI) against them later.
 
 1. Download `tweets_job_reference.csv` from the Zoom chat and add it as a data block (drag & drop, or **Upload files**). It has two columns: `tweet_id` and `theme.reference`.
-2. **Preprocessing → Join**: select your 226-row block FIRST (first pick = left table), then the ground-truth block. Join on **`tweet_id`** (left join).
+2. **Preprocessing → Join**: select your 226-row block FIRST (first pick = left table), then the reference block. Join on **`tweet_id`** (left join).
 3. The joined block (still 226 rows) now carries `theme.reference` alongside the text. Work in this block from here on.
 
 ## 5 · Build the codebook (v1: plain and simple)
@@ -78,11 +78,11 @@ Before the AI touches anything, be the coder for a moment: it changes how you re
 
    > You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs.
 
-## 8 · Preview, measure against the ground truth, revise
+## 8 · Preview, measure against the reference annotation, revise
 
 1. Click **Preview**. The model codes the visible page (10 rows; raise **Rows per page** for a bigger sample). Predictions are display-only; nothing is written to your data yet.
-2. Click **Compare To** and tick **`theme.reference`**: the human-verified ground truth. A **Cohen's Kappa** badge (e.g. `κ 0.74`) appears; **hover it** for the **confusion matrix**.
-3. Optionally also tick **`theme.manual`**: how does the AI agree with *you*, and how do you agree with the ground truth? Disagreement is data, not failure.
+2. Click **Compare To** and tick **`theme.reference`**: the human-verified reference annotation. A **Cohen's Kappa** badge (e.g. `κ 0.74`) appears; **hover it** for the **confusion matrix**.
+3. Optionally also tick **`theme.manual`**: how does the AI agree with *you*, and how do you agree with the reference? Disagreement is data, not failure.
 4. Click **Filter any difference** (the filter icon by the column header) and read the disagreements. Mixed tweets ("jobs, not cuts!") and campaign vote-lists ("For Health. For Jobs.") are the usual suspects. Is the model wrong, or was the codebook silent about these cases?
 5. **Revise**: update the codebook descriptions to v2 (Edit the codebook, extend each description), and the prompt:
 

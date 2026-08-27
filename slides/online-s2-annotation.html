@@ -318,7 +318,7 @@
     <ol>
       <li><strong>Codebook</strong>: define the categories in writing, like instructions to a new research assistant.</li>
       <li><strong>Pilot</strong>: let it code a small sample first. Never the whole dataset on faith.</li>
-      <li><strong>Measure agreement</strong>: compare against a reference: human-verified ground-truth labels, or another coder. Intercoder reliability (Cohen's κ), confusion matrix.</li>
+      <li><strong>Measure agreement</strong>: compare against a reference: a human-verified annotation coded to the same codebook, or another coder. Intercoder reliability (Cohen's κ), confusion matrix.</li>
       <li><strong>Revise</strong>: sharpen the codebook and prompt where the disagreements pile up. Re-pilot.</li>
       <li><strong>Document</strong>: prompt, codebook, model, agreement scores → your methods section.</li>
     </ol>
@@ -351,14 +351,14 @@
   </section>
 
   <!-- Slide 5: The hands-on, in one slide -->
-  <section class="slide" data-notes="Show once so people know the arc, then switch to live Wordflow and stay there. Come back if someone asks 'where are we?'. The dataset: the QLD election tweets from this morning. The theme comes out of the word cloud (jobs), the block is derived with two filters (everyone lands on 226 rows), and human-verified ground-truth labels are the standard the AI must match.">
+  <section class="slide" data-notes="Show once so people know the arc, then switch to live Wordflow and stay there. Come back if someone asks 'where are we?'. The dataset: the QLD election tweets from this morning. The theme comes out of the word cloud (jobs), the block is derived with two filters (everyone lands on 226 rows), and a human-verified reference annotation are the standard the AI must match.">
     <h2>The hands-on, in one slide</h2>
     <ol style="font-size: 0.95em;">
       <li><strong>Create a workspace</strong>, import the sample data: <strong>ADO — Queensland Election Tweets</strong>.</li>
       <li><strong>Explore</strong>: the Frequency word cloud says the campaign is about <strong>jobs</strong>. Two filters (drop retweets, keep "job") → everyone has the same <strong>226 tweets</strong>.</li>
-      <li><strong>Join the ground truth</strong>: human-verified labels for all 226 tweets, onto your block. Then the codebook: <code>promise</code> / <code>cuts</code> / <code>other</code>, and code a few tweets yourself to feel the task.</li>
+      <li><strong>Join the reference annotation</strong>: human-verified labels for all 226 tweets, onto your block. Then the codebook: <code>promise</code> / <code>cuts</code> / <code>other</code>, and code a few tweets yourself to feel the task.</li>
       <li><strong>Connect a model</strong>: shared workshop key from the chat → new column <code>theme.ai</code>.</li>
-      <li><strong>Preview → Compare To → confusion matrix</strong>: measure the AI against the <em>ground truth</em>, then improve it: revise the codebook, feed corrected rows back as examples (few-shot), and watch κ move.</li>
+      <li><strong>Preview → Compare To → confusion matrix</strong>: measure the AI against the <em>reference annotation</em>, then improve it: revise the codebook, feed corrected rows back as examples (few-shot), and watch κ move.</li>
       <li><strong>Run All</strong>: 226 tweets coded, with the numbers to trust them. Then: cleverer questions, same tool.</li>
     </ol>
   </section>

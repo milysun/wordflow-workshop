@@ -17,7 +17,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] Sample import → tweets block; Frequency word cloud renders; right-click word → stop words.
 - [ ] S2 derivation: Filter regex `^[Rr][Tt]` + negate → Filter contains `job` → **exactly 226 rows**.
 - [ ] Annotation: `theme.manual` column + codebook (lowercase codes) + manual codes; `theme.ai`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
-- [ ] Ground-truth join: `tweets_job_reference.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.reference` gives full-table κ.
+- [ ] Reference join: `tweets_job_reference.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.reference` gives full-table κ.
 - [ ] Checkpoint round-trip on a second machine: Upload workspace → Load → selectors re-pick.
 - [ ] Excel/zip import: retest; if fixed, delete the caveat from the hands-on sheet §1 and pre-email.
 
@@ -39,7 +39,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 *(Replaces the old Tour + Story workspace pair: the 2026-08-24 plan builds ONE workspace on camera, from creating it in Ch1 through Export in Ch8. See `demo-checklist-s1.md`.)*
 
 - [ ] **Fresh-state check**: app opens with no workspace; contextual hints ON; multi-tab ON.
-- [ ] **Demo CSV** chosen and staged in an easy folder for the Ch1 drag-and-drop (any small, uncontroversial CSV; not the S2 ground-truth file).
+- [ ] **Demo CSV** chosen and staged in an easy folder for the Ch1 drag-and-drop (any small, uncontroversial CSV; not the S2 reference file).
 - [ ] **Section backup archives** — build the full demo once end-to-end (this is also the rehearsal), exporting a workspace archive at each chapter boundary (Ch2, Ch4, Ch5, Ch6, Ch8 at minimum). Plan B if a live step misbehaves mid-recording; the Ch6/Ch8 archives also carry the finished Honi Soit Topic Modelling + Quotation results in their tabs (fallback if the background jobs aren't done when reached). Keep them local; not published.
 - [ ] Write the pinned TBC values (seed, timings, control labels — from the Wednesday hunt above) into `demo-checklist-s1.md` before the Thursday rehearsal.
 
@@ -51,7 +51,7 @@ Build in a clean workspace on v0.7.2, exporting after each stage (**Export view 
 - [ ] `Checkpoint_b_Codebook.zip`: plus the v1 codebook (three lowercase codes with v1 descriptions), `theme.manual` column with ~8 codes filled, and an empty `theme.ai` column.
 - [ ] `Checkpoint_c_V2.zip`: plus the v2 codebook descriptions and v2 prompt saved in the Annotation tab, ready to Run All.
 - [ ] **Round-trip test each file on a second machine**: Upload workspace → Load → open Annotation → data, tabs, codebook restore; block/column selectors need re-picking (expected; the sheet says so).
-- [ ] **Join test**: join the ground-truth block onto the 226-row block on `tweet_id` (both sides must parse the id with the same dtype), then Compare To `theme.reference` shows a full-table κ.
+- [ ] **Join test**: join the reference block onto the 226-row block on `tweet_id` (both sides must parse the id with the same dtype), then Compare To `theme.reference` shows a full-table κ.
 - [ ] Upload the three ZIPs + `tweets_job_reference.csv` to the materials location; paste the links into the run-of-show panel's Checkpoint field.
 
 ## 4 · AI provider (T-3 days)

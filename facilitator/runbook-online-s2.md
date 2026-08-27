@@ -29,7 +29,7 @@ Show slide 5 (roadmap) for 30 seconds, slide 6 (checkpoints) for 60 — *"if you
 
 1. **Data Loader → Create workspace**, any name.
 2. **Import sample data** → tick **ADO — Queensland Election Tweets** → **Import selected**. (Flat list in v0.7 — no tabs in this dialog.) Wait for the **"✓ Imported"** chip.
-3. Add **`candidate_info_gender`** as a data block; click it — walk the columns in the Data Viewer: `party, electorate, first_name, last_name, username`, and human-coded `gender`. *"One row per candidate. The gender column is our ground truth — coded by people. Today the AI competes with them."*
+3. Add **`candidate_info_gender`** as a data block; click it — walk the columns in the Data Viewer: `party, electorate, first_name, last_name, username`, and human-coded `gender`. *"One row per candidate. The gender column is our reference annotation — coded by people. Today the AI competes with them."*
 4. Mention own-data upload for later (drag & drop, CSV/plain text; **Excel and zip import are broken in 0.7.x — export to CSV first** ⟨re-verify against the shipping version before the day⟩).
 
 **✅-check + Checkpoint 0** (`Checkpoint_0_Data.zip`) into chat: *"anyone stuck on import — this file is the workspace you just saw me build."*

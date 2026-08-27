@@ -225,7 +225,7 @@
   <div class="sub">Frequency word cloud → <b>jobs</b> dominates the campaign language: that's our theme. Then Preprocessing → Filter #1: text contains RegEx <b>^[Rr][Tt]</b> → <b>negate</b> → non-retweets block. Filter #2 on that block: text contains <b>job</b> (not whole-word, so jobs / job-seeker count) → <b>226 rows</b>. Say the number out loud; ✅-check on 226.</div></div>
 </div>
 <div class="item" data-start="14:28"><input type="checkbox"><span class="t">14:28</span><span class="d">4m</span>
-  <div class="what"><div class="head"><span class="flag chat">CHAT</span>Join the ground truth (human-verified labels)</div>
+  <div class="what"><div class="head"><span class="flag chat">CHAT</span>Join the reference annotation (human-verified labels)</div>
   <div class="sub">Chat the <b>tweets_job_reference.csv</b> link (part of {DATA}) · add as block · Preprocessing → Join: 226-block FIRST (left), on <b>tweet_id</b> → joined block carries <b>theme.reference</b>. Say what it is: coded by a frontier model with this codebook, then verified tweet-by-tweet by a human coder. ✅-check.</div></div>
 </div>
 <div class="item" data-start="14:32"><input type="checkbox"><span class="t">14:32</span><span class="d">7m</span>
@@ -241,8 +241,8 @@
   </div>
 </div>
 <div class="item" data-start="14:47"><input type="checkbox"><span class="t">14:47</span><span class="d">15m</span>
-  <div class="what"><div class="head">STEP 3 → STEP 4 · v1 shows AI can do the job; the ground truth shows how to make it better</div>
-  <div class="sub">Prompt: paste <b>v1 prompt</b> (copy bank) · Preview (page of 10) · Compare To → tick <b>theme.reference</b> (+ optionally theme.manual: "how do YOU agree with the ground truth?") → κ badge → hover = confusion matrix · Filter any difference → read 2-3 disagreements aloud (mixed "jobs not cuts" tweets and vote-lists will be the ones) · THE REVISION: swap in the <b>v2 codebook + v2 prompt</b> (copy bank) → Update Preview → κ jumps. Then 4 quiet minutes for the room; collect κ in chat.</div></div>
+  <div class="what"><div class="head">STEP 3 → STEP 4 · v1 shows AI can do the job; the reference annotation shows how to make it better</div>
+  <div class="sub">Prompt: paste <b>v1 prompt</b> (copy bank) · Preview (page of 10) · Compare To → tick <b>theme.reference</b> (+ optionally theme.manual: "how do YOU agree with the reference?") → κ badge → hover = confusion matrix · Filter any difference → read 2-3 disagreements aloud (mixed "jobs not cuts" tweets and vote-lists will be the ones) · THE REVISION: swap in the <b>v2 codebook + v2 prompt</b> (copy bank) → Update Preview → κ jumps. Then 4 quiet minutes for the room; collect κ in chat.</div></div>
 </div>
 <div class="item" data-start="15:02"><input type="checkbox"><span class="t">15:02</span><span class="d">8m</span>
   <div class="what"><div class="head">STEP 5 · Run All: trustworthy coding at scale</div>
