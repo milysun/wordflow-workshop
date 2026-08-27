@@ -108,19 +108,19 @@ Few-shot examples are the other lever besides the codebook. Try it, but keep the
 
 ## 11 · Revise the codebook: v2
 
-The third lever is the codebook itself. The §8 disagreements point at cases v1 was silent about: mixed "jobs, not cuts!" slogans, campaign vote-lists ("For Health. For Jobs."), hashtag-only mentions, and "cutting prices" that is not cutting jobs.
+The third lever is the codebook itself. The §8 disagreements point at cases v1 was silent about: mixed "jobs, not cuts!" slogans, campaign vote-lists ("For Health. For Jobs."), hashtag-only mentions, and "cutting prices" that is not cutting jobs. One rule of the game: the revised codebook must make the *same* decisions on those cases as the reference annotation does, otherwise a better-followed codebook scores a *lower* κ. (Our first draft of v2 got this wrong and dropped from 0.84 to 0.66.)
 
 1. Duplicate your v1 codebook block (block menu → **Clone**), rename the copy **`Job_with_ref_codebook_v2`**, and edit its descriptions to v2 (below). Short on time? **Checkpoint d** contains exactly this block.
 
-   | Code | v2 description (v1 plus the new rules) |
+   | Code | v2 description (aligned with the reference annotation's decisions) |
    |---|---|
-   | `Promise` | …as v1, plus: Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as Promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code Promise only when the promise leads the message. |
-   | `Cuts` | …as v1, plus: Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts. |
-   | `Other` | …as v1, plus: Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message. |
+   | `Promise` | The tweet's main subject is jobs being created, protected or supported: announcements, funding, infrastructure, training or economic-recovery plans, claims of jobs already delivered, and campaign messaging that puts jobs forward as a commitment. This includes campaign value lists where 'For Jobs' appears among other items, 'jobs, not cuts' slogans and vote calls where the author's own pro-jobs stance leads, recovery messaging tagged #qldjobs, and tweets whose subject is a job-creation promise even when reporting or mocking an opponent's promise. |
+   | `Cuts` | The tweet's main subject is jobs being cut, lost or at risk: past sackings, warnings that a party or policy will cut jobs, attacks that spell out an opponent's cuts (who cuts what, how many), and non-partisan warnings of job losses such as industry decline or climate impacts. A bare 'jobs, not cuts' slogan is not enough: the tweet must make the threat of cuts its message. Cutting or slashing prices, costs, taxes or bills is not cutting jobs. |
+   | `Other` | The word job is used another way, or the post carries no substantive jobs message: praise like 'did a great job' or 'top job', commentary or news links about job statistics, and posts where jobs appear only as a hashtag on content with no jobs message (a photo op, a greeting, a thank-you). |
 
 2. In the Annotation tool, pick **`Job_with_ref_codebook_v2`** as the **Codebook**, create a fresh column **`job.AI_v2`**, and paste the v2 prompt:
 
-   > You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use Other.
+   > You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes what it says about jobs. Code the tweet's main subject, not passing mentions. Campaign slogans and vote lists count as the author's own commitment. If a tweet both promises jobs and attacks cuts, choose Promise unless the cuts are spelled out as the main message. If the word job is not about employment, or the post has no real jobs message, use Other.
 
 3. **Run All** → **Compare To `theme.reference`** and **`job.AI`**. Did the sharper codebook move κ? Either way you now have three measured runs (plain, examples, revised codebook) and can say which lever did what.
 
