@@ -16,7 +16,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] Fresh install opens; version correct; multi-tab ON (Settings → General).
 - [ ] Sample import → tweets block; Frequency word cloud renders; right-click word → stop words.
 - [ ] S2 derivation: Filter regex `^[Rr][Tt]` + negate → Filter contains `job` → **exactly 226 rows**.
-- [ ] Annotation: `job.manual` column + codebook (Title-case codes) + manual codes; `job.AI_v1` / `job.AI_v2`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
+- [ ] Annotation: `job.manual` column + codebook (Title-case codes) + manual codes; `job.AI` / `job.AI.example` (examples from `job.manual`); provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
 - [ ] Reference join: `tweets_job_reference.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.reference` gives full-table κ.
 - [ ] Checkpoint round-trip on a second machine: Upload workspace → Load → selectors re-pick.
 - [x] Excel/zip import: fixed since June (verified 2026-08-27); caveats removed from all materials.

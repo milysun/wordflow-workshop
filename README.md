@@ -52,10 +52,11 @@ A **full-capability tour in eight per-tool chapters**, built live in one workspa
 | 0:12–0:32 | Build the `Tweets` block from scratch, briskly (workspace, sample data, column types, `full_name`, join with candidate metadata; Checkpoint a = the rescue), explore (jobs, cuts), derive the 226 non-retweet "job" tweets (Filter ×2), join the reference annotation |
 | 0:32–0:36 | Codebook v1 (`Promise` / `Cuts` / `Other`) |
 | 0:36–0:42 | Be the coder first: annotate the first page by hand into `job.manual`, then Compare To the reference annotation: κ + confusion matrix on your own coding |
-| 0:42–0:50 | Connect a model (shared workshop key, deleted at 3:30 pm; own keys welcome) |
-| 0:50–1:03 | The preview loop: Preview → Compare To the reference → κ + confusion matrix → revise the codebook (v2), feed corrected rows back as examples |
-| 1:03–1:11 | Run All on the full table; headline κ; corrections |
-| 1:11–1:21 | Showcase: same tool, cleverer questions (demo only) |
+| 0:42–0:50 | Connect a model (shared workshop key, deleted at 3:30 pm; own keys welcome); a small, cheap model on purpose |
+| 0:50–1:00 | Preview a few pages, back to page 1: Compare To `job.manual` and the reference → κ + confusion matrix, the mask, corrections (reuse `job.manual`) |
+| 1:00–1:05 | Run All into `job.AI`; headline κ against the reference (rehearsal 0.84) |
+| 1:05–1:13 | Feed `job.manual` back as examples into `job.AI.example`; Run All; κ again (rehearsal 0.73): examples don't guarantee improvement |
+| 1:13–1:21 | Showcase: same tool, cleverer questions (demo only) |
 | 1:21–1:30 | Take-home: your own data, local models, ethics, manual multi-coder use, feedback, close |
 
 ## Design rationale (why this shape)

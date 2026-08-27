@@ -235,27 +235,31 @@
 </div>
 <div class="item" data-start="14:36"><input type="checkbox"><span class="t">14:36</span><span class="d">6m</span>
   <div class="what"><div class="head">Be the coder first · first page by hand → Compare To reference → κ</div>
-  <div class="sub">Manual → Start · everyone codes the FIRST PAGE (10 rows) into job.manual · then <b>Compare To → tick theme.reference</b> → κ badge on the coded rows, hover = confusion matrix · read one disagreement aloud: "who's right? often nobody: the codebook was silent" · "this is how a team measures coder vs coder" · Close · say it: <b>Checkpoint c = this state</b> (v1 codebook + hand-coded pages 1–10 and 221–226); anyone behind loads it NOW, before the AI · Start new annotation → <b>job.AI_v1</b>.</div></div>
+  <div class="sub">Manual → Start · everyone codes the FIRST PAGE (10 rows) into job.manual · then <b>Compare To → tick theme.reference</b> → κ badge on the coded rows, hover = confusion matrix · read one disagreement aloud: "who's right? often nobody: the codebook was silent" · "this is how a team measures coder vs coder" · Close · say it: <b>Checkpoint c = this state</b> (v1 codebook + hand-coded pages 1–10 and 221–226); anyone behind loads it NOW, before the AI .</div></div>
 </div>
 <div class="item" data-start="14:42"><input type="checkbox"><span class="t">14:42</span><span class="d">8m</span>
   <div class="what"><div class="head"><span class="flag key">KEY</span><span class="flag chat">CHAT</span>Connect the model (the danger zone: go slow)</div>
-  <div class="sub">Toggle AI → Advanced settings → + Add Provider → OpenRouter → paste key → Tab → Add Provider → Model: paste the id. Helpers sweep; breakout for stragglers. Say: key is shared, temporary, dies at 3:30.</div>
+  <div class="sub">Start new annotation → <b>job.AI</b> · toggle AI → Advanced settings: name it ("example, prompt, and inference settings") · + Add Provider → OpenRouter → paste key → Tab → Add Provider · Model: <b>google/gemini-2.5-flash-lite</b>, framed honestly: older, small, cheap, on purpose; start cheap to find the boundaries · paste v1 prompt · "key is shared, temporary, dies at 3:30". Helpers sweep; breakout for stragglers.</div>
   <button class="copy" data-tpl="Model access for this session (shared, deleted at 3:30 pm): provider OpenRouter, API key: {KEY} — model: {MODEL}. In Wordflow: Annotation tool → toggle AI → Advanced settings → + Add Provider → OpenRouter → paste the key → Add Provider, then paste the model id into the Model box.">Copy: key + model msg</button>
   <button class="copy" data-tpl="The model is congested — everyone please switch: in the Annotation tool, replace the model id with {MODEL2} (same provider, same key, nothing else changes) and continue from where you were.">Copy: switch to fallback model</button>
   <button class="copy" data-tpl="If openrouter.ai is not reachable from your network (some institutional firewalls and some countries block it): no problem — code a few tweets manually, watch the shared screen for the AI steps, and repeat them later on another network or with a local model (shown at the end).">Copy: OpenRouter unreachable msg</button>
   </div>
 </div>
-<div class="item" data-start="14:50"><input type="checkbox"><span class="t">14:50</span><span class="d">13m</span>
-  <div class="what"><div class="head">STEP 3 → STEP 4 · v1 shows AI can do the job; the reference annotation shows how to make it better</div>
-  <div class="sub">Prompt: paste <b>v1 prompt</b> (copy bank) · Preview (page of 10) · Compare To → tick <b>theme.reference</b> (+ optionally job.manual: "how do YOU agree with the reference?") → κ badge → hover = confusion matrix · Filter any difference → read 2-3 disagreements aloud (mixed "jobs not cuts" tweets and vote-lists will be the ones) · THE REVISION: swap in the <b>v2 codebook + v2 prompt</b> (copy bank) → new column <b>job.AI_v2</b> (versions never mix) → Update Preview → κ jumps. Then 4 quiet minutes for the room; collect κ in chat.</div></div>
+<div class="item" data-start="14:50"><input type="checkbox"><span class="t">14:50</span><span class="d">10m</span>
+  <div class="what"><div class="head">Preview → compare → correct (protect these 10 min)</div>
+  <div class="sub">Preview page 1 · page forward 2-3 pages · BACK to page 1 (manual codes live there) · Compare To → tick <b>job.manual</b> + <b>theme.reference</b> → two κ badges · κ in one breath (chance-corrected; 1 perfect, 0 guessing) · hover = confusion matrix · <b>Filter any difference</b> (the mask) → read 2 disagreements aloud · Correction: recommend <b>reusing job.manual</b> (a correction is a human coding; one column feeds the examples later) · correct a couple of rows.</div></div>
 </div>
-<div class="item" data-start="15:03"><input type="checkbox"><span class="t">15:03</span><span class="d">8m</span>
-  <div class="what"><div class="head">STEP 5 · Run All: trustworthy coding at scale</div>
-  <div class="sub">Run All on all 226 (mention Reprocess vs Fill missing) · Annotation Review: <b>Compare To theme.reference = full-table κ, the headline number</b> · Correction column (accepts job.AI_v2.correction) · correct one row · "Use as example" feeds it back. Land the line: "AI didn't just do the job, it did the whole corpus, and you have the agreement numbers to trust it." Expected shape: roughly 2/3 promise, 1/6 cuts, 1/6 other.</div></div>
+<div class="item" data-start="15:00"><input type="checkbox"><span class="t">15:00</span><span class="d">5m</span>
+  <div class="what"><div class="head">Run All into job.AI · κ vs reference (rehearsal 0.843)</div>
+  <div class="sub">Run All (mention Reprocess vs Fill missing) · Annotation Review → Compare To <b>theme.reference</b> = headline κ · say the day's number; variation is normal. "The AI did the whole corpus, and you have the numbers to judge it."</div></div>
 </div>
-<div class="item" data-start="15:11"><input type="checkbox"><span class="t">15:11</span><span class="d">10m</span>
+<div class="item" data-start="15:05"><input type="checkbox"><span class="t">15:05</span><span class="d">8m</span>
+  <div class="what"><div class="head">Examples run into job.AI.example · κ vs reference (rehearsal 0.728, LOWER)</div>
+  <div class="sub">Start new annotation → <b>job.AI.example</b> (never overwrite a result you'll compare against) · Advanced settings: set <b>job.manual</b> as examples (<b>Use as example</b>; mention Max examples per class) · Run All → Compare To: tick <b>theme.reference + job.AI</b> (two runs side by side) · show once: <b>Filter any difference</b> job.AI.example vs job.AI (where examples changed its mind) · <b>display option</b> = show compared values in the table · <b>exists / does not exist</b> filter = rows with/without a value (find skipped or invalid rows; what Fill missing only targets) · land it calmly: "examples don't guarantee improvement; measure every change, never assume" · hover both confusion matrices. If the numbers flip on the day, same lesson.</div></div>
+</div>
+<div class="item" data-start="15:13"><input type="checkbox"><span class="t">15:13</span><span class="d">8m</span>
   <div class="what"><div class="head">Showcase: same tool, cleverer questions (demo only)</div>
-  <div class="sub">Watch, don't follow. Three quick codebooks on the same 226 tweets, Preview only, all in the copy bank: 1) sentiment TOWARD the LNP (aspect, not sentence) · 2) mentions a place outside QLD? (the model knows geography) · 3) more than two people mentioned? (counting + names). Land: "classic NLP problems, now one codebook away. The checking workflow you just learned is what makes them trustworthy."</div></div>
+  <div class="sub">Watch, don't follow. Three quick codebooks on the same 226 tweets, Preview only, all in the copy bank: 1) sentiment TOWARD the LNP (aspect, not sentence) · 2) mentions a place outside QLD? (the model knows geography) · 3) more than two people mentioned? (counting + names). Land: "classic NLP problems, now one codebook away; the checking workflow you just did makes them trustworthy." Mention codebook v2 (sheet appendix) as homework.</div></div>
 </div>
 <div class="item" data-start="15:21"><input type="checkbox"><span class="t">15:21</span><span class="d">9m</span>
   <div class="what"><div class="head">Take it home + close on time</div>
@@ -283,7 +287,7 @@
 </div>
 
 <div class="item"><span></span><span class="t">v2</span><span class="d"></span>
-  <div class="what"><div class="head">STEP 4 · Improved codebook + prompt (after reading the disagreements)</div>
+  <div class="what"><div class="head">Codebook v2 (optional / homework; sheet appendix D): the revision lever</div>
   <div class="sub">The four added rules come straight from the confusion matrix: mixed slogans, vote-lists, hashtag-only framing, price-cut trap.</div>
   <button class="copy" data-tpl="You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use Other.">Prompt v2</button>
   <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered. Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as Promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code Promise only when the promise leads the message.">Promise v2</button>
