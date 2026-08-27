@@ -77,7 +77,7 @@
 - [ ] 3.6 **Clear results**; add `tweets_F` + `tweets_M`.
 - [ ] 3.7 Side-by-side clouds → the juxtaposed/overuse cloud (mode names **TBC**); explain size, colour, algorithm in two sentences.
 - [ ] 3.8 Stopword the campaign noise live: candidate names, `lnpqld`, etc.
-- [ ] 3.9 Read the result lightly, no editorialising: mixed words (`cases`, `qldjobs`) vs somewhat polarised (`cuts`, `teachers` / `committed`, `leader`); let people form their own impression. (If asked: party matters more than gender for politicians; the split is just a convenient binary, and grouping works with any variable.)
+- [ ] 3.9 Read the result lightly, no editorialising: mixed words (`cases`, `qldjobs`) vs somewhat polarised (`Cuts`, `teachers` / `committed`, `leader`); let people form their own impression. (If asked: party matters more than gender for politicians; the split is just a convenient binary, and grouping works with any variable.)
 - [ ] 3.10 Exploration payoff on **cases**: "everywhere in 2020 — can you still say what it meant?" → **click the word** → Concordance opens and the context answers (the pandemic). Suggestive, not conclusive. Chapter boundary beat.
 
 ## Ch 4 · Concordance · 11:44 (11 min)

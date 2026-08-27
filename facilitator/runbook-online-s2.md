@@ -1,6 +1,6 @@
 # Runbook — Online workshop Session 2 (90 min, hands-on, NOT recorded)
 
-> **Rewritten 2026-08-27** to the current design: the jobs theme-coding task on the 226-tweet block, lowercase `promise` / `cuts` / `other` codebook with a v1 → v2 revision arc measured against a **human-verified reference annotation**, a **shared workshop key**, checkpoint workspace archives a/b/c as rescues (**a** = the Tweets block everyone builds first), the responsible-AI slide before the tool, and the showcase segment. Wall-clock rows and every chat snippet: `facilitator/run-of-show-online.html`. Participant steps: `participant/hands-on-annotation-online.md` (its § numbers are used below).
+> **Rewritten 2026-08-27** to the current design: the jobs theme-coding task on the 226-tweet block, Title-case `Promise` / `Cuts` / `Other` codebook with a v1 → v2 revision arc measured against a **human-verified reference annotation**, a **shared workshop key**, checkpoint workspace archives a/b/c as rescues (**a** = the Tweets block everyone builds first), the responsible-AI slide before the tool, and the showcase segment. Wall-clock rows and every chat snippet: `facilitator/run-of-show-online.html`. Participant steps: `participant/hands-on-annotation-online.md` (its § numbers are used below).
 
 **Coding text with GenAI: the Annotation tool · Friday 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST) · Zoom**
 
@@ -43,7 +43,7 @@ Chat the `tweets_job_reference.csv` link. Add it as a block (drag & drop or Uplo
 
 ## 14:32 · Codebook v1 (sheet §5, 4 min)
 
-**Annotation** tool → add `Jobs_with_ref` → Text Column `text` → **Annotation Column → Start new annotation → `job.manual`**. **Codebook → Create New → Edit**: three codes, lowercase, paste the v1 descriptions from the copy bank (chat them too). *"The descriptions are what the model will read; write them as instructions to a new research assistant."*
+**Annotation** tool → add `Jobs_with_ref` → Text Column `text` → **Annotation Column → Start new annotation → `job.manual`**. **Codebook → Create New → Edit**: three codes, Title-case exactly as written, paste the v1 descriptions from the copy bank (chat them too). *"The descriptions are what the model will read; write them as instructions to a new research assistant."*
 
 ## 14:36 · Be the coder first: a page by hand, then κ against the reference (sheet §6, 6 min)
 
@@ -59,7 +59,7 @@ Paste the **v1 prompt**. **Preview** (page of 10; display-only). **Compare To �
 
 ## 15:03 · Run All: trustworthy coding at scale (sheet §9, 8 min)
 
-**Run All** on all 226 (~1 min; name **Reprocess all rows** vs **Fill missing only**). **Annotation Review** → **Compare To `theme.reference`** = the full-table κ, the headline number. Expected shape: roughly three-quarters `promise`, the rest split between `cuts` and `other`. Correct one row via the **Correction** column (`job.ai.correction`) and point at **Use as example**: corrections feed back as worked examples. *"The AI didn't just do the job; it did the whole corpus, and you have the numbers to trust it."* Then one breath on afterlife: the coded column is ordinary data (filter on it, Trends by `party`, Export CSV).
+**Run All** on all 226 (~1 min; name **Reprocess all rows** vs **Fill missing only**). **Annotation Review** → **Compare To `theme.reference`** = the full-table κ, the headline number. Expected shape: roughly three-quarters `Promise`, the rest split between `Cuts` and `Other`. Correct one row via the **Correction** column (`job.ai.correction`) and point at **Use as example**: corrections feed back as worked examples. *"The AI didn't just do the job; it did the whole corpus, and you have the numbers to trust it."* Then one breath on afterlife: the coded column is ordinary data (filter on it, Trends by `party`, Export CSV).
 
 ## 15:11 · Showcase: same tool, cleverer questions (demo only, 10 min)
 

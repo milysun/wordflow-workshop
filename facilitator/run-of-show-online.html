@@ -223,7 +223,7 @@
 </div>
 <div class="item" data-start="14:21"><input type="checkbox"><span class="t">14:21</span><span class="d">7m</span>
   <div class="what"><div class="head">STEP 1 cont. · Explore (jobs, cuts) → derive the block (everyone lands on 226 rows)</div>
-  <div class="sub">Frequency on <b>Tweets</b> → word cloud: <b>jobs</b> dominates, <b>cuts</b> close behind: that's our theme. Then Preprocessing → Filter #1 on Tweets: text contains RegEx <b>^[Rr][Tt]</b> → <b>negate</b> → originals. Filter #2 on that block: text contains <b>job</b> (not whole-word) → <b>226 rows</b>. Say the number out loud; ✅-check on 226. Stragglers: Checkpoint b = Jobs_with_ref (226 rows + reference joined), one step ahead.</div></div>
+  <div class="sub">Frequency on <b>Tweets</b> → word cloud: <b>jobs</b> dominates, <b>Cuts</b> close behind: that's our theme. Then Preprocessing → Filter #1 on Tweets: text contains RegEx <b>^[Rr][Tt]</b> → <b>negate</b> → originals. Filter #2 on that block: text contains <b>job</b> (not whole-word) → <b>226 rows</b>. Say the number out loud; ✅-check on 226. Stragglers: Checkpoint b = Jobs_with_ref (226 rows + reference joined), one step ahead.</div></div>
 </div>
 <div class="item" data-start="14:28"><input type="checkbox"><span class="t">14:28</span><span class="d">4m</span>
   <div class="what"><div class="head"><span class="flag chat">CHAT</span>Join the reference annotation (human-verified labels)</div>
@@ -231,7 +231,7 @@
 </div>
 <div class="item" data-start="14:32"><input type="checkbox"><span class="t">14:32</span><span class="d">4m</span>
   <div class="what"><div class="head">STEP 2 (say it, skip it) + STEP 3 · v1 codebook</div>
-  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add <b>Jobs_with_ref</b> · Text Column = text · Start new annotation → <b>job.manual</b> · Codebook → Create New → Edit → paste the v1 codebook from the copy bank below (lowercase: promise / cuts / other).</div></div>
+  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add <b>Jobs_with_ref</b> · Text Column = text · Start new annotation → <b>job.manual</b> · Codebook → Create New → Edit → paste the v1 codebook from the copy bank below (Title-case: Promise / Cuts / Other).</div></div>
 </div>
 <div class="item" data-start="14:36"><input type="checkbox"><span class="t">14:36</span><span class="d">6m</span>
   <div class="what"><div class="head">Be the coder first · first page by hand → Compare To reference → κ</div>
@@ -276,19 +276,19 @@
   <div class="what"><div class="head">STEP 3 · Plain codebook + prompt ("AI can do the job")</div>
   <div class="sub">Paste each description into its class in Edit codebook; prompt into the Prompt field.</div>
   <button class="copy" data-tpl="You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs.">Prompt v1</button>
-  <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered.">promise v1</button>
-  <button class="copy" data-tpl="The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts.">cuts v1</button>
-  <button class="copy" data-tpl="The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above.">other v1</button>
+  <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered.">Promise v1</button>
+  <button class="copy" data-tpl="The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts.">Cuts v1</button>
+  <button class="copy" data-tpl="The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above.">Other v1</button>
   </div>
 </div>
 
 <div class="item"><span></span><span class="t">v2</span><span class="d"></span>
   <div class="what"><div class="head">STEP 4 · Improved codebook + prompt (after reading the disagreements)</div>
   <div class="sub">The four added rules come straight from the confusion matrix: mixed slogans, vote-lists, hashtag-only framing, price-cut trap.</div>
-  <button class="copy" data-tpl="You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use other.">Prompt v2</button>
-  <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered. Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code promise only when the promise leads the message.">promise v2</button>
-  <button class="copy" data-tpl="The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts. Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts.">cuts v2</button>
-  <button class="copy" data-tpl="The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above. Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message.">other v2</button>
+  <button class="copy" data-tpl="You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use Other.">Prompt v2</button>
+  <button class="copy" data-tpl="The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered. Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as Promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code Promise only when the promise leads the message.">Promise v2</button>
+  <button class="copy" data-tpl="The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts. Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts.">Cuts v2</button>
+  <button class="copy" data-tpl="The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above. Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message.">Other v2</button>
   </div>
 </div>
 

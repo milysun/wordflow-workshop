@@ -51,7 +51,7 @@ They describe the **same two sessions** from different angles. The session struc
 When timing, chapter structure, tool names, or the demo plan changes, several files have to move together. Before declaring an edit done, check these match each other:
 
 - **Session timing / chapters**: `README.md` tables → deck housekeeping and roadmap slides → `runbook-online-s1.md` / `demo-checklist-s1.md` clock gates → `run-of-show-online.html` rows.
-- **S2 task facts** (226 rows, `theme.reference`, codes `promise`/`cuts`/`other`, shared key deleted at 15:30): hands-on sheet → S2 deck → runbook-online-s2 → panel copy bank → pre-workshop checklist.
+- **S2 task facts** (226 rows, `theme.reference`, codes `Promise`/`Cuts`/`Other`, shared key deleted at 15:30): hands-on sheet → S2 deck → runbook-online-s2 → panel copy bank → pre-workshop checklist.
 - **Version wording**: participant-facing files say "the latest v0.7 release" and ask people to accept the in-app update prompt; never pin a patch number in participant materials.
 - **Screen-share setup** (full MBP screen, cursor kit): demo checklist pre-flight → panel prep rows → pre-workshop checklist §5.
 

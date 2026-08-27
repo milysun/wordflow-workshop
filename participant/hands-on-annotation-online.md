@@ -54,13 +54,13 @@ The codebook is itself a small data block: one row per code, with a description.
 
 1. Open the **Annotation** tool (left sidebar, under **Views**). Under **Selected Data Blocks**, add **`Jobs_with_ref`**. Set **Text Column** to **`text`**.
 2. In the **Annotation Column** dropdown, choose **Start new annotation** → name it **`job.manual`** → **Create**.
-3. In the **Codebook** card, click **Create New**, then **Edit** next to **Codes**. **Add code** three times and type exactly (lowercase, to keep everyone's columns comparable):
+3. In the **Codebook** card, click **Create New**, then **Edit** next to **Codes**. **Add code** three times and type exactly (Title-case, exactly as written: codes must match the reference file letter for letter):
 
    | Code | Description |
    |---|---|
-   | `promise` | The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered. |
-   | `cuts` | The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts. |
-   | `other` | The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above. |
+   | `Promise` | The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered. |
+   | `Cuts` | The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts. |
+   | `Other` | The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above. |
 
 4. **Save.**
 
@@ -93,18 +93,18 @@ Before the AI touches anything, code the first page yourself. It changes how you
 
    | Code | v2 description (v1 plus the new rules) |
    |---|---|
-   | `promise` | …as v1, plus: Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code promise only when the promise leads the message. |
-   | `cuts` | …as v1, plus: Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts. |
-   | `other` | …as v1, plus: Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message. |
+   | `Promise` | …as v1, plus: Concrete spending or program announcements framed as job-creating (including via #qldjobs) count as Promise. Cutting or slashing prices, costs or taxes is not cutting jobs. If a tweet both promises jobs and attacks cuts, code Promise only when the promise leads the message. |
+   | `Cuts` | …as v1, plus: Includes 'jobs, not cuts' slogans whose differentiating message is the threat of cuts, and non-partisan warnings of job losses such as industry decline or climate impacts. |
+   | `Other` | …as v1, plus: Includes campaign value lists where 'For Jobs' is one item among many, idioms such as 'top job', sarcasm about an opponent's job promises, and posts where jobs appear only as a hashtag with no substantive message. |
 
-   > Prompt v2: You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use other.
+   > Prompt v2: You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use Other.
 
 6. **Update Preview** → watch κ move. That loop (codebook → pilot → agreement → revise) is the method; everything else is buttons.
 
 ## 9 · Run All: coding at scale
 
 1. Click **Run All**: all 226 tweets, about a minute. (In **Advanced settings → Run All processing**: **Reprocess all rows** replaces the column; **Fill missing only** keeps existing labels.)
-2. The **Annotation Review** table opens: **Compare To `theme.reference`** now gives a full-table κ over all 226 rows: your headline number. Expect roughly two-thirds `promise`, one-sixth `cuts`, one-sixth `other`.
+2. The **Annotation Review** table opens: **Compare To `theme.reference`** now gives a full-table κ over all 226 rows: your headline number. Expect roughly two-thirds `Promise`, one-sixth `Cuts`, one-sixth `Other`.
 3. Fix any wrong rows via a **Correction** column (it suggests `job.ai.correction`), and note **Use as example**: your corrections can feed back into the AI as worked examples.
 4. Your coded column is ordinary data now: filter on it, chart `job.ai` by party in **Trends**, or export CSV from the **Export** view.
 

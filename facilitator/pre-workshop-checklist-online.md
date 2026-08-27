@@ -16,7 +16,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] Fresh install opens; version correct; multi-tab ON (Settings → General).
 - [ ] Sample import → tweets block; Frequency word cloud renders; right-click word → stop words.
 - [ ] S2 derivation: Filter regex `^[Rr][Tt]` + negate → Filter contains `job` → **exactly 226 rows**.
-- [ ] Annotation: `job.manual` column + codebook (lowercase codes) + manual codes; `job.ai`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
+- [ ] Annotation: `job.manual` column + codebook (Title-case codes) + manual codes; `job.ai`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
 - [ ] Reference join: `tweets_job_reference.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.reference` gives full-table κ.
 - [ ] Checkpoint round-trip on a second machine: Upload workspace → Load → selectors re-pick.
 - [x] Excel/zip import: fixed since June (verified 2026-08-27); caveats removed from all materials.
@@ -45,7 +45,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 
 ## 3 · Session 2 checkpoint archives (built Thu 27 Aug on the final release)
 
-Build in a clean workspace, exporting after each stage (**Export view → Export Workspace → "Export workspace archive"**), and rename the files. Class names everywhere are lowercase: `promise` / `cuts` / `other`. Definitions agreed 2026-08-27:
+Build in a clean workspace, exporting after each stage (**Export view → Export Workspace → "Export workspace archive"**), and rename the files. Class names everywhere are Title-case: `Promise` / `Cuts` / `Other` (matches macOS auto-capitalisation; Compare To is case-sensitive). Definitions agreed 2026-08-27:
 
 - [ ] `Checkpoint_a.zip` (**the rescue for anyone who can't complete the §1 build; everyone builds it from scratch first**): sample tweets + candidate metadata imported → column types fixed (tweets `created_at` → datetime; candidate `party`, `gender` → category) → `full_name` = `first_name` + `last_name` (Preprocessing → Create) → join on `username` → the joined block renamed **`Tweets`**. Nothing else.
 - [x] `Checkpoint_b.zip` (built 2026-08-27): plus Filter #1 (`^[Rr][Tt]` regex, negated) → Filter #2 (contains `job`) → the **226-row block**, `tweets_job_reference.csv` (column `theme.reference`) joined on `tweet_id`, result renamed **`Jobs_with_ref`**. Nothing else.
