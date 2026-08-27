@@ -47,7 +47,7 @@ Chat the `tweets_job_reference.csv` link. Add it as a block (drag & drop or Uplo
 
 ## 14:36 · Be the coder first: a page by hand, then κ against the reference (sheet §6, 6 min)
 
-**Manual → Start**: everyone codes the **first page** (10 tweets) into `job.manual`. *"Notice where you hesitate; the model will hesitate there too."* Then the reveal: **Compare To → tick `theme.reference`** → κ badge for the coded rows, hover for the confusion matrix. Read one disagreement aloud and ask: who's right? Land: *"often nobody: the codebook was silent. That's what we fix in a few minutes. And this is exactly how a team measures coder against coder: one column each, Compare To."* Close. Then **Start new annotation → `job.ai`** so the AI gets its own column.
+**Manual → Start**: everyone codes the **first page** (10 tweets) into `job.manual`. *"Notice where you hesitate; the model will hesitate there too."* Then the reveal: **Compare To → tick `theme.reference`** → κ badge for the coded rows, hover for the confusion matrix. Read one disagreement aloud and ask: who's right? Land: *"often nobody: the codebook was silent. That's what we fix in a few minutes. And this is exactly how a team measures coder against coder: one column each, Compare To."* Close. Say the catch-up line: *"Checkpoint c is exactly this state: v1 codebook plus a hand-coded first and last page; if you missed anything so far, load it now, before the AI."* Then **Start new annotation → `job.AI_v1`** so the AI gets its own column (one column per codebook version; v2 gets `job.AI_v2` later).
 
 ## 14:42 · Connect the model: the danger zone, go slow (sheet §7, 8 min)
 
@@ -55,11 +55,11 @@ Post the key + model snippet. On screen, slowly: toggle **AI** → **Advanced se
 
 ## 14:50 · The preview loop: v1 works, the reference makes it better (sheet §8, 13 min, protect these)
 
-Paste the **v1 prompt**. **Preview** (page of 10; display-only). **Compare To → tick `theme.reference`** (and optionally `job.manual`: *"how do YOU agree with the reference?"*). κ badge; **hover** for the confusion matrix. **Filter any difference**; read two or three disagreements aloud: the mixed "jobs, not cuts!" slogans and the "For Health. For Jobs." vote-lists will be the ones. Ask the room: model wrong, or codebook silent? Then **the revision**: Edit codebook → paste the **v2 descriptions**; paste the **v2 prompt**; **Update Preview**; watch κ move. Land it: *"codebook → pilot → agreement → revise. That loop is the method; everything else is buttons."* Mention that the reference itself came out of this loop: a human reviewer overrode the model on 22 of 226 tweets, mostly on exactly these two rules.
+Paste the **v1 prompt**. **Preview** (page of 10; display-only). **Compare To → tick `theme.reference`** (and optionally `job.manual`: *"how do YOU agree with the reference?"*). κ badge; **hover** for the confusion matrix. **Filter any difference**; read two or three disagreements aloud: the mixed "jobs, not cuts!" slogans and the "For Health. For Jobs." vote-lists will be the ones. Ask the room: model wrong, or codebook silent? Then **the revision**: Edit codebook → paste the **v2 descriptions**; paste the **v2 prompt**; **Start new annotation → `job.AI_v2`** so the versions never mix; **Update Preview**; watch κ move. Land it: *"codebook → pilot → agreement → revise. That loop is the method; everything else is buttons."* Mention that the reference itself came out of this loop: a human reviewer overrode the model on 22 of 226 tweets, mostly on exactly these two rules.
 
 ## 15:03 · Run All: trustworthy coding at scale (sheet §9, 8 min)
 
-**Run All** on all 226 (~1 min; name **Reprocess all rows** vs **Fill missing only**). **Annotation Review** → **Compare To `theme.reference`** = the full-table κ, the headline number. Expected shape: roughly three-quarters `Promise`, the rest split between `Cuts` and `Other`. Correct one row via the **Correction** column (`job.ai.correction`) and point at **Use as example**: corrections feed back as worked examples. *"The AI didn't just do the job; it did the whole corpus, and you have the numbers to trust it."* Then one breath on afterlife: the coded column is ordinary data (filter on it, Trends by `party`, Export CSV).
+**Run All** on all 226 (~1 min; name **Reprocess all rows** vs **Fill missing only**). **Annotation Review** → **Compare To `theme.reference`** = the full-table κ, the headline number. Expected shape: roughly three-quarters `Promise`, the rest split between `Cuts` and `Other`. Correct one row via the **Correction** column (`job.AI_v2.correction`) and point at **Use as example**: corrections feed back as worked examples. *"The AI didn't just do the job; it did the whole corpus, and you have the numbers to trust it."* Then one breath on afterlife: the coded column is ordinary data (filter on it, Trends by `party`, Export CSV).
 
 ## 15:11 · Showcase: same tool, cleverer questions (demo only, 10 min)
 
@@ -81,6 +81,7 @@ Slide 9, top to bottom: the shared key is gone at 3:30, so real research means y
 |---|---|
 | Someone can't complete the §1 build | Load Checkpoint a (exactly the §1 result). If even that fails: sample import → tweets block alone; nothing in §2–9 needs the metadata. |
 | Someone's filter count isn't 226 | Helper + breakout; or load Checkpoint b (`Jobs_with_ref`: the 226 rows with the reference joined). |
+| Anyone behind at 14:42, before the AI | Load Checkpoint c (v1 codebook + hand-coded first and last pages); they continue with the model like everyone else. |
 | Provider add fails / model list empty | Re-paste the key (no trailing space); Tab before Add Provider; last resort: they watch the shared screen and use Checkpoint c later at home with their own key. |
 | openrouter.ai unreachable on their network | Post the unreachable snippet: code manually, watch the AI steps, repeat later on another network or with a local model. |
 | Room model returns 429s / errors | Post the fallback-model snippet; everyone swaps the model id, nothing else changes. Both models were tested Thursday. |

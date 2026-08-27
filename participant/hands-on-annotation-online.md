@@ -75,7 +75,7 @@ Before the AI touches anything, code the first page yourself. It changes how you
 
 ## 7 · Connect the AI
 
-1. Create the AI's own column: **Annotation Column → Start new annotation** → **`job.ai`** → **Create**. (Your `job.manual` stays as it is.)
+1. Create the AI's own column: **Annotation Column → Start new annotation** → **`job.AI_v1`** → **Create**. (Your `job.manual` stays as it is. One column per codebook version keeps the runs apart; v2 gets its own in §8.)
 2. Flip the toggle to **AI**, expand **Advanced settings** (the chevron).
 3. **+ Add Provider** → **OpenRouter** → paste the **shared key from the Zoom chat** → press Tab to accept the name → **Add Provider**.
 4. **Model**: paste the model id from the chat message.
@@ -99,14 +99,14 @@ Before the AI touches anything, code the first page yourself. It changes how you
 
    > Prompt v2: You are coding tweets posted by candidates during the 2020 Queensland state election. Read each tweet and assign the code that best describes how it uses the word job or jobs. Code the tweet's central message, not passing mentions. If a tweet fits two classes, choose the one carrying the main emphasis. If you cannot tell, use Other.
 
-6. **Update Preview** → watch κ move. That loop (codebook → pilot → agreement → revise) is the method; everything else is buttons.
+6. Give the revised codebook its own column so the two versions never mix: **Annotation Column → Start new annotation → `job.AI_v2`**. Then **Update Preview** → watch κ move. That loop (codebook → pilot → agreement → revise) is the method; everything else is buttons.
 
 ## 9 · Run All: coding at scale
 
 1. Click **Run All**: all 226 tweets, about a minute. (In **Advanced settings → Run All processing**: **Reprocess all rows** replaces the column; **Fill missing only** keeps existing labels.)
 2. The **Annotation Review** table opens: **Compare To `theme.reference`** now gives a full-table κ over all 226 rows: your headline number. Expect roughly two-thirds `Promise`, one-sixth `Cuts`, one-sixth `Other`.
-3. Fix any wrong rows via a **Correction** column (it suggests `job.ai.correction`), and note **Use as example**: your corrections can feed back into the AI as worked examples.
-4. Your coded column is ordinary data now: filter on it, chart `job.ai` by party in **Trends**, or export CSV from the **Export** view.
+3. Fix any wrong rows via a **Correction** column (it suggests `job.AI_v2.correction`), and note **Use as example**: your corrections can feed back into the AI as worked examples.
+4. Your coded column is ordinary data now: filter on it, chart `job.AI_v2` by party in **Trends**, or export CSV from the **Export** view.
 
 ## 10 · Checkpoints: if you fall behind
 
@@ -116,7 +116,7 @@ Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader
 |---|---|
 | **a** | §1: the `Tweets` block (column types fixed, `full_name`, candidate metadata joined) |
 | **b** | §4: the 226-row `Jobs_with_ref` block with `theme.reference` joined |
-| **c** | §8: v1→v2 codebook, `job.manual` and `job.ai` columns, v2 prompt in place, ready to Run All |
+| **c** | §6: v1 codebook in place, `job.manual` coded for the first page (1–10) and the last page (221–226); everything ready to connect the AI |
 
 Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them.
 

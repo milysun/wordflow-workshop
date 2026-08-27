@@ -16,7 +16,7 @@ Work top to bottom; the artefact builds (§2–3) are the long poles — start t
 - [ ] Fresh install opens; version correct; multi-tab ON (Settings → General).
 - [ ] Sample import → tweets block; Frequency word cloud renders; right-click word → stop words.
 - [ ] S2 derivation: Filter regex `^[Rr][Tt]` + negate → Filter contains `job` → **exactly 226 rows**.
-- [ ] Annotation: `job.manual` column + codebook (Title-case codes) + manual codes; `job.ai`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
+- [ ] Annotation: `job.manual` column + codebook (Title-case codes) + manual codes; `job.AI_v1` / `job.AI_v2`; provider add (throwaway key) → model list → **Preview** → **Compare To** κ + confusion matrix → **Run All** on 226.
 - [ ] Reference join: `tweets_job_reference.csv` uploads, joins on `tweet_id` (dtype match), Compare To `theme.reference` gives full-table κ.
 - [ ] Checkpoint round-trip on a second machine: Upload workspace → Load → selectors re-pick.
 - [x] Excel/zip import: fixed since June (verified 2026-08-27); caveats removed from all materials.
@@ -49,9 +49,9 @@ Build in a clean workspace, exporting after each stage (**Export view → Export
 
 - [ ] `Checkpoint_a.zip` (**the rescue for anyone who can't complete the §1 build; everyone builds it from scratch first**): sample tweets + candidate metadata imported → column types fixed (tweets `created_at` → datetime; candidate `party`, `gender` → category) → `full_name` = `first_name` + `last_name` (Preprocessing → Create) → join on `username` → the joined block renamed **`Tweets`**. Nothing else.
 - [x] `Checkpoint_b.zip` (built 2026-08-27): plus Filter #1 (`^[Rr][Tt]` regex, negated) → Filter #2 (contains `job`) → the **226-row block**, `tweets_job_reference.csv` (column `theme.reference`) joined on `tweet_id`, result renamed **`Jobs_with_ref`**. Nothing else.
-- [ ] `Checkpoint_c.zip`: plus the codebook (v2 descriptions), the `job.manual` column with ~5 codes, the empty `job.ai` column, and the v2 prompt saved in the Annotation tab, ready to Run All.
+- [x] `Checkpoint_c.zip` (built 2026-08-27): plus the v1 codebook and `job.manual` coded for the first page (tweets 1–10) and the last page (221–226). The catch-up point before anyone connects the AI; no AI column, no prompt inside.
 - [ ] **Round-trip test each file on a second machine**: Upload workspace → Load → open Annotation → data, tabs, codebook restore; block/column selectors need re-picking (expected; the sheet says so).
-- [ ] **Join test** (inside c): Compare To `theme.reference` shows a full-table κ once `job.ai` is filled.
+- [ ] **Join test** (inside c): Compare To `theme.reference` on `job.manual` shows κ for the 16 coded rows.
 - [ ] Upload the three ZIPs + `tweets_job_reference.csv` to the materials location; paste the links into the run-of-show panel's Checkpoint and Data fields.
 
 ## 4 · AI provider (T-3 days)
