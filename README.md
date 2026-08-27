@@ -50,11 +50,13 @@ A **full-capability tour in eight per-tool chapters**, built live in one workspa
 | 0:00–0:05 | Welcome back, setup check (app running and updated), orientation for afternoon-only joiners |
 | 0:05–0:12 | Framing: GenAI as a coder (codebook → pilot → agreement → revise → document), then responsible AI: choosing a provider is a research decision (ethics approval, data privacy, local vs commercial models, cost) |
 | 0:12–0:32 | Build the `Tweets` block from scratch, briskly (workspace, sample data, column types, `full_name`, join with candidate metadata; Checkpoint a = the rescue), explore (jobs, cuts), derive the 226 non-retweet "job" tweets (Filter ×2), join the reference annotation |
-| 0:32–0:39 | Codebook v1 (`promise` / `cuts` / `other`); feel the task by coding a few tweets by hand |
-| 0:39–0:47 | Connect a model (shared workshop key, deleted at 3:30 pm; own keys welcome) |
-| 0:47–1:02 | The preview loop: Preview → Compare To the verified labels → κ + confusion matrix → revise the codebook (v2), feed corrected rows back as examples |
-| 1:02–1:15 | Run All on the full table; headline κ; corrections |
-| 1:15–1:30 | Take-home: your own data, local models, ethics, manual multi-coder use, feedback, close |
+| 0:32–0:36 | Codebook v1 (`promise` / `cuts` / `other`) |
+| 0:36–0:42 | Be the coder first: annotate the first page by hand into `job.manual`, then Compare To the reference annotation: κ + confusion matrix on your own coding |
+| 0:42–0:50 | Connect a model (shared workshop key, deleted at 3:30 pm; own keys welcome) |
+| 0:50–1:03 | The preview loop: Preview → Compare To the reference → κ + confusion matrix → revise the codebook (v2), feed corrected rows back as examples |
+| 1:03–1:11 | Run All on the full table; headline κ; corrections |
+| 1:11–1:21 | Showcase: same tool, cleverer questions (demo only) |
+| 1:21–1:30 | Take-home: your own data, local models, ethics, manual multi-coder use, feedback, close |
 
 ## Design rationale (why this shape)
 

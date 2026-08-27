@@ -229,11 +229,15 @@
   <div class="what"><div class="head"><span class="flag chat">CHAT</span>Join the reference annotation (human-verified labels)</div>
   <div class="sub">Chat the <b>tweets_job_reference.csv</b> link (part of {DATA}) · add as block · Preprocessing → Join: 226-block FIRST (left), on <b>tweet_id</b> → joined block carries <b>theme.reference</b>; rename it <b>Jobs_with_ref</b> (= Checkpoint b). Say what it is: coded by a frontier model with this codebook, then verified tweet-by-tweet by a human coder. ✅-check.</div></div>
 </div>
-<div class="item" data-start="14:32"><input type="checkbox"><span class="t">14:32</span><span class="d">7m</span>
-  <div class="what"><div class="head">STEP 2 (say it, skip it) + STEP 3 setup · v1 codebook + feel-the-task</div>
-  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add <b>Jobs_with_ref</b> · Text Column = text · Start new annotation → <b>theme.manual</b> · Codebook → Create New → Edit → paste the <b>v1 codebook</b> from the copy bank below (lowercase: <b>promise / cuts / other</b>) · Manual mode → everyone codes ~5 rows to feel the task · then Annotation Column → Start new annotation → <b>theme.ai</b>. ✅-check.</div></div>
+<div class="item" data-start="14:32"><input type="checkbox"><span class="t">14:32</span><span class="d">4m</span>
+  <div class="what"><div class="head">STEP 2 (say it, skip it) + STEP 3 · v1 codebook</div>
+  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add <b>Jobs_with_ref</b> · Text Column = text · Start new annotation → <b>job.manual</b> · Codebook → Create New → Edit → paste the v1 codebook from the copy bank below (lowercase: promise / cuts / other).</div></div>
 </div>
-<div class="item" data-start="14:39"><input type="checkbox"><span class="t">14:39</span><span class="d">8m</span>
+<div class="item" data-start="14:36"><input type="checkbox"><span class="t">14:36</span><span class="d">6m</span>
+  <div class="what"><div class="head">Be the coder first · first page by hand → Compare To reference → κ</div>
+  <div class="sub">Manual → Start · everyone codes the FIRST PAGE (10 rows) into job.manual · then <b>Compare To → tick theme.reference</b> → κ badge on the coded rows, hover = confusion matrix · read one disagreement aloud: "who's right? often nobody: the codebook was silent" · "this is how a team measures coder vs coder" · Close · Start new annotation → <b>job.ai</b>.</div></div>
+</div>
+<div class="item" data-start="14:42"><input type="checkbox"><span class="t">14:42</span><span class="d">8m</span>
   <div class="what"><div class="head"><span class="flag key">KEY</span><span class="flag chat">CHAT</span>Connect the model (the danger zone: go slow)</div>
   <div class="sub">Toggle AI → Advanced settings → + Add Provider → OpenRouter → paste key → Tab → Add Provider → Model: paste the id. Helpers sweep; breakout for stragglers. Say: key is shared, temporary, dies at 3:30.</div>
   <button class="copy" data-tpl="Model access for this session (shared, deleted at 3:30 pm): provider OpenRouter, API key: {KEY} — model: {MODEL}. In Wordflow: Annotation tool → toggle AI → Advanced settings → + Add Provider → OpenRouter → paste the key → Add Provider, then paste the model id into the Model box.">Copy: key + model msg</button>
@@ -241,19 +245,19 @@
   <button class="copy" data-tpl="If openrouter.ai is not reachable from your network (some institutional firewalls and some countries block it): no problem — code a few tweets manually, watch the shared screen for the AI steps, and repeat them later on another network or with a local model (shown at the end).">Copy: OpenRouter unreachable msg</button>
   </div>
 </div>
-<div class="item" data-start="14:47"><input type="checkbox"><span class="t">14:47</span><span class="d">15m</span>
+<div class="item" data-start="14:50"><input type="checkbox"><span class="t">14:50</span><span class="d">13m</span>
   <div class="what"><div class="head">STEP 3 → STEP 4 · v1 shows AI can do the job; the reference annotation shows how to make it better</div>
-  <div class="sub">Prompt: paste <b>v1 prompt</b> (copy bank) · Preview (page of 10) · Compare To → tick <b>theme.reference</b> (+ optionally theme.manual: "how do YOU agree with the reference?") → κ badge → hover = confusion matrix · Filter any difference → read 2-3 disagreements aloud (mixed "jobs not cuts" tweets and vote-lists will be the ones) · THE REVISION: swap in the <b>v2 codebook + v2 prompt</b> (copy bank) → Update Preview → κ jumps. Then 4 quiet minutes for the room; collect κ in chat.</div></div>
+  <div class="sub">Prompt: paste <b>v1 prompt</b> (copy bank) · Preview (page of 10) · Compare To → tick <b>theme.reference</b> (+ optionally job.manual: "how do YOU agree with the reference?") → κ badge → hover = confusion matrix · Filter any difference → read 2-3 disagreements aloud (mixed "jobs not cuts" tweets and vote-lists will be the ones) · THE REVISION: swap in the <b>v2 codebook + v2 prompt</b> (copy bank) → Update Preview → κ jumps. Then 4 quiet minutes for the room; collect κ in chat.</div></div>
 </div>
-<div class="item" data-start="15:02"><input type="checkbox"><span class="t">15:02</span><span class="d">8m</span>
+<div class="item" data-start="15:03"><input type="checkbox"><span class="t">15:03</span><span class="d">8m</span>
   <div class="what"><div class="head">STEP 5 · Run All: trustworthy coding at scale</div>
-  <div class="sub">Run All on all 226 (mention Reprocess vs Fill missing) · Annotation Review: <b>Compare To theme.reference = full-table κ, the headline number</b> · Correction column (accepts theme.ai.correction) · correct one row · "Use as example" feeds it back. Land the line: "AI didn't just do the job, it did the whole corpus, and you have the agreement numbers to trust it." Expected shape: roughly 2/3 promise, 1/6 cuts, 1/6 other.</div></div>
+  <div class="sub">Run All on all 226 (mention Reprocess vs Fill missing) · Annotation Review: <b>Compare To theme.reference = full-table κ, the headline number</b> · Correction column (accepts job.ai.correction) · correct one row · "Use as example" feeds it back. Land the line: "AI didn't just do the job, it did the whole corpus, and you have the agreement numbers to trust it." Expected shape: roughly 2/3 promise, 1/6 cuts, 1/6 other.</div></div>
 </div>
-<div class="item" data-start="15:10"><input type="checkbox"><span class="t">15:10</span><span class="d">12m</span>
+<div class="item" data-start="15:11"><input type="checkbox"><span class="t">15:11</span><span class="d">10m</span>
   <div class="what"><div class="head">Showcase: same tool, cleverer questions (demo only)</div>
   <div class="sub">Watch, don't follow. Three quick codebooks on the same 226 tweets, Preview only, all in the copy bank: 1) sentiment TOWARD the LNP (aspect, not sentence) · 2) mentions a place outside QLD? (the model knows geography) · 3) more than two people mentioned? (counting + names). Land: "classic NLP problems, now one codebook away. The checking workflow you just learned is what makes them trustworthy."</div></div>
 </div>
-<div class="item" data-start="15:22"><input type="checkbox"><span class="t">15:22</span><span class="d">8m</span>
+<div class="item" data-start="15:21"><input type="checkbox"><span class="t">15:21</span><span class="d">9m</span>
   <div class="what"><div class="head">Take it home + close on time</div>
   <div class="sub">Real research = your own key or a local model (Add Provider → Custom: Ollama/LM Studio) · ethics approval decides models/providers · document prompt+codebook+κ · Feedback button + citation · follow-up email tomorrow (S1 recording, materials).</div></div>
 </div>

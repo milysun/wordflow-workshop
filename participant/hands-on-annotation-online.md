@@ -53,7 +53,7 @@ The workshop provides **a human-verified reference annotation** for all 226 twee
 The codebook is itself a small data block: one row per code, with a description. The descriptions are what the model actually reads.
 
 1. Open the **Annotation** tool (left sidebar, under **Views**). Under **Selected Data Blocks**, add **`Jobs_with_ref`**. Set **Text Column** to **`text`**.
-2. In the **Annotation Column** dropdown, choose **Start new annotation** → name it **`theme.manual`** → **Create**.
+2. In the **Annotation Column** dropdown, choose **Start new annotation** → name it **`job.manual`** → **Create**.
 3. In the **Codebook** card, click **Create New**, then **Edit** next to **Codes**. **Add code** three times and type exactly (lowercase, to keep everyone's columns comparable):
 
    | Code | Description |
@@ -64,17 +64,18 @@ The codebook is itself a small data block: one row per code, with a description.
 
 4. **Save.**
 
-## 6 · Feel the task (Manual mode, 2 minutes)
+## 6 · Be the coder first: annotate a page by hand, then measure yourself
 
-Before the AI touches anything, be the coder for a moment: it changes how you read everything after.
+Before the AI touches anything, code the first page yourself. It changes how you read everything after, and it shows you the measuring tools on your own work first.
 
 1. Leave the **Manual / AI** toggle on **Manual** and click **Start**.
-2. Code **about 5 tweets** into `theme.manual` via each row's **Select class** dropdown. Notice the ones that make you hesitate; the AI will hesitate there too.
-3. Click **Close**. (In a real team, each coder gets their own column like this, picked under **Annotation Column**.)
+2. Code the **first page** (10 tweets) into `job.manual` via each row's **Select class** dropdown. Notice the ones that make you hesitate; the AI will hesitate there too.
+3. Now measure yourself: click **Compare To** and tick **`theme.reference`**. A **Cohen's Kappa** badge appears for the rows you coded; **hover it** for the confusion matrix. Where you and the reference disagree, who is right? Often the honest answer is "the codebook didn't say", which is exactly what §8 fixes.
+4. Click **Close**. In a real team, each coder gets their own column like this (picked under **Annotation Column**), and the same Compare To measures coder against coder.
 
 ## 7 · Connect the AI
 
-1. Create the AI's own column: **Annotation Column → Start new annotation** → **`theme.ai`** → **Create**.
+1. Create the AI's own column: **Annotation Column → Start new annotation** → **`job.ai`** → **Create**. (Your `job.manual` stays as it is.)
 2. Flip the toggle to **AI**, expand **Advanced settings** (the chevron).
 3. **+ Add Provider** → **OpenRouter** → paste the **shared key from the Zoom chat** → press Tab to accept the name → **Add Provider**.
 4. **Model**: paste the model id from the chat message.
@@ -86,7 +87,7 @@ Before the AI touches anything, be the coder for a moment: it changes how you re
 
 1. Click **Preview**. The model codes the visible page (10 rows; raise **Rows per page** for a bigger sample). Predictions are display-only; nothing is written to your data yet.
 2. Click **Compare To** and tick **`theme.reference`**: the human-verified reference annotation. A **Cohen's Kappa** badge (e.g. `κ 0.74`) appears; **hover it** for the **confusion matrix**.
-3. Optionally also tick **`theme.manual`**: how does the AI agree with *you*, and how do you agree with the reference? Disagreement is data, not failure.
+3. Optionally also tick **`job.manual`**: how does the AI agree with *you*, and how do you agree with the reference? Disagreement is data, not failure.
 4. Click **Filter any difference** (the filter icon by the column header) and read the disagreements. Mixed tweets ("jobs, not cuts!") and campaign vote-lists ("For Health. For Jobs.") are the usual suspects. Is the model wrong, or was the codebook silent about these cases?
 5. **Revise**: update the codebook descriptions to v2 (Edit the codebook, extend each description), and the prompt:
 
@@ -104,8 +105,8 @@ Before the AI touches anything, be the coder for a moment: it changes how you re
 
 1. Click **Run All**: all 226 tweets, about a minute. (In **Advanced settings → Run All processing**: **Reprocess all rows** replaces the column; **Fill missing only** keeps existing labels.)
 2. The **Annotation Review** table opens: **Compare To `theme.reference`** now gives a full-table κ over all 226 rows: your headline number. Expect roughly two-thirds `promise`, one-sixth `cuts`, one-sixth `other`.
-3. Fix any wrong rows via a **Correction** column (it suggests `theme.ai.correction`), and note **Use as example**: your corrections can feed back into the AI as worked examples.
-4. Your coded column is ordinary data now: filter on it, chart `theme.ai` by party in **Trends**, or export CSV from the **Export** view.
+3. Fix any wrong rows via a **Correction** column (it suggests `job.ai.correction`), and note **Use as example**: your corrections can feed back into the AI as worked examples.
+4. Your coded column is ordinary data now: filter on it, chart `job.ai` by party in **Trends**, or export CSV from the **Export** view.
 
 ## 10 · Checkpoints: if you fall behind
 
@@ -115,7 +116,7 @@ Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader
 |---|---|
 | **a** | §1: the `Tweets` block (column types fixed, `full_name`, candidate metadata joined) |
 | **b** | §4: the 226-row `Jobs_with_ref` block with `theme.reference` joined |
-| **c** | §8: v1→v2 codebook, `theme.manual` and `theme.ai` columns, v2 prompt in place, ready to Run All |
+| **c** | §8: v1→v2 codebook, `job.manual` and `job.ai` columns, v2 prompt in place, ready to Run All |
 
 Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them.
 
