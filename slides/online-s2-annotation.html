@@ -354,7 +354,7 @@
   <section class="slide" data-notes="Show once so people know the arc, then switch to live Wordflow and stay there. Come back if someone asks 'where are we?'. The dataset: the QLD election tweets from this morning. The theme comes out of the word cloud (jobs), the block is derived with two filters (everyone lands on 226 rows), and a human-verified reference annotation are the standard the AI must match.">
     <h2>The hands-on, in one slide</h2>
     <ol style="font-size: 0.95em;">
-      <li><strong>Load the prepared workspace</strong> (checkpoint a): the <strong>Tweets</strong> block, cleaned and joined with candidate metadata this morning.</li>
+      <li><strong>Build the Tweets block</strong> (the morning's prep, brisk): workspace, sample data, column types, join with candidate metadata. Fell behind? Checkpoint a is exactly this result.</li>
       <li><strong>Explore</strong>: the Frequency word cloud says the campaign is about <strong>jobs</strong>. Two filters (drop retweets, keep "job") → everyone has the same <strong>226 tweets</strong>.</li>
       <li><strong>Join the reference annotation</strong>: human-verified labels for all 226 tweets, onto your block. Then the codebook: <code>promise</code> / <code>cuts</code> / <code>other</code>, and code a few tweets yourself to feel the task.</li>
       <li><strong>Connect a model</strong>: shared workshop key from the chat → new column <code>theme.ai</code>.</li>

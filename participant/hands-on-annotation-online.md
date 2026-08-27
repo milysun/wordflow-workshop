@@ -14,21 +14,22 @@ This sheet mirrors the live session step by step, and works as a standalone tuto
 2. **This sheet open** next to Wordflow (a second screen helps).
 3. **Model access is provided**: a shared workshop key will be posted in the Zoom chat when we reach §6 (it is deleted at 3:30 pm). Your own OpenRouter / OpenAI / Anthropic / Google key works too, if you prefer.
 
-## 1 · Load the prepared workspace (Checkpoint a)
+## 1 · Build the Tweets block (brief; this is the morning's data prep)
 
-This morning's data preparation is done for you. Load it in one step:
+1. In the **Data Loader**, click **Create workspace** and give it a name.
+2. Click **Import sample data**. In the dialog, tick **ADO — Queensland Election Tweets** → **Import selected**. Wait for the **✓ Imported** chip, then add **both** files as data blocks: the **candidate tweets** (one row per tweet, text in `text`) and the **candidate info** (one row per candidate: `party`, `gender`, `first_name`, `last_name`, `username`).
+3. Fix the column types (open the column's menu in the Data view → change type): tweets `created_at` → **date-time**; candidate `party` and `gender` → **category**.
+4. **Preprocessing → Create** on the candidate block: new column `full_name` = `first_name` + `" "` + `last_name` (Apply result as **Update**).
+5. **Preprocessing → Join**: select the tweets block **FIRST** (first pick = left table), then the candidate block; join on **`username`** (left join). Rename the result **`Tweets`** (block menu → Rename).
 
-1. **Data Loader → Workspace manager → Upload workspace** → choose `Checkpoint_a_Data.zip` (link in the Zoom chat) → click **Load** on the new row.
-2. You now have a **`Tweets`** block: one row per tweet by a candidate in the 2020 Queensland state election, with the tweet in `text`, `created_at` as a proper date-time, and the candidate's metadata (`party`, `gender`, `full_name`) joined in from the candidate table.
-
-*Prefer to build it yourself later? Data Loader → Import sample data → **ADO — Queensland Election Tweets**; add the tweets and candidate blocks; fix the column types (`created_at` → date-time; `party`, `gender` → category); create `full_name` from `first_name` + `last_name` in **Preprocessing → Create**; join the two on `username`. That is exactly what the checkpoint contains.*
+*Lost anywhere in this step? Load **Checkpoint a** (§10): it contains exactly this result, and nothing more.*
 
 ## 2 · Explore first: what is this campaign about?
 
 Before defining any codes, let the data speak.
 
-1. Click the `Tweets` block → open **Frequency**. The word cloud makes it obvious: this campaign is about **jobs**.
-2. Optional: click "jobs" in the cloud to jump into **Concordance** and read a few tweets in context. Notice the different ways the word is used; that observation becomes our codebook in §4.
+1. Click the `Tweets` block → open **Frequency**. In the word cloud, **jobs** dominates, and **cuts** is not far behind: the campaign's language about jobs is our theme.
+2. Optional: click "jobs" in the cloud to jump into **Concordance** and read a few tweets in context. Notice the different ways the word is used (creating jobs, cutting jobs, "did a great job"); that observation becomes our codebook in §5.
 
 ## 3 · Derive the coding dataset (everyone lands on the same 226 rows)
 
@@ -112,7 +113,7 @@ Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader
 
 | Checkpoint | Restores the state after… |
 |---|---|
-| **a** | §1: the prepared `Tweets` block (column types fixed, candidate metadata joined) |
+| **a** | §1: the `Tweets` block (column types fixed, `full_name`, candidate metadata joined) |
 | **b** | §5: the 226-row block with `theme.reference` joined, the v1 codebook, and the `theme.manual` column |
 | **c** | §8: `theme.ai` column, v2 codebook and v2 prompt in place, ready to Run All |
 

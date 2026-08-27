@@ -1,6 +1,6 @@
 # Runbook — Online workshop Session 2 (90 min, hands-on, NOT recorded)
 
-> **Rewritten 2026-08-27** to the current design: the jobs theme-coding task on the 226-tweet block, lowercase `promise` / `cuts` / `other` codebook with a v1 → v2 revision arc measured against a **human-verified reference annotation**, a **shared workshop key**, checkpoint workspace archives a/b/c (everyone loads **a** at the start), the responsible-AI slide before the tool, and the showcase segment. Wall-clock rows and every chat snippet: `facilitator/run-of-show-online.html`. Participant steps: `participant/hands-on-annotation-online.md` (its § numbers are used below).
+> **Rewritten 2026-08-27** to the current design: the jobs theme-coding task on the 226-tweet block, lowercase `promise` / `cuts` / `other` codebook with a v1 → v2 revision arc measured against a **human-verified reference annotation**, a **shared workshop key**, checkpoint workspace archives a/b/c as rescues (**a** = the Tweets block everyone builds first), the responsible-AI slide before the tool, and the showcase segment. Wall-clock rows and every chat snippet: `facilitator/run-of-show-online.html`. Participant steps: `participant/hands-on-annotation-online.md` (its § numbers are used below).
 
 **Coding text with GenAI: the Annotation tool · Friday 28 August 2026 · 2:00 – 3:30 pm AEST (12:00 – 1:30 pm AWST) · Zoom**
 
@@ -21,13 +21,21 @@ Say the recording status first: *"Unlike this morning, this session is **not** r
 - **Slide 6, responsible AI (~2 min, unhurried, before anyone touches the tool; a reminder, not a course):** say the sentence explicitly: *"today we use shared OpenRouter access so everyone can do the exercise; that is convenience, not an endorsement of OpenRouter or any commercial AI service for research."* Four cards, one breath each: ethics approval plus institutional, journal and funder rules decide providers and whether data may leave at all; local models keep data on your machine but don't make a model fair (it can still key on a name or an ethnicity), so de-identify regardless and consider synthetic data while developing; fit includes methodology (reflexive, interpretive analysis has no model that fits); and you remain accountable for everything the AI did on your behalf. Verbal aside only, not on the slide (over half the room is external): USyd people can go deeper in SIH's GenAI training series. Also why the key dies at 3:30.
 - **Slide 7 (roadmap) 30 s, slide 8 (checkpoints) 45 s:** *"whenever you fall behind: chat link → Upload workspace → Load → re-select the block. Under a minute."* Then live Wordflow for the rest; keep the sheet's § numbers in your mouth.
 
-## 14:12 · STEP 1 · Load Checkpoint a: the prepared Tweets block (sheet §1, 8 min)
+## 14:12 · STEP 1 · Build the Tweets block from scratch (sheet §1, 9 min, brisk)
 
-Chat the checkpoint link (panel snippet). Everyone: **Data Loader → Workspace manager → Upload workspace → Checkpoint_a_Data.zip → Load.** SEE: a block called **`Tweets`**. Say what is inside and why: *"this morning's data preparation, done for you: tweets plus candidate metadata joined on username, `created_at` as a real date-time, `party` and `gender` as categories, `full_name` built from first and last name. Loading it is also the rescue move for later."* Fallback for anyone whose upload fails: sample import → tweets block (metadata optional today). ✅-check before moving on.
+This is the morning's data prep replayed at speed: continuity for the morning people, and the afternoon-only joiners need to have done it once rather than inherit a mystery ZIP. Narrate each move in one line; don't teach.
 
-## 14:20 · Identify the theme, derive the block (sheet §2–3, 8 min)
+1. **Data Loader → Create workspace.**
+2. **Import sample data → ADO — Queensland Election Tweets → Import selected**; add **both** blocks: the candidate tweets and the candidate info (metadata).
+3. Column types via the column menu: tweets `created_at` → date-time; candidate `party`, `gender` → category. (*"Types decide what tools can do with a column: dates give you Trends, categories give you groups."*)
+4. **Preprocessing → Create** on the candidate block: `full_name` = first_name + " " + last_name, Apply as **Update**.
+5. **Preprocessing → Join**: tweets **FIRST** (left), candidate block second, on `username`, left join → rename the result **`Tweets`**.
 
-Click `Tweets` → **Frequency**: the word cloud says **jobs**; that's the theme (*"normally you'd read and iterate here; we've pre-baked the codebook for time"*). Then **Preprocessing → Filter #1** on `Tweets`: `text` contains RegEx `^[Rr][Tt]`, **negate** → the originals block. **Filter #2** on that block: `text` contains `job` (plain contains, so "jobs" and "job-seeker" count). Say **226** out loud; ✅-check on 226. Anyone else's number: helper + breakout; Checkpoint b carries this block onward.
+Rescue, said out loud and posted in chat: *"lost anywhere here? Load Checkpoint a: it is exactly this result."* Helpers pull stragglers into a room while the rest continue. ✅-check on a block called `Tweets`.
+
+## 14:21 · Explore, then derive the block (sheet §2–3, 7 min)
+
+Click `Tweets` → **Frequency**: the word cloud says **jobs**, with **cuts** close behind: *"the campaign's language about jobs is our theme; normally you'd read and iterate here, we've pre-baked the codebook for time."* Optional 20-second click on "jobs" into Concordance. Then **Preprocessing → Filter #1** on `Tweets`: `text` contains RegEx `^[Rr][Tt]`, **negate** → the originals block. **Filter #2** on that block: `text` contains `job` (plain contains, so "jobs" and "job-seeker" count). Say **226** out loud; ✅-check on 226. Anyone else's number: helper + breakout; Checkpoint b carries this block onward.
 
 ## 14:28 · Join the reference annotation (sheet §4, 4 min)
 
@@ -67,7 +75,7 @@ Slide 9, top to bottom: the shared key is gone at 3:30, so real research means y
 
 | Symptom | Do |
 |---|---|
-| Checkpoint a won't load for someone | Sample import → tweets block; they proceed without metadata (nothing in §2–9 needs it). |
+| Someone can't complete the §1 build | Load Checkpoint a (exactly the §1 result). If even that fails: sample import → tweets block alone; nothing in §2–9 needs the metadata. |
 | Someone's filter count isn't 226 | Helper + breakout; or load Checkpoint b (block + reference join + v1 codebook). |
 | Provider add fails / model list empty | Re-paste the key (no trailing space); Tab before Add Provider; last resort: they watch the shared screen and use Checkpoint c later at home with their own key. |
 | openrouter.ai unreachable on their network | Post the unreachable snippet: code manually, watch the AI steps, repeat later on another network or with a local model. |
