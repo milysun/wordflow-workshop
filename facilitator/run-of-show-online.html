@@ -217,21 +217,21 @@
 <div class="item" data-start="14:12"><input type="checkbox"><span class="t">14:12</span><span class="d">9m</span>
   <div class="what"><div class="head"><span class="flag chat">CHAT</span>STEP 1 · Build the Tweets block from scratch (brisk: the morning's prep replayed)</div>
   <div class="sub">Create workspace · Import sample data → QLD Election Tweets → add BOTH blocks (tweets + candidate info) · types: created_at → date-time, party/gender → category · Create full_name (Update) · Join: tweets FIRST on username → rename <b>Tweets</b>. Rescue said aloud + chatted: Checkpoint a = exactly this result. ✅-check on a block called Tweets.</div>
-  <button class="copy" data-tpl="Lost in step 1? Load Checkpoint a instead: download Checkpoint_a_Data.zip from {CKPT} — then Data Loader → Workspace manager → Upload workspace → choose the ZIP → click Load on the new row. You get the finished Tweets block.">Copy: checkpoint a rescue</button>
+  <button class="copy" data-tpl="Lost in step 1? Load Checkpoint a instead: download Checkpoint_a.zip from {CKPT} — then Data Loader → Workspace manager → Upload workspace → choose the ZIP → click Load on the new row. You get the finished Tweets block.">Copy: checkpoint a rescue</button>
   <button class="copy" data-tpl="Data fallback if the sample import fails: download {DATA} and drag & drop into Wordflow's Data Loader (or use Upload files). CSV, Excel or zip all import.">Copy: data fallback</button>
   </div>
 </div>
 <div class="item" data-start="14:21"><input type="checkbox"><span class="t">14:21</span><span class="d">7m</span>
   <div class="what"><div class="head">STEP 1 cont. · Explore (jobs, cuts) → derive the block (everyone lands on 226 rows)</div>
-  <div class="sub">Frequency on <b>Tweets</b> → word cloud: <b>jobs</b> dominates, <b>cuts</b> close behind: that's our theme. Then Preprocessing → Filter #1 on Tweets: text contains RegEx <b>^[Rr][Tt]</b> → <b>negate</b> → originals. Filter #2 on that block: text contains <b>job</b> (not whole-word) → <b>226 rows</b>. Say the number out loud; ✅-check on 226. Stragglers: Checkpoint b carries this block + the reference join + the v1 codebook.</div></div>
+  <div class="sub">Frequency on <b>Tweets</b> → word cloud: <b>jobs</b> dominates, <b>cuts</b> close behind: that's our theme. Then Preprocessing → Filter #1 on Tweets: text contains RegEx <b>^[Rr][Tt]</b> → <b>negate</b> → originals. Filter #2 on that block: text contains <b>job</b> (not whole-word) → <b>226 rows</b>. Say the number out loud; ✅-check on 226. Stragglers: Checkpoint b = Jobs_with_ref (226 rows + reference joined), one step ahead.</div></div>
 </div>
 <div class="item" data-start="14:28"><input type="checkbox"><span class="t">14:28</span><span class="d">4m</span>
   <div class="what"><div class="head"><span class="flag chat">CHAT</span>Join the reference annotation (human-verified labels)</div>
-  <div class="sub">Chat the <b>tweets_job_reference.csv</b> link (part of {DATA}) · add as block · Preprocessing → Join: 226-block FIRST (left), on <b>tweet_id</b> → joined block carries <b>theme.reference</b>. Say what it is: coded by a frontier model with this codebook, then verified tweet-by-tweet by a human coder. ✅-check.</div></div>
+  <div class="sub">Chat the <b>tweets_job_reference.csv</b> link (part of {DATA}) · add as block · Preprocessing → Join: 226-block FIRST (left), on <b>tweet_id</b> → joined block carries <b>theme.reference</b>; rename it <b>Jobs_with_ref</b> (= Checkpoint b). Say what it is: coded by a frontier model with this codebook, then verified tweet-by-tweet by a human coder. ✅-check.</div></div>
 </div>
 <div class="item" data-start="14:32"><input type="checkbox"><span class="t">14:32</span><span class="d">7m</span>
   <div class="what"><div class="head">STEP 2 (say it, skip it) + STEP 3 setup · v1 codebook + feel-the-task</div>
-  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add the JOINED block · Text Column = text · Start new annotation → <b>theme.manual</b> · Codebook → Create New → Edit → paste the <b>v1 codebook</b> from the copy bank below (lowercase: <b>promise / cuts / other</b>) · Manual mode → everyone codes ~5 rows to feel the task · then Annotation Column → Start new annotation → <b>theme.ai</b>. ✅-check.</div></div>
+  <div class="sub">Say: "normally you'd now read tweets and iterate class definitions; we've pre-baked that step for time." Annotation tool · add <b>Jobs_with_ref</b> · Text Column = text · Start new annotation → <b>theme.manual</b> · Codebook → Create New → Edit → paste the <b>v1 codebook</b> from the copy bank below (lowercase: <b>promise / cuts / other</b>) · Manual mode → everyone codes ~5 rows to feel the task · then Annotation Column → Start new annotation → <b>theme.ai</b>. ✅-check.</div></div>
 </div>
 <div class="item" data-start="14:39"><input type="checkbox"><span class="t">14:39</span><span class="d">8m</span>
   <div class="what"><div class="head"><span class="flag key">KEY</span><span class="flag chat">CHAT</span>Connect the model (the danger zone: go slow)</div>

@@ -35,15 +35,15 @@ Rescue, said out loud and posted in chat: *"lost anywhere here? Load Checkpoint 
 
 ## 14:21 · Explore, then derive the block (sheet §2–3, 7 min)
 
-Click `Tweets` → **Frequency**: the word cloud says **jobs**, with **cuts** close behind: *"the campaign's language about jobs is our theme; normally you'd read and iterate here, we've pre-baked the codebook for time."* Optional 20-second click on "jobs" into Concordance. Then **Preprocessing → Filter #1** on `Tweets`: `text` contains RegEx `^[Rr][Tt]`, **negate** → the originals block. **Filter #2** on that block: `text` contains `job` (plain contains, so "jobs" and "job-seeker" count). Say **226** out loud; ✅-check on 226. Anyone else's number: helper + breakout; Checkpoint b carries this block onward.
+Click `Tweets` → **Frequency**: the word cloud says **jobs**, with **cuts** close behind: *"the campaign's language about jobs is our theme; normally you'd read and iterate here, we've pre-baked the codebook for time."* Optional 20-second click on "jobs" into Concordance. Then **Preprocessing → Filter #1** on `Tweets`: `text` contains RegEx `^[Rr][Tt]`, **negate** → the originals block. **Filter #2** on that block: `text` contains `job` (plain contains, so "jobs" and "job-seeker" count). Say **226** out loud; ✅-check on 226. Anyone else's number: helper + breakout; Checkpoint b (`Jobs_with_ref`, after the next step) catches them up.
 
 ## 14:28 · Join the reference annotation (sheet §4, 4 min)
 
-Chat the `tweets_job_reference.csv` link. Add it as a block (drag & drop or Upload files). **Preprocessing → Join**: the 226-row block **FIRST** (first pick = left), then the reference block, on `tweet_id`, left join. Say what the column is: *"`theme.reference`: all 226 tweets coded by a frontier model with the codebook you're about to see, then reviewed tweet-by-tweet by a human coder. Not gospel; a reference you can measure any coder against, human or AI."* ✅-check.
+Chat the `tweets_job_reference.csv` link. Add it as a block (drag & drop or Upload files). **Preprocessing → Join**: the 226-row block **FIRST** (first pick = left), then the reference block, on `tweet_id`, left join; rename the result **`Jobs_with_ref`** (Checkpoint b is exactly this). Say what the column is: *"`theme.reference`: all 226 tweets coded by a frontier model with the codebook you're about to see, then reviewed tweet-by-tweet by a human coder. Not gospel; a reference you can measure any coder against, human or AI."* ✅-check.
 
 ## 14:32 · Codebook v1 + feel the task (sheet §5–6, 7 min)
 
-**Annotation** tool → add the joined block → Text Column `text` → **Annotation Column → Start new annotation → `theme.manual`**. **Codebook → Create New → Edit**: three codes, lowercase, paste the v1 descriptions from the copy bank (chat them too). Then **Manual → Start**: everyone codes ~5 tweets. *"Notice where you hesitate; the model will hesitate there too. In a team, each coder gets their own column exactly like this."* Close. Then **Start new annotation → `theme.ai`** so the AI has its own column.
+**Annotation** tool → add `Jobs_with_ref` → Text Column `text` → **Annotation Column → Start new annotation → `theme.manual`**. **Codebook → Create New → Edit**: three codes, lowercase, paste the v1 descriptions from the copy bank (chat them too). Then **Manual → Start**: everyone codes ~5 tweets. *"Notice where you hesitate; the model will hesitate there too. In a team, each coder gets their own column exactly like this."* Close. Then **Start new annotation → `theme.ai`** so the AI has its own column.
 
 ## 14:39 · Connect the model: the danger zone, go slow (sheet §7, 8 min)
 
@@ -76,7 +76,7 @@ Slide 9, top to bottom: the shared key is gone at 3:30, so real research means y
 | Symptom | Do |
 |---|---|
 | Someone can't complete the §1 build | Load Checkpoint a (exactly the §1 result). If even that fails: sample import → tweets block alone; nothing in §2–9 needs the metadata. |
-| Someone's filter count isn't 226 | Helper + breakout; or load Checkpoint b (block + reference join + v1 codebook). |
+| Someone's filter count isn't 226 | Helper + breakout; or load Checkpoint b (`Jobs_with_ref`: the 226 rows with the reference joined). |
 | Provider add fails / model list empty | Re-paste the key (no trailing space); Tab before Add Provider; last resort: they watch the shared screen and use Checkpoint c later at home with their own key. |
 | openrouter.ai unreachable on their network | Post the unreachable snippet: code manually, watch the AI steps, repeat later on another network or with a local model. |
 | Room model returns 429s / errors | Post the fallback-model snippet; everyone swaps the model id, nothing else changes. Both models were tested Thursday. |

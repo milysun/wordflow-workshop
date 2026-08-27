@@ -46,13 +46,13 @@ The workshop provides **a human-verified reference annotation** for all 226 twee
 
 1. Download `tweets_job_reference.csv` from the Zoom chat and add it as a data block (drag & drop, or **Upload files**). It has two columns: `tweet_id` and `theme.reference`.
 2. **Preprocessing → Join**: select your 226-row block FIRST (first pick = left table), then the reference block. Join on **`tweet_id`** (left join).
-3. The joined block (still 226 rows) now carries `theme.reference` alongside the text. Work in this block from here on.
+3. The joined block (still 226 rows) now carries `theme.reference` alongside the text. Rename it **`Jobs_with_ref`** (block menu → Rename) and work in this block from here on.
 
 ## 5 · Build the codebook (v1: plain and simple)
 
 The codebook is itself a small data block: one row per code, with a description. The descriptions are what the model actually reads.
 
-1. Open the **Annotation** tool (left sidebar, under **Views**). Under **Selected Data Blocks**, add the joined block. Set **Text Column** to **`text`**.
+1. Open the **Annotation** tool (left sidebar, under **Views**). Under **Selected Data Blocks**, add **`Jobs_with_ref`**. Set **Text Column** to **`text`**.
 2. In the **Annotation Column** dropdown, choose **Start new annotation** → name it **`theme.manual`** → **Create**.
 3. In the **Codebook** card, click **Create New**, then **Edit** next to **Codes**. **Add code** three times and type exactly (lowercase, to keep everyone's columns comparable):
 
@@ -114,8 +114,8 @@ Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader
 | Checkpoint | Restores the state after… |
 |---|---|
 | **a** | §1: the `Tweets` block (column types fixed, `full_name`, candidate metadata joined) |
-| **b** | §5: the 226-row block with `theme.reference` joined, the v1 codebook, and the `theme.manual` column |
-| **c** | §8: `theme.ai` column, v2 codebook and v2 prompt in place, ready to Run All |
+| **b** | §4: the 226-row `Jobs_with_ref` block with `theme.reference` joined |
+| **c** | §8: v1→v2 codebook, `theme.manual` and `theme.ai` columns, v2 prompt in place, ready to Run All |
 
 Your provider and API key live on your machine, never inside workspace files, so loading a checkpoint doesn't touch them.
 
