@@ -121,7 +121,7 @@ Your provider and API key live on your machine, never inside workspace files, so
 ## 11 · Before you use this in real research
 
 - **The shared workshop key is deleted at 3:30 pm today.** For your research: your own API key (the setup is identical), or a **local model**: in **Add Provider** choose **Custom** and point it at any local server that speaks the OpenAI Chat Completions API (e.g. Ollama, LM Studio), so your data never leaves your machine.
-- **Check your ethics approval.** Which AI models and providers you may use, and whether your data is allowed to be sent to an external API at all, is governed by your approval, not by what the tool can do.
+- **Check your ethics approval, and the rules around it.** Which AI models and providers you may use, and whether your data may be sent to an external API at all, is governed by your ethics approval plus your institution's, journal's and funder's AI-use rules, not by what the tool can do. A local model keeps data on your machine but does not make a model fair: de-identify regardless. You remain accountable for everything the AI did on your behalf.
 - **Keep your methods audit-ready**: save your prompt, codebook, model name, and agreement scores. They belong in your methods section.
 
 ---
