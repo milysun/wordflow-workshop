@@ -40,9 +40,9 @@ Your final block should have **226 rows**. If your number differs, put it in the
 
 The workshop provides **human-verified ground-truth labels** for all 226 tweets: coded by a frontier AI model with the same codebook you're about to use, then reviewed tweet-by-tweet by a human coder. Joining them in now means you can measure any coder (human or AI) against them later.
 
-1. Download `tweets_job_groundtruth.csv` from the Zoom chat and add it as a data block (drag & drop, or **Upload files**). It has two columns: `tweet_id` and `theme.verified`.
+1. Download `tweets_job_reference.csv` from the Zoom chat and add it as a data block (drag & drop, or **Upload files**). It has two columns: `tweet_id` and `theme.reference`.
 2. **Preprocessing → Join**: select your 226-row block FIRST (first pick = left table), then the ground-truth block. Join on **`tweet_id`** (left join).
-3. The joined block (still 226 rows) now carries `theme.verified` alongside the text. Work in this block from here on.
+3. The joined block (still 226 rows) now carries `theme.reference` alongside the text. Work in this block from here on.
 
 ## 5 · Build the codebook (v1: plain and simple)
 
@@ -81,7 +81,7 @@ Before the AI touches anything, be the coder for a moment: it changes how you re
 ## 8 · Preview, measure against the ground truth, revise
 
 1. Click **Preview**. The model codes the visible page (10 rows; raise **Rows per page** for a bigger sample). Predictions are display-only; nothing is written to your data yet.
-2. Click **Compare To** and tick **`theme.verified`**: the human-verified ground truth. A **Cohen's Kappa** badge (e.g. `κ 0.74`) appears; **hover it** for the **confusion matrix**.
+2. Click **Compare To** and tick **`theme.reference`**: the human-verified ground truth. A **Cohen's Kappa** badge (e.g. `κ 0.74`) appears; **hover it** for the **confusion matrix**.
 3. Optionally also tick **`theme.manual`**: how does the AI agree with *you*, and how do you agree with the ground truth? Disagreement is data, not failure.
 4. Click **Filter any difference** (the filter icon by the column header) and read the disagreements. Mixed tweets ("jobs, not cuts!") and campaign vote-lists ("For Health. For Jobs.") are the usual suspects. Is the model wrong, or was the codebook silent about these cases?
 5. **Revise**: update the codebook descriptions to v2 (Edit the codebook, extend each description), and the prompt:
@@ -99,7 +99,7 @@ Before the AI touches anything, be the coder for a moment: it changes how you re
 ## 9 · Run All: coding at scale
 
 1. Click **Run All**: all 226 tweets, about a minute. (In **Advanced settings → Run All processing**: **Reprocess all rows** replaces the column; **Fill missing only** keeps existing labels.)
-2. The **Annotation Review** table opens: **Compare To `theme.verified`** now gives a full-table κ over all 226 rows: your headline number. Expect roughly two-thirds `promise`, one-sixth `cuts`, one-sixth `other`.
+2. The **Annotation Review** table opens: **Compare To `theme.reference`** now gives a full-table κ over all 226 rows: your headline number. Expect roughly two-thirds `promise`, one-sixth `cuts`, one-sixth `other`.
 3. Fix any wrong rows via a **Correction** column (it suggests `theme.ai.correction`), and note **Use as example**: your corrections can feed back into the AI as worked examples.
 4. Your coded column is ordinary data now: filter on it, chart `theme.ai` by party in **Trends**, or export CSV from the **Export** view.
 
@@ -109,7 +109,7 @@ Three checkpoint workspaces are posted in the Zoom chat. Load one: **Data Loader
 
 | Checkpoint | Restores the state after… |
 |---|---|
-| **a** | §4: the 226-row block with `theme.verified` joined in |
+| **a** | §4: the 226-row block with `theme.reference` joined in |
 | **b** | §5–7: v1 codebook, `theme.manual` + `theme.ai` columns ready |
 | **c** | §8: the v2 codebook and prompt in place, ready to Run All |
 
