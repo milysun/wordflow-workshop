@@ -4,10 +4,11 @@
 
 **How to send (participant-data rule):** from Eventbrite (**Manage event → Emails to attendees**) if the event still allows it; otherwise from the SIH Training Administration mailbox with every recipient in **BCC**, addresses copied from `private/participants.csv` (filter `event_id = online_workshop_2026-08-28`), and nothing exported anywhere else. Every link below is an absolute https URL; hover-check them in Outlook before sending. The HTML paste source is `post-workshop-email-online.html`.
 
-**Two things to check before sending:**
+**Before sending:**
 
-1. **Session 2 recording.** Participants were told on the day, in the pre-workshop email and on the Session 2 title slide, that the afternoon would **not** be recorded. Zoom's recording-consent prompt did fire in the afternoon (several "OK" responses in the participant report), and the upload has been edited, but the email wording below still needs to match what was actually cut. If participant voices, names, or screens remain in the edit, keep the opt-out sentence; if only the facilitator segments remain, say so instead.
-2. **Opt-in mechanism.** The email asks people to **reply "Keep me posted"**. Each reply becomes `promo_opt_in = yes`, `opt_in_date`, `opt_in_source = post_workshop_email` on that person's row in `private/participants.csv`; silence stays blank (not consent). If a form link is preferred, swap it in for the reply instruction.
+1. **Tag and freeze first.** Plan (decided 2026-08-30): finish the remaining edits, tag the branch tip `online-2026-08-28-final` and push it on Tue 1 Sep evening or Wed 2 Sep morning, then send. At tagging time, switch the GitHub links below from `blob/online_workshop_2026-08-28/` to `blob/online-2026-08-28-final/` so the email points at the frozen copy (branch links keep working either way).
+2. **Session 2 recording** paragraph reflects the edit as made: the published video keeps only the slides and the Wordflow interface; participant interactions and the Zoom interface were cut; the opt-out sentence stays so anyone with a concern can ask for a segment to go.
+3. **Opt-in mechanism.** The email asks people to **reply "Keep me posted"**. Each reply becomes `promo_opt_in = yes`, `opt_in_date`, `opt_in_source = post_workshop_email` on that person's row in `private/participants.csv`; silence stays blank (not consent). If a sign-up form is adopted instead (decision open; see the 2026-08-30 discussion), swap the link in for the reply instruction before sending.
 
 ---
 
@@ -24,7 +25,7 @@ Thank you for registering for the LDaCA Wordflow online workshop on Friday 28 Au
 - **Session 1: Wordflow, text analytics without code** (concepts, interface, and the Queensland-election research workflow, 90 min): **https://youtu.be/ExYVSgvYIes**
 - **Session 2: Coding text with GenAI, hands-on** (the Annotation tool, 90 min): **https://youtu.be/KcjJViYRYX4**
 
-We had said the afternoon would not be recorded. In the end it was, with Zoom asking for consent as the recording started, and the video has been edited before upload. If you took part and would rather not appear in it, reply to this email and I will cut the segment.
+We had said the afternoon would not be recorded, and the recording was at first kept only for internal use. The session was short and moved quickly through a lot of tasks, so we decided a replay would help anyone wanting a second pass. The published video has been edited down to the slides and the Wordflow interface: participant interactions and the Zoom interface have been removed. If you took part and have any concern about a segment you were involved in, reply to this email and we will remove it.
 
 Both videos are on the Sydney Informatics Hub YouTube channel; share them freely with colleagues who missed the day.
 
