@@ -5,6 +5,8 @@
 > - **Session 1 (morning, recorded)** — a condensed, demo-only version of the June intro workshop: Wordflow basics, concepts, and a multi-tool workflow. No participant hands-on.
 > - **Session 2 (afternoon, NOT recorded)** — a 1.5-hour hands-on on the **Annotation** tool (GenAI text coding), extending the CAITG winter-school session.
 >
+> **Delivered 28 Aug 2026.** Shareable slide PDFs: [Session 1](slides/online-s1-intro.pdf) · [Session 2](slides/online-s2-annotation.pdf) (printed from the HTML decks with headless Chrome, 1280×720 per slide). Hands-on sheet: [participant/hands-on-annotation-online.md](participant/hands-on-annotation-online.md).
+>
 > Materials for earlier deliveries live on their own branches: [`intro_workshop_2026-06-03`](../../tree/intro_workshop_2026-06-03) (June 3-hour intro) and [`caitg_winter_school_2026-07-30`](../../tree/caitg_winter_school_2026-07-30) (CAITG hands-on). They were removed from this branch on 2026-08-27 so that participants following the pre-workshop email's link see only this workshop's materials.
 
 ---
@@ -79,6 +81,7 @@ wordflow-workshop/                           ← branch online_workshop_2026-08-
 ├── slides/
 │   ├── online-s1-intro.html                 ← Session 1 deck (recorded morning)
 │   ├── online-s2-annotation.html            ← Session 2 deck (afternoon hands-on)
+│   ├── online-s1-intro.pdf / online-s2-annotation.pdf ← shareable PDF exports (post-workshop)
 │   └── images/                              ← logos, v0.7 UI screenshot, team photos
 ├── participant/
 │   └── hands-on-annotation-online.md        ← Session 2 step sheet (linked from the pre-workshop email)

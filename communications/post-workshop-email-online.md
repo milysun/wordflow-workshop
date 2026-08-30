@@ -18,7 +18,7 @@ The morning session (Wordflow concepts, interface, and the QLD-election research
 
 ## Materials
 
-- **Slides**: ⟨link to Session 1 + Session 2 slide PDFs⟩
+- **Slides**: [Session 1 (Wordflow: text analytics without code)](https://github.com/milysun/wordflow-workshop/blob/online_workshop_2026-08-28/slides/online-s1-intro.pdf) and [Session 2 (Coding text with GenAI: hands-on)](https://github.com/milysun/wordflow-workshop/blob/online_workshop_2026-08-28/slides/online-s2-annotation.pdf), as PDFs. Use the download button on the GitHub page to save a copy.
 - **Session 2 hands-on sheet**: ⟨link⟩. Every step from the afternoon, in order, with exact button names. It works as a standalone tutorial if you want to redo the exercise at your own pace.
 - **Checkpoint workspace files**: ⟨link⟩. Import any of these in the Data Loader to jump to that stage of the exercise, open tabs and all.
 - **Documentation & tutorials**: built into Wordflow (Tutorial button, bottom of the sidebar), or the docs site linked from **sih.tools/wordflow**.
