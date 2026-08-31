@@ -166,6 +166,20 @@
     border-radius: 4px;
     font-size: 0.9em;
   }
+  .ws-videos {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+  .ws-videos iframe {
+    width: min(420px, 100%);
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 8px;
+    background: #000;
+  }
   .upcoming {
     color: var(--muted);
     font-style: italic;
@@ -203,7 +217,7 @@
 <div class="topbar">
   <div class="wrap">
     <span><strong>LDaCA Wordflow</strong></span>
-    <span>v0.5.6 · 2026</span>
+    <span>v0.7.6 · 2026</span>
   </div>
 </div>
 
@@ -218,14 +232,14 @@
 </header>
 
 <div class="wrap actions">
-  <a class="btn btn-primary" href="https://binderhub.rc.nectar.org.au/v2/gh/Australian-Text-Analytics-Platform/LDaCa_Text_Analytics_Tools/1efb6c2?labpath=index.ipynb">
+  <a class="btn btn-primary" href="https://binderhub.rc.nectar.org.au/v2/gh/Australian-Text-Analytics-Platform/LDaCa_Text_Analytics_Tools/6c389ea?labpath=index.ipynb">
     Launch Wordflow in Binder <span class="arrow">→</span>
   </a>
   <div class="actions-secondary">
-    <a class="btn btn-secondary" href="https://github.com/Australian-Text-Analytics-Platform/ldaca-wordflow/releases/download/v0.5.6/ldaca-wordflow-bundle-apple-silicon-0.5.6.dmg">
+    <a class="btn btn-secondary" href="https://github.com/Australian-Text-Analytics-Platform/ldaca-wordflow/releases/download/v0.7.6/ldaca-wordflow_0.7.6_darwin-aarch64.dmg">
       Download for macOS <span class="arrow">→</span>
     </a>
-    <a class="btn btn-secondary" href="https://github.com/Australian-Text-Analytics-Platform/ldaca-wordflow/releases/download/v0.5.6/ldaca-wordflow-bundle-x64-0.5.6.msi">
+    <a class="btn btn-secondary" href="https://github.com/Australian-Text-Analytics-Platform/ldaca-wordflow/releases/download/v0.7.6/ldaca-wordflow_0.7.6_windows-x86_64.msi">
       Download for Windows <span class="arrow">→</span>
     </a>
   </div>
@@ -240,12 +254,19 @@
     <ul class="workshop-list">
       <li id="online_workshop_2026-08-28">
         <span class="ws-title">Text analytics without code: teach the AI your codebook</span>
-        <span class="ws-meta">28 August 2026 · 2 × 90 min · online (Zoom) · free, all welcome</span>
+        <span class="ws-meta">28 August 2026 · 2 × 90 min · online (Zoom) · delivered</span>
         <span class="ws-link">
-          Register: <a href="https://www.eventbrite.com/e/text-analytics-without-code-teach-ai-your-codebook-ldaca-wordflow-tickets-1996765544495" target="_blank" rel="noopener">Eventbrite</a>
-          ·
           Materials:
           <a href="https://github.com/milysun/wordflow-workshop/tree/online_workshop_2026-08-28"><code>online_workshop_2026-08-28</code></a>
+          · Slides: <a href="https://github.com/milysun/wordflow-workshop/blob/online_workshop_2026-08-28/slides/online-s1-intro.pdf">Session 1 (PDF)</a>
+          / <a href="https://github.com/milysun/wordflow-workshop/blob/online_workshop_2026-08-28/slides/online-s2-annotation.pdf">Session 2 (PDF)</a>
+          · Recordings: <a href="https://youtu.be/ExYVSgvYIes" target="_blank" rel="noopener">Session 1</a>
+          / <a href="https://youtu.be/KcjJViYRYX4" target="_blank" rel="noopener">Session 2</a>
+          · <a href="https://github.com/milysun/wordflow-workshop/releases/tag/online-2026-08-28">Session 2 checkpoint files</a>
+        </span>
+        <span class="ws-videos">
+          <iframe src="https://www.youtube-nocookie.com/embed/ExYVSgvYIes" title="Session 1 recording: Wordflow, text analytics without code" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/KcjJViYRYX4" title="Session 2 recording: Coding text with GenAI, hands-on" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </span>
       </li>
       <li id="caitg_winter_school_2026-07-30">
