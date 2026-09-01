@@ -6,7 +6,7 @@ Eventbrite setup reminders:
 
 - Add the unticked opt-in checkbox at registration ("I'd like to hear about future workshops from this team") per the participant-data policy; registration alone is not consent.
 - Summary field: Eventbrite caps it at 140 characters; the summaries below fit.
-- Venue for all three: The Quadrangle (A14), Western Tower Boardroom (room S495), University of Sydney, Camperdown NSW 2006.
+- Venue on Eventbrite (its location field is Google-Places-backed and rejects free-form room strings): search for "The Quadrangle, The University of Sydney" and pick the Places result; if it doesn't resolve, choose "Add location manually" with venue name "The Quadrangle (A14), The University of Sydney" and address "Parramatta Road, Camperdown NSW 2006". The room itself goes in each description: "Western Tower Boardroom (room S495, level 4), The Quadrangle (A14)".
 - Capacity, organiser profile, and ticket names are Chao's call; nothing below assumes them.
 
 ## Shared series paragraph (opens every description)
@@ -35,6 +35,8 @@ Working through a case study with demonstration tools from the Language Data Com
 - See how computers can help you search and find things when you have 'too much'
 - See computational methods that surface the 'big picture' and what you might be missing, while you keep close-reading your transcripts
 
+**Venue:** Western Tower Boardroom (room S495, level 4), The Quadrangle (A14), The University of Sydney
+
 **Also in this series:** [link to Post 2], [link to Post 3]
 
 ## Post 2: Getting Started with the Proceedings of Federal Parliament in your Research
@@ -51,6 +53,8 @@ This session is part of a series of three free in-person workshops for researche
 The Proceedings of Australian Federal Parliament record every debate held since Federation in 1901. Whether you're interested in language, politics, society or history, there's likely something relevant to your research in the 15,000 transcribed sessions, if you can find it!
 
 This workshop shows you how to get started. We'll cover the necessary context of how Parliament works through its official transcripts and the ParlInfo search interface, then show how the datasets and tools being created by the RAPID-CDL research infrastructure project (https://rapid-cdl.edu.au) make it even easier to get what you need for your research.
+
+**Venue:** Western Tower Boardroom (room S495, level 4), The Quadrangle (A14), The University of Sydney
 
 **Also in this series:** [link to Post 1], [link to Post 3, flagged as the natural follow-on]
 
@@ -72,5 +76,7 @@ You've found the debates you need. What can you do with several thousand of them
 This hands-on workshop introduces LDaCA Wordflow, a free point-and-click app for analysing text, built for researchers who don't write code. Using the Proceedings of Federal Parliament as our example, we'll explore what becomes possible once a collection is searchable and structured: tracing how language shifts across parliaments and decades, reading individual speeches in context, and comparing how different speakers and periods treat the same issue.
 
 Bring your laptop and work along with us. No coding experience needed. This session follows straight on from the morning's Getting Started workshop and pairs especially well with it, though it also stands alone.
+
+**Venue:** Western Tower Boardroom (room S495, level 4), The Quadrangle (A14), The University of Sydney
 
 **Also in this series:** [link to Post 1], [link to Post 2, flagged as the recommended morning session]
