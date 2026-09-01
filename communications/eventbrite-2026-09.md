@@ -8,6 +8,11 @@ Eventbrite setup reminders:
 - Summary field: Eventbrite caps it at 140 characters; the summaries below fit.
 - Venue on Eventbrite (its location field is Google-Places-backed and rejects free-form room strings): search for "The Quadrangle, The University of Sydney" and pick the Places result; if it doesn't resolve, choose "Add location manually" with venue name "The Quadrangle (A14), The University of Sydney" and address "Parramatta Road, Camperdown NSW 2006". The room itself goes in each description: "Western Tower Boardroom (room S495, level 4), The Quadrangle (A14)".
 - Capacity, organiser profile, and ticket names are Chao's call; nothing below assumes them.
+- Discovery settings (checked 2026-09: Eventbrite has no tags on comparable USyd seminar pages; browse listings like "Camperdown seminars" are auto-generated from Type + Category + suburb): set Type = Workshop/Class and Category = Science & Technology on all three (Government & Politics is an alternative for Post 2). Tags, up to 10 per event, 25 chars each:
+  - Post 1: qualitative research, interview transcripts, qualitative coding, research methods, text analysis, digital humanities, HDR training, corpus linguistics, data skills, LDaCA
+  - Post 2: Hansard, parliament, Australian politics, political science, Australian history, archives, text analysis, digital humanities, research data, RAPID-CDL
+  - Post 3: text analytics, discourse analysis, corpus linguistics, Hansard, Australian politics, data visualisation, digital humanities, no-code tools, Wordflow, LDaCA
+  - Main outreach remains the mailing lists (SIH newsletter, LDaCA/ARDC channels, Sydney Corpus Lab, CCSS); Eventbrite search is a supplement.
 
 ## Shared series paragraph (opens every description)
 
