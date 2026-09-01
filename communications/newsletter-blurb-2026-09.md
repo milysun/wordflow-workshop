@@ -1,6 +1,6 @@
 # SIH newsletter blurb: 29-30 September workshop series
 
-Pair with `artifacts/promo-2026-09/exports/newsletter-banner.png` (1600x720).
+Pair with `artifacts/promo-2026-09/exports/2026-09_RAPID_Wordflow_newsletter-banner.png` (1600x720; renamed by Chao). Social card for LinkedIn/X/Bluesky: `exports/social-card.png` (1600x900).
 
 Live Eventbrite events (published 2026-09-02):
 
