@@ -8,7 +8,7 @@ Live Eventbrite events (published 2026-09-02):
 - Session 2 Parliament: https://www.eventbrite.com.au/e/1999369770806/
 - Session 3 Wordflow: https://www.eventbrite.com.au/e/1999370488954/
 
-Known issues at publish time (fix on Eventbrite before sending): Session 3 showed 2:00-3:30 pm instead of 11:00 am-12:30 pm; Session 2 showed a 9:00 start with no "arrive 9:00 for a 9:15 start" note and had Session 1's body text pasted into its description.
+Publish-time issues, status 2026-09-02: Session 3 time fixed (11:00 am-12:30 pm) and Session 2 now lists 9:15-10:45 with the arrive-9:00 note. Still open: Session 2's description carries Session 1's pasted body text ("Qualitative research projects sometimes get away from us..." through its four bullets); delete before the newsletter goes out.
 
 ---
 
