@@ -1,0 +1,12 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1600, "h": 720, "title": "Newsletter banner" },
+    { "file": "Session1.dc.html", "x": 0, "y": 880, "w": 2160, "h": 1080, "title": "Eventbrite S1 transcripts" },
+    { "file": "Session2.dc.html", "x": 2280, "y": 880, "w": 2160, "h": 1080, "title": "Eventbrite S2 Parliament" },
+    { "file": "Session3.dc.html", "x": 4560, "y": 880, "w": 2160, "h": 1080, "title": "Eventbrite S3 Wordflow" }
+  ],
+  "annotations": [
+    { "id": "usage-note", "x": 1700, "y": 0, "w": 360, "text": "Eventbrite images are 2160x1080 (Eventbrite's recommended 2:1). Export each artboard as PNG from the toolbar.\nSession 2 wording is ARDC / RAPID-CDL only (no LDaCA), per the branding rule.\nNo logos are drawn in; add official logos in Eventbrite or the newsletter if needed." }
+  ],
+  "launch": { "view": "canvas" }
+}
