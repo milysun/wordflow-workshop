@@ -7,6 +7,10 @@ Three-session in-person series co-hosted by LDaCA, RAPID-CDL, SIH, the Sydney Co
 - Venue (all sessions): A14.04.S495, The Quadrangle, Western Tower Boardroom
 - BYO laptop; free; open to researchers from all disciplines and universities, HDR students especially welcome
 
+## Branding
+
+RAPID-CDL is NOT part of LDaCA, so Session 2 materials must not carry LDaCA branding or the LDaCA logo. RAPID is an ARDC-sponsored project under the Community Data Lab (CDL), so ARDC-related logos can be used for Session 2. LDaCA branding applies to Session 1 and to Wordflow itself in Session 3.
+
 ## General blurb
 
 The Language Data Commons of Australia, the Reusable and Accessible Public Interest Documents project, and Sydney Informatics Hub teams invite you to come to our in-person workshops for researchers co-hosted by the Sydney Corpus Lab and the Centre for Computational Social Science at the University of Sydney.
