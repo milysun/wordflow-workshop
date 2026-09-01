@@ -12,9 +12,9 @@ Known issues at publish time (fix on Eventbrite before sending): Session 3 showe
 
 ---
 
-**Three free in-person workshops for researchers who work with text, 29-30 September**
+**From interview transcripts to 125 years of Hansard: hands-on workshops for analysing text, no coding needed**
 
-The Language Data Commons of Australia (LDaCA), the RAPID-CDL project and the Sydney Informatics Hub, together with the Sydney Corpus Lab and the Centre for Computational Social Science, invite you to three free in-person workshops for researchers at the University of Sydney. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities, HDR students especially welcome. Please bring your own laptop.
+The Language Data Commons of Australia (LDaCA), the RAPID-CDL project and the Sydney Informatics Hub, together with the Sydney Corpus Lab and the Centre for Computational Social Science, invite you to three free in-person workshops for researchers, 29-30 September at the University of Sydney. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities, HDR students especially welcome. Please bring your own laptop.
 
 - **Tuesday 29 September, 2:00-3:30 pm:** Making the most of your qualitative transcripts with a little bit of computing. [Register](https://www.eventbrite.com.au/e/1999368784857/)
 - **Wednesday 30 September, 9:15-10:45 am:** Getting started with the Proceedings of Federal Parliament in your research (arrive 9:00 for a 9:15 start). [Register](https://www.eventbrite.com.au/e/1999369770806/)
