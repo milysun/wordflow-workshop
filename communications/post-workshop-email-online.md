@@ -40,7 +40,7 @@ We have just released **v0.7.7**, the latest round of bug fixes. If you installe
 - **Slides**: [Session 1](https://github.com/milysun/wordflow-workshop/blob/online-2026-08-28-final/slides/online-s1-intro.pdf) and [Session 2](https://github.com/milysun/wordflow-workshop/blob/online-2026-08-28-final/slides/online-s2-annotation.pdf) as PDFs (the download button is at the top right of each GitHub page).
 - **Session 2 hands-on sheet**: [hands-on-annotation-online.md](https://github.com/milysun/wordflow-workshop/blob/online-2026-08-28-final/participant/hands-on-annotation-online.md). Every step from the afternoon, in order, with exact button names. It works as a standalone tutorial alongside the Session 2 recording, so you can do the exercise at your own pace even if you weren't there.
 - **Checkpoint workspace files**: [release page](https://github.com/milysun/wordflow-workshop/releases/tag/online-2026-08-28). Five checkpoints (a to e), one per stage of the exercise, plus the human-verified reference coding. Load one via **Data Loader → Workspace manager → Upload workspace** to jump straight to that stage, open tabs and all. **A version heads-up:** these checkpoint ZIPs were exported by the workshop-day version and **cannot be loaded into v0.7.7**; we are rebuilding them and will refresh the release page. The reference-coding CSV works regardless.
-- **Wordflow itself**: download from **https://sih.tools/wordflow**. Documentation and tutorials are built in (Tutorial button, bottom of the sidebar).
+- **Wordflow itself**: download from **https://sih.tools/wordflow**. Documentation and tutorials are built in (Help button, bottom of the sidebar).
 
 ## Continuing with the Annotation tool
 
@@ -58,7 +58,7 @@ If anything in Wordflow confused, surprised, or delighted you, tap the **Feedbac
 
 We release new Wordflow versions every few weeks and run workshops like this one a few times a year. **If you'd like occasional updates about Wordflow** (new features, and the next workshop when registration opens), **reply to this email with "Keep me posted"**. A handful of emails a year, and every one carries an unsubscribe line.
 
-If you'd rather not, there's nothing to do: we won't add you to any list from today's registration, and this is the last email you'll get from us about the workshop.
+If you'd rather not, there's nothing to do: we won't add you to any list from your registration, and this is the last email you'll get from us about the workshop.
 
 ## Data acknowledgement
 
