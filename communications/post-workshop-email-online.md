@@ -1,12 +1,12 @@
 # Post-workshop email: online workshop 28 Aug 2026
 
-*Send-ready version (links filled 2026-08-30). Goes to **all 91 registrants**, including the 51 who did not attend: the recordings make the day worth having for them too, and the opt-in question at the end is how we earn the right to email them again.*
+*Send-ready version (links filled 2026-08-30; revised 2026-09-02: v0.7.7 update section, workspace-compatibility heads-up, checkpoint caveat, links switched to the final tag). Goes to **all 91 registrants**, including the 51 who did not attend: the recordings make the day worth having for them too, and the opt-in question at the end is how we earn the right to email them again.*
 
 **How to send (participant-data rule):** from Eventbrite (**Manage event → Emails to attendees**) if the event still allows it; otherwise from the SIH Training Administration mailbox with every recipient in **BCC**, addresses copied from `private/participants.csv` (filter `event_id = online_workshop_2026-08-28`), and nothing exported anywhere else. Every link below is an absolute https URL; hover-check them in Outlook before sending. The HTML paste source is `post-workshop-email-online.html`.
 
 **Before sending:**
 
-1. **Tag and freeze first.** Plan (decided 2026-08-30): finish the remaining edits, tag the branch tip `online-2026-08-28-final` and push it on Tue 1 Sep evening or Wed 2 Sep morning, then send. At tagging time, switch the GitHub links below from `blob/online_workshop_2026-08-28/` to `blob/online-2026-08-28-final/` so the email points at the frozen copy (branch links keep working either way).
+1. **Tag and freeze: done 2026-09-02.** The branch tip is tagged `online-2026-08-28-final` and the GitHub links below point at the tag.
 2. **Session 2 recording** paragraph reflects the edit as made: the published video keeps only the slides and the Wordflow interface; participant interactions and the Zoom interface were cut; the opt-out sentence stays so anyone with a concern can ask for a segment to go.
 3. **Opt-in mechanism.** The email asks people to **reply "Keep me posted"**. Each reply becomes `promo_opt_in = yes`, `opt_in_date`, `opt_in_source = post_workshop_email` on that person's row in `private/participants.csv`; silence stays blank (not consent). If a sign-up form is adopted instead (decision open; see the 2026-08-30 discussion), swap the link in for the reply instruction before sending.
 
@@ -29,11 +29,17 @@ We had said the afternoon would not be recorded, and the recording was at first 
 
 Both videos are on the Sydney Informatics Hub YouTube channel; share them freely with colleagues who missed the day.
 
+## Before you replay: update Wordflow (v0.7.7)
+
+We have just released **v0.7.7**, the latest round of bug fixes. If you installed Wordflow for the workshop, open it and accept the **update notification** (one click; quit and reopen if none appears), or download fresh from **https://sih.tools/wordflow**.
+
+**One compatibility heads-up:** v0.7.7 changes the workspace file format, so **workspaces saved with the workshop-day version (v0.7.6 or earlier) will not open in the new version**, including anything you saved during the hands-on. Your work isn't wasted: §1 of the hands-on sheet rebuilds the starting point in a few minutes, and the sheet plus the Session 2 recording will take you back to wherever you were, at your own pace.
+
 ## Materials
 
-- **Slides**: [Session 1](https://github.com/milysun/wordflow-workshop/blob/online_workshop_2026-08-28/slides/online-s1-intro.pdf) and [Session 2](https://github.com/milysun/wordflow-workshop/blob/online_workshop_2026-08-28/slides/online-s2-annotation.pdf) as PDFs (the download button is at the top right of each GitHub page).
-- **Session 2 hands-on sheet**: [hands-on-annotation-online.md](https://github.com/milysun/wordflow-workshop/blob/online_workshop_2026-08-28/participant/hands-on-annotation-online.md). Every step from the afternoon, in order, with exact button names. It works as a standalone tutorial alongside the Session 2 recording, so you can do the exercise at your own pace even if you weren't there.
-- **Checkpoint workspace files**: [release page](https://github.com/milysun/wordflow-workshop/releases/tag/online-2026-08-28). Five checkpoints (a to e), one per stage of the exercise, plus the human-verified reference coding. Load one via **Data Loader → Workspace manager → Upload workspace** to jump straight to that stage, open tabs and all.
+- **Slides**: [Session 1](https://github.com/milysun/wordflow-workshop/blob/online-2026-08-28-final/slides/online-s1-intro.pdf) and [Session 2](https://github.com/milysun/wordflow-workshop/blob/online-2026-08-28-final/slides/online-s2-annotation.pdf) as PDFs (the download button is at the top right of each GitHub page).
+- **Session 2 hands-on sheet**: [hands-on-annotation-online.md](https://github.com/milysun/wordflow-workshop/blob/online-2026-08-28-final/participant/hands-on-annotation-online.md). Every step from the afternoon, in order, with exact button names. It works as a standalone tutorial alongside the Session 2 recording, so you can do the exercise at your own pace even if you weren't there.
+- **Checkpoint workspace files**: [release page](https://github.com/milysun/wordflow-workshop/releases/tag/online-2026-08-28). Five checkpoints (a to e), one per stage of the exercise, plus the human-verified reference coding. Load one via **Data Loader → Workspace manager → Upload workspace** to jump straight to that stage, open tabs and all. **A version heads-up:** these checkpoint ZIPs were exported by the workshop-day version and **cannot be loaded into v0.7.7**; we are rebuilding them and will refresh the release page. The reference-coding CSV works regardless.
 - **Wordflow itself**: download from **https://sih.tools/wordflow**. Documentation and tutorials are built in (Tutorial button, bottom of the sidebar).
 
 ## Continuing with the Annotation tool
