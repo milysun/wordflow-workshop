@@ -1,6 +1,6 @@
 # Post-workshop email: online workshop 28 Aug 2026
 
-*Send-ready version (links filled 2026-08-30; revised 2026-09-02: v0.7.7 update section, workspace-compatibility heads-up, checkpoint caveat, links switched to the final tag). Goes to **all 91 registrants**, including the 51 who did not attend: the recordings make the day worth having for them too, and the opt-in question at the end is how we earn the right to email them again.*
+*Send-ready version (links filled 2026-08-30; revised 2026-09-02: v0.7.7 update section, workspace-compatibility heads-up, checkpoint caveat, links switched to the final tag). Goes to **all 91 registrants**, including the 51 who did not attend: the recordings make the day worth having for them too.*
 
 **How to send (participant-data rule):** from Eventbrite (**Manage event → Emails to attendees**) if the event still allows it; otherwise from the SIH Training Administration mailbox with every recipient in **BCC**, addresses copied from `private/participants.csv` (filter `event_id = online_workshop_2026-08-28`), and nothing exported anywhere else. Every link below is an absolute https URL; hover-check them in Outlook before sending. The HTML paste source is `post-workshop-email-online.html`.
 
@@ -8,11 +8,11 @@
 
 1. **Tag and freeze: done 2026-09-02.** The branch tip is tagged `online-2026-08-28-final` and the GitHub links below point at the tag.
 2. **Session 2 recording** paragraph reflects the edit as made: the published video keeps only the slides and the Wordflow interface; participant interactions and the Zoom interface were cut; the opt-out sentence stays so anyone with a concern can ask for a segment to go.
-3. **Opt-in mechanism.** The email asks people to **reply "Keep me posted"**. Each reply becomes `promo_opt_in = yes`, `opt_in_date`, `opt_in_source = post_workshop_email` on that person's row in `private/participants.csv`; silence stays blank (not consent). If a sign-up form is adopted instead (decision open; see the 2026-08-30 discussion), swap the link in for the reply instruction before sending.
+3. **Opt-in: removed from this email (decided 2026-09-02).** With over half the cohort international, the future-updates question is dropped from this send; the plan is to ask opt-in/out inside the app in a future release. This cohort therefore stays **blank (never asked)** in `private/participants.csv`, which is not consent: no promotional emails to them without a future opt-in.
 
 ---
 
-**Subject:** Wordflow workshop: recordings, slides, and whether you'd like to hear from us again
+**Subject:** Wordflow workshop: recordings, slides and materials
 
 ---
 
@@ -33,7 +33,7 @@ Both videos are on the Sydney Informatics Hub YouTube channel; share them freely
 
 We have just released **v0.7.7**, the latest round of bug fixes. If you installed Wordflow for the workshop, open it and accept the **update notification** (one click; quit and reopen if none appears), or download fresh from **https://sih.tools/wordflow**.
 
-**One compatibility heads-up:** v0.7.7 changes the workspace file format, so **workspaces saved with the workshop-day version (v0.7.6 or earlier) will not open in the new version**, including anything you saved during the hands-on. Your work isn't wasted: §1 of the hands-on sheet rebuilds the starting point in a few minutes, and the sheet plus the Session 2 recording will take you back to wherever you were, at your own pace.
+**One compatibility heads-up:** v0.7.7 changes the workspace file format, so **workspaces saved with the workshop-day version (v0.7.6 or earlier) will not open in the new version**, including anything you saved during the hands-on. After updating, Wordflow will also ask for a **home folder**: pick a **different location** from the one you used at the workshop, or empty the old home folder first; the new version cannot reuse the old folder's contents. Your work isn't wasted: §1 of the hands-on sheet rebuilds the starting point in a few minutes, and the sheet plus the Session 2 recording will take you back to wherever you were, at your own pace.
 
 ## Materials
 
@@ -53,12 +53,6 @@ Three reminders from the close of Session 2, worth reading even if you are meeti
 ## One small ask
 
 If anything in Wordflow confused, surprised, or delighted you, tap the **Feedback** button (bottom-left of the app); it lands directly with the team, and it genuinely shapes what we build next. And if Wordflow ends up in your research, please cite it: the quote icon in the sidebar ("Cite LDaCA Wordflow") has the citation ready to copy.
-
-## Would you like to hear from us again?
-
-We release new Wordflow versions every few weeks and run workshops like this one a few times a year. **If you'd like occasional updates about Wordflow** (new features, and the next workshop when registration opens), **reply to this email with "Keep me posted"**. A handful of emails a year, and every one carries an unsubscribe line.
-
-If you'd rather not, there's nothing to do: we won't add you to any list from your registration, and this is the last email you'll get from us about the workshop.
 
 ## Data acknowledgement
 

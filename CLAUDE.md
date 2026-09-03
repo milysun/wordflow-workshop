@@ -110,10 +110,12 @@ history on 2026-08-14. Don't recreate that situation.
   participants".
 - The authoritative copy belongs in University-approved storage (Sydney Box /
   OneDrive / SharePoint), not a laptop or a personal cloud account.
-- **Every workshop's post-workshop email must carry the opt-in block** (see the
-  "Hearing about the next one" section in `communications/post-workshop-email-online.md`).
-  Registration alone is not consent to be emailed about later events. Blank in the
-  register means *never asked*, which is not consent. Open public sessions should
+- **Post-workshop emails carry an opt-in block by default**, but the 28 Aug online
+  cohort was deliberately NOT asked (decided 2026-09-02: over half international;
+  the opt-in/out question may move into the app in a future release), so that whole
+  cohort stays blank in the register. Registration alone is not consent to be
+  emailed about later events. Blank in the register means *never asked*, which is
+  not consent. Open public sessions should
   also ask at registration via an unticked Eventbrite checkbox.
 - The June 2026 cohort was never asked and received one one-off email on 2026-08-14
   about the 28 August repeat. That was a directly related follow-up, not a standing
