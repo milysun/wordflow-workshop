@@ -17,7 +17,7 @@ Eventbrite setup reminders:
 
 ## Shared series paragraph (opens every description)
 
-This session is part of a series of three free in-person workshops for researchers, held 29-30 September at the University of Sydney by the Language Data Commons of Australia (LDaCA), the RAPID-CDL project, and the Sydney Informatics Hub, co-hosted by the Sydney Corpus Lab and the Centre for Computational Social Science. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities (HDR students especially welcome), and please bring your own laptop for these interactive sessions.
+This session is part of a series of three free in-person workshops for researchers, held 29-30 September at the University of Sydney by the Language Data Commons of Australia (LDaCA), the RAPID-CDL project, and the Sydney Informatics Hub, co-hosted by the Sydney Corpus Lab and the Computational Social Science Lab. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities (HDR students especially welcome), and please bring your own laptop for these interactive sessions.
 
 ---
 
@@ -30,7 +30,7 @@ A pathway through 'too much' interview data with a little computational help, wi
 
 **Description:**
 
-This session is part of a series of three free in-person workshops for researchers, held 29-30 September at the University of Sydney by the Language Data Commons of Australia (LDaCA), the RAPID-CDL project, and the Sydney Informatics Hub, co-hosted by the Sydney Corpus Lab and the Centre for Computational Social Science. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities (HDR students especially welcome), and please bring your own laptop for these interactive sessions.
+This session is part of a series of three free in-person workshops for researchers, held 29-30 September at the University of Sydney by the Language Data Commons of Australia (LDaCA), the RAPID-CDL project, and the Sydney Informatics Hub, co-hosted by the Sydney Corpus Lab and the Computational Social Science Lab. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities (HDR students especially welcome), and please bring your own laptop for these interactive sessions.
 
 Qualitative research projects sometimes get away from us: we end up with more interview material than we know what to do with. This workshop gives you a pathway for navigating 'too much' with a little computational assistance, without giving up on the core qualitative foundation of your work.
 
@@ -54,7 +54,7 @@ Working through a case study with demonstration tools from the Language Data Com
 
 **Description:**
 
-This session is part of a series of three free in-person workshops for researchers, held 29-30 September at the University of Sydney by the Language Data Commons of Australia (LDaCA), the RAPID-CDL project, and the Sydney Informatics Hub, co-hosted by the Sydney Corpus Lab and the Centre for Computational Social Science. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities (HDR students especially welcome), and please bring your own laptop for these interactive sessions.
+This session is part of a series of three free in-person workshops for researchers, held 29-30 September at the University of Sydney by the Language Data Commons of Australia (LDaCA), the RAPID-CDL project, and the Sydney Informatics Hub, co-hosted by the Sydney Corpus Lab and the Computational Social Science Lab. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities (HDR students especially welcome), and please bring your own laptop for these interactive sessions.
 
 The Proceedings of Australian Federal Parliament record every debate held since Federation in 1901. Whether you're interested in language, politics, society or history, there's likely something relevant to your research in the 15,000 transcribed sessions, if you can find it!
 
@@ -75,7 +75,7 @@ Hands-on with LDaCA Wordflow, a free point-and-click text analysis app, on thous
 
 **Description:**
 
-This session is part of a series of three free in-person workshops for researchers, held 29-30 September at the University of Sydney by the Language Data Commons of Australia (LDaCA), the RAPID-CDL project, and the Sydney Informatics Hub, co-hosted by the Sydney Corpus Lab and the Centre for Computational Social Science. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities (HDR students especially welcome), and please bring your own laptop for these interactive sessions.
+This session is part of a series of three free in-person workshops for researchers, held 29-30 September at the University of Sydney by the Language Data Commons of Australia (LDaCA), the RAPID-CDL project, and the Sydney Informatics Hub, co-hosted by the Sydney Corpus Lab and the Computational Social Science Lab. Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities (HDR students especially welcome), and please bring your own laptop for these interactive sessions.
 
 You've found the debates you need. What can you do with several thousand of them at once?
 

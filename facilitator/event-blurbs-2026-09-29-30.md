@@ -1,6 +1,6 @@
 # In-person workshops, 29-30 September 2026 (University of Sydney)
 
-Three-session in-person series co-hosted by LDaCA, RAPID-CDL, SIH, the Sydney Corpus Lab, and the Centre for Computational Social Science. Chao delivers Session 3 (Wordflow hands-on), designed as a follow-on from Sessions 1 and 2: participants analyse Hansard data from RAPID-CDL in Wordflow.
+Three-session in-person series co-hosted by LDaCA, RAPID-CDL, SIH, the Sydney Corpus Lab, and the Computational Social Science Lab. Chao delivers Session 3 (Wordflow hands-on), designed as a follow-on from Sessions 1 and 2: participants analyse Hansard data from RAPID-CDL in Wordflow.
 
 - Registration: Eventbrite (being set up as of 2026-09-01; link TBD)
 - RAPID-CDL project: https://rapid-cdl.edu.au/
@@ -13,7 +13,7 @@ RAPID-CDL is NOT part of LDaCA, so Session 2 materials must not carry LDaCA bran
 
 ## General blurb
 
-The Language Data Commons of Australia, the Reusable and Accessible Public Interest Documents project, and Sydney Informatics Hub teams invite you to come to our in-person workshops for researchers co-hosted by the Sydney Corpus Lab and the Centre for Computational Social Science at the University of Sydney.
+The Language Data Commons of Australia, the Reusable and Accessible Public Interest Documents project, and Sydney Informatics Hub teams invite you to come to our in-person workshops for researchers co-hosted by the Sydney Corpus Lab and the Computational Social Science Lab at the University of Sydney.
 
 - Tuesday 29 September 14:00-15:30: Making the most of your qualitative transcripts with a little bit of computing
 - Wednesday 30 September 09:15-10:45: Getting Started with the Proceedings of Federal Parliament in your Research

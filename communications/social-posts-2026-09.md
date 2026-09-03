@@ -17,7 +17,7 @@ https://www.eventbrite.com.au/e/1999370488954/
 
 Each session stands alone: register for any one, or come to all three. Open to researchers from all disciplines and universities, HDR students especially welcome.
 
-Brought to you by the Language Data Commons of Australia, the RAPID-CDL project (an ARDC Community Data Lab project) and the Sydney Informatics Hub, with the Sydney Corpus Lab and the Centre for Computational Social Science.
+Brought to you by the Language Data Commons of Australia, the RAPID-CDL project (an ARDC Community Data Lab project) and the Sydney Informatics Hub, with the Sydney Corpus Lab and the Computational Social Science Lab.
 
 #TextAnalytics #DigitalHumanities #QualitativeResearch #Hansard #ResearchSkills
 
