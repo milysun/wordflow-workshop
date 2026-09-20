@@ -1,13 +1,17 @@
-# Wordflow — Online Workshop, 28 August 2026
+# Wordflow — In-person Intro Workshop, University of Melbourne, 26 October 2026
 
-> **This branch: `online_workshop_2026-08-28`.** A one-day **online** workshop combining the June intro workshop and the July CAITG winter-school session, on **Wordflow v0.7.x**. Two 1.5-hour sessions with a lunch break:
+> **This branch: `melbourne_mdap_workshop_2026-10-26`.** Status: **planning** (branched 2026-09-20 from `online_workshop_2026-08-28`).
 >
-> - **Session 1 (morning, recorded)** — a condensed, demo-only version of the June intro workshop: Wordflow basics, concepts, and a multi-tool workflow. No participant hands-on.
-> - **Session 2 (afternoon, NOT recorded)** — a 1.5-hour hands-on on the **Annotation** tool (GenAI text coding), extending the CAITG winter-school session.
+> A single **in-person** session at the **University of Melbourne**, co-hosted with the **Melbourne Data Analytics Platform (MDAP)**, introducing **Wordflow (latest v0.7 release)** to researchers. **Monday 26 October 2026**; exact hours **to be confirmed**, planned as a 2.5–3-hour session in the shape of the June intro workshop.
 >
-> **Delivered 28 Aug 2026.** Shareable slide PDFs: [Session 1](slides/online-s1-intro.pdf) · [Session 2](slides/online-s2-annotation.pdf) (printed from the HTML decks with headless Chrome, 1280×720 per slide). Hands-on sheet: [participant/hands-on-annotation-online.md](participant/hands-on-annotation-online.md).
+> Working plan (tools not yet fixed):
 >
-> Materials for earlier deliveries live on their own branches: [`intro_workshop_2026-06-03`](../../tree/intro_workshop_2026-06-03) (June 3-hour intro) and [`caitg_winter_school_2026-07-30`](../../tree/caitg_winter_school_2026-07-30) (CAITG hands-on). They were removed from this branch on 2026-08-27 so that participants following the pre-workshop email's link see only this workshop's materials.
+> - **Part 1 (most of the session)** — a simplified version of the June intro: concepts, interface, and a multi-tool research workflow (import → prepare → Frequency / Concordance / Trends / Topic Modelling → export), demo plus participant follow-along.
+> - **Part 2 (a shorter block)** — the **Annotation** tool (GenAI text coding): codebook → pilot → agreement → revise, drawn from the August Session 2 hands-on.
+>
+> **Sources on this branch.** The August online materials (`slides/online-s1-intro.html` = condensed June intro on v0.7; `slides/online-s2-annotation.html` + `participant/hands-on-annotation-online.md` = Annotation hands-on; `artifacts/checkpoints/` = v0.7.7 checkpoint archives) are kept here as the starting point and will be replaced by this workshop's own files. **Remove the August-only files before the pre-workshop email links participants to this branch.** The June 3-hour in-person structure is on [`intro_workshop_2026-06-03`](../../tree/intro_workshop_2026-06-03) (v0.5-era: check every UI claim against the v0.7 list in CLAUDE.md).
+>
+> The rest of this README still describes the **28 August online workshop** and is to be rewritten as the Melbourne plan firms up. General blurb: [communications/event-blurb-2026-10-26.md](communications/event-blurb-2026-10-26.md).
 
 ---
 

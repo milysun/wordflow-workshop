@@ -2,18 +2,17 @@
 
 Read this before editing files in this repo. Read `README.md` for the workshop design itself.
 
-## This branch: online workshop, 28 August 2026
+## This branch: in-person intro workshop, University of Melbourne, 26 October 2026
 
-This branch (`online_workshop_2026-08-28`) holds a **one-day online workshop on Wordflow v0.7.x** combining the June intro workshop and the July CAITG session: **Session 1** (90 min, morning, demo-only, **recorded**) is a condensed intro — concepts, interface, multi-tool research workflow; **Session 2** (90 min, after lunch, hands-on, **not recorded**) is the Annotation-tool GenAI coding exercise. `README.md` on this branch is the canonical structure. This workshop's deliverables:
+This branch (`melbourne_mdap_workshop_2026-10-26`, created 2026-09-20 from `online_workshop_2026-08-28`) is for a **single in-person session at the University of Melbourne, co-hosted with the Melbourne Data Analytics Platform (MDAP), on Monday 26 October 2026**, introducing Wordflow (latest v0.7 release). **Hours TBC**; assume 2.5–3 hours like the June intro. Content **not yet fixed**: mostly a simplified June intro (concepts, interface, multi-tool workflow) plus a shorter block on the **Annotation** tool. Keep drafts flexible on tool choice and timing until Chao confirms.
 
-- `slides/online-s1-intro.html` + `slides/online-s2-annotation.html`
-- `facilitator/runbook-online-s1.md`, `runbook-online-s2.md`, `pre-workshop-checklist-online.md`
-- `participant/hands-on-annotation-online.md`
-- `communications/pre-workshop-email-online.md`, `post-workshop-email-online.md`
+**Status: planning.** Everything below the blockquote in `README.md`, and all the August-named files (`slides/online-s*.html`, `facilitator/runbook-online-s*.md`, `participant/hands-on-annotation-online.md`, `communications/*-online.*`), still describe the **28 August online workshop**. They are the sources to adapt, not this workshop's deliverables. New files for this delivery should carry a `melbourne` or `2026-10-26` name, and the August-only files must be removed before participants are linked to this branch (same rule as August's clean-up of June/CAITG files).
 
-Earlier deliveries' materials (June 3-hour intro, CAITG winter school) were **removed from this branch on 2026-08-27** because participants browse it via the pre-workshop email's link. They live on `intro_workshop_2026-06-03` and `caitg_winter_school_2026-07-30`; consult those branches for v0.5-era sources (check every UI claim against the v0.7 list below) and for the CAITG Annotation-tool files (already v0.7-accurate). Additional deliverables on this branch: `facilitator/demo-checklist-s1.md`, `facilitator/run-of-show-online.html`, `facilitator/stress-test-openrouter.py`, `communications/promo-blurbs-online.*`, `artifacts/online-2026-08-28/`.
+Deliverables so far:
 
-Excel and zip-archive import, broken in v0.7.1, are **fixed in the current release** (verified by Chao 2026-08-27); no CSV-only caveats in materials.
+- `communications/event-blurb-2026-10-26.md` — general blurb with placeholders (hours, room, registration link).
+
+Other deliveries live on their own branches: `intro_workshop_2026-06-03` (June 3-hour in-person intro, v0.5-era), `caitg_winter_school_2026-07-30`, `online_workshop_2026-08-28` (delivered; the base of this branch), `hansard_workshop_2026-09-29` (Sept 29–30 series). Excel and zip-archive import work in current releases; **v0.7.7 changed the workspace archive format**, so any checkpoint archive for this workshop must be exported from v0.7.7 or later (the ones in `artifacts/checkpoints/` already are).
 
 ## v0.7 UI facts (verified against v0.7.1 code, 2026-08-02) — these override any v0.5-era bullet below
 
