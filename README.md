@@ -2,12 +2,19 @@
 
 > **This branch: `melbourne_mdap_workshop_2026-10-26`.** Status: **planning** (branched 2026-09-20 from `online_workshop_2026-08-28`).
 >
-> A single **in-person** session at the **University of Melbourne**, co-hosted with the **Melbourne Data Analytics Platform (MDAP)**, introducing **Wordflow (latest v0.7 release)** to researchers. **Monday 26 October 2026**; exact hours **to be confirmed**, planned as a 2.5–3-hour session in the shape of the June intro workshop.
+> A single **in-person** session at the **University of Melbourne**, co-hosted with the **Melbourne Data Analytics Platform (MDAP)**, introducing **Wordflow (latest v0.7 release)** to researchers. **Monday 26 October 2026**, **3 hours** (decided 2026-09-20; start time TBC; MDAP to say if 3 h is too long). Same shape as the June intro workshop.
 >
-> Working plan (tools not yet fixed):
+> Working plan (tools not yet fixed; a sketch to be replaced by a proper session table):
 >
-> - **Part 1 (most of the session)** — a simplified version of the June intro: concepts, interface, and a multi-tool research workflow (import → prepare → Frequency / Concordance / Trends / Topic Modelling → export), demo plus participant follow-along.
-> - **Part 2 (a shorter block)** — the **Annotation** tool (GenAI text coding): codebook → pilot → agreement → revise, drawn from the August Session 2 hands-on.
+> | Approx. | Block | Notes |
+> |---|---|---|
+> | 0:00–0:20 | Welcome, concepts, interface tour | Participants open the app in parallel |
+> | 0:20–1:30 | **Part 1** Simplified June intro: a multi-tool research workflow (import → prepare → Frequency / Concordance / Trends / Topic Modelling → export), demo + follow-along | Includes a 10-min break; checkpoint archives for anyone who falls behind |
+> | 1:30–1:45 | Break | |
+> | 1:45–2:30 | **Part 2** The **Annotation** tool (GenAI text coding): codebook → pilot → agreement → revise | Drawn from the August Session 2 hands-on, cut down |
+> | 2:30–3:00 | Open lab, questions, own data; wrap-up | **The buffer.** Hands-on sessions always run slower than planned; this block absorbs the overrun, and if the room is behind it becomes an optional stay-on session |
+>
+> Pacing rule for this delivery: plan every hands-on block for the slowest third of the room, and treat the final 30 minutes as optional so nobody leaves mid-exercise.
 >
 > **Sources on this branch.** The August online materials (`slides/online-s1-intro.html` = condensed June intro on v0.7; `slides/online-s2-annotation.html` + `participant/hands-on-annotation-online.md` = Annotation hands-on; `artifacts/checkpoints/` = v0.7.7 checkpoint archives) are kept here as the starting point and will be replaced by this workshop's own files. **Remove the August-only files before the pre-workshop email links participants to this branch.** The June 3-hour in-person structure is on [`intro_workshop_2026-06-03`](../../tree/intro_workshop_2026-06-03) (v0.5-era: check every UI claim against the v0.7 list in CLAUDE.md).
 >
