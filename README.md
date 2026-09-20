@@ -2,7 +2,7 @@
 
 > **This branch: `melbourne_mdap_workshop_2026-10-26`.** Status: **planning** (branched 2026-09-20 from `online_workshop_2026-08-28`).
 >
-> A single **in-person** session at the **University of Melbourne**, co-hosted with the **Melbourne Data Analytics Platform (MDAP)**, introducing **Wordflow (latest v0.7 release)** to researchers. **Monday 26 October 2026**, **3 hours** (decided 2026-09-20; start time TBC; MDAP to say if 3 h is too long). Same shape as the June intro workshop.
+> A single **in-person** session at the **University of Melbourne**, co-hosted by the **Melbourne Data Analytics Platform (MDAP)**, **LDaCA** and the **Sydney Informatics Hub** (with the Sydney Corpus Lab acknowledged as Wordflow's development partner), introducing **Wordflow (latest v0.7 release)** to researchers. **Monday 26 October 2026**, **3 hours** (decided 2026-09-20; start time TBC; MDAP to say if 3 h is too long). Same shape as the June intro workshop.
 >
 > Working plan (tools not yet fixed; a sketch to be replaced by a proper session table):
 >
