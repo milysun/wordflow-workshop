@@ -10,10 +10,10 @@
 
 ## Long version (Eventbrite description, web page)
 
-**Title:** Text analytics without programming: an introduction to LDaCA Wordflow
+**Title:** Point-and-click text analytics: an introduction to LDaCA Wordflow
 
 **Summary (short field, under 140 characters):**
-A free hands-on introduction to Wordflow, a point-and-click text analysis app for researchers. Bring your laptop; no programming needed.
+Free hands-on intro to LDaCA Wordflow: word frequencies to topic models and GenAI-assisted coding, point and click. Bring your laptop.
 
 **Description:**
 
@@ -42,13 +42,13 @@ Wordflow is developed at the University of Sydney (Sydney Informatics Hub and Sy
 
 ## Short version (newsletter, mailing list)
 
-**Text analytics without programming: Wordflow at Melbourne, 26 October.** Do you work with text but not with programming languages? Join the Melbourne Data Analytics Platform and the Language Data Commons of Australia on **Monday 26 October** (⟨hours⟩, ⟨room⟩, Parkville) for a free ⟨2.5/3⟩-hour hands-on introduction to **LDaCA Wordflow**, a free point-and-click app for analysing text. You'll follow a real research workflow built live, from raw data to a small finding across several tools, and try Wordflow's new GenAI **Annotation** tool the researcher-first way: write a codebook, code a sample yourself, and check the AI's agreement with you before trusting it further. Open to researchers from all disciplines and universities, HDR students especially welcome; bring your own laptop. ⟨Register⟩.
+**Point-and-click text analytics: Wordflow at Melbourne, 26 October.** Do you work with text but not with programming languages? Join the Melbourne Data Analytics Platform and the Language Data Commons of Australia on **Monday 26 October** (⟨hours⟩, ⟨room⟩, Parkville) for a free ⟨2.5/3⟩-hour hands-on introduction to **LDaCA Wordflow**, a free point-and-click app for analysing text. You'll follow a real research workflow built live, from raw data to a small finding across several tools, and try Wordflow's new GenAI **Annotation** tool the researcher-first way: write a codebook, code a sample yourself, and check the AI's agreement with you before trusting it further. Open to researchers from all disciplines and universities, HDR students especially welcome; bring your own laptop. ⟨Register⟩.
 
 ---
 
 ## One-liner (calendar entry, social)
 
-Free hands-on intro to LDaCA Wordflow, a point-and-click text analysis app for researchers, no programming needed. Mon 26 Oct, University of Melbourne, with MDAP. BYO laptop. ⟨Link⟩
+Free hands-on intro to LDaCA Wordflow, point-and-click text analytics for researchers: word frequencies to topic models and GenAI-assisted coding, no programming. Mon 26 Oct, University of Melbourne, with MDAP. BYO laptop. ⟨Link⟩
 
 ---
 
