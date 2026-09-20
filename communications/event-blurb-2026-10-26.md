@@ -1,6 +1,6 @@
 # Event blurb: Wordflow intro workshop, University of Melbourne, 26 October 2026
 
-*General blurb, drafted 2026-09-20 while the session is still being planned; simplified 2026-09-20 after Chao's review. Placeholders are in ⟨angle brackets⟩: hours, room, registration link, MDAP contact. The workflow bullet names no tools, so the programme can change without the blurb needing to. Shareable copy for MDAP colleagues: `event-blurb-2026-10-26.html` (same text, placeholders highlighted, copy buttons).*
+*General blurb, drafted 2026-09-20 while the session is still being planned; simplified 2026-09-20 after Chao's review. Placeholders are in ⟨angle brackets⟩: hours, venue (campus not yet known; MDAP to supply), registration link, MDAP contact. The workflow bullet names no tools, so the programme can change without the blurb needing to. Shareable copy for MDAP colleagues: `event-blurb-2026-10-26.html` (same text, placeholders highlighted; select and copy from the page to keep the formatting).*
 
 **Known:** Monday 26 October 2026, in person at the University of Melbourne, co-hosted by the Melbourne Data Analytics Platform (MDAP), the Language Data Commons of Australia (LDaCA) and the Sydney Informatics Hub (SIH); the Sydney Corpus Lab (SCL) is acknowledged as Wordflow's development partner. **3 hours** (decided 2026-09-20; MDAP to say if that is too long for their audience), in the shape of the June 2026 intro with a shorter block on the Annotation tool. Wordflow at the latest v0.7 release. Browser option = ARDC BinderHub, confirmed available to Melbourne participants.
 
@@ -31,7 +31,7 @@ This **in-person, 3-hour workshop** at the University of Melbourne, co-hosted by
 
 **What to bring:** your own laptop (Mac or Windows). A short email a few days beforehand will ask you to install the free desktop app (about five minutes). If you can't install software, a browser option is available.
 
-**When and where:** Monday 26 October 2026, ⟨start⟩–⟨end⟩. ⟨Room, building⟩, University of Melbourne, Parkville.
+**When and where:** Monday 26 October 2026, ⟨start⟩–⟨end⟩. ⟨Venue⟩, University of Melbourne.
 
 Wordflow is developed at the University of Sydney by the **Sydney Informatics Hub** together with the **Sydney Corpus Lab**, as part of the **Language Data Commons of Australia (LDaCA)**, an ARDC co-investment partnership enabled by NCRIS. Screenshots, installers and materials from past workshops are at [sih.tools/wordflow](https://sih.tools/wordflow).
 
@@ -41,7 +41,7 @@ Wordflow is developed at the University of Sydney by the **Sydney Informatics Hu
 
 ## Short version (newsletter, mailing list)
 
-**Point-and-click text analytics: Wordflow at Melbourne, 26 October.** Do you work with text but not with programming languages? Join the Melbourne Data Analytics Platform, the Language Data Commons of Australia and the Sydney Informatics Hub on **Monday 26 October** (⟨hours⟩, ⟨room⟩, Parkville) for a free 3-hour hands-on introduction to **LDaCA Wordflow**, a free point-and-click app for analysing text, developed at the University of Sydney with the Sydney Corpus Lab. You'll follow a real research workflow built live, from raw data to a small finding, and try Wordflow's new GenAI **Annotation** tool: write a codebook, code a sample yourself, and check how well the AI agrees with you. Open to researchers from all disciplines and universities, HDR students especially welcome; bring your own laptop. ⟨Register⟩.
+**Point-and-click text analytics: Wordflow at Melbourne, 26 October.** Do you work with text but not with programming languages? Join the Melbourne Data Analytics Platform, the Language Data Commons of Australia and the Sydney Informatics Hub on **Monday 26 October** (⟨hours⟩, ⟨venue⟩) for a free 3-hour hands-on introduction to **LDaCA Wordflow**, a free point-and-click app for analysing text, developed at the University of Sydney with the Sydney Corpus Lab. You'll follow a real research workflow built live, from raw data to a small finding, and try Wordflow's new GenAI **Annotation** tool: write a codebook, code a sample yourself, and check how well the AI agrees with you. Open to researchers from all disciplines and universities, HDR students especially welcome; bring your own laptop. ⟨Register⟩.
 
 ---
 

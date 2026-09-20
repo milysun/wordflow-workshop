@@ -51,16 +51,8 @@
   .copyable ul { margin: 0 0 12px; padding-left: 22px; }
   .copyable li { margin: 4px 0; }
   .copyable a { color: var(--accent); }
-  button.copy {
-    font: inherit; font-size: 0.85rem; color: var(--accent); background: var(--paper);
-    border: 1px solid var(--accent); border-radius: 6px; padding: 4px 10px; cursor: pointer;
-  }
-  button.copy:hover { background: #eef5fc; }
-  button.copy[data-done="1"] { color: #1b6b2f; border-color: #1b6b2f; }
-  .count { color: var(--muted); font-size: 0.85rem; }
   footer { color: var(--muted); font-size: 0.9rem; margin-top: 32px; border-top: 1px solid var(--line); padding-top: 14px; }
   @media print {
-    button.copy { display: none; }
     section.piece { break-inside: avoid; }
     mark.ph { outline: 1px dashed #000; }
   }
@@ -72,10 +64,10 @@
   <p class="sub">Draft promotional copy for the in-person workshop at the University of Melbourne, Monday 26 October 2026. Prepared by Chao Sun (Sydney Informatics Hub), 20 September 2026.</p>
 
   <div class="legend">
-    <p><strong>For MDAP colleagues.</strong> Three ready-to-paste versions follow. Anything shown like <mark class="ph">⟨this⟩</mark> is information we need from you: please fill in or tell us, and revise any wording freely.</p>
+    <p><strong>For MDAP colleagues.</strong> Three ready-to-paste versions follow. Anything shown like <mark class="ph">⟨this⟩</mark> is information we need from you: please fill in or tell us, and revise any wording freely. Selecting text on this page and copying it keeps the bold and links when pasted into Eventbrite, Outlook or a web editor.</p>
     <ul>
       <li><mark class="ph">⟨start⟩–⟨end⟩</mark> and <mark class="ph">⟨hours⟩</mark>: the session time. We have planned 3 hours; say if that is too long for your audience and we will trim the programme.</li>
-      <li><mark class="ph">⟨Room, building⟩</mark>: the venue on the Parkville campus.</li>
+      <li><mark class="ph">⟨Venue⟩</mark>: campus, building and room.</li>
       <li><mark class="ph">⟨Registration link⟩</mark>: the Eventbrite (or other) registration page.</li>
       <li><mark class="ph">⟨and MDAP contact⟩</mark>: a name or mailbox for local questions, if you would like one listed.</li>
       <li>Host order is MDAP, LDaCA, Sydney Informatics Hub. Change it if you prefer.</li>
@@ -85,7 +77,6 @@
   <section class="piece">
     <div class="piece-head">
       <h2>1 · Long version</h2>
-      <button class="copy" data-target="long">Copy text</button>
     </div>
     <p class="use">For the Eventbrite description or a web page. Title and short summary first, then the description.</p>
 
@@ -107,7 +98,7 @@
       </ul>
       <p><strong>Who it's for:</strong> researchers at any stage, from HDR students to senior academics, in any field where text is data. No programming experience needed. Open to researchers from all disciplines and universities.</p>
       <p><strong>What to bring:</strong> your own laptop (Mac or Windows). A short email a few days beforehand will ask you to install the free desktop app (about five minutes). If you can't install software, a browser option is available.</p>
-      <p><strong>When and where:</strong> Monday 26 October 2026, <mark class="ph">⟨start⟩–⟨end⟩</mark>. <mark class="ph">⟨Room, building⟩</mark>, University of Melbourne, Parkville.</p>
+      <p><strong>When and where:</strong> Monday 26 October 2026, <mark class="ph">⟨start⟩–⟨end⟩</mark>. <mark class="ph">⟨Venue⟩</mark>, University of Melbourne.</p>
       <p>Wordflow is developed at the University of Sydney by the <strong>Sydney Informatics Hub</strong> together with the <strong>Sydney Corpus Lab</strong>, as part of the <strong>Language Data Commons of Australia (LDaCA)</strong>, an ARDC co-investment partnership enabled by NCRIS. Screenshots, installers and materials from past workshops are at <a href="https://sih.tools/wordflow">sih.tools/wordflow</a>.</p>
       <p><mark class="ph">⟨Registration link⟩</mark> · Contact: chao.sun@sydney.edu.au <mark class="ph">⟨and MDAP contact⟩</mark></p>
     </div>
@@ -116,18 +107,16 @@
   <section class="piece">
     <div class="piece-head">
       <h2>2 · Short version</h2>
-      <button class="copy" data-target="short">Copy text</button>
     </div>
     <p class="use">For a newsletter item or mailing-list post.</p>
     <div class="copyable" id="short">
-      <p><strong>Point-and-click text analytics: Wordflow at Melbourne, 26 October.</strong> Do you work with text but not with programming languages? Join the Melbourne Data Analytics Platform, the Language Data Commons of Australia and the Sydney Informatics Hub on <strong>Monday 26 October</strong> (<mark class="ph">⟨hours⟩</mark>, <mark class="ph">⟨room⟩</mark>, Parkville) for a free 3-hour hands-on introduction to <strong>LDaCA Wordflow</strong>, a free point-and-click app for analysing text, developed at the University of Sydney with the Sydney Corpus Lab. You'll follow a real research workflow built live, from raw data to a small finding, and try Wordflow's new GenAI <strong>Annotation</strong> tool: write a codebook, code a sample yourself, and check how well the AI agrees with you. Open to researchers from all disciplines and universities, HDR students especially welcome; bring your own laptop. <mark class="ph">⟨Register⟩</mark>.</p>
+      <p><strong>Point-and-click text analytics: Wordflow at Melbourne, 26 October.</strong> Do you work with text but not with programming languages? Join the Melbourne Data Analytics Platform, the Language Data Commons of Australia and the Sydney Informatics Hub on <strong>Monday 26 October</strong> (<mark class="ph">⟨hours⟩</mark>, <mark class="ph">⟨venue⟩</mark>) for a free 3-hour hands-on introduction to <strong>LDaCA Wordflow</strong>, a free point-and-click app for analysing text, developed at the University of Sydney with the Sydney Corpus Lab. You'll follow a real research workflow built live, from raw data to a small finding, and try Wordflow's new GenAI <strong>Annotation</strong> tool: write a codebook, code a sample yourself, and check how well the AI agrees with you. Open to researchers from all disciplines and universities, HDR students especially welcome; bring your own laptop. <mark class="ph">⟨Register⟩</mark>.</p>
     </div>
   </section>
 
   <section class="piece">
     <div class="piece-head">
       <h2>3 · One-liner</h2>
-      <button class="copy" data-target="one">Copy text</button>
     </div>
     <p class="use">For a calendar entry or a social post.</p>
     <div class="copyable" id="one">
@@ -136,38 +125,8 @@
   </section>
 
   <footer>
-    Questions or edits: Chao Sun, Sydney Informatics Hub, chao.sun@sydney.edu.au. The "Copy text" buttons copy plain text, placeholders included, so they stay visible in whatever you paste into.
+    Questions or edits: Chao Sun, Sydney Informatics Hub, chao.sun@sydney.edu.au.
   </footer>
 </main>
-<script>
-  document.querySelectorAll('button.copy').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var id = btn.getAttribute('data-target');
-      var parts = [];
-      if (id === 'long') {
-        parts.push(document.getElementById('long-title').innerText.trim());
-        parts.push(document.getElementById('long-summary').innerText.trim());
-      }
-      parts.push(document.getElementById(id).innerText.trim());
-      var text = parts.join('\n\n');
-      function done() {
-        btn.textContent = 'Copied';
-        btn.setAttribute('data-done', '1');
-        setTimeout(function () { btn.textContent = 'Copy text'; btn.removeAttribute('data-done'); }, 1800);
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, function () { fallback(text); done(); });
-      } else { fallback(text); done(); }
-    });
-  });
-  function fallback(text) {
-    var ta = document.createElement('textarea');
-    ta.value = text; ta.setAttribute('readonly', '');
-    ta.style.position = 'fixed'; ta.style.left = '-9999px';
-    document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); } catch (e) {}
-    document.body.removeChild(ta);
-  }
-</script>
 </body>
 </html>
