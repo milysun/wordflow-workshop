@@ -6,7 +6,7 @@
 
 **Flag for Kit:** 26 November falls in daylight-saving time, so "2 pm AEST" is 3 pm in Sydney and Melbourne. Confirm whether the slot is 2 pm AEDT (Sydney/Melbourne clock) or 2 pm AEST (Brisbane clock).
 
-**Framing (Chao, 2026-09-20):** this hour is a **report, not a tutorial**. Show the interface, the central concept and the critical capabilities, then spend the time on use cases, worked examples, impact, advantages and potential, with slides, screenshots and short screen recordings rather than live step-by-step teaching. Source material: the eResearch Australasia 2026 talks and poster (`../e-Research26/`, outside this repo) more than the workshop decks.
+**Framing (Chao, 2026-09-20):** format **not yet decided**; Chao is leaning towards an **info session** for ARDC's broad audience (use cases, examples, impact, advantages, potential, built from the eResearch Australasia 2026 materials in `../e-Research26/`, outside this repo) rather than a demo, but a quick demo remains an option. The form text below is written to fit either, so the choice can be made later without going back to Kit.
 
 **Word-choice rule:** "code" / "coding" mean qualitative coding; say "programming" for the other sense (never "no coding needed"). See CLAUDE.md.
 
@@ -32,11 +32,11 @@ Note: the product name is **Wordflow** (lower-case f), not WordFlow.
 
 ## Description (one paragraph)
 
-> Most humanities and social science research runs on text: interviews, archives, newspapers, parliamentary records, social media, survey responses. Few researchers have time to learn programming, so the analyses that need it stay out of reach, or get handed to a chat AI that returns prose nobody can verify. LDaCA Wordflow, a free, open-source app from the Language Data Commons of Australia, puts corpus-scale analysis into a point-and-click workspace: word frequencies, concordances, trends over time, topic models and, new in 2026, GenAI-assisted annotation in which your own codebook and hand-coded sample set the standard before a model codes the rest. It runs in the browser on ARDC infrastructure with nothing to install, or as a desktop app so sensitive data never leaves your machine. This webinar is a tour of what the tool makes possible rather than a lesson in its buttons: worked examples on real Australian datasets, the design choices that keep every result traceable to the source text, what we have learnt from training researchers with it this year, and where it is heading, so you can judge whether it belongs in your own workflow.
+> Most humanities and social science research runs on text: interviews, archives, newspapers, parliamentary records, social media, survey responses. Few researchers have time to learn programming, so the analyses that need it stay out of reach, or get handed to a chat AI that returns prose nobody can verify. LDaCA Wordflow, a free, open-source app from the Language Data Commons of Australia, puts corpus-scale analysis into a point-and-click workspace: word frequencies, concordances, trends over time, topic models and, new in 2026, GenAI-assisted annotation in which your own codebook and hand-coded sample set the standard before a model codes the rest. It runs in the browser on ARDC infrastructure with nothing to install, or as a desktop app so sensitive data never leaves your machine. This webinar introduces the tool and what it makes possible: examples on real Australian datasets, the design choices that keep every result traceable to the source text, how it fits alongside close reading, and where it is heading, so you can judge whether it belongs in your own research.
 
 ## Three ways the webinar will help researchers do better research
 
-1. **See corpus-scale analysis without programming.** One real dataset followed from raw files through frequency, concordance, trends and topic modelling, so you can judge which questions in your own research it would answer.
+1. **See what corpus-scale analysis looks like without programming.** Frequency, concordance, trends and topic modelling on real datasets, so you can judge which questions in your own research they would answer.
 2. **Learn a responsible way to use generative AI for qualitative coding.** Codebook first, your own coded sample as the benchmark, agreement scores before scale, and every label stored beside the text it came from.
 3. **Know your options for sensitive and large collections.** Browser access on ARDC infrastructure for trials and teaching, a desktop app that keeps confidential data on your own computer, and workspace archives that make an analysis reproducible and shareable.
 
@@ -81,3 +81,4 @@ Dr Chao Sun, Data Science Group Lead, Sydney Informatics Hub, University of Sydn
 - [ ] Documentation URL and Zenodo DOI filled or the line dropped
 - [ ] LDaCA subscription link from the LDaCA comms team
 - [ ] Title choice made; character counts re-checked (recommended title 62, tagline 130)
+- [ ] Format (info session vs quick demo) can stay open past 1 October; the text fits both. Decide before the ARDC run-through (~12 November).
