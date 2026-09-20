@@ -2,17 +2,15 @@
 
 Read this before editing files in this repo. Read `README.md` for the workshop design itself.
 
-## This branch: in-person intro workshop, University of Melbourne, 26 October 2026
+## This branch: ARDC HASS&I RDC webinar, 26 November 2026
 
-This branch (`melbourne_mdap_workshop_2026-10-26`, created 2026-09-20 from `online_workshop_2026-08-28`) is for a **single in-person session at the University of Melbourne, co-hosted by the Melbourne Data Analytics Platform (MDAP), LDaCA and the Sydney Informatics Hub, on Monday 26 October 2026**, with the Sydney Corpus Lab acknowledged in all copy, introducing Wordflow (latest v0.7 release). **3 hours** (decided 2026-09-20; start time TBC; MDAP may ask for shorter). **Pacing rule:** hands-on blocks always run slower than planned, so the programme keeps the **last 30 minutes as a buffer** (open lab / questions / own data) that can become an optional stay-on block; if MDAP asks for 2.5 h, drop that tail rather than compressing the hands-on. Content **not yet fixed**: mostly a simplified June intro (concepts, interface, multi-tool workflow) plus a shorter block on the **Annotation** tool. Keep drafts flexible on tool choice and timing until Chao confirms.
+This branch (`ardc_hassi_webinar_2026-11-26`, created 2026-09-20 from `melbourne_mdap_workshop_2026-10-26`) is for a **one-hour online webinar in ARDC's HASS&I Research Data Commons series, focus area LDaCA, Thursday 26 November 2026, 2 pm (AEDT/AEST TBC)**. ARDC hosts and runs it (MC, registration, recording, survey, resource page); Chao presents about 45–50 minutes (Alex Guo TBC as second presenter).
 
-**Status: planning.** Everything below the blockquote in `README.md`, and all the August-named files (`slides/online-s*.html`, `facilitator/runbook-online-s*.md`, `participant/hands-on-annotation-online.md`, `communications/*-online.*`), still describe the **28 August online workshop**. They are the sources to adapt, not this workshop's deliverables. New files for this delivery should carry a `melbourne` or `2026-10-26` name, and the August-only files must be removed before participants are linked to this branch (same rule as August's clean-up of June/CAITG files).
+**Shape (Chao, 2026-09-20): a report, not a tutorial.** Show the interface, the central concept and the critical capabilities briefly, then spend the time on **use cases, examples, impact, advantages and potential**. Expect more slides, screenshots and short screen recordings than live clicking. Draw on the **eResearch Australasia 2026 materials** in `../e-Research26/` (outside this repo, private: A3 four delivery channels and sustainability, A4 AI annotation done properly, A6 FAIR poster, A5 training report) more than on the workshop decks. Any live demo needs a recorded fallback.
 
-Deliverables so far:
+**Deliverables:** `communications/ardc-hassi-webinar-description-2026-11-26.md` (filled ARDC form, due to Kit Greenhill 1 Oct 2026; done 2026-09-20), then a webinar deck (`slides/ardc-webinar-2026-11-26.html`, same offline-fine single-file rules as the other decks, ARDC master slide set may frame it) and a short run-sheet. ARDC run-through about 12 November.
 
-- `communications/event-blurb-2026-10-26.md` — general blurb with placeholders (hours, room, registration link).
-
-Other deliveries live on their own branches: `intro_workshop_2026-06-03` (June 3-hour in-person intro, v0.5-era), `caitg_winter_school_2026-07-30`, `online_workshop_2026-08-28` (delivered; the base of this branch), `hansard_workshop_2026-09-29` (Sept 29–30 series). Excel and zip-archive import work in current releases; **v0.7.7 changed the workspace archive format**, so any checkpoint archive for this workshop must be exported from v0.7.7 or later (the ones in `artifacts/checkpoints/` already are).
+**Status: planning.** The Melbourne header material that was in this section, and all the August-named files (`slides/online-s*.html`, `facilitator/runbook-online-s*.md`, `participant/hands-on-annotation-online.md`, `communications/*-online.*`) plus `communications/event-blurb-2026-10-26.*`, are inherited sources, not this webinar's deliverables. Other deliveries live on their own branches: `intro_workshop_2026-06-03`, `caitg_winter_school_2026-07-30`, `online_workshop_2026-08-28`, `hansard_workshop_2026-09-29`, `melbourne_mdap_workshop_2026-10-26`. v0.7.7 changed the workspace archive format; anything shown must be from the current release.
 
 ## v0.7 UI facts (verified against v0.7.1 code, 2026-08-02) — these override any v0.5-era bullet below
 
