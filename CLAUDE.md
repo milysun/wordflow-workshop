@@ -84,6 +84,7 @@ A few UI details that are easy to get wrong in materials (and have been correcte
 
 - Concrete, warm, no jargon. The audience is curious researchers, not engineers.
 - Address the room as "you," not "users" or "participants" (the facilitator runbook is the exception — it talks *about* participants).
+- **"Code" means qualitative coding here, never programming** (decided 2026-09-20). Reserve "code", "coding", "codebook", "coder" for classifying text; for the other sense write "programming" or name the languages ("Python or R"). Never "without code" / "no coding needed" in participant-facing copy: a qualitative audience reads it as "without coding your data".
 - Avoid hype words ("revolutionary," "powerful," "cutting-edge"). Match the existing tone — see `runbook-online-s1.md` for the spoken voice and `hands-on-annotation-online.md` for the written voice.
 - Time is precious — every sentence in a slide or hands-on sheet should pull its weight.
 
