@@ -1,6 +1,6 @@
 # Notes for the LDaCA website project page on Wordflow (reply to Bridey)
 
-*Draft reply, 2026-09-21 (v2, softened after Chao's review), for Chao to send. Bridey (LDaCA comms) already has a description of Wordflow and asked for notes under three headings: the problem, learnings and outcomes beyond the app, and anything else to highlight. Written as notes she can shape, not finished web copy. Facts marked ⟨check⟩ need Chao's confirmation; numbers are as of 21 September 2026.*
+*Draft reply, 2026-09-21 (v2, softened after Chao's review), for Chao to send. Bridey (LDaCA comms) already has a description of Wordflow and asked for notes under three headings: the problem, learnings and outcomes beyond the app, and anything else to highlight. Written as notes she can shape, not finished web copy. Numbers are as of 21 September 2026; the Zenodo DOI for v0.7.7 was confirmed by Chao on 2026-09-21.*
 
 *Terminology: the UI's "Workspace" is being renamed **"Project"** in the release after v0.7.7. The web page will take a while to build, so these notes already say "project". Word-choice rule applied: "coding" is qualitative coding; the other thing is "programming".*
 
@@ -26,7 +26,7 @@ Thanks for taking this on, and no rush from our side. Here are some notes under 
 - **AI as one more coder.** The Annotation tool treats a model the way a research team treats a new human coder: it gets the codebook, codes a sample, has its agreement with the researcher measured (Cohen's kappa, a confusion matrix), the codebook gets revised, and only then does it code the whole corpus. Every label sits beside the text it came from and is data for the other tools. Local models are supported, so confidential text needn't leave the machine. Our premise, said out loud in every training session: AI doesn't replace critical thinking, and no model deserves blind trust. Workshop participants have run this whole cycle themselves in 90 minutes, and seen with their own eyes that adding examples to a prompt can make agreement worse, not better. That's exactly the kind of check we want people to run.
 - **Multilingual from the start.** Language-appropriate tokenisation for English, European languages, Chinese, Japanese, Korean and more. Through the install and desktop channels, this has carried the tool to communities LDaCA's hosted infrastructure was never funded to serve.
 - **What we've learnt from teaching it.** Since June 2026 we've run a three-hour in-person introduction at the University of Sydney (44 registrations, 23 in the room), a hands-on session at the CAITG winter school, and a one-day online workshop in August (91 registrants from 19 countries, 40 attended; both sessions recorded and public). A few things now shape every delivery: one research question threaded through every tool rather than disconnected exercises; checkpoint project files so anyone who falls behind rejoins in under a minute; and the honest admission that hands-on blocks always run slower than planned, so we build in a buffer. A feedback form ships inside every copy of the app and has returned 57 responses so far, which go straight into the development queue.
-- **Released properly.** Public releases on the Python Package Index, each archived with a DOI on Zenodo ⟨check⟩, open source under an open licence, versioned public documentation. Current release v0.7.7 (September 2026).
+- **Released properly.** Public releases on the Python Package Index, each archived with a DOI on Zenodo, open source under an open licence, versioned public documentation. Current release v0.7.7 (September 2026), https://doi.org/10.5281/zenodo.22266622.
 
 ## 3. Other things worth highlighting
 
@@ -45,7 +45,8 @@ Chao
 
 ## Before sending
 
-- ⟨check⟩ Zenodo DOI per release is still the practice for v0.7.x
+- Version: the page can name v0.7.7 and its DOI, or just say "the latest release" if a bug-fix release (v0.7.8) lands before the page goes live; v0.7.7 shipped in a hurry and is known to be buggy
+
 - Monika is happy with the Sydney Corpus Lab wording and the "working together" framing
 - "Project" (not "Workspace") is used throughout, matching the post-v0.7.7 UI; the one-liner's "point-and-click workspace" is the ordinary English word, not the UI term, so it stays
 - Workshop numbers are from `private/attendance_report_2026-08-28.md` and the eResearch A5 abstract; feedback count 57 from Qualtrics on 2026-09-21; no participant names or emails are included here
