@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wordflow on Hansard · RAPID-CDL Session 2</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  :root {
+    --ink: #1a1d24;
+    --paper: #fdfcf8;
+    --accent: #c8423e;
+    --accent-soft: #f3d6d5;
+    --spotlight-bg: #1a1d24;    /* same dark ink as the section dividers; calm at full-slide size */
+    --muted: #6b6f78;
+    --rule: #d9d4c8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+  }
+  .deck { position: relative; width: 100vw; height: 100vh; }
+  section.slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6vh 8vw;
+    overflow: auto;
+  }
+  section.slide.active { display: flex; }
+  section.slide h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.6em;
+    letter-spacing: -0.01em;
+  }
+  section.slide h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.8em;
+  }
+  section.slide h3 {
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+  section.slide p, section.slide li {
+    font-size: clamp(1.1rem, 1.7vw, 1.6rem);
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+  }
+  section.slide ul, section.slide ol {
+    margin-left: 2em;
+    margin-top: 0.8em;
+  }
+  section.slide li { margin-bottom: 0.6em; }
+  section.slide .meta {
+    color: var(--muted);
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  section.slide .pullquote {
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--ink);
+    padding: 0.5em 0;
+    border-left: 6px solid var(--accent);
+    padding-left: 1em;
+    margin: 1em 0;
+  }
+  section.slide .accent { color: var(--accent); font-weight: 600; }
+  section.slide .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+    margin-top: 1em;
+  }
+  section.slide .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5vw;
+    margin-top: 1em;
+  }
+  section.slide .card {
+    background: var(--accent-soft);
+    padding: 1.5em;
+    border-radius: 12px;
+  }
+  section.slide .card h3 { color: var(--accent); margin-bottom: 0.3em; }
+  section.slide .card p {
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
+    margin: 0;
+  }
+  section.slide .card code { font-size: 0.85em; }
+  section.slide table {
+    border-collapse: collapse;
+    margin-top: 1em;
+    font-size: clamp(0.95rem, 1.4vw, 1.3rem);
+  }
+  section.slide th, section.slide td {
+    border: 1px solid var(--rule);
+    padding: 0.5em 1em;
+    text-align: left;
+  }
+  section.slide th { background: var(--accent-soft); }
+  section.slide.title-slide {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.title-slide h1 { color: var(--paper); }
+  section.slide.title-slide h2 { color: var(--accent); }
+  section.slide.title-slide p { color: var(--paper); opacity: 0.85; }
+  section.slide.spotlight {
+    background: var(--spotlight-bg);
+    color: var(--paper);
+    align-items: center;
+    text-align: center;
+  }
+  section.slide.spotlight h1, section.slide.spotlight p {
+    color: var(--paper);
+  }
+  section.slide.spotlight h2 { color: var(--accent); }
+  section.slide.spotlight .pullquote {
+    border-left-color: var(--paper);
+    color: var(--paper);
+  }
+  /* Numbered lists on centered spotlight slides: keep the block centered but
+     the text left-aligned, so list numbers hang consistently. */
+  section.slide.spotlight ol {
+    text-align: left;
+    margin: 0.8em auto 0;
+    max-width: 44em;
+  }
+  section.slide.section-divider {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.section-divider h1 { color: var(--paper); font-size: clamp(3rem, 7vw, 6rem); }
+  section.slide.section-divider h2 { color: var(--accent); }
+  section.slide.section-divider p { color: var(--paper); opacity: 0.75; }
+  section.slide.acknowledgement {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.acknowledgement h2 { color: var(--accent); }
+  section.slide.acknowledgement .ack-body {
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+    line-height: 1.55;
+    max-width: 30em;
+    font-weight: 400;
+    color: var(--paper);
+  }
+  section.slide.acknowledgement .ack-body strong { color: var(--paper); font-weight: 600; }
+  /* Data acknowledgements slide */
+  section.slide.acknowledgements-slide {
+    padding: 3vh 5vw;
+    justify-content: flex-start;
+  }
+  section.slide.acknowledgements-slide h2 { margin-bottom: 0.4em; }
+  section.slide.acknowledgements-slide .ack-intro {
+    font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+    color: var(--muted);
+    font-style: italic;
+    max-width: 52em;
+    margin-bottom: 1.2em;
+    line-height: 1.45;
+  }
+  section.slide.acknowledgements-slide .ack-block {
+    margin-bottom: 1em;
+    padding-left: 1em;
+    border-left: 3px solid var(--accent-soft);
+  }
+  section.slide.acknowledgements-slide .ack-block h3 {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    color: var(--accent);
+    margin-bottom: 0.15em;
+    font-weight: 600;
+  }
+  section.slide.acknowledgements-slide .ack-block p {
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    margin-bottom: 0.2em;
+    line-height: 1.45;
+  }
+  section.slide.acknowledgements-slide .ack-block .citation {
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+    color: var(--muted);
+  }
+  section.slide.acknowledgements-slide a { color: var(--accent); text-decoration: none; }
+  section.slide.acknowledgements-slide a:hover { text-decoration: underline; }
+  /* Project + team slide */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    margin: 1.2em 0;
+    align-items: start;
+  }
+  .team-card { text-align: center; }
+  .team-card img {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 0.7em;
+    border: 4px solid var(--accent-soft);
+    background: var(--accent-soft);
+  }
+  .team-card .team-name {
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    margin-bottom: 0.2em;
+    line-height: 1.2;
+  }
+  .team-card .team-role {
+    color: var(--muted);
+    font-size: clamp(0.85rem, 1.15vw, 1.05rem);
+    line-height: 1.35;
+  }
+  section.slide p.team-attribution {
+    margin-top: 1em;
+    text-align: center;
+    max-width: 52em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .chrome {
+    position: fixed;
+    bottom: 1.5vh;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    pointer-events: none;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .chrome > span { background: var(--paper); padding: 0.3em 0.7em; border-radius: 4px; }
+  .notes {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    max-height: 35vh;
+    overflow: auto;
+    background: rgba(26, 29, 36, 0.97);
+    color: var(--paper);
+    padding: 1.5em 3em;
+    border-top: 3px solid var(--accent);
+    display: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .notes.show { display: block; }
+  .notes h4 {
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    margin-bottom: 0.5em;
+  }
+  /* Branding strip: injected by JS into every slide from #3 onward (inside the
+     section, so it prints per-slide). White pill keeps logos legible on dark
+     divider/spotlight slides. SIH logo links to informatics.sydney.edu.au. */
+  .brand-footer {
+    position: absolute;
+    bottom: 1.2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.6vw;
+    background: rgba(253, 252, 248, 0.95);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.8vh 1.6vw;
+    z-index: 3;
+  }
+  .brand-footer img { display: block; }
+  .brand-footer .logo-ldaca { height: 2.6vh; }
+  .brand-footer .logo-ardc { height: 3.4vh; }
+  .brand-footer .logo-ncris { height: 4.2vh; }
+  .brand-footer .brand-divider { width: 1px; height: 4vh; background: var(--rule); }
+  .brand-footer .logo-scl { height: 3.8vh; }
+  .brand-footer .logo-sih { height: 4.6vh; }
+  .brand-footer a { display: block; line-height: 0; }
+  /* Title-slide logo row: LDaCA + SIH only (white variants on the ink background) */
+  .title-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4vw;
+    margin-top: 4.5vh;
+  }
+  .title-logos img { display: block; }
+  .title-logos .logo-ldaca-lg { height: 4.5vh; }
+  .title-logos .logo-sih-lg { height: 8vh; }
+  .title-logos .title-divider { width: 1px; height: 5.5vh; background: rgba(253, 252, 248, 0.35); }
+  .hint {
+    position: fixed;
+    top: 1vh;
+    right: 2vw;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: var(--paper);
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    opacity: 0.6;
+  }
+  /* UI overview slide */
+  section.slide.ui-overview-slide {
+    padding: 2vh 4vw 8vh;
+    justify-content: flex-start;
+  }
+  section.slide.ui-overview-slide h2 { margin-bottom: 0.3em; }
+  /* The screenshot flex-grows into whatever height the title + legend leave
+     over, so it fills the slide on any screen aspect ratio. */
+  .ui-overview-container {
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin: 0.5vh auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ui-overview-container .ui-overview-figure {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    height: 100%;
+  }
+  .ui-overview-container img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+  .ui-overview-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+  }
+  .ui-overview-legend {
+    flex: 0 0 auto;
+    counter-reset: ui-item;
+    columns: 2;
+    column-gap: 2.5em;
+    margin-top: 0.5em;
+    padding: 0;
+    list-style: none;
+    font-size: clamp(0.78rem, 1.05vw, 1rem);
+  }
+  .ui-overview-legend li {
+    counter-increment: ui-item;
+    margin-bottom: 0.25em;
+    break-inside: avoid;
+    padding-left: 2.4em;
+    position: relative;
+    line-height: 1.3;
+  }
+  .ui-overview-legend li::before {
+    content: counter(ui-item);
+    position: absolute;
+    left: 0; top: 0;
+    width: 1.7em; height: 1.7em;
+    background: var(--accent);
+    color: var(--paper);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+  }
+
+
+  /* RAPID Session 3 additions */
+  section.slide code { background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px; font-size: 0.9em; }
+  section.slide.spotlight code, section.slide.title-slide code { color: var(--ink); }
+  section.slide .card ul { margin: 0.4em 0 0 1.1em; }
+  section.slide .card li { font-size: clamp(0.95rem, 1.3vw, 1.2rem); margin-bottom: 0.3em; line-height: 1.4; }
+  section.slide .small { font-size: clamp(0.85rem, 1.2vw, 1.05rem); color: var(--muted); }
+  section.slide .stat-row { display: flex; gap: 2vw; margin: 0.8em 0 0.4em; }
+  section.slide .stat { flex: 1; border-top: 4px solid var(--accent); padding-top: 0.5em; }
+  section.slide .stat .n { font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.1; }
+  section.slide .stat .l { font-size: clamp(0.9rem, 1.3vw, 1.2rem); color: var(--muted); }
+  section.slide.resources { padding: 4vh 6vw 10vh; justify-content: flex-start; }
+  section.slide.resources .card { padding: 1.1em 1.3em; }
+  section.slide.resources .card p { font-size: clamp(0.95rem, 1.3vw, 1.2rem); margin-bottom: 0.35em; }
+  section.slide.resources a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  section.slide.resources a:hover { text-decoration: underline; }
+
+  /* Print / Save-as-PDF */
+  @media print {
+    @page { size: 1280px 720px; margin: 0; }
+    html, body { height: auto; overflow: visible; background: #fff; }
+    .deck { position: static; width: auto; height: auto; }
+    section.slide {
+      position: relative !important;
+      inset: auto !important;
+      display: flex !important;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    section.slide:last-child { page-break-after: avoid; break-after: auto; }
+    .chrome, .notes, .hint { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- Slide 1: Title -->
+  <section class="slide title-slide active" data-notes="Alex is unwell today, so you're presenting. Welcome people staying on from Sam's session and anyone new. If people haven't set up Wordflow yet, that's fine: they can watch first and open it when they're ready.">
+    <h2>RAPID-CDL · Parliament workshops · Session 2 of 2</h2>
+    <h1>Analysing parliamentary discourse at scale with Wordflow</h1>
+    <p style="margin-top: 1.6em; font-size: 1.3rem;">What becomes possible once thousands of debates are searchable and structured</p>
+    <p style="margin-top: 2.2em; font-size: 0.95rem;"><strong>Dr Chao Sun</strong> · Sydney Informatics Hub, The University of Sydney</p>
+    <p style="margin-top: 0.3em; font-size: 0.85rem; opacity: 0.7;">Wednesday 30 September 2026 · 11:00 am-12:30 pm · Western Tower Boardroom, The Quadrangle</p>
+    <div class="title-logos">
+      <img class="logo-ldaca-lg" src="images/logos/ldaca-light.svg" alt="LDaCA — Language Data Commons of Australia">
+      <span class="title-divider"></span>
+      <img class="logo-sih-lg" src="images/logos/sih-usyd-white.svg" alt="The University of Sydney — Sydney Informatics Hub">
+    </div>
+  </section>
+
+  <!-- Slide 2: Housekeeping (same content as the opener's; see the comment there for sources) -->
+  <section class="slide" data-notes="For anyone new since 9:15; a few seconds if the room is unchanged. Name the assembly area you read off the evacuation diagram this morning.">
+    <h2>Before we start</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Toilets</h3>
+        <p>Out of the door, <strong>turn left</strong> and follow the corridor to the end. The male and all-gender accessible toilets are opposite the MacLaurin Hall kitchen; the female toilet is just around the corner to the right, by the stairs.</p>
+        <h3 style="margin-top: 0.8em;">Emergency numbers</h3>
+        <p><strong>000</strong> for police, fire or ambulance</p>
+        <p><strong>02 9351 3333</strong> for campus security (Protective Services), 24/7, or the <strong>SafeZone</strong> app</p>
+      </div>
+      <div class="card">
+        <h3>If the alarm sounds</h3>
+        <ul>
+          <li>Leave calmly by the <strong>nearest exit</strong>, following the green exit signs.</li>
+          <li>Take the <strong>stairs, not the lift</strong>.</li>
+          <li>Follow the wardens' instructions to the <strong>assembly area</strong> shown on the evacuation diagram by the door.</li>
+          <li>Don't go back in until you're told it's safe.</li>
+        </ul>
+        <p style="margin-top: 0.6em;">Would you need help to evacuate? Please let us know now, quietly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3: How today works -->
+  <section class="slide" data-notes="Set the casual contract. 90 minutes isn't enough for a full hands-on workflow, and 28 years of Hansard won't give one set of findings that interests everyone. So: I show what's possible, you poke at whatever interests you. No steps to keep up with, no checkpoints. Interrupt any time. Everything I do is covered in more detail in last month's recordings (last slide).">
+    <h2>How today works</h2>
+    <ul>
+      <li><strong>A guided tour, not a strict hands-on.</strong> I'll show what Wordflow can do with Hansard; follow along on your laptop, try your own ideas, or just watch.</li>
+      <li><strong>No steps to keep up with.</strong> Nothing breaks if you go your own way.</li>
+      <li><strong>Ask any time.</strong> Questions, "can it do X?", and ideas from your own research are the best part of a small room.</li>
+      <li><strong>The goal:</strong> leave knowing what's possible, so you can explore the debates yourself afterwards. The detailed walk-throughs are on video (last slide).</li>
+    </ul>
+    <p style="margin-top: 1em;">Not set up yet? <code>sih.tools/wordflow</code>: desktop app (recommended) or <strong>Launch in Binder</strong> in your browser.</p>
+  </section>
+
+  <!-- Slide 3: Who built this -->
+  <section class="slide" data-notes="~1 min. Alex sends apologies. Attribution chain: team, University of Sydney, LDaCA, ARDC/NCRIS.">
+    <h2>Who built Wordflow?</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="images/team/Chao_Sun.jpg" alt="Dr Chao Sun">
+        <div class="team-name">Dr Chao Sun</div>
+        <div class="team-role">Project tech lead<br>Sydney Informatics Hub</div>
+      </div>
+      <div class="team-card">
+        <img src="images/team/Senhui_Guo.jpg" alt="Dr Alex Guo">
+        <div class="team-name">Dr Alex Guo</div>
+        <div class="team-role">Principal developer<br>Sydney Informatics Hub</div>
+      </div>
+      <div class="team-card">
+        <img src="images/team/Monika_Bednarek.jpg" alt="Prof. Monika Bednarek">
+        <div class="team-name">Prof. Monika Bednarek</div>
+        <div class="team-role">Academic lead<br>Sydney Corpus Lab</div>
+      </div>
+    </div>
+    <p class="team-attribution">All at the <strong>University of Sydney</strong>, a <strong>partner institution</strong> of the <strong>Language Data Commons of Australia (LDaCA)</strong> (DOI: 10.3565/kq2v-9g52), a <strong>co-investment partnership with the Australian Research Data Commons (ARDC)</strong> through the HASS and Indigenous Research Data Commons. The ARDC is enabled by the Australian Government's <strong>National Collaborative Research Infrastructure Strategy (NCRIS)</strong>.</p>
+  </section>
+
+  <!-- Slide 4: Why Wordflow -->
+  <section class="slide" data-notes="~2 min. Frame programming as a cost in time and effort, not a capability gap. Say the north-star sentence slowly.">
+    <h2>Why Wordflow?</h2>
+    <p>Modern text analysis (corpus methods, NLP, and now GenAI) mostly lives in <strong>Python and R</strong>. Learning and maintaining that is real effort on top of a busy research schedule.</p>
+    <p>Wordflow puts those methods behind <strong>point-and-click tools</strong>: your data stays visible, and every step can be inspected and retraced.</p>
+    <p class="pullquote">Text data flows through stackable, single-purpose tools: the meaning of an analysis comes from how you shape your data, not from the tool itself.</p>
+  </section>
+
+  <!-- Slide 5: Interface -->
+  <section class="slide ui-overview-slide" data-notes="Switch to the live app for this; the slide is the recap. The screenshot is from an earlier v0.7 release: the live app says Project (was Workspace), Data Builder (was Preprocessing) and Data Editor (was Data View), and the legend uses the new names.">
+    <h2>The interface at a glance</h2>
+    <div class="ui-overview-container">
+      <div class="ui-overview-figure">
+        <img src="images/ui-overview-v07.png" alt="Annotated Wordflow v0.7 interface with seven labelled regions" />
+      </div>
+    </div>
+    <ol class="ui-overview-legend">
+      <li><strong>Tool sidebar (Views)</strong>: pick a tool</li>
+      <li><strong>Tool interface</strong>: the selected tool's controls and results, in browser-style tabs</li>
+      <li><strong>Project Graph</strong>: your data and every block derived from it</li>
+      <li><strong>Data Editor</strong>: inspect a block's rows and columns, and clean text in place</li>
+      <li><strong>Data Blocks</strong>: switch the active block quickly</li>
+      <li><strong>Tasks</strong>: progress of longer-running analyses</li>
+      <li><strong>Help &amp; Feedback</strong>: built-in documentation; a direct line to the team</li>
+    </ol>
+  </section>
+
+  <!-- Slide 6: Data block concept -->
+  <section class="slide" data-notes="The one concept, ~1.5 min. Everything else today hangs off it.">
+    <h2>One idea to hold onto</h2>
+    <h1>The data block is what flows between the tools.</h1>
+    <ul>
+      <li>Your imported dataset is a data block. A filter, a join, an analysis result: each becomes a <strong>new block</strong>, ready for any tool to read.</li>
+      <li>Every tool is a <strong>lens</strong>. Click <strong>Add to Project</strong> and its results feed the next tool.</li>
+      <li>The graph <em>is</em> your method: every step visible, every derivation traceable.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 7: Today's data -->
+  <section class="slide" data-notes="Data Loader, Import sample data, the two RAPID-CDL collections. Each has three files: the paragraphs, the same paragraphs with the one before and after (for reading in context), and speaker details to join on speaker_detail_id for name, gender and party. Both are big: sampling or filtering first keeps things quick.">
+    <h2>Today's data: two slices of Hansard</h2>
+    <p>From Sam's <strong>RAPID-CDL</strong> database, now in Wordflow's <strong>Import sample data</strong> list:</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>GST</h3>
+        <p>Every paragraph mentioning GST or the goods and services tax, <strong>1998-2026</strong>: <strong>40,860</strong> paragraphs, about 4.1 million words. Mentions peak around its introduction on 1 July 2000.</p>
+      </div>
+      <div class="card">
+        <h3>Housing</h3>
+        <p>Paragraphs about housing, homelessness, first home buyers, mortgages, negative gearing, renting: <strong>76,312</strong> paragraphs, about 8.5 million words. The most recent years are the busiest.</p>
+      </div>
+    </div>
+    <p style="margin-top: 1em;">Each comes with sitting date, chamber and debate title, a version with the paragraph <strong>before and after</strong> each one, and a <strong>speaker table</strong> to join (name, gender, party).</p>
+    <p class="small">Hames, S., &amp; Alpert, E. (2026). <em>Proceedings of Australian Federal Parliament: An Analytical Database</em> (Version 2026-09-21). Zenodo. doi.org/10.5281/zenodo.22868754 · CC BY-NC-ND 4.0</p>
+  </section>
+
+  <!-- Slide 8: Things to try -->
+  <section class="slide" style="padding-top: 4vh; padding-bottom: 9vh;" data-notes="A menu, not a pathway. Demo two or three that the room is curious about; ask what they'd look for. Tip for big blocks: Data Builder, Sample or Filter first, especially before Topic Modelling. New since the August recordings: the Data Editor's column tools (Find &amp; replace, Clean text, Extract, Split, Combine, Count, Duplicate); Count gives a word count per paragraph.">
+    <h2>Some things to try</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>Over time</h3>
+        <ul>
+          <li><strong>Trends</strong>: how often "GST" or "negative gearing" comes up, year by year</li>
+          <li>Split by chamber, or by party after joining the speaker table</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Who says what</h3>
+        <ul>
+          <li><strong>Frequency</strong>: compare the words of two parties, or House vs Senate</li>
+          <li>Right-click a word to drop it as a stop word; click it to see it in context</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Close reading</h3>
+        <ul>
+          <li><strong>Concordance</strong>: every use of "first home buyers" or "housing affordability", in context</li>
+          <li>Open the full paragraph, and the ones around it</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Themes</h3>
+        <ul>
+          <li><strong>Topic Modelling</strong>: what the housing debates are about, and how that shifts across parliaments</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Shaping</h3>
+        <ul>
+          <li><strong>Data Builder</strong>: filter to a decade, a debate or a speaker; join the speaker details</li>
+          <li><strong>Data Editor</strong>: clean text, count words, split or combine columns</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Coding</h3>
+        <ul>
+          <li><strong>Annotation</strong>: classify paragraphs yourself or with a GenAI model, and measure agreement</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top: 1em;">Big blocks: <strong>Sample</strong> or <strong>Filter</strong> in the Data Builder first to keep things quick, especially before Topic Modelling.</p>
+  </section>
+
+  <!-- Slide 9: Spotlight -->
+  <section class="slide spotlight" data-notes="Wrap-up line. Say it slowly.">
+    <h1>Reshape the data,</h1>
+    <h1 style="margin-top: 0;">and the same tool tells a new story.</h1>
+    <p class="pullquote" style="margin-top: 2em;">Every tool is a lens. The interesting question is which lens, on which slice, for what purpose, and that's by your design.</p>
+  </section>
+
+  <!-- Slide 10: Keep going -->
+  <section class="slide resources" data-notes="Leave this up at the end and during questions. Recordings were made on an earlier v0.7 release; the design is essentially unchanged. Ask for feedback via the in-app Feedback button.">
+    <h2>Keep going</h2>
+    <div class="grid2" style="margin-top: 0.4em;">
+      <div class="card">
+        <h3>Get Wordflow</h3>
+        <p><a href="https://sih.tools/wordflow">sih.tools/wordflow</a>: downloads for Mac and Windows, the browser option, and the documentation.</p>
+        <p>In the app: <strong>Help</strong> for the built-in docs, <strong>Feedback</strong> to tell us what you think.</p>
+      </div>
+      <div class="card">
+        <h3>Watch the full workshop (3 hours)</h3>
+        <p><strong>Wordflow from zero</strong>, every tool step by step (90 min): <a href="https://youtu.be/ExYVSgvYIes">youtu.be/ExYVSgvYIes</a></p>
+        <p><strong>Coding text with GenAI</strong>, the Annotation tool (90 min): <a href="https://youtu.be/KcjJViYRYX4">youtu.be/KcjJViYRYX4</a></p>
+        <p class="small">Recorded in August on an earlier v0.7 release. The design is the same, but a few names have changed: Preprocessing is now <strong>Data Builder</strong>, and the Data View is now the <strong>Data Editor</strong>, with new text-cleaning tools.</p>
+      </div>
+      <div class="card">
+        <h3>The Hansard data</h3>
+        <p>Full database: <a href="https://doi.org/10.5281/zenodo.22868754">doi.org/10.5281/zenodo.22868754</a> (RAPID-CDL, Hames &amp; Alpert 2026)</p>
+        <p>More from RAPID-CDL: <a href="https://rapid-cdl.edu.au">rapid-cdl.edu.au</a></p>
+      </div>
+      <div class="card">
+        <h3>Cite Wordflow &amp; get in touch</h3>
+        <p>Cite: <a href="https://doi.org/10.5281/zenodo.20408328">doi.org/10.5281/zenodo.20408328</a> (always the latest release)</p>
+        <p>Questions, or want Wordflow for your team? <a href="mailto:chao.sun@sydney.edu.au">chao.sun@sydney.edu.au</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branding strip template: cloned by JS into slides 2+ -->
+  <template id="brand-footer-tpl">
+    <div class="brand-footer">
+      <img class="logo-ldaca" src="images/logos/ldaca-dark.svg" alt="LDaCA — Language Data Commons of Australia">
+      <img class="logo-ardc" src="images/logos/ardc.svg" alt="ARDC — Australian Research Data Commons">
+      <img class="logo-ncris" src="images/logos/ausgov-ncris.png" alt="Australian Government — NCRIS, National Research Infrastructure for Australia">
+      <span class="brand-divider"></span>
+      <img class="logo-scl" src="images/logos/sydney-corpus-lab.png" alt="Sydney Corpus Lab">
+      <a href="https://informatics.sydney.edu.au" target="_blank" rel="noopener"><img class="logo-sih" src="images/logos/sih-usyd.png" alt="The University of Sydney — Sydney Informatics Hub"></a>
+    </div>
+  </template>
+</div>
+
+<div class="chrome">
+  <span id="slide-counter">1 / 11</span>
+  <span>←/→ navigate · N toggle notes · F fullscreen</span>
+</div>
+<div class="notes" id="notes"></div>
+<div class="hint" id="hint">Press F for fullscreen, N for speaker notes</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('section.slide'));
+  // Branding strip on every slide except the title, the interface screenshot and the resources slide
+  const brandTpl = document.getElementById('brand-footer-tpl');
+  slides.forEach((sl, i) => {
+    if (i >= 1 && !sl.classList.contains('ui-overview-slide') && !sl.classList.contains('resources')) {
+      sl.appendChild(brandTpl.content.cloneNode(true));
+    }
+  });
+  const notesEl = document.getElementById('notes');
+  const counter = document.getElementById('slide-counter');
+  const hint = document.getElementById('hint');
+  let idx = 0;
+  let notesOn = false;
+
+  function render() {
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    counter.textContent = `${idx + 1} / ${slides.length}`;
+    const notes = slides[idx].dataset.notes || '';
+    notesEl.innerHTML = notes
+      ? `<h4>Speaker notes · slide ${idx + 1}</h4><p>${notes}</p>`
+      : `<h4>Slide ${idx + 1}</h4><p style="opacity:0.6">(no notes)</p>`;
+    notesEl.classList.toggle('show', notesOn);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { idx = Math.min(idx + 1, slides.length - 1); render(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { idx = Math.max(idx - 1, 0); render(); }
+    else if (e.key === 'Home') { idx = 0; render(); }
+    else if (e.key === 'End') { idx = slides.length - 1; render(); }
+    else if (e.key.toLowerCase() === 'n') { notesOn = !notesOn; render(); }
+    else if (e.key.toLowerCase() === 'f') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  setTimeout(() => { hint.style.opacity = '0'; hint.style.transition = 'opacity 1s'; }, 5000);
+
+  render();
+</script>
+</body>
+</html>

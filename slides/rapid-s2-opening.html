@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Proceedings of Federal Parliament · Opening</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  :root {
+    --ink: #1a1d24;
+    --paper: #fdfcf8;
+    --accent: #c8423e;
+    --accent-soft: #f3d6d5;
+    --muted: #6b6f78;
+    --rule: #d9d4c8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+  }
+  .deck { position: relative; width: 100vw; height: 100vh; }
+  section.slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6vh 8vw;
+    overflow: auto;
+  }
+  section.slide.active { display: flex; }
+  section.slide h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.6em;
+    letter-spacing: -0.01em;
+  }
+  section.slide h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.8em;
+  }
+  section.slide p, section.slide li {
+    font-size: clamp(1.1rem, 1.7vw, 1.6rem);
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+  }
+  section.slide ul { margin-left: 2em; margin-top: 0.8em; }
+  section.slide li { margin-bottom: 0.6em; }
+  section.slide code { background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px; }
+  section.slide.dark {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.dark h1 { color: var(--paper); }
+  section.slide.dark h2 { color: var(--accent); }
+  section.slide.dark p { color: var(--paper); opacity: 0.85; }
+  .ack-body {
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem) !important;
+    line-height: 1.55 !important;
+    max-width: 30em;
+    opacity: 1 !important;
+  }
+  .ack-body strong { font-weight: 600; }
+  .hosts {
+    margin-top: 3em;
+    font-size: clamp(0.9rem, 1.3vw, 1.15rem) !important;
+    opacity: 0.75 !important;
+    max-width: 50em;
+  }
+  .title-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4vw;
+    margin-top: 3vh;
+    background: rgba(253, 252, 248, 0.95);
+    border-radius: 999px;
+    padding: 1vh 2.4vw;
+  }
+  .title-logos img { display: block; }
+  .title-logos .logo-ardc { height: 4.4vh; }
+  .title-logos .logo-ncris { height: 5.6vh; }
+  .title-logos .logo-scl { height: 5vh; }
+  .title-logos .logo-sih { height: 6vh; }
+  .title-logos .divider { width: 1px; height: 5vh; background: var(--rule); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2vw; margin-top: 0.6em; }
+  .card { background: var(--accent-soft); padding: 1.2em 1.4em; border-radius: 12px; }
+  .card h3 { color: var(--accent); font-size: clamp(1.2rem, 2vw, 1.7rem); margin-bottom: 0.4em; }
+  .card p, .card li { font-size: clamp(1rem, 1.45vw, 1.35rem) !important; line-height: 1.45 !important; margin-bottom: 0.35em !important; }
+  .card ul { margin: 0.2em 0 0 1.1em !important; }
+  .timeline { margin-top: 1em; border-collapse: collapse; font-size: clamp(1.1rem, 1.7vw, 1.6rem); }
+  .timeline td { padding: 0.5em 1.2em 0.5em 0; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  .timeline td:first-child { font-weight: 600; white-space: nowrap; color: var(--accent); }
+  .chrome {
+    position: fixed; bottom: 1.5vh; left: 0; right: 0;
+    display: flex; justify-content: space-between; padding: 0 2vw;
+    pointer-events: none; font-size: 0.85rem; color: var(--muted);
+  }
+  .chrome > span { background: var(--paper); padding: 0.3em 0.7em; border-radius: 4px; }
+  .notes {
+    position: fixed; bottom: 0; left: 0; right: 0; max-height: 35vh; overflow: auto;
+    background: rgba(26, 29, 36, 0.97); color: var(--paper); padding: 1.5em 3em;
+    border-top: 3px solid var(--accent); display: none; font-size: 0.95rem; line-height: 1.5;
+  }
+  .notes.show { display: block; }
+  .notes h4 { color: var(--accent-soft); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; margin-bottom: 0.5em; }
+  @media print {
+    @page { size: 1280px 720px; margin: 0; }
+    html, body { height: auto; overflow: visible; background: #fff; }
+    .deck { position: static; width: auto; height: auto; }
+    section.slide {
+      position: relative !important; inset: auto !important; display: flex !important;
+      width: 1280px; height: 720px; overflow: hidden;
+      page-break-after: always; break-after: page;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+    section.slide:last-child { page-break-after: avoid; break-after: auto; }
+    .chrome, .notes { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- Slide 1: Welcome. RAPID-CDL session: no LDaCA branding. -->
+  <section class="slide dark active" data-notes="Chao opens as the University of Sydney host. Welcome everyone, thank them for coming early. One line on the series: yesterday's qualitative transcripts session, this morning's two Parliament sessions. Then the Acknowledgement.">
+    <h2>Welcome</h2>
+    <h1>Getting started with the Proceedings of Federal Parliament in your research</h1>
+    <p style="margin-top: 1em; font-size: 1.3rem;"><strong>Sam Hames</strong> · RAPID-CDL, The University of Queensland</p>
+    <p style="margin-top: 0.3em; font-size: 0.95rem; opacity: 0.7;">Wednesday 30 September 2026 · 9:15-10:45 am · Western Tower Boardroom, The Quadrangle</p>
+    <p class="hosts">Hosted by the <strong>RAPID-CDL</strong> project and the <strong>Sydney Informatics Hub</strong>, co-hosted by the <strong>Sydney Corpus Lab</strong> and the <strong>Computational Social Science Lab</strong>, The University of Sydney</p>
+    <div class="title-logos">
+      <img class="logo-ardc" src="images/logos/ardc.svg" alt="ARDC — Australian Research Data Commons">
+      <img class="logo-ncris" src="images/logos/ausgov-ncris.png" alt="Australian Government — NCRIS">
+      <span class="divider"></span>
+      <img class="logo-scl" src="images/logos/sydney-corpus-lab.png" alt="Sydney Corpus Lab">
+      <img class="logo-sih" src="images/logos/sih-usyd.png" alt="The University of Sydney — Sydney Informatics Hub">
+    </div>
+  </section>
+
+  <!-- Slide 2: Acknowledgement of Country (in person) -->
+  <section class="slide dark" data-notes="Speak slowly. 30-45 seconds, then a pause before moving on.">
+    <h2>Acknowledgement of Country</h2>
+    <p class="ack-body">
+      We acknowledge the <strong>Gadigal people of the Eora Nation</strong>, the Traditional Custodians of the land on which we meet today.
+    </p>
+    <p class="ack-body" style="margin-top: 1.2em;">
+      We pay our respects to Elders past and present, and extend that respect to any Aboriginal and Torres Strait Islander people here with us.
+    </p>
+  </section>
+
+  <!-- Slide 3: Housekeeping. Toilets from the University's MazeMap data (A14.04.H4.03 male,
+       H4.04A female, H4.05 all-gender accessible, beside lift H4.00A and the MacLaurin Hall
+       kitchen H4.06). Evacuation steps from sydney.edu.au "Emergencies and personal safety".
+       No assembly area is published for A14: read it off the evacuation diagram on the day. -->
+  <section class="slide" data-notes="On arrival: walk to the toilets once to confirm the route, and read the assembly area off the evacuation diagram near the door or the lift, then say it aloud here. Ask anyone who'd need help evacuating to let you know quietly.">
+    <h2>Before we start</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Toilets</h3>
+        <p>Out of the door, <strong>turn left</strong> and follow the corridor to the end. The male and all-gender accessible toilets are opposite the MacLaurin Hall kitchen; the female toilet is just around the corner to the right, by the stairs.</p>
+        <h3 style="margin-top: 0.8em;">Emergency numbers</h3>
+        <p><strong>000</strong> for police, fire or ambulance</p>
+        <p><strong>02 9351 3333</strong> for campus security (Protective Services), 24/7, or the <strong>SafeZone</strong> app</p>
+      </div>
+      <div class="card">
+        <h3>If the alarm sounds</h3>
+        <ul>
+          <li>Leave calmly by the <strong>nearest exit</strong>, following the green exit signs.</li>
+          <li>Take the <strong>stairs, not the lift</strong>.</li>
+          <li>Follow the wardens' instructions to the <strong>assembly area</strong> shown on the evacuation diagram by the door.</li>
+          <li>Don't go back in until you're told it's safe.</li>
+        </ul>
+        <p style="margin-top: 0.6em;">Would you need help to evacuate? Please let us know now, quietly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4: This morning -->
+  <section class="slide" data-notes="Quick housekeeping: eduroam, facilities. Plug the 11:00 session: same room, and anyone joining it can set up Wordflow in the break (sih.tools/wordflow; desktop app recommended). Then: 'Over to Sam.'">
+    <h2>This morning, in this room</h2>
+    <table class="timeline">
+      <tr><td>9:15</td><td><strong>Getting started with the Proceedings of Federal Parliament</strong>: where the debates come from, and how to find the ones you need</td></tr>
+      <tr><td>10:45</td><td>Short break</td></tr>
+      <tr><td>11:00</td><td><strong>Analysing parliamentary discourse at scale with Wordflow</strong>: thousands of debates at once, in a free point-and-click app. All welcome, even if you haven't registered.</td></tr>
+    </table>
+    <p style="margin-top: 1.5em;">Staying for 11:00? Use the break to set up Wordflow: <code>sih.tools/wordflow</code></p>
+    <p style="margin-top: 1.5em; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 600;">Over to Sam.</p>
+  </section>
+
+</div>
+
+<div class="chrome">
+  <span id="slide-counter">1 / 4</span>
+  <span>←/→ navigate · N toggle notes · F fullscreen</span>
+</div>
+<div class="notes" id="notes"></div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('section.slide'));
+  const notesEl = document.getElementById('notes');
+  const counter = document.getElementById('slide-counter');
+  let idx = 0;
+  let notesOn = false;
+
+  function render() {
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    counter.textContent = `${idx + 1} / ${slides.length}`;
+    const notes = slides[idx].dataset.notes || '';
+    notesEl.innerHTML = notes
+      ? `<h4>Speaker notes · slide ${idx + 1}</h4><p>${notes}</p>`
+      : `<h4>Slide ${idx + 1}</h4><p style="opacity:0.6">(no notes)</p>`;
+    notesEl.classList.toggle('show', notesOn);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { idx = Math.min(idx + 1, slides.length - 1); render(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { idx = Math.max(idx - 1, 0); render(); }
+    else if (e.key === 'Home') { idx = 0; render(); }
+    else if (e.key === 'End') { idx = slides.length - 1; render(); }
+    else if (e.key.toLowerCase() === 'n') { notesOn = !notesOn; render(); }
+    else if (e.key.toLowerCase() === 'f') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  render();
+</script>
+</body>
+</html>
