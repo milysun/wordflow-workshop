@@ -9,7 +9,7 @@ Three-session in-person series co-hosted by LDaCA, RAPID-CDL, SIH, the Sydney Co
 
 ## Branding
 
-RAPID-CDL is NOT part of LDaCA, so Session 2 materials must not carry LDaCA branding or the LDaCA logo. RAPID is an ARDC-sponsored project under the Community Data Lab (CDL), so ARDC-related logos can be used for Session 2. LDaCA branding applies to Session 1 and to Wordflow itself in Session 3.
+RAPID-CDL is NOT part of LDaCA, so Session 2 materials must not carry LDaCA branding or the LDaCA logo. RAPID is an ARDC-sponsored project under the Community Data Lab (CDL), so ARDC-related logos can be used for Session 2. Session 1 is also a RAPID-CDL workshop, not an LDaCA one (Chao, 2026-09-28): its hosts are RAPID-CDL, the Sydney Corpus Lab, the Computational Social Science Lab and SIH, with no LDaCA branding. LDaCA branding applies to Wordflow itself in Session 3.
 
 ## General blurb
 
