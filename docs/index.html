@@ -106,6 +106,7 @@
     color: var(--paper);
   }
   .btn-primary:hover { background: #b8362f; }
+  .actions-primary { display: flex; flex-wrap: wrap; gap: 12px; }
   .btn-secondary {
     background: var(--paper);
     color: var(--ink);
@@ -232,9 +233,14 @@
 </header>
 
 <div class="wrap actions">
+  <div class="actions-primary">
   <a class="btn btn-primary" href="https://binderhub.rc.nectar.org.au/v2/gh/Australian-Text-Analytics-Platform/LDaCa_Text_Analytics_Tools/main?labpath=index.ipynb">
     Launch Wordflow in Binder <span class="arrow">→</span>
   </a>
+  <a class="btn btn-primary" href="https://wordflow.ldaca.edu.au">
+    Open Wordflow online <span class="arrow">→</span>
+  </a>
+  </div>
   <div class="actions-secondary">
     <a class="btn btn-secondary" href="https://github.com/Australian-Text-Analytics-Platform/ldaca-wordflow/releases/download/v0.7.14/ldaca-wordflow_0.7.14_darwin-aarch64.dmg">
       Download for macOS <span class="arrow">→</span>
@@ -244,7 +250,7 @@
     </a>
   </div>
   <p class="btn-note">
-    Binder takes about a minute to spin up. The desktop app is recommended for serious work and as a backup if Binder is slow. The macOS installer is for Apple Silicon Macs.
+    Binder takes about a minute to spin up and needs an Australian or New Zealand institutional sign-in. Wordflow online (wordflow.ldaca.edu.au) is open to researchers anywhere: sign in through CILogon and your Projects are kept for next time. The desktop app is recommended for serious work and as a backup if Binder is slow. The macOS installer is for Apple Silicon Macs.
   </p>
 </div>
 
