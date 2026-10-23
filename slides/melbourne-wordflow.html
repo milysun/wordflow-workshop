@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wordflow in Melbourne · MDAP workshop</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  :root {
+    --ink: #1a1d24;
+    --paper: #fdfcf8;
+    --accent: #c8423e;
+    --accent-soft: #f3d6d5;
+    --spotlight-bg: #1a1d24;    /* same dark ink as the section dividers; calm at full-slide size */
+    --muted: #6b6f78;
+    --rule: #d9d4c8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+  }
+  .deck { position: relative; width: 100vw; height: 100vh; }
+  section.slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6vh 8vw;
+    overflow: auto;
+  }
+  section.slide.active { display: flex; }
+  section.slide h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.6em;
+    letter-spacing: -0.01em;
+  }
+  section.slide h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.8em;
+  }
+  section.slide h3 {
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+  section.slide p, section.slide li {
+    font-size: clamp(1.1rem, 1.7vw, 1.6rem);
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+  }
+  section.slide ul, section.slide ol {
+    margin-left: 2em;
+    margin-top: 0.8em;
+  }
+  section.slide li { margin-bottom: 0.6em; }
+  section.slide .meta {
+    color: var(--muted);
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  section.slide .pullquote {
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--ink);
+    padding: 0.5em 0;
+    border-left: 6px solid var(--accent);
+    padding-left: 1em;
+    margin: 1em 0;
+  }
+  section.slide .accent { color: var(--accent); font-weight: 600; }
+  section.slide .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+    margin-top: 1em;
+  }
+  section.slide .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5vw;
+    margin-top: 1em;
+  }
+  section.slide .card {
+    background: var(--accent-soft);
+    padding: 1.5em;
+    border-radius: 12px;
+  }
+  section.slide .card h3 { color: var(--accent); margin-bottom: 0.3em; }
+  section.slide .card p {
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
+    margin: 0;
+  }
+  section.slide .card code { font-size: 0.85em; }
+  section.slide table {
+    border-collapse: collapse;
+    margin-top: 1em;
+    font-size: clamp(0.95rem, 1.4vw, 1.3rem);
+  }
+  section.slide th, section.slide td {
+    border: 1px solid var(--rule);
+    padding: 0.5em 1em;
+    text-align: left;
+  }
+  section.slide th { background: var(--accent-soft); }
+  section.slide.title-slide {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.title-slide h1 { color: var(--paper); }
+  section.slide.title-slide h2 { color: var(--accent); }
+  section.slide.title-slide p { color: var(--paper); opacity: 0.85; }
+  section.slide.spotlight {
+    background: var(--spotlight-bg);
+    color: var(--paper);
+    align-items: center;
+    text-align: center;
+  }
+  section.slide.spotlight h1, section.slide.spotlight p {
+    color: var(--paper);
+  }
+  section.slide.spotlight h2 { color: var(--accent); }
+  section.slide.spotlight .pullquote {
+    border-left-color: var(--paper);
+    color: var(--paper);
+  }
+  /* Numbered lists on centered spotlight slides: keep the block centered but
+     the text left-aligned, so list numbers hang consistently. */
+  section.slide.spotlight ol {
+    text-align: left;
+    margin: 0.8em auto 0;
+    max-width: 44em;
+  }
+  section.slide.section-divider {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.section-divider h1 { color: var(--paper); font-size: clamp(3rem, 7vw, 6rem); }
+  section.slide.section-divider h2 { color: var(--accent); }
+  section.slide.section-divider p { color: var(--paper); opacity: 0.75; }
+  section.slide.acknowledgement {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+  section.slide.acknowledgement h2 { color: var(--accent); }
+  section.slide.acknowledgement .ack-body {
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+    line-height: 1.55;
+    max-width: 30em;
+    font-weight: 400;
+    color: var(--paper);
+  }
+  section.slide.acknowledgement .ack-body strong { color: var(--paper); font-weight: 600; }
+  /* Data acknowledgements slide */
+  section.slide.acknowledgements-slide {
+    padding: 3vh 5vw;
+    justify-content: flex-start;
+  }
+  section.slide.acknowledgements-slide h2 { margin-bottom: 0.4em; }
+  section.slide.acknowledgements-slide .ack-intro {
+    font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+    color: var(--muted);
+    font-style: italic;
+    max-width: 52em;
+    margin-bottom: 1.2em;
+    line-height: 1.45;
+  }
+  section.slide.acknowledgements-slide .ack-block {
+    margin-bottom: 1em;
+    padding-left: 1em;
+    border-left: 3px solid var(--accent-soft);
+  }
+  section.slide.acknowledgements-slide .ack-block h3 {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    color: var(--accent);
+    margin-bottom: 0.15em;
+    font-weight: 600;
+  }
+  section.slide.acknowledgements-slide .ack-block p {
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    margin-bottom: 0.2em;
+    line-height: 1.45;
+  }
+  section.slide.acknowledgements-slide .ack-block .citation {
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+    color: var(--muted);
+  }
+  section.slide.acknowledgements-slide a { color: var(--accent); text-decoration: none; }
+  section.slide.acknowledgements-slide a:hover { text-decoration: underline; }
+  /* Project + team slide */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    margin: 1.2em 0;
+    align-items: start;
+  }
+  .team-card { text-align: center; }
+  .team-card img {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 0.7em;
+    border: 4px solid var(--accent-soft);
+    background: var(--accent-soft);
+  }
+  .team-card .team-name {
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    margin-bottom: 0.2em;
+    line-height: 1.2;
+  }
+  .team-card .team-role {
+    color: var(--muted);
+    font-size: clamp(0.85rem, 1.15vw, 1.05rem);
+    line-height: 1.35;
+  }
+  section.slide p.team-attribution {
+    margin-top: 1em;
+    text-align: center;
+    max-width: 52em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .chrome {
+    position: fixed;
+    bottom: 1.5vh;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    pointer-events: none;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .chrome > span { background: var(--paper); padding: 0.3em 0.7em; border-radius: 4px; }
+  .notes {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    max-height: 35vh;
+    overflow: auto;
+    background: rgba(26, 29, 36, 0.97);
+    color: var(--paper);
+    padding: 1.5em 3em;
+    border-top: 3px solid var(--accent);
+    display: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .notes.show { display: block; }
+  .notes h4 {
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    margin-bottom: 0.5em;
+  }
+  /* Branding strip: injected by JS into every slide from #3 onward (inside the
+     section, so it prints per-slide). White pill keeps logos legible on dark
+     divider/spotlight slides. SIH logo links to informatics.sydney.edu.au. */
+  .brand-footer {
+    position: absolute;
+    bottom: 1.2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.6vw;
+    background: rgba(253, 252, 248, 0.95);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.8vh 1.6vw;
+    z-index: 3;
+  }
+  .brand-footer img { display: block; }
+  .brand-footer .logo-ldaca { height: 2.6vh; }
+  .brand-footer .logo-ardc { height: 3.4vh; }
+  .brand-footer .logo-ncris { height: 4.2vh; }
+  .brand-footer .brand-divider { width: 1px; height: 4vh; background: var(--rule); }
+  .brand-footer .logo-scl { height: 3.8vh; }
+  .brand-footer .logo-sih { height: 4.6vh; }
+  .brand-footer a { display: block; line-height: 0; }
+  /* Title-slide logo row: LDaCA + SIH only (white variants on the ink background) */
+  .title-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4vw;
+    margin-top: 4.5vh;
+  }
+  .title-logos img { display: block; }
+  .title-logos .logo-ldaca-lg { height: 4.5vh; }
+  .title-logos .logo-sih-lg { height: 8vh; }
+  .title-logos .title-divider { width: 1px; height: 5.5vh; background: rgba(253, 252, 248, 0.35); }
+  .hint {
+    position: fixed;
+    top: 1vh;
+    right: 2vw;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: var(--paper);
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    opacity: 0.6;
+  }
+  /* UI overview slide */
+  section.slide.ui-overview-slide {
+    padding: 2vh 4vw 8vh;
+    justify-content: flex-start;
+  }
+  section.slide.ui-overview-slide h2 { margin-bottom: 0.3em; }
+  /* The screenshot flex-grows into whatever height the title + legend leave
+     over, so it fills the slide on any screen aspect ratio. */
+  .ui-overview-container {
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin: 0.5vh auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ui-overview-container .ui-overview-figure {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    height: 100%;
+  }
+  .ui-overview-container img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+  .ui-overview-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+  }
+  .ui-overview-legend {
+    flex: 0 0 auto;
+    counter-reset: ui-item;
+    columns: 2;
+    column-gap: 2.5em;
+    margin-top: 0.5em;
+    padding: 0;
+    list-style: none;
+    font-size: clamp(0.78rem, 1.05vw, 1rem);
+  }
+  .ui-overview-legend li {
+    counter-increment: ui-item;
+    margin-bottom: 0.25em;
+    break-inside: avoid;
+    padding-left: 2.4em;
+    position: relative;
+    line-height: 1.3;
+  }
+  .ui-overview-legend li::before {
+    content: counter(ui-item);
+    position: absolute;
+    left: 0; top: 0;
+    width: 1.7em; height: 1.7em;
+    background: var(--accent);
+    color: var(--paper);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+  }
+
+
+  /* RAPID Session 3 additions */
+  section.slide code { background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 4px; font-size: 0.9em; }
+  section.slide.spotlight code, section.slide.title-slide code { color: var(--ink); }
+  section.slide .card ul { margin: 0.4em 0 0 1.1em; }
+  section.slide .card li { font-size: clamp(0.95rem, 1.3vw, 1.2rem); margin-bottom: 0.3em; line-height: 1.4; }
+  section.slide .small { font-size: clamp(0.85rem, 1.2vw, 1.05rem); color: var(--muted); }
+  section.slide .stat-row { display: flex; gap: 2vw; margin: 0.8em 0 0.4em; }
+  section.slide .stat { flex: 1; border-top: 4px solid var(--accent); padding-top: 0.5em; }
+  section.slide .stat .n { font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.1; }
+  section.slide .stat .l { font-size: clamp(0.9rem, 1.3vw, 1.2rem); color: var(--muted); }
+  section.slide.resources { padding: 4vh 6vw 10vh; justify-content: flex-start; }
+  section.slide.resources .card { padding: 1.1em 1.3em; }
+  section.slide.resources .card p { font-size: clamp(0.95rem, 1.3vw, 1.2rem); margin-bottom: 0.35em; }
+  section.slide.resources a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  section.slide.resources a:hover { text-decoration: underline; }
+
+  /* Print / Save-as-PDF */
+  @media print {
+    @page { size: 1280px 720px; margin: 0; }
+    html, body { height: auto; overflow: visible; background: #fff; }
+    .deck { position: static; width: auto; height: auto; }
+    section.slide {
+      position: relative !important;
+      inset: auto !important;
+      display: flex !important;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    section.slide:last-child { page-break-after: avoid; break-after: auto; }
+    .chrome, .notes, .hint { display: none !important; }
+  }
+  /* Placeholders still to fill before the day (orange, so they can't be missed) */
+  section.slide .todo { color: #d9730d; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- Slide 1: Title -->
+  <section class="slide title-slide active" data-notes="On screen as people arrive, with the step-sheet link on the next slide ready. Welcome; thank MDAP for hosting. Our first Wordflow workshop outside Sydney.">
+    <h2>Melbourne Data Analytics Platform · LDaCA · Sydney Informatics Hub</h2>
+    <h1>Point-and-click text analytics: an introduction to LDaCA Wordflow</h1>
+    <p style="margin-top: 1.6em; font-size: 1.3rem;">A hands-on afternoon: shape your data, look through the lenses, find topics, and code text with GenAI</p>
+    <p style="margin-top: 2.2em; font-size: 0.95rem;"><strong>Dr Chao Sun</strong> · Sydney Informatics Hub, The University of Sydney</p>
+    <p style="margin-top: 0.3em; font-size: 0.85rem; opacity: 0.7;">Monday 26 October 2026 · 2:00-5:00 pm · Meeting Room M03, Mezzanine, Melbourne Connect</p>
+    <div class="title-logos">
+      <img class="logo-ldaca-lg" src="images/logos/ldaca-light.svg" alt="LDaCA: Language Data Commons of Australia">
+      <span class="title-divider"></span>
+      <img class="logo-sih-lg" src="images/logos/sih-usyd-white.svg" alt="The University of Sydney: Sydney Informatics Hub">
+    </div>
+  </section>
+
+  <!-- Slide 2: Setup, on screen while people arrive -->
+  <section class="slide" data-notes="Leave this up while people settle. Helpers walk the room checking the version. The update takes about a minute; nobody needs to wait for it to start listening.">
+    <h2>While we get started</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>1. Open Wordflow</h3>
+        <p>It offers an <strong>update</strong> when it starts: accept it. No prompt? <strong>Help → Check for Updates</strong>.</p>
+        <p style="margin-top: 0.6em;">Not installed? <code>sih.tools/wordflow</code>: the desktop app for Mac or Windows, or <strong>Launch in Binder</strong> in your browser.</p>
+      </div>
+      <div class="card">
+        <h3>2. Open the step sheet</h3>
+        <p class="todo">⟨short link and QR code to participant/hands-on-melbourne.md⟩</p>
+        <p style="margin-top: 0.6em;">Every step we do together is on it, with an Explore card for each part, and catch-up files if you fall behind.</p>
+      </div>
+    </div>
+    <p style="margin-top: 1em;">Wi-Fi: <strong>eduroam</strong>. Stuck at any point? Put your hand up: a helper will come to you.</p>
+  </section>
+
+  <!-- Slide 3: Housekeeping -->
+  <section class="slide" data-notes="Confirm the details with MDAP at 1:15 and fill the orange items. Name the assembly area from the evacuation diagram by the door.">
+    <h2>Before we start</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Toilets</h3>
+        <p class="todo">⟨directions from M03, from MDAP⟩</p>
+        <h3 style="margin-top: 0.8em;">Emergency numbers</h3>
+        <p><strong>000</strong> for police, fire or ambulance</p>
+        <p class="todo">⟨University of Melbourne campus security number, from MDAP⟩</p>
+      </div>
+      <div class="card">
+        <h3>If the alarm sounds</h3>
+        <ul>
+          <li>Leave calmly by the <strong>nearest exit</strong>, following the green exit signs.</li>
+          <li>Take the <strong>stairs, not the lift</strong>.</li>
+          <li>Follow the wardens to the <strong>assembly area</strong> shown on the evacuation diagram by the door.</li>
+          <li>Don't go back in until you're told it's safe.</li>
+        </ul>
+        <p style="margin-top: 0.6em;">Would you need help to evacuate? Please let us know now, quietly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4: Acknowledgement of Country -->
+  <section class="slide spotlight" data-notes="Check the University of Melbourne's preferred wording with MDAP.">
+    <h2>Acknowledgement of Country</h2>
+    <p class="pullquote">We acknowledge the Wurundjeri Woi-wurrung people of the Kulin Nation, the Traditional Owners of the land on which we meet today, and pay our respects to their Elders past and present.</p>
+  </section>
+
+  <!-- Slide 5: How this afternoon works -->
+  <section class="slide" data-notes="Set the contract: this is hands-on, at the room's pace. Short demos, then your turn. The Explore time is yours: try the card, try Hansard, or try your own data. If you fall behind, load the checkpoint and carry on; nobody needs to finish everything. Zoom joiners: same sheet, same checkpoints, questions in the chat.">
+    <h2>How this afternoon works</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>Show</h3>
+        <p>A few minutes on screen: what a tool is for, and one step.</p>
+      </div>
+      <div class="card">
+        <h3>Do it together</h3>
+        <p>The same steps on your laptop, following the step sheet.</p>
+      </div>
+      <div class="card">
+        <h3>Explore</h3>
+        <p>Your time: the Explore card, the Hansard data, or your own. Helpers come to you.</p>
+      </div>
+    </div>
+    <ul style="margin-top: 1em;">
+      <li><strong>Fallen behind?</strong> Each part has a <strong>checkpoint</strong>: a Project file you import to catch up in under a minute.</li>
+      <li><strong>Ask any time.</strong> "Can it do X?" and ideas from your own research are the best part of the room.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 6: Who built this -->
+  <section class="slide" data-notes="About 1 minute. Attribution chain: team, University of Sydney, LDaCA, ARDC/NCRIS. Thank MDAP for hosting and the helpers in the room.">
+    <h2>Who built Wordflow?</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="images/team/Chao_Sun.jpg" alt="Dr Chao Sun">
+        <div class="team-name">Dr Chao Sun</div>
+        <div class="team-role">Project tech lead<br>Sydney Informatics Hub</div>
+      </div>
+      <div class="team-card">
+        <img src="images/team/Senhui_Guo.jpg" alt="Dr Alex Guo">
+        <div class="team-name">Dr Alex Guo</div>
+        <div class="team-role">Principal developer<br>Sydney Informatics Hub</div>
+      </div>
+      <div class="team-card">
+        <img src="images/team/Monika_Bednarek.jpg" alt="Prof. Monika Bednarek">
+        <div class="team-name">Prof. Monika Bednarek</div>
+        <div class="team-role">Academic lead<br>Sydney Corpus Lab</div>
+      </div>
+    </div>
+    <p class="team-attribution">All at the <strong>University of Sydney</strong>, a <strong>partner institution</strong> of the <strong>Language Data Commons of Australia (LDaCA)</strong> (DOI: 10.3565/kq2v-9g52), a <strong>co-investment partnership with the Australian Research Data Commons (ARDC)</strong> through the HASS and Indigenous Research Data Commons. The ARDC is enabled by the Australian Government's <strong>National Collaborative Research Infrastructure Strategy (NCRIS)</strong>. Today hosted by the <strong>Melbourne Data Analytics Platform</strong>.</p>
+  </section>
+
+  <!-- Slide 7: Why Wordflow -->
+  <section class="slide" data-notes="About 2 minutes. Frame programming as a cost in time and effort, not a capability gap. Say the north-star sentence slowly.">
+    <h2>Why Wordflow?</h2>
+    <p>Modern text analysis (corpus methods, NLP, and now GenAI) mostly lives in <strong>Python and R</strong>. Learning and maintaining that is real effort on top of a busy research schedule.</p>
+    <p>Wordflow puts those methods behind <strong>point-and-click tools</strong>: your data stays visible, and every step can be inspected and retraced.</p>
+    <p class="pullquote">Text data flows through stackable, single-purpose tools: the meaning of an analysis comes from how you shape your data, not from the tool itself.</p>
+  </section>
+
+  <!-- Slide 8: Interface -->
+  <section class="slide ui-overview-slide" data-notes="Switch to the live app; the slide is the recap. The screenshot is from an earlier v0.7 release: the live app says Project (was Workspace), Data Builder (was Preprocessing) and Data Editor (was Data View), and the legend uses the new names. Point out the lightbulb suggestions: they appear when a result looks off, and point at the setting that may help.">
+    <h2>The interface at a glance</h2>
+    <div class="ui-overview-container">
+      <div class="ui-overview-figure">
+        <img src="images/ui-overview-v07.png" alt="Annotated Wordflow v0.7 interface with seven labelled regions" />
+      </div>
+    </div>
+    <ol class="ui-overview-legend">
+      <li><strong>Tool sidebar</strong>: pick a tool</li>
+      <li><strong>Tool interface</strong>: the selected tool's controls and results, in tabs</li>
+      <li><strong>Project Graph</strong>: your data and every block derived from it</li>
+      <li><strong>Data Editor</strong>: a block's rows and columns, with tools to clean and add columns</li>
+      <li><strong>Data Blocks</strong>: switch the active block quickly</li>
+      <li><strong>Tasks</strong>: progress of longer-running analyses</li>
+      <li><strong>Help &amp; Feedback</strong>: built-in documentation; a direct line to the team</li>
+    </ol>
+  </section>
+
+  <!-- Slide 9: Data block concept -->
+  <section class="slide" data-notes="The one concept, about 1.5 minutes. Everything else today hangs off it.">
+    <h2>One idea to hold onto</h2>
+    <h1>The data block is what flows between the tools.</h1>
+    <ul>
+      <li>Your imported dataset is a data block. A filter, a join, an analysis result: each becomes a <strong>new block</strong>, ready for any tool to read.</li>
+      <li>Every tool is a <strong>lens</strong>. Click <strong>Add to Project</strong> and its results feed the next tool.</li>
+      <li>The graph <em>is</em> your method: every step visible, every derivation traceable.</li>
+    </ul>
+  </section>
+
+  <!-- Slide 10: Today's data -->
+  <section class="slide" data-notes="Both come from Wordflow's built-in sample data. The tweets are small, so every step is quick on any laptop: that's the one we do together. Hansard is big and new: it's for exploring, and for anyone who races ahead. Tip: Sample or Filter Hansard in the Data Builder before Topic Modelling.">
+    <h2>Today's data</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Together: Queensland election tweets</h3>
+        <p><strong>2,380</strong> tweets by candidates in the 2020 Queensland state election, with a table of <strong>133 candidates</strong>, their party and gender. Small enough that every step is quick on any laptop.</p>
+        <p class="small">Australian Digital Observatory (ADO)</p>
+      </div>
+      <div class="card">
+        <h3>Explore: Australian Hansard</h3>
+        <p>Every paragraph of the Federal Parliament's proceedings that mentions the <strong>GST</strong> (40,860), or is about <strong>housing</strong> (76,312), 1998 to 2026, with a speaker table to join for party and gender.</p>
+        <p class="small">Hames, S., &amp; Alpert, E. (2026). <em>Proceedings of Australian Federal Parliament: An Analytical Database</em> (Version 2026-09-21). Zenodo. doi.org/10.5281/zenodo.22868754 · RAPID-CDL</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 11: Roadmap -->
+  <section class="slide" data-notes="The shape of the afternoon. Point at the Explore minutes: more than half the afternoon is yours. The open lab at the end is for your own data, or anything you want to try again.">
+    <h2>This afternoon</h2>
+    <table>
+      <tr><th>Time</th><th>Part</th><th>You'll leave able to</th></tr>
+      <tr><td>2:15</td><td><strong>1 Shape your data</strong></td><td>import, check, clean and combine data; join and filter it into new blocks</td></tr>
+      <tr><td>2:45</td><td><strong>2 Look through the lenses</strong></td><td>compare word use, read words in context, trace them over time</td></tr>
+      <tr><td>3:25</td><td>Break</td><td></td></tr>
+      <tr><td>3:35</td><td><strong>3 Topics</strong></td><td>find topics, read their most typical texts, name them, follow one over time</td></tr>
+      <tr><td>4:00</td><td><strong>4 Coding text with GenAI</strong></td><td>code text yourself, then check how well an AI model agrees with you</td></tr>
+      <tr><td>4:35</td><td><strong>Open lab</strong></td><td>try Hansard or your own data, with us beside you</td></tr>
+    </table>
+  </section>
+
+  <!-- Slide 12: Part 1 -->
+  <section class="slide" data-notes="Show (about 8 minutes): new Project, Import sample data (tick the tweets AND Hansard GST; GST takes a while, let it download while we work), Overview, the date conversion window, Combine columns for full_name, Join tweets first, Filter out retweets. Then the room does it with the sheet. Explore from about 2:35. Checkpoint A link in the chat at 2:45.">
+    <h2>Part 1 · Shape your data</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Together</h3>
+        <ol>
+          <li>A new Project; import the <strong>tweets</strong> and <strong>Hansard GST</strong></li>
+          <li><strong>Data Editor</strong>: Overview; set the date column's type</li>
+          <li>Combine candidates' first and last names</li>
+          <li><strong>Data Builder</strong>: Join tweets to candidates; Filter out retweets</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Explore</h3>
+        <ul>
+          <li><strong>Data Editor</strong> tools: Clean text, Count words, Find &amp; replace</li>
+          <li><strong>Map values</strong>: group the parties into sides</li>
+          <li>Hansard: join the speaker table for party and gender</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top: 1em;">New since August: the <strong>Data Builder</strong> makes new blocks (Filter, Join, Sample...); the <strong>Data Editor</strong> changes a block's columns in place, with a preview and Undo.</p>
+  </section>
+
+  <!-- Slide 13: Part 2 -->
+  <section class="slide" data-notes="Show (about 12 minutes in three short bursts, one per tool): Frequency women vs men, right-click a word to drop it, click a word into Concordance; Match Details (new in 0.7.16) shows the match in its document; regex job(s)?|cut(s)? then Add to Project; Trends by day and gender. Explore from about 3:05. At 3:20: everyone starts a Topic Modelling run on the no-retweet block (settings from the sheet) so the model downloads over the break. Checkpoint B.">
+    <h2>Part 2 · Look through the lenses</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Together</h3>
+        <ol>
+          <li><strong>Frequency</strong>: women and men candidates' words, side by side</li>
+          <li>Click a word: <strong>Concordance</strong> shows it in context</li>
+          <li>Search <code>job(s)?|cut(s)?</code>, then <strong>Add to Project</strong></li>
+          <li><strong>Trends</strong>: tweets per day, by gender</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Explore</h3>
+        <ul>
+          <li>Swap gender for <strong>party</strong>: one click, a different study</li>
+          <li>Trends on your jobs/cuts block: which word, when?</li>
+          <li>Hansard: GST paragraphs per year, by chamber</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top: 1em;">Before the break: start a <strong>Topic Modelling</strong> run (step sheet), so it's ready when you're back.</p>
+  </section>
+
+  <!-- Slide 14: Break -->
+  <section class="slide spotlight" data-notes="Check the Tasks panel on screen: the Topic Modelling run is going. Helpers: catch-up time for anyone behind.">
+    <h1>Break</h1>
+    <p class="pullquote" style="margin-top: 1.4em;">Back at 3:35. Your Topic Modelling run keeps going in the background: watch it in <strong>Tasks</strong>.</p>
+  </section>
+
+  <!-- Slide 15: Part 3 -->
+  <section class="slide" data-notes="Show (about 7 minutes): the bubble map; hover a bubble; the eye opens example texts (Most typical first; One per document); Open document; name a topic with the pencil; Ungrouped; a suggestion if one shows. Add one topic to the Project, then Trends on it. Explore from about 3:45. Checkpoint C at 4:00.">
+    <h2>Part 3 · Topics</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Together</h3>
+        <ol>
+          <li>The topic map: hover, select, find topics by a word</li>
+          <li><strong>Read a topic's example texts</strong>: the most typical first, then the whole document</li>
+          <li><strong>Name</strong> a topic you can describe</li>
+          <li>Add it to the Project, and follow it in <strong>Trends</strong></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Explore</h3>
+        <ul>
+          <li>More or fewer topics; a different Max topic size</li>
+          <li>Colour the map by party</li>
+          <li>Hansard: Sample 2,000 paragraphs, then find their topics</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top: 1em;">Topic Modelling groups texts by meaning, not shared words. Texts that fit no topic are shown as <strong>Ungrouped</strong>.</p>
+  </section>
+
+  <!-- Slide 16: Part 4 framing -->
+  <section class="slide" data-notes="About 4 minutes. The AI is another coder: it earns trust the way a human coder does. And choosing a provider is a research decision: ethics approval, data privacy, local versus commercial models, cost. Today we use a workshop key on a small, cheap model on purpose; it's deleted at 5 pm.">
+    <h2>Part 4 · Coding text with GenAI</h2>
+    <h1>An AI model is just another coder.</h1>
+    <p>It earns trust the way a human coder does: a <strong>codebook</strong>, a <strong>pilot</strong>, <strong>agreement</strong> scores, and <strong>revision</strong>.</p>
+    <p style="margin-top: 0.8em;">Choosing a provider is a <strong>research decision</strong>: ethics approval, data privacy, local or commercial model, and cost. Today: a workshop key for a small, inexpensive model, deleted at 5 pm. Your own key works too.</p>
+  </section>
+
+  <!-- Slide 17: Part 4 steps -->
+  <section class="slide" data-notes="Show (about 6 minutes), then the room. The hand-coding comes first on purpose: it needs no key, and it's the baseline. Show the shared key only when the room reaches the provider step. Everyone Previews first; the full Run on 226 tweets is optional. If errors appear, lower Requests at once to 3. Checkpoint D for anyone who didn't get the 226 tweets built.">
+    <h2>Part 4 · Together</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Be the coder first</h3>
+        <ol>
+          <li>The <strong>226 tweets</strong> that mention jobs, with labels checked by our team</li>
+          <li>A codebook: <code>Promise</code> · <code>Cuts</code> · <code>Other</code></li>
+          <li>Code the first page <strong>by hand</strong></li>
+          <li><strong>Compare To</strong> the checked labels: agreement and where you differ</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Then the model</h3>
+        <ol start="5">
+          <li>Connect the workshop key</li>
+          <li><strong>Preview</strong> a page</li>
+          <li>Compare the model with you, and with the checked labels</li>
+          <li>If time: <strong>Run</strong> all 226 and read the headline agreement</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 18: Open lab -->
+  <section class="slide" style="padding-top: 4vh; padding-bottom: 9vh;" data-notes="A menu, not a pathway. Walk the room. If several people are stuck on the same thing, show it on screen. Close at 4:55.">
+    <h2>Open lab: your data, or Hansard</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>Over time</h3>
+        <ul>
+          <li><strong>Trends</strong>: how often "GST" or "negative gearing" comes up, year by year</li>
+          <li>Split by chamber, or by party after joining the speaker table</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Who says what</h3>
+        <ul>
+          <li><strong>Frequency</strong>: compare two parties, or House and Senate</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Close reading</h3>
+        <ul>
+          <li><strong>Concordance</strong>: every "first home buyers" or "housing affordability", in context</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Themes</h3>
+        <ul>
+          <li><strong>Topic Modelling</strong> on a sample: what the housing debates are about, and how that shifts</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Your own data</h3>
+        <ul>
+          <li>A spreadsheet, a folder of texts, a ZIP: the <strong>Data Loader</strong> takes them all</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Coding</h3>
+        <ul>
+          <li><strong>Annotation</strong> on your own categories: code a page by hand first</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 19: Spotlight -->
+  <section class="slide spotlight" data-notes="Wrap-up line. Say it slowly.">
+    <h1>Reshape the data,</h1>
+    <h1 style="margin-top: 0;">and the same tool tells a new story.</h1>
+    <p class="pullquote" style="margin-top: 2em;">Every tool is a lens. The interesting question is which lens, on which slice, for what purpose, and that's by your design.</p>
+  </section>
+
+  <!-- Slide 20: Keep going -->
+  <section class="slide resources" data-notes="Leave this up during questions. Ask for feedback through the in-app Feedback button. Thank MDAP and the helpers.">
+    <h2>Keep going</h2>
+    <div class="grid2" style="margin-top: 0.4em;">
+      <div class="card">
+        <h3>Get Wordflow</h3>
+        <p><a href="https://sih.tools/wordflow">sih.tools/wordflow</a>: downloads for Mac and Windows, the browser option, and the documentation.</p>
+        <p>In the app: <strong>Help</strong> for the built-in docs, <strong>Feedback</strong> to tell us what you think.</p>
+      </div>
+      <div class="card">
+        <h3>Watch the full workshop (3 hours)</h3>
+        <p><strong>Wordflow from zero</strong>, every tool step by step (90 min): <a href="https://youtu.be/ExYVSgvYIes">youtu.be/ExYVSgvYIes</a></p>
+        <p><strong>Coding text with GenAI</strong>, the Annotation tool (90 min): <a href="https://youtu.be/KcjJViYRYX4">youtu.be/KcjJViYRYX4</a></p>
+        <p class="small">Recorded in August on an earlier version: Workspace is now <strong>Project</strong>, Preprocessing is now the <strong>Data Builder</strong>, and the Data View is now the <strong>Data Editor</strong>.</p>
+      </div>
+      <div class="card">
+        <h3>Today's materials</h3>
+        <p class="todo">⟨short link to the step sheet and checkpoints⟩</p>
+        <p>Hansard data: <a href="https://doi.org/10.5281/zenodo.22868754">doi.org/10.5281/zenodo.22868754</a> (RAPID-CDL)</p>
+      </div>
+      <div class="card">
+        <h3>Cite Wordflow &amp; get in touch</h3>
+        <p>Cite: <a href="https://doi.org/10.5281/zenodo.20408328">doi.org/10.5281/zenodo.20408328</a> (always the latest release)</p>
+        <p>Questions, or want Wordflow for your team? <a href="mailto:chao.sun@sydney.edu.au">chao.sun@sydney.edu.au</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branding strip template: cloned by JS into slides 2+ -->
+  <template id="brand-footer-tpl">
+    <div class="brand-footer">
+      <img class="logo-ldaca" src="images/logos/ldaca-dark.svg" alt="LDaCA: Language Data Commons of Australia">
+      <img class="logo-ardc" src="images/logos/ardc.svg" alt="ARDC: Australian Research Data Commons">
+      <img class="logo-ncris" src="images/logos/ausgov-ncris.png" alt="Australian Government: NCRIS, National Research Infrastructure for Australia">
+      <span class="brand-divider"></span>
+      <img class="logo-scl" src="images/logos/sydney-corpus-lab.png" alt="Sydney Corpus Lab">
+      <a href="https://informatics.sydney.edu.au" target="_blank" rel="noopener"><img class="logo-sih" src="images/logos/sih-usyd.png" alt="The University of Sydney: Sydney Informatics Hub"></a>
+    </div>
+  </template>
+</div>
+
+<div class="chrome">
+  <span id="slide-counter">1 / 20</span>
+  <span>←/→ navigate · N toggle notes · F fullscreen</span>
+</div>
+<div class="notes" id="notes"></div>
+<div class="hint" id="hint">Press F for fullscreen, N for speaker notes</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('section.slide'));
+  // Branding strip on every slide except the title, the interface screenshot and the resources slide
+  const brandTpl = document.getElementById('brand-footer-tpl');
+  slides.forEach((sl, i) => {
+    if (i >= 1 && !sl.classList.contains('ui-overview-slide') && !sl.classList.contains('resources')) {
+      sl.appendChild(brandTpl.content.cloneNode(true));
+    }
+  });
+  const notesEl = document.getElementById('notes');
+  const counter = document.getElementById('slide-counter');
+  const hint = document.getElementById('hint');
+  let idx = 0;
+  let notesOn = false;
+
+  function render() {
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    counter.textContent = `${idx + 1} / ${slides.length}`;
+    const notes = slides[idx].dataset.notes || '';
+    notesEl.innerHTML = notes
+      ? `<h4>Speaker notes · slide ${idx + 1}</h4><p>${notes}</p>`
+      : `<h4>Slide ${idx + 1}</h4><p style="opacity:0.6">(no notes)</p>`;
+    notesEl.classList.toggle('show', notesOn);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { idx = Math.min(idx + 1, slides.length - 1); render(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { idx = Math.max(idx - 1, 0); render(); }
+    else if (e.key === 'Home') { idx = 0; render(); }
+    else if (e.key === 'End') { idx = slides.length - 1; render(); }
+    else if (e.key.toLowerCase() === 'n') { notesOn = !notesOn; render(); }
+    else if (e.key.toLowerCase() === 'f') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  setTimeout(() => { hint.style.opacity = '0'; hint.style.transition = 'opacity 1s'; }, 5000);
+
+  render();
+</script>
+</body>
+</html>
+
