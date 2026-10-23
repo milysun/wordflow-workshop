@@ -28,13 +28,13 @@ Run the whole flow on the **desktop app, 0.7.16**, from an empty data folder (a 
 ## 3 · Sunday 25 Oct: build the materials and the checkpoints
 
 - [ ] **Checkpoints A to D** from one clean 0.7.16 run-through, exported as Project archives, then round-trip each on a second machine (import, open, re-pick the tool inputs: those are not saved):
-  - **A**, end of Part 1: tweets and candidates imported, types set, `full_name`, the joined block, the no-retweet block.
-  - **B**, end of Part 2: plus the `job(s)?|cut(s)?` Concordance block and the Trends tab.
+  - **A**, end of Part 1: tweets and candidates added, types set, `full_name`, `Tweets` (joined) and `Tweets_original` (1,646 rows). Block names as in `participant/hands-on-melbourne.md`.
+  - **B**, end of Part 2: plus `Tweets_F`, `Tweets_M`, the `job(s)?|cut(s)?` Concordance block `Tweets_jobcut`, and the Frequency, Concordance and Trends tabs.
   - **C**, end of Part 3: plus the Topic Modelling tab (settings from §2) and one named topic added to the Project.
-  - **D**, Part 4 start: plus the 226 job tweets joined to the reference labels and the v1 codebook block. The prompt and model are not saved in a Project: the sheet says to re-select them.
+  - **D**, Part 4 start: plus `Jobs` (226), `Jobs_with_ref` and the v1 codebook block with its **Task context** (saved with the codebook, so it survives the archive; the sheet uses it instead of a prompt). The model is not saved: the sheet says to pick it again.
   - Replace the v0.7.7 archives in `artifacts/checkpoints/` (they hold August's flow). Host the zips where the room can download them in one click (a GitHub release on this repo, as August did) and make a short link or QR code.
-- [ ] **Participant step sheet** `participant/hands-on-melbourne.md`: Together steps and an Explore card per part, checkpoints linked, plain 0.7.16 labels. Share it in the room by QR code and short link.
-- [ ] **Deck** `slides/melbourne-wordflow.html`: welcome and housekeeping (Melbourne Connect: toilets, emergency, Acknowledgement of Country for Wurundjeri Woi-wurrung land, to confirm with MDAP), who we are, why Wordflow, interface, one idea, a title slide per part with its Explore card, Part 4 framing, close. Reuse the September deck's current-version interface slide and the August slides' structure.
+- [ ] **Participant step sheet** `participant/hands-on-melbourne.md` (drafted 2026-10-23 from verified 0.7.16 labels): walk it during the Saturday test and fix anything that reads wrong; fill the checkpoint links; share it in the room by QR code and short link.
+- [ ] **Deck** `slides/melbourne-wordflow.html` (drafted 2026-10-23, 20 slides): fill the orange placeholders (toilets, campus security number from MDAP; step-sheet short link and QR); confirm the Acknowledgement of Country wording with MDAP; replace the interface screenshot with a 0.7.16 one taken during the Saturday test.
 - [ ] **Runbook** with clock gates and the cut order (README), printed or on the second screen.
 - [ ] Remove the August-only files from this branch before its link goes to participants (`*-online.*`, `*-s1*`, `*-s2*`, the August checkpoint archives, `artifacts/snapshots/`).
 

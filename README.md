@@ -98,9 +98,9 @@ wordflow-workshop/                                 ← branch melbourne_mdap_wor
 │   ├── pre-workshop-checklist-melbourne.md        ← Fri 23 to Mon 26 Oct: who does what, test script, room setup
 │   └── (to come) runbook-melbourne.md, run-of-show-melbourne.html
 ├── participant/
-│   └── (to come) hands-on-melbourne.md            ← the step sheet: Together steps + Explore cards per part
+│   └── hands-on-melbourne.md                      ← the step sheet: Together steps + Explore cards per part
 ├── slides/
-│   └── (to come) melbourne-wordflow.html          ← one deck: welcome, interface, a title slide per part, close
+│   └── melbourne-wordflow.html                    ← one deck: welcome, interface, a slide per part, close
 ├── communications/
 │   ├── event-blurb-2026-10-26.md / .html          ← registration copy (sent to MDAP 2026-09)
 │   ├── newsletter-blurb-2026-10.md                ← SIH October newsletter
