@@ -5,8 +5,10 @@
 
 Each part starts with a few minutes on screen, then it's your turn.
 
-- **Try it** is the basic move with each tool: a few steps, the same for everyone.
-- **Go further** is a menu for the rest of the time. Pick anything, in any order, on the tweets, on the Hansard data, or on your own. Nobody is expected to finish it.
+- **Try it** is the main steps: the same for everyone, and the only ones we expect you to finish. Take your time; helpers come to you.
+- **If you finish early**: a few ideas to try, in any order. They're suggestions, not tasks.
+
+Each part opens with a small chart of its Try it steps: for each, the task, the tool (in italics), why, and the result to check for. Round boxes are Data Blocks, the data a part starts from.
 
 Fall behind at any point? Load the part's **checkpoint** (the table at the end) and carry on. Names in **bold** are the exact words on Wordflow's buttons and menus.
 
@@ -24,6 +26,39 @@ Lightbulb **suggestions** may pop up as you work: they appear when a result look
 
 ## Part 1 · Shape your data (2:12)
 
+```mermaid
+flowchart TD
+  s1["`**1 · A Project and the tweets sample**
+*Data Loader · Create Project, Import sample data*
+Why: one Project holds the whole analysis
+Result: the tweet files in sample_data › ADO › twitter`"]
+  s2["`**2 · Add the two CSV files**
+*Data Loader · Add*
+Why: files become data the tools can read
+Result: 2 Data Blocks: 2,380 tweets, 133 candidates`"]
+  s3["`**3 · Overview; created_at to Date and time**
+*Data Editor · Overview, column type*
+Why: look before you change; Trends needs real dates
+Result: created_at holds dates, ready for Trends`"]
+  s4["`**4 · Join tweets (first) to candidates on username**
+*Data Builder · Join*
+Why: tweets carry no party or gender; the candidates table does
+Result: Tweets: 2,380 rows with party and gender`"]
+  s5["`**5 · Filter: text starts with RT, negate**
+*Data Builder · Filter*
+Why: count what candidates wrote, not what they passed on
+Result: Tweets_original: 1,646 tweets, retweets out`"]
+  s6["`**6 · Run Frequency on text**
+*Frequency*
+Why: see what dominates before you analyse
+Result: https, co, t near the top: link pieces in 1,153 tweets`"]
+  s7["`**7 · Remove web links (URLs), the same column**
+*Data Editor · Clean text*
+Why: links aren't words anyone wrote
+Result: Run again: https, co, t are gone`"]
+  s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> s7
+```
+
 ### Try it
 
 1. **A Project and the data.** In the **Data Loader**, under **Create Project**, type a name (for example `Melbourne`) and click **Create Project**. Click **Import sample data**, tick **Queensland Election Tweets** (and **RAPID-CDL: Australian Hansard, GST** if you'd like it for later: it's bigger, so let it download while you work), then **Import selected**.
@@ -39,14 +74,11 @@ Lightbulb **suggestions** may pop up as you work: they appear when a result look
 
 Look at the Project Graph: every step you took is a block, and the arrows are your method.
 
-### Go further (from about 2:30)
+### If you finish early
 
-- **Categories**: on `Tweets_original`, the type symbol on `gender` → **Category** → **Convert**. Categories give you tick lists in Filter and colours in charts.
-- **Two corpora to compare in Part 2**: **Filter** `Tweets_original` on `gender` (tick **F** if it's a Category, or **equals** `F` if not) into `Tweets_F` (721 tweets), and the same with `M` into `Tweets_M` (925).
-- **More cleaning** on a copy of `text` (**Add column** → **Copy column…** first): **Clean text** → **Remove punctuation and symbols**, or **lowercase**; **Find & replace**; **Count words, characters, or matches…** for each tweet's length. The preview shows the change before **Apply**; **Undo** takes it back.
-- **Combine columns…** (under **Add column**) on the candidates: template `{first_name} {last_name}` (type `{` to pick a column), **New column name** `full_name`.
-- **Map values…** on `party`: give each party a side (Labor and Greens, LNP and One Nation and Katter, Others…). **Fill the rest** keeps anything you don't type.
-- **Hansard**: in the file list, `sample_data` → `RAPID-CDL` → `hansard_au_gst`. **Add** `Hansard_AU_gst_metadata.parquet` (40,860 paragraphs) and `speaker_detail.parquet`. **Join** the paragraphs (first) to the speakers on `speaker_detail_id`: now every paragraph has the speaker's name, party and gender.
+- Make `gender` a **Category** (its type symbol → **Category** → **Convert**), then look at the Filter tab: categories become tick lists.
+- Try another **Clean text** option, such as **lowercase**, on a copy of `text` (**Add column** → **Copy column…** first). **Undo** takes it back.
+- Look at the Hansard GST data: `sample_data` → `RAPID-CDL` → `hansard_au_gst`, **Add** `Hansard_AU_gst_metadata.parquet`, and click **Overview**.
 
 *Behind? Load **Checkpoint A**.*
 
@@ -56,6 +88,47 @@ Look at the Project Graph: every step you took is a block, and the arrows are yo
 
 Three tools, one move each, and Trends twice: over time, then across categories. Each is shown for a couple of minutes, then it's your turn.
 
+```mermaid
+flowchart TD
+  src[("Tweets_original · clean")]
+  s1["`**1 · Cloud and List view; right-click the noise**
+*Frequency*
+Why: which words the candidates use most
+Result: a cloud of their own words, noise dropped`"]
+  s2["`**2 · Click a word (jobs), then a row**
+*Frequency › Concordance*
+Why: a count is a claim until you read it
+Result: every use of jobs, in bold in its tweet`"]
+  s3["`**3 · created_at, Daily, group by gender**
+*Trends*
+Why: when candidates tweeted
+Result: tweets per day over 18 days, women and men`"]
+  s4["`**4 · party to Category: Most rows first, drag Independents last**
+*Data Editor · column type*
+Why: your order shows in every table, legend and chart
+Result: party: 7 parties, in your order`"]
+  s5["`**5 · party on the axis, group by gender, Stacked bars**
+*Trends*
+Why: who tweeted, across parties
+Result: Labor 1,264 of 1,646; the Greens' mostly women`"]
+  s6["`**6 · Run with the settings as they are, before the break**
+*Topic Modelling*
+Why: the first run downloads a model: let it happen over the break
+Result: a finished run in Tasks when you're back`"]
+  honi[("Honi Soit · 100 news articles")]
+  side["`**Side task · Max tokens 128**
+*Data Loader · Add ZIP, then Topic Modelling*
+Why: long articles are read in passages
+Result: a second run, ready after the break`"]
+  src --> s1 -->|click a word| s2
+  src --> s3
+  src --> s4 --> s5
+  src -.-> s6
+  honi -.-> side
+  classDef optional stroke-dasharray: 6 4
+  class side optional
+```
+
 ### Try it
 
 1. **Frequency: which words.** Your Frequency tab from Part 1 is still open, with clean text. Look at the **Cloud view** and the **List view**. Campaign noise (handles, names) crowding the cloud? **Right-click** a word to drop it.
@@ -64,20 +137,20 @@ Three tools, one move each, and Trends twice: over time, then across categories.
 4. **A category in your own order.** Trends can also put a category along the bottom, one bar per value. On `Tweets_original` in the **Data Editor**, click the type symbol on `party` → **Category**. The window shows each party with its number of tweets: choose **Most rows first**, then **drag** `N/A (Independent)` to the end (or drag the parties into any order that suits your question). **Convert**.
 5. **Trends across parties.** A new Trends tab (**+**), **Add Data Block** `Tweets_original`, **Time, number or category column**: `party`, **Add group**: `gender`, **Run**. One bar per party, in your order. **Chart** → **Stacked bars**. Labor wrote three tweets in four; most of the Greens' were by women.
 
-### Go further (from about 3:05)
+### If you finish early
 
-- **Women and men compared**: Frequency with two blocks, `Tweets_F` then `Tweets_M` (from Part 1's Go further). The **Juxtorpus** cloud sets them side by side, and **Keyword Analysis** says which words one group uses more than the other.
-- **Stop words**: switch them on and **Select language** → English.
-- **Your own search**: a new Concordance tab (**+**), **Add Data Block** `Tweets_original`, **Search word or phrase** `job(s)?|cut(s)?`, tick **Use regular expression**, **Run**. **Show metadata** adds `party` and `gender` beside each match. **Add to Project** turns the matches into a block (`Tweets_jobcut`), with the matched word in `CONC_matched_text`.
-- Trends on `Tweets_jobcut`, grouped by `CONC_matched_text` (tick **Ignore capitals**): when did the talk turn to cuts?
-- Concordance's **Dispersion view**: where in each text the matches fall. Click a mark: **Match Details**, with **Previous match** and **Next match**.
-- Trends over time: **Chart** → **Bars**, **Stacked bars**, **Normalise to 100%**. Swap the group `gender` for `party`: one click, a different study.
-- A different party order: choose **Category** on `party` again and drag; **Run** the party Trends again and the bars follow.
-- **Hansard**: Trends on the GST paragraphs, `date` **Yearly**, grouped by `chamber`. The peak is no surprise: the GST began on 1 July 2000.
+- In the day-by-day Trends, try **Chart** → **Bars**, or **Normalise to 100%**.
+- In Concordance, switch to the **Dispersion view**: where in each tweet the word falls.
+- Click a different word in the Frequency cloud and read it in Concordance.
 
 ### Before the break (3:22): start a Topic Modelling run
 
 6. Open **Topic Modelling**. **Add Data Block** `Tweets_original`, **Text column** `text`. Leave the settings as they are and click **Run**. If a lightbulb says your texts are short, click its **Use … tokens** button first. The first run downloads a model: it carries on over the break, in **Tasks**.
+
+**Side task, over the break (optional):** a second run, on longer texts, to see after the break.
+
+- **Data Loader** → **Import sample data** → tick **Honi Soit Student Newspaper** → **Import selected**. In the file list, `sample_data` → `SCL`: **Add** beside `Honi_Soit.zip` → **Texts as one Data Block (100)** → **Add to Project**. That's 100 news articles from the University of Sydney's student newspaper.
+- A new **Topic Modelling** tab (**+**), **Add Data Block**: the Honi Soit block, **Text column** `document`. The lightbulb offers **Use 128 tokens**: click it (or set **Max tokens** to 128). **Run**.
 
 *Behind? Load **Checkpoint B**.*
 
@@ -87,21 +160,49 @@ Three tools, one move each, and Trends twice: over time, then across categories.
 
 Three things here are new since August: reading a topic's texts, naming topics, and colouring the map by your own columns.
 
+Wordflow reads each text in **passages** (its buttons call them *segments*): a sentence, a paragraph, or a few paragraphs together, up to the **Max tokens** you set. A tweet is a single passage. A news article is several, and each passage can belong to a different topic.
+
+```mermaid
+flowchart TD
+  src[("Tweets run")]
+  s1["`**1 · Hover the bubbles; find Ungrouped**
+*Topic Modelling · the map*
+Why: topics at a glance
+Result: topics sized by tweets; Ungrouped isn't forced into one`"]
+  s2["`**2 · Most typical, then Open document**
+*Topic Modelling · Show examples*
+Why: a topic is its texts, not its words
+Result: you can say what a topic is about`"]
+  s3["`**3 · Name a topic: pencil or double-click**
+*Topic Modelling · Rename*
+Why: keep your reading with the topic
+Result: the name, wherever the topic appears`"]
+  s4["`**4 · Colour by party**
+*Topic Modelling · Display options*
+Why: see topics alongside who wrote them
+Result: solid: mostly one party; pale: shared`"]
+  honi[("Honi Soit run")]
+  s5["`**5 · Show examples, Open document**
+*Topic Modelling · Show examples*
+Why: a long text holds several themes
+Result: one article, its passages in different topics`"]
+  src --> s1 --> s2 --> s3 --> s4
+  honi --> s5
+```
+
 ### Try it
 
 1. **The topic map.** Each bubble is a topic, sized by how many tweets it holds. Hover a bubble to see its words. Grey **Ungrouped** holds the texts that fit no topic.
 2. **Read the texts, not just the words.** In the topic list, click the eye (**Show examples**). **Most typical** shows the passages closest to the heart of the topic first. **Open document** shows the whole tweet a passage comes from.
 3. **Name a topic** you can now describe: the pencil (**Rename**), or double-click the topic's title. The name follows the topic everywhere.
 4. **Colour by** `party` (in **Display options**, beside or below the map): a bubble's colour is solid when its tweets come mostly from one party and pale when they're spread across parties. Labor wrote three tweets in four, so look for the bubbles that aren't Labor's.
+5. **One article, several topics** (if you ran the side task): open the Honi Soit tab. On any topic, click the eye (**Show examples**), then **Open document**. This topic's passages are tinted in its colour, and passages from other topics are grey: one article, several themes. **Next segment** steps through this topic's passages.
 
-### Go further (from about 3:47)
+### If you finish early
 
-- **Search term** (in **Display options**): type `job` to light up the topics that use it, *jobs* included. `job, health` gives each term its own colour.
-- The **Topics** slider in **Display options**: fewer, broader topics, or more, narrower ones. Names stay with their topics.
-- **Random** examples instead of **Most typical**: does the topic still hold?
-- **Follow a topic over time**: select it in the list, then **Add to Project** (in **Display options**) → **One row per document** → **Add to Project**. Only the selected topics are included. Then **Trends** on the new block, by `party`.
-- **Colour by** `gender` instead; **Words per topic** for a longer list of each topic's words.
-- **Hansard**: first **Data Builder** → **Sample** → **Random sample**, **Fraction / Count** `2000`, **Random seed** `0` → **Add to Project**. Then Topic Modelling on the sample. (All 40,860 paragraphs would take a long time on a laptop.)
+- **Search term** in **Display options**: type `job` to light up the topics that use it.
+- Move the **Topics** slider: fewer, broader topics, or more, narrower ones.
+- Colour by `gender` instead of `party`.
 
 *Behind? Load **Checkpoint C**.*
 
@@ -123,6 +224,35 @@ Everyone starts this part from **Checkpoint D**, so the time goes on coding rath
 
 The **Task context** tells the model, and any human coder, what the texts are, why we are coding them, and how to decide the hard cases. It is saved with the codebook, so it travels with the Project and belongs in your methods section.
 
+```mermaid
+flowchart TD
+  s1["`**1 · Import Checkpoint D, then Open**
+*Data Loader · Project manager*
+Why: the same start for everyone: the time goes on coding
+Result: Jobs_with_ref (226 tweets, checked labels) and Codebook`"]
+  s2["`**2 · Add Jobs_with_ref and Codebook; Edit: read the Task context**
+*Annotation · Codebook*
+Why: the brief any coder needs, human or AI
+Result: 3 codes and a Task context you have read`"]
+  s3["`**3 · job.manual, Start, code page 1**
+*Annotation · Manual*
+Why: you are the first coder
+Result: page 1 coded by you`"]
+  s4["`**4 · Compare to theme.reference; hover the score**
+*Annotation · Compare to*
+Why: agreement is how any coder earns trust
+Result: your κ and the confusion matrix`"]
+  s5["`**5 · job.AI; OpenRouter, workshop key, gemini-2.5-flash-lite**
+*Annotation · AI, Add provider*
+Why: a second coder: small and inexpensive, on purpose
+Result: a model ready to code`"]
+  s6["`**6 · Preview; page 1; Compare to job.manual and theme.reference**
+*Annotation · Preview, Compare to*
+Why: does it agree with you, and with the checked labels?
+Result: two κ scores for the model`"]
+  s1 --> s2 --> s3 --> s4 --> s5 --> s6
+```
+
 ### Try it
 
 1. **Load Checkpoint D**: **Data Loader** → **Project manager** → **Import Project** → choose the ZIP → click **Open** on its row.
@@ -132,23 +262,17 @@ The **Task context** tells the model, and any human coder, what the texts are, w
 5. **Then the model.** **Start new annotation** → `job.AI` → **Create**, and flip the switch to **AI**. **Provider** → **Add provider** → **OpenRouter**, paste the **workshop key** shown on screen → **Add provider**. **Model**: `google/gemini-2.5-flash-lite`, a small, inexpensive model, chosen on purpose.
 6. **Preview**: the model codes one page; nothing is saved yet. Go back to **page 1**, where your own codes are, and **Compare to** `job.manual` and `theme.reference`: how far does the model agree with **you**, and with the checked labels?
 
-### Go further
+### If you finish early
 
-- **Run** codes all 226 into `job.AI` in about a minute. **Compare to** `theme.reference` gives the headline score. In August this model scored about **0.84** with a one-sentence instruction instead of this Task context; yours will differ a little.
-- Disagree with the model? **Correction:** → **Create new…** makes a column for your corrections. Correct a few rows and tick **Use as example** to feed them back to the model. Run into a new column and compare again: examples don't always help, which is why you measure.
-- **A codebook of your own** on the same tweets: **Codebook** → **Create new**, then **Edit**. Write the **Task context** first (what the texts are, what you want to find out, how to decide the hard cases), then **Add code** for each code, and **Save**. Code a page by hand before any model sees it. One to try, sentiment toward the LNP:
-  > **Task context**: Tweets posted by candidates around the 2020 Queensland state election that mention jobs. The Liberal National Party (LNP), led by Deb Frecklington, was in opposition. We want to know how candidates positioned themselves against the LNP. Judge the sentiment toward the LNP or its leader specifically, not the tweet's overall tone. If neither is mentioned or referred to, choose none.
-
-  Codes: `neg` (criticises, attacks or blames the LNP or its leader), `pos` (praises or supports them), `neu` (mentions them without a clear judgement), `none` (doesn't mention or refer to them).
-- **Build the 226 yourself**, as Checkpoint D was made: **Filter** `Tweets_original` on `text` **contains** `job` (226 rows); download [`tweets_job_reference.csv`](https://github.com/milysun/wordflow-workshop/releases/download/online-2026-08-28/tweets_job_reference.csv), drop it into the **Data Loader** and **Add** it; **Join** the two on `tweet_id`.
-
-The August recording *Coding text with GenAI* (link at the end) walks through all of these.
+- **Run** codes all 226 tweets into `job.AI` in about a minute. Then **Compare to** `theme.reference`: in August this model scored about 0.84.
+- Where the model got it wrong, pick a **Correction:** column and fix a few rows.
+- Write a codebook of your own for the same tweets, such as the one under *A codebook to try* near the end of this sheet.
 
 ---
 
 ## Open lab (4:25)
 
-Try Wordflow on what interests you, with us beside you. Anything from a Go further list is fair game too.
+Try Wordflow on what interests you, with us beside you: finish a part, try the ideas, or bring your own question.
 
 - **Your own data**: a spreadsheet, a folder of text files, or a ZIP. Drop it into the **Data Loader**, then **Add**.
 - **Hansard GST or housing** (housing is in the same **Import sample data** list):
@@ -167,10 +291,25 @@ A checkpoint is a whole Project saved as a ZIP. To load one: **Data Loader** →
 |---|---|
 | ⟨**A** link⟩ | Part 1: tweets and candidates, `created_at` as dates, `Tweets`, `Tweets_original` with the web links removed, and the Frequency tab |
 | ⟨**B** link⟩ | Part 2: plus `party` as a category in order, the Concordance tab and both Trends tabs |
-| ⟨**C** link⟩ | Part 3: plus a finished Topic Modelling tab with one named topic, coloured by party |
+| ⟨**C** link⟩ | Part 3: plus a finished Topic Modelling tab with one named topic, coloured by party, and the Honi Soit run (128 tokens) |
 | ⟨**D** link⟩ | Part 4's starting point, for everyone: plus `Jobs_with_ref` (226 tweets with `theme.reference`) and `Codebook` |
 
 Your AI provider and key stay on your computer, never inside a Project file, so checkpoints are safe to share and loading one never touches your key.
+
+---
+
+## A codebook to try
+
+Sentiment toward the LNP, on the same 226 tweets. **Codebook** → **Create new** → **Edit**; paste the Task context, **Add code** for each code, **Save**. Code a page by hand before the model does.
+
+> **Task context**: Tweets posted by candidates around the 2020 Queensland state election that mention jobs. The Liberal National Party (LNP), led by Deb Frecklington, was in opposition. We want to know how candidates positioned themselves against the LNP. Judge the sentiment toward the LNP or its leader specifically, not the tweet's overall tone. If neither is mentioned or referred to, choose none.
+
+| Code | Description |
+|---|---|
+| `neg` | Criticises, attacks or blames the LNP or its leader. |
+| `pos` | Praises or supports the LNP or its leader. |
+| `neu` | Mentions them without a clear judgement. |
+| `none` | Doesn't mention or refer to the LNP or its leader. |
 
 ---
 
@@ -180,7 +319,7 @@ Your AI provider and key stay on your computer, never inside a Project file, so 
 - **Check your ethics approval** and your institution's rules on AI use: they decide which models you may use and whether your data may be sent to an external service. De-identify regardless. You remain responsible for everything the AI does on your behalf.
 - **Keep your method on record**: codebook, task context, model, examples and agreement scores belong in your methods section.
 
-**Keep going:** `sih.tools/wordflow` for downloads and documentation; in the app, **Help** and **Feedback**. Every tool in today's Go further lists is shown step by step in the August workshop videos: *Wordflow from zero* ([youtu.be/ExYVSgvYIes](https://youtu.be/ExYVSgvYIes)) and *Coding text with GenAI* ([youtu.be/KcjJViYRYX4](https://youtu.be/KcjJViYRYX4)). They were recorded on an earlier version: Workspace is now Project, Preprocessing is now the Data Builder, and Topic Modelling's settings have moved, but the steps are the same.
+**Keep going:** `sih.tools/wordflow` for downloads and documentation; in the app, **Help** and **Feedback**. Everything we didn't show today is shown step by step in the August workshop videos: *Wordflow from zero* ([youtu.be/ExYVSgvYIes](https://youtu.be/ExYVSgvYIes)) and *Coding text with GenAI* ([youtu.be/KcjJViYRYX4](https://youtu.be/KcjJViYRYX4)). They were recorded on an earlier version: Workspace is now Project, Preprocessing is now the Data Builder, and Topic Modelling's settings have moved, but the steps are the same.
 
 ---
 

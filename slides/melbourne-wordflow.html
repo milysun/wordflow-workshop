@@ -104,6 +104,89 @@
     margin: 0;
   }
   section.slide .card code { font-size: 0.85em; }
+  /* Step flows on the Part slides: the step sheet's charts, shortened to the tool and the main step.
+     A .block pill is a Data Block. */
+  section.slide .flow { margin-top: 0.9em; }
+  section.slide .flow-row { display: flex; align-items: stretch; gap: 0.45em; margin-bottom: 0.6em; }
+  section.slide .flow .step {
+    flex: 1 1 0;
+    max-width: 24vw;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 0.6em 0.8em;
+    font-size: clamp(1.05rem, 1.5vw, 1.45rem);
+    line-height: 1.25;
+  }
+  section.slide .flow .step b { display: block; }
+  section.slide .flow .step b .n { color: var(--accent); margin-right: 0.25em; }
+  section.slide .flow .step .tool {
+    display: block;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.7em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.2em;
+  }
+  /* U-turn: the second row runs back right to left under the first, joined by a curve on the right. */
+  section.slide .flow.u { position: relative; display: grid; grid-auto-rows: 1fr; row-gap: 1.1em; padding-right: 2.4em; }
+  section.slide .flow.u .flow-row { margin-bottom: 0; }
+  section.slide .flow.u::after {
+    content: "";
+    position: absolute;
+    right: 0.3em;
+    width: 2.1em;
+    top: calc((100% - 1.1em) / 4);
+    bottom: calc((100% - 1.1em) / 4);
+    border: 3px solid var(--accent);
+    border-left: none;
+    border-radius: 0 999px 999px 0;
+  }
+  section.slide .flow.u::before {
+    content: "";
+    position: absolute;
+    right: calc(2.4em - 12px);
+    bottom: calc((100% - 1.1em) / 4 - 7px);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 12px solid var(--accent);
+  }
+  /* Part 1: a spiral. 1 → 2 → 3 across the top, 4 and 5 down the right, 6 and 7 back to the left,
+     ending at the Tweets_original block. Columns: block, arrow, then three cards with arrows between. */
+  section.slide .flow.spiral {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto 1fr auto 1fr;
+    gap: 0.3em 0.5em;
+  }
+  section.slide .flow.spiral .step { max-width: none; font-size: clamp(1.15rem, 1.7vw, 1.6rem); }
+  section.slide .flow .arr.down { justify-self: center; line-height: 1; }
+  /* The break's side task: outlined, not filled, so it reads as optional. */
+  section.slide .flow .side-row { margin-top: 1.2em; }
+  section.slide .flow .step.side { background: var(--paper); border: 2px dashed var(--accent); flex: 0 1 auto; max-width: none; }
+  section.slide .flow-row.rev { flex-direction: row-reverse; }
+  section.slide .flow .step { min-width: 0; }
+  section.slide .flow.u .step { max-width: none; }
+  section.slide .flow .spacer { flex: 1 1 0; padding: 0 0.8em; } /* same padding as a step, so the columns line up */
+  section.slide .flow .block {
+    flex: 0 0 auto;
+    align-self: center;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 0.35em 0.85em;
+    background: var(--paper);
+    font-weight: 600;
+    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+    white-space: nowrap;
+  }
+  section.slide .flow .arr {
+    flex: 0 0 auto;
+    align-self: center;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+  }
+  section.slide .flow .label { color: var(--muted); font-size: 0.75em; font-weight: 400; }
   section.slide table {
     border-collapse: collapse;
     margin-top: 1em;
@@ -471,7 +554,7 @@
       <div class="card">
         <h3>2. Open the step sheet</h3>
         <p class="todo">⟨short link and QR code to participant/hands-on-melbourne.md⟩</p>
-        <p style="margin-top: 0.6em;">The basic steps for each part, a <strong>Go further</strong> menu for the rest of the time, and catch-up files if you fall behind.</p>
+        <p style="margin-top: 0.6em;">The main steps for each part, a few ideas if you finish early, and catch-up files if you fall behind.</p>
       </div>
     </div>
     <p style="margin-top: 1em;">Wi-Fi: <strong>eduroam</strong>. Stuck at any point? Put your hand up: a helper will come to you.</p>
@@ -508,7 +591,7 @@
   </section>
 
   <!-- Slide 5: How this afternoon works -->
-  <section class="slide" data-notes="Set the contract, about 1 minute. In August I demoed every tool's full sequence; the recordings still show all of it. Today I show only the first move, you do that move, and the rest is yours from the Go further list. Nobody needs to finish the list. Fall behind: load the checkpoint and carry on. Zoom joiners: same sheet, same checkpoints, questions in the chat.">
+  <section class="slide" data-notes="Set the contract, about 1 minute. In August I demoed every tool's full sequence; the recordings still show all of it. Today I show only the first move, you do that move, and the rest of the time is yours to finish the steps, with help. A few ideas on the sheet if you finish early. Fall behind: load the checkpoint and carry on. Zoom joiners: same sheet, same checkpoints, questions in the chat.">
     <h2>How this afternoon works</h2>
     <div class="grid3">
       <div class="card">
@@ -520,12 +603,12 @@
         <p>That move on your laptop, a few steps from the sheet, the same for everyone.</p>
       </div>
       <div class="card">
-        <h3>Go further</h3>
-        <p>A menu, not a sequence: pick anything, on the tweets, on Hansard, or on your own data. Helpers come to you.</p>
+        <h3>Your time</h3>
+        <p>Finish the steps with a helper beside you. Done early? The sheet has a few ideas to try.</p>
       </div>
     </div>
     <ul style="margin-top: 1em;">
-      <li><strong>More than two hours of this afternoon are yours</strong> at the keyboard. Everything we don't show is on the sheet, and in the August recordings.</li>
+      <li><strong>More than two hours of this afternoon are yours</strong> at the keyboard. Everything we don't show is in the August recordings.</li>
       <li><strong>Fallen behind?</strong> Each part has a <strong>checkpoint</strong>: a Project file you import to catch up in under a minute.</li>
       <li><strong>Ask any time.</strong> "Can it do X?" and ideas from your own research are the best part of the room.</li>
     </ul>
@@ -598,10 +681,10 @@
       <div class="card">
         <h3>Try it: Queensland election tweets</h3>
         <p><strong>2,380</strong> tweets by candidates in the 2020 Queensland state election, with a table of <strong>133 candidates</strong>, their party and gender. Small enough that every step is quick on any laptop.</p>
-        <p class="small">Australian Digital Observatory (ADO)</p>
+        <p class="small">Bruns, A., Angus, D., Cohen, T., &amp; QUT Digital Observatory (2022). <em>Queensland Election 2020 on Twitter</em>. QUT. doi.org/10.25912/RDF_1665115527020 · Australian Digital Observatory (ADO)</p>
       </div>
       <div class="card">
-        <h3>Go further: Australian Hansard</h3>
+        <h3>To explore: Australian Hansard</h3>
         <p>Every paragraph of the Federal Parliament's proceedings that mentions the <strong>GST</strong> (40,860), or is about <strong>housing</strong> (76,312), 1998 to 2026, with a speaker table to join for party and gender.</p>
         <p class="small">Hames, S., &amp; Alpert, E. (2026). <em>Proceedings of Australian Federal Parliament: An Analytical Database</em> (Version 2026-09-21). Zenodo. doi.org/10.5281/zenodo.22868754 · RAPID-CDL</p>
       </div>
@@ -618,90 +701,61 @@
       <tr><td>3:25</td><td>Break</td><td></td></tr>
       <tr><td>3:35</td><td><strong>3 Topics</strong></td><td>find topics, read their most typical texts, name them, colour them by party</td></tr>
       <tr><td>4:00</td><td><strong>4 Coding text with GenAI</strong></td><td>code text yourself, then check how well an AI model agrees with you</td></tr>
-      <tr><td>4:25</td><td><strong>Open lab</strong></td><td>Hansard, your own data, or anything from Go further, with us beside you</td></tr>
+      <tr><td>4:25</td><td><strong>Open lab</strong></td><td>Hansard, your own data, or the ideas on your sheet, with us beside you</td></tr>
     </table>
   </section>
 
   <!-- Slide 12: Part 1 -->
-  <section class="slide" data-notes="Show (about 6 minutes), only the Try it steps: new Project, Import sample data (tweets; Hansard GST optional, it downloads in the background), Add both files, Overview, created_at to Date and time, Join tweets first, Filter out retweets. Then the reason to clean: Frequency on Tweets_original, point at https, co and t (pieces of t.co links; 1,153 of 1,646 tweets have one), Data Editor, Clean text, Remove web links (URLs), the same column, Apply, Run Frequency again. The lesson: the data tells you what to clean. Stop there: categories, Combine columns, Map values are on the sheet. Try it to about 2:30, then Go further to 2:47. Checkpoint A link in the chat at 2:45.">
+  <section class="slide" data-notes="Show (about 6 minutes), only the Try it steps: new Project, Import sample data (tweets; Hansard GST optional, it downloads in the background), Add both files, Overview, created_at to Date and time, Join tweets first, Filter out retweets. Then the reason to clean: Frequency on Tweets_original, point at https, co and t (pieces of t.co links; 1,153 of 1,646 tweets have one), Data Editor, Clean text, Remove web links (URLs), the same column, Apply, Run Frequency again. The lesson: the data tells you what to clean. Stop there. The room to about 2:30; then catch-up time and the sheet's ideas to 2:47. Checkpoint A link in the chat at 2:45.">
     <h2>Part 1 · Shape your data</h2>
-    <div class="grid2">
-      <div class="card">
-        <h3>Try it</h3>
-        <ol>
-          <li>A new Project; import the <strong>tweets</strong></li>
-          <li>Add the tweets and the candidates as Data Blocks</li>
-          <li><strong>Data Editor</strong>: Overview; make the date column real dates</li>
-          <li><strong>Data Builder</strong>: Join tweets to candidates; Filter out retweets</li>
-          <li>A first Frequency cloud: <code>https</code>, <code>co</code>, <code>t</code>? <strong>Clean text</strong>: remove web links</li>
-        </ol>
-      </div>
-      <div class="card">
-        <h3>Go further (on the sheet)</h3>
-        <ul>
-          <li>Categories; women's and men's tweets as two blocks</li>
-          <li><strong>Data Editor</strong> tools: more cleaning, Combine columns, Count words, Map values</li>
-          <li>Hansard: join the speaker table for party and gender</li>
-        </ul>
-      </div>
+    <div class="flow spiral">
+      <div class="step" style="grid-column: 3; grid-row: 1;"><i class="tool">Data Loader</i><b><span class="n">1</span>New Project; import the tweets</b></div>
+      <span class="arr" style="grid-column: 4; grid-row: 1;">→</span>
+      <div class="step" style="grid-column: 5; grid-row: 1;"><i class="tool">Data Loader</i><b><span class="n">2</span>Add both CSV files</b></div>
+      <span class="arr" style="grid-column: 6; grid-row: 1;">→</span>
+      <div class="step" style="grid-column: 7; grid-row: 1;"><i class="tool">Data Editor · column type</i><b><span class="n">3</span><code>created_at</code> → Date and time</b></div>
+      <span class="arr down" style="grid-column: 7; grid-row: 2;">↓</span>
+      <div class="step" style="grid-column: 7; grid-row: 3;"><i class="tool">Data Builder · Join</i><b><span class="n">4</span>Tweets + candidates</b></div>
+      <span class="arr down" style="grid-column: 7; grid-row: 4;">↓</span>
+      <div class="step" style="grid-column: 7; grid-row: 5;"><i class="tool">Data Builder · Filter</i><b><span class="n">5</span>Drop retweets: 1,646</b></div>
+      <span class="arr" style="grid-column: 6; grid-row: 5;">←</span>
+      <div class="step" style="grid-column: 5; grid-row: 5;"><i class="tool">Frequency</i><b><span class="n">6</span>Word cloud: https, co, t?</b></div>
+      <span class="arr" style="grid-column: 4; grid-row: 5;">←</span>
+      <div class="step" style="grid-column: 3; grid-row: 5;"><i class="tool">Data Editor · Clean text</i><b><span class="n">7</span>Remove web links</b></div>
+      <span class="arr" style="grid-column: 2; grid-row: 5;">←</span>
+      <span class="block" style="grid-column: 1; grid-row: 5;">Tweets_original</span>
     </div>
-    <p class="small" style="margin-top: 1em;">New since August: the <strong>Data Builder</strong> makes new blocks (Filter, Join, Sample...); the <strong>Data Editor</strong> changes a block's columns in place, with a preview and Undo.</p>
+    <p class="small" style="margin-top: 1.2em;">Most of these steps are in the August recordings, linked from <strong>sih.tools/wordflow</strong>. A few tools are new or have moved: the <strong>Data Builder</strong> (was Preprocessing) makes new blocks, and the new <strong>Data Editor</strong> changes a block's columns in place, with a preview and Undo.</p>
   </section>
+
   <!-- Slide 13: Part 2 -->
-  <section class="slide" data-notes="Three cycles of about 2 minutes on screen, then about 4 for the room: (1) Frequency on Tweets_original, Cloud and List view, right-click a word to drop it; (2) click a word: a Concordance tab opens named after it, already previewed; click a row, Row Details shows the match in bold, Next row; (3) Trends, created_at Daily, Add group gender; (4) Data Editor, type symbol on party, Category: the order window shows each party with its count; Most rows first, then drag N/A (Independent) to the end, Convert; (5) a new Trends tab, party on the axis, group gender, Run, Stacked bars: one bar per party in the dragged order (new: Trends takes a category on its axis). Don't demo the women vs men comparison, the regex search or Add to Project: they are Go further. Go further from about 3:05. At 3:22: everyone starts a Topic Modelling run on Tweets_original (settings from the sheet) so the model downloads over the break. Checkpoint B.">
+  <section class="slide" data-notes="Three cycles of about 2 minutes on screen, then about 4 for the room: (1) Frequency on Tweets_original, Cloud and List view, right-click a word to drop it; (2) click a word: a Concordance tab opens named after it, already previewed; click a row, Row Details shows the match in bold, Next row; (3) Trends, created_at Daily, Add group gender; (4) Data Editor, type symbol on party, Category: the order window shows each party with its count; Most rows first, then drag N/A (Independent) to the end, Convert; (5) a new Trends tab, party on the axis, group gender, Run, Stacked bars: one bar per party in the dragged order (new: Trends takes a category on its axis). Don't demo anything else (the recordings have it). Catch-up and the sheet's ideas from about 3:05. At 3:22: everyone starts a Topic Modelling run on Tweets_original (settings from the sheet) so the model downloads over the break. Then the side task, for anyone willing: import Honi Soit (100 news articles, Add ZIP, Texts as one Data Block), a second Topic Modelling tab, text column document, Max tokens 128 (the lightbulb offers it), Run. Both runs go on over the break. Checkpoint B.">
     <h2>Part 2 · Look through the lenses</h2>
-    <div class="grid2">
-      <div class="card">
-        <h3>Try it: one move per tool</h3>
-        <ol>
-          <li><strong>Frequency</strong>: which words? Right-click one to drop it</li>
-          <li>Click a word: <strong>Concordance</strong> shows it in context</li>
-          <li><strong>Trends</strong>: tweets per day, by gender</li>
-          <li>Make <code>party</code> a <strong>category</strong>, drag it into order</li>
-          <li><strong>Trends</strong> across parties: one bar each, in your order</li>
-        </ol>
-      </div>
-      <div class="card">
-        <h3>Go further (on the sheet)</h3>
-        <ul>
-          <li>Women and men compared, side by side</li>
-          <li>Search <code>job(s)?|cut(s)?</code>, Add to Project, then Trends: which word, when?</li>
-          <li>Normalise to 100%; a different party order; Hansard GST per year, by chamber</li>
-        </ul>
-      </div>
+    <div class="flow">
+      <div class="flow-row"><span class="block">Tweets_original</span><span class="arr">→</span><div class="step"><i class="tool">Frequency</i><b><span class="n">1</span>Which words?</b></div><span class="arr">→ <span class="label">click a word</span></span><div class="step"><i class="tool">Concordance</i><b><span class="n">2</span>Click a word: read it</b></div></div>
+      <div class="flow-row"><span class="block">Tweets_original</span><span class="arr">→</span><div class="step"><i class="tool">Trends</i><b><span class="n">3</span>Per day, by gender</b></div></div>
+      <div class="flow-row"><span class="block">Tweets_original</span><span class="arr">→</span><div class="step"><i class="tool">Data Editor</i><b><span class="n">4</span><code>party</code> → Category, drag to order</b></div><span class="arr">→</span><div class="step"><i class="tool">Trends</i><b><span class="n">5</span>Per party, stacked bars</b></div></div>
+      <div class="flow-row"><span class="block">Tweets_original</span><span class="arr">→</span><div class="step"><i class="tool">Topic Modelling</i><b><span class="n">6</span>Start a run: the topics after the break</b></div></div>
+      <div class="flow-row side-row"><span class="block">Honi Soit</span><span class="arr">→</span><div class="step side"><i class="tool">Side task, over the break · Topic Modelling</i><b>100 news articles, Max tokens 128</b></div></div>
     </div>
-    <p class="small" style="margin-top: 1em;">At 3:22: start a <strong>Topic Modelling</strong> run (step sheet), so it's ready when you're back from the break.</p>
   </section>
+
   <!-- Slide 14: Break -->
-  <section class="slide spotlight" data-notes="Check the Tasks panel on screen: the Topic Modelling run is going. Helpers: catch-up time for anyone behind.">
+  <section class="slide spotlight" data-notes="The back time is the clock when this slide opens, plus 10 minutes: open it as the break starts. Check the Tasks panel on screen: the Topic Modelling run is going. Helpers: catch-up time for anyone behind.">
     <h1>Break</h1>
-    <p class="pullquote" style="margin-top: 1.4em;">Back at 3:35. Your Topic Modelling run keeps going in the background: watch it in <strong>Tasks</strong>.</p>
+    <p class="pullquote" style="margin-top: 1.4em;">Back at <strong class="break-back-time" data-minutes="10">in 10 minutes</strong>. Your Topic Modelling run keeps going in the background: watch it in <strong>Tasks</strong>.</p>
   </section>
 
   <!-- Slide 15: Part 3 -->
-  <section class="slide" data-notes="Show (about 5 minutes), naming the three new capabilities as you go: the bubble map; hover a bubble; Ungrouped; the eye opens example passages (Most typical first) and Open document shows the whole tweet; name a topic with the pencil; Colour by party in Display options (solid = mostly one party, pale = spread; Labor wrote three tweets in four, so look for the bubbles that are not Labor's). That's all. Search term, the Topics slider, Add to Project and Trends are Go further (Display options sit beside the map on a wide window, below it on a narrow one). Try it to about 3:47, then Go further. Checkpoint C at 4:00.">
+  <section class="slide" data-notes="Show (about 5 minutes), naming the three new capabilities as you go: the bubble map; hover a bubble; Ungrouped; the eye opens example passages (Most typical first) and Open document shows the whole tweet; name a topic with the pencil; Colour by party in Display options (solid = mostly one party, pale = spread; Labor wrote three tweets in four, so look for the bubbles that are not Labor's). Then the Honi Soit tab: each article was read in passages of up to 128 tokens (Wordflow calls them segments); Show examples on a topic, Open document: this topic's passages tinted in its colour, other topics' passages grey. One article, several themes. Tweets are one passage each, so this only shows on longer texts. That's all. Nothing else (Display options sit beside the map on a wide window, below it on a narrow one). The room to about 3:47, then catch-up and the sheet's ideas. Checkpoint C at 4:00.">
     <h2>Part 3 · Topics</h2>
-    <div class="grid2">
-      <div class="card">
-        <h3>Try it</h3>
-        <ol>
-          <li>The topic map: hover a bubble for its words</li>
-          <li><strong>Read a topic's example texts</strong>: the most typical first, then the whole tweet</li>
-          <li><strong>Name</strong> a topic you can describe</li>
-          <li><strong>Colour by</strong> party: which topics are one party's?</li>
-        </ol>
-      </div>
-      <div class="card">
-        <h3>Go further (on the sheet)</h3>
-        <ul>
-          <li>Search the topics for a word; more or fewer topics</li>
-          <li>Add a topic to the Project and follow it in <strong>Trends</strong></li>
-          <li>Hansard: sample 2,000 paragraphs, then find their topics</li>
-        </ul>
-      </div>
+    <div class="flow">
+      <div class="flow-row"><span class="block">Tweets run</span><span class="arr">→</span><div class="step"><i class="tool">Topic Modelling</i><b><span class="n">1</span>Hover the map</b></div><span class="arr">→</span><div class="step"><i class="tool">Show examples</i><b><span class="n">2</span>Read a topic's texts</b></div><span class="arr">→</span><div class="step"><i class="tool">Rename</i><b><span class="n">3</span>Name the topic</b></div><span class="arr">→</span><div class="step"><i class="tool">Display options</i><b><span class="n">4</span>Colour by party</b></div></div>
+      <div class="flow-row"><span class="block">Honi Soit run</span><span class="arr">→</span><div class="step"><i class="tool">Show examples · Open document</i><b><span class="n">5</span>One article, several topics</b></div></div>
     </div>
-    <p class="small" style="margin-top: 1em;">New since August: example texts, topic names and <strong>Colour by</strong>. Topic Modelling groups texts by meaning, not shared words; texts that fit no topic are <strong>Ungrouped</strong>.</p>
+    <p class="small" style="margin-top: 0.6em;">New since August: example texts, topic names and <strong>Colour by</strong>. Topic Modelling groups texts by meaning, not shared words.</p>
   </section>
+
   <!-- Slide 16: Part 4 framing -->
   <section class="slide" data-notes="About 3 minutes. The AI is another coder: it earns trust the way a human coder does. And choosing a provider is a research decision: ethics approval, data privacy, local versus commercial models, cost. Today we use a workshop key on a small, cheap model on purpose; it's deleted at 5 pm.">
     <h2>Part 4 · Coding text with GenAI</h2>
@@ -711,31 +765,16 @@
   </section>
 
   <!-- Slide 17: Part 4 steps -->
-  <section class="slide" data-notes="Show (about 3 minutes): import Checkpoint D, open the codebook's Edit window and read the Task context aloud (what the data is, what the coding is for, the hard cases), code two rows by hand, Compare to. Then the room. Building the 226 and typing the codebook are Go further, not today's steps. Hand-coding comes first on purpose: it needs no key, and it's the baseline. Show the shared key only when most of the room has a Kappa score. Everyone Previews; the full Run is Go further. If errors appear, lower Requests at once to 3.">
+  <section class="slide" data-notes="Show (about 3 minutes): import Checkpoint D, open the codebook's Edit window and read the Task context aloud (what the data is, what the coding is for, the hard cases), code two rows by hand, Compare to. Then the room. Building the 226 and typing a codebook are not today's steps. Hand-coding comes first on purpose: it needs no key, and it's the baseline. Show the shared key only when most of the room has a Kappa score. Everyone Previews; the full Run is an idea for anyone done early. If errors appear, lower Requests at once to 3.">
     <h2>Part 4 · Try it</h2>
-    <div class="grid2">
-      <div class="card">
-        <h3>Be the coder first</h3>
-        <ol>
-          <li>Import <strong>Checkpoint D</strong>: the 226 tweets that mention jobs, with labels checked by our team</li>
-          <li>Read the codebook: <code>Promise</code> · <code>Cuts</code> · <code>Other</code>, and its <strong>Task context</strong></li>
-          <li>Code the first page <strong>by hand</strong></li>
-          <li><strong>Compare to</strong> the checked labels: agreement and where you differ</li>
-        </ol>
-      </div>
-      <div class="card">
-        <h3>Then the model</h3>
-        <ol start="5">
-          <li>Connect the workshop key</li>
-          <li><strong>Preview</strong> a page</li>
-          <li>Compare the model with you, and with the checked labels</li>
-        </ol>
-        <p class="small" style="margin-top: 0.8em;">The <strong>Task context</strong> says what the texts are, what the coding is for, and how to decide the hard cases. It's saved with the codebook: part of your method.</p>
-      </div>
+    <div class="flow u">
+      <div class="flow-row"><div class="step"><i class="tool">Data Loader</i><b><span class="n">1</span>Import Checkpoint D</b></div><span class="arr">→</span><div class="step"><i class="tool">Annotation · Codebook</i><b><span class="n">2</span>Read the codes and Task context</b></div><span class="arr">→</span><div class="step"><i class="tool">Annotation · Manual</i><b><span class="n">3</span>Code page 1 by hand</b></div></div>
+      <div class="flow-row rev"><div class="step"><i class="tool">Annotation · Compare to</i><b><span class="n">4</span>Compare to the checked labels</b></div><span class="arr">←</span><div class="step"><i class="tool">Annotation · AI</i><b><span class="n">5</span>Connect the workshop model</b></div><span class="arr">←</span><div class="step"><i class="tool">Annotation · Preview</i><b><span class="n">6</span>Preview, compare again</b></div></div>
     </div>
   </section>
+
   <!-- Slide 18: Open lab -->
-  <section class="slide" style="padding-top: 4vh; padding-bottom: 9vh;" data-notes="A menu, not a pathway, and any Go further item counts too. Walk the room. If several people are stuck on the same thing, show it on screen. Close at 4:55.">
+  <section class="slide" style="padding-top: 4vh; padding-bottom: 9vh;" data-notes="A menu, not a pathway, and anything from the sheet counts too. Walk the room. If several people are stuck on the same thing, show it on screen. Close at 4:55.">
     <h2>Open lab: your data, or Hansard</h2>
     <div class="grid3">
       <div class="card">
@@ -848,6 +887,18 @@
   let idx = 0;
   let notesOn = false;
 
+  function formatTimePlus(minutes) {
+    // Returns "H:MM am/pm" for the current time plus the given minutes.
+    // Used by .break-back-time so 'Back at H:MM' updates the moment the break slide is shown.
+    const t = new Date(Date.now() + minutes * 60 * 1000);
+    let h = t.getHours();
+    const m = t.getMinutes().toString().padStart(2, '0');
+    const ampm = h >= 12 ? 'pm' : 'am';
+    h = h % 12;
+    if (h === 0) h = 12;
+    return `${h}:${m} ${ampm}`;
+  }
+
   function render() {
     slides.forEach((s, i) => s.classList.toggle('active', i === idx));
     counter.textContent = `${idx + 1} / ${slides.length}`;
@@ -856,6 +907,10 @@
       ? `<h4>Speaker notes · slide ${idx + 1}</h4><p>${notes}</p>`
       : `<h4>Slide ${idx + 1}</h4><p style="opacity:0.6">(no notes)</p>`;
     notesEl.classList.toggle('show', notesOn);
+    // Recompute the break's "Back at" time each time we land on the break slide.
+    slides[idx].querySelectorAll('.break-back-time').forEach((el) => {
+      el.textContent = formatTimePlus(Number(el.dataset.minutes) || 10);
+    });
   }
 
   document.addEventListener('keydown', (e) => {
