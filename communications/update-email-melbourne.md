@@ -1,6 +1,6 @@
 # Reminder email: Melbourne workshop, Mon 26 Oct 2026
 
-*For MDAP to send to the 45 registrants (MDAP holds the registration list; we never receive the addresses). Send **Friday 23 or Saturday 24 October**, so people can update over the weekend. MDAP's own pre-workshop email went out when 0.7.15 was current; this one asks everyone to take the 0.7.16 update. Per the branch rule, participant-facing text names no patch number: it says "the latest version" and asks people to accept the update prompt.*
+*For MDAP to send to the 45 registrants (MDAP holds the registration list; we never receive the addresses). Send **Friday 23 or Saturday 24 October**, so people can update over the weekend. MDAP's own pre-workshop email went out when 0.7.15 was current; this one asks everyone to take the latest update (0.7.16 when drafted; 0.7.18 by Monday, and the text needs no change for it). Per the branch rule, participant-facing text names no patch number: it says "the latest version" and asks people to accept the update prompt.*
 
 *Placeholders in ⟨angle brackets⟩: delete the Zoom paragraph if nobody is joining online.*
 
