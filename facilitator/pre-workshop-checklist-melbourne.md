@@ -1,6 +1,6 @@
 # Pre-workshop checklist: Melbourne, Monday 26 October 2026
 
-> Chao-only. The plan it serves is in `README.md`. Workshop: **Mon 26 Oct, 2:00-5:00 pm AEDT, Meeting Room M03, Mezzanine, Melbourne Connect**; 45 registered (full), a few possibly on Zoom; Wordflow **0.7.19** (release in progress 25 Oct; 0.7.18 the fallback). Prep window: **Fri 23 to Mon 26** (the weekend). Chao is in Melbourne that week for eResearch (26-30 Oct, MCG).
+> Chao-only. The plan it serves is in `README.md`. Workshop: **Mon 26 Oct, 2:00-5:00 pm AEDT, Meeting Room M03, Mezzanine, Melbourne Connect**; 45 registered (full), a few possibly on Zoom; Wordflow **0.7.19** (released 25 Oct). Prep window: **Fri 23 to Mon 26** (the weekend). Chao is in Melbourne that week for eResearch (26-30 Oct, MCG).
 
 ## 1 · Friday 23 Oct: unblock the people side
 
@@ -15,7 +15,7 @@
 
 ## 2 · Saturday 24 Oct: test 0.7.18 end to end, pin the TBCs
 
-- [ ] **0.7.19 is released and offered** (Project export hot fix; Topic Modelling says *passage*): the same checks as below. If it isn't out by Monday morning, run on 0.7.18 and change the three places the materials quote 0.7.19 words: Part 3's **Next passage** (step sheet, workshop page, runbook) back to **Next segment**. Export the checkpoints from 0.7.19 either way (next item).
+- [x] **0.7.19 is released and offered** (released 25 Oct on all platforms; the labels the materials quote checked against the v0.7.19 tag) (Project export hot fix; Topic Modelling says *passage*): the same checks as below. If it isn't out by Monday morning, run on 0.7.18 and change the three places the materials quote 0.7.19 words: Part 3's **Next passage** (step sheet, workshop page, runbook) back to **Next segment**. Export the checkpoints from 0.7.19 either way (next item).
 - [x] **0.7.18 is released and offered**: the CI on `v0.7` passes, the release is promoted to Latest, and a 0.7.16 install offers the update at start. If it is not out by Sunday evening, run Monday on **0.7.17**: the step sheet's labels are the same (0.7.18 only greys the Search term example, makes topics repeatable on corpora over about 8,000 segments, speeds up the end of a run and adds the shared-server notice), and the tweets are far below 8,000 segments.
 
 Run the whole flow on the **desktop app, 0.7.18**, from an empty data folder (a fresh-install state shows the first-run hints the room will see). If possible repeat Parts 1 and 3 on a **Windows** laptop: most of the room will not have Apple silicon, and Topic Modelling on Windows still uses the processor.
@@ -28,7 +28,7 @@ Run the whole flow on the **desktop app, 0.7.18**, from an empty data folder (a 
 - [ ] **Codebook CSVs** (`docs/melbourne/Codebook.csv`, `Codebook_LNP_sentiment.csv`): Add one, pick it under **Codebook**, and check that **Code column** `class` and **Description column** `description` work and that **Edit** shows the Task context. If the Task context row shows up as a fourth code instead, say so on the page and fall back to typing it in.
 - [ ] **Hansard for the open lab**: Sample GST to 2,000 paragraphs (Seed 0) and time Topic Modelling on it; Trends of GST paragraphs by year and chamber; Join the speaker table on `speaker_detail_id` for party and gender. Check the open lab ideas on the sheet work as written.
 - [ ] **Part 4, from MDAP-Part4 as the room will do it**: import MDAP-Part4, Annotation, open tab **A-1** (check it opens with `Tweets_job_with_reference`, `text` and `Codebook_LNP_Job` selected), read the Task context in Edit, **Annotation column** `Job_Manual`, code page 1, Compare to `theme.reference`, `Job_AI`, provider, each of the five room models once (they show up when you type and filter; the `:free` Gemma and Qwen3.6 27B must not be chosen), Preview, Compare to. **Run all 226 with the new Task context** and record κ against `theme.reference`: August's 0.84 was with the one-sentence v1 prompt. If the Task context scores clearly lower, cut its decision rules back to the data description and purpose, and fix the sheet's printed copy to match. **Which rows to annotate** defaults to only rows without a label: check it does not trip the hand-coded-then-AI flow.
-- [ ] **Browser option**: launch ARDC BinderHub from sih.tools/wordflow; check it runs **0.7.19** (the master repo's Binder pin was 0.7.17 on 24 Oct: bump it once 0.7.19 is on PyPI, then launch once to build the image before Monday) and that a checkpoint loads in it. Wordflow online (`wordflow.ldaca.edu.au`, CILogon sign-in) is the second browser option.
+- [ ] **Browser option**: launch ARDC BinderHub from sih.tools/wordflow; check it runs **0.7.19** (the Binder pin moved to 0.7.19 on 25 Oct; launch once to build the image before Monday) and that a checkpoint loads in it. Wordflow online (`wordflow.ldaca.edu.au`, CILogon sign-in) is the second browser option.
 
 ## 3 · Sunday 25 Oct: build the materials and the checkpoints
 
