@@ -130,7 +130,7 @@
     margin-bottom: 0.2em;
   }
   /* Part 1: a spiral. 1 → 2 → 3 across the top, 4 and 5 down the right, 6 and 7 back to the left,
-     ending at the Tweets_original block. Columns: block, arrow, then three cards with arrows between. */
+     ending at the Tweets_Original block. Columns: block, arrow, then three cards with arrows between. */
   section.slide .flow.spiral {
     display: grid;
     grid-template-columns: auto auto 1fr auto 1fr auto 1fr;
@@ -579,37 +579,13 @@
     <p style="margin-top: 1em;">Wi-Fi: <strong>eduroam</strong>. Stuck at any point? Put your hand up: a helper will come to you.</p>
   </section>
 
-  <!-- Slide 3: Housekeeping -->
-  <section class="slide" data-notes="Confirm the details with MDAP at 1:15 and fill the orange items. Name the assembly area from the evacuation diagram by the door.">
-    <h2>Before we start</h2>
-    <div class="grid2">
-      <div class="card">
-        <h3>Toilets</h3>
-        <p class="todo">⟨directions from M03, from MDAP⟩</p>
-        <h3 style="margin-top: 0.8em;">Emergency numbers</h3>
-        <p><strong>000</strong> for police, fire or ambulance</p>
-        <p class="todo">⟨University of Melbourne campus security number, from MDAP⟩</p>
-      </div>
-      <div class="card">
-        <h3>If the alarm sounds</h3>
-        <ul>
-          <li>Leave calmly by the <strong>nearest exit</strong>, following the green exit signs.</li>
-          <li>Take the <strong>stairs, not the lift</strong>.</li>
-          <li>Follow the wardens to the <strong>assembly area</strong> shown on the evacuation diagram by the door.</li>
-          <li>Don't go back in until you're told it's safe.</li>
-        </ul>
-        <p style="margin-top: 0.6em;">Would you need help to evacuate? Please let us know now, quietly.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Slide 4: Acknowledgement of Country -->
+  <!-- Slide 3: Acknowledgement of Country -->
   <section class="slide spotlight" data-notes="Check the University of Melbourne's preferred wording with MDAP.">
     <h2>Acknowledgement of Country</h2>
     <p class="pullquote">We acknowledge the Wurundjeri Woi-wurrung people of the Kulin Nation, the Traditional Owners of the land on which we meet today, and pay our respects to their Elders past and present.</p>
   </section>
 
-  <!-- Slide 5: How this afternoon works -->
+  <!-- Slide 4: How this afternoon works -->
   <section class="slide" data-notes="Set the contract, about 1 minute. In August I demoed every tool's full sequence; the recordings still show all of it. Today I show only the first move, you do that move, and the rest of the time is yours to finish the steps, with help. A few ideas on the sheet if you finish early. Fall behind: load the checkpoint and carry on. Zoom joiners: same sheet, same checkpoints, questions in the chat.">
     <h2>How this afternoon works</h2>
     <div class="grid3">
@@ -632,7 +608,7 @@
       <li><strong>Ask any time.</strong> "Can it do X?" and ideas from your own research are the best part of the room.</li>
     </ul>
   </section>
-  <!-- Slide 6: Who built this -->
+  <!-- Slide 5: Who built this -->
   <section class="slide" data-notes="About 1 minute. Attribution chain: team, University of Sydney, LDaCA, ARDC/NCRIS. Thank MDAP for hosting and the helpers in the room.">
     <h2>Who built Wordflow?</h2>
     <div class="team-grid">
@@ -655,7 +631,7 @@
     <p class="team-attribution">All at the <strong>University of Sydney</strong>, a <strong>partner institution</strong> of the <strong>Language Data Commons of Australia (LDaCA)</strong> (DOI: 10.3565/kq2v-9g52), a <strong>co-investment partnership with the Australian Research Data Commons (ARDC)</strong> through the HASS and Indigenous Research Data Commons. The ARDC is enabled by the Australian Government's <strong>National Collaborative Research Infrastructure Strategy (NCRIS)</strong>. Today hosted by the <strong>Melbourne Data Analytics Platform</strong>.</p>
   </section>
 
-  <!-- Slide 7: Why Wordflow -->
+  <!-- Slide 6: Why Wordflow -->
   <section class="slide" data-notes="About 1 minute. Frame programming as a cost in time and effort, not a capability gap. Say the north-star sentence slowly.">
     <h2>Why Wordflow?</h2>
     <p>Modern text analysis (corpus methods, NLP, and now GenAI) mostly lives in <strong>Python and R</strong>. Learning and maintaining that is real effort on top of a busy research schedule.</p>
@@ -663,7 +639,7 @@
     <p class="pullquote">Text data flows through stackable, single-purpose tools: the meaning of an analysis comes from how you shape your data, not from the tool itself.</p>
   </section>
 
-  <!-- Slide 8: Interface -->
+  <!-- Slide 7: Interface -->
   <section class="slide ui-overview-slide" data-notes="Switch to the live app; the slide is the recap. The screenshot is from an earlier v0.7 release: the live app says Project (was Workspace), Data Builder (was Preprocessing) and Data Editor (was Data View), and the legend uses the new names. Point out the lightbulb suggestions: they appear when a result looks off, and point at the setting that may help.">
     <h2>The interface at a glance</h2>
     <div class="ui-overview-container">
@@ -682,7 +658,7 @@
     </ol>
   </section>
 
-  <!-- Slide 9: Data block concept -->
+  <!-- Slide 8: Data block concept -->
   <section class="slide" data-notes="The one concept, about 1 minute. Everything else today hangs off it.">
     <h2>One idea to hold onto</h2>
     <h1>The data block is what flows between the tools.</h1>
@@ -693,7 +669,7 @@
     </ul>
   </section>
 
-  <!-- Slide 10: Today's data -->
+  <!-- Slide 9: Today's data -->
   <section class="slide" data-notes="Both come from Wordflow's built-in sample data. The tweets are small, so every step is quick on any laptop: that's the one we do together. Hansard is big and new: it's for exploring, and for anyone who races ahead. Tip: Sample or Filter Hansard in the Data Builder before Topic Modelling.">
     <h2>Today's data</h2>
     <div class="grid2">
@@ -710,7 +686,7 @@
     </div>
   </section>
 
-  <!-- Slide 11: Roadmap -->
+  <!-- Slide 10: Roadmap -->
   <section class="slide" data-notes="The shape of the afternoon. Each part is a few minutes of me, then you: about 37 minutes of talk in three hours. The open lab at the end is for your own data, or anything you want to try again.">
     <h2>This afternoon</h2>
     <table>
@@ -724,8 +700,8 @@
     </table>
   </section>
 
-  <!-- Slide 12: Part 1 -->
-  <section class="slide" data-notes="Show (about 6 minutes), only the Try it steps: new Project, Import sample data (tweets and Honi Soit; Hansard GST optional, it downloads in the background), Add the two tweet CSVs and Honi_Soit.zip (Texts as one Data Block: a ZIP of text files becomes one block, a row per article; it's for Topic Modelling before the break), Overview, created_at to Date and time, Join tweets first, Filter out retweets. Then the reason to clean: Frequency on Tweets_original, point at https, co and t (pieces of t.co links; 1,153 of 1,646 tweets have one), Data Editor, Clean text, Remove web links (URLs), the same column, Apply, Run Frequency again. The lesson: the data tells you what to clean. Stop there. The room to about 2:30; then catch-up time and the sheet's ideas to 2:47. MDAP-Part1 (on sih.tools/ldaca) in the chat at 2:45.">
+  <!-- Slide 11: Part 1 -->
+  <section class="slide" data-notes="Show (about 6 minutes), only the Try it steps: new Project, Import sample data (tweets and Honi Soit; Hansard GST optional, it downloads in the background), Add the two tweet CSVs and Honi_Soit.zip (Texts as one Data Block: a ZIP of text files becomes one block, a row per article; it's for Topic Modelling before the break), Overview, created_at to Date and time, Join tweets first, Filter out retweets. Then the reason to clean: Frequency on Tweets_Original, point at https, co and t (pieces of t.co links; 1,153 of 1,646 tweets have one), Data Editor, Clean text, Remove web links (URLs), the same column, Apply, Run Frequency again. The lesson: the data tells you what to clean. Stop there. The room to about 2:30; then catch-up time and the sheet's ideas to 2:47. MDAP-Part1 (on sih.tools/ldaca) in the chat at 2:45.">
     <h2>Part 1 · Shape your data</h2>
     <div class="flow spiral">
       <div class="step" style="grid-column: 3; grid-row: 1;"><i class="tool">Data Loader</i><b><span class="n">1</span>New Project; import tweets + Honi Soit</b></div>
@@ -742,31 +718,31 @@
       <span class="arr" style="grid-column: 4; grid-row: 5;">←</span>
       <div class="step" style="grid-column: 3; grid-row: 5;"><i class="tool">Data Editor · Clean text</i><b><span class="n">7</span>Remove web links</b></div>
       <span class="arr" style="grid-column: 2; grid-row: 5;">←</span>
-      <span class="block" style="grid-column: 1; grid-row: 5;">Tweets_original</span>
+      <span class="block" style="grid-column: 1; grid-row: 5;">Tweets_Original</span>
     </div>
     <p class="small" style="margin-top: 1.2em;">Most of these steps are in the August recordings, linked from <strong>sih.tools/wordflow</strong>. A few tools are new or have moved: the <strong>Data Builder</strong> (was Preprocessing) makes new blocks, and the new <strong>Data Editor</strong> changes a block's columns in place, with a preview and Undo.</p>
   </section>
 
-  <!-- Slide 13: Part 2 -->
-  <section class="slide" data-notes="Three cycles of about 2 minutes on screen, then about 4 for the room: (1) Frequency on Tweets_original, Cloud and List view, right-click a word to drop it; (2) click a word: a Concordance tab opens named after it, already previewed; click a row, Row Details shows the match in bold, Next row; (3) Trends, created_at Daily, Add group gender; (4) Data Editor, type symbol on party, Category: the order window shows each party with its count; Most rows first, then drag N/A (Independent) to the end, Convert; (5) a new Trends tab, party on the axis, group gender, Run, Stacked bars: one bar per party in the dragged order (new: Trends takes a category on its axis). Don't demo anything else (the recordings have it). Catch-up and the sheet's ideas from about 3:05. At 3:17, Topic Modelling prep for Part 3, both rows in the box: step 6, everyone starts a run on Tweets_original (settings from the sheet) so the model downloads over the break. Then step 7, everyone: Honi Soit (100 news articles, added in Part 1), open a new Topic Modelling tab with + (two tabs side by side: multi-tab), text column document, Max tokens 128 (the lightbulb offers it), Run. Both runs are prep for Part 3 and carry on over the break. Anyone behind: MDAP-Part2, with both runs finished.">
+  <!-- Slide 12: Part 2 -->
+  <section class="slide" data-notes="Three cycles of about 2 minutes on screen, then about 4 for the room: (1) Frequency on Tweets_Original, Cloud and List view, right-click a word to drop it; (2) click a word: a Concordance tab opens named after it, already previewed; click a row, Row Details shows the match in bold, Next row; (3) Trends, created_at Daily, Add group gender; (4) Data Editor, type symbol on party, Category: the order window shows each party with its count; Most rows first, then drag N/A (Independent) to the end, Convert; (5) a new Trends tab, party on the axis, group gender, Run, Stacked bars: one bar per party in the dragged order (new: Trends takes a category on its axis). Don't demo anything else (the recordings have it). Catch-up and the sheet's ideas from about 3:05. At 3:17, Topic Modelling prep for Part 3, both rows in the box: step 6, everyone starts a run on Tweets_Original (settings from the sheet) so the model downloads over the break. Then step 7, everyone: Honi Soit (100 news articles, added in Part 1), open a new Topic Modelling tab with + (two tabs side by side: multi-tab), text column document, Max tokens 128 (the lightbulb offers it), Run. Both runs are prep for Part 3 and carry on over the break. Anyone behind: MDAP-Part2; MDAP-Part3 has both runs finished.">
     <h2>Part 2 · Look through the lenses</h2>
     <div class="flow lenses">
-      <span class="block" style="grid-row: 1; grid-column: 1;">Tweets_original</span>
+      <span class="block" style="grid-row: 1; grid-column: 1;">Tweets_Original</span>
       <span class="arr" style="grid-row: 1; grid-column: 2;">→</span>
       <div class="step" style="grid-row: 1; grid-column: 3;"><i class="tool">Frequency</i><b><span class="n">1</span>Which words?</b></div>
       <span class="arr" style="grid-row: 1; grid-column: 4;">→ <span class="label">click a word</span></span>
       <div class="step" style="grid-row: 1; grid-column: 5;"><i class="tool">Concordance</i><b><span class="n">2</span>Click a word: read it</b></div>
-      <span class="block" style="grid-row: 2; grid-column: 1;">Tweets_original</span>
+      <span class="block" style="grid-row: 2; grid-column: 1;">Tweets_Original</span>
       <span class="arr" style="grid-row: 2; grid-column: 2;">→</span>
       <div class="step" style="grid-row: 2; grid-column: 3;"><i class="tool">Trends</i><b><span class="n">3</span>Per day, by gender</b></div>
-      <span class="block" style="grid-row: 3; grid-column: 1;">Tweets_original</span>
+      <span class="block" style="grid-row: 3; grid-column: 1;">Tweets_Original</span>
       <span class="arr" style="grid-row: 3; grid-column: 2;">→</span>
       <div class="step" style="grid-row: 3; grid-column: 3;"><i class="tool">Data Editor</i><b><span class="n">4</span><code>party</code> → Category, drag to order</b></div>
       <span class="arr" style="grid-row: 3; grid-column: 4;">→</span>
       <div class="step" style="grid-row: 3; grid-column: 5;"><i class="tool">Trends</i><b><span class="n">5</span>Per party, stacked bars</b></div>
       <div class="prep" style="grid-row: 4 / 7; grid-column: 1 / -1;"></div>
       <div class="prep-label" style="grid-row: 4; grid-column: 1 / -1;">Topic Modelling prep for Part 3 · start both before the break</div>
-      <span class="block" style="grid-row: 5; grid-column: 1;">Tweets_original</span>
+      <span class="block" style="grid-row: 5; grid-column: 1;">Tweets_Original</span>
       <span class="arr" style="grid-row: 5; grid-column: 2;">→</span>
       <div class="step" style="grid-row: 5; grid-column: 3;"><i class="tool">Topic Modelling · first tab</i><b><span class="n">6</span>Tweets: start a run</b></div>
       <span class="block" style="grid-row: 6; grid-column: 1;">Honi Soit</span>
@@ -775,14 +751,14 @@
     </div>
   </section>
 
-  <!-- Slide 14: Break -->
+  <!-- Slide 13: Break -->
   <section class="slide spotlight" data-notes="The back time is the clock when this slide opens, plus 10 minutes: open it as the break starts. Check the Tasks panel on screen: the Topic Modelling run is going. Helpers: catch-up time for anyone behind.">
     <h1>Break</h1>
     <p class="pullquote" style="margin-top: 1.4em;">Back at <strong class="break-back-time" data-minutes="10">in 10 minutes</strong>. Your Topic Modelling run keeps going in the background: watch it in <strong>Tasks</strong>.</p>
   </section>
 
-  <!-- Slide 15: Part 3 -->
-  <section class="slide" data-notes="Show (about 5 minutes), naming the three new capabilities as you go: the bubble map; hover a bubble; Ungrouped; the eye opens example passages (Most typical first) and Open document shows the whole tweet; name a topic with the pencil; Colour by party in Display options (solid = mostly one party, pale = spread; Labor wrote three tweets in four, so look for the bubbles that are not Labor's). Then the Honi Soit tab: each article was read in passages of up to 128 tokens; Show examples on a topic, Open document: this topic's passages tinted in its colour, other topics' passages grey. One article, several themes. Tweets are one passage each, so this only shows on longer texts. That's all. Nothing else (Display options sit beside the map on a wide window, below it on a narrow one). The room to about 3:47, then catch-up and the sheet's ideas. At 4:00 everyone imports MDAP-Part4 (slide 17).">
+  <!-- Slide 14: Part 3 -->
+  <section class="slide" data-notes="Show (about 5 minutes), naming the three new capabilities as you go: the bubble map; hover a bubble; Ungrouped; the eye opens example passages (Most typical first) and Open document shows the whole tweet; name a topic with the pencil; Colour by party in Display options (solid = mostly one party, pale = spread; Labor wrote three tweets in four, so look for the bubbles that are not Labor's). Then the Honi Soit tab: each article was read in passages of up to 128 tokens; Show examples on a topic, Open document: this topic's passages tinted in its colour, other topics' passages grey. One article, several themes. Tweets are one passage each, so this only shows on longer texts. That's all. Nothing else (Display options sit beside the map on a wide window, below it on a narrow one). The room to about 3:47, then catch-up and the sheet's ideas. At 4:00 everyone imports MDAP-Part4 (slide 16).">
     <h2>Part 3 · Topics</h2>
     <div class="flow lenses topics">
       <span class="block" style="grid-row: 1; grid-column: 1;">Tweets run</span>
@@ -801,7 +777,7 @@
     <p class="small" style="margin-top: 0.6em;">New since August: example texts, topic names and <strong>Colour by</strong>. Topic Modelling groups texts by meaning, not shared words.</p>
   </section>
 
-  <!-- Slide 16: Part 4 framing -->
+  <!-- Slide 15: Part 4 framing -->
   <section class="slide" data-notes="About 3 minutes. The AI is another coder: it earns trust the way a human coder does. And choosing a provider is a research decision: ethics approval, data privacy, local versus commercial models, cost. Today we use a workshop key on a small, cheap model on purpose; it's deleted at 5 pm.">
     <h2>Part 4 · Coding text with GenAI</h2>
     <h1>An AI model is just another coder.</h1>
@@ -809,7 +785,7 @@
     <p style="margin-top: 0.8em;">Choosing a provider is a <strong>research decision</strong>: ethics approval, data privacy, local or commercial model, and cost. Today: a workshop key for a small, inexpensive model, deleted at 5 pm. Your own key works too.</p>
   </section>
 
-  <!-- Slide 17: Part 4 steps -->
+  <!-- Slide 16: Part 4 steps -->
   <section class="slide" data-notes="Show (about 3 minutes): import MDAP-Part4, open the codebook's Edit window and read the Task context aloud (what the data is, what the coding is for, the hard cases), code two rows by hand, Compare to. Then the room. Building the 226 and typing a codebook are not today's steps. Hand-coding comes first on purpose: it needs no key, and it's the baseline. Show the shared key only when most of the room has a Kappa score. Everyone Previews; the full Run is an idea for anyone done early. If errors appear, lower Requests at once to 3.">
     <h2>Part 4 · Try it</h2>
     <div class="flow turn">
@@ -827,7 +803,7 @@
     </div>
   </section>
 
-  <!-- Slide 18: Open lab -->
+  <!-- Slide 17: Open lab -->
   <section class="slide" style="padding-top: 4vh; padding-bottom: 9vh;" data-notes="A menu, not a pathway, and anything from the sheet counts too. Walk the room. If several people are stuck on the same thing, show it on screen. Close at 4:55.">
     <h2>Open lab: your data, or Hansard</h2>
     <div class="grid3">
@@ -871,14 +847,14 @@
     </div>
   </section>
 
-  <!-- Slide 19: Spotlight -->
+  <!-- Slide 18: Spotlight -->
   <section class="slide spotlight" data-notes="Wrap-up line. Say it slowly.">
     <h1>Reshape the data,</h1>
     <h1 style="margin-top: 0;">and the same tool tells a new story.</h1>
     <p class="pullquote" style="margin-top: 2em;">Every tool is a lens. The interesting question is which lens, on which slice, for what purpose, and that's by your design.</p>
   </section>
 
-  <!-- Slide 20: Keep going -->
+  <!-- Slide 19: Keep going -->
   <section class="slide resources" data-notes="Leave this up during questions. Ask for feedback through the in-app Feedback button. Thank MDAP and the helpers.">
     <h2>Keep going</h2>
     <div class="grid2" style="margin-top: 0.4em;">
@@ -931,7 +907,7 @@
 </div>
 
 <div class="chrome">
-  <span id="slide-counter">1 / 20</span>
+  <span id="slide-counter">1 / 19</span>
   <span>←/→ navigate · N toggle notes · F fullscreen</span>
 </div>
 <div class="notes" id="notes"></div>

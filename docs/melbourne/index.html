@@ -247,19 +247,19 @@
     <li><div class="num">5</div><div class="card">
       <div class="tool">Data Builder · Filter</div>
       <h4>Drop the retweets</h4>
-      <p>The <strong>Filter</strong> tab. <strong>Add Data Block</strong> <code>Tweets</code>, <strong>Add condition</strong>: <code>text</code>, <strong>starts with</strong>, <code>RT</code>, and tick <strong>negate</strong> (keep the tweets that do <em>not</em> start with RT). <strong>New Data Block name</strong>: <code>Tweets_original</code>. <strong>Add to Project</strong>.</p>
-      <dl class="why-result"><dt>Why</dt><dd>count what candidates wrote, not what they passed on</dd><dt>Result</dt><dd class="result"><code>Tweets_original</code>: 1,646 tweets</dd></dl>
+      <p>The <strong>Filter</strong> tab. <strong>Add Data Block</strong> <code>Tweets</code>, <strong>Add condition</strong>: <code>text</code>, <strong>starts with</strong>, <code>RT</code>, and tick <strong>negate</strong> (keep the tweets that do <em>not</em> start with RT). <strong>New Data Block name</strong>: <code>Tweets_Original</code>. <strong>Add to Project</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>count what candidates wrote, not what they passed on</dd><dt>Result</dt><dd class="result"><code>Tweets_Original</code>: 1,646 tweets</dd></dl>
     </div></li>
     <li><div class="num">6</div><div class="card">
       <div class="tool">Frequency</div>
       <h4>A first look at the words</h4>
-      <p>Open <strong>Frequency</strong> in the sidebar. <strong>Add Data Block</strong> <code>Tweets_original</code>, <strong>Text column</strong> <code>text</code>, and under <strong>Tokeniser model</strong> pick the one under <strong>Recommended</strong>. <strong>Run</strong>. Among the biggest words: <code>https</code>, <code>co</code> and <code>t</code>. Nobody wrote them: they're pieces of web links (<code>https://t.co/…</code>).</p>
+      <p>Open <strong>Frequency</strong> in the sidebar. <strong>Add Data Block</strong> <code>Tweets_Original</code>, <strong>Text column</strong> <code>text</code>, and under <strong>Tokeniser model</strong> pick the one under <strong>Recommended</strong>. <strong>Run</strong>. Among the biggest words: <code>https</code>, <code>co</code> and <code>t</code>. Nobody wrote them: they're pieces of web links (<code>https://t.co/…</code>).</p>
       <dl class="why-result"><dt>Why</dt><dd>see what dominates before you analyse</dd><dt>Result</dt><dd class="result">https, co, t near the top: link pieces in 1,153 tweets</dd></dl>
     </div></li>
     <li><div class="num">7</div><div class="card">
       <div class="tool">Data Editor · Clean text</div>
       <h4>Clean them out</h4>
-      <p>Click <code>Tweets_original</code> in the Project Graph. In the <strong>Data Editor</strong>, <strong>Clean text</strong> → <strong>Remove web links (URLs)</strong>. <strong>Column</strong>: <code>text</code>; <strong>Save result to</strong>: <strong>The same column</strong>. The preview shows the links gone: <strong>Apply</strong>. Back in <strong>Frequency</strong>, <strong>Run</strong> again. Changed your mind? <strong>Undo</strong> in the Data Editor.</p>
+      <p>Click <code>Tweets_Original</code> in the Project Graph. In the <strong>Data Editor</strong>, <strong>Clean text</strong> → <strong>Remove web links (URLs)</strong>. <strong>Column</strong>: <code>text</code>; <strong>Save result to</strong>: <strong>The same column</strong>. The preview shows the links gone: <strong>Apply</strong>. Back in <strong>Frequency</strong>, <strong>Run</strong> again. Changed your mind? <strong>Undo</strong> in the Data Editor.</p>
       <dl class="why-result"><dt>Why</dt><dd>links aren't words anyone wrote</dd><dt>Result</dt><dd class="result">https, co, t are gone from the cloud</dd></dl>
     </div></li>
   </ol>
@@ -279,7 +279,7 @@
   <h2>Part 2 · Look through the lenses <span class="time">2:47</span></h2>
   <p class="lead">Three tools, one move each, and Trends twice: over time, then across categories.</p>
   <h3>Try it</h3>
-  <div class="start"><span class="block">Tweets_original</span></div>
+  <div class="start"><span class="block">Tweets_Original</span></div>
   <ol class="flow from-block">
     <li><div class="num">1</div><div class="card">
       <div class="tool">Frequency</div>
@@ -296,19 +296,19 @@
     <li><div class="num">3</div><div class="card">
       <div class="tool">Trends</div>
       <h4>Tweets per day, by gender</h4>
-      <p>Open <strong>Trends</strong>. <strong>Add Data Block</strong> <code>Tweets_original</code>. <strong>Time, number or category column</strong>: <code>created_at</code>, <strong>Daily</strong>. <strong>Add group</strong>: <code>gender</code>. <strong>Run</strong>.</p>
+      <p>Open <strong>Trends</strong>. <strong>Add Data Block</strong> <code>Tweets_Original</code>. <strong>Time, number or category column</strong>: <code>created_at</code>, <strong>Daily</strong>. <strong>Add group</strong>: <code>gender</code>. <strong>Run</strong>.</p>
       <dl class="why-result"><dt>Why</dt><dd>when candidates tweeted</dd><dt>Result</dt><dd class="result">tweets per day over 18 days, women and men</dd></dl>
     </div></li>
     <li><div class="num">4</div><div class="card">
       <div class="tool">Data Editor · column type</div>
       <h4>A category in your own order</h4>
-      <p>On <code>Tweets_original</code> in the <strong>Data Editor</strong>, click the type symbol on <code>party</code> → <strong>Category</strong>. The window shows each party with its number of tweets: choose <strong>Most rows first</strong>, then <strong>drag</strong> <code>N/A (Independent)</code> to the end (or into any order that suits your question). <strong>Convert</strong>.</p>
+      <p>On <code>Tweets_Original</code> in the <strong>Data Editor</strong>, click the type symbol on <code>party</code> → <strong>Category</strong>. The window shows each party with its number of tweets: choose <strong>Most rows first</strong>, then <strong>drag</strong> <code>N/A (Independent)</code> to the end (or into any order that suits your question). <strong>Convert</strong>.</p>
       <dl class="why-result"><dt>Why</dt><dd>your order shows in every table, legend and chart</dd><dt>Result</dt><dd class="result"><code>party</code>: 7 parties, in your order</dd></dl>
     </div></li>
     <li><div class="num">5</div><div class="card">
       <div class="tool">Trends</div>
       <h4>Tweets per party</h4>
-      <p>A new Trends tab (<strong>+</strong>), <strong>Add Data Block</strong> <code>Tweets_original</code>, <strong>Time, number or category column</strong>: <code>party</code>, <strong>Add group</strong>: <code>gender</code>, <strong>Run</strong>. One bar per party, in your order. <strong>Chart</strong> → <strong>Stacked bars</strong>.</p>
+      <p>A new Trends tab (<strong>+</strong>), <strong>Add Data Block</strong> <code>Tweets_Original</code>, <strong>Time, number or category column</strong>: <code>party</code>, <strong>Add group</strong>: <code>gender</code>, <strong>Run</strong>. One bar per party, in your order. <strong>Chart</strong> → <strong>Stacked bars</strong>.</p>
       <dl class="why-result"><dt>Why</dt><dd>who tweeted, across parties</dd><dt>Result</dt><dd class="result">Labor wrote 1,264 of the 1,646; most of the Greens' were by women</dd></dl>
     </div></li>
   </ol>
@@ -324,12 +324,12 @@
   <div class="group">
     <span class="tool">Topic Modelling prep for Part 3 · start both before the break (3:17)</span>
     <p>Two runs, one in each Topic Modelling tab, so both are ready when we're back.</p>
-    <div class="start"><span class="block">Tweets_original</span></div>
+    <div class="start"><span class="block">Tweets_Original</span></div>
     <ol class="flow from-block" start="6">
       <li><div class="num">6</div><div class="card">
         <div class="tool">Topic Modelling · first tab</div>
         <h4>Tweets: start a run</h4>
-        <p>Open <strong>Topic Modelling</strong>. <strong>Add Data Block</strong> <code>Tweets_original</code>, <strong>Text column</strong> <code>text</code>. Leave the settings as they are and click <strong>Run</strong>. If a lightbulb says your texts are short, click its <strong>Use … tokens</strong> button first.</p>
+        <p>Open <strong>Topic Modelling</strong>. <strong>Add Data Block</strong> <code>Tweets_Original</code>, <strong>Text column</strong> <code>text</code>. Leave the settings as they are and click <strong>Run</strong>. If a lightbulb says your texts are short, click its <strong>Use … tokens</strong> button first.</p>
         <dl class="why-result"><dt>Why</dt><dd>the first run downloads a model: let it happen over the break</dd><dt>Result</dt><dd class="result">a finished run in <strong>Tasks</strong> when you're back</dd></dl>
       </div></li>
     </ol>
@@ -343,14 +343,14 @@
       </div></li>
     </ol>
   </div>
-  <p class="behind">Behind? Load <a href="checkpoints/MDAP-Part2.zip">MDAP-Part2</a>: Part 2's results, with both Topic Modelling runs finished, ready for Part 3.</p>
+  <p class="behind">Behind? Load <a href="checkpoints/MDAP-Part2.zip">MDAP-Part2</a>: Part 2's results.</p>
 </section>
 
 <section id="part3">
   <h2>Part 3 · Topics <span class="time">3:35</span></h2>
   <p class="lead">Three things here are new since August: reading a topic's texts, naming topics, and colouring the map by your own columns.</p>
   <p>Wordflow reads each text in <strong>passages</strong>: a sentence, a paragraph, or a few paragraphs together, up to the <strong>Max tokens</strong> you set. A tweet is a single passage. A news article is several, and each passage can belong to a different topic.</p>
-  <p class="behind">No Topic Modelling runs to look at? Load <a href="checkpoints/MDAP-Part2.zip">MDAP-Part2</a>: both runs are in it, finished.</p>
+  <p class="behind">No Topic Modelling runs to look at? Load <a href="checkpoints/MDAP-Part3.zip">MDAP-Part3</a>: both runs are in it, finished, with some topics already named.</p>
   <h3>Try it</h3>
   <div class="start"><span class="block">Tweets run</span></div>
   <ol class="flow from-block">
@@ -397,13 +397,12 @@
       <li>Colour by <code>gender</code> instead of <code>party</code>.</li>
     </ul>
   </div>
-  <p class="behind">Behind? Load <a href="checkpoints/MDAP-Part3.zip">MDAP-Part3</a>: Part 3 done, a topic named.</p>
   </section>
 
 <section id="part4">
   <h2>Part 4 · Coding text with GenAI <span class="time">4:00</span></h2>
   <p class="lead">An AI model is just another coder. It earns trust the way a human coder does: a codebook, a pilot, agreement scores, and revision. We code by hand first, then check the model against ourselves and against labels our team has checked.</p>
-  <p>Everyone starts this part from <a href="#checkpoints">MDAP-Part4</a>, so the time goes on coding rather than setup. It holds the 226 tweets that mention jobs, the labels our team checked for them (<code>theme.reference</code>), and this codebook:</p>
+  <p>Everyone starts this part from <a href="#checkpoints">MDAP-Part4</a>, so the time goes on coding rather than setup. It holds the 226 tweets that mention jobs, the labels our team checked for them (<code>theme.reference</code>, also on its own: <a href="tweets_job_reference.csv" download>tweets_job_reference.csv</a>), and this codebook:</p>
   <blockquote><strong>Task context</strong>: Tweets posted by candidates around the 2020 Queensland state election (polling day 31 October 2020). Retweets are left out, and only tweets containing "job" or "jobs" are included: 226 tweets. We are studying how candidates talked about employment: as a promise of jobs created or protected, or as a warning about jobs cut or lost. Code each tweet's main message about jobs, not passing mentions. Campaign slogans and lists of values ("For jobs. For health.") count as the candidate's own commitment. If a tweet both promises jobs and attacks cuts, choose Promise unless the cuts are spelled out as its main message. Cutting prices, costs or taxes is not cutting jobs. If "job" is not about employment ("did a great job"), or the tweet has no real jobs message, choose Other.</blockquote>
   <div class="table-scroll"><table>
     <tr><th>Code</th><th>Description</th></tr>
@@ -419,18 +418,18 @@
       <div class="tool">Data Loader · Project manager</div>
       <h4>Load MDAP-Part4</h4>
       <p>Download <a href="checkpoints/MDAP-Part4.zip">MDAP-Part4</a>. <strong>Data Loader</strong> → <strong>Project manager</strong> → <strong>Import Project</strong> → choose the ZIP → click <strong>Open</strong> on its row. Your own Project stays in the Project manager.</p>
-      <dl class="why-result"><dt>Why</dt><dd>the same start for everyone: the time goes on coding</dd><dt>Result</dt><dd class="result"><code>Jobs_with_ref</code> (226 tweets, checked labels) and <code>Codebook</code></dd></dl>
+      <dl class="why-result"><dt>Why</dt><dd>the same start for everyone: the time goes on coding</dd><dt>Result</dt><dd class="result"><code>Tweets_job_with_reference</code> (226 tweets, checked labels) and <code>Codebook_LNP_Job</code></dd></dl>
     </div></li>
     <li><div class="num">2</div><div class="card">
       <div class="tool">Annotation · Codebook</div>
       <h4>Read the codebook</h4>
-      <p>Open <strong>Annotation</strong>. <strong>Add Data Block</strong> <code>Jobs_with_ref</code>; <strong>Text column</strong> <code>text</code>. Under <strong>Codebook</strong>, <strong>Add Data Block</strong> → <code>Codebook</code>. Click <strong>Edit</strong> beside <strong>Codes</strong>: the codes and the Task context above are there. Close the window.</p>
+      <p>Open <strong>Annotation</strong>, tab <strong>A-1</strong>: the tweets (<code>Tweets_job_with_reference</code>, <strong>Text column</strong> <code>text</code>) and the codebook (<code>Codebook_LNP_Job</code>) are already selected. Click <strong>Edit</strong> beside <strong>Codes</strong>: the three codes and the Task context above are there. Close the window.</p>
       <dl class="why-result"><dt>Why</dt><dd>the brief any coder needs, human or AI</dd><dt>Result</dt><dd class="result">3 codes and a Task context you have read</dd></dl>
     </div></li>
     <li><div class="num">3</div><div class="card">
       <div class="tool">Annotation · Manual</div>
       <h4>Be the coder first</h4>
-      <p><strong>Annotation column</strong> → <strong>Start new annotation</strong> → <strong>Column name</strong> <code>job.manual</code> → <strong>Create</strong>. With the switch on <strong>Manual</strong>, click <strong>Start</strong> and code the first page yourself, with each row's <strong>Select code</strong> list. Notice the tweets that make you hesitate.</p>
+      <p><strong>Annotation column</strong> → <code>Job_Manual</code> (empty, ready for you). With the switch on <strong>Manual</strong>, click <strong>Start</strong> and code the first page yourself, with each row's <strong>Select code</strong> list. Notice the tweets that make you hesitate.</p>
       <dl class="why-result"><dt>Why</dt><dd>you are the first coder</dd><dt>Result</dt><dd class="result">page 1 coded by you</dd></dl>
     </div></li>
     <li><div class="num">4</div><div class="card">
@@ -441,22 +440,32 @@
     </div></li>
     <li><div class="num">5</div><div class="card">
       <div class="tool">Annotation · AI · Add provider</div>
-      <h4>Then the model: OpenRouter and the workshop key</h4>
-      <p><strong>Start new annotation</strong> → <code>job.AI</code> → <strong>Create</strong>, and flip the switch to <strong>AI</strong>. <strong>Provider</strong> → <strong>Add provider</strong> → <strong>OpenRouter</strong>, paste the workshop key → <strong>Add provider</strong>. <strong>Model</strong>: <code>google/gemini-2.5-flash-lite</code>, a small, inexpensive model, chosen on purpose.</p>
+      <h4>Then the model: OpenRouter, the workshop key, a model</h4>
+      <p><strong>Annotation column</strong> → <code>Job_AI</code>, and flip the switch to <strong>AI</strong>. <strong>Provider</strong> → <strong>Add provider</strong> → <strong>OpenRouter</strong>, paste the workshop key → <strong>Add provider</strong>.</p>
       <div class="keyrow"><output class="key-slot empty">The workshop key appears here on the day.</output><button type="button" class="copy" disabled>Copy key</button></div>
-      <dl class="why-result"><dt>Why</dt><dd>a second coder: small and inexpensive, on purpose</dd><dt>Result</dt><dd class="result">a model ready to code</dd></dl>
+      <p><strong>Model</strong>: type to find one of these five, and pick it from the list. The workshop key works with these only.</p>
+      <div class="table-scroll"><table>
+        <tr><th>Type to find</th><th>Model</th></tr>
+        <tr><td><code>flash-lite</code></td><td>Google: Gemini 2.5 Flash Lite</td></tr>
+        <tr><td><code>2.5-flash</code></td><td>Google: Gemini 2.5 Flash</td></tr>
+        <tr><td><code>gemma-4-26b</code></td><td>Google: Gemma 4 26B A4B (not the "(free)" one)</td></tr>
+        <tr><td><code>qwen3.6-35b</code></td><td>Qwen: Qwen3.6 35B A3B</td></tr>
+        <tr><td><code>qwen3.8-27b</code></td><td>Qwen: Qwen3.8 27B (not Qwen3.6 27B)</td></tr>
+      </table></div>
+      <dl class="why-result"><dt>Why</dt><dd>a second coder, and you choose which one</dd><dt>Result</dt><dd class="result">a model ready to code</dd></dl>
     </div></li>
     <li><div class="num">6</div><div class="card">
       <div class="tool">Annotation · Preview, Compare to</div>
       <h4>Preview and compare again</h4>
-      <p><strong>Preview</strong>: the model codes one page; nothing is saved yet. Go back to <strong>page 1</strong>, where your own codes are, and <strong>Compare to</strong> <code>job.manual</code> and <code>theme.reference</code>: how far does the model agree with <strong>you</strong>, and with the checked labels?</p>
+      <p><strong>Preview</strong>: the model codes one page; nothing is saved yet. Go back to <strong>page 1</strong>, where your own codes are, and <strong>Compare to</strong> <code>Job_Manual</code> and <code>theme.reference</code>: how far does the model agree with <strong>you</strong>, and with the checked labels?</p>
       <dl class="why-result"><dt>Why</dt><dd>does it agree with you, and with the checked labels?</dd><dt>Result</dt><dd class="result">two κ scores for the model</dd></dl>
     </div></li>
   </ol>
   <div class="early">
     <h3>If you finish early</h3>
     <ul>
-      <li><strong>Run</strong> codes all 226 tweets into <code>job.AI</code> in about a minute. Then <strong>Compare to</strong> <code>theme.reference</code>: in August this model scored about 0.84.</li>
+      <li><strong>Run</strong> codes all 226 tweets into <code>Job_AI</code> in about a minute. Then <strong>Compare to</strong> <code>theme.reference</code> for the headline score.</li>
+      <li><strong>Another model as another coder</strong>: <strong>Start new annotation</strong> (for example <code>Job_Qwen</code>), pick a different model from the list, <strong>Preview</strong>, and <strong>Compare to</strong> the first model's column. Do two models agree with each other?</li>
       <li>Where the model got it wrong, pick a <strong>Correction:</strong> column and fix a few rows.</li>
       <li>Write a codebook of your own for the same tweets, such as <a href="#codebook">the one below</a>.</li>
     </ul>
@@ -478,11 +487,13 @@
   <p>A checkpoint is a whole Project saved as a ZIP, with the part's data and results ready to look at. Each tool opens with its result and its settings, so you can change a setting and <strong>Run</strong> it again. To load one: <strong>Data Loader</strong> → <strong>Project manager</strong> → <strong>Import Project</strong> → choose the ZIP → click <strong>Open</strong> on its row.</p>
   <div class="table-scroll"><table class="downloads">
     <tr><th>Download</th><th>After</th></tr>
-    <tr><td><a href="checkpoints/MDAP-Part1.zip" download>MDAP-Part1</a></td><td>End of Part 1: tweets, candidates and Honi Soit, <code>created_at</code> as dates, <code>Tweets</code>, <code>Tweets_original</code> (retweets out, web links removed), and the Frequency tab</td></tr>
-    <tr><td><a href="checkpoints/MDAP-Part2.zip" download>MDAP-Part2</a></td><td>End of Part 2: plus <code>party</code> as a category, the Concordance and both Trends tabs, and <strong>both Topic Modelling runs finished</strong> (tweets; Honi Soit at 128 tokens)</td></tr>
-    <tr><td><a href="checkpoints/MDAP-Part3.zip" download>MDAP-Part3</a></td><td>End of Part 3: plus a named topic and the map coloured by party</td></tr>
-    <tr><td><a href="checkpoints/MDAP-Part4.zip" download>MDAP-Part4</a></td><td>Part 4's starting point, for everyone: plus <code>Jobs_with_ref</code> (226 tweets with <code>theme.reference</code>) and <code>Codebook</code>; no coding done yet</td></tr>
+    <tr><td><a href="checkpoints/MDAP-Part1.zip" download>MDAP-Part1</a></td><td>End of Part 1: tweets, candidates and Honi Soit, <code>created_at</code> as dates, <code>Tweets</code>, <code>Tweets_Original</code> (retweets out, web links removed), and the Frequency tab</td></tr>
+    <tr><td><a href="checkpoints/MDAP-Part2.zip" download>MDAP-Part2</a></td><td>End of Part 2: plus <code>party</code> as a category, women's and men's tweets as two blocks, the Concordance and Trends tabs</td></tr>
+    <tr><td><a href="checkpoints/MDAP-Part3.zip" download>MDAP-Part3</a></td><td>End of Part 3: plus <strong>both Topic Modelling runs finished</strong> (tweets; Honi Soit at 128 tokens), with topics named</td></tr>
+    <tr><td><a href="checkpoints/MDAP-Part4.zip" download>MDAP-Part4</a></td><td>Part 4's starting point, for everyone: plus <code>Tweets_job_with_reference</code> (226 tweets with <code>theme.reference</code>, and empty <code>Job_Manual</code> and <code>Job_AI</code> columns), the codebooks <code>Codebook_LNP_Job</code> and <code>Codebook_LNP_sentiment</code>, and the Annotation tab A-1 set up; no coding done yet</td></tr>
   </table></div>
+  <p><strong>Also for Part 4:</strong> <a href="tweets_job_reference.csv" download>tweets_job_reference.csv</a>, the checked labels for the 226 job tweets (columns <code>tweet_id</code>, <code>theme.reference</code>). It is already joined in MDAP-Part4. To join it yourself: drop it into the <strong>Data Loader</strong>, <strong>Add</strong> it, then <strong>Data Builder</strong> → <strong>Join</strong> your 226 tweets (first) to it on <code>tweet_id</code>.</p>
+  <p><a href="Codebook.csv" download>Codebook.csv</a>: the Part 4 codebook (three codes and the Task context), also inside MDAP-Part4. To use it on its own: <strong>Add</strong> it in the <strong>Data Loader</strong>, then in <strong>Annotation</strong>, under <strong>Codebook</strong>, <strong>Add Data Block</strong> → this block (<strong>Code column</strong> <code>class</code>, <strong>Description column</strong> <code>description</code>).</p>
   <p class="small">Checkpoints hold no keys or passwords, so they are safe to share.</p>
 </section>
 
@@ -504,7 +515,7 @@
 
 <section id="codebook">
   <h2>A codebook to try</h2>
-  <p>Sentiment toward the LNP, on the same 226 tweets. <strong>Codebook</strong> → <strong>Create new</strong> → <strong>Edit</strong>; paste the Task context, <strong>Add code</strong> for each code, <strong>Save</strong>. Code a page by hand before the model does.</p>
+  <p>Sentiment toward the LNP, on the same 226 tweets. Download <a href="Codebook_LNP_sentiment.csv" download>Codebook_LNP_sentiment.csv</a>: <strong>Add</strong> it in the <strong>Data Loader</strong>, then in <strong>Annotation</strong>, under <strong>Codebook</strong>, <strong>Add Data Block</strong> → this block (<strong>Code column</strong> <code>class</code>, <strong>Description column</strong> <code>description</code>). Or type it in: <strong>Codebook</strong> → <strong>Create new</strong> → <strong>Edit</strong>, paste the Task context, <strong>Add code</strong> for each code, <strong>Save</strong>. Code a page by hand before the model does.</p>
   <blockquote><strong>Task context</strong>: Tweets posted by candidates around the 2020 Queensland state election that mention jobs. The Liberal National Party (LNP), led by Deb Frecklington, was in opposition. We want to know how candidates positioned themselves against the LNP. Judge the sentiment toward the LNP or its leader specifically, not the tweet's overall tone. If neither is mentioned or referred to, choose none.</blockquote>
   <div class="table-scroll"><table>
     <tr><th>Code</th><th>Description</th></tr>
@@ -537,7 +548,7 @@
 <script>
   // The workshop key, stored encoded so it isn't plain text in this file.
   // Set or clear it with facilitator/set-workshop-key.py; don't edit this line by hand.
-  const WORKSHOP_KEY_ENCODED = '';
+  const WORKSHOP_KEY_ENCODED = 'NWQ5ZDRiOThlM2FiYmY2Nzc2NDQyZTNhZWEwZjU0ZjJjZTQ4NGQ0ZjY3YmZmMGQwZDdkN2Y3N2E2MDI5YjI1ZS0xdi1yby1rcw==';
 
   (function () {
     let key = '';

@@ -49,7 +49,7 @@ Result: Tweets: 2,380 rows with party and gender`"]
   s5["`**5 · Filter: text starts with RT, negate**
 *Data Builder · Filter*
 Why: count what candidates wrote, not what they passed on
-Result: Tweets_original: 1,646 tweets, retweets out`"]
+Result: Tweets_Original: 1,646 tweets, retweets out`"]
   s6["`**6 · Run Frequency on text**
 *Frequency*
 Why: see what dominates before you analyse
@@ -67,12 +67,12 @@ Result: Run again: https, co, t are gone`"]
 2. **Files into Data Blocks.** Importing brings in files, not yet data. In the file list, open `sample_data` → `ADO` → `twitter`. Click **Add** beside `qldelection2020_candidate_tweets.csv`, then **Add to Project**. Do the same for `candidate_info_gender.csv`. Both appear in the **Project Graph**: 2,380 tweets, and 133 candidates with their party and gender. Then `sample_data` → `SCL`: **Add** beside `Honi_Soit.zip` → **Texts as one Data Block (100)** → **Add to Project**: 100 news articles from the University of Sydney's student newspaper, one row each, for Topic Modelling before the break.
 3. **Look, then fix one thing.** Click the tweets block: the table under the graph is the **Data Editor**. Click **Overview** for a summary. The column `created_at` holds dates written as text: click the small type symbol at the left of its header, choose **Date and time**, then **Convert**. Trends needs real dates in Part 2.
 4. **Join.** Open **Data Builder** in the sidebar, then **Join**. **Add Data Block**: the **tweets first** (the first one is the left table), then the candidates. Set **Left column** and **Right column** to `username`. **New Data Block name**: `Tweets`. Click **Add to Project**. Every tweet now carries its candidate's `party` and `gender`.
-5. **Filter.** The **Filter** tab. **Add Data Block** `Tweets`, **Add condition**: `text`, **starts with**, `RT`, and tick **negate** (keep the tweets that do *not* start with RT, so retweets drop out). **New Data Block name**: `Tweets_original`. **Add to Project**. Check: **1,646 rows**.
+5. **Filter.** The **Filter** tab. **Add Data Block** `Tweets`, **Add condition**: `text`, **starts with**, `RT`, and tick **negate** (keep the tweets that do *not* start with RT, so retweets drop out). **New Data Block name**: `Tweets_Original`. **Add to Project**. Check: **1,646 rows**.
 
 **Clean the text, because the data tells you to**
 
-6. **A first look.** Open **Frequency** in the sidebar. **Add Data Block** `Tweets_original`, **Text column** `text`, and under **Tokeniser model** pick the one under **Recommended**. **Run**. Among the biggest words: `https`, `co` and `t`. Nobody wrote them: they're the pieces of web links (`https://t.co/…`), which 1,153 of the 1,646 tweets carry.
-7. **Clean them out.** Click `Tweets_original` in the Project Graph. In the **Data Editor**, **Clean text** → **Remove web links (URLs)**. **Column**: `text`; **Save result to**: **The same column**. The preview shows the links gone: **Apply**. Back in **Frequency**, **Run** again: `https`, `co` and `t` have left the cloud. Changed your mind? **Undo** in the Data Editor.
+6. **A first look.** Open **Frequency** in the sidebar. **Add Data Block** `Tweets_Original`, **Text column** `text`, and under **Tokeniser model** pick the one under **Recommended**. **Run**. Among the biggest words: `https`, `co` and `t`. Nobody wrote them: they're the pieces of web links (`https://t.co/…`), which 1,153 of the 1,646 tweets carry.
+7. **Clean them out.** Click `Tweets_Original` in the Project Graph. In the **Data Editor**, **Clean text** → **Remove web links (URLs)**. **Column**: `text`; **Save result to**: **The same column**. The preview shows the links gone: **Apply**. Back in **Frequency**, **Run** again: `https`, `co` and `t` have left the cloud. Changed your mind? **Undo** in the Data Editor.
 
 Look at the Project Graph: every step you took is a block, and the arrows are your method.
 
@@ -92,7 +92,7 @@ Three tools, one move each, and Trends twice: over time, then across categories.
 
 ```mermaid
 flowchart TD
-  src[("Tweets_original · clean")]
+  src[("Tweets_Original · clean")]
   s1["`**1 · Cloud and List view; right-click the noise**
 *Frequency*
 Why: which words the candidates use most
@@ -135,9 +135,9 @@ Result: a second run in its own tab, ready for Part 3`"]
 
 1. **Frequency: which words.** Your Frequency tab from Part 1 is still open, with clean text. Look at the **Cloud view** and the **List view**. Campaign noise (handles, names) crowding the cloud? **Right-click** a word to drop it.
 2. **Concordance: in context.** **Click** a word in the cloud, for example `jobs`. A new **Concordance** tab opens, named after the word, with its matches already shown. **Click a row**: the tweet opens with the match in bold. **Next row** steps through them.
-3. **Trends over time.** Open **Trends**. **Add Data Block** `Tweets_original`. **Time, number or category column**: `created_at`, **Daily**. **Add group**: `gender`. **Run**.
-4. **A category in your own order.** Trends can also put a category along the bottom, one bar per value. On `Tweets_original` in the **Data Editor**, click the type symbol on `party` → **Category**. The window shows each party with its number of tweets: choose **Most rows first**, then **drag** `N/A (Independent)` to the end (or drag the parties into any order that suits your question). **Convert**.
-5. **Trends across parties.** A new Trends tab (**+**), **Add Data Block** `Tweets_original`, **Time, number or category column**: `party`, **Add group**: `gender`, **Run**. One bar per party, in your order. **Chart** → **Stacked bars**. Labor wrote three tweets in four; most of the Greens' were by women.
+3. **Trends over time.** Open **Trends**. **Add Data Block** `Tweets_Original`. **Time, number or category column**: `created_at`, **Daily**. **Add group**: `gender`. **Run**.
+4. **A category in your own order.** Trends can also put a category along the bottom, one bar per value. On `Tweets_Original` in the **Data Editor**, click the type symbol on `party` → **Category**. The window shows each party with its number of tweets: choose **Most rows first**, then **drag** `N/A (Independent)` to the end (or drag the parties into any order that suits your question). **Convert**.
+5. **Trends across parties.** A new Trends tab (**+**), **Add Data Block** `Tweets_Original`, **Time, number or category column**: `party`, **Add group**: `gender`, **Run**. One bar per party, in your order. **Chart** → **Stacked bars**. Labor wrote three tweets in four; most of the Greens' were by women.
 
 ### If you finish early
 
@@ -149,10 +149,10 @@ Result: a second run in its own tab, ready for Part 3`"]
 
 Two runs, one in each Topic Modelling tab, so both are ready when we're back. Topic Modelling takes a little while, so we start both now and they carry on over the break.
 
-6. **Tweets.** Open **Topic Modelling**. **Add Data Block** `Tweets_original`, **Text column** `text`. Leave the settings as they are and click **Run**. If a lightbulb says your texts are short, click its **Use … tokens** button first. The first run downloads a model: watch it in **Tasks**.
+6. **Tweets.** Open **Topic Modelling**. **Add Data Block** `Tweets_Original`, **Text column** `text`. Leave the settings as they are and click **Run**. If a lightbulb says your texts are short, click its **Use … tokens** button first. The first run downloads a model: watch it in **Tasks**.
 7. **Honi Soit, in a second tab.** In **Topic Modelling**, open a **new tab** with **+**. **Add Data Block**: the Honi Soit block, **Text column** `document`. The lightbulb offers **Use 128 tokens**: click it (or set **Max tokens** to 128). **Run**. Each tab keeps its own settings and results: click between them.
 
-*Behind? Load **MDAP-Part2**: Part 2's results, with both Topic Modelling runs finished, ready for Part 3.*
+*Behind? Load **MDAP-Part2**: Part 2's results.*
 
 ---
 
@@ -160,7 +160,7 @@ Two runs, one in each Topic Modelling tab, so both are ready when we're back. To
 
 Three things here are new since August: reading a topic's texts, naming topics, and colouring the map by your own columns.
 
-*No Topic Modelling runs to look at? Load **MDAP-Part2**: both runs are in it, finished.*
+*No Topic Modelling runs to look at? Load **MDAP-Part3**: both runs are in it, finished, with some topics already named.*
 
 Wordflow reads each text in **passages**: a sentence, a paragraph, or a few paragraphs together, up to the **Max tokens** you set. A tweet is a single passage. A news article is several, and each passage can belong to a different topic.
 
@@ -206,15 +206,13 @@ Result: one article, its passages in different topics`"]
 - Move the **Topics** slider: fewer, broader topics, or more, narrower ones.
 - Colour by `gender` instead of `party`.
 
-*Behind? Load **MDAP-Part3**: Part 3 done, a topic named.*
-
 ---
 
 ## Part 4 · Coding text with GenAI (4:00)
 
 An AI model is just another coder. It earns trust the way a human coder does: a codebook, a pilot, agreement scores, and revision. We code by hand first, then check the model against ourselves and against labels our team has checked.
 
-Everyone starts this part from **MDAP-Part4**, so the time goes on coding rather than setup. It holds the 226 tweets that mention jobs, the labels our team checked for them (`theme.reference`), and this codebook:
+Everyone starts this part from **MDAP-Part4**, so the time goes on coding rather than setup. It holds the 226 tweets that mention jobs, the labels our team checked for them (`theme.reference`, also on its own: [`tweets_job_reference.csv`](../docs/melbourne/tweets_job_reference.csv), on the workshop page), and this codebook:
 
 > **Task context**: Tweets posted by candidates around the 2020 Queensland state election (polling day 31 October 2020). Retweets are left out, and only tweets containing "job" or "jobs" are included: 226 tweets. We are studying how candidates talked about employment: as a promise of jobs created or protected, or as a warning about jobs cut or lost. Code each tweet's main message about jobs, not passing mentions. Campaign slogans and lists of values ("For jobs. For health.") count as the candidate's own commitment. If a tweet both promises jobs and attacks cuts, choose Promise unless the cuts are spelled out as its main message. Cutting prices, costs or taxes is not cutting jobs. If "job" is not about employment ("did a great job"), or the tweet has no real jobs message, choose Other.
 
@@ -231,12 +229,12 @@ flowchart TD
   s1["`**1 · Import MDAP-Part4, then Open**
 *Data Loader · Project manager*
 Why: the same start for everyone: the time goes on coding
-Result: Jobs_with_ref (226 tweets, checked labels) and Codebook`"]
-  s2["`**2 · Add Jobs_with_ref and Codebook; Edit: read the Task context**
+Result: Tweets_job_with_reference (226 tweets, checked labels) and Codebook_LNP_Job`"]
+  s2["`**2 · Annotation tab A-1: read the codebook and Task context**
 *Annotation · Codebook*
 Why: the brief any coder needs, human or AI
 Result: 3 codes and a Task context you have read`"]
-  s3["`**3 · job.manual, Start, code page 1**
+  s3["`**3 · Job_Manual, Manual, Start: code page 1**
 *Annotation · Manual*
 Why: you are the first coder
 Result: page 1 coded by you`"]
@@ -244,11 +242,11 @@ Result: page 1 coded by you`"]
 *Annotation · Compare to*
 Why: agreement is how any coder earns trust
 Result: your κ and the confusion matrix`"]
-  s5["`**5 · job.AI; OpenRouter, workshop key, gemini-2.5-flash-lite**
+  s5["`**5 · Job_AI, AI: OpenRouter, workshop key, pick a model**
 *Annotation · AI, Add provider*
-Why: a second coder: small and inexpensive, on purpose
+Why: a second coder, and you choose which one
 Result: a model ready to code`"]
-  s6["`**6 · Preview; page 1; Compare to job.manual and theme.reference**
+  s6["`**6 · Preview; page 1; Compare to Job_Manual and theme.reference**
 *Annotation · Preview, Compare to*
 Why: does it agree with you, and with the checked labels?
 Result: two κ scores for the model`"]
@@ -258,15 +256,27 @@ Result: two κ scores for the model`"]
 ### Try it
 
 1. **Load MDAP-Part4**: **Data Loader** → **Project manager** → **Import Project** → choose the ZIP → click **Open** on its row.
-2. Open **Annotation**. **Add Data Block** `Jobs_with_ref`; **Text column** `text`. Under **Codebook**, **Add Data Block** → `Codebook`. Click **Edit** beside **Codes**: the codes and the **Task context** above are there. Close the window.
-3. **Be the coder first.** **Annotation column** → **Start new annotation** → **Column name** `job.manual` → **Create**. With the switch on **Manual**, click **Start** and code the first page yourself, with each row's **Select code** list. Notice the tweets that make you hesitate.
+2. Open **Annotation**, tab **A-1**: the tweets (`Tweets_job_with_reference`, **Text column** `text`) and the codebook (`Codebook_LNP_Job`) are already selected. Click **Edit** beside **Codes**: the three codes and the **Task context** above are there. Close the window.
+3. **Be the coder first.** **Annotation column** → `Job_Manual` (empty, ready for you). With the switch on **Manual**, click **Start** and code the first page yourself, with each row's **Select code** list. Notice the tweets that make you hesitate.
 4. **Compare to** → tick `theme.reference`. A **Cohen's Kappa** score appears in your column's header: 1 is perfect agreement, 0 is what chance would get. **Hover** it for the confusion matrix: which codes you mixed up. Click **Close**.
-5. **Then the model.** **Start new annotation** → `job.AI` → **Create**, and flip the switch to **AI**. **Provider** → **Add provider** → **OpenRouter**, paste the **workshop key** from the workshop page (sih.tools/ldaca) → **Add provider**. **Model**: `google/gemini-2.5-flash-lite`, a small, inexpensive model, chosen on purpose.
-6. **Preview**: the model codes one page; nothing is saved yet. Go back to **page 1**, where your own codes are, and **Compare to** `job.manual` and `theme.reference`: how far does the model agree with **you**, and with the checked labels?
+5. **Then the model.** **Annotation column** → `Job_AI`, and flip the switch to **AI**. **Provider** → **Add provider** → **OpenRouter**, paste the **workshop key** from the workshop page (sih.tools/ldaca) → **Add provider**. **Model**: type to find one of these, and pick it from the list:
+
+   | Type to find | Model |
+   |---|---|
+   | `flash-lite` | Google: Gemini 2.5 Flash Lite |
+   | `2.5-flash` | Google: Gemini 2.5 Flash |
+   | `gemma-4-26b` | Google: Gemma 4 26B A4B (not the "(free)" one) |
+   | `qwen3.6-35b` | Qwen: Qwen3.6 35B A3B |
+   | `qwen3.8-27b` | Qwen: Qwen3.8 27B (not Qwen3.6 27B) |
+
+   The workshop key works with these five only.
+
+6. **Preview**: the model codes one page; nothing is saved yet. Go back to **page 1**, where your own codes are, and **Compare to** `Job_Manual` and `theme.reference`: how far does the model agree with **you**, and with the checked labels?
 
 ### If you finish early
 
-- **Run** codes all 226 tweets into `job.AI` in about a minute. Then **Compare to** `theme.reference`: in August this model scored about 0.84.
+- **Run** codes all 226 tweets into `Job_AI` in about a minute. Then **Compare to** `theme.reference` for the headline score.
+- **Another model as another coder**: **Start new annotation** (for example `Job_Qwen`), pick a different model from the list, **Preview**, and **Compare to** the first model's column. Do two models agree with each other?
 - Where the model got it wrong, pick a **Correction:** column and fix a few rows.
 - Write a codebook of your own for the same tweets, such as the one under *A codebook to try* near the end of this sheet.
 
@@ -291,10 +301,12 @@ A checkpoint is a whole Project saved as a ZIP, with the part's data and results
 
 | Checkpoint | Holds |
 |---|---|
-| **MDAP-Part1** | End of Part 1: tweets, candidates and Honi Soit, `created_at` as dates, `Tweets`, `Tweets_original` (retweets out, web links removed), and the Frequency tab |
-| **MDAP-Part2** | End of Part 2: plus `party` as a category, the Concordance and both Trends tabs, and **both Topic Modelling runs finished** (tweets; Honi Soit at 128 tokens) |
-| **MDAP-Part3** | End of Part 3: plus a named topic and the map coloured by party |
-| **MDAP-Part4** | Part 4's starting point, for everyone: plus `Jobs_with_ref` (226 tweets with `theme.reference`) and `Codebook`; no coding done yet |
+| **MDAP-Part1** | End of Part 1: tweets, candidates and Honi Soit, `created_at` as dates, `Tweets`, `Tweets_Original` (retweets out, web links removed), and the Frequency tab |
+| **MDAP-Part2** | End of Part 2: plus `party` as a category, women's and men's tweets as two blocks, the Concordance and Trends tabs |
+| **MDAP-Part3** | End of Part 3: plus **both Topic Modelling runs finished** (tweets; Honi Soit at 128 tokens), with topics named |
+| **MDAP-Part4** | Part 4's starting point, for everyone: plus `Tweets_job_with_reference` (226 tweets with `theme.reference`, and empty `Job_Manual` and `Job_AI` columns), the codebooks `Codebook_LNP_Job` and `Codebook_LNP_sentiment`, and the Annotation tab A-1 set up; no coding done yet |
+
+Also for Part 4, on the workshop page: [`Codebook.csv`](../docs/melbourne/Codebook.csv), the Part 4 codebook (three codes and the Task context, also inside MDAP-Part4). To use it on its own: **Add** it in the **Data Loader**, then in **Annotation**, under **Codebook**, **Add Data Block** → this block (**Code column** `class`, **Description column** `description`).
 
 Your AI provider and key stay on your computer, never inside a Project file, so checkpoints are safe to share and loading one never touches your key.
 
@@ -302,7 +314,7 @@ Your AI provider and key stay on your computer, never inside a Project file, so 
 
 ## A codebook to try
 
-Sentiment toward the LNP, on the same 226 tweets. **Codebook** → **Create new** → **Edit**; paste the Task context, **Add code** for each code, **Save**. Code a page by hand before the model does.
+Sentiment toward the LNP, on the same 226 tweets. Download [`Codebook_LNP_sentiment.csv`](../docs/melbourne/Codebook_LNP_sentiment.csv) (also on the workshop page): **Add** it in the **Data Loader**, then in **Annotation**, under **Codebook**, **Add Data Block** → this block (**Code column** `class`, **Description column** `description`). Or type it in: **Codebook** → **Create new** → **Edit**, paste the Task context, **Add code** for each code, **Save**. Code a page by hand before the model does.
 
 > **Task context**: Tweets posted by candidates around the 2020 Queensland state election that mention jobs. The Liberal National Party (LNP), led by Deb Frecklington, was in opposition. We want to know how candidates positioned themselves against the LNP. Judge the sentiment toward the LNP or its leader specifically, not the tweet's overall tone. If neither is mentioned or referred to, choose none.
 
