@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wordflow Melbourne Workshop</title>
+<meta name="description" content="Step-by-step page for the hands-on Wordflow workshop at the University of Melbourne, 26 October 2026: the steps for each part, the workshop key and the checkpoint downloads.">
+<!--
+  Participant page for the Melbourne workshop (Mon 26 Oct 2026). Same content as
+  participant/hands-on-melbourne.md; change both together. Temporary home for the day
+  (sih.tools/ldaca points here); after the workshop it moves into the landing page.
+  The workshop key is set with facilitator/set-workshop-key.py, never typed in here.
+-->
+<style>
+  :root {
+    --ink: #1a1d24;
+    --paper: #fdfcf8;
+    --accent: #c8423e;
+    --accent-soft: #f3d6d5;
+    --muted: #6b6f78;
+    --rule: #d9d4c8;
+    --card: #ffffff;
+    --max-width: 980px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88em;
+    background: #f1eee6;
+    padding: 0.05em 0.3em;
+    border-radius: 4px;
+    overflow-wrap: anywhere;
+  }
+  .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 16px; }
+
+  /* Header and the sticky jump bar */
+  header.top { background: var(--ink); color: var(--paper); padding: 2.2rem 0 1.6rem; }
+  header.top .kicker { color: #f0a9a6; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.8rem; }
+  header.top h1 { margin: 0.3rem 0 0.4rem; font-size: clamp(1.6rem, 4.5vw, 2.4rem); line-height: 1.2; }
+  header.top p { margin: 0.2rem 0; opacity: 0.88; }
+  nav.jump {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.jump .wrap { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; padding-top: 0.6rem; padding-bottom: 0.6rem; }
+  nav.jump a { text-decoration: none; font-weight: 600; font-size: 0.92rem; white-space: nowrap; }
+
+  section { padding: 1.8rem 0 0.6rem; }
+  section + section { border-top: 1px solid var(--rule); }
+  h2 { font-size: 1.55rem; margin: 0 0 0.3rem; color: var(--accent); }
+  h2 .time { color: var(--muted); font-weight: 500; font-size: 1rem; margin-left: 0.4rem; }
+  h3 { font-size: 1.1rem; margin: 1.6rem 0 0.6rem; }
+  .lead { color: var(--muted); margin: 0.2rem 0 1rem; }
+
+  /* The workshop key */
+  .keybox {
+    background: var(--card);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    margin: 1rem 0;
+  }
+  .keybox h3 { margin: 0 0 0.3rem; }
+  .keyrow { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.6rem 0 0.4rem; }
+  .keyrow output {
+    flex: 1 1 18rem; min-width: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.95rem;
+    background: #f6f3ec;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 0.55rem 0.7rem;
+    overflow-wrap: anywhere;
+  }
+  .keyrow output.empty { font-family: inherit; color: var(--muted); }
+  button.copy {
+    font: inherit; font-weight: 700;
+    background: var(--accent); color: #fff;
+    border: 0; border-radius: 8px;
+    padding: 0.55rem 1rem; cursor: pointer;
+  }
+  button.copy:disabled { background: var(--rule); color: var(--muted); cursor: default; }
+  .small { font-size: 0.88rem; color: var(--muted); }
+
+  /* Steps as a flowchart: cards joined by a line, Data Blocks as pills */
+  .block {
+    display: inline-block;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 0.15rem 0.85rem;
+    font-weight: 700;
+    font-size: 0.92rem;
+    background: var(--card);
+  }
+  .start { margin: 0.4rem 0 0.2rem; }
+  ol.flow { list-style: none; margin: 0; padding: 0; position: relative; }
+  ol.flow > li { position: relative; padding: 0 0 0 3rem; margin: 0; }
+  ol.flow > li::before {
+    /* the line joining one step to the next */
+    content: ""; position: absolute; left: 1.1rem; top: 0; bottom: 0;
+    border-left: 3px solid var(--accent-soft);
+  }
+  ol.flow > li:last-child::before { bottom: auto; height: 1.6rem; }
+  ol.flow.from-block > li:first-child::before { top: -0.6rem; }
+  .num {
+    position: absolute; left: 0; top: 0.7rem;
+    width: 2.25rem; height: 2.25rem; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 0.8rem 1rem 0.7rem;
+    margin: 0 0 0.9rem;
+  }
+  .tool {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .card h4 { margin: 0.1rem 0 0.35rem; font-size: 1.08rem; }
+  .card p { margin: 0.3rem 0; }
+  .why-result { display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 0.6rem; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dashed var(--rule); font-size: 0.93rem; }
+  .why-result dt { font-weight: 700; color: var(--muted); }
+  .why-result dd { margin: 0; }
+  .why-result dd.result { font-weight: 600; }
+  .group {
+    border: 2px solid var(--rule);
+    border-radius: 14px;
+    padding: 0.8rem 0.8rem 0.1rem;
+    margin: 1.2rem 0 0.8rem;
+  }
+  .group > .tool { display: block; margin-bottom: 0.3rem; }
+  .group > p { margin: 0 0 0.6rem; }
+
+  .early { background: #f6f3ec; border-radius: 12px; padding: 0.7rem 1rem; margin: 0.8rem 0; }
+  .early h3 { margin: 0.1rem 0 0.3rem; font-size: 1rem; }
+  .early ul { margin: 0.2rem 0 0.3rem; padding-left: 1.2rem; }
+  .behind { font-style: italic; color: var(--muted); }
+  blockquote {
+    margin: 0.8rem 0; padding: 0.6rem 1rem;
+    border-left: 4px solid var(--accent);
+    background: var(--card);
+  }
+  table { border-collapse: collapse; width: 100%; margin: 0.6rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid var(--rule); padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
+  th { background: var(--accent-soft); }
+  .table-scroll { overflow-x: auto; }
+  .downloads td:first-child { white-space: nowrap; }
+  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.88rem; }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    ol.flow > li { padding-left: 2.5rem; }
+    ol.flow > li::before { left: 0.9rem; }
+    .num { width: 1.9rem; height: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="kicker">LDaCA Wordflow · hands-on workshop</div>
+    <h1>Point-and-click text analytics with Wordflow</h1>
+    <p>University of Melbourne · Monday 26 October 2026 · 2:00-5:00 pm · Meeting Room M03, Mezzanine, Melbourne Connect</p>
+    <p>Hosted by the Melbourne Data Analytics Platform, LDaCA and the Sydney Informatics Hub</p>
+  </div>
+</header>
+
+<nav class="jump" aria-label="On this page">
+  <div class="wrap">
+    <a href="#start">Start</a>
+    <a href="#part1">1 Shape your data</a>
+    <a href="#part2">2 Lenses</a>
+    <a href="#part3">3 Topics</a>
+    <a href="#part4">4 Coding with GenAI</a>
+    <a href="#key">Workshop key</a>
+    <a href="#checkpoints">Checkpoints</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="start">
+  <h2>Before we start</h2>
+  <p>Each part starts with a few minutes on screen, then it's your turn.</p>
+  <ul>
+    <li><strong>Try it</strong> is the main steps: the same for everyone, and the only ones we expect you to finish. Take your time; helpers come to you.</li>
+    <li><strong>If you finish early</strong>: a few ideas to try, in any order. They're suggestions, not tasks.</li>
+  </ul>
+  <p>Each step shows the <strong>tool</strong> (in red), what to do, <strong>why</strong>, and the <strong>result</strong> to check for. Round boxes are Data Blocks: the data a part starts from. Names in <strong>bold</strong> are the exact words on Wordflow's buttons and menus. Fall behind at any point? Load the part's <a href="#checkpoints">checkpoint</a> and carry on.</p>
+  <ol>
+    <li><strong>Open Wordflow</strong> and accept the <strong>update</strong> it offers. No prompt? <strong>Help → Check for Updates</strong>. Not installed? <a href="https://sih.tools/wordflow">sih.tools/wordflow</a>: the desktop app for Mac or Windows, or <strong>Launch in Binder</strong> to run it in your browser.</li>
+    <li><strong>Keep this page open</strong> beside Wordflow.</li>
+    <li>Stuck? Put your hand up: a helper will come to you.</li>
+  </ol>
+  <p class="small">Lightbulb <strong>suggestions</strong> may pop up as you work: they appear when a result looks off and point at the setting that may help. Read them, or click <strong>Dismiss</strong>.</p>
+</section>
+
+<section id="part1">
+  <h2>Part 1 · Shape your data <span class="time">2:12</span></h2>
+  <h3>Try it</h3>
+  <ol class="flow">
+    <li><div class="num">1</div><div class="card">
+      <div class="tool">Data Loader · Create Project, Import sample data</div>
+      <h4>A Project and the sample data</h4>
+      <p>In the <strong>Data Loader</strong>, under <strong>Create Project</strong>, type a name (for example <code>Melbourne</code>) and click <strong>Create Project</strong>. Click <strong>Import sample data</strong>, tick <strong>Queensland Election Tweets</strong> and <strong>Honi Soit Student Newspaper</strong> (and <strong>RAPID-CDL: Australian Hansard, GST</strong> if you'd like it for later: it's bigger, so let it download while you work), then <strong>Import selected</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>one Project holds the whole analysis</dd><dt>Result</dt><dd class="result">tweets and Honi Soit files in <code>sample_data</code></dd></dl>
+    </div></li>
+    <li><div class="num">2</div><div class="card">
+      <div class="tool">Data Loader · Add</div>
+      <h4>Files into Data Blocks</h4>
+      <p>Importing brings in files, not yet data. In the file list, open <code>sample_data</code> → <code>ADO</code> → <code>twitter</code>. Click <strong>Add</strong> beside <code>qldelection2020_candidate_tweets.csv</code>, then <strong>Add to Project</strong>. Do the same for <code>candidate_info_gender.csv</code>.</p>
+      <p>Then <code>sample_data</code> → <code>SCL</code>: <strong>Add</strong> beside <code>Honi_Soit.zip</code> → <strong>Texts as one Data Block (100)</strong> → <strong>Add to Project</strong>: 100 news articles from the University of Sydney's student newspaper, one row each, for Topic Modelling before the break.</p>
+      <dl class="why-result"><dt>Why</dt><dd>files become data the tools can read</dd><dt>Result</dt><dd class="result">2,380 tweets, 133 candidates with party and gender, 100 Honi Soit articles</dd></dl>
+    </div></li>
+    <li><div class="num">3</div><div class="card">
+      <div class="tool">Data Editor · Overview, column type</div>
+      <h4>Look, then fix one thing</h4>
+      <p>Click the tweets block: the table under the graph is the <strong>Data Editor</strong>. Click <strong>Overview</strong> for a summary. The column <code>created_at</code> holds dates written as text: click the small type symbol at the left of its header, choose <strong>Date and time</strong>, then <strong>Convert</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>look before you change; Trends needs real dates in Part 2</dd><dt>Result</dt><dd class="result"><code>created_at</code> holds dates</dd></dl>
+    </div></li>
+    <li><div class="num">4</div><div class="card">
+      <div class="tool">Data Builder · Join</div>
+      <h4>Join tweets to candidates</h4>
+      <p>Open <strong>Data Builder</strong> in the sidebar, then <strong>Join</strong>. <strong>Add Data Block</strong>: the <strong>tweets first</strong> (the first one is the left table), then the candidates. Set <strong>Left column</strong> and <strong>Right column</strong> to <code>username</code>. <strong>New Data Block name</strong>: <code>Tweets</code>. Click <strong>Add to Project</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>tweets carry no party or gender; the candidates table does</dd><dt>Result</dt><dd class="result"><code>Tweets</code>: 2,380 rows, each with <code>party</code> and <code>gender</code></dd></dl>
+    </div></li>
+    <li><div class="num">5</div><div class="card">
+      <div class="tool">Data Builder · Filter</div>
+      <h4>Drop the retweets</h4>
+      <p>The <strong>Filter</strong> tab. <strong>Add Data Block</strong> <code>Tweets</code>, <strong>Add condition</strong>: <code>text</code>, <strong>starts with</strong>, <code>RT</code>, and tick <strong>negate</strong> (keep the tweets that do <em>not</em> start with RT). <strong>New Data Block name</strong>: <code>Tweets_original</code>. <strong>Add to Project</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>count what candidates wrote, not what they passed on</dd><dt>Result</dt><dd class="result"><code>Tweets_original</code>: 1,646 tweets</dd></dl>
+    </div></li>
+    <li><div class="num">6</div><div class="card">
+      <div class="tool">Frequency</div>
+      <h4>A first look at the words</h4>
+      <p>Open <strong>Frequency</strong> in the sidebar. <strong>Add Data Block</strong> <code>Tweets_original</code>, <strong>Text column</strong> <code>text</code>, and under <strong>Tokeniser model</strong> pick the one under <strong>Recommended</strong>. <strong>Run</strong>. Among the biggest words: <code>https</code>, <code>co</code> and <code>t</code>. Nobody wrote them: they're pieces of web links (<code>https://t.co/…</code>).</p>
+      <dl class="why-result"><dt>Why</dt><dd>see what dominates before you analyse</dd><dt>Result</dt><dd class="result">https, co, t near the top: link pieces in 1,153 tweets</dd></dl>
+    </div></li>
+    <li><div class="num">7</div><div class="card">
+      <div class="tool">Data Editor · Clean text</div>
+      <h4>Clean them out</h4>
+      <p>Click <code>Tweets_original</code> in the Project Graph. In the <strong>Data Editor</strong>, <strong>Clean text</strong> → <strong>Remove web links (URLs)</strong>. <strong>Column</strong>: <code>text</code>; <strong>Save result to</strong>: <strong>The same column</strong>. The preview shows the links gone: <strong>Apply</strong>. Back in <strong>Frequency</strong>, <strong>Run</strong> again. Changed your mind? <strong>Undo</strong> in the Data Editor.</p>
+      <dl class="why-result"><dt>Why</dt><dd>links aren't words anyone wrote</dd><dt>Result</dt><dd class="result">https, co, t are gone from the cloud</dd></dl>
+    </div></li>
+  </ol>
+  <p>Look at the Project Graph: every step you took is a block, and the arrows are your method.</p>
+  <div class="early">
+    <h3>If you finish early</h3>
+    <ul>
+      <li>Make <code>gender</code> a <strong>Category</strong> (its type symbol → <strong>Category</strong> → <strong>Convert</strong>), then look at the Filter tab: categories become tick lists.</li>
+      <li>Try another <strong>Clean text</strong> option, such as <strong>lowercase</strong>, on a copy of <code>text</code> (<strong>Add column</strong> → <strong>Copy column…</strong> first). <strong>Undo</strong> takes it back.</li>
+      <li>Look at the Hansard GST data: <code>sample_data</code> → <code>RAPID-CDL</code> → <code>hansard_au_gst</code>, <strong>Add</strong> <code>Hansard_AU_gst_metadata.parquet</code>, and click <strong>Overview</strong>.</li>
+    </ul>
+  </div>
+  <p class="behind">Behind? Load <a href="checkpoints/MDAP-Part1.zip">MDAP-Part1</a>: Part 1 done, with the Frequency result.</p>
+</section>
+
+<section id="part2">
+  <h2>Part 2 · Look through the lenses <span class="time">2:47</span></h2>
+  <p class="lead">Three tools, one move each, and Trends twice: over time, then across categories.</p>
+  <h3>Try it</h3>
+  <div class="start"><span class="block">Tweets_original</span></div>
+  <ol class="flow from-block">
+    <li><div class="num">1</div><div class="card">
+      <div class="tool">Frequency</div>
+      <h4>Which words?</h4>
+      <p>Your Frequency tab from Part 1 is still open, with clean text. Look at the <strong>Cloud view</strong> and the <strong>List view</strong>. Campaign noise (handles, names) crowding the cloud? <strong>Right-click</strong> a word to drop it.</p>
+      <dl class="why-result"><dt>Why</dt><dd>which words the candidates use most</dd><dt>Result</dt><dd class="result">a cloud of their own words, noise dropped</dd></dl>
+    </div></li>
+    <li><div class="num">2</div><div class="card">
+      <div class="tool">Frequency → Concordance</div>
+      <h4>Read a word in context</h4>
+      <p><strong>Click</strong> a word in the cloud, for example <code>jobs</code>. A new <strong>Concordance</strong> tab opens, named after the word, with its matches already shown. <strong>Click a row</strong>: the tweet opens with the match in bold. <strong>Next row</strong> steps through them.</p>
+      <dl class="why-result"><dt>Why</dt><dd>a count is a claim until you read it</dd><dt>Result</dt><dd class="result">every use of <em>jobs</em>, in bold in its tweet</dd></dl>
+    </div></li>
+    <li><div class="num">3</div><div class="card">
+      <div class="tool">Trends</div>
+      <h4>Tweets per day, by gender</h4>
+      <p>Open <strong>Trends</strong>. <strong>Add Data Block</strong> <code>Tweets_original</code>. <strong>Time, number or category column</strong>: <code>created_at</code>, <strong>Daily</strong>. <strong>Add group</strong>: <code>gender</code>. <strong>Run</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>when candidates tweeted</dd><dt>Result</dt><dd class="result">tweets per day over 18 days, women and men</dd></dl>
+    </div></li>
+    <li><div class="num">4</div><div class="card">
+      <div class="tool">Data Editor · column type</div>
+      <h4>A category in your own order</h4>
+      <p>On <code>Tweets_original</code> in the <strong>Data Editor</strong>, click the type symbol on <code>party</code> → <strong>Category</strong>. The window shows each party with its number of tweets: choose <strong>Most rows first</strong>, then <strong>drag</strong> <code>N/A (Independent)</code> to the end (or into any order that suits your question). <strong>Convert</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>your order shows in every table, legend and chart</dd><dt>Result</dt><dd class="result"><code>party</code>: 7 parties, in your order</dd></dl>
+    </div></li>
+    <li><div class="num">5</div><div class="card">
+      <div class="tool">Trends</div>
+      <h4>Tweets per party</h4>
+      <p>A new Trends tab (<strong>+</strong>), <strong>Add Data Block</strong> <code>Tweets_original</code>, <strong>Time, number or category column</strong>: <code>party</code>, <strong>Add group</strong>: <code>gender</code>, <strong>Run</strong>. One bar per party, in your order. <strong>Chart</strong> → <strong>Stacked bars</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>who tweeted, across parties</dd><dt>Result</dt><dd class="result">Labor wrote 1,264 of the 1,646; most of the Greens' were by women</dd></dl>
+    </div></li>
+  </ol>
+  <div class="early">
+    <h3>If you finish early</h3>
+    <ul>
+      <li>In the day-by-day Trends, try <strong>Chart</strong> → <strong>Bars</strong>, or <strong>Normalise to 100%</strong>.</li>
+      <li>In Concordance, switch to the <strong>Dispersion view</strong>: where in each tweet the word falls.</li>
+      <li>Click a different word in the Frequency cloud and read it in Concordance.</li>
+    </ul>
+  </div>
+
+  <div class="group">
+    <span class="tool">Topic Modelling prep for Part 3 · start both before the break (3:17)</span>
+    <p>Two runs, one in each Topic Modelling tab, so both are ready when we're back.</p>
+    <div class="start"><span class="block">Tweets_original</span></div>
+    <ol class="flow from-block" start="6">
+      <li><div class="num">6</div><div class="card">
+        <div class="tool">Topic Modelling · first tab</div>
+        <h4>Tweets: start a run</h4>
+        <p>Open <strong>Topic Modelling</strong>. <strong>Add Data Block</strong> <code>Tweets_original</code>, <strong>Text column</strong> <code>text</code>. Leave the settings as they are and click <strong>Run</strong>. If a lightbulb says your texts are short, click its <strong>Use … tokens</strong> button first.</p>
+        <dl class="why-result"><dt>Why</dt><dd>the first run downloads a model: let it happen over the break</dd><dt>Result</dt><dd class="result">a finished run in <strong>Tasks</strong> when you're back</dd></dl>
+      </div></li>
+    </ol>
+    <div class="start"><span class="block">Honi Soit</span></div>
+    <ol class="flow from-block" start="7">
+      <li><div class="num">7</div><div class="card">
+        <div class="tool">Topic Modelling · new tab (+)</div>
+        <h4>Honi Soit, in a second tab</h4>
+        <p>In <strong>Topic Modelling</strong>, open a <strong>new tab</strong> with <strong>+</strong>. <strong>Add Data Block</strong>: the Honi Soit block, <strong>Text column</strong> <code>document</code>. The lightbulb offers <strong>Use 128 tokens</strong>: click it (or set <strong>Max tokens</strong> to 128). <strong>Run</strong>. Each tab keeps its own settings and results: click between them.</p>
+        <dl class="why-result"><dt>Why</dt><dd>long news articles are read in several passages</dd><dt>Result</dt><dd class="result">a second run in its own tab, ready for Part 3</dd></dl>
+      </div></li>
+    </ol>
+  </div>
+  <p class="behind">Behind? Load <a href="checkpoints/MDAP-Part2.zip">MDAP-Part2</a>: Part 2's results, with both Topic Modelling runs finished, ready for Part 3.</p>
+</section>
+
+<section id="part3">
+  <h2>Part 3 · Topics <span class="time">3:35</span></h2>
+  <p class="lead">Three things here are new since August: reading a topic's texts, naming topics, and colouring the map by your own columns.</p>
+  <p>Wordflow reads each text in <strong>passages</strong>: a sentence, a paragraph, or a few paragraphs together, up to the <strong>Max tokens</strong> you set. A tweet is a single passage. A news article is several, and each passage can belong to a different topic.</p>
+  <p class="behind">No Topic Modelling runs to look at? Load <a href="checkpoints/MDAP-Part2.zip">MDAP-Part2</a>: both runs are in it, finished.</p>
+  <h3>Try it</h3>
+  <div class="start"><span class="block">Tweets run</span></div>
+  <ol class="flow from-block">
+    <li><div class="num">1</div><div class="card">
+      <div class="tool">Topic Modelling · the map</div>
+      <h4>The topic map</h4>
+      <p>Each bubble is a topic, sized by how many tweets it holds. Hover a bubble to see its words. Grey <strong>Ungrouped</strong> holds the texts that fit no topic.</p>
+      <dl class="why-result"><dt>Why</dt><dd>topics at a glance</dd><dt>Result</dt><dd class="result">topics sized by tweets; Ungrouped isn't forced into one</dd></dl>
+    </div></li>
+    <li><div class="num">2</div><div class="card">
+      <div class="tool">Topic Modelling · Show examples, Edit stop words</div>
+      <h4>Read the texts, not just the words</h4>
+      <p>In the topic list, click the eye (<strong>Show examples</strong>). <strong>Most typical</strong> shows the passages closest to the heart of the topic first. <strong>Open document</strong> shows the whole tweet a passage comes from.</p>
+      <p>Words in the topic's list that tell you nothing (handles, names, <code>amp</code>)? In <strong>Display options</strong>, turn the stop words switch on, click the pencil (<strong>Edit stop words</strong>), add them, <strong>Save</strong>. They leave the word lists; the topics stay the same, so there's no need to run again.</p>
+      <dl class="why-result"><dt>Why</dt><dd>a topic is its texts, not its words</dd><dt>Result</dt><dd class="result">you can say what a topic is about</dd></dl>
+    </div></li>
+    <li><div class="num">3</div><div class="card">
+      <div class="tool">Topic Modelling · Rename</div>
+      <h4>Name a topic</h4>
+      <p>Name a topic you can now describe: the pencil (<strong>Rename</strong>), or double-click the topic's title. The name follows the topic everywhere.</p>
+      <dl class="why-result"><dt>Why</dt><dd>keep your reading with the topic</dd><dt>Result</dt><dd class="result">the name, wherever the topic appears</dd></dl>
+    </div></li>
+    <li><div class="num">4</div><div class="card">
+      <div class="tool">Topic Modelling · Display options</div>
+      <h4>Colour by party</h4>
+      <p><strong>Colour by</strong> <code>party</code> (in <strong>Display options</strong>, beside or below the map). Labor wrote three tweets in four, so look for the bubbles that aren't Labor's.</p>
+      <dl class="why-result"><dt>Why</dt><dd>see topics alongside who wrote them</dd><dt>Result</dt><dd class="result">solid: mostly one party; pale: shared across parties</dd></dl>
+    </div></li>
+  </ol>
+  <div class="start"><span class="block">Honi Soit run</span></div>
+  <ol class="flow from-block">
+    <li><div class="num">5</div><div class="card">
+      <div class="tool">Topic Modelling · Show examples, Open document</div>
+      <h4>One article, several topics</h4>
+      <p>Click the Honi Soit tab. On any topic, click the eye (<strong>Show examples</strong>), then <strong>Open document</strong>. This topic's passages are tinted in its colour; passages from other topics are grey. <strong>Next passage</strong> steps through this topic's passages.</p>
+      <dl class="why-result"><dt>Why</dt><dd>a long text holds several themes</dd><dt>Result</dt><dd class="result">one article, its passages in different topics</dd></dl>
+    </div></li>
+  </ol>
+  <div class="early">
+    <h3>If you finish early</h3>
+    <ul>
+      <li><strong>Search term</strong> in <strong>Display options</strong>: type <code>job</code> to light up the topics that use it.</li>
+      <li>Move the <strong>Topics</strong> slider: fewer, broader topics, or more, narrower ones.</li>
+      <li>Colour by <code>gender</code> instead of <code>party</code>.</li>
+    </ul>
+  </div>
+  <p class="behind">Behind? Load <a href="checkpoints/MDAP-Part3.zip">MDAP-Part3</a>: Part 3 done, a topic named.</p>
+  </section>
+
+<section id="part4">
+  <h2>Part 4 · Coding text with GenAI <span class="time">4:00</span></h2>
+  <p class="lead">An AI model is just another coder. It earns trust the way a human coder does: a codebook, a pilot, agreement scores, and revision. We code by hand first, then check the model against ourselves and against labels our team has checked.</p>
+  <p>Everyone starts this part from <a href="#checkpoints">MDAP-Part4</a>, so the time goes on coding rather than setup. It holds the 226 tweets that mention jobs, the labels our team checked for them (<code>theme.reference</code>), and this codebook:</p>
+  <blockquote><strong>Task context</strong>: Tweets posted by candidates around the 2020 Queensland state election (polling day 31 October 2020). Retweets are left out, and only tweets containing "job" or "jobs" are included: 226 tweets. We are studying how candidates talked about employment: as a promise of jobs created or protected, or as a warning about jobs cut or lost. Code each tweet's main message about jobs, not passing mentions. Campaign slogans and lists of values ("For jobs. For health.") count as the candidate's own commitment. If a tweet both promises jobs and attacks cuts, choose Promise unless the cuts are spelled out as its main message. Cutting prices, costs or taxes is not cutting jobs. If "job" is not about employment ("did a great job"), or the tweet has no real jobs message, choose Other.</blockquote>
+  <div class="table-scroll"><table>
+    <tr><th>Code</th><th>Description</th></tr>
+    <tr><td><code>Promise</code></td><td>The tweet's main message is jobs being created, protected or supported: announcements, funding, infrastructure or training plans, or claims of jobs already delivered.</td></tr>
+    <tr><td><code>Cuts</code></td><td>The tweet's main message is jobs being cut, lost or at risk: past sackings, warnings that a party will cut jobs, or attacks on an opponent's cuts.</td></tr>
+    <tr><td><code>Other</code></td><td>The word job is used another way: praise like 'did a great job', commentary about job statistics, or anything that fits neither class above.</td></tr>
+  </table></div>
+  <p class="small">The Task context tells the model, and any human coder, what the texts are, why we are coding them, and how to decide the hard cases. It is saved with the codebook, so it travels with the Project and belongs in your methods section.</p>
+
+  <h3>Try it</h3>
+  <ol class="flow">
+    <li><div class="num">1</div><div class="card">
+      <div class="tool">Data Loader · Project manager</div>
+      <h4>Load MDAP-Part4</h4>
+      <p>Download <a href="checkpoints/MDAP-Part4.zip">MDAP-Part4</a>. <strong>Data Loader</strong> → <strong>Project manager</strong> → <strong>Import Project</strong> → choose the ZIP → click <strong>Open</strong> on its row. Your own Project stays in the Project manager.</p>
+      <dl class="why-result"><dt>Why</dt><dd>the same start for everyone: the time goes on coding</dd><dt>Result</dt><dd class="result"><code>Jobs_with_ref</code> (226 tweets, checked labels) and <code>Codebook</code></dd></dl>
+    </div></li>
+    <li><div class="num">2</div><div class="card">
+      <div class="tool">Annotation · Codebook</div>
+      <h4>Read the codebook</h4>
+      <p>Open <strong>Annotation</strong>. <strong>Add Data Block</strong> <code>Jobs_with_ref</code>; <strong>Text column</strong> <code>text</code>. Under <strong>Codebook</strong>, <strong>Add Data Block</strong> → <code>Codebook</code>. Click <strong>Edit</strong> beside <strong>Codes</strong>: the codes and the Task context above are there. Close the window.</p>
+      <dl class="why-result"><dt>Why</dt><dd>the brief any coder needs, human or AI</dd><dt>Result</dt><dd class="result">3 codes and a Task context you have read</dd></dl>
+    </div></li>
+    <li><div class="num">3</div><div class="card">
+      <div class="tool">Annotation · Manual</div>
+      <h4>Be the coder first</h4>
+      <p><strong>Annotation column</strong> → <strong>Start new annotation</strong> → <strong>Column name</strong> <code>job.manual</code> → <strong>Create</strong>. With the switch on <strong>Manual</strong>, click <strong>Start</strong> and code the first page yourself, with each row's <strong>Select code</strong> list. Notice the tweets that make you hesitate.</p>
+      <dl class="why-result"><dt>Why</dt><dd>you are the first coder</dd><dt>Result</dt><dd class="result">page 1 coded by you</dd></dl>
+    </div></li>
+    <li><div class="num">4</div><div class="card">
+      <div class="tool">Annotation · Compare to</div>
+      <h4>Compare with the checked labels</h4>
+      <p><strong>Compare to</strong> → tick <code>theme.reference</code>. A <strong>Cohen's Kappa</strong> score appears in your column's header: 1 is perfect agreement, 0 is what chance would get. <strong>Hover</strong> it for the confusion matrix: which codes you mixed up. Click <strong>Close</strong>.</p>
+      <dl class="why-result"><dt>Why</dt><dd>agreement is how any coder earns trust</dd><dt>Result</dt><dd class="result">your κ and the confusion matrix</dd></dl>
+    </div></li>
+    <li><div class="num">5</div><div class="card">
+      <div class="tool">Annotation · AI · Add provider</div>
+      <h4>Then the model: OpenRouter and the workshop key</h4>
+      <p><strong>Start new annotation</strong> → <code>job.AI</code> → <strong>Create</strong>, and flip the switch to <strong>AI</strong>. <strong>Provider</strong> → <strong>Add provider</strong> → <strong>OpenRouter</strong>, paste the workshop key → <strong>Add provider</strong>. <strong>Model</strong>: <code>google/gemini-2.5-flash-lite</code>, a small, inexpensive model, chosen on purpose.</p>
+      <div class="keyrow"><output class="key-slot empty">The workshop key appears here on the day.</output><button type="button" class="copy" disabled>Copy key</button></div>
+      <dl class="why-result"><dt>Why</dt><dd>a second coder: small and inexpensive, on purpose</dd><dt>Result</dt><dd class="result">a model ready to code</dd></dl>
+    </div></li>
+    <li><div class="num">6</div><div class="card">
+      <div class="tool">Annotation · Preview, Compare to</div>
+      <h4>Preview and compare again</h4>
+      <p><strong>Preview</strong>: the model codes one page; nothing is saved yet. Go back to <strong>page 1</strong>, where your own codes are, and <strong>Compare to</strong> <code>job.manual</code> and <code>theme.reference</code>: how far does the model agree with <strong>you</strong>, and with the checked labels?</p>
+      <dl class="why-result"><dt>Why</dt><dd>does it agree with you, and with the checked labels?</dd><dt>Result</dt><dd class="result">two κ scores for the model</dd></dl>
+    </div></li>
+  </ol>
+  <div class="early">
+    <h3>If you finish early</h3>
+    <ul>
+      <li><strong>Run</strong> codes all 226 tweets into <code>job.AI</code> in about a minute. Then <strong>Compare to</strong> <code>theme.reference</code>: in August this model scored about 0.84.</li>
+      <li>Where the model got it wrong, pick a <strong>Correction:</strong> column and fix a few rows.</li>
+      <li>Write a codebook of your own for the same tweets, such as <a href="#codebook">the one below</a>.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="key">
+  <h2>Workshop key</h2>
+  <div class="keybox">
+    <h3>OpenRouter key for Part 4</h3>
+    <p class="small">Paste it in Wordflow: <strong>Annotation</strong> → <strong>Provider</strong> → <strong>Add provider</strong> → <strong>OpenRouter</strong>. It has a spending limit and is deleted at 5:00 pm today.</p>
+    <div class="keyrow"><output class="key-slot empty">The workshop key appears here on the day.</output><button type="button" class="copy" disabled>Copy key</button></div>
+    <p class="small">Your key stays on your computer, never inside a Project file. For your own research, use your own key, or a local model (see <a href="#research">below</a>).</p>
+  </div>
+</section>
+
+<section id="checkpoints">
+  <h2>Checkpoints: if you fall behind</h2>
+  <p>A checkpoint is a whole Project saved as a ZIP, with the part's data and results ready to look at. Each tool opens with its result and its settings, so you can change a setting and <strong>Run</strong> it again. To load one: <strong>Data Loader</strong> → <strong>Project manager</strong> → <strong>Import Project</strong> → choose the ZIP → click <strong>Open</strong> on its row.</p>
+  <div class="table-scroll"><table class="downloads">
+    <tr><th>Download</th><th>After</th></tr>
+    <tr><td><a href="checkpoints/MDAP-Part1.zip" download>MDAP-Part1</a></td><td>End of Part 1: tweets, candidates and Honi Soit, <code>created_at</code> as dates, <code>Tweets</code>, <code>Tweets_original</code> (retweets out, web links removed), and the Frequency tab</td></tr>
+    <tr><td><a href="checkpoints/MDAP-Part2.zip" download>MDAP-Part2</a></td><td>End of Part 2: plus <code>party</code> as a category, the Concordance and both Trends tabs, and <strong>both Topic Modelling runs finished</strong> (tweets; Honi Soit at 128 tokens)</td></tr>
+    <tr><td><a href="checkpoints/MDAP-Part3.zip" download>MDAP-Part3</a></td><td>End of Part 3: plus a named topic and the map coloured by party</td></tr>
+    <tr><td><a href="checkpoints/MDAP-Part4.zip" download>MDAP-Part4</a></td><td>Part 4's starting point, for everyone: plus <code>Jobs_with_ref</code> (226 tweets with <code>theme.reference</code>) and <code>Codebook</code>; no coding done yet</td></tr>
+  </table></div>
+  <p class="small">Checkpoints hold no keys or passwords, so they are safe to share.</p>
+</section>
+
+<section id="openlab">
+  <h2>Open lab <span class="time">4:25</span></h2>
+  <p>Try Wordflow on what interests you, with us beside you: finish a part, try the ideas, or bring your own question.</p>
+  <ul>
+    <li><strong>Your own data</strong>: a spreadsheet, a folder of text files, or a ZIP. Drop it into the <strong>Data Loader</strong>, then <strong>Add</strong>.</li>
+    <li><strong>Hansard GST or housing</strong> (housing is in the same <strong>Import sample data</strong> list):
+      <ul>
+        <li><strong>Trends</strong>: how often "negative gearing" or "first home buyers" comes up, year by year, by chamber or by party.</li>
+        <li><strong>Frequency</strong>: one party's words against another's (<strong>Filter</strong> on <code>party</code> after the speaker join).</li>
+        <li><strong>Concordance</strong>: every "housing affordability", in context.</li>
+        <li><strong>Topic Modelling</strong> on a sample: what the housing debates are about.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section id="codebook">
+  <h2>A codebook to try</h2>
+  <p>Sentiment toward the LNP, on the same 226 tweets. <strong>Codebook</strong> → <strong>Create new</strong> → <strong>Edit</strong>; paste the Task context, <strong>Add code</strong> for each code, <strong>Save</strong>. Code a page by hand before the model does.</p>
+  <blockquote><strong>Task context</strong>: Tweets posted by candidates around the 2020 Queensland state election that mention jobs. The Liberal National Party (LNP), led by Deb Frecklington, was in opposition. We want to know how candidates positioned themselves against the LNP. Judge the sentiment toward the LNP or its leader specifically, not the tweet's overall tone. If neither is mentioned or referred to, choose none.</blockquote>
+  <div class="table-scroll"><table>
+    <tr><th>Code</th><th>Description</th></tr>
+    <tr><td><code>neg</code></td><td>Criticises, attacks or blames the LNP or its leader.</td></tr>
+    <tr><td><code>pos</code></td><td>Praises or supports the LNP or its leader.</td></tr>
+    <tr><td><code>neu</code></td><td>Mentions them without a clear judgement.</td></tr>
+    <tr><td><code>none</code></td><td>Doesn't mention or refer to the LNP or its leader.</td></tr>
+  </table></div>
+</section>
+
+<section id="research">
+  <h2>Before you use this in your own research</h2>
+  <ul>
+    <li><strong>The workshop key is deleted at 5:00 pm today.</strong> For your research, use your own key (the steps are the same), or a <strong>local model</strong>: in <strong>Add provider</strong>, choose <strong>Custom</strong> and point it at a local server such as Ollama or LM Studio, so your data never leaves your computer.</li>
+    <li><strong>Check your ethics approval</strong> and your institution's rules on AI use: they decide which models you may use and whether your data may be sent to an external service. De-identify regardless. You remain responsible for everything the AI does on your behalf.</li>
+    <li><strong>Keep your method on record</strong>: codebook, task context, model, examples and agreement scores belong in your methods section.</li>
+  </ul>
+  <p><strong>Keep going:</strong> <a href="https://sih.tools/wordflow">sih.tools/wordflow</a> for downloads and documentation; in the app, <strong>Help</strong> and <strong>Feedback</strong>. Everything we didn't show today is shown step by step in the August workshop videos: <a href="https://youtu.be/ExYVSgvYIes"><em>Wordflow from zero</em></a> and <a href="https://youtu.be/KcjJViYRYX4"><em>Coding text with GenAI</em></a>. They were recorded on an earlier version: Workspace is now Project, Preprocessing is now the Data Builder, and Topic Modelling's settings have moved, but the steps are the same.</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Data: Bruns, A., Angus, D., Cohen, T., &amp; QUT Digital Observatory (2022). <em>Queensland Election 2020 on Twitter</em>. QUT. <a href="https://doi.org/10.25912/RDF_1665115527020">doi.org/10.25912/RDF_1665115527020</a>. Hames, S., &amp; Alpert, E. (2026). <em>Proceedings of Australian Federal Parliament: An Analytical Database</em> (Version 2026-09-21). Zenodo. <a href="https://doi.org/10.5281/zenodo.22868754">doi.org/10.5281/zenodo.22868754</a> (RAPID-CDL). Honi Soit corpus: Sydney Corpus Lab. Please cite if you use them in research.</p>
+    <p>LDaCA Wordflow is developed at the Sydney Informatics Hub, University of Sydney, with the Sydney Corpus Lab, as part of the Language Data Commons of Australia (LDaCA), with the Australian Research Data Commons (ARDC).</p>
+  </div>
+</footer>
+
+<script>
+  // The workshop key, stored encoded so it isn't plain text in this file.
+  // Set or clear it with facilitator/set-workshop-key.py; don't edit this line by hand.
+  const WORKSHOP_KEY_ENCODED = '';
+
+  (function () {
+    let key = '';
+    try {
+      key = WORKSHOP_KEY_ENCODED ? atob(WORKSHOP_KEY_ENCODED).split('').reverse().join('') : '';
+    } catch (e) {
+      key = '';
+    }
+    if (!key) return;
+    document.querySelectorAll('.keyrow').forEach((row) => {
+      const out = row.querySelector('.key-slot');
+      const button = row.querySelector('button.copy');
+      out.textContent = key;
+      out.classList.remove('empty');
+      button.disabled = false;
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(key);
+        } catch (e) {
+          // Fallback: select the key so Cmd/Ctrl+C copies it
+          const range = document.createRange();
+          range.selectNodeContents(out);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+        button.textContent = 'Copied';
+        setTimeout(() => { button.textContent = 'Copy key'; }, 1600);
+      });
+    });
+  })();
+</script>
+</body>
+</html>

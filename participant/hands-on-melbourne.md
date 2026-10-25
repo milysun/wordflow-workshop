@@ -10,6 +10,8 @@ Each part starts with a few minutes on screen, then it's your turn.
 
 Each part opens with a small chart of its Try it steps: for each, the task, the tool (in italics), why, and the result to check for. Round boxes are Data Blocks, the data a part starts from.
 
+This sheet is also a web page, **sih.tools/ldaca**, with the workshop key for Part 4 and the checkpoint downloads.
+
 Fall behind at any point? Load the part's **checkpoint** (the table at the end) and carry on. Names in **bold** are the exact words on Wordflow's buttons and menus.
 
 ---
@@ -28,14 +30,14 @@ Lightbulb **suggestions** may pop up as you work: they appear when a result look
 
 ```mermaid
 flowchart TD
-  s1["`**1 · A Project and the tweets sample**
+  s1["`**1 · A Project and the sample data**
 *Data Loader · Create Project, Import sample data*
 Why: one Project holds the whole analysis
-Result: the tweet files in sample_data › ADO › twitter`"]
-  s2["`**2 · Add the two CSV files**
+Result: tweets and Honi Soit files in sample_data`"]
+  s2["`**2 · Add the files as Data Blocks**
 *Data Loader · Add*
 Why: files become data the tools can read
-Result: 2 Data Blocks: 2,380 tweets, 133 candidates`"]
+Result: 2,380 tweets, 133 candidates, 100 Honi Soit articles`"]
   s3["`**3 · Overview; created_at to Date and time**
 *Data Editor · Overview, column type*
 Why: look before you change; Trends needs real dates
@@ -61,8 +63,8 @@ Result: Run again: https, co, t are gone`"]
 
 ### Try it
 
-1. **A Project and the data.** In the **Data Loader**, under **Create Project**, type a name (for example `Melbourne`) and click **Create Project**. Click **Import sample data**, tick **Queensland Election Tweets** (and **RAPID-CDL: Australian Hansard, GST** if you'd like it for later: it's bigger, so let it download while you work), then **Import selected**.
-2. **Files into Data Blocks.** Importing brings in files, not yet data. In the file list, open `sample_data` → `ADO` → `twitter`. Click **Add** beside `qldelection2020_candidate_tweets.csv`, then **Add to Project**. Do the same for `candidate_info_gender.csv`. Both appear in the **Project Graph**: 2,380 tweets, and 133 candidates with their party and gender.
+1. **A Project and the data.** In the **Data Loader**, under **Create Project**, type a name (for example `Melbourne`) and click **Create Project**. Click **Import sample data**, tick **Queensland Election Tweets** and **Honi Soit Student Newspaper** (and **RAPID-CDL: Australian Hansard, GST** if you'd like it for later: it's bigger, so let it download while you work), then **Import selected**.
+2. **Files into Data Blocks.** Importing brings in files, not yet data. In the file list, open `sample_data` → `ADO` → `twitter`. Click **Add** beside `qldelection2020_candidate_tweets.csv`, then **Add to Project**. Do the same for `candidate_info_gender.csv`. Both appear in the **Project Graph**: 2,380 tweets, and 133 candidates with their party and gender. Then `sample_data` → `SCL`: **Add** beside `Honi_Soit.zip` → **Texts as one Data Block (100)** → **Add to Project**: 100 news articles from the University of Sydney's student newspaper, one row each, for Topic Modelling before the break.
 3. **Look, then fix one thing.** Click the tweets block: the table under the graph is the **Data Editor**. Click **Overview** for a summary. The column `created_at` holds dates written as text: click the small type symbol at the left of its header, choose **Date and time**, then **Convert**. Trends needs real dates in Part 2.
 4. **Join.** Open **Data Builder** in the sidebar, then **Join**. **Add Data Block**: the **tweets first** (the first one is the left table), then the candidates. Set **Left column** and **Right column** to `username`. **New Data Block name**: `Tweets`. Click **Add to Project**. Every tweet now carries its candidate's `party` and `gender`.
 5. **Filter.** The **Filter** tab. **Add Data Block** `Tweets`, **Add condition**: `text`, **starts with**, `RT`, and tick **negate** (keep the tweets that do *not* start with RT, so retweets drop out). **New Data Block name**: `Tweets_original`. **Add to Project**. Check: **1,646 rows**.
@@ -80,7 +82,7 @@ Look at the Project Graph: every step you took is a block, and the arrows are yo
 - Try another **Clean text** option, such as **lowercase**, on a copy of `text` (**Add column** → **Copy column…** first). **Undo** takes it back.
 - Look at the Hansard GST data: `sample_data` → `RAPID-CDL` → `hansard_au_gst`, **Add** `Hansard_AU_gst_metadata.parquet`, and click **Overview**.
 
-*Behind? Load **Checkpoint A**.*
+*Behind? Load **MDAP-Part1**: Part 1 done, with the Frequency result.*
 
 ---
 
@@ -111,22 +113,22 @@ Result: party: 7 parties, in your order`"]
 *Trends*
 Why: who tweeted, across parties
 Result: Labor 1,264 of 1,646; the Greens' mostly women`"]
-  s6["`**6 · Run with the settings as they are, before the break**
-*Topic Modelling*
+  honi[("Honi Soit")]
+  subgraph prep ["Topic Modelling prep for Part 3: start both before the break"]
+    s6["`**6 · Tweets: start a run**
+*Topic Modelling · first tab*
 Why: the first run downloads a model: let it happen over the break
 Result: a finished run in Tasks when you're back`"]
-  honi[("Honi Soit · 100 news articles")]
-  side["`**Side task · Max tokens 128**
-*Data Loader · Add ZIP, then Topic Modelling*
-Why: long articles are read in passages
-Result: a second run, ready after the break`"]
+    s7["`**7 · Honi Soit: Max tokens 128, start a run**
+*Topic Modelling · new tab (+)*
+Why: long news articles are read in several passages
+Result: a second run in its own tab, ready for Part 3`"]
+  end
   src --> s1 -->|click a word| s2
   src --> s3
   src --> s4 --> s5
-  src -.-> s6
-  honi -.-> side
-  classDef optional stroke-dasharray: 6 4
-  class side optional
+  src --> s6
+  honi --> s7
 ```
 
 ### Try it
@@ -143,16 +145,14 @@ Result: a second run, ready after the break`"]
 - In Concordance, switch to the **Dispersion view**: where in each tweet the word falls.
 - Click a different word in the Frequency cloud and read it in Concordance.
 
-### Before the break (3:22): start a Topic Modelling run
+### Before the break (3:17): Topic Modelling prep for Part 3
 
-6. Open **Topic Modelling**. **Add Data Block** `Tweets_original`, **Text column** `text`. Leave the settings as they are and click **Run**. If a lightbulb says your texts are short, click its **Use … tokens** button first. The first run downloads a model: it carries on over the break, in **Tasks**.
+Two runs, one in each Topic Modelling tab, so both are ready when we're back. Topic Modelling takes a little while, so we start both now and they carry on over the break.
 
-**Side task, over the break (optional):** a second run, on longer texts, to see after the break.
+6. **Tweets.** Open **Topic Modelling**. **Add Data Block** `Tweets_original`, **Text column** `text`. Leave the settings as they are and click **Run**. If a lightbulb says your texts are short, click its **Use … tokens** button first. The first run downloads a model: watch it in **Tasks**.
+7. **Honi Soit, in a second tab.** In **Topic Modelling**, open a **new tab** with **+**. **Add Data Block**: the Honi Soit block, **Text column** `document`. The lightbulb offers **Use 128 tokens**: click it (or set **Max tokens** to 128). **Run**. Each tab keeps its own settings and results: click between them.
 
-- **Data Loader** → **Import sample data** → tick **Honi Soit Student Newspaper** → **Import selected**. In the file list, `sample_data` → `SCL`: **Add** beside `Honi_Soit.zip` → **Texts as one Data Block (100)** → **Add to Project**. That's 100 news articles from the University of Sydney's student newspaper.
-- A new **Topic Modelling** tab (**+**), **Add Data Block**: the Honi Soit block, **Text column** `document`. The lightbulb offers **Use 128 tokens**: click it (or set **Max tokens** to 128). **Run**.
-
-*Behind? Load **Checkpoint B**.*
+*Behind? Load **MDAP-Part2**: Part 2's results, with both Topic Modelling runs finished, ready for Part 3.*
 
 ---
 
@@ -160,7 +160,9 @@ Result: a second run, ready after the break`"]
 
 Three things here are new since August: reading a topic's texts, naming topics, and colouring the map by your own columns.
 
-Wordflow reads each text in **passages** (its buttons call them *segments*): a sentence, a paragraph, or a few paragraphs together, up to the **Max tokens** you set. A tweet is a single passage. A news article is several, and each passage can belong to a different topic.
+*No Topic Modelling runs to look at? Load **MDAP-Part2**: both runs are in it, finished.*
+
+Wordflow reads each text in **passages**: a sentence, a paragraph, or a few paragraphs together, up to the **Max tokens** you set. A tweet is a single passage. A news article is several, and each passage can belong to a different topic.
 
 ```mermaid
 flowchart TD
@@ -169,8 +171,8 @@ flowchart TD
 *Topic Modelling · the map*
 Why: topics at a glance
 Result: topics sized by tweets; Ungrouped isn't forced into one`"]
-  s2["`**2 · Most typical, then Open document**
-*Topic Modelling · Show examples*
+  s2["`**2 · Most typical, Open document; stop words for the noise**
+*Topic Modelling · Show examples, Edit stop words*
 Why: a topic is its texts, not its words
 Result: you can say what a topic is about`"]
   s3["`**3 · Name a topic: pencil or double-click**
@@ -193,10 +195,10 @@ Result: one article, its passages in different topics`"]
 ### Try it
 
 1. **The topic map.** Each bubble is a topic, sized by how many tweets it holds. Hover a bubble to see its words. Grey **Ungrouped** holds the texts that fit no topic.
-2. **Read the texts, not just the words.** In the topic list, click the eye (**Show examples**). **Most typical** shows the passages closest to the heart of the topic first. **Open document** shows the whole tweet a passage comes from.
+2. **Read the texts, not just the words.** In the topic list, click the eye (**Show examples**). **Most typical** shows the passages closest to the heart of the topic first. **Open document** shows the whole tweet a passage comes from. Words in the topic's list that tell you nothing (handles, names, `amp`)? In **Display options**, turn the stop words switch on, click the pencil (**Edit stop words**), add them, **Save**. They leave the word lists; the topics stay the same, so there's no need to run again.
 3. **Name a topic** you can now describe: the pencil (**Rename**), or double-click the topic's title. The name follows the topic everywhere.
 4. **Colour by** `party` (in **Display options**, beside or below the map): a bubble's colour is solid when its tweets come mostly from one party and pale when they're spread across parties. Labor wrote three tweets in four, so look for the bubbles that aren't Labor's.
-5. **One article, several topics** (if you ran the side task): open the Honi Soit tab. On any topic, click the eye (**Show examples**), then **Open document**. This topic's passages are tinted in its colour, and passages from other topics are grey: one article, several themes. **Next segment** steps through this topic's passages.
+5. **One article, several topics**: click the Honi Soit tab. On any topic, click the eye (**Show examples**), then **Open document**. This topic's passages are tinted in its colour, and passages from other topics are grey: one article, several themes. **Next passage** steps through this topic's passages.
 
 ### If you finish early
 
@@ -204,7 +206,7 @@ Result: one article, its passages in different topics`"]
 - Move the **Topics** slider: fewer, broader topics, or more, narrower ones.
 - Colour by `gender` instead of `party`.
 
-*Behind? Load **Checkpoint C**.*
+*Behind? Load **MDAP-Part3**: Part 3 done, a topic named.*
 
 ---
 
@@ -212,7 +214,7 @@ Result: one article, its passages in different topics`"]
 
 An AI model is just another coder. It earns trust the way a human coder does: a codebook, a pilot, agreement scores, and revision. We code by hand first, then check the model against ourselves and against labels our team has checked.
 
-Everyone starts this part from **Checkpoint D**, so the time goes on coding rather than setup. It holds the 226 tweets that mention jobs, the labels our team checked for them (`theme.reference`), and this codebook:
+Everyone starts this part from **MDAP-Part4**, so the time goes on coding rather than setup. It holds the 226 tweets that mention jobs, the labels our team checked for them (`theme.reference`), and this codebook:
 
 > **Task context**: Tweets posted by candidates around the 2020 Queensland state election (polling day 31 October 2020). Retweets are left out, and only tweets containing "job" or "jobs" are included: 226 tweets. We are studying how candidates talked about employment: as a promise of jobs created or protected, or as a warning about jobs cut or lost. Code each tweet's main message about jobs, not passing mentions. Campaign slogans and lists of values ("For jobs. For health.") count as the candidate's own commitment. If a tweet both promises jobs and attacks cuts, choose Promise unless the cuts are spelled out as its main message. Cutting prices, costs or taxes is not cutting jobs. If "job" is not about employment ("did a great job"), or the tweet has no real jobs message, choose Other.
 
@@ -226,7 +228,7 @@ The **Task context** tells the model, and any human coder, what the texts are, w
 
 ```mermaid
 flowchart TD
-  s1["`**1 · Import Checkpoint D, then Open**
+  s1["`**1 · Import MDAP-Part4, then Open**
 *Data Loader · Project manager*
 Why: the same start for everyone: the time goes on coding
 Result: Jobs_with_ref (226 tweets, checked labels) and Codebook`"]
@@ -255,11 +257,11 @@ Result: two κ scores for the model`"]
 
 ### Try it
 
-1. **Load Checkpoint D**: **Data Loader** → **Project manager** → **Import Project** → choose the ZIP → click **Open** on its row.
+1. **Load MDAP-Part4**: **Data Loader** → **Project manager** → **Import Project** → choose the ZIP → click **Open** on its row.
 2. Open **Annotation**. **Add Data Block** `Jobs_with_ref`; **Text column** `text`. Under **Codebook**, **Add Data Block** → `Codebook`. Click **Edit** beside **Codes**: the codes and the **Task context** above are there. Close the window.
 3. **Be the coder first.** **Annotation column** → **Start new annotation** → **Column name** `job.manual` → **Create**. With the switch on **Manual**, click **Start** and code the first page yourself, with each row's **Select code** list. Notice the tweets that make you hesitate.
 4. **Compare to** → tick `theme.reference`. A **Cohen's Kappa** score appears in your column's header: 1 is perfect agreement, 0 is what chance would get. **Hover** it for the confusion matrix: which codes you mixed up. Click **Close**.
-5. **Then the model.** **Start new annotation** → `job.AI` → **Create**, and flip the switch to **AI**. **Provider** → **Add provider** → **OpenRouter**, paste the **workshop key** shown on screen → **Add provider**. **Model**: `google/gemini-2.5-flash-lite`, a small, inexpensive model, chosen on purpose.
+5. **Then the model.** **Start new annotation** → `job.AI` → **Create**, and flip the switch to **AI**. **Provider** → **Add provider** → **OpenRouter**, paste the **workshop key** from the workshop page (sih.tools/ldaca) → **Add provider**. **Model**: `google/gemini-2.5-flash-lite`, a small, inexpensive model, chosen on purpose.
 6. **Preview**: the model codes one page; nothing is saved yet. Go back to **page 1**, where your own codes are, and **Compare to** `job.manual` and `theme.reference`: how far does the model agree with **you**, and with the checked labels?
 
 ### If you finish early
@@ -285,14 +287,14 @@ Try Wordflow on what interests you, with us beside you: finish a part, try the i
 
 ## Checkpoints: if you fall behind
 
-A checkpoint is a whole Project saved as a ZIP. To load one: **Data Loader** → **Project manager** → **Import Project** → choose the ZIP → click **Open** on its row. Then pick the tool's Data Block and columns again (those choices are not saved in the file; everything else is).
+A checkpoint is a whole Project saved as a ZIP, with the part's data and results ready to look at. Each tool opens with its result and its settings, so you can change a setting and **Run** it again. To load one: **Data Loader** → **Project manager** → **Import Project** → choose the ZIP → click **Open** on its row. Download them from **sih.tools/ldaca**.
 
-| Checkpoint | After |
+| Checkpoint | Holds |
 |---|---|
-| ⟨**A** link⟩ | Part 1: tweets and candidates, `created_at` as dates, `Tweets`, `Tweets_original` with the web links removed, and the Frequency tab |
-| ⟨**B** link⟩ | Part 2: plus `party` as a category in order, the Concordance tab and both Trends tabs |
-| ⟨**C** link⟩ | Part 3: plus a finished Topic Modelling tab with one named topic, coloured by party, and the Honi Soit run (128 tokens) |
-| ⟨**D** link⟩ | Part 4's starting point, for everyone: plus `Jobs_with_ref` (226 tweets with `theme.reference`) and `Codebook` |
+| **MDAP-Part1** | End of Part 1: tweets, candidates and Honi Soit, `created_at` as dates, `Tweets`, `Tweets_original` (retweets out, web links removed), and the Frequency tab |
+| **MDAP-Part2** | End of Part 2: plus `party` as a category, the Concordance and both Trends tabs, and **both Topic Modelling runs finished** (tweets; Honi Soit at 128 tokens) |
+| **MDAP-Part3** | End of Part 3: plus a named topic and the map coloured by party |
+| **MDAP-Part4** | Part 4's starting point, for everyone: plus `Jobs_with_ref` (226 tweets with `theme.reference`) and `Codebook`; no coding done yet |
 
 Your AI provider and key stay on your computer, never inside a Project file, so checkpoints are safe to share and loading one never touches your key.
 
