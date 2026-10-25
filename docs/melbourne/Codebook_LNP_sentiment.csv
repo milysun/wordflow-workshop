@@ -1,0 +1,6 @@
+class,description
+neg,"Criticises, attacks or blames the LNP or its leader."
+pos,Praises or supports the LNP or its leader.
+neu,Mentions them without a clear judgement.
+none,Doesn't mention or refer to the LNP or its leader.
+__task_context__,"Tweets posted by candidates around the 2020 Queensland state election that mention jobs. The Liberal National Party (LNP), led by Deb Frecklington, was in opposition. We want to know how candidates positioned themselves against the LNP. Judge the sentiment toward the LNP or its leader specifically, not the tweet's overall tone. If neither is mentioned or referred to, choose none."
