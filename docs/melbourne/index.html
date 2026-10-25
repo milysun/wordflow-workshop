@@ -418,12 +418,12 @@
       <div class="tool">Data Loader · Project manager</div>
       <h4>Load MDAP-Part4</h4>
       <p>Download <a href="checkpoints/MDAP-Part4.zip">MDAP-Part4</a>. <strong>Data Loader</strong> → <strong>Project manager</strong> → <strong>Import Project</strong> → choose the ZIP → click <strong>Open</strong> on its row. Your own Project stays in the Project manager.</p>
-      <dl class="why-result"><dt>Why</dt><dd>the same start for everyone: the time goes on coding</dd><dt>Result</dt><dd class="result"><code>Tweets_job_with_reference</code> (226 tweets, checked labels) and <code>Codebook_LNP_Job</code></dd></dl>
+      <dl class="why-result"><dt>Why</dt><dd>the same start for everyone: the time goes on coding</dd><dt>Result</dt><dd class="result"><code>Tweets_job_with_reference</code> (226 tweets, checked labels) and <code>Codebook_Job</code></dd></dl>
     </div></li>
     <li><div class="num">2</div><div class="card">
       <div class="tool">Annotation · Codebook</div>
       <h4>Read the codebook</h4>
-      <p>Open <strong>Annotation</strong>, tab <strong>A-1</strong>: the tweets (<code>Tweets_job_with_reference</code>, <strong>Text column</strong> <code>text</code>) and the codebook (<code>Codebook_LNP_Job</code>) are already selected. Click <strong>Edit</strong> beside <strong>Codes</strong>: the three codes and the Task context above are there. Close the window.</p>
+      <p>Open <strong>Annotation</strong>, tab <strong>A-1</strong>: the tweets (<code>Tweets_job_with_reference</code>, <strong>Text column</strong> <code>text</code>) and the codebook (<code>Codebook_Job</code>) are already selected. Click <strong>Edit</strong> beside <strong>Codes</strong>: the three codes and the Task context above are there. Close the window.</p>
       <dl class="why-result"><dt>Why</dt><dd>the brief any coder needs, human or AI</dd><dt>Result</dt><dd class="result">3 codes and a Task context you have read</dd></dl>
     </div></li>
     <li><div class="num">3</div><div class="card">
@@ -490,7 +490,7 @@
     <tr><td><a href="checkpoints/MDAP-Part1.zip" download>MDAP-Part1</a></td><td>End of Part 1: tweets, candidates and Honi Soit, <code>created_at</code> as dates, <code>Tweets</code>, <code>Tweets_Original</code> (retweets out, web links removed), and the Frequency tab</td></tr>
     <tr><td><a href="checkpoints/MDAP-Part2.zip" download>MDAP-Part2</a></td><td>End of Part 2: plus <code>party</code> as a category, women's and men's tweets as two blocks, the Concordance and Trends tabs</td></tr>
     <tr><td><a href="checkpoints/MDAP-Part3.zip" download>MDAP-Part3</a></td><td>End of Part 3: plus <strong>both Topic Modelling runs finished</strong> (tweets; Honi Soit at 128 tokens), with topics named</td></tr>
-    <tr><td><a href="checkpoints/MDAP-Part4.zip" download>MDAP-Part4</a></td><td>Part 4's starting point, for everyone: plus <code>Tweets_job_with_reference</code> (226 tweets with <code>theme.reference</code>, and empty <code>Job_Manual</code> and <code>Job_AI</code> columns), the codebooks <code>Codebook_LNP_Job</code> and <code>Codebook_LNP_sentiment</code>, and the Annotation tab A-1 set up; no coding done yet</td></tr>
+    <tr><td><a href="checkpoints/MDAP-Part4.zip" download>MDAP-Part4</a></td><td>Part 4's starting point, for everyone: plus <code>Tweets_job_with_reference</code> (226 tweets with <code>theme.reference</code>, and empty <code>Job_Manual</code> and <code>Job_AI</code> columns), the codebooks <code>Codebook_Job</code> and <code>Codebook_LNP_sentiment</code>, and the Annotation tab A-1 set up; no coding done yet</td></tr>
   </table></div>
   <p><strong>Also for Part 4:</strong> <a href="tweets_job_reference.csv" download>tweets_job_reference.csv</a>, the checked labels for the 226 job tweets (columns <code>tweet_id</code>, <code>theme.reference</code>). It is already joined in MDAP-Part4. To join it yourself: drop it into the <strong>Data Loader</strong>, <strong>Add</strong> it, then <strong>Data Builder</strong> → <strong>Join</strong> your 226 tweets (first) to it on <code>tweet_id</code>.</p>
   <p><a href="Codebook.csv" download>Codebook.csv</a>: the Part 4 codebook (three codes and the Task context), also inside MDAP-Part4. To use it on its own: <strong>Add</strong> it in the <strong>Data Loader</strong>, then in <strong>Annotation</strong>, under <strong>Codebook</strong>, <strong>Add Data Block</strong> → this block (<strong>Code column</strong> <code>class</code>, <strong>Description column</strong> <code>description</code>).</p>

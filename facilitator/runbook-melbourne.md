@@ -73,7 +73,7 @@ Hands up when everyone has named a topic. **3:47:** finishing time; early finish
 **Slide 16, show (P4.1-4):**
 
 1. **Import MDAP-Part4**, **Open**. *"Everyone starts from the same Project, so the time goes on coding. Your own Project is still in the Project manager for the open lab."*
-2. Annotation, tab **A-1**: `Tweets_job_with_reference`, `text` and `Codebook_LNP_Job` are already selected (the checkpoint saved them). **Edit**: read the **Task context** aloud. Step 3 picks the empty `Job_Manual`. *"This is the brief you'd give a new research assistant: what the texts are, what we want to find out, how to decide the hard cases. It's saved with the codebook, so it's part of your method."*
+2. Annotation, tab **A-1**: `Tweets_job_with_reference`, `text` and `Codebook_Job` are already selected (the checkpoint saved them). **Edit**: read the **Task context** aloud. Step 3 picks the empty `Job_Manual`. *"This is the brief you'd give a new research assistant: what the texts are, what we want to find out, how to decide the hard cases. It's saved with the codebook, so it's part of your method."*
 3. `Job_Manual`, **Manual**, **Start**: code two rows aloud, hesitating honestly.
 4. **Compare to** `theme.reference`: κ in the header, hover for the confusion matrix.
 

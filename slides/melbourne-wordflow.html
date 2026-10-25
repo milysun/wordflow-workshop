@@ -104,6 +104,9 @@
     margin: 0;
   }
   section.slide .card code { font-size: 0.85em; }
+  /* Slide 2: the workshop page's QR code beside its short link */
+  section.slide .qr-row { display: flex; align-items: center; gap: 1.2em; margin-top: 0.4em; }
+  section.slide .qr-row .qr { width: 26vh; height: 26vh; flex: 0 0 auto; border-radius: 6px; }
   /* Step flows on the Part slides: the step sheet's charts, shortened to the tool and the main step.
      A .block pill is a Data Block. */
   section.slide .flow { margin-top: 0.9em; }
@@ -392,7 +395,7 @@
   .brand-footer .logo-scl { height: 3.8vh; }
   .brand-footer .logo-sih { height: 4.6vh; }
   .brand-footer a { display: block; line-height: 0; }
-  .brand-footer .host-text { color: var(--ink); font-size: clamp(0.7rem, 0.95vw, 0.9rem); line-height: 1.15; white-space: nowrap; }
+  .brand-footer .host-text { color: var(--ink); font-size: clamp(0.7rem, 0.95vw, 0.9rem); line-height: 1.15; white-space: nowrap; text-align: center; }
   .brand-footer .host-text small { display: block; color: var(--muted); font-size: 0.82em; }
   /* Title-slide logo row: the project, LDaCA + SIH (white variants on the ink background). MDAP, the host, is credited in words below it. */
   .title-logos {
@@ -571,9 +574,13 @@
       </div>
       <div class="card">
         <h3>2. Open the workshop page</h3>
-        <p style="font-size: 1.6em; font-weight: 700;">sih.tools/ldaca</p>
-        <p class="todo">⟨QR code for sih.tools/ldaca⟩</p>
-        <p style="margin-top: 0.6em;">Every step, the workshop key for Part 4, and catch-up files if you fall behind.</p>
+        <div class="qr-row">
+          <img class="qr" src="images/qr-sih-tools-ldaca.svg" alt="QR code for sih.tools/ldaca">
+          <div>
+            <p style="font-size: 1.6em; font-weight: 700;">sih.tools/ldaca</p>
+            <p style="margin-top: 0.6em;">Every step, the workshop key for Part 4, and catch-up files if you fall behind.</p>
+          </div>
+        </div>
       </div>
     </div>
     <p style="margin-top: 1em;">Wi-Fi: <strong>eduroam</strong>. Stuck at any point? Put your hand up: a helper will come to you.</p>
@@ -786,12 +793,12 @@
   </section>
 
   <!-- Slide 16: Part 4 steps -->
-  <section class="slide" data-notes="Show (about 3 minutes): import MDAP-Part4, open the codebook's Edit window and read the Task context aloud (what the data is, what the coding is for, the hard cases), code two rows by hand, Compare to. Then the room. Building the 226 and typing a codebook are not today's steps. Hand-coding comes first on purpose: it needs no key, and it's the baseline. Show the shared key only when most of the room has a Kappa score. Everyone Previews; the full Run is an idea for anyone done early. If errors appear, lower Requests at once to 3.">
+  <section class="slide" data-notes="Show (about 3 minutes): import MDAP-Part4, open Annotation tab A-1 (the tweets and Codebook_Job are already selected), open the codebook's Edit window and read the Task context aloud (what the data is, what the coding is for, the hard cases), code two rows by hand, Compare to. Then the room. Building the 226 and typing a codebook are not today's steps. Hand-coding comes first on purpose: it needs no key, and it's the baseline. Show the shared key only when most of the room has a Kappa score. Everyone Previews; the full Run is an idea for anyone done early. If errors appear, lower Requests at once to 3.">
     <h2>Part 4 · Try it</h2>
     <div class="flow turn">
       <div class="step" style="grid-row: 1; grid-column: 1;"><i class="tool">Data Loader</i><b><span class="n">1</span>Import MDAP-Part4</b></div>
       <span class="arr" style="grid-row: 1; grid-column: 2;">→</span>
-      <div class="step" style="grid-row: 1; grid-column: 3;"><i class="tool">Annotation · Codebook</i><b><span class="n">2</span>Read the codes and Task context</b></div>
+      <div class="step" style="grid-row: 1; grid-column: 3;"><i class="tool">Annotation · tab A-1</i><b><span class="n">2</span>Read <code>Codebook_Job</code> and its Task context</b></div>
       <span class="arr" style="grid-row: 1; grid-column: 4;">→</span>
       <div class="step" style="grid-row: 1; grid-column: 5;"><i class="tool">Annotation · Manual</i><b><span class="n">3</span>Code page 1 by hand</b></div>
       <span class="arr down" style="grid-row: 2; grid-column: 5;">↓</span>

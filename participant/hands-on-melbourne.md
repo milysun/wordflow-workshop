@@ -229,7 +229,7 @@ flowchart TD
   s1["`**1 · Import MDAP-Part4, then Open**
 *Data Loader · Project manager*
 Why: the same start for everyone: the time goes on coding
-Result: Tweets_job_with_reference (226 tweets, checked labels) and Codebook_LNP_Job`"]
+Result: Tweets_job_with_reference (226 tweets, checked labels) and Codebook_Job`"]
   s2["`**2 · Annotation tab A-1: read the codebook and Task context**
 *Annotation · Codebook*
 Why: the brief any coder needs, human or AI
@@ -256,7 +256,7 @@ Result: two κ scores for the model`"]
 ### Try it
 
 1. **Load MDAP-Part4**: **Data Loader** → **Project manager** → **Import Project** → choose the ZIP → click **Open** on its row.
-2. Open **Annotation**, tab **A-1**: the tweets (`Tweets_job_with_reference`, **Text column** `text`) and the codebook (`Codebook_LNP_Job`) are already selected. Click **Edit** beside **Codes**: the three codes and the **Task context** above are there. Close the window.
+2. Open **Annotation**, tab **A-1**: the tweets (`Tweets_job_with_reference`, **Text column** `text`) and the codebook (`Codebook_Job`) are already selected. Click **Edit** beside **Codes**: the three codes and the **Task context** above are there. Close the window.
 3. **Be the coder first.** **Annotation column** → `Job_Manual` (empty, ready for you). With the switch on **Manual**, click **Start** and code the first page yourself, with each row's **Select code** list. Notice the tweets that make you hesitate.
 4. **Compare to** → tick `theme.reference`. A **Cohen's Kappa** score appears in your column's header: 1 is perfect agreement, 0 is what chance would get. **Hover** it for the confusion matrix: which codes you mixed up. Click **Close**.
 5. **Then the model.** **Annotation column** → `Job_AI`, and flip the switch to **AI**. **Provider** → **Add provider** → **OpenRouter**, paste the **workshop key** from the workshop page (sih.tools/ldaca) → **Add provider**. **Model**: type to find one of these, and pick it from the list:
@@ -304,7 +304,7 @@ A checkpoint is a whole Project saved as a ZIP, with the part's data and results
 | **MDAP-Part1** | End of Part 1: tweets, candidates and Honi Soit, `created_at` as dates, `Tweets`, `Tweets_Original` (retweets out, web links removed), and the Frequency tab |
 | **MDAP-Part2** | End of Part 2: plus `party` as a category, women's and men's tweets as two blocks, the Concordance and Trends tabs |
 | **MDAP-Part3** | End of Part 3: plus **both Topic Modelling runs finished** (tweets; Honi Soit at 128 tokens), with topics named |
-| **MDAP-Part4** | Part 4's starting point, for everyone: plus `Tweets_job_with_reference` (226 tweets with `theme.reference`, and empty `Job_Manual` and `Job_AI` columns), the codebooks `Codebook_LNP_Job` and `Codebook_LNP_sentiment`, and the Annotation tab A-1 set up; no coding done yet |
+| **MDAP-Part4** | Part 4's starting point, for everyone: plus `Tweets_job_with_reference` (226 tweets with `theme.reference`, and empty `Job_Manual` and `Job_AI` columns), the codebooks `Codebook_Job` and `Codebook_LNP_sentiment`, and the Annotation tab A-1 set up; no coding done yet |
 
 Also for Part 4, on the workshop page: [`Codebook.csv`](../docs/melbourne/Codebook.csv), the Part 4 codebook (three codes and the Task context, also inside MDAP-Part4). To use it on its own: **Add** it in the **Data Loader**, then in **Annotation**, under **Codebook**, **Add Data Block** → this block (**Code column** `class`, **Description column** `description`).
 
