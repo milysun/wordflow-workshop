@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Wordflow — Platform demo</title>
+  <script defer src="./presentation.js"></script>
+</head>
+<body>
+  <main id="workspace">
+    <section id="stage" tabindex="0" aria-label="Wordflow presentation. Right, Page Down or Space advances through screenshot pairs and cues; Left or Page Up goes back.">
+      <p id="loading" role="status">Preparing the Wordflow demo…</p>
+    </section>
+    <aside id="notes" hidden aria-label="Speaker notes">
+      <h1 id="notes-title">Speaker notes</h1>
+      <div id="speech"></div>
+      <details><summary>Recording and animation direction</summary><p id="direction"></p></details>
+    </aside>
+  </main>
+  <footer id="controls" aria-label="Presentation controls">
+    <div class="identity"><strong>Wordflow</strong><span id="status" role="status">Loading Motion Canvas</span></div>
+    <select id="cue" aria-label="Jump to cue" disabled><option>Preparing cues…</option></select>
+    <button id="previous" type="button" title="Previous pair or cue (← / Page Up)" disabled>Previous</button>
+    <button id="next" type="button" title="Next pair or cue (→ / Page Down / Space)" disabled>Next <kbd>Space</kbd></button>
+    <button id="toggle-notes" type="button" aria-expanded="false" aria-controls="notes" title="Speaker notes (N)">Notes</button>
+    <button id="fullscreen" type="button" title="Fullscreen (F)">Fullscreen</button>
+  </footer>
+</body>
+</html>
