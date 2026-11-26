@@ -1,6 +1,6 @@
 # ARDC HASS&I webinar: talk outline (draft 2, 2026-11-16)
 
-> **Delivered 26 November 2026.** This outline is the plan as of draft 2 and was not updated for the last changes to the deck. The slides as delivered are `slides/ardc-webinar-wordflow.pdf` (21 slides) and the slide viewer with both recordings, https://claude.ai/artifact/92MvtXmiPT2T4DRft8ShXD.
+> **Delivered 26 November 2026.** This outline is the plan as of draft 2 and was not updated for the last changes to the deck. The slides as delivered are `slides/ardc-webinar-wordflow.pdf` (21 slides) and the GitHub release https://github.com/milysun/wordflow-workshop/releases/tag/ardc-webinar-2026-11-26 (PPTX with both recordings, PDF, MP4s).
 
 **Thursday 26 November 2026, 2 pm AEDT** · ARDC HASS&I Research Data Commons webinar series, focus area LDaCA · Presenter: Chao Sun, alone (ARDC's opening slides also name Prof. Monika Bednarek, by mistake: she takes no part) · MC: Mary Filsell (ARDC) · Rehearsal with ARDC: Thursday 19 November
 
